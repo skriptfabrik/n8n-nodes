@@ -1,0 +1,75 @@
+name: Pull Request
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+
+env:
+  NODE_VERSION: 18.18.2
+
+jobs:
+  check-lint-test-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Restore Node.js modules cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-Node-Modules-V1-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-Node-Modules-V1-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v4
+
+      - name: Check format
+        run: npx nx format:check
+
+      - name: Lint source code affected by changes
+        run: npx nx affected --target=lint --parallel=3
+
+      - name: Test source code affected by changes
+        run: npx nx affected --target=test --configuration=ci --parallel=3
+
+      - name: Run build of packages affected by changes
+        run: npx nx affected --target=build --parallel=3
+
+  lint-markdown:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check Markdown files
+        uses: nosborn/github-action-markdown-cli@v3
+        with:
+          files: .
+
+  lint-yaml:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check YAML files
+        uses: ibiqlik/action-yamllint@v3
