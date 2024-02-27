@@ -13,6 +13,7 @@ env:
 
 jobs:
   check-lint-test-build:
+    name: Check, Lint, Test, and Build
     runs-on: ubuntu-latest
 
     steps:
@@ -47,12 +48,13 @@ jobs:
         run: npx nx affected --target=lint --parallel=3
 
       - name: Test source code affected by changes
-        run: npx nx affected --target=test --configuration=ci --parallel=3
+        run: npx nx affected --target=test --exclude=n8n-nodes --parallel=3 --coverage
 
       - name: Run build of packages affected by changes
         run: npx nx affected --target=build --parallel=3
 
   lint-markdown:
+    name: Lint Markdown
     runs-on: ubuntu-latest
 
     steps:
@@ -65,6 +67,7 @@ jobs:
           files: .
 
   lint-yaml:
+    name: Lint YAML
     runs-on: ubuntu-latest
 
     steps:
