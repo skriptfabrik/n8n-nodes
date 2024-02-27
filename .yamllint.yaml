@@ -1,0 +1,17 @@
+extends: default
+
+ignore: |
+  /dist
+  /node_modules
+
+rules:
+  document-start: false
+  line-length:
+    max: 120
+  new-lines:
+    type: unix
+  new-line-at-end-of-file:
+    level: warning
+  trailing-spaces:
+    level: warning
+  truthy: false
