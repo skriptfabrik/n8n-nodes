@@ -13,6 +13,7 @@ env:
 
 jobs:
   check-lint-test-build:
+    name: Check, Lint, Test, and Build
     runs-on: ubuntu-latest
 
     steps:
@@ -53,6 +54,7 @@ jobs:
         run: npx nx affected --target=build --parallel=3
 
   lint-markdown:
+    name: Lint Markdown
     runs-on: ubuntu-latest
 
     steps:
@@ -65,6 +67,7 @@ jobs:
           files: .
 
   lint-yaml:
+    name: Lint YAML
     runs-on: ubuntu-latest
 
     steps:
