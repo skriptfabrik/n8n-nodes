@@ -1,0 +1,46 @@
+name: Publish Package
+
+on:
+  push:
+    tags:
+      - 'clockify-enhanced-*'
+      - 'moco-*'
+
+env:
+  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  NODE_VERSION: 18.18.2
+
+jobs:
+  publish-package:
+    name: Publish Package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: https://registry.npmjs.org
+
+      - name: Restore Node.js modules cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-Node-Modules-V1-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-Node-Modules-V1-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Get tag
+        uses: little-core-labs/get-tag@v3.0.2
+        id: tag
+        with:
+          tagRegex: '(?<name>.*)-(?<version>.*)'
+
+      - name: Publish package
+        run: npx nx publish n8n-nodes-${{ steps.tag.outputs.name }} --ver=${{ steps.tag.outputs.version }} --tag=latest
