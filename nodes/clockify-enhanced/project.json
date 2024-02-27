@@ -1,0 +1,43 @@
+{
+  "name": "n8n-nodes-clockify-enhanced",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "nodes/clockify-enhanced/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/nodes/clockify-enhanced",
+        "tsConfig": "nodes/clockify-enhanced/tsconfig.lib.json",
+        "packageJson": "nodes/clockify-enhanced/package.json",
+        "main": "nodes/clockify-enhanced/src/index.ts",
+        "assets": [
+          "nodes/clockify-enhanced/src/nodes/*/*.svg",
+          "nodes/clockify-enhanced/src/nodes/*/*.json",
+          "nodes/clockify-enhanced/*.md"
+        ]
+      }
+    },
+    "link": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "dist/nodes/clockify-enhanced",
+        "command": "npm link --no-audit"
+      },
+      "dependsOn": ["build"]
+    },
+    "install": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/install.mjs n8n-nodes-clockify-enhanced"
+      },
+      "dependsOn": ["link"]
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs n8n-nodes-clockify-enhanced {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}

@@ -12,3 +12,11 @@ updates:
       - dependency-name: '@types/*'
     schedule:
       interval: 'weekly'
+
+  - package-ecosystem: 'npm'
+    directory: '/nodes/clockify-enhanced'
+    ignore:
+      - dependency-name: '@types/*'
+    schedule:
+      interval: 'weekly'
+
