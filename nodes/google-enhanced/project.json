@@ -1,0 +1,43 @@
+{
+  "name": "n8n-nodes-google-enhanced",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "nodes/google-enhanced/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/nodes/google-enhanced",
+        "tsConfig": "nodes/google-enhanced/tsconfig.lib.json",
+        "packageJson": "nodes/google-enhanced/package.json",
+        "main": "nodes/google-enhanced/src/index.ts",
+        "assets": [
+          "nodes/google-enhanced/src/nodes/*/*.svg",
+          "nodes/google-enhanced/src/nodes/*/*.json",
+          "nodes/google-enhanced/*.md"
+        ]
+      }
+    },
+    "link": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "dist/nodes/google-enhanced",
+        "command": "npm link --no-audit"
+      },
+      "dependsOn": ["build"]
+    },
+    "install": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/install.mjs n8n-nodes-google-enhanced"
+      },
+      "dependsOn": ["link"]
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs n8n-nodes-google-enhanced {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}
