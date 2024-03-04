@@ -4,7 +4,6 @@ on:
   push:
     tags:
       - 'clockify-enhanced-*'
-      - 'moco-*'
 
 env:
   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
