@@ -1,0 +1,43 @@
+{
+  "name": "n8n-nodes-moco",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "nodes/moco/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/nodes/moco",
+        "tsConfig": "nodes/moco/tsconfig.lib.json",
+        "packageJson": "nodes/moco/package.json",
+        "main": "nodes/moco/src/index.ts",
+        "assets": [
+          "nodes/moco/src/nodes/*/*.svg",
+          "nodes/moco/src/nodes/*/*.json",
+          "nodes/moco/*.md"
+        ]
+      }
+    },
+    "link": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "dist/nodes/moco",
+        "command": "npm link --no-audit"
+      },
+      "dependsOn": ["build"]
+    },
+    "install": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/install.mjs n8n-nodes-moco"
+      },
+      "dependsOn": ["link"]
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs n8n-nodes-moco {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}

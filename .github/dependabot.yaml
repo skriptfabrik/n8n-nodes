@@ -26,3 +26,10 @@ updates:
       - dependency-name: '@types/*'
     schedule:
       interval: 'weekly'
+
+  - package-ecosystem: 'npm'
+    directory: '/nodes/moco'
+    ignore:
+      - dependency-name: '@types/*'
+    schedule:
+      interval: 'weekly'
