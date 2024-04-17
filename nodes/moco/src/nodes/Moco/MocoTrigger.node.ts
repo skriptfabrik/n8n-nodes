@@ -190,7 +190,7 @@ export class MocoTrigger implements INodeType {
           undefined,
           'POST',
           '/account/web_hooks',
-          body,
+          { body },
         );
 
         if (responseData.id === undefined) {
