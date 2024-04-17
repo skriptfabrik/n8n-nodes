@@ -63,6 +63,18 @@ export class MocoTrigger implements INodeType {
             value: 'Activity/update',
           },
           {
+            name: 'Comment Created',
+            value: 'Comment/create',
+          },
+          {
+            name: 'Comment Deleted',
+            value: 'Comment/delete',
+          },
+          {
+            name: 'Comment Updated',
+            value: 'Comment/update',
+          },
+          {
             name: 'Company Created',
             value: 'Company/create',
           },
@@ -123,6 +135,30 @@ export class MocoTrigger implements INodeType {
             value: 'Invoice/update',
           },
           {
+            name: 'Invoice/Payment Created',
+            value: 'Invoice::Payment/create',
+          },
+          {
+            name: 'Invoice/Payment Deleted',
+            value: 'Invoice::Payment/delete',
+          },
+          {
+            name: 'Invoice/Payment Updated',
+            value: 'Invoice::Payment/update',
+          },
+          {
+            name: 'InvoiceDraft Created',
+            value: 'InvoiceDraft/create',
+          },
+          {
+            name: 'InvoiceDraft Deleted',
+            value: 'InvoiceDraft/delete',
+          },
+          {
+            name: 'InvoiceDraft Updated',
+            value: 'InvoiceDraft/update',
+          },
+          {
             name: 'Offer Created',
             value: 'Offer/create',
           },
@@ -135,6 +171,30 @@ export class MocoTrigger implements INodeType {
             value: 'Offer/update',
           },
           {
+            name: 'PlanningEntry Created',
+            value: 'PlanningEntry/create',
+          },
+          {
+            name: 'PlanningEntry Deleted',
+            value: 'PlanningEntry/delete',
+          },
+          {
+            name: 'PlanningEntry Updated',
+            value: 'PlanningEntry/update',
+          },
+          {
+            name: 'Presence Created',
+            value: 'Presence/create',
+          },
+          {
+            name: 'Presence Deleted',
+            value: 'Presence/delete',
+          },
+          {
+            name: 'Presence Updated',
+            value: 'Presence/update',
+          },
+          {
             name: 'Project Created',
             value: 'Project/create',
           },
@@ -145,6 +205,126 @@ export class MocoTrigger implements INodeType {
           {
             name: 'Project Updated',
             value: 'Project/update',
+          },
+          {
+            name: 'Project/PaymentSchedule Created',
+            value: 'Project::PaymentSchedule/create',
+          },
+          {
+            name: 'Project/PaymentSchedule Deleted',
+            value: 'Project::PaymentSchedule/delete',
+          },
+          {
+            name: 'Project/PaymentSchedule Updated',
+            value: 'Project::PaymentSchedule/update',
+          },
+          {
+            name: 'Purchase Created',
+            value: 'Purchase/create',
+          },
+          {
+            name: 'Purchase Deleted',
+            value: 'Purchase/delete',
+          },
+          {
+            name: 'Purchase Updated',
+            value: 'Purchase/update',
+          },
+          {
+            name: 'Purchase/Approval Created',
+            value: 'Purchase::Approval/create',
+          },
+          {
+            name: 'Purchase/Approval Deleted',
+            value: 'Purchase::Approval/delete',
+          },
+          {
+            name: 'Purchase/Approval Updated',
+            value: 'Purchase::Approval/update',
+          },
+          {
+            name: 'Purchase/Draft Created',
+            value: 'Purchase::Draft/create',
+          },
+          {
+            name: 'Purchase/Draft Deleted',
+            value: 'Purchase::Draft/delete',
+          },
+          {
+            name: 'Purchase/Draft Updated',
+            value: 'Purchase::Draft/update',
+          },
+          {
+            name: 'Purchase/Payment Created',
+            value: 'Purchase::Payment/create',
+          },
+          {
+            name: 'Purchase/Payment Deleted',
+            value: 'Purchase::Payment/delete',
+          },
+          {
+            name: 'Purchase/Payment Updated',
+            value: 'Purchase::Payment/update',
+          },
+          {
+            name: 'RecurringExpense Created',
+            value: 'RecurringExpense/create',
+          },
+          {
+            name: 'RecurringExpense Deleted',
+            value: 'RecurringExpense/delete',
+          },
+          {
+            name: 'RecurringExpense Updated',
+            value: 'RecurringExpense/update',
+          },
+          {
+            name: 'Schedule Created',
+            value: 'Schedule/create',
+          },
+          {
+            name: 'Schedule Deleted',
+            value: 'Schedule/delete',
+          },
+          {
+            name: 'Schedule Updated',
+            value: 'Schedule/update',
+          },
+          {
+            name: 'Task Created',
+            value: 'Task/create',
+          },
+          {
+            name: 'Task Deleted',
+            value: 'Task/delete',
+          },
+          {
+            name: 'Task Updated',
+            value: 'Task/update',
+          },
+          {
+            name: 'User Created',
+            value: 'User/create',
+          },
+          {
+            name: 'User Deleted',
+            value: 'User/delete',
+          },
+          {
+            name: 'User Updated',
+            value: 'User/update',
+          },
+          {
+            name: 'User/HolidayRequest Created',
+            value: 'User::HolidayRequest/create',
+          },
+          {
+            name: 'User/HolidayRequest Deleted',
+            value: 'User::HolidayRequest/delete',
+          },
+          {
+            name: 'User/HolidayRequest Updated',
+            value: 'User::HolidayRequest/update',
           },
         ],
         default: 'Activity/create',
