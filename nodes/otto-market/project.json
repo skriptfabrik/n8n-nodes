@@ -1,0 +1,42 @@
+{
+  "name": "n8n-nodes-otto-market",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "nodes/otto-market/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/nodes/otto-market",
+        "tsConfig": "nodes/otto-market/tsconfig.lib.json",
+        "packageJson": "nodes/otto-market/package.json",
+        "main": "nodes/otto-market/src/index.ts",
+        "assets": [
+          "nodes/otto-market/*.md",
+          "nodes/otto-market/src/nodes/OttoMarket/icons/*"
+        ]
+      }
+    },
+    "link": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "dist/nodes/otto-market",
+        "command": "npm link --no-audit"
+      },
+      "dependsOn": ["build"]
+    },
+    "install": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/install.mjs n8n-nodes-otto-market"
+      },
+      "dependsOn": ["link"]
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs n8n-nodes-otto-market {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}
