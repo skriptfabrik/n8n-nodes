@@ -1,0 +1,42 @@
+{
+  "name": "n8n-nodes-kaufland-marketplace",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "nodes/kaufland-marketplace/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/nodes/kaufland-marketplace",
+        "tsConfig": "nodes/kaufland-marketplace/tsconfig.lib.json",
+        "packageJson": "nodes/kaufland-marketplace/package.json",
+        "main": "nodes/kaufland-marketplace/src/index.ts",
+        "assets": [
+          "nodes/kaufland-marketplace/*.md",
+          "nodes/kaufland-marketplace/src/nodes/KauflandMarketplace/icons/*"
+        ]
+      }
+    },
+    "link": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "dist/nodes/kaufland-marketplace",
+        "command": "npm link --no-audit"
+      },
+      "dependsOn": ["build"]
+    },
+    "install": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/install.mjs n8n-nodes-kaufland-marketplace"
+      },
+      "dependsOn": ["link"]
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs n8n-nodes-kaufland-marketplace {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}
