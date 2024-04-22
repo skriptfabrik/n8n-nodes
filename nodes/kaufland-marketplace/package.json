@@ -1,0 +1,40 @@
+{
+  "name": "@skriptfabrik/n8n-nodes-kaufland-marketplace",
+  "version": "0.1.0",
+  "description": "Kaufland Marketplace nodes for n8n",
+  "keywords": [
+    "Kaufland",
+    "Kaufland-Marketplace",
+    "n8n",
+    "n8n-community-node",
+    "n8n-community-node-package"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/skriptfabrik/n8n-nodes/blob/main/nodes/kaufland-marketplace/README.md",
+  "author": {
+    "name": "skriptfabrik",
+    "email": "info@skriptfabrik.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skriptfabrik/n8n-nodes.git"
+  },
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "type": "commonjs",
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "src/credentials/KauflandMarketplace.credentials.js"
+    ],
+    "nodes": [
+      "src/nodes/KauflandMarketplace/KauflandMarketplace.node.js"
+    ]
+  },
+  "dependencies": {
+    "tslib": "^2.6.2"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "^1.36.4"
+  }
+}
