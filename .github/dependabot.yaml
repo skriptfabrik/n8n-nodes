@@ -28,6 +28,13 @@ updates:
       interval: 'weekly'
 
   - package-ecosystem: 'npm'
+    directory: '/nodes/cronhooks'
+    ignore:
+      - dependency-name: '@types/*'
+    schedule:
+      interval: 'weekly'
+
+  - package-ecosystem: 'npm'
     directory: '/nodes/fulfillmenttools'
     ignore:
       - dependency-name: '@types/*'

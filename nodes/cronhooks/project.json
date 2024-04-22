@@ -1,0 +1,43 @@
+{
+  "name": "n8n-nodes-cronhooks",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "nodes/cronhooks/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/nodes/cronhooks",
+        "tsConfig": "nodes/cronhooks/tsconfig.lib.json",
+        "packageJson": "nodes/cronhooks/package.json",
+        "main": "nodes/cronhooks/src/index.ts",
+        "assets": [
+          "nodes/cronhooks/src/nodes/*/icons/*.svg",
+          "nodes/cronhooks/src/nodes/*/*.json",
+          "nodes/cronhooks/*.md"
+        ]
+      }
+    },
+    "link": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "dist/nodes/cronhooks",
+        "command": "npm link --no-audit"
+      },
+      "dependsOn": ["build"]
+    },
+    "install": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/install.mjs n8n-nodes-cronhooks"
+      },
+      "dependsOn": ["link"]
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs n8n-nodes-cronhooks {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}
