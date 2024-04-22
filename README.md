@@ -14,6 +14,7 @@ Please take a closer look at the detailed instructions for the individual nodes:
 - [Enhanced Google community nodes](nodes/google-enhanced/README.md)
 - [fulfillmenttools community nodes](nodes/fulfillmenttools/README.md)
 - [MOCO community nodes](nodes/moco/README.md)
+- [OTTO Market community nodes](nodes/otto-market/README.md)
 
 ## Resources
 
