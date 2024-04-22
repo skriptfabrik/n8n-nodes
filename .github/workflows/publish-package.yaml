@@ -3,6 +3,7 @@ name: Publish Package
 on:
   push:
     tags:
+      - 'barcode-*'
       - 'channable-*'
       - 'clockify-enhanced-*'
       - 'cronhooks-*'
