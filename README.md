@@ -13,6 +13,7 @@ Please take a closer look at the detailed instructions for the individual nodes:
 - [Enhanced Clockify community nodes](nodes/clockify-enhanced/README.md)
 - [Enhanced Google community nodes](nodes/google-enhanced/README.md)
 - [MOCO community nodes](nodes/moco/README.md)
+- [OTTO Market community nodes](nodes/otto-market/README.md)
 
 ## Resources
 

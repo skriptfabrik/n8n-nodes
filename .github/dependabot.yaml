@@ -33,3 +33,10 @@ updates:
       - dependency-name: '@types/*'
     schedule:
       interval: 'weekly'
+
+  - package-ecosystem: 'npm'
+    directory: '/nodes/otto-market'
+    ignore:
+      - dependency-name: '@types/*'
+    schedule:
+      interval: 'weekly'
