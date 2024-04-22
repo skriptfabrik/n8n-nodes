@@ -1,0 +1,44 @@
+{
+  "name": "n8n-nodes-fulfillmenttools",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "nodes/fulfillmenttools/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/nodes/fulfillmenttools",
+        "tsConfig": "nodes/fulfillmenttools/tsconfig.lib.json",
+        "packageJson": "nodes/fulfillmenttools/package.json",
+        "main": "nodes/fulfillmenttools/src/index.ts",
+        "assets": [
+          "nodes/fulfillmenttools/src/credentials/icons/*.svg",
+          "nodes/fulfillmenttools/src/nodes/Fulfillmenttools/icons/*.svg",
+          "nodes/fulfillmenttools/src/nodes/Fulfillmenttools/*.json",
+          "nodes/fulfillmenttools/*.md"
+        ]
+      }
+    },
+    "link": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "dist/nodes/fulfillmenttools",
+        "command": "npm link --no-audit"
+      },
+      "dependsOn": ["build"]
+    },
+    "install": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/install.mjs n8n-nodes-fulfillmenttools"
+      },
+      "dependsOn": ["link"]
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs n8n-nodes-fulfillmenttools {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}
