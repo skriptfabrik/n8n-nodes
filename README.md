@@ -11,6 +11,7 @@ This is a mono repository with many different community nodes.
 Please take a closer look at the detailed instructions for the individual nodes:
 
 - [Channable community nodes](nodes/channable/README.md)
+- [Cronhooks community nodes](nodes/cronhooks/README.md)
 - [Enhanced Clockify community nodes](nodes/clockify-enhanced/README.md)
 - [Enhanced Google community nodes](nodes/google-enhanced/README.md)
 - [fulfillmenttools community nodes](nodes/fulfillmenttools/README.md)
