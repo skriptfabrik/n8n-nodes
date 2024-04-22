@@ -157,9 +157,11 @@ describe('MocoTrigger', () => {
       'POST',
       '/account/web_hooks',
       {
-        target: 'Activity',
-        event: 'create',
-        hook: 'http://localhost:5678/webhook/985dc3e9-b382-4dd0-922e-0ceee97023e9',
+        body: {
+          target: 'Activity',
+          event: 'create',
+          hook: 'http://localhost:5678/webhook/985dc3e9-b382-4dd0-922e-0ceee97023e9',
+        },
       },
     );
 
@@ -201,9 +203,11 @@ describe('MocoTrigger', () => {
       'POST',
       '/account/web_hooks',
       {
-        target: 'Activity',
-        event: 'create',
-        hook: 'http://localhost:5678/webhook/985dc3e9-b382-4dd0-922e-0ceee97023e9',
+        body: {
+          target: 'Activity',
+          event: 'create',
+          hook: 'http://localhost:5678/webhook/985dc3e9-b382-4dd0-922e-0ceee97023e9',
+        },
       },
     );
 
