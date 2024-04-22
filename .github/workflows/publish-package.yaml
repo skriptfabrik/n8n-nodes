@@ -3,6 +3,7 @@ name: Publish Package
 on:
   push:
     tags:
+      - 'channable-*'
       - 'clockify-enhanced-*'
       - 'google-enhanced-*'
       - 'moco-*'
