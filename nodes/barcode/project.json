@@ -1,0 +1,41 @@
+{
+  "name": "n8n-nodes-barcode",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "nodes/barcode-node/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/nodes/barcode",
+        "main": "nodes/barcode/src/index.ts",
+        "tsConfig": "nodes/barcode/tsconfig.lib.json",
+        "assets": [
+          "nodes/barcode/*.md",
+          "nodes/barcode/src/nodes/Barcode/icons/*"
+        ]
+      }
+    },
+    "link": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "dist/nodes/barcode",
+        "command": "npm link --no-audit"
+      },
+      "dependsOn": ["build"]
+    },
+    "install": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/install.mjs n8n-nodes-barcode"
+      },
+      "dependsOn": ["link"]
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs n8n-nodes-barcode {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}
