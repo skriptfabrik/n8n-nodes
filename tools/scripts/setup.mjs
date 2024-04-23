@@ -5,7 +5,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const N8N_CREDENTIALS = process.env.N8N_CREDENTIALS || '{"credentials":[]}';
-const N8N_URL = process.env.N8N_URL || 'http://localhost:5678';
+const N8N_HOST = process.env.N8N_HOST || process.env.HOSTNAME || "localhost";
+const N8N_URL = process.env.N8N_URL || `http://${N8N_HOST}:5678`;
 const OWNER_EMAIL = process.env.OWNER_EMAIL || 'owner@n8n.local';
 const OWNER_FIRST_NAME = process.env.OWNER_FIRST_NAME || 'n8n';
 const OWNER_LAST_NAME = process.env.OWNER_LAST_NAME || 'owner';
