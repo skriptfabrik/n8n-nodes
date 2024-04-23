@@ -1760,7 +1760,7 @@ describe('Moco', () => {
     executeFunctions.continueOnFail.mockReturnValue(true);
 
     expect(moco.execute.call(executeFunctions)).resolves.toEqual([
-      [{ error: '__error_message__', json: {} }],
+      [{ json: { error: '__error_message__' }, pairedItem: { item: 0 } }],
     ]);
 
     expect(mockedMocoApiRequest).toHaveBeenCalledWith(
