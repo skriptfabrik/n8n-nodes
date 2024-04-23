@@ -1105,7 +1105,7 @@ describe('Fulfillmenttools', () => {
     executeFunctions.continueOnFail.mockReturnValue(true);
 
     expect(fulfillmenttools.execute.call(executeFunctions)).resolves.toEqual([
-      [{ error: '__error_message__', json: {} }],
+      [{ json: { error: '__error_message__' }, pairedItem: { item: 0 } }],
     ]);
 
     expect(fulfillmenttoolsApiRequest).toHaveBeenCalledWith(

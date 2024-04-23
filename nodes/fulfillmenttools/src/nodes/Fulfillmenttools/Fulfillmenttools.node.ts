@@ -4,6 +4,7 @@ import type {
   INodeExecutionData,
   INodeType,
   INodeTypeDescription,
+  NodeApiError,
 } from 'n8n-workflow';
 import type { components, operations } from '../../api';
 import {
@@ -367,9 +368,16 @@ export class Fulfillmenttools implements INodeType {
         );
 
         returnData.push(...executionData);
-      } catch (error: any) {
+      } catch (error: unknown) {
         if (this.continueOnFail()) {
-          returnData.push({ error: error.message, json: {} });
+          returnData.push({
+            json: {
+              error: (error as NodeApiError).message,
+            },
+            pairedItem: {
+              item,
+            },
+          });
           continue;
         }
 
