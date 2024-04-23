@@ -12,6 +12,21 @@ env:
   NODE_VERSION: 18.18.2
 
 jobs:
+  check-commit-messages:
+    name: Check Commit Messages
+    if: ${{ github.actor != 'dependabot[bot]' && github.actor != 'github-actions[bot]' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check for ticket number
+        uses: gsactions/commit-message-checker@v2
+        with:
+          pattern: '^N8N-\d+\s'
+          error: 'Your first line has to start with a ticket number of the issue like "N8N-1".'
+          excludeDescription: 'true'
+          checkAllCommitMessages: 'true'
+          accessToken: ${{ secrets.GITHUB_TOKEN }}
+
   check-lint-test-build:
     name: Check, Lint, Test, and Build
     runs-on: ubuntu-latest
