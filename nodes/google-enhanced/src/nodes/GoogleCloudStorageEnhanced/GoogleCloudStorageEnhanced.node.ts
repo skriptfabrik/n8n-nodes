@@ -8,6 +8,7 @@ import {
 } from 'n8n-nodes-base/dist/nodes/Google/CloudStorage/ObjectDescription';
 import {
   BINARY_ENCODING,
+  NodeApiError,
   type IDataObject,
   type IExecuteFunctions,
   type INodeExecutionData,
@@ -532,9 +533,12 @@ export class GoogleCloudStorageEnhanced implements INodeType {
         );
 
         returnData.push(...executionData);
-      } catch (error: any) {
+      } catch (error: unknown) {
         if (this.continueOnFail()) {
-          returnData.push({ error: error.message, json: {} });
+          returnData.push({
+            json: { error: (error as NodeApiError).message },
+            pairedItem: { item },
+          });
           continue;
         }
 
