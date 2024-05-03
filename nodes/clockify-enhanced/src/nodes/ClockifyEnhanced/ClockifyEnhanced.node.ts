@@ -14,6 +14,11 @@ import {
   projectOperations,
 } from './descriptions/ProjectDescription';
 
+import {
+  projectMembershipFields,
+  projectMembershipOperations,
+} from './descriptions/ProjectMembershipsDescription';
+
 import { Clockify } from 'n8n-nodes-base/dist/nodes/Clockify/Clockify.node';
 
 export class ClockifyEnhanced implements INodeType {
@@ -58,10 +63,15 @@ export class ClockifyEnhanced implements INodeType {
             name: 'Project',
             value: 'project',
           },
+          {
+            name: 'Projectmembership',
+            value: 'projectmembership',
+          },
         ],
         default: 'project',
       },
       ...projectOperations,
+      ...projectMembershipOperations,
       {
         displayName: 'Workspace Name or ID',
         name: 'workspaceId',
@@ -80,6 +90,7 @@ export class ClockifyEnhanced implements INodeType {
         },
       },
       ...projectFields,
+      ...projectMembershipFields,
     ],
   };
 
@@ -117,6 +128,33 @@ export class ClockifyEnhanced implements INodeType {
               'PUT',
               `/workspaces/${workspaceId}/projects/${projectId}`,
               updateFields,
+            );
+          }
+        }
+
+        if (resource === 'projectmembership') {
+          if (operation === 'patch') {
+            const workspaceId = this.getNodeParameter(
+              'workspaceId',
+              item,
+            ) as string;
+
+            const projectId = this.getNodeParameter(
+              'projectId',
+              item,
+            ) as string;
+
+            const memberships = (
+              this.getNodeParameter('memberships', item) as string[]
+            ).map((membership) => ({ userId: membership }));
+
+            responseData = await clockifyApiRequest.call(
+              this,
+              'PATCH',
+              `/workspaces/${workspaceId}/projects/${projectId}/memberships`,
+              {
+                memberships,
+              },
             );
           }
         }
