@@ -2,7 +2,6 @@ import { mockClear, mockDeep } from 'jest-mock-extended';
 import { type IExecuteFunctions } from 'n8n-workflow';
 import { ClockifyEnhanced } from './ClockifyEnhanced.node';
 import { clockifyApiRequest } from 'n8n-nodes-base/dist/nodes/Clockify/GenericFunctions';
-import { error } from 'console';
 
 jest.mock('n8n-nodes-base/dist/nodes/Clockify/GenericFunctions');
 

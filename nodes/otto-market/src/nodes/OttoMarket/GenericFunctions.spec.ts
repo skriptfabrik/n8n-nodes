@@ -1,6 +1,6 @@
 import { OttoMarketRequest, OttoMarketRequestData } from './GenericFunctions';
 import { mockDeep } from 'jest-mock-extended';
-import { IExecuteFunctions, INode, NodeOperationError } from 'n8n-workflow';
+import { IExecuteFunctions } from 'n8n-workflow';
 describe('OttoMarket', () => {
   let instance: IExecuteFunctions;
 
