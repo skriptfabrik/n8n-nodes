@@ -1,0 +1,43 @@
+{
+  "name": "n8n-nodes-sentry-io-enhanced",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "nodes/sentry-io-enhanced/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/nodes/sentry-io-enhanced",
+        "tsConfig": "nodes/sentry-io-enhanced/tsconfig.lib.json",
+        "packageJson": "nodes/sentry-io-enhanced/package.json",
+        "main": "nodes/sentry-io-enhanced/src/index.ts",
+        "assets": [
+          "nodes/sentry-io-enhanced/src/nodes/*/icons/*.svg",
+          "nodes/sentry-io-enhanced/src/nodes/*/*.json",
+          "nodes/sentry-io-enhanced/*.md"
+        ]
+      }
+    },
+    "link": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "dist/nodes/sentry-io-enhanced",
+        "command": "npm link --no-audit"
+      },
+      "dependsOn": ["build"]
+    },
+    "install": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/install.mjs n8n-nodes-sentry-io-enhanced"
+      },
+      "dependsOn": ["link"]
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs n8n-nodes-sentry-io-enhanced {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}

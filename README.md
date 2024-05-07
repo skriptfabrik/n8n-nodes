@@ -15,6 +15,7 @@ Please take a closer look at the detailed instructions for the individual nodes:
 - [Cronhooks community nodes](nodes/cronhooks/README.md)
 - [Enhanced Clockify community nodes](nodes/clockify-enhanced/README.md)
 - [Enhanced Google community nodes](nodes/google-enhanced/README.md)
+- [Enhanced Sentry.io community nodes](nodes/sentry-io-enhanced/README.md)
 - [fulfillmenttools community nodes](nodes/fulfillmenttools/README.md)
 - [Kaufland Marketplace community nodes](nodes/kaufland-marketplace/README.md)
 - [MOCO community nodes](nodes/moco/README.md)

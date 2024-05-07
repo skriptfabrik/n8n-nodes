@@ -1,0 +1,43 @@
+{
+  "name": "@skriptfabrik/n8n-nodes-sentry-io-enhanced",
+  "version": "0.1.0",
+  "description": "Enhanced Sentry.io community nodes for n8n",
+  "keywords": [
+    "Sentry",
+    "Sentry-io",
+    "n8n",
+    "n8n-community-node",
+    "n8n-community-node-package"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/skriptfabrik/n8n-nodes/blob/main/nodes/sentry-io-enhanced/README.md",
+  "author": {
+    "name": "skriptfabrik",
+    "email": "info@skriptfabrik.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skriptfabrik/n8n-nodes.git"
+  },
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "type": "commonjs",
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "src/credentials/SentryIoDSNApi.credentials.js"
+    ],
+    "nodes": [
+      "src/nodes/SentryIoEnhanced/SentryIoEnhanced.node.js"
+    ]
+  },
+  "dependencies": {
+    "tslib": "^2.6.2"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "1.38.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  }
+}
