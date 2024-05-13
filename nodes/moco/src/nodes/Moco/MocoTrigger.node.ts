@@ -99,6 +99,18 @@ export class MocoTrigger implements INodeType {
             value: 'Contact/update',
           },
           {
+            name: 'Contract Created',
+            value: 'Contract/create',
+          },
+          {
+            name: 'Contract Deleted',
+            value: 'Contract/delete',
+          },
+          {
+            name: 'Contract Updated',
+            value: 'Contract/update',
+          },
+          {
             name: 'Deal Created',
             value: 'Deal/create',
           },
