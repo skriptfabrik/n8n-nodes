@@ -38,6 +38,8 @@ It supports these operations:
 - Register a webhook in the API which will call the trigger node on configured event
 - Update a project with the given ID
 - Patch the memberships of a project with the given ID
+- Add members to a project with the given ID
+- Remove members from a project with the given ID
 
 ## Credentials
 

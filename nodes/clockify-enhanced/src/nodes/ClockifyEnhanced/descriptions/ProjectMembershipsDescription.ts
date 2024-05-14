@@ -8,15 +8,27 @@ export const projectMembershipOperations: INodeProperties[] = [
     noDataExpression: true,
     displayOptions: {
       show: {
-        resource: ['projectmembership'],
+        resource: ['project membership'],
       },
     },
     options: [
       {
         name: 'Patch',
         value: 'patch',
-        description: 'Patches the membership of a project',
-        action: 'Patches the project membership',
+        description: 'Patch the project membership',
+        action: 'Patch the project membership',
+      },
+      {
+        name: 'Assign',
+        value: 'assign',
+        description: 'Assign users to a project',
+        action: 'Assign users to a project',
+      },
+      {
+        name: 'Remove',
+        value: 'remove',
+        description: 'Remove users from a project',
+        action: 'Remove users from a project',
       },
     ],
     default: 'patch',
@@ -31,37 +43,83 @@ export const projectMembershipFields: INodeProperties[] = [
     displayName: 'Project Name or ID',
     name: 'projectId',
     type: 'options',
-    description:
-      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
     typeOptions: {
       loadOptionsDependsOn: ['workspaceId'],
-      loadOptionsMethod: 'loadProjectsForWorkspace',
+      loadOptionsMethod: 'loadProjects',
     },
-    required: true,
     default: '',
+    description:
+      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
     displayOptions: {
       show: {
-        operation: ['patch'],
-        resource: ['projectmembership'],
+        operation: ['patch', 'assign', 'remove'],
+        resource: ['project membership'],
       },
     },
+    required: true,
+    requiresDataPath: 'single',
+    validateType: 'string',
   },
   {
     displayName: 'User Names or IDs',
     name: 'memberships',
     type: 'multiOptions',
-    description:
-      'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
     typeOptions: {
       loadOptionsDependsOn: ['workspaceId'],
-      loadOptionsMethod: 'loadUsersForWorkspace',
+      loadOptionsMethod: 'loadUsers',
     },
     default: [],
+    description:
+      'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
     displayOptions: {
       show: {
         operation: ['patch'],
-        resource: ['projectmembership'],
+        resource: ['project membership'],
       },
     },
+    requiresDataPath: 'multiple',
+    validateType: 'array',
+  },
+  {
+    displayName: 'User Names or IDs',
+    name: 'userIdsToAssign',
+    type: 'multiOptions',
+    typeOptions: {
+      loadOptionsDependsOn: ['workspaceId', 'projectId'],
+      loadOptionsMethod: 'loadNonProjectUsers',
+    },
+    default: [],
+    description:
+      'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+    displayOptions: {
+      show: {
+        operation: ['assign'],
+        resource: ['project membership'],
+      },
+    },
+    required: true,
+    requiresDataPath: 'multiple',
+    validateType: 'array',
+  },
+  {
+    displayName: 'User Names or IDs',
+    name: 'userIdsToRemove',
+    type: 'multiOptions',
+    typeOptions: {
+      loadOptionsDependsOn: ['workspaceId', 'projectId'],
+      loadOptionsMethod: 'loadProjectUsers',
+    },
+    default: [],
+    description:
+      'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+    displayOptions: {
+      show: {
+        operation: ['remove'],
+        resource: ['project membership'],
+      },
+    },
+    required: true,
+    requiresDataPath: 'multiple',
+    validateType: 'array',
   },
 ];
