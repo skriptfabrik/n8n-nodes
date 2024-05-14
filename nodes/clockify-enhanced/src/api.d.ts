@@ -100,6 +100,22 @@ export interface paths {
     /** Download receipt */
     get: operations['downloadFile'];
   };
+  '/v1/workspaces/{workspaceId}/holidays': {
+    /** Get holidays on workspace */
+    get: operations['getHolidays'];
+    /** Create holiday */
+    post: operations['createHoliday'];
+  };
+  '/v1/workspaces/{workspaceId}/holidays/in-period': {
+    /** Get holiday in specific period */
+    get: operations['getHolidaysInPeriod'];
+  };
+  '/v1/workspaces/{workspaceId}/holidays/{holidayId}': {
+    /** Update holiday */
+    put: operations['updateHoliday'];
+    /** Delete holiday */
+    delete: operations['deleteHoliday'];
+  };
   '/v1/workspaces/{workspaceId}/hourly-rate': {
     /** Update workspace billable rate */
     put: operations['setWorkspaceHourlyRate'];
@@ -415,22 +431,6 @@ export interface paths {
     /** Get balance by user */
     get: operations['getBalancesForUser'];
   };
-  '/v1/workspaces/{workspaceId}/holidays': {
-    /** Get holidays on workspace */
-    get: operations['getHolidays'];
-    /** Create holiday */
-    post: operations['createHoliday'];
-  };
-  '/v1/workspaces/{workspaceId}/holidays/in-period': {
-    /** Get holiday in specific period */
-    get: operations['getHolidaysInPeriod'];
-  };
-  '/v1/workspaces/{workspaceId}/holidays/{holidayId}': {
-    /** Update holiday */
-    put: operations['updateHoliday'];
-    /** Delete holiday */
-    delete: operations['deleteHoliday'];
-  };
   '/v1/workspaces/{workspaceId}/policies': {
     /** Get policies on workspace */
     get: operations['findPoliciesForWorkspace'];
@@ -469,6 +469,8 @@ export interface paths {
     /**
      * Generate shared report by ID
      * @description Response depends on report type and export type. Given example is for SUMMARY report and JSON exportType.
+     *
+     * Shared report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
      */
     get: operations['generateSharedReportV1'];
   };
@@ -477,19 +479,31 @@ export interface paths {
     post: operations['generateAttendanceReport'];
   };
   '/v1/workspaces/{workspaceId}/reports/detailed': {
-    /** Detailed report */
+    /**
+     * Detailed report
+     * @description Detailed report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
+     */
     post: operations['generateDetailedReport'];
   };
   '/v1/workspaces/{workspaceId}/reports/expenses/detailed': {
-    /** Generate expense report */
+    /**
+     * Generate expense report
+     * @description Expense report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
+     */
     post: operations['generateDetailedReportV1'];
   };
   '/v1/workspaces/{workspaceId}/reports/summary': {
-    /** Summary report */
+    /**
+     * Summary report
+     * @description Summary report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
+     */
     post: operations['generateSummaryReport'];
   };
   '/v1/workspaces/{workspaceId}/reports/weekly': {
-    /** Weekly report */
+    /**
+     * Weekly report
+     * @description Weekly report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
+     */
     post: operations['generateWeeklyReport'];
   };
   '/v1/workspaces/{workspaceId}/shared-reports': {
@@ -500,7 +514,9 @@ export interface paths {
     get: operations['getSharedReportsV1'];
     /**
      * Create shared report
-     * @description Saves shared report with name, options and report filter
+     * @description Saves shared report with name, options and report filter.
+     *
+     * Shared report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
      */
     post: operations['saveSharedReportV1'];
   };
@@ -695,46 +711,17 @@ export interface components {
       updatedByUserName?: string;
     };
     AssignmentCreateRequestV1: {
-      /** @description Indicates whether assignment is billable or not. */
       billable?: boolean;
-      end?: string;
-      /**
-       * Format: double
-       * @description Represents assignment total hours per day.
-       * @example 7.5
-       */
+      end: string;
+      /** Format: double */
       hoursPerDay?: number;
-      /** @description Indicates whether to include non-working days or not. */
       includeNonWorkingDays?: boolean;
-      /**
-       * @description Represents assignment note.
-       * @example This is a sample note for an assignment.
-       */
       note?: string;
-      period?: components['schemas']['DateRange'];
-      /**
-       * @description Represents project identifier across the system.
-       * @example 56b687e29ae1f428e7ebe504
-       */
       projectId: string;
       recurring?: components['schemas']['RecurringAssignmentRequestV1'];
-      recurringAssignment?: components['schemas']['RecurringAssignmentRequestV1'];
-      regularRecurringAssignment?: components['schemas']['RecurringAssignmentRequest'];
-      start?: string;
-      /**
-       * @description Represents start time in hh:mm:ss format.
-       * @example 10:00:00
-       */
+      start: string;
       startTime?: string;
-      /**
-       * @description Represents task identifier across the system.
-       * @example 56b687e29ae1f428e7ebe505
-       */
       taskId?: string;
-      /**
-       * @description Represents user identifier across the system.
-       * @example 72k687e29ae1f428e7ebe109
-       */
       userId: string;
     };
     AssignmentDtoV1: {
@@ -862,7 +849,11 @@ export interface components {
     AssignmentUpdateRequestV1: {
       /** @description Indicates whether assignment is billable or not. */
       billable?: boolean;
-      end?: string;
+      /**
+       * @description Represents end date in yyyy-MM-ddThh:mm:ssZ format.
+       * @example 2021-01-01T00:00:00Z
+       */
+      end: string;
       /**
        * Format: double
        * @description Represents assignment total hours per day.
@@ -883,7 +874,11 @@ export interface components {
        * @enum {string}
        */
       seriesUpdateOption?: 'THIS_ONE' | 'THIS_AND_FOLLOWING' | 'ALL';
-      start?: string;
+      /**
+       * @description Represents start date in yyyy-MM-ddThh:mm:ssZ format.
+       * @example 2020-01-01T00:00:00Z
+       */
+      start: string;
       /**
        * @description Represents start time in hh:mm:ss format.
        * @example 10:00:00
@@ -962,12 +957,16 @@ export interface components {
        */
       type?: 'WEEKLY' | 'MONTHLY' | 'OLDER_THAN';
     };
+    AutomaticTimeEntryCreationDto: {
+      defaultEntities?: components['schemas']['DefaultEntitiesDto'];
+      enabled?: boolean;
+    };
     ChangeEmailRequest: {
       /**
        * @description Represents email address of the user.
        * @example johndoe@example.com
        */
-      email?: string;
+      email: string;
     };
     ChangeInvoiceStatusRequestV1: {
       /**
@@ -1108,6 +1107,28 @@ export interface components {
        */
       status?: string;
     };
+    /** @description Provide list with user group ids and corresponding status. */
+    ContainsFilter: {
+      /**
+       * @example CONTAINS
+       * @enum {string}
+       */
+      contains?: 'CONTAINS' | 'DOES_NOT_CONTAIN';
+      /**
+       * @description Represents ids upon which filtering is performed.
+       * @example [
+       *   "5b715612b079875110791111",
+       *   "5b715612b079875110791222"
+       * ]
+       */
+      ids?: string[];
+      /**
+       * @description Represents user status.
+       * @example ALL
+       * @enum {string}
+       */
+      status?: 'ALL' | 'ACTIVE' | 'INACTIVE';
+    };
     ContainsUserGroupFilterRequest: {
       /**
        * @description Filter type
@@ -1175,6 +1196,29 @@ export interface components {
        */
       status?: string;
       statuses?: ('PENDING' | 'ACTIVE' | 'DECLINED' | 'INACTIVE' | 'ALL')[];
+    };
+    /** @description Provide list with users ids and corresponding status. */
+    ContainsUsersFilterRequestForHoliday: {
+      /**
+       * @description Filter type
+       * @example CONTAINS
+       * @enum {string}
+       */
+      contains?: 'CONTAINS' | 'DOES_NOT_CONTAIN' | 'CONTAINS_ONLY';
+      /**
+       * @description Represents a list of filter identifiers.
+       * @example [
+       *   "5a0ab5acb07987125438b60f",
+       *   "64c777ddd3fcab07cfbb210c"
+       * ]
+       */
+      ids?: string[];
+      /**
+       * @description Represents a filter for status.
+       * @example ACTIVE
+       */
+      status?: string;
+      statuses?: string[];
     };
     /** @description Represents a user filter request object. */
     ContainsUsersFilterRequestV1: {
@@ -1258,17 +1302,7 @@ export interface components {
        * @enum {string}
        */
       period?: 'WEEKLY' | 'SEMI_MONTHLY' | 'MONTHLY';
-      /**
-       * @description Valid yyyy-MM-dd datetime format.
-       * @example 2020-01-01
-       */
-      weekTime?: string;
-      /**
-       * Format: int32
-       * @description Valid number of weeks ago as integer. Default value = 0
-       * @example 1
-       */
-      weeksAgo?: number;
+      periodStart?: string;
     };
     CreateClientRequestV1: {
       /**
@@ -1322,15 +1356,15 @@ export interface components {
        * @description Represents category identifier across the system.
        * @example 45y687e29ae1f428e7ebe890
        */
-      categoryId?: string;
+      categoryId: string;
       /**
        * Format: date-time
        * @description Provides a valid yyyy-MM-ddThh:mm:ssZ format date.
        * @example 2020-01-01T00:00:00Z
        */
-      date?: string;
+      date: string;
       /** Format: binary */
-      file?: string;
+      file: string;
       /**
        * @description Represents notes for an expense.
        * @example This is a sample note for this expense.
@@ -1340,12 +1374,37 @@ export interface components {
        * @description Represents project identifier across the system.
        * @example 25b687e29ae1f428e7ebe123
        */
-      projectId?: string;
+      projectId: string;
       /**
        * @description Represents user identifier across the system.
        * @example 89b687e29ae1f428e7ebe912
        */
-      userId?: string;
+      userId: string;
+    };
+    CreateHolidayRequestV1: {
+      /**
+       * @description Provide color in format ^#(?:[0-9a-fA-F]{6}){1}$. Explanation: A valid color code should start with '#' and consist of six hexadecimal characters, representing a color in hexadecimal format. Color value is in standard RGB hexadecimal format.
+       * @example #8BC34A
+       */
+      color?: string;
+      datePeriod: components['schemas']['DatePeriodRequest'];
+      /**
+       * @description Indicates whether the holiday is shown to new users.
+       * @example true
+       */
+      everyoneIncludingNew?: boolean;
+      /**
+       * @description Provide the name of the holiday.
+       * @example Labour Day
+       */
+      name: string;
+      /**
+       * @description Indicates whether the holiday occurs annually.
+       * @example true
+       */
+      occursAnnually?: boolean;
+      userGroups?: components['schemas']['ContainsFilter'];
+      users?: components['schemas']['ContainsFilter'];
     };
     CreateInvoiceDtoV1: {
       /**
@@ -1420,13 +1479,13 @@ export interface components {
        * @description Represents an invoice due date in yyyy-MM-ddThh:mm:ssZ format.
        * @example 2020-06-01T08:00:00Z
        */
-      dueDate?: string;
+      dueDate: string;
       /**
        * Format: date-time
        * @description Represents an invoice issued date in yyyy-MM-ddThh:mm:ssZ format.
        * @example 2020-01-01T08:00:00Z
        */
-      issuedDate?: string;
+      issuedDate: string;
       /**
        * @description Represents an invoice number.
        * @example 202306121129
@@ -1498,45 +1557,47 @@ export interface components {
        * @example PROJECT_ID
        * @enum {string}
        */
-      triggerSourceType?:
+      triggerSourceType:
         | 'PROJECT_ID'
         | 'USER_ID'
         | 'TAG_ID'
         | 'TASK_ID'
         | 'WORKSPACE_ID'
         | 'USER_GROUP_ID'
-        | 'INVOICE_ID';
+        | 'INVOICE_ID'
+        | 'ASSIGNMENT_ID'
+        | 'EXPENSE_ID';
       /**
        * @description Represents workspace identifier across the system.
        * @example https://example-clockify.com/stripeEndpoint
        */
       url: string;
       /** @enum {string} */
-      webhookEvent?:
-        | 'NEW_PROJECT'
-        | 'NEW_TASK'
-        | 'NEW_CLIENT'
-        | 'NEW_TIMER_STARTED'
-        | 'TIMER_STOPPED'
-        | 'TIME_ENTRY_UPDATED'
-        | 'TIME_ENTRY_DELETED'
-        | 'NEW_TIME_ENTRY'
-        | 'NEW_TAG'
-        | 'USER_DELETED_FROM_WORKSPACE'
-        | 'USER_JOINED_WORKSPACE'
-        | 'USER_DEACTIVATED_ON_WORKSPACE'
-        | 'USER_ACTIVATED_ON_WORKSPACE'
-        | 'USER_EMAIL_CHANGED'
-        | 'USER_UPDATED'
-        | 'NEW_INVOICE'
+      webhookEvent:
+        | 'APPROVAL_REQUEST_STATUS_UPDATED'
+        | 'BALANCE_UPDATED'
         | 'INVOICE_UPDATED'
         | 'NEW_APPROVAL_REQUEST'
-        | 'APPROVAL_REQUEST_STATUS_UPDATED'
-        | 'TIME_OFF_REQUESTED'
+        | 'NEW_CLIENT'
+        | 'NEW_INVOICE'
+        | 'NEW_PROJECT'
+        | 'NEW_TAG'
+        | 'NEW_TASK'
+        | 'NEW_TIME_ENTRY'
+        | 'NEW_TIMER_STARTED'
+        | 'TIME_ENTRY_DELETED'
+        | 'TIME_ENTRY_UPDATED'
         | 'TIME_OFF_REQUEST_APPROVED'
         | 'TIME_OFF_REQUEST_REJECTED'
         | 'TIME_OFF_REQUEST_WITHDRAWN'
-        | 'BALANCE_UPDATED';
+        | 'TIME_OFF_REQUESTED'
+        | 'TIMER_STOPPED'
+        | 'USER_ACTIVATED_ON_WORKSPACE'
+        | 'USER_DEACTIVATED_ON_WORKSPACE'
+        | 'USER_DELETED_FROM_WORKSPACE'
+        | 'USER_EMAIL_CHANGED'
+        | 'USER_JOINED_WORKSPACE'
+        | 'USER_UPDATED';
     };
     /** @description Represents currency with default info object. */
     CurrencyWithDefaultInfoDtoV1: {
@@ -1713,6 +1774,26 @@ export interface components {
        */
       value?: Record<string, never>;
     };
+    /** @description Represents startDate and endDate of the holiday. Date is in format yyyy-mm-dd */
+    DatePeriod: {
+      /** Format: date */
+      endDate?: string;
+      /** Format: date */
+      startDate?: string;
+    };
+    /** @description Provide startDate and endDate for the holiday. */
+    DatePeriodRequest: {
+      /**
+       * @description yyyy-MM-dd format date
+       * @example 2023-02-16
+       */
+      endDate: string;
+      /**
+       * @description yyyy-MM-dd format date
+       * @example 2023-02-14
+       */
+      startDate: string;
+    };
     DateRange: {
       /** Format: date-time */
       end?: string;
@@ -1725,6 +1806,10 @@ export interface components {
       end?: string;
       /** Format: date-time */
       start?: string;
+    };
+    DefaultEntitiesDto: {
+      projectId?: string;
+      taskId?: string;
     };
     /** @description Represents project estimate object. */
     EstimateDtoV1: {
@@ -1750,6 +1835,7 @@ export interface components {
         /** Format: int32 */
         nano?: number;
         negative?: boolean;
+        positive?: boolean;
         /** Format: int64 */
         seconds?: number;
         units?: {
@@ -1758,6 +1844,7 @@ export interface components {
             /** Format: int32 */
             nano?: number;
             negative?: boolean;
+            positive?: boolean;
             /** Format: int64 */
             seconds?: number;
             zero?: boolean;
@@ -1773,6 +1860,38 @@ export interface components {
        * @enum {string}
        */
       type?: 'AUTO' | 'MANUAL';
+    };
+    /** @description Represents project estimate reset object */
+    EstimateResetDto: {
+      /** Format: int32 */
+      dayOfMonth?: number;
+      /** @enum {string} */
+      dayOfWeek?:
+        | 'MONDAY'
+        | 'TUESDAY'
+        | 'WEDNESDAY'
+        | 'THURSDAY'
+        | 'FRIDAY'
+        | 'SATURDAY'
+        | 'SUNDAY';
+      /** Format: int32 */
+      hour?: number;
+      /** @enum {string} */
+      interval?: 'WEEKLY' | 'MONTHLY' | 'YEARLY';
+      /** @enum {string} */
+      month?:
+        | 'JANUARY'
+        | 'FEBRUARY'
+        | 'MARCH'
+        | 'APRIL'
+        | 'MAY'
+        | 'JUNE'
+        | 'JULY'
+        | 'AUGUST'
+        | 'SEPTEMBER'
+        | 'OCTOBER'
+        | 'NOVEMBER'
+        | 'DECEMBER';
     };
     /** @description Represents estimate reset request object. */
     EstimateResetRequest: {
@@ -2263,7 +2382,9 @@ export interface components {
       | 'FORECASTING'
       | 'TIME_TRACKING'
       | 'ATTENDANCE_REPORT'
-      | 'CLIENT_CURRENCY';
+      | 'CLIENT_CURRENCY'
+      | 'WORKSPACE_TRANSFER'
+      | 'FAVORITE_ENTRIES';
     /**
      * @description Represents a feature subscription type enum.
      * @example PREMIUM
@@ -2326,6 +2447,8 @@ export interface components {
         | 'TIME_TRACKING'
         | 'ATTENDANCE_REPORT'
         | 'CLIENT_CURRENCY'
+        | 'WORKSPACE_TRANSFER'
+        | 'FAVORITE_ENTRIES'
       )[];
       legacy?: boolean;
       regionalAllowed?: boolean;
@@ -2347,6 +2470,8 @@ export interface components {
       | 'PRO_YEAR_2021'
       | 'ENTERPRISE_2021'
       | 'ENTERPRISE_YEAR_2021'
+      | 'BUNDLE_2024'
+      | 'BUNDLE_YEAR_2024'
       | 'SELF_HOSTED'
       | 'FREE'
     );
@@ -2356,7 +2481,7 @@ export interface components {
        * @description Represents end date in yyyy-MM-ddThh:mm:ssZ format.
        * @example 2021-01-01T00:00:00Z
        */
-      end?: string;
+      end: string;
       /**
        * Format: int32
        * @description page
@@ -2383,7 +2508,7 @@ export interface components {
        * @description Represents start date in yyyy-MM-ddThh:mm:ssZ format.
        * @example 2020-01-01T00:00:00Z
        */
-      start?: string;
+      start: string;
       userFilter?: components['schemas']['ContainsUsersFilterRequestV1'];
       userGroupFilter?: components['schemas']['ContainsUserGroupFilterRequestV1'];
     };
@@ -2468,6 +2593,112 @@ export interface components {
        * ]
        */
       userGroups?: string[];
+    };
+    HolidayDto: {
+      automaticTimeEntryCreation?: components['schemas']['AutomaticTimeEntryCreationDto'];
+      /**
+       * @description Provide color in format ^#(?:[0-9a-fA-F]{6}){1}$. Explanation: A valid color code should start with '#' and consist of six hexadecimal characters, representing a color in hexadecimal format. Color value is in standard RGB hexadecimal format.
+       * @example #8BC34A
+       */
+      color?: string;
+      datePeriod?: components['schemas']['DatePeriod'];
+      /**
+       * @description Indicates whether the holiday is shown to new users.
+       * @example false
+       */
+      everyoneIncludingNew?: boolean;
+      /**
+       * @description Represents holiday identifier across the system.
+       * @example 5b715612b079875110791111
+       */
+      id?: string;
+      /**
+       * @description Represents the name of the holiday.
+       * @example New Year's Day
+       */
+      name?: string;
+      /**
+       * @description Indicates whether the holiday occurs annually.
+       * @example true
+       */
+      occursAnnually?: boolean;
+      /**
+       * @description Indicates which user groups are included.
+       * @example [
+       *   "5b715612b079875110791342",
+       *   "5b715612b079875110791324",
+       *   "5b715612b079875110793142"
+       * ]
+       */
+      userGroupIds?: string[];
+      /**
+       * @description Indicates which users are included.
+       * @example [
+       *   "5b715612b079875110791432",
+       *   "5b715612b079875110791234"
+       * ]
+       */
+      userIds?: string[];
+      /**
+       * @description Represents workspace identifier across the system.
+       * @example 5b715612b079875110792222
+       */
+      workspaceId?: string;
+    };
+    HolidayDtoV1: {
+      datePeriod?: components['schemas']['DatePeriod'];
+      /**
+       * @description Indicates whether the holiday is shown to new users.
+       * @example false
+       */
+      everyoneIncludingNew?: boolean;
+      /**
+       * @description Represents holiday identifier across the system.
+       * @example 5b715612b079875110791111
+       */
+      id?: string;
+      /**
+       * @description Represents the name of the holiday.
+       * @example New Year's Day
+       */
+      name?: string;
+      /**
+       * @description Indicates whether the holiday occurs annually.
+       * @example true
+       */
+      occursAnnually?: boolean;
+      /**
+       * @description Represents projectId for automatic time entry creation.
+       * @example 65b36d3c525e243c48f9150f
+       */
+      projectId?: string;
+      /**
+       * @description Represents taskId for automatic time entry creation.
+       * @example 65b36d46fa3df8607e42d21a
+       */
+      taskId?: string;
+      /**
+       * @description Indicates which user groups are included.
+       * @example [
+       *   "5b715612b079875110791342",
+       *   "5b715612b079875110791324",
+       *   "5b715612b079875110793142"
+       * ]
+       */
+      userGroupIds?: string[];
+      /**
+       * @description Indicates which users are included.
+       * @example [
+       *   "5b715612b079875110791432",
+       *   "5b715612b079875110791234"
+       * ]
+       */
+      userIds?: string[];
+      /**
+       * @description Represents workspace identifier across the system.
+       * @example 5b715612b079875110792222
+       */
+      workspaceId?: string;
     };
     /** @description Represents an hourly rate object. */
     HourlyRateDtoV1: {
@@ -2756,7 +2987,7 @@ export interface components {
        */
       page: number;
       /** Format: int32 */
-      'page-size'?: number;
+      'page-size': number;
       'sort-column'?: string;
       'sort-order'?: string;
       statuses?: components['schemas']['InvoiceStatus'];
@@ -3194,92 +3425,23 @@ export interface components {
     };
     /** @description Represents a label customization object. */
     LabelsCustomizationRequest: {
-      /**
-       * @description Represents invoice amount.
-       * @example 1000
-       */
-      amount?: string;
-      /**
-       * @description Represents a string an invoice is billed from.
-       * @example Entity A
-       */
-      billFrom?: string;
-      /**
-       * @description Represents a string an invoice is billed to.
-       * @example Entity B
-       */
-      billTo?: string;
-      /**
-       * @description Represents a description of an invoice.
-       * @example This is a sample description for this invoice.
-       */
-      description?: string;
-      /**
-       * @description Represents invoice discount amount.
-       * @example 0
-       */
-      discount?: string;
-      /**
-       * @description Represents a due date in yyyy-MM-dd format.
-       * @example 2020-01-01
-       */
-      dueDate?: string;
-      /**
-       * @description Represents an issue date in yyyy-MM-dd format.
-       * @example 2020-01-01
-       */
-      issueDate?: string;
-      /**
-       * @description Represents an item type.
-       * @example Service
-       */
+      amount: string;
+      billFrom: string;
+      billTo: string;
+      description: string;
+      discount: string;
+      dueDate: string;
+      issueDate: string;
       itemType?: string;
-      /**
-       * @description Represents notes for an invoice.
-       * @example This is a sample note for this invoice.
-       */
-      notes?: string;
-      /**
-       * @description Represents invoice paid amount.
-       * @example 1000
-       */
-      paid?: string;
-      /**
-       * @description Represents quantity.
-       * @example 10
-       */
-      quantity?: string;
-      /**
-       * @description Represents invoice subtotal.
-       * @example 1000
-       */
-      subtotal?: string;
-      /**
-       * @description Represents invoice tax amount.
-       * @example 10
-       */
-      tax?: string;
-      /**
-       * @description Represents invoice tax amount.
-       * @example 0
-       */
-      tax2?: string;
-      total?: string;
-      /**
-       * @description Represents invoice total amount.
-       * @example 1010
-       */
-      totalAmount?: string;
-      /**
-       * @description Represents invoice total amount due.
-       * @example 10
-       */
-      totalAmountDue?: string;
-      /**
-       * @description Represents unit price.
-       * @example 100
-       */
-      unitPrice?: string;
+      notes: string;
+      paid: string;
+      quantity: string;
+      subtotal: string;
+      tax: string;
+      tax2: string;
+      total: string;
+      totalAmount: string;
+      unitPrice: string;
     };
     MemberProfileDtoV1: {
       /**
@@ -3520,6 +3682,7 @@ export interface components {
        */
       duration?: string;
       estimate?: components['schemas']['EstimateDtoV1'];
+      estimateReset?: components['schemas']['EstimateResetDto'];
       hourlyRate?: components['schemas']['RateDtoV1'];
       /**
        * @description Represents project identifier across the system.
@@ -3656,7 +3819,7 @@ export interface components {
        * @description Represents end date in yyyy-MM-ddThh:mm:ssZ format.
        * @example 2021-01-01T00:00:00Z
        */
-      end?: string;
+      end: string;
       /** @description Indicates whether to notify users when assignment is published. */
       notifyUsers?: boolean;
       regularUserFilter?: components['schemas']['ContainsUsersFilterRequest'];
@@ -3670,7 +3833,7 @@ export interface components {
        * @description Represents start date in yyyy-MM-ddThh:mm:ssZ format.
        * @example 2020-01-01T00:00:00Z
        */
-      start?: string;
+      start: string;
       userFilter?: components['schemas']['ContainsUsersFilterRequestV1'];
       userGroupFilter?: components['schemas']['ContainsUserGroupFilterRequestV1'];
       /**
@@ -3742,16 +3905,6 @@ export interface components {
        */
       weeks?: number;
     };
-    RecurringAssignmentRequest: {
-      /** @description Indicates whether assignment is recurring or not. */
-      repeat?: boolean;
-      /**
-       * Format: int32
-       * @description Indicates number of weeks for assignment.
-       * @example 5
-       */
-      weeks?: number;
-    };
     RecurringAssignmentRequestV1: {
       /** @description Indicates whether assignment is recurring or not. */
       repeat?: boolean;
@@ -3760,7 +3913,7 @@ export interface components {
        * @description Indicates number of weeks for assignment.
        * @example 5
        */
-      weeks?: number;
+      weeks: number;
     };
     RoleDetailsDtoV1: {
       role?: components['schemas']['RoleDtoV1'];
@@ -3800,9 +3953,17 @@ export interface components {
        * @example WORKSPACE_ADMIN
        * @enum {string}
        */
-      role?: 'WORKSPACE_ADMIN' | 'TEAM_MANAGER' | 'PROJECT_MANAGER';
-      /** @enum {string} */
-      sourceType?: 'USER_GROUP';
+      role: 'WORKSPACE_ADMIN' | 'TEAM_MANAGER' | 'PROJECT_MANAGER';
+      /**
+       * @description Represents the source type of this request.
+       * This helps the API to determine on where to select this 'entity', and applies a corresponding
+       * action base on the endpoint.
+       * The entityId should be relative to this source, and can be used whenever the endpoint needs to
+       * access a certain resource. e.g. User group (USER_GROUP)
+       * @example USER_GROUP
+       * @enum {string}
+       */
+      sourceType: 'USER_GROUP';
     };
     /** @description Represents a time rounding object. */
     RoundDto: {
@@ -3925,7 +4086,7 @@ export interface components {
        * @description Represents an end date in yyyy-MM-ddThh:mm:ssZ format.
        * @example 2021-01-01T00:00:00Z
        */
-      end?: string;
+      end: string;
     };
     /** @description Represents a summary report settings object. */
     SummaryReportSettingsDtoV1: {
@@ -4383,7 +4544,7 @@ export interface components {
        * @example PENDING
        * @enum {string}
        */
-      state?:
+      state:
         | 'PENDING'
         | 'APPROVED'
         | 'WITHDRAWN_SUBMISSION'
@@ -4479,7 +4640,7 @@ export interface components {
        * @example DROPDOWN_MULTIPLE
        * @enum {string}
        */
-      type?:
+      type:
         | 'TXT'
         | 'NUMBER'
         | 'DROPDOWN_SINGLE'
@@ -4505,7 +4666,7 @@ export interface components {
        * @description Represents category identifier across the system.
        * @example 45y687e29ae1f428e7ebe890
        */
-      categoryId?: string;
+      categoryId: string;
       /**
        * @description Represents a list of expense change fields.
        * @example [
@@ -4514,7 +4675,7 @@ export interface components {
        *   "PROJECT"
        * ]
        */
-      changeFields?: (
+      changeFields: (
         | 'USER'
         | 'DATE'
         | 'PROJECT'
@@ -4529,9 +4690,9 @@ export interface components {
        * @description Provides a valid yyyy-MM-ddThh:mm:ssZ format date.
        * @example 2020-01-01T00:00:00Z
        */
-      date?: string;
+      date: string;
       /** Format: binary */
-      file?: string;
+      file: string;
       /**
        * @description Represents notes for an expense.
        * @example This is a sample note for this expense.
@@ -4546,7 +4707,32 @@ export interface components {
        * @description Represents user identifier across the system.
        * @example 89b687e29ae1f428e7ebe912
        */
-      userId?: string;
+      userId: string;
+    };
+    UpdateHolidayRequestV1: {
+      /**
+       * @description Provide color in format ^#(?:[0-9a-fA-F]{6}){1}$. Explanation: A valid color code should start with '#' and consist of six hexadecimal characters, representing a color in hexadecimal format. Color value is in standard RGB hexadecimal format.
+       * @example #8BC34A
+       */
+      color?: string;
+      datePeriod: components['schemas']['DatePeriodRequest'];
+      /**
+       * @description Indicates whether the holiday is shown to new users.
+       * @example false
+       */
+      everyoneIncludingNew?: boolean;
+      /**
+       * @description Provide the name you would like to use for updating the holiday.
+       * @example New Year's Day
+       */
+      name: string;
+      /**
+       * @description Indicates whether the holiday occurs annually.
+       * @example true
+       */
+      occursAnnually: boolean;
+      userGroups?: components['schemas']['ContainsUserGroupFilterRequest'];
+      users?: components['schemas']['ContainsUsersFilterRequestForHoliday'];
     };
     UpdateInvoiceRequestV1: {
       /**
@@ -4569,19 +4755,19 @@ export interface components {
        * @description Represents an invoice discount percent as double.
        * @example 1.5
        */
-      discountPercent?: number;
+      discountPercent: number;
       /**
        * Format: date-time
        * @description Represents an invoice due date in yyyy-MM-ddThh:mm:ssZ format.
        * @example 2020-06-01T08:00:00Z
        */
-      dueDate?: string;
+      dueDate: string;
       /**
        * Format: date-time
        * @description Represents an invoice issued date in yyyy-MM-ddThh:mm:ssZ format.
        * @example 2020-01-01T08:00:00Z
        */
-      issuedDate?: string;
+      issuedDate: string;
       /**
        * @description Represents an invoice note.
        * @example This is a sample note for this invoice.
@@ -4602,13 +4788,13 @@ export interface components {
        * @description Represents an invoice tax percent as double.
        * @example 0
        */
-      tax2Percent?: number;
+      tax2Percent: number;
       /**
        * Format: double
        * @description Represents an invoice tax percent as double.
        * @example 0.5
        */
-      taxPercent?: number;
+      taxPercent: number;
       visibleZeroFields?: components['schemas']['VisibleZeroFieldsInvoice'];
     };
     UpdateInvoiceSettingsRequestV1: {
@@ -4785,7 +4971,7 @@ export interface components {
        * @description Represents a start date in yyyy-MM-ddThh:mm:ssZ format.
        * @example 2020-01-01T00:00:00Z
        */
-      start?: string;
+      start: string;
       /**
        * @description Represents a list of tag ids.
        * @example [
@@ -4818,20 +5004,65 @@ export interface components {
       status: 'ACTIVE' | 'INACTIVE';
     };
     UpdateWebhookRequestV1: {
+      /**
+       * @description Represents webhook name.
+       * @example stripe
+       */
       name?: string;
+      /**
+       * @description Represents a list of trigger sources.
+       * @example [
+       *   "54a687e29ae1f428e7ebe909",
+       *   "87p187e29ae1f428e7ebej56"
+       * ]
+       */
       triggerSource: string[];
-      /** @enum {string} */
-      triggerSourceType?:
+      /**
+       * @description Represents a webhook event trigger source type enum.
+       * @example PROJECT_ID
+       * @enum {string}
+       */
+      triggerSourceType:
         | 'PROJECT_ID'
         | 'USER_ID'
         | 'TAG_ID'
         | 'TASK_ID'
         | 'WORKSPACE_ID'
         | 'USER_GROUP_ID'
-        | 'INVOICE_ID';
+        | 'INVOICE_ID'
+        | 'ASSIGNMENT_ID'
+        | 'EXPENSE_ID';
+      /**
+       * @description Represents workspace identifier across the system.
+       * @example https://example-clockify.com/stripeEndpoint
+       */
       url: string;
       /** @enum {string} */
-      webhookEvent?: 'NEW_PROJECT,NEW_TASK,NEW_CLIENT,NEW_TIMER_STARTED, TIMER_STOPPED, TIME_ENTRY_UPDATED, TIME_ENTRY_DELETED,NEW_TIME_ENTRY, NEW_TAG, USER_DELETED_FROM_WORKSPACE, USER_JOINED_WORKSPACE,USER_DEACTIVATED_ON_WORKSPACE, USER_ACTIVATED_ON_WORKSPACE, USER_EMAIL_CHANGED,USER_UPDATED, NEW_INVOICE, INVOICE_UPDATED, NEW_APPROVAL_REQUEST,APPROVAL_REQUEST_STATUS_UPDATED, TIME_OFF_REQUESTED, TIME_OFF_REQUEST_APPROVED,TIME_OFF_REQUEST_REJECTED, TIME_OFF_REQUEST_WITHDRAWN, BALANCE_UPDATED';
+      webhookEvent:
+        | 'NEW_PROJECT'
+        | 'NEW_TASK'
+        | 'NEW_CLIENT'
+        | 'NEW_TIMER_STARTED'
+        | 'TIMER_STOPPED'
+        | 'TIME_ENTRY_UPDATED'
+        | 'TIME_ENTRY_DELETED'
+        | 'NEW_TIME_ENTRY'
+        | 'NEW_TAG'
+        | 'USER_DELETED_FROM_WORKSPACE'
+        | 'USER_JOINED_WORKSPACE'
+        | 'USER_DEACTIVATED_ON_WORKSPACE'
+        | 'USER_ACTIVATED_ON_WORKSPACE'
+        | 'USER_EMAIL_CHANGED'
+        | 'USER_UPDATED'
+        | 'NEW_INVOICE'
+        | 'INVOICE_UPDATED'
+        | 'NEW_APPROVAL_REQUEST'
+        | 'APPROVAL_REQUEST_STATUS_UPDATED'
+        | 'TIME_OFF_REQUESTED'
+        | 'TIME_OFF_REQUEST_APPROVED'
+        | 'TIME_OFF_REQUEST_REJECTED'
+        | 'TIME_OFF_REQUEST_WITHDRAWN'
+        | 'BALANCE_UPDATED';
     };
     UploadFileResponseV1: {
       /**
@@ -4998,7 +5229,7 @@ export interface components {
        * @description Represents user identifier across the system.
        * @example 5a0ab5acb07987125438b60f
        */
-      userId?: string;
+      userId: string;
     };
     /** @description Represents a list of user with id hourly rate request objects. */
     UserIdWithHourlyRateRequest: {
@@ -5168,6 +5399,7 @@ export interface components {
         | 'AUTH'
         | 'ALERT'
         | 'APPROVAL_REQUEST'
+        | 'ASSIGNMENT'
         | 'CLIENT'
         | 'EXPENSE'
         | 'EXPENSE_CATEGORY'
@@ -5200,6 +5432,7 @@ export interface components {
         | 'KIOSK_SESSION'
         | 'MARKETPLACE_ADDON'
         | 'INVOICE_PAYMENT'
+        | 'FAVORITE_TIMEENTRY'
         | 'HOLIDAY'
         | 'EMAIL_KEY_REQUEST'
         | 'EMAIL_SESSION_REQUEST';
@@ -5211,6 +5444,8 @@ export interface components {
       | 'WORKSPACE_ID'
       | 'USER_GROUP_ID'
       | 'INVOICE_ID'
+      | 'ASSIGNMENT_ID'
+      | 'EXPENSE_ID'
     );
     /**
      * @description Represents a webhook event type enum.
@@ -5237,8 +5472,12 @@ export interface components {
         | 'INVOICE'
         | 'TIME_OFF_REQUEST'
         | 'BALANCE_UPDATED'
+        | 'ASSIGNMENT_PUBLISHED'
         | 'ASSIGNMENT'
-        | 'ADDITIONAL_WORKSPACE';
+        | 'TIME_ENTRY_WITH_CUSTOM_FIELD'
+        | 'ADDITIONAL_WORKSPACE'
+        | 'EXPENSE'
+        | 'WORKSPACE_TRANSFER_DETAILS';
       validSourceTypes?: (
         | 'PROJECT_ID'
         | 'USER_ID'
@@ -5247,6 +5486,8 @@ export interface components {
         | 'WORKSPACE_ID'
         | 'USER_GROUP_ID'
         | 'INVOICE_ID'
+        | 'ASSIGNMENT_ID'
+        | 'EXPENSE_ID'
       )[];
     } & (
       | 'NEW_PROJECT'
@@ -5281,6 +5522,13 @@ export interface components {
       | 'CLIENT_UPDATED'
       | 'TASK_DELETED'
       | 'CLIENT_DELETED'
+      | 'ASSIGNMENT_CREATED'
+      | 'ASSIGNMENT_DELETED'
+      | 'ASSIGNMENT_PUBLISHED'
+      | 'ASSIGNMENT_UPDATED'
+      | 'EXPENSE_CREATED'
+      | 'EXPENSE_DELETED'
+      | 'EXPENSE_UPDATED'
     );
     WebhookLogDtoV1: {
       id?: string;
@@ -5350,7 +5598,20 @@ export interface components {
        */
       name: string;
     };
-    /** @description Represents workspace settings object. */
+    /**
+     * @description Workspace settings also include Time Duration Format settings.
+     *
+     * The Time Duration Format can be changed by setting the correct values of the following boolean fields:
+     * decimalFormat and trackTimeDownToSecond
+     *
+     * There are three different Time Duration modes:
+     *
+     *     1. Full (hh:mm:ss) -> decimalFormat = false, trackTimeDownToSecond = true,
+     *
+     *     2. Compact (h:mm) -> decimalFormat = false, trackTimeDownToSecond = false,
+     *
+     *     3. Decimal (h:hh) -> decimalFormat = true, trackTimeDownToSecond = true
+     */
     WorkspaceSettingsDtoV1: {
       /**
        * @description Represents a unique list of protected page enums.
@@ -5373,6 +5634,8 @@ export interface components {
         | 'VALUE_SPACE_CURRENCY'
         | 'CURRENCY_VALUE'
         | 'VALUE_CURRENCY';
+      /** @description Set decimalFormat alongside trackTimeDownToSecond to manage Time Duration Format as explained in class description */
+      decimalFormat?: boolean;
       /** @description Indicates whether projects are billable by default. */
       defaultBillableProjects?: boolean;
       /** @description Indicates whether description are forced or not. */
@@ -5430,7 +5693,7 @@ export interface components {
        * @enum {string}
        */
       timeTrackingMode?: 'DEFAULT' | 'STOPWATCH_ONLY';
-      /** @description Indicates whether time tracking is seconds-accurate. */
+      /** @description Indicates whether time tracking is seconds-accurate. Set decimalFormat alongside trackTimeDownToSecond to manage Time Duration Format as explained in class description" */
       trackTimeDownToSecond?: boolean;
     };
     Approve: {
@@ -5610,52 +5873,6 @@ export interface components {
        */
       status: 'ACTIVE' | 'ARCHIVED' | 'ALL';
     };
-    ContainsFilter: {
-      /**
-       * @example CONTAINS
-       * @enum {string}
-       */
-      contains?: 'CONTAINS' | 'DOES_NOT_CONTAIN';
-      /**
-       * @description Represents ids upon which filtering is performed.
-       * @example [
-       *   "5b715612b079875110791111",
-       *   "5b715612b079875110791222"
-       * ]
-       */
-      ids?: string[];
-      /**
-       * @description Represents user status.
-       * @example ALL
-       * @enum {string}
-       */
-      status?: 'ALL' | 'ACTIVE' | 'INACTIVE';
-    };
-    CreateHolidayRequestV1: {
-      /**
-       * @description Provide color in format ^#(?:[0-9a-fA-F]{6}){1}$. Explanation: A valid color code should start with '#' and consist of six hexadecimal characters, representing a color in hexadecimal format. Color value is in standard RGB hexadecimal format.
-       * @example #8BC34A
-       */
-      color?: string;
-      datePeriod: components['schemas']['DatePeriodRequest'];
-      /**
-       * @description Indicates whether the holiday is shown to new users.
-       * @example true
-       */
-      everyoneIncludingNew?: boolean;
-      /**
-       * @description Provide the name of the holiday.
-       * @example Labour Day
-       */
-      name: string;
-      /**
-       * @description Indicates whether the holiday occurs annually.
-       * @example true
-       */
-      occursAnnually?: boolean;
-      userGroups?: components['schemas']['ContainsFilter'];
-      users?: components['schemas']['ContainsFilter'];
-    };
     CreatePolicyRequestV1: {
       /**
        * @description Indicates whether policy allows half day.
@@ -5707,30 +5924,6 @@ export interface components {
       note?: string;
       timeOffPeriod: components['schemas']['TimeOffRequestPeriodV1Request'];
     };
-    /** @description Represents startDate and endDate of the holiday. Date is in format yyyy-mm-dd */
-    DatePeriod: {
-      /** Format: date */
-      end?: string;
-      /** Format: date */
-      endDate?: string;
-      /** Format: date */
-      start?: string;
-      /** Format: date */
-      startDate?: string;
-    };
-    /** @description Provide startDate and endDate for the holiday. */
-    DatePeriodRequest: {
-      /**
-       * @description Provide endDate in format yyyy-MM-dd
-       * @example 2023-02-16
-       */
-      endDate: string;
-      /**
-       * @description Provide startDate in format yyyy-MM-dd
-       * @example 2023-02-14
-       */
-      startDate: string;
-    };
     GetTimeOffRequestsV1Request: {
       /**
        * Format: date-time
@@ -5776,101 +5969,6 @@ export interface components {
        * ]
        */
       users?: string[];
-    };
-    HolidayDto: {
-      /**
-       * @description Provide color in format ^#(?:[0-9a-fA-F]{6}){1}$. Explanation: A valid color code should start with '#' and consist of six hexadecimal characters, representing a color in hexadecimal format. Color value is in standard RGB hexadecimal format.
-       * @example #8BC34A
-       */
-      color?: string;
-      datePeriod?: components['schemas']['DatePeriod'];
-      /**
-       * @description Indicates whether the holiday is shown to new users.
-       * @example false
-       */
-      everyoneIncludingNew?: boolean;
-      /**
-       * @description Represents holiday identifier across the system.
-       * @example 5b715612b079875110791111
-       */
-      id?: string;
-      /**
-       * @description Represents the name of the holiday.
-       * @example New Year's Day
-       */
-      name?: string;
-      /**
-       * @description Indicates whether the holiday occurs annually.
-       * @example true
-       */
-      occursAnnually?: boolean;
-      /**
-       * @description Indicates which user groups are included.
-       * @example [
-       *   "5b715612b079875110791342",
-       *   "5b715612b079875110791324",
-       *   "5b715612b079875110793142"
-       * ]
-       */
-      userGroupIds?: string[];
-      /**
-       * @description Indicates which users are included.
-       * @example [
-       *   "5b715612b079875110791432",
-       *   "5b715612b079875110791234"
-       * ]
-       */
-      userIds?: string[];
-      /**
-       * @description Represents workspace identifier across the system.
-       * @example 5b715612b079875110792222
-       */
-      workspaceId?: string;
-    };
-    HolidayDtoV1: {
-      datePeriod?: components['schemas']['DatePeriod'];
-      /**
-       * @description Indicates whether the holiday is shown to new users.
-       * @example false
-       */
-      everyoneIncludingNew?: boolean;
-      /**
-       * @description Represents holiday identifier across the system.
-       * @example 5b715612b079875110791111
-       */
-      id?: string;
-      /**
-       * @description Represents the name of the holiday.
-       * @example New Year's Day
-       */
-      name?: string;
-      /**
-       * @description Indicates whether the holiday occurs annually.
-       * @example true
-       */
-      occursAnnually?: boolean;
-      /**
-       * @description Indicates which user groups are included.
-       * @example [
-       *   "5b715612b079875110791342",
-       *   "5b715612b079875110791324",
-       *   "5b715612b079875110793142"
-       * ]
-       */
-      userGroupIds?: string[];
-      /**
-       * @description Indicates which users are included.
-       * @example [
-       *   "5b715612b079875110791432",
-       *   "5b715612b079875110791234"
-       * ]
-       */
-      userIds?: string[];
-      /**
-       * @description Represents workspace identifier across the system.
-       * @example 5b715612b079875110792222
-       */
-      workspaceId?: string;
     };
     /** @description Represents the data about negative balance including amount, time unit and period. */
     NegativeBalance: {
@@ -5970,6 +6068,7 @@ export interface components {
        */
       name?: string;
       negativeBalance?: components['schemas']['NegativeBalance'];
+      projectId?: string;
       /**
        * @description Represents the time unit of the policy.
        * @example DAYS
@@ -6271,31 +6370,6 @@ export interface components {
        */
       count?: number;
       requests?: components['schemas']['TimeOffRequestFullDtoV1'][];
-    };
-    UpdateHolidayRequestV1: {
-      /**
-       * @description Provide color in format ^#(?:[0-9a-fA-F]{6}){1}$. Explanation: A valid color code should start with '#' and consist of six hexadecimal characters, representing a color in hexadecimal format. Color value is in standard RGB hexadecimal format.
-       * @example #8BC34A
-       */
-      color?: string;
-      datePeriod: components['schemas']['DatePeriodRequest'];
-      /**
-       * @description Indicates whether the holiday is shown to new users.
-       * @example false
-       */
-      everyoneIncludingNew?: boolean;
-      /**
-       * @description Provide the name you would like to use for updating the holiday.
-       * @example New Year's Day
-       */
-      name: string;
-      /**
-       * @description Indicates whether the holiday occurs annually.
-       * @example true
-       */
-      occursAnnually: boolean;
-      userGroups?: components['schemas']['ContainsFilter'];
-      users?: components['schemas']['ContainsFilter'];
     };
     UpdatePolicyRequestV1: {
       /**
@@ -6663,13 +6737,22 @@ export interface components {
         | 'CATEGORY_NO_OF_UNITS'
         | 'CATEGORY_UNIT'
         | 'KIOSK'
+        | 'TYPE'
         | 'BREAK'
         | 'NOTES'
         | 'BILLABLE_TOTAL'
         | 'RECEIPTS'
         | 'EXPENSE_TOTAL'
+        | 'DATE_OF_CREATION'
+        | 'DATE_OF_APPROVAL'
         | 'NAME'
+        | 'ROLE'
+        | 'PROJECTS'
         | 'STATUS'
+        | 'WEEK_START'
+        | 'WORKING_DAYS'
+        | 'TEAM_MEMBERS'
+        | 'DAILY_WORK_CAPACITY'
         | 'VISIBILITY'
         | 'BILLABILITY'
         | 'TASKS'
@@ -6690,8 +6773,6 @@ export interface components {
         | 'PROJECT_MEMBERS'
         | 'PROJECT_MANAGER'
         | 'APPROVED_BY'
-        | 'DATE_OF_CREATION'
-        | 'DATE_OF_APPROVAL'
         | 'ISSUE_DATE'
         | 'DUE_ON'
         | 'BALANCE'
@@ -6746,22 +6827,67 @@ export interface components {
       workspaceId?: string;
     };
     ExpenseReportFilterV1: {
-      approvalState?: string;
+      /**
+       * @description Represents approval state
+       * @example APPROVED
+       * @enum {string}
+       */
+      approvalState?: 'APPROVED' | 'UNAPPROVED' | 'ALL';
+      /**
+       * @description Indicates whether report is billable
+       * @example true
+       */
       billable?: boolean;
       categories?: components['schemas']['ContainsArchivedFilterV1'];
       clients?: components['schemas']['ContainsArchivedFilterV1'];
       currency?: components['schemas']['ContainsArchivedFilterV1'];
-      dateRangeEnd?: string;
-      dateRangeStart?: string;
-      dateRangeType?: string;
-      exportType?: string;
-      invoicingState?: string;
       /**
-       * @description Represents expense report filter's note
-       * @example Expense Report Note
+       * @description Provide date in format YYYY-MM-DDTHH:MM:SS.ssssssZ
+       * @example 2021-10-27T23:59:59.999Z
+       */
+      dateRangeEnd: string;
+      /**
+       * @description Provide date in format YYYY-MM-DDTHH:MM:SS.ssssssZ
+       * @example 2021-10-27T00:00:00Z
+       */
+      dateRangeStart: string;
+      /**
+       * @description Represents date range type of expense report
+       * @example TODAY
+       * @enum {string}
+       */
+      dateRangeType?:
+        | 'ABSOLUTE'
+        | 'TODAY'
+        | 'YESTERDAY'
+        | 'THIS_WEEK'
+        | 'LAST_WEEK'
+        | 'PAST_TWO_WEEKS'
+        | 'THIS_MONTH'
+        | 'LAST_MONTH'
+        | 'THIS_YEAR'
+        | 'LAST_YEAR';
+      /**
+       * @description Represents export type
+       * @example JSON
+       * @enum {string}
+       */
+      exportType?: 'JSON' | 'JSON_V1' | 'PDF' | 'CSV' | 'XLSX' | 'ZIP';
+      /**
+       * @description Represents invoicing state
+       * @example INVOICED
+       * @enum {string}
+       */
+      invoicingState?: 'INVOICED' | 'UNINVOICED' | 'ALL';
+      /**
+       * @description Represents search term for filtering report entries by note
+       * @example some note keyword
        */
       note?: string;
-      /** Format: int32 */
+      /**
+       * Format: int32
+       * @example 1
+       */
       page?: number;
       /**
        * Format: int32
@@ -6775,15 +6901,45 @@ export interface components {
        * @enum {string}
        */
       sortColumn?: 'ID' | 'PROJECT' | 'USER' | 'CATEGORY' | 'DATE' | 'AMOUNT';
-      sortOrder?: string;
+      /**
+       * @description Represents sort order
+       * @example ASCENDING
+       * @enum {string}
+       */
+      sortOrder?: 'ASCENDING' | 'DESCENDING';
+      /**
+       * @description Represents time zone
+       * @example Europe/Budapest
+       */
       timeZone?: string;
       userGroups?: components['schemas']['ContainsUsersFilterV1'];
+      /**
+       * @description Represents user locale
+       * @example en
+       */
       userLocale?: string;
       users?: components['schemas']['ContainsUsersFilterV1'];
-      weekStart?: string;
+      /**
+       * @description Represents week start
+       * @example MONDAY
+       * @enum {string}
+       */
+      weekStart?:
+        | 'MONDAY'
+        | 'TUESDAY'
+        | 'WEDNESDAY'
+        | 'THURSDAY'
+        | 'FRIDAY'
+        | 'SATURDAY'
+        | 'SUNDAY';
       withoutDescription?: boolean;
       withoutNote?: boolean;
-      zoomLevel?: string;
+      /**
+       * @description Represents zoom level
+       * @example WEEK
+       * @enum {string}
+       */
+      zoomLevel?: 'WEEK' | 'MONTH' | 'YEAR';
     };
     /** @description Expense Totals */
     ExpenseTotalsDtoV1: {
@@ -6851,7 +7007,12 @@ export interface components {
        */
       amountShown?: 'EARNED' | 'COST' | 'PROFIT' | 'HIDE_AMOUNT' | 'EXPORT';
       amounts?: ('EARNED' | 'COST' | 'PROFIT' | 'HIDE_AMOUNT' | 'EXPORT')[];
-      approvalState?: string;
+      /**
+       * @description If provided, you'll get filtered result including reports with provided approval state.
+       * @example APPROVED
+       * @enum {string}
+       */
+      approvalState?: 'APPROVED' | 'UNAPPROVED' | 'ALL';
       /**
        * @description Indicates whether the report is archived
        * @example false
@@ -6898,8 +7059,8 @@ export interface components {
         | 'THIS_YEAR'
         | 'LAST_YEAR';
       /**
-       * @description Represents report's description
-       * @example Report Description
+       * @description Represents search term for filtering report entries by description
+       * @example some description keyword
        */
       description?: string;
       detailedFilter?: components['schemas']['DetailedFilterV1'];
@@ -6909,7 +7070,12 @@ export interface components {
        * @enum {string}
        */
       exportType?: 'JSON' | 'JSON_V1' | 'PDF' | 'CSV' | 'XLSX' | 'ZIP';
-      invoicingState?: string;
+      /**
+       * @description If provided, you'll get filtered result including reports with provided invoicing state.
+       * @example INVOICED
+       * @enum {string}
+       */
+      invoicingState?: 'INVOICED' | 'UNINVOICED' | 'ALL';
       projects?: components['schemas']['ContainsArchivedFilterV1'];
       /**
        * @description Indicates whether the report filter is rounding
@@ -6957,7 +7123,7 @@ export interface components {
         | 'SUNDAY';
       weeklyFilter?: components['schemas']['WeeklyFilterV1'];
       /**
-       * @description Indicates whether the report is billable
+       * @description If set to 'true', report will only include entries with empty description
        * @example false
        */
       withoutDescription?: boolean;
@@ -7044,6 +7210,9 @@ export interface components {
         | 'ATTENDANCE'
         | 'INVOICE_EXPENSE'
         | 'PROJECT'
+        | 'TEAM_FULL'
+        | 'TEAM_LIMITED'
+        | 'TEAM_GROUPS'
         | 'INVOICES';
       visibleToUserGroups?: components['schemas']['EntityName'][];
       /**
@@ -7083,6 +7252,9 @@ export interface components {
         | 'ATTENDANCE'
         | 'INVOICE_EXPENSE'
         | 'PROJECT'
+        | 'TEAM_FULL'
+        | 'TEAM_LIMITED'
+        | 'TEAM_GROUPS'
         | 'INVOICES';
       /**
        * @description Represents user group ids
@@ -7133,6 +7305,9 @@ export interface components {
         | 'ATTENDANCE'
         | 'INVOICE_EXPENSE'
         | 'PROJECT'
+        | 'TEAM_FULL'
+        | 'TEAM_LIMITED'
+        | 'TEAM_GROUPS'
         | 'INVOICES';
       /**
        * @description Represents user identifier across the system.
@@ -8444,6 +8619,150 @@ export interface operations {
       };
     };
   };
+  /** Get holidays on workspace */
+  getHolidays: {
+    parameters: {
+      query?: {
+        /**
+         * @description If provided, you'll get a filtered list of holidays assigned to user.
+         * @example 60f924bafdaf031696ec6218
+         */
+        'assigned-to'?: string;
+      };
+      path: {
+        /**
+         * @description Represents workspace identifier across the system.
+         * @example 60f91b3ffdaf031696ec61a8
+         */
+        workspaceId: string;
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          'application/json': components['schemas']['HolidayDtoV1'][];
+        };
+      };
+    };
+  };
+  /** Create holiday */
+  createHoliday: {
+    parameters: {
+      path: {
+        /**
+         * @description Represents workspace identifier across the system.
+         * @example 60f91b3ffdaf031696ec61a8
+         */
+        workspaceId: string;
+      };
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['CreateHolidayRequestV1'];
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          'application/json': components['schemas']['HolidayDtoV1'];
+        };
+      };
+    };
+  };
+  /** Get holiday in specific period */
+  getHolidaysInPeriod: {
+    parameters: {
+      query: {
+        /**
+         * @description If provided, you'll get a filtered list of holidays assigned to user.
+         * @example 60f924bafdaf031696ec6218
+         */
+        'assigned-to': string;
+        /**
+         * @description If provided, you'll get a filtered list of holidays starting from start date. Expected date format yyyy-mm-dd
+         * @example 2022-12-03
+         */
+        start: string;
+        /**
+         * @description If provided, you'll get a filtered list of holidays ending by end date. Expected date format yyyy-mm-dd
+         * @example 2022-12-05
+         */
+        end: string;
+      };
+      path: {
+        /**
+         * @description Represents workspace identifier across the system.
+         * @example 60f91b3ffdaf031696ec61a8
+         */
+        workspaceId: string;
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          'application/json': components['schemas']['HolidayDtoV1'][];
+        };
+      };
+    };
+  };
+  /** Update holiday */
+  updateHoliday: {
+    parameters: {
+      path: {
+        /**
+         * @description Represents workspace identifier across the system.
+         * @example 60f91b3ffdaf031696ec61a8
+         */
+        workspaceId: string;
+        /**
+         * @description Represents holiday identifier across the system.
+         * @example 60f927920658241e3cf35e02
+         */
+        holidayId: string;
+      };
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['UpdateHolidayRequestV1'];
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          'application/json': components['schemas']['HolidayDtoV1'];
+        };
+      };
+    };
+  };
+  /** Delete holiday */
+  deleteHoliday: {
+    parameters: {
+      path: {
+        /**
+         * @description Represents workspace identifier across the system.
+         * @example 60f91b3ffdaf031696ec61a8
+         */
+        workspaceId: string;
+        /**
+         * @description Represents holiday identifier across the system.
+         * @example 60f927920658241e3cf35e02
+         */
+        holidayId: string;
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        content: {
+          'application/json': components['schemas']['HolidayDto'];
+        };
+      };
+    };
+  };
   /** Update workspace billable rate */
   setWorkspaceHourlyRate: {
     parameters: {
@@ -9034,6 +9353,8 @@ export interface operations {
          * @example PUBLIC
          */
         access?: string;
+        'expense-limit'?: number;
+        'expense-date'?: string;
       };
       path: {
         /**
@@ -9088,6 +9409,8 @@ export interface operations {
          * @example TIMEENTRY
          */
         customFieldEntityType?: 'TIMEENTRY' | 'USER';
+        'expense-limit'?: number;
+        'expense-date'?: string;
       };
       path: {
         /**
@@ -9719,7 +10042,7 @@ export interface operations {
   /** Get all assignments */
   getAllAssignments: {
     parameters: {
-      query?: {
+      query: {
         /**
          * @description If provided, assignments will be filtered by name
          * @example Bugfixing
@@ -9729,12 +10052,12 @@ export interface operations {
          * @description Represents start date in yyyy-MM-ddThh:mm:ssZ format.
          * @example 2020-01-01T00:00:00Z
          */
-        start?: string;
+        start: string;
         /**
          * @description Represents start date in yyyy-MM-ddThh:mm:ssZ format.
          * @example 2021-01-01T00:00:00Z
          */
-        end?: string;
+        end: string;
         /**
          * @description Represents the column as the sorting criteria.
          * @example USER
@@ -10647,7 +10970,7 @@ export interface operations {
         /** @description Flag to set whether to filter in progress time entries only or not. */
         'in-progress'?: boolean;
         /**
-         * @description Valid yyyy-MM-ddThh:mm:ssZ format date. If provided, filters results only within the week before the datetime provided.
+         * @description Valid yyyy-MM-ddThh:mm:ssZ format date. If provided, filters results within the week before the datetime provided and only those entries with assigned project or task.
          * @example 2020-01-01T00:00:00Z
          */
         'get-week-before'?: string;
@@ -11529,150 +11852,6 @@ export interface operations {
       };
     };
   };
-  /** Get holidays on workspace */
-  getHolidays: {
-    parameters: {
-      query?: {
-        /**
-         * @description If provided, you'll get a filtered list of holidays assigned to user.
-         * @example 60f924bafdaf031696ec6218
-         */
-        'assigned-to'?: string;
-      };
-      path: {
-        /**
-         * @description Represents workspace identifier across the system.
-         * @example 60f91b3ffdaf031696ec61a8
-         */
-        workspaceId: string;
-      };
-    };
-    responses: {
-      /** @description OK */
-      200: {
-        content: {
-          'application/json': components['schemas']['HolidayDtoV1'][];
-        };
-      };
-    };
-  };
-  /** Create holiday */
-  createHoliday: {
-    parameters: {
-      path: {
-        /**
-         * @description Represents workspace identifier across the system.
-         * @example 60f91b3ffdaf031696ec61a8
-         */
-        workspaceId: string;
-      };
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['CreateHolidayRequestV1'];
-      };
-    };
-    responses: {
-      /** @description OK */
-      200: {
-        content: {
-          'application/json': components['schemas']['HolidayDtoV1'];
-        };
-      };
-    };
-  };
-  /** Get holiday in specific period */
-  getHolidaysInPeriod: {
-    parameters: {
-      query: {
-        /**
-         * @description If provided, you'll get a filtered list of holidays assigned to user.
-         * @example 60f924bafdaf031696ec6218
-         */
-        'assigned-to': string;
-        /**
-         * @description If provided, you'll get a filtered list of holidays starting from start date. Expected date format yyyy-mm-dd
-         * @example 2022-12-03
-         */
-        start: string;
-        /**
-         * @description If provided, you'll get a filtered list of holidays ending by end date. Expected date format yyyy-mm-dd
-         * @example 2022-12-05
-         */
-        end: string;
-      };
-      path: {
-        /**
-         * @description Represents workspace identifier across the system.
-         * @example 60f91b3ffdaf031696ec61a8
-         */
-        workspaceId: string;
-      };
-    };
-    responses: {
-      /** @description OK */
-      200: {
-        content: {
-          'application/json': components['schemas']['HolidayDtoV1'][];
-        };
-      };
-    };
-  };
-  /** Update holiday */
-  updateHoliday: {
-    parameters: {
-      path: {
-        /**
-         * @description Represents workspace identifier across the system.
-         * @example 60f91b3ffdaf031696ec61a8
-         */
-        workspaceId: string;
-        /**
-         * @description Represents holiday identifier across the system.
-         * @example 60f927920658241e3cf35e02
-         */
-        holidayId: string;
-      };
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['UpdateHolidayRequestV1'];
-      };
-    };
-    responses: {
-      /** @description OK */
-      200: {
-        content: {
-          'application/json': components['schemas']['HolidayDtoV1'];
-        };
-      };
-    };
-  };
-  /** Delete holiday */
-  deleteHoliday: {
-    parameters: {
-      path: {
-        /**
-         * @description Represents workspace identifier across the system.
-         * @example 60f91b3ffdaf031696ec61a8
-         */
-        workspaceId: string;
-        /**
-         * @description Represents holiday identifier across the system.
-         * @example 60f927920658241e3cf35e02
-         */
-        holidayId: string;
-      };
-    };
-    responses: {
-      /** @description OK */
-      200: {
-        content: {
-          'application/json': components['schemas']['HolidayDto'];
-        };
-      };
-    };
-  };
   /** Get policies on workspace */
   findPoliciesForWorkspace: {
     parameters: {
@@ -11997,6 +12176,8 @@ export interface operations {
   /**
    * Generate shared report by ID
    * @description Response depends on report type and export type. Given example is for SUMMARY report and JSON exportType.
+   *
+   * Shared report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
    */
   generateSharedReportV1: {
     parameters: {
@@ -12043,7 +12224,10 @@ export interface operations {
       };
     };
   };
-  /** Detailed report */
+  /**
+   * Detailed report
+   * @description Detailed report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
+   */
   generateDetailedReport: {
     parameters: {
       path: {
@@ -12064,7 +12248,10 @@ export interface operations {
       };
     };
   };
-  /** Generate expense report */
+  /**
+   * Generate expense report
+   * @description Expense report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
+   */
   generateDetailedReportV1: {
     parameters: {
       path: {
@@ -12085,7 +12272,10 @@ export interface operations {
       };
     };
   };
-  /** Summary report */
+  /**
+   * Summary report
+   * @description Summary report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
+   */
   generateSummaryReport: {
     parameters: {
       path: {
@@ -12106,7 +12296,10 @@ export interface operations {
       };
     };
   };
-  /** Weekly report */
+  /**
+   * Weekly report
+   * @description Weekly report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
+   */
   generateWeeklyReport: {
     parameters: {
       path: {
@@ -12153,7 +12346,9 @@ export interface operations {
   };
   /**
    * Create shared report
-   * @description Saves shared report with name, options and report filter
+   * @description Saves shared report with name, options and report filter.
+   *
+   * Shared report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
    */
   saveSharedReportV1: {
     parameters: {
