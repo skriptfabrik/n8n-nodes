@@ -27,6 +27,7 @@ export enum WebhookEvent {
   INVOICE_UPDATED = 'INVOICE_UPDATED',
   NEW_APPROVAL_REQUEST = 'NEW_APPROVAL_REQUEST',
   NEW_CLIENT = 'NEW_CLIENT',
+  NEW_INVOICE = 'NEW_INVOICE',
   NEW_PROJECT = 'NEW_PROJECT',
   NEW_TAG = 'NEW_TAG',
   NEW_TASK = 'NEW_TASK',
@@ -114,6 +115,10 @@ export class ClockifyEnhancedTrigger implements INodeType {
           },
           {
             name: 'Invoice Created',
+            value: WebhookEvent.NEW_INVOICE,
+          },
+          {
+            name: 'Invoice Updated',
             value: WebhookEvent.INVOICE_UPDATED,
           },
           {
