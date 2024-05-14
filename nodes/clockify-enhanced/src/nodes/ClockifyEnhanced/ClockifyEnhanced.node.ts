@@ -1,13 +1,31 @@
-import type {
-  IDataObject,
-  IExecuteFunctions,
-  INodeExecutionData,
-  INodeType,
-  INodeTypeDescription,
-  NodeApiError,
+import {
+  type IDataObject,
+  type IExecuteFunctions,
+  type ILoadOptionsFunctions,
+  type INodeExecutionData,
+  type INodePropertyOptions,
+  type INodeType,
+  type INodeTypeDescription,
+  type NodeApiError,
 } from 'n8n-workflow';
 
-import { clockifyApiRequest } from 'n8n-nodes-base/dist/nodes/Clockify/GenericFunctions';
+import {
+  clockifyApiRequest,
+  clockifyApiRequestAllItems,
+} from 'n8n-nodes-base/dist/nodes/Clockify/GenericFunctions';
+
+import { components } from '../../api';
+
+type Project = components['schemas']['ProjectDtoV1'] &
+  Required<Pick<components['schemas']['ProjectDtoV1'], 'id' | 'name'>>;
+
+type User = components['schemas']['UserDtoV1'] &
+  Required<
+    Pick<components['schemas']['UserDtoV1'], 'id' | 'name' | 'memberships'>
+  >;
+
+type Workspace = components['schemas']['WorkspaceDtoV1'] &
+  Required<Pick<components['schemas']['WorkspaceDtoV1'], 'id' | 'name'>>;
 
 import {
   projectFields,
@@ -18,8 +36,6 @@ import {
   projectMembershipFields,
   projectMembershipOperations,
 } from './descriptions/ProjectMembershipsDescription';
-
-import { Clockify } from 'n8n-nodes-base/dist/nodes/Clockify/Clockify.node';
 
 export class ClockifyEnhanced implements INodeType {
   description: INodeTypeDescription = {
@@ -64,8 +80,8 @@ export class ClockifyEnhanced implements INodeType {
             value: 'project',
           },
           {
-            name: 'Projectmembership',
-            value: 'projectmembership',
+            name: 'Project Membership',
+            value: 'project membership',
           },
         ],
         default: 'project',
@@ -76,25 +92,165 @@ export class ClockifyEnhanced implements INodeType {
         displayName: 'Workspace Name or ID',
         name: 'workspaceId',
         type: 'options',
+        typeOptions: {
+          loadOptionsMethod: 'loadWorkspaces',
+        },
+        default: '',
         description:
           'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
-        typeOptions: {
-          loadOptionsMethod: 'listWorkspaces',
-        },
         required: true,
-        default: '',
-        displayOptions: {
-          hide: {
-            resource: ['workspace'],
-          },
-        },
+        requiresDataPath: 'single',
+        validateType: 'string',
       },
       ...projectFields,
       ...projectMembershipFields,
     ],
   };
 
-  methods = new Clockify().methods;
+  methods = {
+    loadOptions: {
+      async loadWorkspaces(
+        this: ILoadOptionsFunctions,
+      ): Promise<INodePropertyOptions[]> {
+        const workspaces: Workspace[] = await clockifyApiRequest.call(
+          this,
+          'GET',
+          'workspaces',
+        );
+
+        if (!workspaces) {
+          return [];
+        }
+
+        return workspaces.map((value) => ({
+          name: value.name,
+          value: value.id,
+        }));
+      },
+
+      async loadProjects(
+        this: ILoadOptionsFunctions,
+      ): Promise<INodePropertyOptions[]> {
+        const workspaceId = this.getCurrentNodeParameter('workspaceId');
+        if (!workspaceId) {
+          return [];
+        }
+
+        const projects: Project[] = await clockifyApiRequestAllItems.call(
+          this,
+          'GET',
+          `workspaces/${workspaceId}/projects`,
+        );
+
+        if (!projects) {
+          return [];
+        }
+
+        return projects.map((project) => ({
+          name: project.name,
+          value: project.id,
+        }));
+      },
+
+      async loadUsers(
+        this: ILoadOptionsFunctions,
+      ): Promise<INodePropertyOptions[]> {
+        const workspaceId = this.getCurrentNodeParameter('workspaceId');
+        if (!workspaceId) {
+          return [];
+        }
+
+        const users: User[] = await clockifyApiRequestAllItems.call(
+          this,
+          'GET',
+          `workspaces/${workspaceId}/users`,
+        );
+
+        if (!users) {
+          return [];
+        }
+
+        return users.map((value) => ({
+          name: value.name,
+          value: value.id,
+        }));
+      },
+
+      async loadNonProjectUsers(
+        this: ILoadOptionsFunctions,
+      ): Promise<INodePropertyOptions[]> {
+        const workspaceId = this.getCurrentNodeParameter(
+          'workspaceId',
+        ) as string;
+
+        const projectId = this.getCurrentNodeParameter('projectId') as string;
+
+        if (!workspaceId || !projectId) {
+          return [];
+        }
+
+        const users: User[] = await clockifyApiRequestAllItems.call(
+          this,
+          'GET',
+          `workspaces/${workspaceId}/users`,
+          undefined,
+          {
+            memberships: 'PROJECT',
+          },
+        );
+
+        if (!users) {
+          return [];
+        }
+
+        return users
+          .filter((user) => {
+            const memberships = user.memberships.filter(
+              (membership) => membership.targetId === projectId,
+            );
+
+            return memberships.length <= 0;
+          })
+          .map((user) => ({
+            name: user.name,
+            value: user.id,
+          }));
+      },
+
+      async loadProjectUsers(
+        this: ILoadOptionsFunctions,
+      ): Promise<INodePropertyOptions[]> {
+        const workspaceId = this.getCurrentNodeParameter(
+          'workspaceId',
+        ) as string;
+
+        const projectId = this.getCurrentNodeParameter('projectId') as string;
+
+        if (!workspaceId || !projectId) {
+          return [];
+        }
+
+        const users: User[] = await clockifyApiRequestAllItems.call(
+          this,
+          'GET',
+          `workspaces/${workspaceId}/users`,
+          undefined,
+          {
+            projectId,
+          },
+        );
+
+        if (!users) {
+          return [];
+        }
+
+        return users.map((user) => ({
+          name: user.name,
+          value: user.id,
+        }));
+      },
+    },
+  };
 
   async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
     const items = this.getInputData();
@@ -132,18 +288,15 @@ export class ClockifyEnhanced implements INodeType {
           }
         }
 
-        if (resource === 'projectmembership') {
+        if (resource === 'project membership') {
+          const workspaceId = this.getNodeParameter(
+            'workspaceId',
+            item,
+          ) as string;
+
+          const projectId = this.getNodeParameter('projectId', item) as string;
+
           if (operation === 'patch') {
-            const workspaceId = this.getNodeParameter(
-              'workspaceId',
-              item,
-            ) as string;
-
-            const projectId = this.getNodeParameter(
-              'projectId',
-              item,
-            ) as string;
-
             const memberships = (
               this.getNodeParameter('memberships', item) as string[]
             ).map((membership) => ({ userId: membership }));
@@ -154,6 +307,30 @@ export class ClockifyEnhanced implements INodeType {
               `/workspaces/${workspaceId}/projects/${projectId}/memberships`,
               {
                 memberships,
+              },
+            );
+          }
+
+          if (operation === 'assign') {
+            responseData = await clockifyApiRequest.call(
+              this,
+              'POST',
+              `/workspaces/${workspaceId}/projects/${projectId}/memberships`,
+              {
+                remove: false,
+                userIds: this.getNodeParameter('userIdsToAssign', item),
+              },
+            );
+          }
+
+          if (operation === 'remove') {
+            responseData = await clockifyApiRequest.call(
+              this,
+              'POST',
+              `/workspaces/${workspaceId}/projects/${projectId}/memberships`,
+              {
+                remove: true,
+                userIds: this.getNodeParameter('userIdsToRemove', item),
               },
             );
           }
