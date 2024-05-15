@@ -8,6 +8,7 @@ import type {
 } from 'n8n-workflow';
 
 import type { SentryIoDSNApiCredential } from '../../credentials/SentryIoDSNApi.credentials';
+import { getOptionsFromNodeParameter } from './GenericFunctions';
 
 export class SentryIoEnhanced implements INodeType {
   description: INodeTypeDescription = {
@@ -44,16 +45,15 @@ export class SentryIoEnhanced implements INodeType {
         name: 'message',
         type: 'string',
         description: 'The message to send',
+        default: '',
         required: true,
-        default: undefined,
       },
       {
         displayName: 'Level',
         name: 'level',
         type: 'options',
-        noDataExpression: true,
-        description: 'The record severity',
         default: 'error',
+        description: 'The record severity',
         options: [
           {
             name: 'Debug',
@@ -80,13 +80,111 @@ export class SentryIoEnhanced implements INodeType {
             value: 'warning',
           },
         ],
+        noDataExpression: true,
       },
       {
         displayName: 'Environment',
         name: 'environment',
         type: 'string',
-        description: 'The environment name, such as production or staging',
         default: 'production',
+        description: 'The environment name, such as production or staging',
+        validateType: 'string',
+      },
+      {
+        displayName:
+          'By default the workflow ID (workflow_id) and name (workflow_name) are added as tags. Add additional tags here.',
+        name: 'notice',
+        type: 'notice',
+        default: '',
+      },
+      {
+        displayName: 'Tags',
+        name: 'tags',
+        type: 'fixedCollection',
+        typeOptions: {
+          multipleValues: true,
+          sortable: true,
+        },
+        default: [],
+        options: [
+          {
+            name: 'values',
+            displayName: 'Values',
+            values: [
+              {
+                displayName: 'Key',
+                name: 'key',
+                type: 'string',
+                default: '',
+                placeholder: 'Tag name',
+                description: 'Name of the tag to set the value of',
+                noDataExpression: true,
+                required: true,
+                requiresDataPath: 'single',
+                validateType: 'string',
+              },
+              {
+                displayName: 'Value',
+                name: 'value',
+                type: 'string',
+                default: '',
+                placeholder: 'Tag value',
+                description: 'Value of the tag',
+                required: true,
+                validateType: 'string',
+              },
+            ],
+          },
+        ],
+        placeholder: 'Add tag',
+      },
+      {
+        displayName:
+          'By default the execution ID (execution_id), execution URL (execution_url), and trigger name (trigger_name) are added as extra. Add additional extra here.',
+        name: 'notice',
+        type: 'notice',
+        default: '',
+      },
+      {
+        displayName: 'Extra',
+        name: 'extra',
+        type: 'fixedCollection',
+        typeOptions: {
+          multipleValues: true,
+          sortable: true,
+        },
+        default: {},
+        options: [
+          {
+            name: 'values',
+            displayName: 'Values',
+            values: [
+              {
+                displayName: 'Key',
+                name: 'key',
+                type: 'string',
+                default: '',
+                placeholder: 'Extra name',
+                description: 'Name of the extra to set the value of',
+                noDataExpression: true,
+                required: true,
+                requiresDataPath: 'single',
+                validateType: 'string',
+              },
+              {
+                displayName: 'Value',
+                name: 'value',
+                type: 'string',
+                default: '',
+                placeholder: 'Extra value',
+                description: 'Value of the extra',
+                required: true,
+                validateType: 'string',
+              },
+            ],
+          },
+        ],
+        placeholder: 'Add extra',
       },
     ],
   };
@@ -124,8 +222,14 @@ export class SentryIoEnhanced implements INodeType {
           transaction: `${this.getInstanceBaseUrl()}workflow/${workflow.id}`,
           server_name: new URL(this.getInstanceBaseUrl()).hostname,
           environment: this.getNodeParameter('environment', item) as string,
-          tags: commonTags,
-          extra: commonExtra,
+          tags: {
+            ...commonTags,
+            ...getOptionsFromNodeParameter.call(this, 'tags.values', item),
+          },
+          extra: {
+            ...commonExtra,
+            ...getOptionsFromNodeParameter.call(this, 'extra.values', item),
+          },
         });
 
         const itemHeaders = JSON.stringify({
