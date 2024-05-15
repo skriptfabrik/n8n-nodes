@@ -1,6 +1,9 @@
 import { mockClear, mockDeep } from 'jest-mock-extended';
 import type { IExecuteFunctions } from 'n8n-workflow';
 import { SentryIoEnhanced } from './SentryIoEnhanced.node';
+import { getOptionsFromNodeParameter } from './GenericFunctions';
+
+jest.mock('./GenericFunctions');
 
 describe('SentryIoEnhanced', () => {
   const executeFunctions = mockDeep<IExecuteFunctions>();
@@ -19,7 +22,7 @@ describe('SentryIoEnhanced', () => {
     expect(sentryIoEnhanced).toBeDefined();
   });
 
-  it('should send a event envelope to Sentry.io', () => {
+  it('should send a event envelope to Sentry.io', async () => {
     const jsonArray = [{ json: { id: '_sentry_io_event_id_' } }];
     const executionData = jsonArray.map(({ json }) => ({
       json,
@@ -72,6 +75,14 @@ describe('SentryIoEnhanced', () => {
       .calledWith('environment', 0)
       .mockReturnValue('_environment_');
 
+    jest
+      .mocked(getOptionsFromNodeParameter)
+      .mockReturnValueOnce({ _tag_key_: '_tag_value_' });
+
+    jest
+      .mocked(getOptionsFromNodeParameter)
+      .mockReturnValueOnce({ _extra_key_: '_extra_value_' });
+
     const eventPayload = JSON.stringify({
       message: '_message_',
       level: '_level_',
@@ -82,12 +93,14 @@ describe('SentryIoEnhanced', () => {
       tags: {
         workflow_id: '_workflow_id_',
         workflow_name: '_workflow_name_',
+        _tag_key_: '_tag_value_',
       },
       extra: {
         execution_id: '_execution_id_',
         execution_url:
           'http://localhost:5678/workflow/_workflow_id_/execution/_execution_id_',
         trigger_name: '_node_name_',
+        _extra_key_: '_extra_value_',
       },
     });
 
@@ -117,9 +130,21 @@ describe('SentryIoEnhanced', () => {
       )
       .mockResolvedValue({ id: '_sentry_io_event_id_' });
 
-    expect(sentryIoEnhanced.execute.call(executeFunctions)).resolves.toEqual([
-      executionData,
-    ]);
+    await expect(
+      sentryIoEnhanced.execute.call(executeFunctions),
+    ).resolves.toEqual([executionData]);
+
+    expect(getOptionsFromNodeParameter).toHaveBeenCalledTimes(2);
+    expect(getOptionsFromNodeParameter).toHaveBeenNthCalledWith(
+      1,
+      'tags.values',
+      0,
+    );
+    expect(getOptionsFromNodeParameter).toHaveBeenNthCalledWith(
+      2,
+      'extra.values',
+      0,
+    );
   });
 
   it('should return on error', () => {
