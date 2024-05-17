@@ -1,12 +1,24 @@
 import { mockClear, mockDeep } from 'jest-mock-extended';
-import type { IExecuteFunctions, ILoadOptionsFunctions } from 'n8n-workflow';
+import {
+  type IExecuteFunctions,
+  type ILoadOptionsFunctions,
+} from 'n8n-workflow';
 import { Moco } from './Moco.node';
-import { mocoApiRequest, mocoApiRequestAllItems } from './GenericFunctions';
+import {
+  mocoApiRequest,
+  mocoApiRequestAllItems,
+  createParametersFromNodeParameter,
+} from './GenericFunctions';
 import {
   Activity,
   ActivityParameters,
+  CommonCompanyParameters,
+  Company,
+  CompanyParameters,
+  CustomerCompanyParameters,
   Project,
   ProjectParameters,
+  SupplierCompanyParameters,
   User,
   UserParameters,
 } from '../../api';
@@ -30,6 +42,8 @@ describe('Moco', () => {
     mockClear(executeFunctions);
     mockClear(mockedMocoApiRequest);
     mockClear(mockedMocoApiRequestAllItems);
+
+    jest.mocked(createParametersFromNodeParameter).mockRestore();
   });
 
   it('should be defined', () => {
@@ -847,6 +861,1011 @@ describe('Moco', () => {
       },
     );
   });
+
+  it.each<{ type: CompanyParameters['type']; withCustomProperties: boolean }>([
+    { type: 'customer', withCustomProperties: true },
+    { type: 'customer', withCustomProperties: false },
+    { type: 'supplier', withCustomProperties: true },
+    { type: 'supplier', withCustomProperties: false },
+    { type: 'organization', withCustomProperties: true },
+    { type: 'organization', withCustomProperties: true },
+  ])(
+    'should create a company with type $type and custom properties: $withCustomProperties',
+    ({ type, withCustomProperties }) => {
+      const body: CommonCompanyParameters = {
+        name: '_name_',
+        type,
+        country_code: '_country_code_',
+        vat_identifier: '_vat_identifier_',
+        alternative_correspondence_language: true,
+        website: '_website_',
+        fax: '_fax_',
+        phone: '_phone_',
+        email: '_email_',
+        billing_email_cc: '_billing_email_cc_',
+        address: '_address_',
+        info: '_info_',
+        tags: ['_tag1_', '_tag2_'],
+        footer: '_footer_',
+      };
+
+      if (type === 'customer') {
+        Object.assign<CommonCompanyParameters, CustomerCompanyParameters>(
+          body,
+          {
+            type,
+            currency: '_currency_',
+            identifier: '_identifier_',
+            customer_tax: 19.0,
+            default_invoice_due_days: 20,
+            debit_number: 10000,
+          },
+        );
+      }
+
+      if (type === 'supplier') {
+        Object.assign<CommonCompanyParameters, SupplierCompanyParameters>(
+          body,
+          {
+            type,
+            iban: '_iban_',
+            supplier_tax: 19.0,
+            credit_number: 70000,
+          },
+        );
+      }
+
+      if (withCustomProperties) {
+        Object.assign(body, {
+          custom_properties: {
+            _prop_key_: '_prop_value_',
+          },
+        });
+      }
+
+      const company: Company = {
+        id: 1234567,
+        type: type as 'customer' | 'supplier' | 'organization',
+        name: '_name_',
+        website: '_website_',
+        email: '_email_',
+        billing_email_cc: '_billing_email_cc_',
+        phone: '_phone_',
+        fax: '_fax_',
+        address: '_address_',
+        tags: ['_tag1_', '_tag2_'],
+        user: {
+          id: 123456,
+          firstname: '_user_firstname_',
+          lastname: '_user_lastname_',
+        },
+        info: '_info_',
+        custom_properties: {
+          _prop_key_: '_prop_value_',
+        },
+        identifier: '_identifier_',
+        intern: false,
+        billing_tax: 19.0,
+        customer_vat: {
+          tax: 19.0,
+          reverse_charge: false,
+          intra_eu: false,
+          active: true,
+          print_gross_total: false,
+          notice_tax_exemption: '_notice_tax_exemption_',
+          notice_tax_exemption_alt: '_notice_tax_exemption_alt_',
+        },
+        supplier_vat: {
+          tax: 19.0,
+          reverse_charge: false,
+          intra_eu: false,
+          active: true,
+        },
+        currency: '_currency_',
+        custom_rates: false,
+        include_time_report: false,
+        billing_notes: '_billing_notes_',
+        default_discount: 0.0,
+        default_cash_discount: 0.0,
+        default_cash_discount_days: 0,
+        country_code: '_country_code_',
+        vat_identifier: '_vat_identifier_',
+        alternative_correspondence_language: true,
+        default_invoice_due_days: 20,
+        footer: '_footer_',
+        projects: [],
+        created_at: '_created_at_',
+        updated_at: '_updated_at_',
+        debit_number: 10000,
+      };
+
+      const jsonArray = [{ json: company }];
+      const executionData = jsonArray.map(({ json }) => ({
+        json,
+        pairedItem: { item: 0 },
+      }));
+
+      executeFunctions.getInputData.mockReturnValue([
+        {
+          json: {},
+        },
+      ]);
+
+      const additionalFields = [
+        'countryCode',
+        'vatIdentifier',
+        'alternativeCorrespondenceLanguage',
+        'website',
+        'fax',
+        'phone',
+        'email',
+        'billingEmailCc',
+        'address',
+        'info',
+        'customProperties',
+        'tags',
+        'footer',
+      ];
+
+      const additionalFieldsParameters: {
+        [key in keyof CompanyParameters]?: string | number | boolean | object;
+      } = {
+        country_code: '_country_code_',
+        vat_identifier: '_vat_identifier_',
+        alternative_correspondence_language: true,
+        website: '_website_',
+        fax: '_fax_',
+        phone: '_phone_',
+        email: '_email_',
+        billing_email_cc: '_billing_email_cc_',
+        address: '_address_',
+        info: '_info_',
+        tags: ['_tag1_', '_tag2_'],
+        footer: '_footer_',
+      };
+
+      if (withCustomProperties) {
+        additionalFieldsParameters['custom_properties'] = {
+          values: [
+            {
+              key: '_prop_key_',
+              value: '_prop_value_',
+            },
+          ],
+        };
+      }
+
+      if (type === 'customer') {
+        additionalFields.push(
+          'customerTax',
+          'defaultInvoiceDueDays',
+          'debitNumber',
+        );
+
+        Object.assign(additionalFieldsParameters, {
+          customer_tax: 19.0,
+          default_invoice_due_days: 20,
+          debit_number: 10000,
+        });
+      }
+
+      if (type === 'supplier') {
+        additionalFields.push('iban', 'supplierTax', 'creditNumber');
+
+        Object.assign(additionalFieldsParameters, {
+          iban: '_iban_',
+          supplier_tax: 19.0,
+          credit_number: 70000,
+        });
+      }
+
+      jest
+        .mocked(createParametersFromNodeParameter)
+        .mockReturnValueOnce(additionalFieldsParameters);
+
+      executeFunctions.getNodeParameter
+        .calledWith('resource', 0)
+        .mockReturnValue('company');
+
+      executeFunctions.getNodeParameter
+        .calledWith('operation', 0)
+        .mockReturnValue('create');
+
+      executeFunctions.getNodeParameter
+        .calledWith('name', 0)
+        .mockReturnValue('_name_');
+
+      executeFunctions.getNodeParameter
+        .calledWith('type', 0)
+        .mockReturnValue(type);
+
+      if (type === 'customer') {
+        executeFunctions.getNodeParameter
+          .calledWith('currency', 0)
+          .mockReturnValue('_currency_');
+
+        executeFunctions.getNodeParameter
+          .calledWith('identifier', 0)
+          .mockReturnValue('_identifier_');
+      }
+
+      mockedMocoApiRequest.mockResolvedValue({
+        body: company,
+        statusCode: 200,
+      });
+
+      executeFunctions.helpers.returnJsonArray.mockReturnValue(jsonArray);
+
+      executeFunctions.helpers.constructExecutionMetaData.mockReturnValue(
+        executionData,
+      );
+
+      expect(moco.execute.call(executeFunctions)).resolves.toEqual([
+        executionData,
+      ]);
+
+      expect(mockedMocoApiRequest).toHaveBeenCalledWith(
+        0,
+        'POST',
+        '/companies',
+        {
+          body,
+        },
+      );
+
+      expect(createParametersFromNodeParameter).toHaveBeenCalledTimes(1);
+      expect(createParametersFromNodeParameter).toHaveBeenCalledWith(
+        'additionalFields',
+        0,
+        additionalFields,
+      );
+    },
+  );
+
+  it('should delete a company', () => {
+    const companyId = 1234567;
+    const executionData = [
+      {
+        json: {},
+        pairedItem: { item: 0 },
+      },
+    ];
+
+    executeFunctions.getInputData.mockReturnValue([
+      {
+        json: {},
+      },
+    ]);
+
+    executeFunctions.getNodeParameter
+      .calledWith('resource', 0)
+      .mockReturnValue('company');
+
+    executeFunctions.getNodeParameter
+      .calledWith('operation', 0)
+      .mockReturnValue('delete');
+
+    executeFunctions.getNodeParameter
+      .calledWith('companyId', 0)
+      .mockReturnValue(companyId);
+
+    executeFunctions.helpers.returnJsonArray.mockReturnValue([]);
+
+    executeFunctions.helpers.constructExecutionMetaData.mockReturnValue(
+      executionData,
+    );
+
+    expect(moco.execute.call(executeFunctions)).resolves.toEqual([
+      executionData,
+    ]);
+
+    expect(mockedMocoApiRequest).toHaveBeenCalledWith(
+      0,
+      'DELETE',
+      `/companies/${companyId}`,
+    );
+  });
+
+  it('should get a company', () => {
+    const companyId = 1234567;
+    const company: Company = {
+      id: 1234567,
+      type: 'customer',
+      name: '_name_',
+      website: '_website_',
+      email: '_email_',
+      billing_email_cc: '_billing_email_cc_',
+      phone: '_phone_',
+      fax: '_fax_',
+      address: '_address_',
+      tags: ['_tag1_', '_tag2_'],
+      user: {
+        id: 123456,
+        firstname: '_user_firstname_',
+        lastname: '_user_lastname_',
+      },
+      info: '_info_',
+      custom_properties: {
+        _prop_key_: '_prop_value_',
+      },
+      identifier: '_identifier_',
+      intern: false,
+      billing_tax: 19.0,
+      customer_vat: {
+        tax: 19.0,
+        reverse_charge: false,
+        intra_eu: false,
+        active: true,
+        print_gross_total: false,
+        notice_tax_exemption: '_notice_tax_exemption_',
+        notice_tax_exemption_alt: '_notice_tax_exemption_alt_',
+      },
+      supplier_vat: {
+        tax: 19.0,
+        reverse_charge: false,
+        intra_eu: false,
+        active: true,
+      },
+      currency: '_currency_',
+      custom_rates: false,
+      include_time_report: false,
+      billing_notes: '_billing_notes_',
+      default_discount: 0.0,
+      default_cash_discount: 0.0,
+      default_cash_discount_days: 0,
+      country_code: '_country_code_',
+      vat_identifier: '_vat_identifier_',
+      alternative_correspondence_language: true,
+      default_invoice_due_days: 20,
+      footer: '_footer_',
+      projects: [],
+      created_at: '_created_at_',
+      updated_at: '_updated_at_',
+      debit_number: 10000,
+    };
+
+    const jsonArray = [{ json: company }];
+    const executionData = jsonArray.map(({ json }) => ({
+      json,
+      pairedItem: { item: 0 },
+    }));
+
+    executeFunctions.getInputData.mockReturnValue([
+      {
+        json: {},
+      },
+    ]);
+
+    executeFunctions.getNodeParameter
+      .calledWith('resource', 0)
+      .mockReturnValue('company');
+
+    executeFunctions.getNodeParameter
+      .calledWith('operation', 0)
+      .mockReturnValue('get');
+
+    executeFunctions.getNodeParameter
+      .calledWith('companyId', 0)
+      .mockReturnValue(companyId);
+
+    mockedMocoApiRequest.mockResolvedValue({ body: company, statusCode: 200 });
+
+    executeFunctions.helpers.returnJsonArray.mockReturnValue(jsonArray);
+
+    executeFunctions.helpers.constructExecutionMetaData.mockReturnValue(
+      executionData,
+    );
+
+    expect(moco.execute.call(executeFunctions)).resolves.toEqual([
+      executionData,
+    ]);
+
+    expect(mockedMocoApiRequest).toHaveBeenCalledWith(
+      0,
+      'GET',
+      `/companies/${companyId}`,
+    );
+  });
+
+  it('should list all companies', () => {
+    const companies: Company[] = [
+      {
+        id: 1234567,
+        type: 'customer',
+        name: '_name_',
+        website: '_website_',
+        email: '_email_',
+        billing_email_cc: '_billing_email_cc_',
+        phone: '_phone_',
+        fax: '_fax_',
+        address: '_address_',
+        tags: ['_tag1_', '_tag2_'],
+        user: {
+          id: 123456,
+          firstname: '_user_firstname_',
+          lastname: '_user_lastname_',
+        },
+        info: '_info_',
+        custom_properties: {
+          _prop_key_: '_prop_value_',
+        },
+        identifier: '_identifier_',
+        intern: false,
+        billing_tax: 19.0,
+        customer_vat: {
+          tax: 19.0,
+          reverse_charge: false,
+          intra_eu: false,
+          active: true,
+          print_gross_total: false,
+          notice_tax_exemption: '_notice_tax_exemption_',
+          notice_tax_exemption_alt: '_notice_tax_exemption_alt_',
+        },
+        supplier_vat: {
+          tax: 19.0,
+          reverse_charge: false,
+          intra_eu: false,
+          active: true,
+        },
+        currency: '_currency_',
+        custom_rates: false,
+        include_time_report: false,
+        billing_notes: '_billing_notes_',
+        default_discount: 0.0,
+        default_cash_discount: 0.0,
+        default_cash_discount_days: 0,
+        country_code: '_country_code_',
+        vat_identifier: '_vat_identifier_',
+        alternative_correspondence_language: true,
+        default_invoice_due_days: 20,
+        footer: '_footer_',
+        projects: [],
+        created_at: '_created_at_',
+        updated_at: '_updated_at_',
+        debit_number: 10000,
+      },
+      {
+        id: 7654321,
+        type: 'supplier',
+        name: '_name_',
+        website: '_website_',
+        email: '_email_',
+        billing_email_cc: '_billing_email_cc_',
+        phone: '_phone_',
+        fax: '_fax_',
+        address: '_address_',
+        tags: ['_tag1_', '_tag2_'],
+        user: {
+          id: 123456,
+          firstname: '_user_firstname_',
+          lastname: '_user_lastname_',
+        },
+        info: '_info_',
+        custom_properties: {
+          _prop_key_: '_prop_value_',
+        },
+        identifier: '_identifier_',
+        intern: false,
+        billing_tax: 19.0,
+        customer_vat: {
+          tax: 19.0,
+          reverse_charge: false,
+          intra_eu: false,
+          active: true,
+          print_gross_total: false,
+          notice_tax_exemption: '_notice_tax_exemption_',
+          notice_tax_exemption_alt: '_notice_tax_exemption_alt_',
+        },
+        supplier_vat: {
+          tax: 19.0,
+          reverse_charge: false,
+          intra_eu: false,
+          active: true,
+        },
+        currency: '_currency_',
+        custom_rates: false,
+        include_time_report: false,
+        billing_notes: '_billing_notes_',
+        default_discount: 0.0,
+        default_cash_discount: 0.0,
+        default_cash_discount_days: 0,
+        country_code: '_country_code_',
+        vat_identifier: '_vat_identifier_',
+        alternative_correspondence_language: true,
+        default_invoice_due_days: 20,
+        footer: '_footer_',
+        projects: [],
+        created_at: '_created_at_',
+        updated_at: '_updated_at_',
+        debit_number: 10000,
+      },
+    ];
+
+    const jsonArray = companies.map((json) => ({ json }));
+    const executionData = jsonArray.map(({ json }) => ({
+      json,
+      pairedItem: { item: 0 },
+    }));
+
+    executeFunctions.getInputData.mockReturnValue([
+      {
+        json: {},
+      },
+    ]);
+
+    executeFunctions.getNodeParameter
+      .calledWith('resource', 0)
+      .mockReturnValue('company');
+
+    executeFunctions.getNodeParameter
+      .calledWith('operation', 0)
+      .mockReturnValue('list');
+
+    executeFunctions.getNodeParameter
+      .calledWith('returnAll', 0)
+      .mockReturnValue(true);
+
+    executeFunctions.getNodeParameter
+      .calledWith('additionalFields', 0)
+      .mockReturnValue({});
+
+    mockedMocoApiRequestAllItems.mockResolvedValue(companies);
+
+    executeFunctions.helpers.returnJsonArray.mockReturnValue(jsonArray);
+
+    executeFunctions.helpers.constructExecutionMetaData.mockReturnValue(
+      executionData,
+    );
+
+    expect(moco.execute.call(executeFunctions)).resolves.toEqual([
+      executionData,
+    ]);
+
+    expect(mockedMocoApiRequestAllItems).toHaveBeenCalledWith(
+      0,
+      'GET',
+      '/companies',
+      {
+        qs: {},
+      },
+    );
+  });
+
+  it('should list some companies', () => {
+    const companies: Company[] = [
+      {
+        id: 1234567,
+        type: 'customer',
+        name: '_name_',
+        website: '_website_',
+        email: '_email_',
+        billing_email_cc: '_billing_email_cc_',
+        phone: '_phone_',
+        fax: '_fax_',
+        address: '_address_',
+        tags: ['_tag1_', '_tag2_'],
+        user: {
+          id: 123456,
+          firstname: '_user_firstname_',
+          lastname: '_user_lastname_',
+        },
+        info: '_info_',
+        custom_properties: {
+          _prop_key_: '_prop_value_',
+        },
+        identifier: '_identifier_',
+        intern: false,
+        billing_tax: 19.0,
+        customer_vat: {
+          tax: 19.0,
+          reverse_charge: false,
+          intra_eu: false,
+          active: true,
+          print_gross_total: false,
+          notice_tax_exemption: '_notice_tax_exemption_',
+          notice_tax_exemption_alt: '_notice_tax_exemption_alt_',
+        },
+        supplier_vat: {
+          tax: 19.0,
+          reverse_charge: false,
+          intra_eu: false,
+          active: true,
+        },
+        currency: '_currency_',
+        custom_rates: false,
+        include_time_report: false,
+        billing_notes: '_billing_notes_',
+        default_discount: 0.0,
+        default_cash_discount: 0.0,
+        default_cash_discount_days: 0,
+        country_code: '_country_code_',
+        vat_identifier: '_vat_identifier_',
+        alternative_correspondence_language: true,
+        default_invoice_due_days: 20,
+        footer: '_footer_',
+        projects: [],
+        created_at: '_created_at_',
+        updated_at: '_updated_at_',
+        debit_number: 10000,
+      },
+      {
+        id: 7654321,
+        type: 'supplier',
+        name: '_name_',
+        website: '_website_',
+        email: '_email_',
+        billing_email_cc: '_billing_email_cc_',
+        phone: '_phone_',
+        fax: '_fax_',
+        address: '_address_',
+        tags: ['_tag1_', '_tag2_'],
+        user: {
+          id: 123456,
+          firstname: '_user_firstname_',
+          lastname: '_user_lastname_',
+        },
+        info: '_info_',
+        custom_properties: {
+          _prop_key_: '_prop_value_',
+        },
+        identifier: '_identifier_',
+        intern: false,
+        billing_tax: 19.0,
+        customer_vat: {
+          tax: 19.0,
+          reverse_charge: false,
+          intra_eu: false,
+          active: true,
+          print_gross_total: false,
+          notice_tax_exemption: '_notice_tax_exemption_',
+          notice_tax_exemption_alt: '_notice_tax_exemption_alt_',
+        },
+        supplier_vat: {
+          tax: 19.0,
+          reverse_charge: false,
+          intra_eu: false,
+          active: true,
+        },
+        currency: '_currency_',
+        custom_rates: false,
+        include_time_report: false,
+        billing_notes: '_billing_notes_',
+        default_discount: 0.0,
+        default_cash_discount: 0.0,
+        default_cash_discount_days: 0,
+        country_code: '_country_code_',
+        vat_identifier: '_vat_identifier_',
+        alternative_correspondence_language: true,
+        default_invoice_due_days: 20,
+        footer: '_footer_',
+        projects: [],
+        created_at: '_created_at_',
+        updated_at: '_updated_at_',
+        debit_number: 10000,
+      },
+    ];
+
+    const jsonArray = companies.map((json) => ({ json }));
+    const executionData = jsonArray.map(({ json }) => ({
+      json,
+      pairedItem: { item: 0 },
+    }));
+
+    executeFunctions.getInputData.mockReturnValue([
+      {
+        json: {},
+      },
+    ]);
+
+    executeFunctions.getNodeParameter
+      .calledWith('resource', 0)
+      .mockReturnValue('company');
+
+    executeFunctions.getNodeParameter
+      .calledWith('operation', 0)
+      .mockReturnValue('list');
+
+    executeFunctions.getNodeParameter
+      .calledWith('returnAll', 0)
+      .mockReturnValue(false);
+
+    executeFunctions.getNodeParameter.calledWith('limit', 0).mockReturnValue(0);
+
+    executeFunctions.getNodeParameter.calledWith('ids', 0).mockReturnValue('');
+
+    executeFunctions.getNodeParameter
+      .calledWith('updatedAfter', 0)
+      .mockReturnValue('');
+
+    executeFunctions.getNodeParameter
+      .calledWith('additionalFields', 0)
+      .mockReturnValue({});
+
+    mockedMocoApiRequestAllItems.mockResolvedValue(companies);
+
+    executeFunctions.helpers.returnJsonArray.mockReturnValue(jsonArray);
+
+    executeFunctions.helpers.constructExecutionMetaData.mockReturnValue(
+      executionData,
+    );
+
+    expect(moco.execute.call(executeFunctions)).resolves.toEqual([
+      executionData,
+    ]);
+
+    expect(mockedMocoApiRequestAllItems).toHaveBeenCalledWith(
+      0,
+      'GET',
+      '/companies',
+      {
+        qs: { limit: undefined, ids: undefined, updated_after: undefined },
+      },
+    );
+  });
+
+  it.each<{ type: CompanyParameters['type']; withCustomProperties: boolean }>([
+    { type: 'customer', withCustomProperties: true },
+    { type: 'customer', withCustomProperties: false },
+    { type: 'supplier', withCustomProperties: true },
+    { type: 'supplier', withCustomProperties: false },
+    { type: 'organization', withCustomProperties: true },
+    { type: 'organization', withCustomProperties: false },
+  ])(
+    'should update a company with type $type and custom properties: $withCustomProperties',
+    ({ type, withCustomProperties }) => {
+      const body: CommonCompanyParameters = {
+        name: '_name_',
+        type,
+        country_code: '_country_code_',
+        vat_identifier: '_vat_identifier_',
+        alternative_correspondence_language: true,
+        website: '_website_',
+        fax: '_fax_',
+        phone: '_phone_',
+        email: '_email_',
+        billing_email_cc: '_billing_email_cc_',
+        address: '_address_',
+        info: '_info_',
+        tags: ['_tag1_', '_tag2_'],
+        footer: '_footer_',
+      };
+
+      if (type === 'customer') {
+        Object.assign<CommonCompanyParameters, CustomerCompanyParameters>(
+          body,
+          {
+            type,
+            currency: '_currency_',
+            identifier: '_identifier_',
+            customer_tax: 19.0,
+            default_invoice_due_days: 20,
+            debit_number: 10000,
+          },
+        );
+      }
+
+      if (type === 'supplier') {
+        Object.assign<CommonCompanyParameters, SupplierCompanyParameters>(
+          body,
+          {
+            type,
+            iban: '_iban_',
+            supplier_tax: 19.0,
+            credit_number: 70000,
+          },
+        );
+      }
+
+      if (withCustomProperties) {
+        Object.assign(body, {
+          custom_properties: {
+            _prop_key_: '_prop_value_',
+          },
+        });
+      }
+
+      const company: Company = {
+        id: 1234567,
+        type: type as 'customer' | 'supplier' | 'organization',
+        name: '_name_',
+        website: '_website_',
+        email: '_email_',
+        billing_email_cc: '_billing_email_cc_',
+        phone: '_phone_',
+        fax: '_fax_',
+        address: '_address_',
+        tags: ['_tag1_', '_tag2_'],
+        user: {
+          id: 123456,
+          firstname: '_user_firstname_',
+          lastname: '_user_lastname_',
+        },
+        info: '_info_',
+        custom_properties: {
+          _prop_key_: '_prop_value_',
+        },
+        identifier: '_identifier_',
+        intern: false,
+        billing_tax: 19.0,
+        customer_vat: {
+          tax: 19.0,
+          reverse_charge: false,
+          intra_eu: false,
+          active: true,
+          print_gross_total: false,
+          notice_tax_exemption: '_notice_tax_exemption_',
+          notice_tax_exemption_alt: '_notice_tax_exemption_alt_',
+        },
+        supplier_vat: {
+          tax: 19.0,
+          reverse_charge: false,
+          intra_eu: false,
+          active: true,
+        },
+        currency: '_currency_',
+        custom_rates: false,
+        include_time_report: false,
+        billing_notes: '_billing_notes_',
+        default_discount: 0.0,
+        default_cash_discount: 0.0,
+        default_cash_discount_days: 0,
+        country_code: '_country_code_',
+        vat_identifier: '_vat_identifier_',
+        alternative_correspondence_language: true,
+        default_invoice_due_days: 20,
+        footer: '_footer_',
+        projects: [],
+        created_at: '_created_at_',
+        updated_at: '_updated_at_',
+        debit_number: 10000,
+      };
+
+      const jsonArray = [{ json: company }];
+      const executionData = jsonArray.map(({ json }) => ({
+        json,
+        pairedItem: { item: 0 },
+      }));
+
+      executeFunctions.getInputData.mockReturnValue([
+        {
+          json: {},
+        },
+      ]);
+
+      const additionalFields = [
+        'countryCode',
+        'vatIdentifier',
+        'alternativeCorrespondenceLanguage',
+        'website',
+        'fax',
+        'phone',
+        'email',
+        'billingEmailCc',
+        'address',
+        'info',
+        'customProperties',
+        'tags',
+        'footer',
+      ];
+
+      const additionalFieldsParameters: {
+        [key in keyof CompanyParameters]?: string | number | boolean | object;
+      } = {
+        country_code: '_country_code_',
+        vat_identifier: '_vat_identifier_',
+        alternative_correspondence_language: true,
+        website: '_website_',
+        fax: '_fax_',
+        phone: '_phone_',
+        email: '_email_',
+        billing_email_cc: '_billing_email_cc_',
+        address: '_address_',
+        info: '_info_',
+        tags: ['_tag1_', '_tag2_'],
+        footer: '_footer_',
+      };
+
+      if (withCustomProperties) {
+        additionalFieldsParameters['custom_properties'] = {
+          values: [
+            {
+              key: '_prop_key_',
+              value: '_prop_value_',
+            },
+          ],
+        };
+      }
+
+      if (type === 'customer') {
+        additionalFields.push(
+          'customerTax',
+          'defaultInvoiceDueDays',
+          'debitNumber',
+        );
+
+        Object.assign(additionalFieldsParameters, {
+          customer_tax: 19.0,
+          default_invoice_due_days: 20,
+          debit_number: 10000,
+        });
+      }
+
+      if (type === 'supplier') {
+        additionalFields.push('iban', 'supplierTax', 'creditNumber');
+
+        Object.assign(additionalFieldsParameters, {
+          iban: '_iban_',
+          supplier_tax: 19.0,
+          credit_number: 70000,
+        });
+      }
+
+      jest
+        .mocked(createParametersFromNodeParameter)
+        .mockReturnValueOnce(additionalFieldsParameters);
+
+      executeFunctions.getNodeParameter
+        .calledWith('resource', 0)
+        .mockReturnValue('company');
+
+      executeFunctions.getNodeParameter
+        .calledWith('operation', 0)
+        .mockReturnValue('update');
+
+      executeFunctions.getNodeParameter
+        .calledWith('name', 0)
+        .mockReturnValue('_name_');
+
+      executeFunctions.getNodeParameter
+        .calledWith('type', 0)
+        .mockReturnValue(type);
+
+      if (type === 'customer') {
+        executeFunctions.getNodeParameter
+          .calledWith('currency', 0)
+          .mockReturnValue('_currency_');
+
+        executeFunctions.getNodeParameter
+          .calledWith('identifier', 0)
+          .mockReturnValue('_identifier_');
+      }
+
+      executeFunctions.getNodeParameter
+        .calledWith('companyId', 0)
+        .mockReturnValue(1234567);
+
+      mockedMocoApiRequest.mockResolvedValue({
+        body: company,
+        statusCode: 200,
+      });
+
+      executeFunctions.helpers.returnJsonArray.mockReturnValue(jsonArray);
+
+      executeFunctions.helpers.constructExecutionMetaData.mockReturnValue(
+        executionData,
+      );
+
+      expect(moco.execute.call(executeFunctions)).resolves.toEqual([
+        executionData,
+      ]);
+
+      expect(mockedMocoApiRequest).toHaveBeenCalledWith(
+        0,
+        'PUT',
+        '/companies/1234567',
+        {
+          body,
+        },
+      );
+
+      expect(createParametersFromNodeParameter).toHaveBeenCalledTimes(1);
+      expect(createParametersFromNodeParameter).toHaveBeenCalledWith(
+        'additionalFields',
+        0,
+        additionalFields,
+      );
+    },
+  );
 
   it('should create a project', () => {
     const body: ProjectParameters = {
