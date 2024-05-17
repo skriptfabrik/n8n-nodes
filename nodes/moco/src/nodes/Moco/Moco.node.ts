@@ -7,12 +7,15 @@ import type {
   INodeType,
   INodeTypeDescription,
   NodeApiError,
+  NodeParameterValue,
 } from 'n8n-workflow';
 import type {
   Activity,
   ActivityParameters,
   ActivityFilters,
   Company,
+  CompanyParameters,
+  CompanyFilters,
   Deal,
   Project,
   ProjectParameters,
@@ -30,6 +33,7 @@ import {
 } from './GenericFunctions';
 import { userFields, userOperations } from './UserDescription';
 import { activityFields, activityOperations } from './ActivityDescription';
+import { companyFields, companyOperations } from './CompanyDescription';
 import { projectFields, projectOperations } from './ProjectDescription';
 
 export class Moco implements INodeType {
@@ -64,6 +68,10 @@ export class Moco implements INodeType {
             value: 'activity',
           },
           {
+            name: 'Company',
+            value: 'company',
+          },
+          {
             name: 'Project',
             value: 'project',
           },
@@ -76,6 +84,8 @@ export class Moco implements INodeType {
       },
       ...activityOperations,
       ...activityFields,
+      ...companyOperations,
+      ...companyFields,
       ...projectOperations,
       ...projectFields,
       ...userOperations,
@@ -390,6 +400,156 @@ export class Moco implements INodeType {
               `/activities/${activityId}`,
               { body },
             )) as User;
+          }
+        }
+
+        if (resource === 'company') {
+          if (operation === 'create' || operation === 'update') {
+            const type = this.getNodeParameter(
+              'type',
+              item,
+            ) as CompanyParameters['type'];
+
+            let typeSpecificParameters = {};
+
+            const additionalFields = [
+              'countryCode',
+              'vatIdentifier',
+              'alternativeCorrespondenceLanguage',
+              'website',
+              'fax',
+              'phone',
+              'email',
+              'billingEmailCc',
+              'address',
+              'info',
+              'customProperties',
+              'tags',
+              'footer',
+            ];
+
+            if (type === 'customer') {
+              typeSpecificParameters = {
+                currency: this.getNodeParameter('currency', item) as string,
+                identifier: this.getNodeParameter('identifier', item) as string,
+              };
+
+              additionalFields.push(
+                'customerTax',
+                'defaultInvoiceDueDays',
+                'debitNumber',
+              );
+            }
+
+            if (type === 'supplier') {
+              additionalFields.push('iban', 'supplierTax', 'creditNumber');
+            }
+
+            const additionalFieldsParameters =
+              createParametersFromNodeParameter.call(
+                this,
+                'additionalFields',
+                item,
+                additionalFields,
+              );
+
+            // Patch custom properties to be in the correct format
+            if (additionalFieldsParameters.custom_properties) {
+              additionalFieldsParameters.custom_properties = (
+                additionalFieldsParameters.custom_properties.values as {
+                  key: string;
+                  value: string;
+                }[]
+              ).reduce<
+                Record<
+                  string,
+                  NodeParameterValue | NodeParameterValue[] | object
+                >
+              >((properties, { key, value }) => {
+                properties[key] = value;
+                return properties;
+              }, {});
+            }
+
+            const body: CompanyParameters = {
+              name: this.getNodeParameter('name', item) as string,
+              type,
+              ...typeSpecificParameters,
+              ...additionalFieldsParameters,
+            };
+
+            let companyId = undefined;
+            if (operation === 'update') {
+              companyId = this.getNodeParameter('companyId', item) as number;
+            }
+
+            responseData = (await mocoApiRequest.call(
+              this,
+              item,
+              operation === 'create' ? 'POST' : 'PUT',
+              operation === 'create' ? '/companies' : `/companies/${companyId}`,
+              {
+                body,
+              },
+            )) as Company;
+          }
+
+          if (operation === 'delete') {
+            const companyId = this.getNodeParameter('companyId', item);
+
+            responseData = (await mocoApiRequest.call(
+              this,
+              item,
+              'DELETE',
+              `/companies/${companyId}`,
+            )) as never;
+          }
+
+          if (operation === 'get') {
+            const companyId = this.getNodeParameter('companyId', item);
+
+            responseData = (await mocoApiRequest.call(
+              this,
+              item,
+              'GET',
+              `/companies/${companyId}`,
+            )) as Company;
+          }
+
+          if (operation === 'list') {
+            const returnAll = this.getNodeParameter('returnAll', item);
+
+            const qs: CompanyFilters = {
+              ...(returnAll
+                ? {}
+                : {
+                    limit:
+                      (this.getNodeParameter('limit', item) as number) ||
+                      undefined,
+                    ids:
+                      (this.getNodeParameter('ids', item) as string) ||
+                      undefined,
+                    updated_after: createUTCStringFromNodeParameter.call(
+                      this,
+                      'updatedAfter',
+                      item,
+                    ),
+                  }),
+              ...createParametersFromNodeParameter.call(
+                this,
+                'additionalFields',
+                item,
+                ['type', 'tags', 'identifier', 'term', 'sortBy'],
+              ),
+            };
+
+            responseData = (await mocoApiRequestAllItems.call(
+              this,
+              item,
+              'GET',
+              '/companies',
+              { qs },
+            )) as Company[];
           }
         }
 

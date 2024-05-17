@@ -43,7 +43,8 @@ After installing the node, you can use it like any other node. n8n displays the 
 It supports these operations:
 
 - Create, delete, get, list and update activities
-- Create, delete, get, list and update project
+- Create, delete, get, list and update companies
+- Create, delete, get, list and update projects
 - Create, delete, get, list and update users
 
 ## Credentials

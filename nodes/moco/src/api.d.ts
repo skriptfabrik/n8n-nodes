@@ -88,7 +88,7 @@ export type Company = {
   };
   info: string;
   custom_properties: {
-    UID: string;
+    [key: string]: string;
   };
   identifier: string;
   intern: boolean;
@@ -130,6 +130,61 @@ export type Company = {
   created_at: string;
   updated_at: string;
   debit_number: number;
+};
+
+export type CustomerCompanyParameters = {
+  type: 'customer';
+  currency: string;
+  identifier: string;
+  customer_tax?: number;
+  default_invoice_due_days?: number;
+  debit_number?: number;
+};
+
+export type SupplierCompanyParameters = {
+  type: 'supplier';
+  iban?: string;
+  supplier_tax?: number;
+  credit_number?: number;
+};
+
+export type OrganizationCompanyParameters = {
+  type: 'organization';
+};
+
+export type CommonCompanyParameters = {
+  name: string;
+  type: 'customer' | 'supplier' | 'organization';
+  country_code?: string;
+  vat_identifier?: string;
+  alternative_correspondence_language?: boolean;
+  website?: string;
+  fax?: string;
+  phone?: string;
+  email?: string;
+  billing_email_cc?: string;
+  address?: string;
+  info?: string;
+  custom_properties?: {
+    [key: string]: string | number | boolean;
+  };
+  tags?: string[];
+  user_id?: number;
+  footer?: string;
+};
+
+export type CompanyParameters = CommonCompanyParameters &
+  (
+    | CustomerCompanyParameters
+    | SupplierCompanyParameters
+    | OrganizationCompanyParameters
+  );
+
+export type CompanyFilters = GlobalFilters & {
+  type?: 'customer' | 'supplier' | 'organization';
+  tags?: string;
+  identifier?: string;
+  term?: string;
 };
 
 export type Deal = {
