@@ -3,6 +3,8 @@ version: 2
 updates:
   - package-ecosystem: 'github-actions'
     directory: '/'
+    reviewers:
+      - 'skriptfabrik/github-actions-maintainers'
     schedule:
       interval: 'weekly'
 
@@ -10,6 +12,8 @@ updates:
     directory: '/'
     ignore:
       - dependency-name: '@types/*'
+    reviewers:
+      - 'skriptfabrik/npm-maintainers'
     schedule:
       interval: 'weekly'
 
@@ -17,6 +21,8 @@ updates:
     directory: '/nodes/barcode'
     ignore:
       - dependency-name: '@types/*'
+    reviewers:
+      - 'skriptfabrik/npm-maintainers'
     schedule:
       interval: 'weekly'
 
@@ -24,6 +30,8 @@ updates:
     directory: '/nodes/channable'
     ignore:
       - dependency-name: '@types/*'
+    reviewers:
+      - 'skriptfabrik/npm-maintainers'
     schedule:
       interval: 'weekly'
 
@@ -31,6 +39,8 @@ updates:
     directory: '/nodes/clockify-enhanced'
     ignore:
       - dependency-name: '@types/*'
+    reviewers:
+      - 'skriptfabrik/npm-maintainers'
     schedule:
       interval: 'weekly'
 
@@ -38,6 +48,8 @@ updates:
     directory: '/nodes/cronhooks'
     ignore:
       - dependency-name: '@types/*'
+    reviewers:
+      - 'skriptfabrik/npm-maintainers'
     schedule:
       interval: 'weekly'
 
@@ -45,6 +57,8 @@ updates:
     directory: '/nodes/fulfillmenttools'
     ignore:
       - dependency-name: '@types/*'
+    reviewers:
+      - 'skriptfabrik/npm-maintainers'
     schedule:
       interval: 'weekly'
 
@@ -52,6 +66,8 @@ updates:
     directory: '/nodes/google-enhanced'
     ignore:
       - dependency-name: '@types/*'
+    reviewers:
+      - 'skriptfabrik/npm-maintainers'
     schedule:
       interval: 'weekly'
 
@@ -59,6 +75,8 @@ updates:
     directory: '/nodes/kaufland-marketplace'
     ignore:
       - dependency-name: '@types/*'
+    reviewers:
+      - 'skriptfabrik/npm-maintainers'
     schedule:
       interval: 'weekly'
 
@@ -66,6 +84,8 @@ updates:
     directory: '/nodes/moco'
     ignore:
       - dependency-name: '@types/*'
+    reviewers:
+      - 'skriptfabrik/npm-maintainers'
     schedule:
       interval: 'weekly'
 
@@ -73,6 +93,8 @@ updates:
     directory: '/nodes/otto-market'
     ignore:
       - dependency-name: '@types/*'
+    reviewers:
+      - 'skriptfabrik/npm-maintainers'
     schedule:
       interval: 'weekly'
 
@@ -80,5 +102,7 @@ updates:
     directory: '/nodes/sentry-io-enhanced'
     ignore:
       - dependency-name: '@types/*'
+    reviewers:
+      - 'skriptfabrik/npm-maintainers'
     schedule:
       interval: 'weekly'
