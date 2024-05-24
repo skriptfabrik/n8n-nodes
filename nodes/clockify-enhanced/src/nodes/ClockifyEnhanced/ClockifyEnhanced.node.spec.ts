@@ -11,6 +11,7 @@ import { ClockifyEnhanced } from './ClockifyEnhanced.node';
 
 import { components } from '../../api';
 
+type Client = components['schemas']['ClientDtoV1'];
 type Project = components['schemas']['ProjectDtoImplV1'];
 type User = components['schemas']['UserDtoV1'];
 type Workspace = components['schemas']['WorkspaceDtoV1'];
@@ -144,6 +145,79 @@ describe('ClockifyEnhanced', () => {
         expect(clockifyApiRequest).toHaveBeenCalledWith('GET', 'workspaces');
       });
     });
+
+    describe('load clients', () => {
+      it('should return on missing workspace id', () => {
+        loadOptionsFunctions.getCurrentNodeParameter
+          .calledWith('workspaceId')
+          .mockReturnValue('');
+
+        jest.mocked(clockifyApiRequestAllItems).mockResolvedValue([]);
+
+        expect(
+          clockifyEnhanced.methods.loadOptions.loadClients.call(
+            loadOptionsFunctions,
+          ),
+        ).resolves.toStrictEqual([]);
+
+        expect(clockifyApiRequestAllItems).not.toHaveBeenCalled();
+      });
+
+      it('should return on empty result', () => {
+        loadOptionsFunctions.getCurrentNodeParameter
+          .calledWith('workspaceId')
+          .mockReturnValue('_workspace_id_');
+
+        jest.mocked(clockifyApiRequestAllItems).mockResolvedValue(undefined);
+
+        expect(
+          clockifyEnhanced.methods.loadOptions.loadClients.call(
+            loadOptionsFunctions,
+          ),
+        ).resolves.toStrictEqual([]);
+
+        expect(clockifyApiRequestAllItems).toHaveBeenCalledTimes(1);
+        expect(clockifyApiRequestAllItems).toHaveBeenCalledWith(
+          'GET',
+          `workspaces/_workspace_id_/clients`,
+        );
+      });
+
+      it('should return mapped clients', () => {
+        const clients: Client[] = [
+          {
+            id: '64a687e29ae1f428e7ebe303',
+            name: 'Client X',
+          },
+          {
+            id: '64a687e29ae1f428e7ebe304',
+            name: 'Client Y',
+          },
+        ];
+
+        loadOptionsFunctions.getCurrentNodeParameter
+          .calledWith('workspaceId')
+          .mockReturnValue('_workspace_id_');
+
+        jest.mocked(clockifyApiRequestAllItems).mockResolvedValue(clients);
+
+        expect(
+          clockifyEnhanced.methods.loadOptions.loadClients.call(
+            loadOptionsFunctions,
+          ),
+        ).resolves.toStrictEqual([
+          { name: 'Client X', value: '64a687e29ae1f428e7ebe303' },
+          { name: 'Client Y', value: '64a687e29ae1f428e7ebe304' },
+        ]);
+
+        expect(clockifyApiRequestAllItems).toHaveBeenCalledTimes(1);
+        expect(clockifyApiRequestAllItems).toHaveBeenCalledWith(
+          'GET',
+          `workspaces/_workspace_id_/clients`,
+        );
+      });
+    });
+
     describe('load projects', () => {
       it('should return on missing workspace id', () => {
         loadOptionsFunctions.getCurrentNodeParameter

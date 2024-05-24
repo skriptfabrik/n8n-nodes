@@ -16,6 +16,9 @@ import {
 
 import { components } from '../../api';
 
+type Client = components['schemas']['ClientDtoV1'] &
+  Required<Pick<components['schemas']['ClientDtoV1'], 'id' | 'name'>>;
+
 type Project = components['schemas']['ProjectDtoV1'] &
   Required<Pick<components['schemas']['ProjectDtoV1'], 'id' | 'name'>>;
 
@@ -125,6 +128,30 @@ export class ClockifyEnhanced implements INodeType {
         return workspaces.map((value) => ({
           name: value.name,
           value: value.id,
+        }));
+      },
+
+      async loadClients(
+        this: ILoadOptionsFunctions,
+      ): Promise<INodePropertyOptions[]> {
+        const workspaceId = this.getCurrentNodeParameter('workspaceId');
+        if (!workspaceId) {
+          return [];
+        }
+
+        const clients: Client[] = await clockifyApiRequestAllItems.call(
+          this,
+          'GET',
+          `workspaces/${workspaceId}/clients`,
+        );
+
+        if (!clients) {
+          return [];
+        }
+
+        return clients.map((client) => ({
+          name: client.name,
+          value: client.id,
         }));
       },
 
