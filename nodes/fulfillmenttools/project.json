@@ -32,10 +32,6 @@
         "command": "node tools/scripts/install.mjs n8n-nodes-fulfillmenttools"
       },
       "dependsOn": ["link"]
-    },
-    "publish": {
-      "command": "node tools/scripts/publish.mjs n8n-nodes-fulfillmenttools {args.ver} {args.tag}",
-      "dependsOn": ["build"]
     }
   },
   "tags": []

@@ -31,10 +31,6 @@
         "command": "node tools/scripts/install.mjs n8n-nodes-otto-market"
       },
       "dependsOn": ["link"]
-    },
-    "publish": {
-      "command": "node tools/scripts/publish.mjs n8n-nodes-otto-market {args.ver} {args.tag}",
-      "dependsOn": ["build"]
     }
   },
   "tags": []
