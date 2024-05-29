@@ -1,54 +1,66 @@
-name: Publish Package
+name: Create Tag and Publish Package
 
 on:
-  push:
-    tags:
-      - 'barcode-*'
-      - 'channable-*'
-      - 'clockify-enhanced-*'
-      - 'cronhooks-*'
-      - 'fulfillmenttools-*'
-      - 'google-enhanced-*'
-      - 'kaufland-marketplace-*'
-      - 'moco-*'
-      - 'otto-market-*'
-      - 'sentry-io-enhanced-*'
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+
+permissions:
+  contents: write
 
 env:
   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   NODE_VERSION: 18.20.2
 
 jobs:
-  publish-package:
-    name: Publish Package
+  tag-and-publish-package:
+    name: Create Tag and Publish Package
     runs-on: ubuntu-latest
+    # Only run this job if an actual publishing should be made
+    if: ${{ (github.event.pull_request.merged == true) &&
+      (startsWith(github.event.pull_request.head.ref, 'release/')) &&
+      (contains(github.event.pull_request.labels.*.name, 'release')) }}
 
     steps:
+      - name: Extract package from head ref
+        id: extract_package
+        # yamllint disable-line rule:line-length
+        run: echo "package=$(echo ${{ github.event.pull_request.head.ref }} | grep -oP '(?<=release/)[^@]+(?=@)')" >> "$GITHUB_OUTPUT"
+
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          filter: 'blob:none'
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Configure git User
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           cache: npm
           node-version: ${{ env.NODE_VERSION }}
-          registry-url: https://registry.npmjs.org
-
-      - name: Restore Node.js modules cache
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-Node-Modules-V1-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-Node-Modules-V1-
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Get tag
-        uses: olegtarasov/get-tag@v2.1.3
-        id: tag
-        with:
-          tagRegex: '(?<name>.*)-(?<version>.*)'
+      - name: Create tag
+        run: |
+          npx nx release version \
+            --projects=${{ steps.extract_package.outputs.package }} \
+            --git-commit=false \
+            --git-tag=true
 
       - name: Publish package
-        run: npx nx publish n8n-nodes-${{ steps.tag.outputs.name }} --ver=${{ steps.tag.outputs.version }} --tag=latest
+        run: |
+          npx nx release publish \
+            --projects=${{ steps.extract_package.outputs.package }}
+
+      - name: Push tags
+        run: git push origin --follow-tags
