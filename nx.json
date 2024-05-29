@@ -1,5 +1,16 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "release": {
+    "projects": ["*", "!n8n-nodes"],
+    "changelog": {
+      "projectChangelogs": true
+    },
+    "projectsRelationship": "independent",
+    "version": {
+      "conventionalCommits": true
+    },
+    "releaseTagPattern": "{projectName}-{version}"
+  },
   "plugins": [
     {
       "plugin": "@nx/eslint/plugin",
