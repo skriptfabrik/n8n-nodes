@@ -1,0 +1,84 @@
+name: Release Package
+
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        type: choice
+        description: package
+        options:
+          - barcode
+          - channable
+          - clockify-enhanced
+          - cronhooks
+          - fulfillmenttools
+          - google-enhanced
+          - kaufland-marketplace
+          - moco
+          - otto-market
+          - sentry-io-enhanced
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  NODE_VERSION: 18.20.2
+
+jobs:
+  release-package:
+    name: Release Package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          filter: 'blob:none'
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Configure git User
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Bump version
+        run: npx nx release version --projects=${{ github.event.inputs.package }}
+
+      - name: Get previous tag
+        id: prev_tag
+        uses: WyriHaximus/github-action-get-previous-tag@v1
+
+      - name: Extract version from tag
+        id: extract_version
+        # yamllint disable-line rule:line-length
+        run: echo "version=$(echo ${{ steps.prev_tag.outputs.tag }} | grep -oP '\d+\.\d+\.\d+(-[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?')" >> "$GITHUB_OUTPUT"
+
+      - name: Create changelog
+        run: |
+          npx nx release changelog ${{ steps.extract_version.outputs.version }} \
+            --projects=${{ github.event.inputs.package }} \
+            --git-commit-message="chore(release): {projectName}-{version}" \
+            --git-tag=false
+
+      - name: Create pull request
+        id: create_pull_request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: release/${{ github.event.inputs.package }}@${{ steps.extract_version.outputs.version }}
+          delete-branch: true
+          title: Release ${{ github.event.inputs.package }}@${{ steps.extract_version.outputs.version }}
+          body: |
+            This is an automated pull request to create a new release of the package ${{ github.event.inputs.package }}.
+          reviewers: ${{ github.actor }}
+          labels: release
