@@ -203,7 +203,7 @@ export class SentryIoEnhanced implements INodeType {
     const executionId = this.getExecutionId();
     const commonExtra = {
       execution_id: executionId,
-      execution_url: `${this.getInstanceBaseUrl()}workflow/${workflow.id}/execution/${executionId}`,
+      execution_url: `${this.getInstanceBaseUrl()}workflow/${workflow.id}/executions/${executionId}`,
       trigger_name: this.getNode().name,
     };
 

@@ -98,7 +98,7 @@ describe('SentryIoEnhanced', () => {
       extra: {
         execution_id: '_execution_id_',
         execution_url:
-          'http://localhost:5678/workflow/_workflow_id_/execution/_execution_id_',
+          'http://localhost:5678/workflow/_workflow_id_/executions/_execution_id_',
         trigger_name: '_node_name_',
         _extra_key_: '_extra_value_',
       },
