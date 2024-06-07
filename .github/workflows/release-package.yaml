@@ -53,7 +53,10 @@ jobs:
         run: npm ci
 
       - name: Bump version
-        run: npx nx release version --projects=${{ github.event.inputs.package }}
+        run: |
+          npx nx release version \
+            --projects=${{ github.event.inputs.package }} \
+            --git-tag=true
 
       - name: Get previous tag
         id: prev_tag
