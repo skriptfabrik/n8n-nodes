@@ -38,7 +38,7 @@ jobs:
             @commitlint/cli@${{ env.COMMITLINT_CLI_VERSION }} \
             @commitlint/config-conventional@${{ env.COMMITLINT_CONFIG_CONVENTIONAL_VERSION }} \
             @commitlint/config-nx-scopes@${{ env.COMMITLINT_CONFIG_NX_SCOPES_VERSION }} \
-            nx@$(npm info nx version)
+            nx@$(jq -r '.packages["node_modules/nx"].version' package-lock.json)
 
       - name: Lint commits
         run: |
