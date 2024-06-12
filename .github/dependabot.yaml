@@ -22,6 +22,7 @@ updates:
   - package-ecosystem: 'npm'
     directory: '/'
     ignore:
+      - dependency-name: '@nx/*'
       - dependency-name: '@types/*'
       - dependency-name: 'n8n-nodes-base'
       - dependency-name: 'n8n-workflow'
