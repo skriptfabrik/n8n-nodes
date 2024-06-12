@@ -1,0 +1,88 @@
+name: Create GitHub Release
+
+on:
+  push:
+    tags:
+      - 'barcode-*'
+      - 'channable-*'
+      - 'clockify-enhanced-*'
+      - 'cronhooks-*'
+      - 'fulfillmenttools-*'
+      - 'google-enhanced-*'
+      - 'kaufland-marketplace-*'
+      - 'moco-*'
+      - 'otto-market-*'
+      - 'sentry-io-enhanced-*'
+
+permissions:
+  contents: write
+
+env:
+  NODE_VERSION: 20.13.1
+
+jobs:
+  create-release:
+    name: Create GitHub release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.ref }}
+
+      - name: Extract package name from tag
+        id: extract_package
+        # yamllint disable-line rule:line-length
+        run: echo "package=$(echo ${{ github.event.ref }} | sed -E 's#refs/tags/([^/]+)-[0-9]+\.[0-9]+\.[0-9]+.*#\1#')" >> "$GITHUB_OUTPUT"
+
+      - name: Extract version from tag
+        id: extract_version
+        # yamllint disable-line rule:line-length
+        run: echo "version=$(echo ${{ github.event.ref }} | sed -E 's#refs/tags/[^/]+-([0-9]+\.[0-9]+\.[0-9]+.*)#\1#')" >> "$GITHUB_OUTPUT"
+
+      - name: Extract Changelog
+        id: changelog
+        uses: yashanand1910/standard-release-notes@v1.5.0
+        with:
+          changelog_path: nodes/${{ steps.extract_package.outputs.package }}/CHANGELOG.md
+          version: ${{ steps.extract_version.outputs.version }}
+
+      - name: Store release notes
+        id: store_release_notes
+        run: |
+          RELEASE_NOTES_FILE=release_notes.txt
+          echo -e "${{ steps.changelog.outputs.release_notes }}" > $RELEASE_NOTES_FILE
+          echo "release_notes_file=$RELEASE_NOTES_FILE" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build package
+        run: npx nx build --project ${{ steps.extract_package.outputs.package }}
+
+      - name: Zip package
+        # yamllint disable-line rule:line-length
+        run: zip -9 -r -q ${{ steps.extract_package.outputs.package }}-${{ steps.extract_version.outputs.version }}.zip dist/nodes/${{ steps.extract_package.outputs.package }}/
+
+      - name: Tar package
+        # yamllint disable-line rule:line-length
+        run: tar --create --file ${{ steps.extract_package.outputs.package }}-${{steps.extract_version.outputs.version }}.tar.gz --gzip dist/nodes/${{ steps.extract_package.outputs.package }}/
+
+      - name: Create GitHub release
+        run: |
+          gh release create \
+            ${{ steps.extract_package.outputs.package }}-${{ steps.extract_version.outputs.version }} \
+            ${{ steps.extract_package.outputs.package }}-${{ steps.extract_version.outputs.version }}.zip \
+            ${{ steps.extract_package.outputs.package }}-${{ steps.extract_version.outputs.version }}.tar.gz \
+            --notes-file ${{ steps.store_release_notes.outputs.release_notes_file }} \
+            --title "${{ steps.extract_package.outputs.package }} ${{ steps.extract_version.outputs.version }}" \
+            --verify-tag
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
