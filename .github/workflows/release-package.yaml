@@ -38,10 +38,27 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
+      - name: Check on existing release branch
+        # yamllint disable rule:line-length
+        run: |
+          if git ls-remote --heads origin | grep "refs/heads/release-${{ github.event.inputs.package }}@*"; then
+            echo "::error ::Release branch already exists for package: \"${{ github.event.inputs.package }}\" please remove or merge branch before executing again."
+            exit 1
+          fi
+        # yamllint enable rule:line-length
+
       - name: Configure git User
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+      - name: Retrieve short commit hash
+        id: short_commit_hash
+        run: echo "short_commit_hash=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Switch to release branch
+        # yamllint disable-line rule:line-length
+        run: git switch --force-create release-${{ github.event.inputs.package }}@${{ steps.short_commit_hash.outputs.short_commit_hash }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -52,36 +69,26 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Bump version
+      - name: Bump version and create changelog
         run: |
-          npx nx release version \
+          npx nx release \
             --projects=${{ github.event.inputs.package }} \
-            --git-tag=true
+            --skip-publish
 
-      - name: Get previous tag
-        id: prev_tag
-        uses: WyriHaximus/github-action-get-previous-tag@v1
-
-      - name: Extract version from tag
-        id: extract_version
+      - name: Push changes
         # yamllint disable-line rule:line-length
-        run: echo "version=$(echo ${{ steps.prev_tag.outputs.tag }} | grep -oP '\d+\.\d+\.\d+(-[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?')" >> "$GITHUB_OUTPUT"
-
-      - name: Create changelog
-        run: |
-          npx nx release changelog ${{ steps.extract_version.outputs.version }} \
-            --projects=${{ github.event.inputs.package }} \
-            --git-commit-message="chore(release): {projectName}-{version}" \
-            --git-tag=false
+        run: git push origin release-${{ github.event.inputs.package }}@${{ steps.short_commit_hash.outputs.short_commit_hash }}
 
       - name: Create pull request
-        id: create_pull_request
-        uses: peter-evans/create-pull-request@v6
-        with:
-          branch: release/${{ github.event.inputs.package }}@${{ steps.extract_version.outputs.version }}
-          delete-branch: true
-          title: Release ${{ github.event.inputs.package }}@${{ steps.extract_version.outputs.version }}
-          body: |
-            This is an automated pull request to create a new release of the package ${{ github.event.inputs.package }}.
-          reviewers: ${{ github.actor }}
-          labels: release
+        # yamllint disable rule:line-length
+        run: |
+          gh pr create \
+            --base main \
+            --body "This is an automated pull request to create a new release of the package ${{ github.event.inputs.package }}." \
+            --head release-${{ github.event.inputs.package }}@${{ steps.short_commit_hash.outputs.short_commit_hash }} \
+            --label release \
+            --reviewer ${{ github.actor }} \
+            --title "Release ${{ github.event.inputs.package }}"
+        # yamllint enable rule:line-length
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
