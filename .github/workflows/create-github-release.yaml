@@ -1,18 +1,11 @@
 name: Create GitHub Release
 
 on:
-  push:
-    tags:
-      - 'barcode-*'
-      - 'channable-*'
-      - 'clockify-enhanced-*'
-      - 'cronhooks-*'
-      - 'fulfillmenttools-*'
-      - 'google-enhanced-*'
-      - 'kaufland-marketplace-*'
-      - 'moco-*'
-      - 'otto-market-*'
-      - 'sentry-io-enhanced-*'
+  workflow_run:
+    workflows:
+      - Create Tag and Publish Package
+    types:
+      - completed
 
 permissions:
   contents: write
@@ -22,24 +15,29 @@ env:
 
 jobs:
   create-release:
-    name: Create GitHub release
+    name: Create GitHub Release
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.ref }}
+          fetch-tags: true
+
+      - name: Get latest tag
+        id: latest_tag
+        run: echo "tag=$(git describe --tags --abbrev=0 ${{ github.ref }})" >> "$GITHUB_OUTPUT"
 
       - name: Extract package name from tag
         id: extract_package
         # yamllint disable-line rule:line-length
-        run: echo "package=$(echo ${{ github.event.ref }} | sed -E 's#refs/tags/([^/]+)-[0-9]+\.[0-9]+\.[0-9]+.*#\1#')" >> "$GITHUB_OUTPUT"
+        run: echo "package=$(echo ${{ steps.latest_tag.outputs.tag }} | sed -E 's#([^/]+)-[0-9]+\.[0-9]+\.[0-9]+.*#\1#')" >> "$GITHUB_OUTPUT"
 
       - name: Extract version from tag
         id: extract_version
         # yamllint disable-line rule:line-length
-        run: echo "version=$(echo ${{ github.event.ref }} | sed -E 's#refs/tags/[^/]+-([0-9]+\.[0-9]+\.[0-9]+.*)#\1#')" >> "$GITHUB_OUTPUT"
+        run: echo "version=$(echo ${{ steps.latest_tag.outputs.tag }} | sed -E 's#[^/]+-([0-9]+\.[0-9]+\.[0-9]+.*)#\1#')" >> "$GITHUB_OUTPUT"
 
       - name: Extract Changelog
         id: changelog
