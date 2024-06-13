@@ -20,14 +20,14 @@ jobs:
     runs-on: ubuntu-latest
     # Only run this job if an actual publishing should be made
     if: ${{ (github.event.pull_request.merged == true) &&
-      (startsWith(github.event.pull_request.head.ref, 'release/')) &&
+      (startsWith(github.event.pull_request.head.ref, 'release-')) &&
       (contains(github.event.pull_request.labels.*.name, 'release')) }}
 
     steps:
       - name: Extract package from head ref
         id: extract_package
         # yamllint disable-line rule:line-length
-        run: echo "package=$(echo ${{ github.event.pull_request.head.ref }} | grep -oP '(?<=release/)[^@]+(?=@)')" >> "$GITHUB_OUTPUT"
+        run: echo "package=$(echo ${{ github.event.pull_request.head.ref }} | sed -E 's/release-(.*)@.*/\1/')" >> "$GITHUB_OUTPUT"
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -50,17 +50,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Create tag
-        run: |
-          npx nx release version \
-            --projects=${{ steps.extract_package.outputs.package }} \
-            --git-commit=false \
-            --git-tag=true
-
-      - name: Publish package
-        run: |
-          npx nx release publish \
-            --projects=${{ steps.extract_package.outputs.package }}
+      - name: Create tag and publish package
+        run: npx nx release --projects=${{ steps.extract_package.outputs.package }}
 
       - name: Push tags
         run: git push origin --follow-tags
