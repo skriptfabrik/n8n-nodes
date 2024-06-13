@@ -21,6 +21,10 @@ updates:
 
   - package-ecosystem: 'npm'
     directory: '/'
+    groups:
+      '@typescript-eslint':
+        patterns:
+          - '@typescript-eslint/*'
     ignore:
       - dependency-name: '@nx/*'
       - dependency-name: '@types/*'
