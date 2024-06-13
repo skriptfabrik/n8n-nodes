@@ -7,7 +7,10 @@
     },
     "projectsRelationship": "independent",
     "version": {
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "generatorOptions": {
+        "skipLockFileUpdate": true
+      }
     },
     "releaseTagPattern": "{projectName}-{version}"
   },
