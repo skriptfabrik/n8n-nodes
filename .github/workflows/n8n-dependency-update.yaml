@@ -1,0 +1,284 @@
+name: n8n Dependency Update
+
+on:
+  workflow_call:
+    inputs:
+      pull_request_ref:
+        required: true
+        type: string
+
+env:
+  YQ_VERSION: v4.44.1
+
+jobs:
+  update-node-version:
+    name: Update Node.js Version
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.pull_request_ref }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Retrieve target versions
+        id: target-versions
+        # yamllint disable rule:line-length
+        run: |
+          set -e
+          n8n_version=$(npm list n8n --json | jq --raw-output --exit-status '.dependencies.n8n.version')
+          node_version=$(docker run --rm --entrypoint node n8nio/n8n:${n8n_version} --version | sed 's/^v//')
+          node_types_version=$(npm show @types/node versions --json | jq --raw-output --arg node_version "${node_version}" 'map(select(. <= $node_version)) | map(split(".") | map(tonumber)) | max_by(.) | join(".")')
+          echo "node_version=${node_version}" >> "$GITHUB_OUTPUT"
+          echo "node_types_version=${node_types_version}" >> "$GITHUB_OUTPUT"
+        # yamllint enable rule:line-length
+
+      - name: Setup YQ
+        uses: chrisdickinson/setup-yq@v1.0.1
+        with:
+          yq-version: ${{ env.YQ_VERSION }}
+
+      - name: Update node version in devcontainer.json
+        # yamllint disable-line rule:line-length
+        run: yq --inplace --exit-status '.features."ghcr.io/devcontainers/features/node:1".version = "${{steps.target-versions.outputs.node_version}}"' .devcontainer/devcontainer.json
+
+      - name: Commit node version update in devcontainer.json
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          # yamllint disable-line rule:line-length
+          commit_message: 'chore: bump node version in devcontainer to ${{steps.target-versions.outputs.node_version}}'
+          skip_dirty_check: false
+
+      - name: Update @types/node
+        run: |
+          npm install @types/node@~${{ steps.target-versions.outputs.node_types_version }} \
+            --save-dev
+
+      - name: Commit @types/node update
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          # yamllint disable-line rule:line-length
+          commit_message: 'chore: bump @types/node version to ${{ steps.target-versions.outputs.node_types_version }}'
+          skip_dirty_check: false
+
+  update-n8n-dependencies-in-root:
+    name: Update n8n Dependencies in Root
+    needs: update-node-version
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.pull_request_ref }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Retrieve target versions
+        id: target-versions
+        # yamllint disable rule:line-length
+        run: |
+          set -e
+          n8n_nodes_base_version=$(npm list n8n-nodes-base --json --depth 1 | jq --raw-output --exit-status '.dependencies.n8n.dependencies."n8n-nodes-base".version')
+          n8n_workflow_version=$(npm list n8n-workflow --json --depth 1 | jq --raw-output --exit-status '.dependencies.n8n.dependencies."n8n-workflow".version')
+          echo "n8n_nodes_base_version=${n8n_nodes_base_version}" >> "$GITHUB_OUTPUT"
+          echo "n8n_workflow_version=${n8n_workflow_version}" >> "$GITHUB_OUTPUT"
+        # yamllint enable rule:line-length
+
+      - name: Update n8n-nodes-base
+        # yamllint disable rule:line-length
+        run: |
+          npm install n8n-nodes-base@${{ steps.target-versions.outputs.n8n_nodes_base_version }} \
+            --save-dev \
+            --save-exact
+        # yamllint enable rule:line-length
+
+      - name: Commit n8n-nodes-base update
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          # yamllint disable-line rule:line-length
+          commit_message: 'chore: bump n8n-nodes-base version to ${{ steps.target-versions.outputs.n8n_nodes_base_version }}'
+          skip_dirty_check: false
+
+      - name: Update n8n-workflow
+        # yamllint disable rule:line-length
+        run: |
+          npm install n8n-workflow@${{ steps.target-versions.outputs.n8n_workflow_version }} \
+            --save-dev \
+            --save-exact
+        # yamllint enable rule:line-length
+
+      - name: Commit n8n-workflow update
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          # yamllint disable-line rule:line-length
+          commit_message: 'chore: bump n8n-workflow version to ${{ steps.target-versions.outputs.n8n_workflow_version }}'
+
+  update-n8n-versions-in-packages:
+    name: Update n8n Dependencies in Packages
+    needs: update-n8n-dependencies-in-root
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        package:
+          - name: barcode
+            json: nodes/barcode/package.json
+          - name: channable
+            json: nodes/channable/package.json
+          - name: clockify-enhanced
+            json: nodes/clockify-enhanced/package.json
+          - name: cronhooks
+            json: nodes/cronhooks/package.json
+          - name: fulfillmenttools
+            json: nodes/fulfillmenttools/package.json
+          - name: google-enhanced
+            json: nodes/google-enhanced/package.json
+          - name: kaufland-marketplace
+            json: nodes/kaufland-marketplace/package.json
+          - name: moco
+            json: nodes/moco/package.json
+          - name: otto-market
+            json: nodes/otto-market/package.json
+          - name: sentry-io-enhanced
+            json: nodes/sentry-io-enhanced/package.json
+      max-parallel: 1
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.pull_request_ref }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Retrieve target versions
+        id: target-versions
+        # yamllint disable rule:line-length
+        run: |
+          set -e
+          n8n_nodes_base_version=$(npm list n8n-nodes-base --json --depth 1 | jq --raw-output --exit-status '.dependencies.n8n.dependencies."n8n-nodes-base".version')
+          n8n_workflow_version=$(npm list n8n-workflow --json --depth 1 | jq --raw-output --exit-status '.dependencies.n8n.dependencies."n8n-workflow".version')
+          echo "n8n_nodes_base_version=${n8n_nodes_base_version}" >> "$GITHUB_OUTPUT"
+          echo "n8n_workflow_version=${n8n_workflow_version}" >> "$GITHUB_OUTPUT"
+        # yamllint enable rule:line-length
+
+      - name: Setup YQ
+        uses: chrisdickinson/setup-yq@v1.0.1
+        with:
+          yq-version: ${{ env.YQ_VERSION }}
+
+      - name: Update n8n-nodes-base version
+        # yamllint disable-line rule:line-length
+        run: yq --inplace --exit-status '.peerDependencies.n8n-nodes-base = "${{ steps.target-versions.outputs.n8n_nodes_base_version }}"' ${{ matrix.package.json }}
+
+      - name: Commit n8n-nodes-base version update
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          # yamllint disable-line rule:line-length
+          commit_message: 'fix(${{matrix.package.name}}): bump n8n-nodes-base version to ${{ steps.target-versions.outputs.n8n_nodes_base_version }}'
+          skip_dirty_check: false
+
+      - name: Update n8n-workflow version
+        # yamllint disable-line rule:line-length
+        run: yq --inplace --exit-status '.peerDependencies.n8n-workflow = "${{ steps.target-versions.outputs.n8n_workflow_version }}"' ${{ matrix.package.json }}
+
+      - name: Commit n8n-workflow version update
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          # yamllint disable-line rule:line-length
+          commit_message: 'fix(${{matrix.package.name}}): bump n8n-workflow version to ${{ steps.target-versions.outputs.n8n_workflow_version }}'
+          skip_dirty_check: false
+
+  verify-workflow-node-version:
+    name: Verify matching version for GitHub Workflow Node.js
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.pull_request_ref }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Retrieve target versions
+        id: target-versions
+        run: |
+          set -e
+          n8n_version=$(npm list n8n --json | jq --raw-output --exit-status '.dependencies.n8n.version')
+          node_version=$(docker run --rm --entrypoint node n8nio/n8n:${n8n_version} --version | sed 's/^v//')
+          echo "node_version=${node_version}" >> "$GITHUB_OUTPUT"
+
+      - name: Setup YQ
+        uses: chrisdickinson/setup-yq@v1.0.1
+        with:
+          yq-version: ${{ env.YQ_VERSION }}
+
+      - name: Check Node.js version
+        id: check_node_version
+        # yamllint disable rule:line-length
+        run: |
+          workflow_file_urls=()
+
+          for workflow_file in ".github/workflows/"*.yaml; do
+            node_version=$(yq eval '.env.NODE_VERSION' "$workflow_file")
+            if [ "${node_version}" = "null" ] || [ "${node_version}" = "${{ steps.target-versions.outputs.node_version }}" ] ; then
+              continue;
+            fi
+
+            line_number=$(yq eval '.env.NODE_VERSION | line' "$workflow_file")
+
+            url="[${workflow_file}](${{ github.server_url }}/${{ github.repository }}/blob/main/${workflow_file}#L${line_number})"
+
+            workflow_file_urls+=("$url")
+          done
+
+          if [ ${#workflow_file_urls[@]} -gt 0 ]; then
+            echo "workflow_file_urls=${workflow_file_urls[*]}" >> "$GITHUB_OUTPUT"
+          fi
+        # yamllint enable rule:line-length
+
+      - name: Request changes on PR
+        if: steps.check_node_version.outputs.workflow_file_urls
+        # yamllint disable rule:line-length
+        run: |
+          # Split the output by spaces into an array
+          IFS=' ' read -r -a files_array <<< "${{ steps.check_node_version.outputs.workflow_file_urls }}"
+
+          files_with_newlines=$(printf -- '- %s\n' "${files_array[@]}")
+
+          body=$(printf "The following Workflows have a different NODE_VERSION:\n%s\n\nPlease update the Node.js version to **${{ steps.target-versions.outputs.node_version }}**." "${files_with_newlines}")
+
+          gh pr review ${{ github.event.pull_request.number }} \
+            --request-changes \
+            --body "${body}"
+        # yamllint enable rule:line-length
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
