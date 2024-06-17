@@ -51,7 +51,10 @@ jobs:
         run: npm ci
 
       - name: Create tag and publish package
-        run: npx nx release --projects=${{ steps.extract_package.outputs.package }}
+        run: |
+          npx nx release \
+            --projects=${{ steps.extract_package.outputs.package }} \
+            --yes
 
       - name: Push tags
         run: git push origin --follow-tags
