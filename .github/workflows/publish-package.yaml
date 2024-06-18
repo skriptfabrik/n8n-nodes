@@ -11,7 +11,6 @@ permissions:
   contents: write
 
 env:
-  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   NODE_VERSION: 20.13.1
 
 jobs:
@@ -56,6 +55,8 @@ jobs:
           npx nx release \
             --projects=${{ steps.extract_package.outputs.package }} \
             --yes
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Push tags
         run: git push origin --follow-tags
