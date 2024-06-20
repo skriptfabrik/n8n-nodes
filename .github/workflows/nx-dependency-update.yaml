@@ -1,0 +1,60 @@
+name: nx Dependency Update
+
+on:
+  workflow_call:
+    inputs:
+      pull_request_ref:
+        required: true
+        type: string
+
+jobs:
+  update-nx-dependencies:
+    name: Update nx dependencies and apply migrations
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.pull_request_ref }}
+
+      - name: Setup git user
+        uses: fregante/setup-git-user@v2
+
+      - name: Fetch dependabot metadata
+        id: dependabot-metadata
+        uses: dependabot/fetch-metadata@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Migrate nx
+        run: |
+          npx nx migrate ${{ steps.dependabot-metadata.outputs.new-version }} \
+            --from nx@${{ steps.dependabot-metadata.outputs.previous-version }}
+
+      - name: Install updated depenencies
+        run: npm install
+
+      - name: Commit changes to package(-lock).json
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          # yamllint disable-line rule:line-length
+          commit_message: 'chore: bump nx dependencies to ${{ steps.dependabot-metadata.outputs.new-version }}'
+          file_pattern: 'package.json package-lock.json'
+          push_options: --dry-run
+          skip_fetch: true
+          skip_checkout: true
+
+      - name: Execute migrations
+        run: npx nx migrate --run-migrations --if-exists --create-commits
+        env:
+          npm_config_legacy_peer_deps: false
+
+      - name: Push changes
+        run: git push origin HEAD:${{ inputs.pull_request_ref }}
