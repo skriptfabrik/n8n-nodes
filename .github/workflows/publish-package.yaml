@@ -35,10 +35,8 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
-      - name: Configure git User
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - name: Setup git user
+        uses: fregante/setup-git-user@v2
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
