@@ -47,10 +47,8 @@ jobs:
           fi
         # yamllint enable rule:line-length
 
-      - name: Configure git User
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - name: Setup git user
+        uses: fregante/setup-git-user@v2
 
       - name: Retrieve short commit hash
         id: short_commit_hash
