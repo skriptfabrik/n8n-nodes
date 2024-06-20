@@ -5,7 +5,6 @@ export default {
   },
   parserPreset: {
     parserOpts: {
-      headerPattern: /^(\w*)(?:\(([\w\$\.\-\* ]*)\))?\: (.*) \(N8N-[0-9]+\)$/,
       issuePrefixes: ['N8N-'],
     },
   },
