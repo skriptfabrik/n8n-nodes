@@ -5,338 +5,1187 @@
 
 export interface paths {
   '/v1/file/image': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     /** Add photo */
     post: operations['uploadImage'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/user': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get currently logged-in user's info */
     get: operations['getLoggedUser'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get all my workspaces */
     get: operations['getWorkspacesOfUser'];
+    put?: never;
     /** Add workspace */
     post: operations['createWorkspace'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get workspace info */
     get: operations['getWorkspaceOfUser'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/addons/{addonId}/webhooks': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get all webhooks for addon on workspace */
     get: operations['getAddonWebhooks'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/approval-requests': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get approval requests */
     get: operations['getApprovalGroups'];
+    put?: never;
     /** Submit approval request */
     post: operations['createApprrovalRequest'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/approval-requests/users/{userId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     /** Submit approval request for user */
     post: operations['createApprovalForOther'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/approval-requests/{approvalRequestId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
     /** Update approval request */
     patch: operations['updateApprovalStatus'];
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/clients': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Find clients on workspace */
     get: operations['getClients'];
+    put?: never;
     /** Add a new client */
     post: operations['createClient'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/clients/{id}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get client by ID */
     get: operations['getClient'];
     /** Update client */
     put: operations['updateClient'];
+    post?: never;
     /** Delete client */
     delete: operations['deleteClient'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/cost-rate': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
     /** Update workspace cost rate */
     put: operations['setWorkspaceCostRate'];
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/custom-fields': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get custom fields on workspace */
     get: operations['ofWorkspace'];
+    put?: never;
+    /** Create custom fields on workspace */
+    post: operations['create'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/custom-fields/{customFieldId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
     /** Set custom field as required */
     put: operations['editCustomField'];
+    post?: never;
+    /** Delete custom field */
+    delete: operations['delete'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/expenses': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get all expenses on workspace */
     get: operations['getExpenses'];
+    put?: never;
     /** Create expense */
     post: operations['createExpense'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/expenses/categories': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get all expense categories */
     get: operations['getCategories'];
+    put?: never;
     /** Add expense category */
     post: operations['createExpenseCategory'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/expenses/categories/{categoryId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
     /** Update expense category */
     put: operations['updateCategory'];
+    post?: never;
     /** Delete expense category */
     delete: operations['deleteCategory'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/expenses/categories/{categoryId}/status': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
     /** Archive expense category */
     patch: operations['updateExpenseCategoryStatus'];
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/expenses/{expenseId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get expense by ID */
     get: operations['getExpense'];
     /** Update expense */
     put: operations['updateExpense'];
+    post?: never;
     /** Delete expense */
     delete: operations['deleteExpense'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/expenses/{expenseId}/files/{fileId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Download receipt */
     get: operations['downloadFile'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/holidays': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get holidays on workspace */
     get: operations['getHolidays'];
+    put?: never;
     /** Create holiday */
     post: operations['createHoliday'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/holidays/in-period': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get holiday in specific period */
     get: operations['getHolidaysInPeriod'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/holidays/{holidayId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
     /** Update holiday */
     put: operations['updateHoliday'];
+    post?: never;
     /** Delete holiday */
     delete: operations['deleteHoliday'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/hourly-rate': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
     /** Update workspace billable rate */
     put: operations['setWorkspaceHourlyRate'];
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/invoices': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get all invoices on workspace */
     get: operations['getInvoices'];
+    put?: never;
     /** Add invoice */
     post: operations['createInvoice'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/invoices/info': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     /** Filter out invoices */
     post: operations['getInvoicesInfo'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/invoices/settings': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get invoice in another language */
     get: operations['getInvoiceSettings'];
     /** Change invoice language */
     put: operations['updateInvoiceSettings'];
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/invoices/{invoiceId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get invoice by ID */
     get: operations['getInvoice'];
     /** Send invoice */
     put: operations['updateInvoice'];
+    post?: never;
     /** Delete invoice */
     delete: operations['deleteInvoice'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/invoices/{invoiceId}/duplicate': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     /** Duplicate invoice */
     post: operations['duplicateInvoice'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/invoices/{invoiceId}/export': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Export invoice */
     get: operations['exportInvoice'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/invoices/{invoiceId}/payments': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get payments for invoice */
     get: operations['getPaymentsForInvoice'];
+    put?: never;
     /** Add payment to invoice */
     post: operations['createInvoicePayment'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/invoices/{invoiceId}/payments/{paymentId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post?: never;
     /** Delete payment from invoice */
     delete: operations['deletePaymentById'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/invoices/{invoiceId}/status': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
     /** Change invoice status */
     patch: operations['changeInvoiceStatus'];
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/member-profile/{userId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get member's profile */
     get: operations['getMemberProfile'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
     /** Update member's profile */
     patch: operations['updateMemberProfileWithAdditionalData'];
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/member-profile/{userId}/email': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
     /** Update user's email */
     put: operations['changeUserMemberEmail'];
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/projects': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get all projects on workspace */
     get: operations['getProjects'];
+    put?: never;
     /** Add a new project */
     post: operations['createNewProject'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/projects/{projectId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Find project by ID */
     get: operations['getProject'];
     /** Update project on workspace */
     put: operations['updateProject'];
+    post?: never;
     /** Delete project from workspace */
     delete: operations['deleteProject'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/projects/{projectId}/custom-fields': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get custom fields on project */
     get: operations['getCustomFieldsOfProject'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/projects/{projectId}/custom-fields/{customFieldId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post?: never;
     /** Remove custom field from project */
     delete: operations['removeDefaultValueOfProject'];
+    options?: never;
+    head?: never;
     /** Update custom field on project */
     patch: operations['editProjectCustomFieldDefaultValue'];
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/projects/{projectId}/estimate': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
     /** Update project estimate */
     patch: operations['updateEstimate'];
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/projects/{projectId}/memberships': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     /** Assign/remove users to/from the project */
     post: operations['addUsersToProject'];
+    delete?: never;
+    options?: never;
+    head?: never;
     /** Update project memberships */
     patch: operations['updateMemberships'];
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/projects/{projectId}/tasks': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Find tasks on project */
     get: operations['getTasks'];
+    put?: never;
     /** Add a new task on project */
     post: operations['createTask'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/projects/{projectId}/tasks/{id}/cost-rate': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
     /** Update task cost rate */
     put: operations['setTaskCostRate'];
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/projects/{projectId}/tasks/{id}/hourly-rate': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
     /** Update task billable rate */
     put: operations['setTaskHourlyRate'];
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/projects/{projectId}/tasks/{taskId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get task by id */
     get: operations['getTask'];
     /** Update task on project */
     put: operations['updateTask'];
+    post?: never;
     /** Delete task from project */
     delete: operations['deleteTask'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/projects/{projectId}/template': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
     /** Update project template */
     patch: operations['updateIsProjectTemplate'];
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/projects/{projectId}/users/{userId}/cost-rate': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
     /** Update project user cost rate */
     put: operations['addUsersCostRate'];
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/projects/{projectId}/users/{userId}/hourly-rate': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
     /** Update project user billable rate */
     put: operations['addUsersHourlyRate'];
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/scheduling/assignments/all': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get all assignments */
     get: operations['getAllAssignments'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/scheduling/assignments/projects/totals': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get all scheduled assignments per project */
     get: operations['getProjectTotals'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/scheduling/assignments/projects/totals/{projectId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get all scheduled assignments on project */
     get: operations['getProjectTotalsForSingleProject'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/scheduling/assignments/publish': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
     /** Publish assignments */
     put: operations['publishAssignments'];
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/scheduling/assignments/recurring': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     /** Create recurring assignment */
     post: operations['createRecurring'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/scheduling/assignments/recurring/{assignmentId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post?: never;
     /** Delete recurring assignment */
     delete: operations['deleteRRecurringAssignment'];
+    options?: never;
+    head?: never;
     /** Update recurring assignment */
     patch: operations['editRecurring'];
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/scheduling/assignments/series/{assignmentId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
     /** Change recurring period */
     put: operations['editRecurringPeriod'];
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/scheduling/assignments/user-filter/totals': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     /** Get total of users' capacity on workspace */
     post: operations['getUserTotals'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/scheduling/assignments/users/{userId}/totals': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get total capacity of a user */
     get: operations['getUserTotalsForSingleUser'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/scheduling/assignments/{assignmentId}/copy': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     /** Copy scheduled assignment */
     post: operations['copyAssignment'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/tags': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Find tags on workspace */
     get: operations['getTags'];
+    put?: never;
     /** Add a new tag */
     post: operations['createNewTag'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/tags/{id}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get tag by ID */
     get: operations['getTag'];
     /** Update tag */
     put: operations['updateTag'];
+    post?: never;
     /** Delete tag */
     delete: operations['deleteTag'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/time-entries': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     /** Add a new time entry */
     post: operations['createTimeEntry'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/time-entries/invoiced': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
     /** Mark time entries as invoiced */
     patch: operations['updateInvoicedStatus'];
+    trace?: never;
+  };
+  '/v1/workspaces/{workspaceId}/time-entries/status/in-progress': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    /** Get all in progress time entries on workspace */
+    get: operations['getInProgressTimeEntries'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/time-entries/{id}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get a specific time entry on workspace */
     get: operations['getTimeEntry'];
     /** Update time entry on workspace */
     put: operations['updateTimeEntry'];
+    post?: never;
     /** Delete time entry from workspace */
     delete: operations['deleteTimeEntry'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/user-groups': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Find all groups on workspace */
     get: operations['getUserGroups'];
+    put?: never;
     /** Add a new group */
     post: operations['createUserGroup'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/user-groups/{id}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
     /** Update group */
     put: operations['updateUserGroup'];
+    post?: never;
     /** Delete group */
     delete: operations['deleteUserGroup'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/user-groups/{userGroupId}/users': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     /** Add users to group */
     post: operations['addUser'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/user-groups/{userGroupId}/users/{userId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post?: never;
     /** Remove user from group */
     delete: operations['deleteUser'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/user/{userId}/time-entries': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get time entries for a user on workspace */
     get: operations['getTimeEntries'];
     /** Bulk edit time entries */
@@ -345,194 +1194,558 @@ export interface paths {
     post: operations['createForOthers'];
     /** Delete all time entries for user on workspace */
     delete: operations['deleteMany'];
+    options?: never;
+    head?: never;
     /** Stop currently running timer on workspace for user */
     patch: operations['stopRunningTimeEntry'];
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/user/{userId}/time-entries/{id}/duplicate': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     /** Duplicate time entry */
     post: operations['duplicateTimeEntry'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/users': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Find all users on workspace */
     get: operations['getUsersOfWorkspace'];
+    put?: never;
     /**
      * Add user
      * @description You can add users to a workspace via API only if that workspace has a paid subscription. If the workspace has a paid subscription, you can add as many users as you want but you are limited by the number of paid user seats on that workspace.
      */
     post: operations['addUsers'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/users/info': {
-    /** Filter workspace users */
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /**  Filter workspace users */
     post: operations['filterUsersOfWorkspace'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/users/{userId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
     /** Update user's status */
     put: operations['updateUserStatus'];
+    post?: never;
     /** Remove user from workspace */
     delete: operations['removeMember'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/users/{userId}/cost-rate': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
     /** Update user's cost rate */
     put: operations['setCostRateForUser'];
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/users/{userId}/custom-field/{customFieldId}/value': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
     /** Update user's custom field */
     put: operations['upsertUserCustomFieldValue'];
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/users/{userId}/hourly-rate': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
     /** Update user's hourly rate */
     put: operations['setHourlyRateForUser'];
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/users/{userId}/managers': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Find user's team manager */
     get: operations['getManagersOfUser'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/users/{userId}/roles': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     /** Give user manager role */
     post: operations['createUserRole'];
     /** Remove user's manager role */
     delete: operations['deleteUserRole'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/webhooks': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get all webhooks on workspace */
     get: operations['getWebhooks'];
+    put?: never;
     /**
      * Create webhooks
      * @description Creating a webhook generates a new token which can be used to verify that the webhook being sent was sent by Clockify, as it will always be present in the header.
      */
     post: operations['createWebhook'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/webhooks/{webhookId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get a specific webhook by id */
     get: operations['getWebhook'];
     /** Update a webhook */
     put: operations['updateWebhook'];
+    post?: never;
     /** Delete webhook */
     delete: operations['deleteWebhook'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/webhooks/{webhookId}/logs': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     /** Get logs for a webhook */
     post: operations['getLogsForWebhook'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/webhooks/{webhookId}/token': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
     /**
      * Generate new token
      * @description Generates a new webhook token and invalidates previous one
      */
     patch: operations['generateNewToken'];
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/balance/policy/{policyId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get balance by policy */
     get: operations['getBalancesForPolicy'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
     /** Update balance */
     patch: operations['updateBalancesForUsers'];
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/balance/user/{userId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get balance by user */
     get: operations['getBalancesForUser'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/policies': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get policies on workspace */
     get: operations['findPoliciesForWorkspace'];
+    put?: never;
     /** Create time off policy */
     post: operations['createPolicy'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/policies/{id}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /** Get time off policy */
     get: operations['getPolicy'];
     /** Update policy */
     put: operations['updatePolicy'];
+    post?: never;
     /** Delete policy */
     delete: operations['deletePolicy'];
+    options?: never;
+    head?: never;
     /** Change policy status */
     patch: operations['updatePolicyStatus'];
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/policies/{policyId}/requests': {
-    /** Create time off request (for day policies) */
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /** Create time off request */
     post: operations['createTimeOffRequest'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/policies/{policyId}/requests/{requestId}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    post?: never;
     /** Delete request */
     delete: operations['deleteTimeOffRequest'];
+    options?: never;
+    head?: never;
     /** Change time off request status */
     patch: operations['changeTimeOffRequestStatus'];
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/policies/{policyId}/users/{userId}/requests': {
-    /** Create time off request */
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /** Create time off request for user */
     post: operations['createTimeOffRequestForOther'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/requests': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     /** Get all time off requests on workspace */
     post: operations['getTimeOffRequests'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/shared-reports/{id}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /**
      * Generate shared report by ID
      * @description Response depends on report type and export type. Given example is for SUMMARY report and JSON exportType.
      *
-     * Shared report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
+     *     Shared report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
      */
     get: operations['generateSharedReportV1'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/reports/attendance': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     /** Generate attendance report */
     post: operations['generateAttendanceReport'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/reports/detailed': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     /**
      * Detailed report
      * @description Detailed report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
      */
     post: operations['generateDetailedReport'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/reports/expenses/detailed': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     /**
      * Generate expense report
      * @description Expense report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
      */
     post: operations['generateDetailedReportV1'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/reports/summary': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     /**
      * Summary report
      * @description Summary report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
      */
     post: operations['generateSummaryReport'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/reports/weekly': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
     /**
      * Weekly report
      * @description Weekly report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
      */
     post: operations['generateWeeklyReport'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/shared-reports': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     /**
      * Get all my shared reports
      * @description Gets all shared reports for current user on given workspace
      */
     get: operations['getSharedReportsV1'];
+    put?: never;
     /**
      * Create shared report
      * @description Saves shared report with name, options and report filter.
      *
-     * Shared report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
+     *     Shared report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
      */
     post: operations['saveSharedReportV1'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
   '/v1/workspaces/{workspaceId}/shared-reports/{id}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
     /**
      * Update shared report
      * @description Updates shared report name and/or options
      */
     put: operations['updateSharedReportV1'];
+    post?: never;
     /** Delete shared report */
     delete: operations['deleteSharedReportV1'];
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
   };
 }
-
 export type webhooks = Record<string, never>;
-
 export interface components {
   schemas: {
     /**
@@ -557,8 +1770,18 @@ export interface components {
       email: string;
     };
     AddUsersToProjectRequestV1: {
-      /** @default false */
-      remove?: boolean;
+      /**
+       * @description Setting this flag to 'true' will remove the given users from the project.
+       * @default false
+       */
+      remove: boolean;
+      /**
+       * @description Represents array of user ids which should be added/removed.
+       * @example [
+       *       "45b687e29ae1f428e7ebe123",
+       *       "67s687e29ae1f428e7ebe678"
+       *     ]
+       */
       userIds?: string[];
     };
     ApprovalDetailsDtoV1: {
@@ -711,17 +1934,51 @@ export interface components {
       updatedByUserName?: string;
     };
     AssignmentCreateRequestV1: {
+      /** @description Indicates whether assignment is billable or not. */
       billable?: boolean;
+      /**
+       * @description Represents end date in yyyy-MM-ddThh:mm:ssZ format.
+       * @example 2021-01-01T00:00:00Z
+       */
       end: string;
-      /** Format: double */
+      /**
+       * Format: double
+       * @description Represents assignment total hours per day.
+       * @example 7.5
+       */
       hoursPerDay?: number;
+      /** @description Indicates whether to include non-working days or not. */
       includeNonWorkingDays?: boolean;
+      /**
+       * @description Represents assignment note.
+       * @example This is a sample note for an assignment.
+       */
       note?: string;
+      /**
+       * @description Represents project identifier across the system.
+       * @example 56b687e29ae1f428e7ebe504
+       */
       projectId: string;
-      recurring?: components['schemas']['RecurringAssignmentRequestV1'];
+      recurringAssignment?: components['schemas']['RecurringAssignmentRequestV1'];
+      /**
+       * @description Represents start date in yyyy-MM-ddThh:mm:ssZ format.
+       * @example 2020-01-01T00:00:00Z
+       */
       start: string;
+      /**
+       * @description Represents start time in hh:mm:ss format.
+       * @example 10:00:00
+       */
       startTime?: string;
+      /**
+       * @description Represents task identifier across the system.
+       * @example 56b687e29ae1f428e7ebe505
+       */
       taskId?: string;
+      /**
+       * @description Represents user identifier across the system.
+       * @example 72k687e29ae1f428e7ebe109
+       */
       userId: string;
     };
     AssignmentDtoV1: {
@@ -867,7 +2124,6 @@ export interface components {
        * @example This is a sample note for an assignment.
        */
       note?: string;
-      period?: components['schemas']['DateRange'];
       /**
        * @description Valid series option
        * @example THIS_ONE
@@ -959,6 +2215,12 @@ export interface components {
     };
     AutomaticTimeEntryCreationDto: {
       defaultEntities?: components['schemas']['DefaultEntitiesDto'];
+      enabled?: boolean;
+    };
+    /** @description Provides automatic time entry creation settings. */
+    AutomaticTimeEntryCreationRequest: {
+      defaultEntities: components['schemas']['DefaultEntitiesRequest'];
+      /** @description Indicates that automatic time entry creation is enabled. */
       enabled?: boolean;
     };
     ChangeEmailRequest: {
@@ -1065,9 +2327,10 @@ export interface components {
        */
       workspaceId?: string;
     };
+    /** @description Represents a client filter object. If provided, you'll get a filtered list of invoices that matches the specified client filter. */
     ContainsClientsFilterRequest: {
       /**
-       * @description Filter type
+       * @description Filter type.
        * @example CONTAINS
        * @enum {string}
        */
@@ -1075,20 +2338,22 @@ export interface components {
       /**
        * @description Represents a list of filter identifiers.
        * @example [
-       *   "5a0ab5acb07987125438b60f",
-       *   "64c777ddd3fcab07cfbb210c"
-       * ]
+       *       "5a0ab5acb07987125438b60f",
+       *       "64c777ddd3fcab07cfbb210c"
+       *     ]
        */
       ids?: string[];
       /**
-       * @description Represents a filter for status.
+       * @description Filters entities by status.
        * @example ACTIVE
+       * @enum {string}
        */
-      status?: string;
+      status?: 'PENDING' | 'ACTIVE' | 'DECLINED' | 'INACTIVE' | 'ALL';
     };
+    /** @description Represents a company filter object. If provided, you'll get a filtered list of invoices that matches the specified company filter. */
     ContainsCompaniesFilterRequest: {
       /**
-       * @description Filter type
+       * @description Filter type.
        * @example CONTAINS
        * @enum {string}
        */
@@ -1096,42 +2361,22 @@ export interface components {
       /**
        * @description Represents a list of filter identifiers.
        * @example [
-       *   "5a0ab5acb07987125438b60f",
-       *   "64c777ddd3fcab07cfbb210c"
-       * ]
+       *       "5a0ab5acb07987125438b60f",
+       *       "64c777ddd3fcab07cfbb210c"
+       *     ]
        */
       ids?: string[];
       /**
-       * @description Represents a filter for status.
+       * @description Filters entities by status.
        * @example ACTIVE
+       * @enum {string}
        */
-      status?: string;
+      status?: 'PENDING' | 'ACTIVE' | 'DECLINED' | 'INACTIVE' | 'ALL';
     };
     /** @description Provide list with user group ids and corresponding status. */
-    ContainsFilter: {
-      /**
-       * @example CONTAINS
-       * @enum {string}
-       */
-      contains?: 'CONTAINS' | 'DOES_NOT_CONTAIN';
-      /**
-       * @description Represents ids upon which filtering is performed.
-       * @example [
-       *   "5b715612b079875110791111",
-       *   "5b715612b079875110791222"
-       * ]
-       */
-      ids?: string[];
-      /**
-       * @description Represents user status.
-       * @example ALL
-       * @enum {string}
-       */
-      status?: 'ALL' | 'ACTIVE' | 'INACTIVE';
-    };
     ContainsUserGroupFilterRequest: {
       /**
-       * @description Filter type
+       * @description Filter type.
        * @example CONTAINS
        * @enum {string}
        */
@@ -1139,21 +2384,22 @@ export interface components {
       /**
        * @description Represents a list of filter identifiers.
        * @example [
-       *   "5a0ab5acb07987125438b60f",
-       *   "64c777ddd3fcab07cfbb210c"
-       * ]
+       *       "5a0ab5acb07987125438b60f",
+       *       "64c777ddd3fcab07cfbb210c"
+       *     ]
        */
       ids?: string[];
       /**
-       * @description Represents a filter for status.
+       * @description Filters entities by status.
        * @example ACTIVE
+       * @enum {string}
        */
-      status?: string;
+      status?: 'PENDING' | 'ACTIVE' | 'DECLINED' | 'INACTIVE' | 'ALL';
     };
     /** @description Represents a user group filter request object. */
     ContainsUserGroupFilterRequestV1: {
       /**
-       * @description Filter type
+       * @description Filter type.
        * @example CONTAINS
        * @enum {string}
        */
@@ -1161,46 +2407,22 @@ export interface components {
       /**
        * @description Represents a list of filter identifiers.
        * @example [
-       *   "5a0ab5acb07987125438b60f",
-       *   "64c777ddd3fcab07cfbb210c"
-       * ]
+       *       "5a0ab5acb07987125438b60f",
+       *       "64c777ddd3fcab07cfbb210c"
+       *     ]
        */
       ids?: string[];
       /**
-       * @description Represents a filter for status.
+       * @description Filters entities by status.
        * @example ACTIVE
-       */
-      status?: string;
-    };
-    ContainsUsersFilterRequest: {
-      archivedFilterValue?: boolean;
-      /**
-       * @description Filter type
-       * @example CONTAINS
        * @enum {string}
        */
-      contains?: 'CONTAINS' | 'DOES_NOT_CONTAIN' | 'CONTAINS_ONLY';
-      /**
-       * @description Represents a list of filter identifiers.
-       * @example [
-       *   "5a0ab5acb07987125438b60f",
-       *   "64c777ddd3fcab07cfbb210c"
-       * ]
-       */
-      ids?: string[];
-      /** @enum {string} */
-      sourceType?: 'USER_GROUP';
-      /**
-       * @description Represents a filter for status.
-       * @example ACTIVE
-       */
-      status?: string;
-      statuses?: ('PENDING' | 'ACTIVE' | 'DECLINED' | 'INACTIVE' | 'ALL')[];
+      status?: 'PENDING' | 'ACTIVE' | 'DECLINED' | 'INACTIVE' | 'ALL';
     };
     /** @description Provide list with users ids and corresponding status. */
     ContainsUsersFilterRequestForHoliday: {
       /**
-       * @description Filter type
+       * @description Filter type.
        * @example CONTAINS
        * @enum {string}
        */
@@ -1208,22 +2430,23 @@ export interface components {
       /**
        * @description Represents a list of filter identifiers.
        * @example [
-       *   "5a0ab5acb07987125438b60f",
-       *   "64c777ddd3fcab07cfbb210c"
-       * ]
+       *       "5a0ab5acb07987125438b60f",
+       *       "64c777ddd3fcab07cfbb210c"
+       *     ]
        */
       ids?: string[];
       /**
-       * @description Represents a filter for status.
+       * @description Filters entities by status.
        * @example ACTIVE
+       * @enum {string}
        */
-      status?: string;
+      status?: 'PENDING' | 'ACTIVE' | 'DECLINED' | 'INACTIVE' | 'ALL';
       statuses?: string[];
     };
     /** @description Represents a user filter request object. */
     ContainsUsersFilterRequestV1: {
       /**
-       * @description Filter type
+       * @description Filter type.
        * @example CONTAINS
        * @enum {string}
        */
@@ -1231,31 +2454,35 @@ export interface components {
       /**
        * @description Represents a list of filter identifiers.
        * @example [
-       *   "5a0ab5acb07987125438b60f",
-       *   "64c777ddd3fcab07cfbb210c"
-       * ]
+       *       "5a0ab5acb07987125438b60f",
+       *       "64c777ddd3fcab07cfbb210c"
+       *     ]
        */
       ids?: string[];
       /**
-       * @description Valid authorization source type
+       * @description Valid authorization source type.
        * @example USER_GROUP
        * @enum {string}
        */
       sourceType?: 'USER_GROUP';
       /**
-       * @description Represents a filter for status.
+       * @description Filters entities by status.
        * @example ACTIVE
+       * @enum {string}
        */
-      status?: string;
+      status?: 'PENDING' | 'ACTIVE' | 'DECLINED' | 'INACTIVE' | 'ALL';
       /**
-       * @description Valid array of membership status. Possible values: PENDING, ACTIVE, DECLINED, INACTIVE, ALL
-       * @example PENDING
+       * @description Valid array of membership statuses.
+       * @example [
+       *       "PENDING",
+       *       "INACTIVE"
+       *     ]
        */
       statuses?: ('PENDING' | 'ACTIVE' | 'DECLINED' | 'INACTIVE' | 'ALL')[];
     };
     CopyAssignmentRequestV1: {
       /**
-       * @description Represents a series option enum.
+       * @description Represents series update option.
        * @example THIS_ONE
        * @enum {string}
        */
@@ -1290,19 +2517,23 @@ export interface components {
        */
       amount?: number;
       /**
-       * @description Represents a datetime in yyyy-MM-ddThh:mm:ssZ format.
+       * @description Represents a date and time in yyyy-MM-ddThh:mm:ssZ format.
        * @example 2020-01-01T00:00:00Z
        */
       since?: string;
     };
     CreateApprovalRequest: {
       /**
-       * @description Specifies the approval period.
+       * @description Specifies the approval period. It has to match the workspace approval period setting.
        * @example MONTHLY
        * @enum {string}
        */
       period?: 'WEEKLY' | 'SEMI_MONTHLY' | 'MONTHLY';
-      periodStart?: string;
+      /**
+       * @description Specifies an approval period start date in yyyy-MM-ddThh:mm:ssZ format.
+       * @example 2020-01-01T00:00:00.000Z
+       */
+      periodStart: string;
     };
     CreateClientRequestV1: {
       /**
@@ -1326,6 +2557,7 @@ export interface components {
        */
       note?: string;
     };
+    /** @description Represents a list of create custom field request objects. */
     CreateCustomAttributeRequest: {
       /**
        * @description Represents custom attribute name.
@@ -1349,7 +2581,7 @@ export interface components {
        * @description Represents expense amount as double data type.
        * @example 99.5
        */
-      amount?: number;
+      amount: number;
       /** @description Indicates whether expense is billable or not. */
       billable?: boolean;
       /**
@@ -1382,6 +2614,7 @@ export interface components {
       userId: string;
     };
     CreateHolidayRequestV1: {
+      automaticTimeEntryCreation?: components['schemas']['AutomaticTimeEntryCreationRequest'];
       /**
        * @description Provide color in format ^#(?:[0-9a-fA-F]{6}){1}$. Explanation: A valid color code should start with '#' and consist of six hexadecimal characters, representing a color in hexadecimal format. Color value is in standard RGB hexadecimal format.
        * @example #8BC34A
@@ -1403,8 +2636,8 @@ export interface components {
        * @example true
        */
       occursAnnually?: boolean;
-      userGroups?: components['schemas']['ContainsFilter'];
-      users?: components['schemas']['ContainsFilter'];
+      userGroups?: components['schemas']['UserGroupIdsSchema'];
+      users?: components['schemas']['UserIdsSchema'];
     };
     CreateInvoiceDtoV1: {
       /**
@@ -1495,7 +2728,9 @@ export interface components {
     CreateTimeEntryRequest: {
       /** @description Indicates whether a time entry is billable or not. */
       billable?: boolean;
+      /** @description Represents a list of create custom field request objects. */
       customAttributes?: components['schemas']['CreateCustomAttributeRequest'][];
+      /** @description Represents a list of value objects for user’s custom fields. */
       customFields?: components['schemas']['UpdateCustomFieldRequest'][];
       /**
        * @description Represents time entry description.
@@ -1522,9 +2757,9 @@ export interface components {
       /**
        * @description Represents a list of tag ids.
        * @example [
-       *   "321r77ddd3fcab07cfbb567y",
-       *   "44x777ddd3fcab07cfbb88f"
-       * ]
+       *       "321r77ddd3fcab07cfbb567y",
+       *       "44x777ddd3fcab07cfbb88f"
+       *     ]
        */
       tagIds?: string[];
       /**
@@ -1533,10 +2768,10 @@ export interface components {
        */
       taskId?: string;
       /**
-       * @description Valid time entry type
+       * @description Valid time entry type.
        * @enum {string}
        */
-      type?: 'REGULAR' | 'BREAK' | 'HOLIDAY' | 'TIME_OFF';
+      type?: 'REGULAR' | 'BREAK';
     };
     CreateWebhookRequestV1: {
       /**
@@ -1547,13 +2782,13 @@ export interface components {
       /**
        * @description Represents a list of trigger sources.
        * @example [
-       *   "54a687e29ae1f428e7ebe909",
-       *   "87p187e29ae1f428e7ebej56"
-       * ]
+       *       "54a687e29ae1f428e7ebe909",
+       *       "87p187e29ae1f428e7ebej56"
+       *     ]
        */
       triggerSource: string[];
       /**
-       * @description Represents a webhook event trigger source type enum.
+       * @description Represents a webhook event trigger source type.
        * @example PROJECT_ID
        * @enum {string}
        */
@@ -1568,36 +2803,39 @@ export interface components {
         | 'ASSIGNMENT_ID'
         | 'EXPENSE_ID';
       /**
-       * @description Represents workspace identifier across the system.
+       * @description Represents webhook target url.
        * @example https://example-clockify.com/stripeEndpoint
        */
       url: string;
-      /** @enum {string} */
+      /**
+       * @description Represents webhook event type.
+       * @enum {string}
+       */
       webhookEvent:
-        | 'APPROVAL_REQUEST_STATUS_UPDATED'
-        | 'BALANCE_UPDATED'
+        | 'NEW_PROJECT'
+        | 'NEW_TASK'
+        | 'NEW_CLIENT'
+        | 'NEW_TIMER_STARTED'
+        | 'TIMER_STOPPED'
+        | 'TIME_ENTRY_UPDATED'
+        | 'TIME_ENTRY_DELETED'
+        | 'NEW_TIME_ENTRY'
+        | 'NEW_TAG'
+        | 'USER_DELETED_FROM_WORKSPACE'
+        | 'USER_JOINED_WORKSPACE'
+        | 'USER_DEACTIVATED_ON_WORKSPACE'
+        | 'USER_ACTIVATED_ON_WORKSPACE'
+        | 'USER_EMAIL_CHANGED'
+        | 'USER_UPDATED'
+        | 'NEW_INVOICE'
         | 'INVOICE_UPDATED'
         | 'NEW_APPROVAL_REQUEST'
-        | 'NEW_CLIENT'
-        | 'NEW_INVOICE'
-        | 'NEW_PROJECT'
-        | 'NEW_TAG'
-        | 'NEW_TASK'
-        | 'NEW_TIME_ENTRY'
-        | 'NEW_TIMER_STARTED'
-        | 'TIME_ENTRY_DELETED'
-        | 'TIME_ENTRY_UPDATED'
+        | 'APPROVAL_REQUEST_STATUS_UPDATED'
+        | 'TIME_OFF_REQUESTED'
         | 'TIME_OFF_REQUEST_APPROVED'
         | 'TIME_OFF_REQUEST_REJECTED'
         | 'TIME_OFF_REQUEST_WITHDRAWN'
-        | 'TIME_OFF_REQUESTED'
-        | 'TIMER_STOPPED'
-        | 'USER_ACTIVATED_ON_WORKSPACE'
-        | 'USER_DEACTIVATED_ON_WORKSPACE'
-        | 'USER_DELETED_FROM_WORKSPACE'
-        | 'USER_EMAIL_CHANGED'
-        | 'USER_JOINED_WORKSPACE'
-        | 'USER_UPDATED';
+        | 'BALANCE_UPDATED';
     };
     /** @description Represents currency with default info object. */
     CurrencyWithDefaultInfoDtoV1: {
@@ -1639,12 +2877,12 @@ export interface components {
       /**
        * @description Represents a list of custom field's allowed values.
        * @example [
-       *   "NA",
-       *   "White",
-       *   "Black",
-       *   "Asian",
-       *   "Hispanic"
-       * ]
+       *       "NA",
+       *       "White",
+       *       "Black",
+       *       "Asian",
+       *       "Hispanic"
+       *     ]
        */
       allowedValues?: string[];
       /**
@@ -1712,6 +2950,24 @@ export interface components {
        */
       status?: 'INACTIVE' | 'VISIBLE' | 'INVISIBLE';
     };
+    CustomFieldRequestV1: {
+      allowedValues?: string[];
+      description?: string;
+      entityType?: string;
+      name: string;
+      onlyAdminCanEdit?: boolean;
+      placeholder?: string;
+      /** @enum {string} */
+      type:
+        | 'TXT'
+        | 'NUMBER'
+        | 'DROPDOWN_SINGLE'
+        | 'DROPDOWN_MULTIPLE'
+        | 'CHECKBOX'
+        | 'LINK';
+      /** @description <li>if type = NUMBER, then value must be a number</li><li>if type = DROPDOWN_MULTIPLE, value must be a list</li><li>if type = CHECKBOX, value must be true/false</li><li>otherwise any string</li> */
+      workspaceDefaultValue?: Record<string, never>;
+    };
     /**
      * @description Represents custom field type.
      * @example TXT
@@ -1731,7 +2987,7 @@ export interface components {
        */
       customFieldId?: string;
       /**
-       * @description Represents a custom field value source type enum.
+       * @description Represents a custom field value source type.
        * @example WORKSPACE
        * @enum {string}
        */
@@ -1747,6 +3003,7 @@ export interface components {
        */
       value?: Record<string, never>;
     };
+    /** @description Represents a list of custom field value objects. */
     CustomFieldValueDtoV1: {
       /**
        * @description Represents custom field identifier across the system.
@@ -1794,12 +3051,6 @@ export interface components {
        */
       startDate: string;
     };
-    DateRange: {
-      /** Format: date-time */
-      end?: string;
-      /** Format: date-time */
-      start?: string;
-    };
     /** @description Represents a date range object. */
     DateRangeDto: {
       /** Format: date-time */
@@ -1809,6 +3060,13 @@ export interface components {
     };
     DefaultEntitiesDto: {
       projectId?: string;
+      taskId?: string;
+    };
+    /** @description Provides information about default project and task for automatically created time entries. */
+    DefaultEntitiesRequest: {
+      /** @description Default project for automatically created time entries */
+      projectId?: string;
+      /** @description Default task for automatically created time entries */
       taskId?: string;
     };
     /** @description Represents project estimate object. */
@@ -1828,7 +3086,7 @@ export interface components {
     /** @description Represents an estimate request object. */
     EstimateRequest: {
       /**
-       * @description Represents a time duration.
+       * @description Represents a time duration in ISO-8601 format.
        * @example PT1H30M
        */
       estimate?: {
@@ -1916,8 +3174,8 @@ export interface components {
         | 'SUNDAY';
       /**
        * Format: int32
-       * @description Represents an hour of the day in 24-hhour time format.
-       * @example 12
+       * @description Represents an hour of the day in 24 hour time format.
+       * @example 15
        */
       hour?: number;
       /**
@@ -1971,6 +3229,7 @@ export interface components {
     };
     /** @description Represents estimate with options request object. */
     EstimateWithOptionsRequest: {
+      /** @description Flag whether to set estimate as active or not. */
       active?: boolean;
       /**
        * Format: int64
@@ -1978,9 +3237,8 @@ export interface components {
        * @example 10000
        */
       estimate?: number;
-      includeExpenses?: boolean;
       /** @description Flag whether to include billable expenses. */
-      includesBillableExpenses?: boolean;
+      includeExpenses?: boolean;
       /**
        * @description Represents a reset option enum.
        * @example MONTHLY
@@ -2026,7 +3284,7 @@ export interface components {
       name?: string;
       /**
        * Format: int32
-       * @description Represents price in centavos as integer.
+       * @description Represents price in cents as integer.
        * @example 1000
        */
       priceInCents?: number;
@@ -2058,7 +3316,7 @@ export interface components {
       name?: string;
       /**
        * Format: int32
-       * @description Represents price in centavos as integer.
+       * @description Represents price in cents as integer.
        * @example 1000
        */
       priceInCents?: number;
@@ -2074,6 +3332,7 @@ export interface components {
       workspaceId?: string;
     };
     ExpenseCategoryV1Request: {
+      /** @description Flag whether expense category has unit price or none. */
       hasUnitPrice?: boolean;
       /**
        * @description Represents a valid expense category name.
@@ -2082,7 +3341,7 @@ export interface components {
       name: string;
       /**
        * Format: int32
-       * @description Represents price in centavos as integer.
+       * @description Represents price in cents as integer.
        * @example 1000
        */
       priceInCents?: number;
@@ -2320,11 +3579,11 @@ export interface components {
     /**
      * @description Represents a list of features.
      * @example [
-     *   "ADD_TIME_FOR_OTHERS",
-     *   "ADMIN_PANEL",
-     *   "ALERTS",
-     *   "APPROVAL"
-     * ]
+     *       "ADD_TIME_FOR_OTHERS",
+     *       "ADMIN_PANEL",
+     *       "ALERTS",
+     *       "APPROVAL"
+     *     ]
      */
     Feature:
       | 'ADD_TIME_FOR_OTHERS'
@@ -2382,9 +3641,10 @@ export interface components {
       | 'FORECASTING'
       | 'TIME_TRACKING'
       | 'ATTENDANCE_REPORT'
-      | 'CLIENT_CURRENCY'
       | 'WORKSPACE_TRANSFER'
-      | 'FAVORITE_ENTRIES';
+      | 'FAVORITE_ENTRIES'
+      | 'SPLIT_TIME_ENTRY'
+      | 'CLIENT_CURRENCY';
     /**
      * @description Represents a feature subscription type enum.
      * @example PREMIUM
@@ -2446,9 +3706,10 @@ export interface components {
         | 'FORECASTING'
         | 'TIME_TRACKING'
         | 'ATTENDANCE_REPORT'
-        | 'CLIENT_CURRENCY'
         | 'WORKSPACE_TRANSFER'
         | 'FAVORITE_ENTRIES'
+        | 'SPLIT_TIME_ENTRY'
+        | 'CLIENT_CURRENCY'
       )[];
       legacy?: boolean;
       regionalAllowed?: boolean;
@@ -2484,22 +3745,18 @@ export interface components {
       end: string;
       /**
        * Format: int32
-       * @description page
+       * @description Page number.
        * @example 1
        */
       page?: number;
-      /** Format: int32 */
-      'page-size'?: number;
       /**
        * Format: int32
-       * @description page size
+       * @description Page size.
        * @example 50
        */
       pageSize?: number;
-      regularUserFilter?: components['schemas']['ContainsUsersFilterRequest'];
-      regularUserGroupFilter?: components['schemas']['ContainsUserGroupFilterRequest'];
       /**
-       * @description Represents search keyword
+       * @description Represents keyword for searching users by name or email.
        * @example keyword
        */
       search?: string;
@@ -2514,6 +3771,14 @@ export interface components {
     };
     GetUsersRequestV1: {
       /**
+       * @description If provided, you'll get a filtered list of users with the corresponding account status filter. If not, this will only filter ACTIVE, PENDING_EMAIL_VERIFICATION, and NOT_REGISTERED Users.
+       * @example [
+       *       "LIMITED",
+       *       "ACTIVE"
+       *     ]
+       */
+      accountStatuses?: string[];
+      /**
        * @description If provided, you'll get a filtered list of users that contain the provided string in their email address.
        * @example mail@example.com
        */
@@ -2521,10 +3786,12 @@ export interface components {
       /** @description If you pass along includeRoles=true, you'll get each user's detailed manager role (including projects and members for whom they're managers) */
       includeRoles?: boolean;
       /**
-       * @description If provided, you'll get all users along with what workspaces, groups, or projects they have access to. Possible values: WORKSPACE, PROJECT, USERGROUP, NONE (default), ALL (only get basic data about users on the workpace)
+       * @description If provided, you'll get all users along with workspaces, groups, or projects they have access to.
+       * @default NONE
        * @example NONE
+       * @enum {string}
        */
-      memberships?: string;
+      memberships: 'ALL' | 'NONE' | 'WORKSPACE' | 'PROJECT' | 'USERGROUP';
       /**
        * @description If provided, you'll get a filtered list of users that contain the provided string in their name.
        * @example John
@@ -2532,13 +3799,13 @@ export interface components {
       name?: string;
       /**
        * Format: int32
-       * @description page
+       * @description Page number.
        * @example 1
        */
       page?: number;
       /**
        * Format: int32
-       * @description page size
+       * @description Page size.
        * @example 50
        */
       pageSize?: number;
@@ -2550,9 +3817,9 @@ export interface components {
       /**
        * @description If provided, you'll get a filtered list of users that have any of the specified roles. Owners are counted as admins when filtering.
        * @example [
-       *   "WORKSPACE_ADMIN",
-       *   "OWNER"
-       * ]
+       *       "WORKSPACE_ADMIN",
+       *       "OWNER"
+       *     ]
        */
       roles?: (
         | 'WORKSPACE_ADMIN'
@@ -2588,9 +3855,9 @@ export interface components {
       /**
        * @description If provided, you'll get a list of users that belong to the specified user group IDs.
        * @example [
-       *   "5a0ab5acb07987125438b60f",
-       *   "72wab5acb07987125438b564"
-       * ]
+       *       "5a0ab5acb07987125438b60f",
+       *       "72wab5acb07987125438b564"
+       *     ]
        */
       userGroups?: string[];
     };
@@ -2625,18 +3892,18 @@ export interface components {
       /**
        * @description Indicates which user groups are included.
        * @example [
-       *   "5b715612b079875110791342",
-       *   "5b715612b079875110791324",
-       *   "5b715612b079875110793142"
-       * ]
+       *       "5b715612b079875110791342",
+       *       "5b715612b079875110791324",
+       *       "5b715612b079875110793142"
+       *     ]
        */
       userGroupIds?: string[];
       /**
        * @description Indicates which users are included.
        * @example [
-       *   "5b715612b079875110791432",
-       *   "5b715612b079875110791234"
-       * ]
+       *       "5b715612b079875110791432",
+       *       "5b715612b079875110791234"
+       *     ]
        */
       userIds?: string[];
       /**
@@ -2646,6 +3913,11 @@ export interface components {
       workspaceId?: string;
     };
     HolidayDtoV1: {
+      /**
+       * @description Indicates that time entries will be automatically created for this holiday.
+       * @example false
+       */
+      automaticTimeEntryCreation?: boolean;
       datePeriod?: components['schemas']['DatePeriod'];
       /**
        * @description Indicates whether the holiday is shown to new users.
@@ -2680,18 +3952,18 @@ export interface components {
       /**
        * @description Indicates which user groups are included.
        * @example [
-       *   "5b715612b079875110791342",
-       *   "5b715612b079875110791324",
-       *   "5b715612b079875110793142"
-       * ]
+       *       "5b715612b079875110791342",
+       *       "5b715612b079875110791324",
+       *       "5b715612b079875110793142"
+       *     ]
        */
       userGroupIds?: string[];
       /**
        * @description Indicates which users are included.
        * @example [
-       *   "5b715612b079875110791432",
-       *   "5b715612b079875110791234"
-       * ]
+       *       "5b715612b079875110791432",
+       *       "5b715612b079875110791234"
+       *     ]
        */
       userIds?: string[];
       /**
@@ -2731,12 +4003,12 @@ export interface components {
     HourlyRateRequestV1: {
       /**
        * Format: int32
-       * @description Represents a cost rate amount as integer.
+       * @description Represents an hourly rate amount as integer.
        * @example 20000
        */
       amount: number;
       /**
-       * @description Represents a datetime in yyyy-MM-ddThh:mm:ssZ format.
+       * @description Represents a date and time in yyyy-MM-ddThh:mm:ssZ format.
        * @example 2020-01-01T00:00:00Z
        */
       since?: string;
@@ -2936,11 +4208,11 @@ export interface components {
     };
     /** @description Represents an invoice export fields object. */
     InvoiceExportFieldsRequest: {
-      RTL?: boolean;
       /** @description Indicates whether to export item type. */
       itemType?: boolean;
       /** @description Indicates whether to export quantity. */
       quantity?: boolean;
+      /** @description Indicates whether to export RTL. */
       rtl?: boolean;
       /** @description Indicates whether to export unit price. */
       unitPrice?: boolean;
@@ -2954,6 +4226,12 @@ export interface components {
       'exact-balance'?: number;
       /**
        * Format: int64
+       * @description Represents an invoice amount. If provided, you'll get a filtered list of invoices that has the equal amount as specified.
+       * @example 1000
+       */
+      exactAmount?: number;
+      /**
+       * Format: int64
        * @description Represents an invoice balance. If provided, you'll get a filtered list of invoices that has the equal balance as specified.
        * @example 1000
        */
@@ -2964,16 +4242,33 @@ export interface components {
       'greater-than-balance'?: number;
       /**
        * Format: int64
+       * @description Represents an invoice amount. If provided, you'll get a filtered list of invoices that has amount greater than specified.
+       * @example 500
+       */
+      greaterThanAmount?: number;
+      /**
+       * Format: int64
        * @description Represents an invoice balance. If provided, you'll get a filtered list of invoices that has balance greater than specified.
        * @example 500
        */
       greaterThanBalance?: number;
-      'invoice-number'?: string;
-      'issue-date'?: components['schemas']['TimeRangeRequest'];
+      /**
+       * @description If provided, you'll get a filtered list of invoices that contain the provided string in their invoice number.
+       * @example Invoice-01
+       */
+      invoiceNumber?: string;
+      'issue-date'?: components['schemas']['TimeRangeRequestDtoV1'];
+      issueDate?: components['schemas']['TimeRangeRequestDtoV1'];
       /** Format: int64 */
       'less-than-amount'?: number;
       /** Format: int64 */
       'less-than-balance'?: number;
+      /**
+       * Format: int64
+       * @description Represents an invoice amount. If provided, you'll get a filtered list of invoices that has amount less than specified.
+       * @example 500
+       */
+      lessThanAmount?: number;
       /**
        * Format: int64
        * @description Represents an invoice balance. If provided, you'll get a filtered list of invoices that has balance less than specified.
@@ -2982,16 +4277,52 @@ export interface components {
       lessThanBalance?: number;
       /**
        * Format: int32
-       * @description page
+       * @description Page number.
        * @example 1
        */
       page: number;
-      /** Format: int32 */
-      'page-size': number;
-      'sort-column'?: string;
-      'sort-order'?: string;
-      statuses?: components['schemas']['InvoiceStatus'];
-      'strict-id-search'?: boolean;
+      /**
+       * Format: int32
+       * @description Page size.
+       * @example 50
+       */
+      pageSize: number;
+      /**
+       * @description Represents the column name to be used as sorting criteria.
+       * @example ID
+       * @enum {string}
+       */
+      sortColumn?:
+        | 'ID'
+        | 'CLIENT'
+        | 'DUE_ON'
+        | 'ISSUE_DATE'
+        | 'AMOUNT'
+        | 'BALANCE';
+      /**
+       * @description Represents the sorting order.
+       * @example ASCENDING
+       * @enum {string}
+       */
+      sortOrder?: 'ASCENDING' | 'DESCENDING';
+      /**
+       * @description Represents a list of invoice statuses. If provided, you'll get a filtered list of invoices that matches any of the invoice status provided.
+       * @example [
+       *       "SENT",
+       *       "PAID",
+       *       "PARTIALLY_PAID"
+       *     ]
+       */
+      statuses?: (
+        | 'UNSENT'
+        | 'SENT'
+        | 'PAID'
+        | 'PARTIALLY_PAID'
+        | 'VOID'
+        | 'OVERDUE'
+      )[];
+      /** @description Flag to toggle on/off strict search mode. When set to true, search by invoice number only will return invoices whose number exactly matches the string value given for the 'invoiceNumber' parameter. When set to false, results will also include invoices whose number contain the string value, but could be longer than the string value itself. For example, if there is an invoice with the number '123456', and the search value is '123', setting strict-name-search to true will not return that invoice in the results, whereas setting it to false will. */
+      strictSearch?: boolean;
     };
     InvoiceInfoResponseDtoV1: {
       /** @description Represents a list of invoice info. */
@@ -3118,9 +4449,9 @@ export interface components {
       /**
        * @description Represents a list of time entrry IDs.
        * @example [
-       *   "5b715448b0798751107918ab",
-       *   "5b641568b07987035750505e"
-       * ]
+       *       "5b715448b0798751107918ab",
+       *       "5b641568b07987035750505e"
+       *     ]
        */
       timeEntryIds?: string[];
       /**
@@ -3312,19 +4643,6 @@ export interface components {
       exportFields?: components['schemas']['InvoiceExportFields'];
       labels?: components['schemas']['LabelsCustomization'];
     };
-    /**
-     * @description Represents a list of invoice statuses. If provided, you'll get a filtered list of invoices that matches any of the invoice status provided.
-     * @example [
-     *   "SENT",
-     *   "PAID",
-     *   "PARTIALLY_PAID"
-     * ]
-     */
-    InvoiceStatus: {
-      sent?: boolean;
-      unsent?: boolean;
-      void?: boolean;
-    } & ('UNSENT' | 'SENT' | 'PAID' | 'PARTIALLY_PAID' | 'VOID' | 'OVERDUE');
     InvoicesListDtoV1: {
       /** @description Represents a list of invoices. */
       invoices?: components['schemas']['InvoiceDtoV1'][];
@@ -3425,22 +4743,90 @@ export interface components {
     };
     /** @description Represents a label customization object. */
     LabelsCustomizationRequest: {
+      /**
+       * @description Represents invoice amount label.
+       * @example AMOUNT
+       */
       amount: string;
+      /**
+       * @description Represents invoice bill from label.
+       * @example BILL FROM
+       */
       billFrom: string;
+      /**
+       * @description Represents invoice bill to label.
+       * @example BILL TO
+       */
       billTo: string;
+      /**
+       * @description Represents invoice description label.
+       * @example DESCRIPTION
+       */
       description: string;
+      /**
+       * @description Represents invoice discount amount label.
+       * @example DISCOUNT
+       */
       discount: string;
+      /**
+       * @description Represents invoice due date label.
+       * @example DUE DATE
+       */
       dueDate: string;
+      /**
+       * @description Represents invoice issue date label.
+       * @example ISSUE DATE
+       */
       issueDate: string;
-      itemType?: string;
+      /**
+       * @description Represents invoice item type label.
+       * @example ITEM TYPE
+       */
+      itemType: string;
+      /**
+       * @description Represents invoice notes label.
+       * @example NOTES
+       */
       notes: string;
+      /**
+       * @description Represents invoice paid amount label.
+       * @example PAID
+       */
       paid: string;
+      /**
+       * @description Represents invoice quantity label.
+       * @example QUANTITY
+       */
       quantity: string;
+      /**
+       * @description Represents invoice subtotal label.
+       * @example SUBTOTAL
+       */
       subtotal: string;
+      /**
+       * @description Represents invoice tax amount label.
+       * @example TAX
+       */
       tax: string;
+      /**
+       * @description Represents invoice tax 2 amount label.
+       * @example TAX2
+       */
       tax2: string;
+      /**
+       * @description Represents invoice total amount label.
+       * @example AMOUNT
+       */
       total: string;
-      totalAmount: string;
+      /**
+       * @description Represents invoice total amount due label.
+       * @example TOTAL AMOUNT DUE
+       */
+      totalAmountDue: string;
+      /**
+       * @description Represents invoice unit price label.
+       * @example UNIT PRICE
+       */
       unitPrice: string;
     };
     MemberProfileDtoV1: {
@@ -3463,7 +4849,7 @@ export interface components {
        * @example John Doe
        */
       name?: string;
-      /** @description Represents a list of user custom field value objects. */
+      /** @description Represents a list of value objects for user’s custom fields. */
       userCustomFieldValues?: components['schemas']['UserCustomFieldValueFullDtoV1'][];
       /**
        * @description Represents a day of the week.
@@ -3481,16 +4867,20 @@ export interface components {
         | 'SATURDAY'
         | 'SUNDAY'
       );
+      /**
+       * @description Represents work capacity as duration.
+       * @example 50000
+       */
       workCapacity?: string;
       /**
        * @description Represents a list of days of the week.
        * @example [
-       *   "MONDAY",
-       *   "TUESDAY",
-       *   "WEDNESDAY",
-       *   "THURSDAY",
-       *   "FRIDAY"
-       * ]
+       *       "MONDAY",
+       *       "TUESDAY",
+       *       "WEDNESDAY",
+       *       "THURSDAY",
+       *       "FRIDAY"
+       *     ]
        */
       workingDays?: {
         /** Format: int32 */
@@ -3540,19 +4930,19 @@ export interface components {
         | 'SATURDAY'
         | 'SUNDAY';
       /**
-       * @description Represents work capacity as duration.
-       * @example 50000
+       * @description Represents work capacity as duration in seconds. For example, for a 7hr work day, input should be 25200.
+       * @example 25200
        */
       workCapacity?: string;
       /**
        * @description Represents a list of days of the week.
        * @example [
-       *   "MONDAY",
-       *   "TUESDAY",
-       *   "WEDNESDAY",
-       *   "THURSDAY",
-       *   "FRIDAY"
-       * ]
+       *       "MONDAY",
+       *       "TUESDAY",
+       *       "WEDNESDAY",
+       *       "THURSDAY",
+       *       "FRIDAY"
+       *     ]
        */
       workingDays?: {
         /** Format: int32 */
@@ -3610,11 +5000,6 @@ export interface components {
        */
       membershipType?: 'WORKSPACE' | 'PROJECT' | 'USERGROUP';
       /**
-       * @description Represents target identifier across the system.
-       * @example 78a687e29ae1f428e7ebe303
-       */
-      targetId?: string;
-      /**
        * @description Represents user identifier across the system.
        * @example 12t687e29ae1f428e7ebe202
        */
@@ -3652,7 +5037,6 @@ export interface components {
     PatchProjectTemplateRequest: {
       /** @description Indicates whether project is a template or not. */
       isTemplate?: boolean;
-      template?: boolean;
     };
     ProjectDtoImplV1: {
       /** @description Indicates whether project is archived or not. */
@@ -3822,8 +5206,6 @@ export interface components {
       end: string;
       /** @description Indicates whether to notify users when assignment is published. */
       notifyUsers?: boolean;
-      regularUserFilter?: components['schemas']['ContainsUsersFilterRequest'];
-      regularUserGroupFilter?: components['schemas']['ContainsUserGroupFilterRequest'];
       /**
        * @description Represents a search string.
        * @example search keyword
@@ -3837,7 +5219,7 @@ export interface components {
       userFilter?: components['schemas']['ContainsUsersFilterRequestV1'];
       userGroupFilter?: components['schemas']['ContainsUserGroupFilterRequestV1'];
       /**
-       * @description Represents a view type enum.
+       * @description Represents view type.
        * @example PROJECTS
        * @enum {string}
        */
@@ -3879,12 +5261,13 @@ export interface components {
        */
       amount: number;
       /**
-       * @description Represents a currency. Default value is "USD".
+       * @description Represents a currency.
+       * @default USD
        * @example USD
        */
       currency: string;
       /**
-       * @description Represents a datetime in yyyy-MM-ddThh:mm:ssZ format.
+       * @description Represents a date and time in yyyy-MM-ddThh:mm:ssZ format.
        * @example 2020-01-01T00:00:00Z
        */
       since?: string;
@@ -3949,17 +5332,17 @@ export interface components {
        */
       entityId: string;
       /**
-       * @description Represents a valid role enum.
+       * @description Represents valid role.
        * @example WORKSPACE_ADMIN
        * @enum {string}
        */
       role: 'WORKSPACE_ADMIN' | 'TEAM_MANAGER' | 'PROJECT_MANAGER';
       /**
        * @description Represents the source type of this request.
-       * This helps the API to determine on where to select this 'entity', and applies a corresponding
-       * action base on the endpoint.
-       * The entityId should be relative to this source, and can be used whenever the endpoint needs to
-       * access a certain resource. e.g. User group (USER_GROUP)
+       *     This helps the API to determine on where to select this 'entity', and applies a corresponding
+       *     action base on the endpoint.
+       *     The entityId should be relative to this source, and can be used whenever the endpoint needs to
+       *     access a certain resource. e.g. User group (USER_GROUP)
        * @example USER_GROUP
        * @enum {string}
        */
@@ -3967,7 +5350,9 @@ export interface components {
     };
     /** @description Represents a time rounding object. */
     RoundDto: {
+      /** @example 15 */
       minutes?: string;
+      /** @example Round to nearest */
       round?: string;
     };
     /** @description Represents a list of excluded days objects */
@@ -4029,8 +5414,8 @@ export interface components {
     SchedulingUsersTotalsDtoV1: {
       /**
        * Format: double
-       * @description Represents capacity per day in hours.
-       * @example 7.5
+       * @description Represents capacity per day in seconds. For a 7hr work day, value is 25200.
+       * @example 25200
        */
       capacityPerDay?: number;
       /** @description Represents total hours per day object. */
@@ -4055,12 +5440,12 @@ export interface components {
       /**
        * @description Represents list of days of the week.
        * @example [
-       *   "MONDAY",
-       *   "TUESDAY",
-       *   "WEDNESDAY",
-       *   "THURSDAY",
-       *   "FRIDAY"
-       * ]
+       *       "MONDAY",
+       *       "TUESDAY",
+       *       "WEDNESDAY",
+       *       "THURSDAY",
+       *       "FRIDAY"
+       *     ]
        */
       workingDays?: {
         /** Format: int32 */
@@ -4147,9 +5532,9 @@ export interface components {
       /**
        * @description Represents list of assignee ids for the task.
        * @example [
-       *   "45b687e29ae1f428e7ebe123",
-       *   "67s687e29ae1f428e7ebe678"
-       * ]
+       *       "45b687e29ae1f428e7ebe123",
+       *       "67s687e29ae1f428e7ebe678"
+       *     ]
        */
       assigneeIds?: string[];
       /** @description Indicates whether a task is billable or not. */
@@ -4191,9 +5576,9 @@ export interface components {
       /**
        * @description Represents list of user group ids for the task.
        * @example [
-       *   "67b687e29ae1f428e7ebe123",
-       *   "12s687e29ae1f428e7ebe678"
-       * ]
+       *       "67b687e29ae1f428e7ebe123",
+       *       "12s687e29ae1f428e7ebe678"
+       *     ]
        */
       userGroupIds?: string[];
     };
@@ -4212,13 +5597,14 @@ export interface components {
     };
     /** @description Represents a list of task request objects. */
     TaskRequest: {
+      /** @deprecated */
       assigneeId?: string;
       /**
        * @description Represents list of assignee ids for the task.
        * @example [
-       *   "45b687e29ae1f428e7ebe123",
-       *   "67s687e29ae1f428e7ebe678"
-       * ]
+       *       "45b687e29ae1f428e7ebe123",
+       *       "67s687e29ae1f428e7ebe678"
+       *     ]
        */
       assigneeIds?: string[];
       /** @description Flag to set whether task is billable or not */
@@ -4255,29 +5641,31 @@ export interface components {
       /**
        * @description Represents list of user group ids for the task.
        * @example [
-       *   "67b687e29ae1f428e7ebe123",
-       *   "12s687e29ae1f428e7ebe678"
-       * ]
+       *       "67b687e29ae1f428e7ebe123",
+       *       "12s687e29ae1f428e7ebe678"
+       *     ]
        */
       userGroupIds?: string[];
     };
     TaskRequestV1: {
+      /** @deprecated */
       assigneeId?: string;
       /**
        * @description Represents list of assignee ids for the task.
        * @example [
-       *   "45b687e29ae1f428e7ebe123",
-       *   "67s687e29ae1f428e7ebe678"
-       * ]
+       *       "45b687e29ae1f428e7ebe123",
+       *       "67s687e29ae1f428e7ebe678"
+       *     ]
        */
       assigneeIds?: string[];
       /**
        * Format: int64
+       * @description Represents a task budget estimate as long.
        * @example 10000
        */
       budgetEstimate?: number;
       /**
-       * @description Represents a task duration estimate.
+       * @description Represents a task duration estimate in ISO-8601 format.
        * @example PT1H30M
        */
       estimate?: string;
@@ -4291,28 +5679,30 @@ export interface components {
        * @example Bugfixing
        */
       name: string;
-      /** @example DONE */
-      status?: string;
-      /** @enum {string} */
-      statusEnum?: 'ACTIVE' | 'DONE' | 'ALL';
+      /**
+       * @description Represents task status.
+       * @example DONE
+       * @enum {string}
+       */
+      status?: 'ACTIVE' | 'DONE' | 'ALL';
       /**
        * @description Represents list of user group ids for the task.
        * @example [
-       *   "67b687e29ae1f428e7ebe123",
-       *   "12s687e29ae1f428e7ebe678"
-       * ]
+       *       "67b687e29ae1f428e7ebe123",
+       *       "12s687e29ae1f428e7ebe678"
+       *     ]
        */
       userGroupIds?: string[];
     };
     /**
-     * @description Represents task status enum.
+     * @description Represents task status.
      * @example DONE
      */
     TaskStatus: {
       active?: boolean;
     } & ('ACTIVE' | 'DONE' | 'ALL');
     TimeEntryDtoImplV1: {
-      /** @description Indicates whether a time entry is billable or not. */
+      /** @description Indicates whether a time entry is billable. */
       billable?: boolean;
       /** @description Represents a list of custom field value objects. */
       customFieldValues?: components['schemas']['CustomFieldValueDtoV1'][];
@@ -4326,9 +5716,10 @@ export interface components {
        * @example 64c777ddd3fcab07cfbb210c
        */
       id?: string;
+      /** @description Represents whether time entry is locked for modification. */
       isLocked?: boolean;
       /**
-       * @description Represents a kiosk identifier across the system.
+       * @description Represents kiosk identifier across the system.
        * @example 94c777ddd3fcab07cfbb210d
        */
       kioskId?: string;
@@ -4338,11 +5729,11 @@ export interface components {
        */
       projectId?: string;
       /**
-       * @description Represents a list of tag ids.
+       * @description Represents a list of tag identifiers across the system.
        * @example [
-       *   "321r77ddd3fcab07cfbb567y",
-       *   "44x777ddd3fcab07cfbb88f"
-       * ]
+       *       "321r77ddd3fcab07cfbb567y",
+       *       "44x777ddd3fcab07cfbb88f"
+       *     ]
        */
       tagIds?: string[];
       /**
@@ -4369,28 +5760,73 @@ export interface components {
       workspaceId?: string;
     };
     TimeEntryDtoV1: {
+      /** @description Indicates whether a time entry is billable. */
       billable?: boolean;
+      /** @description Represents a list of custom field value objects. */
       customFieldValues?: components['schemas']['CustomFieldValueDtoV1'][];
+      /**
+       * @description Represents time entry description.
+       * @example This is a sample time entry description.
+       */
       description?: string;
+      /**
+       * @description Represents time entry identifier across the system.
+       * @example 64c777ddd3fcab07cfbb210c
+       */
       id?: string;
+      /** @description Represents whether time entry is locked for modification. */
       isLocked?: boolean;
+      /**
+       * @description Represents kiosk identifier across the system.
+       * @example 94c777ddd3fcab07cfbb210d
+       */
       kioskId?: string;
+      /**
+       * @description Represents project identifier across the system.
+       * @example 25b687e29ae1f428e7ebe123
+       */
       projectId?: string;
+      /**
+       * @description Represents a list of tag identifiers across the system.
+       * @example [
+       *       "321r77ddd3fcab07cfbb567y",
+       *       "44x777ddd3fcab07cfbb88f"
+       *     ]
+       */
       tagIds?: string[];
+      /**
+       * @description Represents task identifier across the system.
+       * @example 54m377ddd3fcab07cfbb432w
+       */
       taskId?: string;
       timeInterval?: components['schemas']['TimeIntervalDtoV1'];
-      type?: string;
+      /**
+       * @description Represents a time entry type enum.
+       * @example BREAK
+       * @enum {string}
+       */
+      type?: 'REGULAR' | 'BREAK' | 'HOLIDAY' | 'TIME_OFF';
+      /**
+       * @description Represents user identifier across the system.
+       * @example 5a0ab5acb07987125438b60f
+       */
       userId?: string;
+      /**
+       * @description Represents workspace identifier across the system.
+       * @example 64a687e29ae1f428e7ebe303
+       */
       workspaceId?: string;
     };
     /**
      * @description Represents a list of invoiced time entry ids
      * @example [
-     *   "54m377ddd3fcab07cfbb432w",
-     *   "25b687e29ae1f428e7ebe123"
-     * ]
+     *       "54m377ddd3fcab07cfbb432w",
+     *       "25b687e29ae1f428e7ebe123"
+     *     ]
      */
     TimeEntryId: {
+      /** Format: date-time */
+      dateOfCreationFromObjectId?: string;
       id?: string;
     };
     /** @description Represents a list of time entry info data transfer objects. */
@@ -4431,20 +5867,63 @@ export interface components {
       type?: 'REGULAR' | 'BREAK' | 'HOLIDAY' | 'TIME_OFF';
     };
     TimeEntryWithRatesDtoV1: {
+      /** @description Indicates whether a time entry is billable. */
       billable?: boolean;
       costRate?: components['schemas']['RateDtoV1'];
+      /** @description Represents a list of custom field value objects. */
       customFieldValues?: components['schemas']['CustomFieldValueDtoV1'][];
+      /**
+       * @description Represents time entry description.
+       * @example This is a sample time entry description.
+       */
       description?: string;
       hourlyRate?: components['schemas']['RateDtoV1'];
+      /**
+       * @description Represents time entry identifier across the system.
+       * @example 64c777ddd3fcab07cfbb210c
+       */
       id?: string;
+      /** @description Represents whether time entry is locked for modification. */
       isLocked?: boolean;
+      /**
+       * @description Represents kiosk identifier across the system.
+       * @example 94c777ddd3fcab07cfbb210d
+       */
       kioskId?: string;
+      /**
+       * @description Represents project identifier across the system.
+       * @example 25b687e29ae1f428e7ebe123
+       */
       projectId?: string;
+      /**
+       * @description Represents a list of tag identifiers across the system.
+       * @example [
+       *       "321r77ddd3fcab07cfbb567y",
+       *       "44x777ddd3fcab07cfbb88f"
+       *     ]
+       */
       tagIds?: string[];
+      /**
+       * @description Represents task identifier across the system.
+       * @example 54m377ddd3fcab07cfbb432w
+       */
       taskId?: string;
       timeInterval?: components['schemas']['TimeIntervalDtoV1'];
-      type?: string;
+      /**
+       * @description Represents a time entry type enum.
+       * @example BREAK
+       * @enum {string}
+       */
+      type?: 'REGULAR' | 'BREAK' | 'HOLIDAY' | 'TIME_OFF';
+      /**
+       * @description Represents user identifier across the system.
+       * @example 5a0ab5acb07987125438b60f
+       */
       userId?: string;
+      /**
+       * @description Represents workspace identifier across the system.
+       * @example 64a687e29ae1f428e7ebe303
+       */
       workspaceId?: string;
     };
     /** @description Represents project time estimate object. */
@@ -4471,12 +5950,14 @@ export interface components {
     };
     /** @description Represents project time estimate request object. */
     TimeEstimateRequest: {
+      /** @description Flag whether to include only active or inactive estimates. */
       active?: boolean;
       /**
-       * Format: int64
-       * @description Represents a time duration.
+       * @description Represents a time duration in ISO-8601 format.
+       * @example PT1H30M
        */
-      estimate?: number;
+      estimate?: string;
+      /** @description Flag whether to include non-billable expenses. */
       includeNonBillable?: boolean;
       /**
        * @description Represents a reset option enum.
@@ -4503,6 +5984,7 @@ export interface components {
       /** Format: date-time */
       start?: string;
     };
+    /** @description Represents a time interval object. */
     TimeIntervalDtoV1: {
       /**
        * @description Represents a time duration.
@@ -4522,8 +6004,17 @@ export interface components {
        */
       start?: string;
     };
-    TimeRangeRequest: {
+    /** @description Represents a time range object. If provided, you'll get a filtered list of invoices that has issue date within the time range specified. */
+    TimeRangeRequestDtoV1: {
+      /**
+       * @description Represents a date in yyyy-MM-dd format. This is the lower bound of the time range.
+       * @example 2020-01-01
+       */
       'issue-date-end'?: string;
+      /**
+       * @description Represents a date in yyyy-MM-dd format. This is the lower bound of the time range.
+       * @example 2020-01-01
+       */
       'issue-date-start'?: string;
     };
     /** @description Represents total hours per day object. */
@@ -4560,7 +6051,7 @@ export interface components {
       /** @description Indicates if client will be archived or not. */
       archived?: boolean;
       /**
-       * @description Represents currency identifier across the system.a record in the database.
+       * @description Represents currency identifier across the system.
        * @example 53a687e29ae1f428e7ebe888
        */
       currencyId?: string;
@@ -4580,6 +6071,7 @@ export interface components {
        */
       note?: string;
     };
+    /** @description Represents a list of value objects for user’s custom fields. */
     UpdateCustomFieldRequest: {
       /**
        * @description Represents custom field identifier across the system.
@@ -4587,7 +6079,7 @@ export interface components {
        */
       customFieldId: string;
       /**
-       * @description Represents a custom field value source type enum.
+       * @description Represents a custom field value source type.
        * @example WORKSPACE
        * @enum {string}
        */
@@ -4602,12 +6094,12 @@ export interface components {
       /**
        * @description Represents a list of custom field's allowed values.
        * @example [
-       *   "NA",
-       *   "White",
-       *   "Black",
-       *   "Asian",
-       *   "Hispanic"
-       * ]
+       *       "NA",
+       *       "White",
+       *       "Black",
+       *       "Asian",
+       *       "Hispanic"
+       *     ]
        */
       allowedValues?: string[];
       /**
@@ -4659,7 +6151,7 @@ export interface components {
        * @description Represents expense amount as double data type.
        * @example 99.5
        */
-      amount?: number;
+      amount: number;
       /** @description Indicates whether expense is billable or not. */
       billable?: boolean;
       /**
@@ -4670,10 +6162,10 @@ export interface components {
       /**
        * @description Represents a list of expense change fields.
        * @example [
-       *   "USER",
-       *   "DATE",
-       *   "PROJECT"
-       * ]
+       *       "USER",
+       *       "DATE",
+       *       "PROJECT"
+       *     ]
        */
       changeFields: (
         | 'USER'
@@ -4710,6 +6202,7 @@ export interface components {
       userId: string;
     };
     UpdateHolidayRequestV1: {
+      automaticTimeEntryCreation?: components['schemas']['AutomaticTimeEntryCreationRequest'];
       /**
        * @description Provide color in format ^#(?:[0-9a-fA-F]{6}){1}$. Explanation: A valid color code should start with '#' and consist of six hexadecimal characters, representing a color in hexadecimal format. Color value is in standard RGB hexadecimal format.
        * @example #8BC34A
@@ -4785,7 +6278,7 @@ export interface components {
       subject?: string;
       /**
        * Format: double
-       * @description Represents an invoice tax percent as double.
+       * @description Represents an invoice tax 2 percent as double.
        * @example 0
        */
       tax2Percent: number;
@@ -4795,7 +6288,12 @@ export interface components {
        * @example 0.5
        */
       taxPercent: number;
-      visibleZeroFields?: components['schemas']['VisibleZeroFieldsInvoice'];
+      /**
+       * @description Represents a list of zero value invoice fields that will be visible.
+       * @example ["TAX","TAX_2","DISCOUNT"]
+       * @enum {string}
+       */
+      visibleZeroFields?: 'TAX' | 'TAX_2' | 'DISCOUNT';
     };
     UpdateInvoiceSettingsRequestV1: {
       defaults?: components['schemas']['InvoiceDefaultSettingsRequestV1'];
@@ -4808,14 +6306,14 @@ export interface components {
       /**
        * @description Represents a list of invoiced time entry ids
        * @example [
-       *   "54m377ddd3fcab07cfbb432w",
-       *   "25b687e29ae1f428e7ebe123"
-       * ]
+       *       "54m377ddd3fcab07cfbb432w",
+       *       "25b687e29ae1f428e7ebe123"
+       *     ]
        */
       timeEntryIds: components['schemas']['TimeEntryId'][];
     };
     UpdateProjectMembershipsRequest: {
-      /** @description Represents a list of user with id hourly rate request objects. */
+      /** @description Represents a list of users with id and hourly rate request objects. */
       memberships: components['schemas']['UserIdWithHourlyRateRequest'][];
     };
     UpdateProjectRequest: {
@@ -4858,19 +6356,21 @@ export interface components {
       name: string;
     };
     UpdateTaskRequest: {
+      /** @deprecated */
       assigneeId?: string;
       /**
        * @description Represents list of assignee ids for the task.
        * @example [
-       *   "45b687e29ae1f428e7ebe123",
-       *   "67s687e29ae1f428e7ebe678"
-       * ]
+       *       "45b687e29ae1f428e7ebe123",
+       *       "67s687e29ae1f428e7ebe678"
+       *     ]
        */
       assigneeIds?: string[];
       /** @description Indicates whether a task is billable or not. */
       billable?: boolean;
       /**
        * Format: int64
+       * @description Represents a task budget estimate as integer.
        * @example 10000
        */
       budgetEstimate?: number;
@@ -4885,6 +6385,7 @@ export interface components {
        */
       name: string;
       /**
+       * @description Represents task status.
        * @example DONE
        * @enum {string}
        */
@@ -4892,9 +6393,9 @@ export interface components {
       /**
        * @description Represents list of user group ids for the task.
        * @example [
-       *   "67b687e29ae1f428e7ebe123",
-       *   "12s687e29ae1f428e7ebe678"
-       * ]
+       *       "67b687e29ae1f428e7ebe123",
+       *       "12s687e29ae1f428e7ebe678"
+       *     ]
        */
       userGroupIds?: string[];
     };
@@ -4932,9 +6433,9 @@ export interface components {
       /**
        * @description Represents a list of tag ids.
        * @example [
-       *   "321r77ddd3fcab07cfbb567y",
-       *   "44x777ddd3fcab07cfbb88f"
-       * ]
+       *       "321r77ddd3fcab07cfbb567y",
+       *       "44x777ddd3fcab07cfbb88f"
+       *     ]
        */
       tagIds?: string[];
       /**
@@ -4948,7 +6449,7 @@ export interface components {
     UpdateTimeEntryRequest: {
       /** @description Indicates whether a time entry is billable or not. */
       billable?: boolean;
-      /** @description Represents a list of update custom field request objects. */
+      /** @description Represents a list of value objects for user’s custom fields. */
       customFields?: components['schemas']['UpdateCustomFieldRequest'][];
       /**
        * @description Represents time entry description.
@@ -4975,9 +6476,9 @@ export interface components {
       /**
        * @description Represents a list of tag ids.
        * @example [
-       *   "321r77ddd3fcab07cfbb567y",
-       *   "44x777ddd3fcab07cfbb88f"
-       * ]
+       *       "321r77ddd3fcab07cfbb567y",
+       *       "44x777ddd3fcab07cfbb88f"
+       *     ]
        */
       tagIds?: string[];
       /**
@@ -4997,7 +6498,7 @@ export interface components {
     };
     UpdateUserStatusRequest: {
       /**
-       * @description Represents membership status enum.
+       * @description Represents membership status.
        * @example ACTIVE
        * @enum {string}
        */
@@ -5006,19 +6507,19 @@ export interface components {
     UpdateWebhookRequestV1: {
       /**
        * @description Represents webhook name.
-       * @example stripe
+       * @example Stripe
        */
       name?: string;
       /**
        * @description Represents a list of trigger sources.
        * @example [
-       *   "54a687e29ae1f428e7ebe909",
-       *   "87p187e29ae1f428e7ebej56"
-       * ]
+       *       "54a687e29ae1f428e7ebe909",
+       *       "87p187e29ae1f428e7ebej56"
+       *     ]
        */
       triggerSource: string[];
       /**
-       * @description Represents a webhook event trigger source type enum.
+       * @description Represents a webhook event trigger source type.
        * @example PROJECT_ID
        * @enum {string}
        */
@@ -5037,7 +6538,10 @@ export interface components {
        * @example https://example-clockify.com/stripeEndpoint
        */
       url: string;
-      /** @enum {string} */
+      /**
+       * @description Represents webhook event type.
+       * @enum {string}
+       */
       webhookEvent:
         | 'NEW_PROJECT'
         | 'NEW_TASK'
@@ -5119,7 +6623,7 @@ export interface components {
        */
       value?: Record<string, never>;
     };
-    /** @description Represents a list of user custom field value objects. */
+    /** @description Represents a list of value objects for user’s custom fields. */
     UserCustomFieldValueFullDtoV1: {
       customField?: components['schemas']['CustomFieldDtoV1'];
       /**
@@ -5133,7 +6637,7 @@ export interface components {
        */
       name?: string;
       /**
-       * @description Represents user custom field source type enum.
+       * @description Represents user custom field source type.
        * @example WORKSPACE
        * @enum {string}
        */
@@ -5141,10 +6645,17 @@ export interface components {
       /**
        * @description Represents custom field type.
        * @example DROPDOWN_MULTIPLE
+       * @enum {string}
        */
-      type?: string;
+      type?:
+        | 'TXT'
+        | 'NUMBER'
+        | 'DROPDOWN_SINGLE'
+        | 'DROPDOWN_MULTIPLE'
+        | 'CHECKBOX'
+        | 'LINK';
       /**
-       * @description Represents a user identifier across the system.
+       * @description Represents user identifier across the system.
        * @example 5a0ab5acb07987125438b60f
        */
       userId?: string;
@@ -5156,11 +6667,11 @@ export interface components {
     };
     UserDtoV1: {
       /**
-       * @description Represents user active workspace identifier across the system.
+       * @description Represents user's active workspace identifier across the system.
        * @example 64a687e29ae1f428e7ebe303
        */
       activeWorkspace?: string;
-      /** @description Represents a list of user custom field value objects. */
+      /** @description Represents a list of value objects for user’s custom fields. */
       customFields?: components['schemas']['UserCustomFieldValueDtoV1'][];
       /**
        * @description Represents user default workspace identifier across the system.
@@ -5204,11 +6715,11 @@ export interface components {
        */
       name?: string;
       /**
-       * @description Represents a list of user ids.
+       * @description Represents a list of users' identifiers across the system.
        * @example [
-       *   "5a0ab5acb07987125438b60f",
-       *   "98j4b5acb07987125437y32"
-       * ]
+       *       "5a0ab5acb07987125438b60f",
+       *       "98j4b5acb07987125437y32"
+       *     ]
        */
       userIds?: string[];
       /**
@@ -5216,6 +6727,28 @@ export interface components {
        * @example 64a687e29ae1f428e7ebe303
        */
       workspaceId?: string;
+    };
+    /** @description Provide list with user group ids and corresponding status. */
+    UserGroupIdsSchema: {
+      /**
+       * @example CONTAINS
+       * @enum {string}
+       */
+      contains?: 'CONTAINS' | 'DOES_NOT_CONTAIN';
+      /**
+       * @description Represents ids upon which filtering is performed.
+       * @example [
+       *       "5b715612b079875110791111",
+       *       "5b715612b079875110791222"
+       *     ]
+       */
+      ids?: string[];
+      /**
+       * @description Represents user status.
+       * @example ALL
+       * @enum {string}
+       */
+      status?: 'ALL' | 'ACTIVE' | 'INACTIVE';
     };
     UserGroupRequest: {
       /**
@@ -5231,7 +6764,7 @@ export interface components {
        */
       userId: string;
     };
-    /** @description Represents a list of user with id hourly rate request objects. */
+    /** @description Represents a list of users with id and hourly rate request objects. */
     UserIdWithHourlyRateRequest: {
       hourlyRate?: components['schemas']['HourlyRateRequestV1'];
       /**
@@ -5239,6 +6772,28 @@ export interface components {
        * @example 12t687e29ae1f428e7ebe202
        */
       userId: string;
+    };
+    /** @description Provide list with user ids and corresponding status. */
+    UserIdsSchema: {
+      /**
+       * @example CONTAINS
+       * @enum {string}
+       */
+      contains?: 'CONTAINS' | 'DOES_NOT_CONTAIN';
+      /**
+       * @description Represents ids upon which filtering is performed.
+       * @example [
+       *       "5b715612b079875110791111",
+       *       "5b715612b079875110791222"
+       *     ]
+       */
+      ids?: string[];
+      /**
+       * @description Represents user status.
+       * @example ALL
+       * @enum {string}
+       */
+      status?: 'ALL' | 'ACTIVE' | 'INACTIVE';
     };
     /** @description Represents user settings object. */
     UserSettingsDtoV1: {
@@ -5339,10 +6894,10 @@ export interface components {
     /**
      * @description Represents a list of zero value invoice fields that will be visible.
      * @example [
-     *   "TAX",
-     *   "TAX_2",
-     *   "DISCOUNT"
-     * ]
+     *       "TAX",
+     *       "TAX_2",
+     *       "DISCOUNT"
+     *     ]
      */
     VisibleZeroFieldsInvoice: 'TAX' | 'TAX_2' | 'DISCOUNT';
     WebhookDtoV1: {
@@ -5366,9 +6921,9 @@ export interface components {
       /**
        * @description Represents a list of trigger sources.
        * @example [
-       *   "54a687e29ae1f428e7ebe909",
-       *   "87p187e29ae1f428e7ebej56"
-       * ]
+       *       "54a687e29ae1f428e7ebe909",
+       *       "87p187e29ae1f428e7ebej56"
+       *     ]
        */
       triggerSource?: string[];
       triggerSourceType?: components['schemas']['WebhookEventTriggerSourceType'];
@@ -5390,7 +6945,7 @@ export interface components {
       workspaceId?: string;
     };
     /**
-     * @description Represents a webhook event trigger source type enum.
+     * @description Represents a webhook event trigger source type.
      * @example PROJECT_ID
      */
     WebhookEventTriggerSourceType: {
@@ -5435,7 +6990,8 @@ export interface components {
         | 'FAVORITE_TIMEENTRY'
         | 'HOLIDAY'
         | 'EMAIL_KEY_REQUEST'
-        | 'EMAIL_SESSION_REQUEST';
+        | 'EMAIL_SESSION_REQUEST'
+        | 'FEATURE_SUBSCRIPTION';
     } & (
       | 'PROJECT_ID'
       | 'USER_ID'
@@ -5448,7 +7004,7 @@ export interface components {
       | 'EXPENSE_ID'
     );
     /**
-     * @description Represents a webhook event type enum.
+     * @description Represents webhook event type.
      * @example NEW_PROJECT
      */
     WebhookEventType: {
@@ -5472,7 +7028,7 @@ export interface components {
         | 'INVOICE'
         | 'TIME_OFF_REQUEST'
         | 'BALANCE_UPDATED'
-        | 'ASSIGNMENT_PUBLISHED'
+        | 'ASSIGNMENT_WEBHOOK'
         | 'ASSIGNMENT'
         | 'TIME_ENTRY_WITH_CUSTOM_FIELD'
         | 'ADDITIONAL_WORKSPACE'
@@ -5497,6 +7053,7 @@ export interface components {
       | 'TIMER_STOPPED'
       | 'TIME_ENTRY_UPDATED'
       | 'TIME_ENTRY_DELETED'
+      | 'TIME_ENTRY_SPLIT'
       | 'NEW_TIME_ENTRY'
       | 'NEW_TAG'
       | 'USER_DELETED_FROM_WORKSPACE'
@@ -5531,27 +7088,56 @@ export interface components {
       | 'EXPENSE_UPDATED'
     );
     WebhookLogDtoV1: {
+      /**
+       * @description Represents log identifier across the system.
+       * @example 65e5b854fe0dfa24f1528ef0
+       */
       id?: string;
+      /**
+       * @description Represents request body.
+       * @example {"id":"65df50f5d2dd8f23a685374e","name":"Webhook"}
+       */
       requestBody?: string;
+      /**
+       * @description Represents date and time of response.
+       * @example 2024-03-04T12:02:28.125+00:00
+       */
       respondedAt?: string;
+      /**
+       * @description Represents response body.
+       * @example {"id":"h73210f5d2dd8f23685374e","response":"Webhook response"}
+       */
       responseBody?: string;
-      /** Format: int32 */
+      /**
+       * Format: int32
+       * @description Represents response status code.
+       * @example 200
+       */
       statusCode?: number;
+      /**
+       * @description Represents webhook identifier across the system.
+       * @example 65df5508d2dd8f23a68537af
+       */
       webhookId?: string;
     };
     WebhookLogSearchRequestV1: {
       /**
        * Format: date-time
+       * @description Represents date and time in yyyy-MM-ddThh:mm:ssZ format. If provided, results will include logs which occurred after this value.
        * @example 2023-02-01T13:00:46Z
        */
       from?: string;
-      newest?: boolean;
+      /** @description If set to true, logs will be sorted with most recent first. */
       sortByNewest?: boolean;
-      /** @enum {string} */
+      /**
+       * @description Filters logs by status.
+       * @enum {string}
+       */
       status?: 'ALL' | 'SUCCEEDED' | 'FAILED';
       /**
        * Format: date-time
-       * @example 2023-05-01T13:00:46Z
+       * @description Represents date and time in yyyy-MM-ddThh:mm:ssZ format. If provided, results will include logs which occurred before this value.
+       * @example 2023-02-05T13:00:46Z
        */
       to?: string;
     };
@@ -5589,6 +7175,7 @@ export interface components {
        * @example Cool Company
        */
       name?: string;
+      subdomain?: components['schemas']['WorkspaceSubdomainDtoV1'];
       workspaceSettings?: components['schemas']['WorkspaceSettingsDtoV1'];
     };
     WorkspaceRequest: {
@@ -5598,20 +7185,20 @@ export interface components {
        */
       name: string;
     };
-    /**
-     * @description Workspace settings also include Time Duration Format settings.
+    /** @description Workspace settings also include Time Duration Format settings.
      *
-     * The Time Duration Format can be changed by setting the correct values of the following boolean fields:
-     * decimalFormat and trackTimeDownToSecond
+     *     The Time Duration Format can be changed by setting the correct values of the following boolean fields:
+     *     decimalFormat and trackTimeDownToSecond
      *
-     * There are three different Time Duration modes:
+     *     There are three different Time Duration modes:
      *
-     *     1. Full (hh:mm:ss) -> decimalFormat = false, trackTimeDownToSecond = true,
+     *         1. Full (hh:mm:ss) -> decimalFormat = false, trackTimeDownToSecond = true,
      *
-     *     2. Compact (h:mm) -> decimalFormat = false, trackTimeDownToSecond = false,
+     *         2. Compact (h:mm) -> decimalFormat = false, trackTimeDownToSecond = false,
      *
-     *     3. Decimal (h:hh) -> decimalFormat = true, trackTimeDownToSecond = true
-     */
+     *         3. Decimal (h:hh) -> decimalFormat = true, trackTimeDownToSecond = true
+     *
+     *      */
     WorkspaceSettingsDtoV1: {
       /**
        * @description Represents a unique list of protected page enums.
@@ -5647,7 +7234,9 @@ export interface components {
       /** @description Indicates whether tasks are forced or not. */
       forceTasks?: boolean;
       isProjectPublicByDefault?: boolean;
+      /** @example 2024-02-25T23:00:00Z */
       lockTimeEntries?: string;
+      /** @example Europe/Belgrade */
       lockTimeZone?: string;
       /** @description Indicates whether two-factor authentication is enabled or not. */
       multiFactorEnabled?: boolean;
@@ -5696,6 +7285,17 @@ export interface components {
       /** @description Indicates whether time tracking is seconds-accurate. Set decimalFormat alongside trackTimeDownToSecond to manage Time Duration Format as explained in class description" */
       trackTimeDownToSecond?: boolean;
     };
+    /** @description Represents the workspace subdomain */
+    WorkspaceSubdomainDtoV1: {
+      /** @description Indicates whether subdomain is enabled on workspace */
+      enabled?: boolean;
+      /**
+       * @description Represents subdomain name
+       * @example coolcompany
+       */
+      name?: string;
+    };
+    /** @description Provide approval settings. */
     Approve: {
       /**
        * @description Indicates whether it requires approval
@@ -5715,12 +7315,13 @@ export interface components {
       /**
        * @description Represents set of user's identifier across the system
        * @example [
-       *   "6579d126c2fe3b25f20ea001",
-       *   "6579d126c2fe3b25f20ea002"
-       * ]
+       *       "6579d126c2fe3b25f20ea001",
+       *       "6579d126c2fe3b25f20ea002"
+       *     ]
        */
       userIds?: string[];
     };
+    /** @description Represents automatic approval settings. */
     AutomaticAccrual: {
       /**
        * Format: double
@@ -5741,6 +7342,7 @@ export interface components {
        */
       timeUnit?: 'DAYS' | 'HOURS';
     };
+    /** @description Provide automatic accrual settings. */
     AutomaticAccrualRequest: {
       /**
        * Format: double
@@ -5748,7 +7350,6 @@ export interface components {
        * @example 2
        */
       amount: number;
-      amountValidForTimeUnit?: boolean;
       /**
        * @description Represents automatic accrual period.
        * @example MONTH
@@ -5761,6 +7362,11 @@ export interface components {
        * @enum {string}
        */
       timeUnit?: 'DAYS' | 'HOURS';
+    };
+    /** @description Represents automatic time entry creation settings. */
+    AutomaticTimeEntryCreation: {
+      defaultEntities?: components['schemas']['DefaultEntities'];
+      enabled?: boolean;
     };
     /** @description Represent the list of balances. */
     BalanceDtoV1: {
@@ -5846,21 +7452,21 @@ export interface components {
     };
     ChangeBalanceRequestV1: {
       /**
-       * @description Provide the note you would like to use for changing the balance.
-       * @example Change Balance Request Note
+       * @description Represents note attached to updating balance.
+       * @example Bonus days added.
        */
       note?: string;
       /**
-       * @description Provide user ids for whom you want to change the balance.
+       * @description Represents list of users' identifiers whose balance is to be updated.
        * @example [
-       *   "5b715448b079875110792222",
-       *   "5b715448b079875110791111"
-       * ]
+       *       "5b715448b079875110792222",
+       *       "5b715448b079875110791111"
+       *     ]
        */
       userIds: string[];
       /**
        * Format: double
-       * @description Provide the value you would like to use for changing the balance.
+       * @description Represents new balance value.
        * @example 22
        */
       value: number;
@@ -5875,12 +7481,12 @@ export interface components {
     };
     CreatePolicyRequestV1: {
       /**
-       * @description Indicates whether policy allows half day.
+       * @description Indicates whether policy allows half days.
        * @example false
        */
       allowHalfDay?: boolean;
       /**
-       * @description Indicates whether policy allows negative balance.
+       * @description Indicates whether policy allows negative balances.
        * @example true
        */
       allowNegativeBalance?: boolean;
@@ -5891,19 +7497,20 @@ export interface components {
        */
       archived?: boolean;
       automaticAccrual?: components['schemas']['AutomaticAccrualRequest'];
+      automaticTimeEntryCreation?: components['schemas']['AutomaticTimeEntryCreationRequest'];
       /**
        * @description Provide color in format ^#(?:[0-9a-fA-F]{6}){1}$. Explanation: A valid color code should start with '#' and consist of six hexadecimal characters, representing a color in hexadecimal format. Color value is in standard RGB hexadecimal format.
        * @example #8BC34A
        */
       color?: string;
       /**
-       * @description Indicates whether the holiday is shown to new users.
+       * @description Indicates whether the policy is to be applied to future new users.
        * @example false
        */
       everyoneIncludingNew?: boolean;
       /**
-       * @description Provide the name you would like to use for creating the policy.
-       * @example Days
+       * @description Represents name of new policy.
+       * @example Mental health days
        */
       name: string;
       negativeBalance?: components['schemas']['NegativeBalanceRequest'];
@@ -5913,8 +7520,8 @@ export interface components {
        * @enum {string}
        */
       timeUnit?: 'DAYS' | 'HOURS';
-      userGroups?: components['schemas']['ContainsFilter'];
-      users?: components['schemas']['ContainsFilter'];
+      userGroups?: components['schemas']['UserGroupIdsSchema'];
+      users?: components['schemas']['UserIdsSchema'];
     };
     CreateTimeOffRequestV1Request: {
       /**
@@ -5924,49 +7531,56 @@ export interface components {
       note?: string;
       timeOffPeriod: components['schemas']['TimeOffRequestPeriodV1Request'];
     };
+    DefaultEntities: {
+      projectId?: string;
+      taskId?: string;
+    };
     GetTimeOffRequestsV1Request: {
       /**
        * Format: date-time
-       * @description Return time off requests created before. Provide end in format YYYY-MM-DDTHH:MM:SS.ssssssZ
+       * @description Returns time off requests created before provided date in YYYY-MM-DDTHH:MM:SS.ssssssZ format.
        * @example 2022-08-26T23:55:06.281873Z
        */
       end?: string;
       /**
        * Format: int32
+       * @description Page number.
        * @example 1
        */
       page?: number;
       /**
        * Format: int32
+       * @description Page size.
        * @example 50
        */
-      'page-size'?: number;
+      pageSize?: number;
       /**
        * Format: date-time
-       * @description Return time off requests created after. Provide start in format YYYY-MM-DDTHH:MM:SS.ssssssZ
+       * @description Returns time off requests created after provided date in YYYY-MM-DDTHH:MM:SS.ssssssZ format.
        * @example 2022-08-26T08:00:06.281873Z
        */
       start?: string;
       /**
-       * @example [APPROVED, PENDING]
+       * @description Filters time off requests by status.
+       * @example ["APPROVED","PENDING"]
        * @enum {string}
        */
       statuses?: 'PENDING' | 'APPROVED' | 'REJECTED' | 'ALL';
       /**
        * @description Provide the user group ids of time off requests.
        * @example [
-       *   "5b715612b079875110791342",
-       *   "5b715612b079875110791324",
-       *   "5b715612b079875110793142"
-       * ]
+       *       "5b715612b079875110791342",
+       *       "5b715612b079875110791324",
+       *       "5b715612b079875110793142"
+       *     ]
        */
       userGroups?: string[];
       /**
        * @description Provide the user ids of time off requests.
        * @example [
-       *   "5b715612b079875110791432",
-       *   "b715612b079875110791234"
-       * ]
+       *       "5b715612b079875110791432",
+       *       "b715612b079875110791234"
+       *     ]
        */
       users?: string[];
     };
@@ -6020,16 +7634,17 @@ export interface components {
     PeriodV1Request: {
       /**
        * Format: int32
+       * @description Provide number of days.
        * @example 3
        */
       days?: number;
       /**
-       * @description Provide end date in format YYYY-MM-DD
+       * @description Provide end date in YYYY-MM-DD format.
        * @example 2021-12-25
        */
       end?: string;
       /**
-       * @description Provide start date in format YYYY-MM-DD
+       * @description Provide start date in YYYY-MM-DD format.
        * @example 2021-12-23
        */
       start?: string;
@@ -6052,8 +7667,9 @@ export interface components {
        */
       archived?: boolean;
       automaticAccrual?: components['schemas']['AutomaticAccrual'];
+      automaticTimeEntryCreation?: components['schemas']['AutomaticTimeEntryCreation'];
       /**
-       * @description Indicates whether the policy is shown to new users.
+       * @description Indicates whether the policy is applied to future new users.
        * @example false
        */
       everyoneIncludingNew?: boolean;
@@ -6068,6 +7684,7 @@ export interface components {
        */
       name?: string;
       negativeBalance?: components['schemas']['NegativeBalance'];
+      /** @description Represents project identifier across the system. */
       projectId?: string;
       /**
        * @description Represents the time unit of the policy.
@@ -6076,20 +7693,20 @@ export interface components {
        */
       timeUnit?: 'DAYS' | 'HOURS';
       /**
-       * @description Indicates which user groups are included.
+       * @description Represents user groups' identifiers across the system. Indicates which user groups are included in the policy.
        * @example [
-       *   "5b715612b079875110791342",
-       *   "5b715612b079875110791324",
-       *   "5b715612b079875110793142"
-       * ]
+       *       "5b715612b079875110791342",
+       *       "5b715612b079875110791324",
+       *       "5b715612b079875110793142"
+       *     ]
        */
       userGroupIds?: string[];
       /**
-       * @description Indicates which users are included.
+       * @description Represents users' identifiers across the system. Indicates which users are included in the policy.
        * @example [
-       *   "5b715612b079875110791432",
-       *   "5b715612b079875110791234"
-       * ]
+       *       "5b715612b079875110791432",
+       *       "5b715612b079875110791234"
+       *     ]
        */
       userIds?: string[];
       /**
@@ -6389,6 +8006,7 @@ export interface components {
        */
       archived: boolean;
       automaticAccrual?: components['schemas']['AutomaticAccrualRequest'];
+      automaticTimeEntryCreation?: components['schemas']['AutomaticTimeEntryCreationRequest'];
       /**
        * @description Provide color in format ^#(?:[0-9a-fA-F]{6}){1}$. Explanation: A valid color code should start with '#' and consist of six hexadecimal characters, representing a color in hexadecimal format. Color value is in standard RGB hexadecimal format.
        * @example #8BC34A
@@ -6405,8 +8023,8 @@ export interface components {
        */
       name: string;
       negativeBalance?: components['schemas']['NegativeBalanceRequest'];
-      userGroups: components['schemas']['ContainsFilter'];
-      users: components['schemas']['ContainsFilter'];
+      userGroups: components['schemas']['UserGroupIdsSchema'];
+      users: components['schemas']['UserIdsSchema'];
     };
     /** @description List of amounts */
     AmountDto: {
@@ -6422,17 +8040,33 @@ export interface components {
        */
       value?: number;
     };
+    /** @description Represents attendance report filter. */
     AttendanceFilterV1: {
       breakFilters?: components['schemas']['CompareBreakFilter'][];
       capacityFilters?: components['schemas']['CompareCapacityFilter'][];
       endFilters?: components['schemas']['CompareEndFilter'][];
+      /**
+       * @description If set to true, report will include time off hours.
+       * @example true
+       */
       hasTimeOff?: boolean;
       overtimeFilters?: components['schemas']['CompareOvertimeFilter'][];
-      /** Format: int32 */
-      page?: number;
-      /** Format: int32 */
+      /**
+       * Format: int32
+       * @description Specifies page number.
+       * @default 1
+       */
+      page: number;
+      /**
+       * Format: int32
+       * @description Specifies page size.
+       */
       pageSize?: number;
-      sortColumn?: string;
+      /**
+       * @default NAME
+       * @enum {string}
+       */
+      sortColumn: 'NAME';
       startFilters?: components['schemas']['CompareStartFilter'][];
       workFilters?: components['schemas']['CompareWorkFilter'][];
     };
@@ -6483,47 +8117,82 @@ export interface components {
       withoutTask?: boolean;
     };
     CompareBreakFilter: {
-      filtrationType?: string;
+      /** @enum {string} */
+      filtrationType?: 'EXACTLY' | 'LARGER_THAN' | 'SMALLER_THAN';
+      /**
+       * @description Represents duration of breaks in the day in hours, multiplied by 100. For example, if desired value is 0.5h, input should be 50
+       * @example 50
+       */
       value?: string;
     };
     CompareCapacityFilter: {
-      filtrationType?: string;
+      /** @enum {string} */
+      filtrationType?: 'EXACTLY' | 'LARGER_THAN' | 'SMALLER_THAN';
+      /**
+       * @description Represents daily work capacity of user in hours, multiplied by 100. For example, if desired value is 7.5h, input should be 750.
+       * @example 750
+       */
       value?: string;
     };
     CompareEndFilter: {
-      filtrationType?: string;
+      /** @enum {string} */
+      filtrationType?: 'EXACTLY' | 'LARGER_THAN' | 'SMALLER_THAN';
+      /**
+       * @description Represents end time in 24-hour notation.
+       * @example 17:00
+       */
       value?: string;
     };
     CompareOvertimeFilter: {
-      filtrationType?: string;
+      /** @enum {string} */
+      filtrationType?: 'EXACTLY' | 'LARGER_THAN' | 'SMALLER_THAN';
+      /**
+       * @description Represents duration of overtime work (difference between work and capacity) in hours, multiplied by 100. For example, if desired value is 1.5h, input should be 150.
+       * @example 150
+       */
       value?: string;
     };
     CompareStartFilter: {
-      filtrationType?: string;
+      /** @enum {string} */
+      filtrationType?: 'EXACTLY' | 'LARGER_THAN' | 'SMALLER_THAN';
+      /**
+       * @description Represents start time in 24-hour notation.
+       * @example 15:00
+       */
       value?: string;
     };
     CompareWorkFilter: {
-      filtrationType?: string;
+      /** @enum {string} */
+      filtrationType?: 'EXACTLY' | 'LARGER_THAN' | 'SMALLER_THAN';
+      /**
+       * @description Represents duration of completed work for day in hours, multiplied by 100. For example, if desired value is 7.5h, input should be 750.
+       * @example 750
+       */
       value?: string;
     };
     ContainsArchivedFilterV1: {
-      /** @example CONTAINS */
+      /**
+       * @description Represents contains type.
+       * @example CONTAINS
+       * @enum {string}
+       */
       contains?: 'CONTAINS' | 'DOES_NOT_CONTAIN' | 'CONTAINS_ONLY';
       /**
        * @description Filter includes provided list of ids.
        * @example [
-       *   "5b715448b079875110792222",
-       *   "5b715448b079875110791111"
-       * ]
+       *       "5b715448b079875110792222",
+       *       "5b715448b079875110791111"
+       *     ]
        */
       ids?: string[];
       /**
-       * @description The status of the task, project, and other filters.
+       * @description Filter entities in 'contains' by their status.
        * @example ACTIVE
        * @enum {string}
        */
       status?: 'ACTIVE' | 'ARCHIVED' | 'ALL';
     };
+    /** @description Represents object for filtering entries by tags. */
     ContainsTagFilterV1: {
       /**
        * @description If provided, you'll get result filtered by value of contained in time entry.
@@ -6531,66 +8200,83 @@ export interface components {
        * @enum {string}
        */
       containedInTimeentry?: 'CONTAINS' | 'DOES_NOT_CONTAIN' | 'CONTAINS_ONLY';
-      /** @example CONTAINS */
+      /**
+       * @description Represents contains type.
+       * @example CONTAINS
+       * @enum {string}
+       */
       contains?: 'CONTAINS' | 'DOES_NOT_CONTAIN' | 'CONTAINS_ONLY';
       /**
        * @description Filter includes provided list of ids.
        * @example [
-       *   "5b715448b079875110792222",
-       *   "5b715448b079875110791111"
-       * ]
+       *       "5b715448b079875110792222",
+       *       "5b715448b079875110791111"
+       *     ]
        */
       ids?: string[];
       /**
-       * @description The status of the task, project, and other filters.
+       * @description Filter entities in 'contains' by their status.
        * @example ACTIVE
        * @enum {string}
        */
       status?: 'ACTIVE' | 'ARCHIVED' | 'ALL';
     };
+    /** @description Represents object for filtering entries by tasks. */
     ContainsTaskFilterV1: {
-      /** @example CONTAINS */
+      /**
+       * @description Represents contains type.
+       * @example CONTAINS
+       * @enum {string}
+       */
       contains?: 'CONTAINS' | 'DOES_NOT_CONTAIN' | 'CONTAINS_ONLY';
       /**
        * @description Filter includes provided list of ids.
        * @example [
-       *   "5b715448b079875110792222",
-       *   "5b715448b079875110791111"
-       * ]
+       *       "5b715448b079875110792222",
+       *       "5b715448b079875110791111"
+       *     ]
        */
       ids?: string[];
       /**
-       * @description The status of the task, project, and other filters.
+       * @description Filter entities in 'contains' by their status.
        * @example ACTIVE
        * @enum {string}
        */
       status?: 'ACTIVE' | 'ARCHIVED' | 'ALL';
     };
     ContainsUsersFilterV1: {
-      /** @example CONTAINS */
+      /**
+       * @description Represents contains type.
+       * @example CONTAINS
+       * @enum {string}
+       */
       contains?: 'CONTAINS' | 'DOES_NOT_CONTAIN' | 'CONTAINS_ONLY';
       /**
        * @description Filter includes provided list of ids.
        * @example [
-       *   "5b715448b079875110792222",
-       *   "5b715448b079875110791111"
-       * ]
+       *       "5b715448b079875110792222",
+       *       "5b715448b079875110791111"
+       *     ]
        */
       ids?: string[];
       /**
-       * @description The status of the task, project, and other filters.
+       * @description Filter entities in 'contains' by their status.
        * @example ACTIVE
        * @enum {string}
        */
       status?: 'ACTIVE' | 'ARCHIVED' | 'ALL';
     };
+    /** @description Represents list of custom field filter objects. */
     CustomFieldFilterV1: {
-      empty?: boolean;
       /**
        * @description Represents custom field identifier across the system.
        * @example 5b71544ab0798751107918b3
        */
       id?: string;
+      /**
+       * @description Indicates whether the custom field is empty.
+       * @example false
+       */
       isEmpty?: boolean;
       /**
        * @description Represents custom field number condition.
@@ -6622,6 +8308,7 @@ export interface components {
       date?: string;
       duration?: number;
     };
+    /** @description Represents detailed report filter. */
     DetailedFilterV1: {
       auditFilter?: components['schemas']['AuditFilterV1'];
       options?: components['schemas']['DetailedOptionsV1'];
@@ -6662,15 +8349,15 @@ export interface components {
     };
     /** @description report */
     ExpenseDetailedReportDtoV1: {
-      /** @description List of expenses */
+      /** @description Represents list of expenses */
       expenses?: components['schemas']['ExpenseReportDtoV1'][];
       totals?: components['schemas']['ExpenseTotalsDtoV1'];
     };
-    /** @description List of expenses */
+    /** @description Represents list of expenses */
     ExpenseReportDtoV1: {
       /**
        * Format: double
-       * @description Represents expenses amount
+       * @description Represents expenses amount.
        */
       amount?: number;
       /**
@@ -6678,24 +8365,25 @@ export interface components {
        * @example 5b715612b079875110791336
        */
       approvalRequestId?: string;
-      /** @description Indicates whether the expenses is billable */
+      /** @description Indicates whether the expenses is billable. */
       billable?: boolean;
-      /** @description Represents category's hash unit price */
+      /** @description Indicates whether category has unit price. */
       categoryHasUnitPrice?: boolean;
       /**
        * @description Represents category identifier across the system.
        * @example 5b715612b079875110791334
        */
       categoryId?: string;
-      /** @description Represents category's name */
+      /** @description Represents category's name. */
       categoryName?: string;
-      /** @description Represents category's unit */
+      /** @description Represents category's unit. */
       categoryUnit?: string;
       /**
-       * @description Represents expenses date. Date is in format YYYY-MM-DDTHH:MM:SS.ssssssZ
+       * @description Represents expenses date in YYYY-MM-DDTHH:MM:SS.ssssssZ format.
        * @example 2021-10-27T00:00:00Z
        */
       date?: string;
+      /** @description Represents export fields. */
       exportFields?: (
         | 'PROJECT'
         | 'CLIENT'
@@ -6782,10 +8470,15 @@ export interface components {
        * @example 5b715612b079875110791335
        */
       fileId?: string;
-      /** @description Represents expenses file name */
+      /** @description Represents expenses file name. */
       fileName?: string;
+      /**
+       * @description Represents expenses identifier across the system.
+       * @example 5b715612b079875110791122
+       */
       id?: string;
       invoicingInfo?: components['schemas']['invoicingInfo'];
+      /** @description Indicates whether the expenses is locked. */
       locked?: boolean;
       /**
        * @description Represents expenses note.
@@ -6799,7 +8492,7 @@ export interface components {
        * @example 5b715612b079875110791333
        */
       projectId?: string;
-      /** @description Represents project's name */
+      /** @description Represents project's name. */
       projectName?: string;
       /**
        * Format: double
@@ -6807,18 +8500,20 @@ export interface components {
        * @example 10
        */
       quantity?: number;
+      /** @description Represents expense name. */
       reportName?: string;
+      /** @description Represents expense time. */
       time?: string;
-      /** @description Represents user's email */
+      /** @description Represents user's email. */
       userEmail?: string;
       /**
        * @description Represents user identifier across the system.
        * @example 5b715612b079875110791121
        */
       userId?: string;
-      /** @description Represents user's name */
+      /** @description Represents user's name. */
       userName?: string;
-      /** @description Represents user's status */
+      /** @description Represents user's status. */
       userStatus?: string;
       /**
        * @description Represents workspace identifier across the system.
@@ -6886,11 +8581,13 @@ export interface components {
       note?: string;
       /**
        * Format: int32
+       * @description Page number.
        * @example 1
        */
       page?: number;
       /**
        * Format: int32
+       * @description Page size.
        * @example 50
        */
       pageSize?: number;
@@ -6932,7 +8629,10 @@ export interface components {
         | 'FRIDAY'
         | 'SATURDAY'
         | 'SUNDAY';
-      withoutDescription?: boolean;
+      /**
+       * @description If set to 'true', report will only include entries with empty note
+       * @example false
+       */
       withoutNote?: boolean;
       /**
        * @description Represents zoom level
@@ -6941,7 +8641,7 @@ export interface components {
        */
       zoomLevel?: 'WEEK' | 'MONTH' | 'YEAR';
     };
-    /** @description Expense Totals */
+    /** @description Represents expense totals */
     ExpenseTotalsDtoV1: {
       /**
        * Format: int32
@@ -7033,12 +8733,12 @@ export interface components {
        */
       dateFormat?: string;
       /**
-       * @description Provide date in format format YYYY-MM-DDTHH:MM:SS.ssssssZ
+       * @description Provide date in format YYYY-MM-DDTHH:MM:SS.ssssssZ
        * @example 2018-11-30T23:59:59.999Z
        */
       dateRangeEnd: string;
       /**
-       * @description Provide date in format format YYYY-MM-DDTHH:MM:SS.ssssssZ
+       * @description Provide date in format YYYY-MM-DDTHH:MM:SS.ssssssZ
        * @example 2018-11-01T00:00:00Z
        */
       dateRangeStart: string;
@@ -7167,10 +8867,7 @@ export interface components {
     };
     /** @description Represents the array of reports. */
     SharedReportDtoV1: {
-      /**
-       * @description Indicates whether the shared report is fixed date
-       * @example true
-       */
+      /** @description Indicates whether the shared report has a fixed date range */
       fixedDate?: boolean;
       /**
        * @description Represents shared report identifier across the system.
@@ -7223,18 +8920,18 @@ export interface components {
     };
     SharedReportRequestV1: {
       filter?: components['schemas']['ReportFilterV1'];
-      /**
-       * @description Indicates whether the shared reports is fixed date.
-       * @example true
-       */
+      /** @description Indicates whether the shared report has a fixed date range. */
       fixedDate?: boolean;
+      /**
+       * @description Indicates whether the shared report is public or not
+       * @example false
+       */
       isPublic?: boolean;
       /**
        * @description Represents shared report's name
        * @example Weekly 1
        */
       name?: string;
-      public?: boolean;
       /**
        * @description Represent the type of shared report.
        * @example WEEKLY
@@ -7257,32 +8954,33 @@ export interface components {
         | 'TEAM_GROUPS'
         | 'INVOICES';
       /**
-       * @description Represents user group ids
+       * @description Represents user group ids.
        * @example "[5b715448b079875110792222", "5b715448b079875110791111"]
        */
       visibleToUserGroups?: string[];
       /**
-       * @description Represents user ids
+       * @description Represents user ids.
        * @example [
-       *   "5b715448b079875110791234",
-       *   "5b715448b079875110791432",
-       *   "5b715448b079875110791324"
-       * ]
+       *       "5b715448b079875110791234",
+       *       "5b715448b079875110791432",
+       *       "5b715448b079875110791324"
+       *     ]
        */
       visibleToUsers?: string[];
     };
     SharedReportV1: {
       filter?: components['schemas']['ReportFilterV1'];
-      /**
-       * @description Indicates whether the shared report is fixed date
-       * @example true
-       */
+      /** @description Indicates whether the shared report has a fixed date range */
       fixedDate?: boolean;
       /**
        * @description Represents shared report identifier across the system.
        * @example 5b715612b079875110791111
        */
       id?: string;
+      /**
+       * @description Indicates whether the shared report is public or not
+       * @example false
+       */
       isPublic?: boolean;
       /**
        * @description Represents shared report name
@@ -7317,18 +9015,18 @@ export interface components {
       /**
        * @description Indicates to which user groups are visible shared report
        * @example [
-       *   "5b715612b079875110791342",
-       *   "5b715612b079875110791324",
-       *   "5b715612b079875110793142"
-       * ]
+       *       "5b715612b079875110791342",
+       *       "5b715612b079875110791324",
+       *       "5b715612b079875110793142"
+       *     ]
        */
       visibleToUserGroups?: string[];
       /**
        * @description Indicates to whom users are visible shared report
        * @example [
-       *   "5b715612b079875110791432",
-       *   "5b715612b079875110791234"
-       * ]
+       *       "5b715612b079875110791432",
+       *       "5b715612b079875110791234"
+       *     ]
        */
       visibleToUsers?: string[];
       /**
@@ -7346,6 +9044,7 @@ export interface components {
       count?: number;
       reports?: components['schemas']['SharedReportDtoV1'][];
     };
+    /** @description Represents summary report filter. */
     SummaryFilterV1: {
       /**
        * @description Represents group ids
@@ -7581,29 +9280,32 @@ export interface components {
     };
     UpdateSharedReportRequestV1: {
       /**
-       * @description Indicates whether the shared report is fixed date
+       * @description Indicates whether the shared report has a fixed date range.
        * @example false
        */
       fixedDate?: boolean;
+      /**
+       * @description Indicates whether the shared report is public.
+       * @example false
+       */
       isPublic?: boolean;
       /**
-       * @description Represents shared reports name
+       * @description Represents shared reports name.
        * @example Weekly Updated Report
        */
       name: string;
-      public?: boolean;
       /**
-       * @description Provide user groups ids to which the shared report is visible
+       * @description Provide user groups ids to which the shared report is visible.
        * @example "[5b715448b079875110792222", "5b715448b079875110791111"]
        */
       visibleToUserGroups?: string[];
       /**
-       * @description Provide user groups ids to which the shared report is visible
+       * @description Provide user ids to which the shared report is visible.
        * @example [
-       *   "5b715448b079875110791234",
-       *   "5b715448b079875110791432",
-       *   "5b715448b079875110791324"
-       * ]
+       *       "5b715448b079875110791234",
+       *       "5b715448b079875110791432",
+       *       "5b715448b079875110791324"
+       *     ]
        */
       visibleToUsers?: string[];
     };
@@ -7616,6 +9318,7 @@ export interface components {
       timeZone?: string;
       weekStart?: string;
     };
+    /** @description Represents weekly report filter. */
     WeeklyFilterV1: {
       /**
        * @description Weekly filter will include group identifier.
@@ -7648,7 +9351,7 @@ export interface components {
       userId?: string;
       userName?: string;
     };
-    /** @description Expense's invoicing info */
+    /** @description Expense's invoicing info. */
     invoicingInfo: {
       invoiceId?: string;
       manuallyInvoiced?: boolean;
@@ -7760,14 +9463,15 @@ export interface components {
   headers: never;
   pathItems: never;
 }
-
 export type $defs = Record<string, never>;
-
-export type external = Record<string, never>;
-
 export interface operations {
-  /** Add photo */
   uploadImage: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     requestBody?: {
       content: {
         'multipart/form-data': {
@@ -7782,42 +9486,50 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['UploadFileResponseV1'];
         };
       };
     };
   };
-  /** Get currently logged-in user's info */
   getLoggedUser: {
     parameters: {
       query?: {
         /**
-         * @description If set to true, memberships will be included, otherwise memberships will not be included.
+         * @description If set to true, memberships will be included.
          * @example true
          */
         'include-memberships'?: string;
       };
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['UserDtoV1'];
         };
       };
     };
   };
-  /** Get all my workspaces */
   getWorkspacesOfUser: {
     parameters: {
       query?: {
         /**
          * @description If provided, you'll get a filtered list of workspaces where you have any of the specified roles. Owners are not counted as admins when filtering.
          * @example [
-         *   "WORKSPACE_ADMIN",
-         *   "OWNER"
-         * ]
+         *       "WORKSPACE_ADMIN",
+         *       "OWNER"
+         *     ]
          */
         roles?:
           | 'WORKSPACE_ADMIN'
@@ -7825,18 +9537,30 @@ export interface operations {
           | 'TEAM_MANAGER'
           | 'PROJECT_MANAGER';
       };
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['WorkspaceDtoV1'][];
         };
       };
     };
   };
-  /** Add workspace */
   createWorkspace: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
     requestBody: {
       content: {
         'application/json': components['schemas']['WorkspaceRequest'];
@@ -7845,15 +9569,19 @@ export interface operations {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['WorkspaceDtoV1'];
         };
       };
     };
   };
-  /** Get workspace info */
   getWorkspaceOfUser: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -7861,19 +9589,25 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['WorkspaceDtoV1'];
         };
       };
     };
   };
-  /** Get all webhooks for addon on workspace */
   getAddonWebhooks: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -7886,17 +9620,21 @@ export interface operations {
          */
         addonId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['WebhooksDtoV1'];
         };
       };
     };
   };
-  /** Get approval requests */
   getApprovalGroups: {
     parameters: {
       query?: {
@@ -7921,16 +9659,17 @@ export interface operations {
          */
         'sort-order'?: 'ASCENDING' | 'DESCENDING';
         /**
-         * @description page
+         * @description Page number.
          * @example 1
          */
         page?: string;
         /**
-         * @description max page-size 200
+         * @description Page size.
          * @example 50
          */
         'page-size'?: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -7938,19 +9677,25 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ApprovalDetailsDtoV1'][];
         };
       };
     };
   };
-  /** Submit approval request */
   createApprrovalRequest: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -7958,6 +9703,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -7967,15 +9713,19 @@ export interface operations {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ApprovalRequestDtoV1'];
         };
       };
     };
   };
-  /** Submit approval request for user */
   createApprovalForOther: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -7988,6 +9738,7 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -7997,15 +9748,19 @@ export interface operations {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ApprovalRequestDtoV1'];
         };
       };
     };
   };
-  /** Update approval request */
   updateApprovalStatus: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8018,6 +9773,7 @@ export interface operations {
          */
         approvalRequestId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -8027,13 +9783,15 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ApprovalRequestDtoV1'];
         };
       };
     };
   };
-  /** Find clients on workspace */
   getClients: {
     parameters: {
       query?: {
@@ -8053,12 +9811,12 @@ export interface operations {
          */
         'sort-order'?: string;
         /**
-         * @description page
+         * @description Page number.
          * @example 1
          */
         page?: string;
         /**
-         * @description page size
+         * @description Page size.
          * @example 50
          */
         'page-size'?: string;
@@ -8068,6 +9826,7 @@ export interface operations {
          */
         archived?: boolean;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8075,19 +9834,25 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ClientWithCurrencyDtoV1'][];
         };
       };
     };
   };
-  /** Add a new client */
   createClient: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8095,6 +9860,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -8104,15 +9870,19 @@ export interface operations {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ClientWithCurrencyDtoV1'];
         };
       };
     };
   };
-  /** Get client by ID */
   getClient: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents client identifier across the system.
@@ -8125,23 +9895,28 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ClientWithCurrencyDtoV1'];
         };
       };
     };
   };
-  /** Update client */
   updateClient: {
     parameters: {
       query?: {
         'archive-projects'?: boolean;
         'mark-tasks-as-done'?: boolean;
       };
+      header?: never;
       path: {
         /**
          * @description Represents client identifier across the system.
@@ -8154,6 +9929,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -8163,15 +9939,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ClientDtoV1'];
         };
       };
     };
   };
-  /** Delete client */
   deleteClient: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents client identifier across the system.
@@ -8184,19 +9964,25 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ClientDtoV1'];
         };
       };
     };
   };
-  /** Update workspace cost rate */
   setWorkspaceCostRate: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8204,6 +9990,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -8213,13 +10000,15 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['WorkspaceDtoV1'];
         };
       };
     };
   };
-  /** Get custom fields on workspace */
   ofWorkspace: {
     parameters: {
       query?: {
@@ -8236,12 +10025,13 @@ export interface operations {
         /**
          * @description If provided, you'll get a filtered list of custom fields that matches the provided string with the custom field entity type.
          * @example [
-         *   "TIMEENTRY",
-         *   "USER"
-         * ]
+         *       "TIMEENTRY",
+         *       "USER"
+         *     ]
          */
         entityType?: 'TIMEENTRY' | 'USER';
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8249,19 +10039,51 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['CustomFieldDtoV1'][];
         };
       };
     };
   };
-  /** Set custom field as required */
+  create: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        workspaceId: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['CustomFieldRequestV1'];
+      };
+    };
+    responses: {
+      /** @description Created */
+      201: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          '*/*': components['schemas']['CustomFieldDtoV1'];
+        };
+      };
+    };
+  };
   editCustomField: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8274,6 +10096,7 @@ export interface operations {
          */
         customFieldId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -8283,32 +10106,56 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['CustomFieldDtoV1'];
         };
       };
     };
   };
-  /** Get all expenses on workspace */
+  delete: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        workspaceId: string;
+        customFieldId: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description No Content */
+      204: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+    };
+  };
   getExpenses: {
     parameters: {
       query?: {
         /**
-         * @description page
+         * @description Page number.
          * @example 1
          */
         page?: string;
         /**
-         * @description page-size
+         * @description Page size.
          * @example 50
          */
         'page-size'?: string;
         /**
-         * @description If provided, you'll get a filtered result of expenses that matchesthe provided string in the user ID linked to the expense.
+         * @description If provided, you'll get a filtered list of expenses which match the provided string in the user ID linked to the expense.
          * @example 5a0ab5acb07987125438b60f
          */
         userId?: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8316,19 +10163,25 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ExpensesAndTotalsDtoV1'];
         };
       };
     };
   };
-  /** Create expense */
   createExpense: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8336,6 +10189,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody?: {
       content: {
@@ -8345,13 +10199,15 @@ export interface operations {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ExpenseDtoV1'];
         };
       };
     };
   };
-  /** Get all expense categories */
   getCategories: {
     parameters: {
       query?: {
@@ -8359,19 +10215,19 @@ export interface operations {
          * @description Represents the column name to be used as sorting criteria.
          * @example NAME
          */
-        'sort-column'?: string;
+        'sort-column'?: 'NAME';
         /**
-         * @description Represents the sorting order. Possible values: ASCENDING, DESCENDING
+         * @description Represents the sorting order.
          * @example ASCENDING
          */
-        'sort-order'?: string;
+        'sort-order'?: 'ASCENDING' | 'DESCENDING';
         /**
-         * @description page
+         * @description Page number.
          * @example 1
          */
         page?: string;
         /**
-         * @description page size
+         * @description Page size.
          * @example 50
          */
         'page-size'?: string;
@@ -8381,11 +10237,12 @@ export interface operations {
          */
         archived?: string;
         /**
-         * @description If provided, you'll get a filtered list of expense categoriesthat matches the provided string in their name.
+         * @description If provided, you'll get a filtered list of expense categories that matches the provided string in their name.
          * @example procurement
          */
         name?: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8393,19 +10250,25 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ExpenseCategoriesWithCountDtoV1'];
         };
       };
     };
   };
-  /** Add expense category */
   createExpenseCategory: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8413,6 +10276,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -8422,15 +10286,19 @@ export interface operations {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ExpenseCategoryDtoV1'];
         };
       };
     };
   };
-  /** Update expense category */
   updateCategory: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8443,6 +10311,7 @@ export interface operations {
          */
         categoryId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -8452,15 +10321,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ExpenseCategoryDtoV1'];
         };
       };
     };
   };
-  /** Delete expense category */
   deleteCategory: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8473,17 +10346,23 @@ export interface operations {
          */
         categoryId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description No Content */
       204: {
-        content: never;
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
       };
     };
   };
-  /** Archive expense category */
   updateExpenseCategoryStatus: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8496,6 +10375,7 @@ export interface operations {
          */
         categoryId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -8505,15 +10385,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ExpenseCategoryDtoV1'];
         };
       };
     };
   };
-  /** Get expense by ID */
   getExpense: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8526,19 +10410,25 @@ export interface operations {
          */
         expenseId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ExpenseDtoV1'];
         };
       };
     };
   };
-  /** Update expense */
   updateExpense: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8551,6 +10441,7 @@ export interface operations {
          */
         expenseId: string;
       };
+      cookie?: never;
     };
     requestBody?: {
       content: {
@@ -8560,15 +10451,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ExpenseDtoV1'];
         };
       };
     };
   };
-  /** Delete expense */
   deleteExpense: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8581,17 +10476,23 @@ export interface operations {
          */
         expenseId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
-        content: never;
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
       };
     };
   };
-  /** Download receipt */
   downloadFile: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents file identifier across the system.
@@ -8609,17 +10510,21 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           '*/*': string[];
         };
       };
     };
   };
-  /** Get holidays on workspace */
   getHolidays: {
     parameters: {
       query?: {
@@ -8629,6 +10534,7 @@ export interface operations {
          */
         'assigned-to'?: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8636,19 +10542,25 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['HolidayDtoV1'][];
         };
       };
     };
   };
-  /** Create holiday */
   createHoliday: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8656,6 +10568,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -8665,13 +10578,15 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['HolidayDtoV1'];
         };
       };
     };
   };
-  /** Get holiday in specific period */
   getHolidaysInPeriod: {
     parameters: {
       query: {
@@ -8691,6 +10606,7 @@ export interface operations {
          */
         end: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8698,19 +10614,25 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['HolidayDtoV1'][];
         };
       };
     };
   };
-  /** Update holiday */
   updateHoliday: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8723,6 +10645,7 @@ export interface operations {
          */
         holidayId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -8732,15 +10655,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['HolidayDtoV1'];
         };
       };
     };
   };
-  /** Delete holiday */
   deleteHoliday: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8753,19 +10680,25 @@ export interface operations {
          */
         holidayId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['HolidayDto'];
         };
       };
     };
   };
-  /** Update workspace billable rate */
   setWorkspaceHourlyRate: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8773,6 +10706,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -8782,29 +10716,34 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['WorkspaceDtoV1'];
         };
       };
     };
   };
-  /** Get all invoices on workspace */
   getInvoices: {
     parameters: {
       query?: {
         /**
-         * @description page
+         * @description Page number.
          * @example 1
          */
         page?: string;
         /**
-         * @description page size
+         * @description Page size.
          * @example 50
          */
         'page-size'?: string;
         /**
          * @description If provided, you'll get a filtered result of invoices that matches the provided string in the user ID linked to the expense.
-         * @example UNSENT
+         * @example [
+         *       "UNSENT",
+         *       "PAID"
+         *     ]
          */
         statuses?:
           | 'UNSENT'
@@ -8814,16 +10753,23 @@ export interface operations {
           | 'VOID'
           | 'OVERDUE';
         /**
-         * @description Valid column name as sorting criteria. Possible values: ID, CLIENT, DUE_ON, ISSUE_DATE, AMOUNT, BALANCE
+         * @description Valid column name as sorting criteria. Default: ID
          * @example CLIENT
          */
-        'sort-column'?: string;
+        'sort-column'?:
+          | 'ID'
+          | 'CLIENT'
+          | 'DUE_ON'
+          | 'ISSUE_DATE'
+          | 'AMOUNT'
+          | 'BALANCE';
         /**
-         * @description Possible values: ASCENDING, DESCENDING
+         * @description Sort order. Default: ASCENDING
          * @example ASCENDING
          */
-        'sort-order'?: string;
+        'sort-order'?: 'ASCENDING' | 'DESCENDING';
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8831,19 +10777,25 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['InvoicesListDtoV1'];
         };
       };
     };
   };
-  /** Add invoice */
   createInvoice: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8851,6 +10803,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -8860,15 +10813,19 @@ export interface operations {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['CreateInvoiceDtoV1'];
         };
       };
     };
   };
-  /** Filter out invoices */
   getInvoicesInfo: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8876,6 +10833,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -8885,15 +10843,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['InvoiceInfoResponseDtoV1'];
         };
       };
     };
   };
-  /** Get invoice in another language */
   getInvoiceSettings: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8901,19 +10863,25 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['InvoiceSettingsDtoV1'];
         };
       };
     };
   };
-  /** Change invoice language */
   updateInvoiceSettings: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8921,6 +10889,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -8930,13 +10899,17 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
-        content: never;
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
       };
     };
   };
-  /** Get invoice by ID */
   getInvoice: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8949,19 +10922,25 @@ export interface operations {
          */
         invoiceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['InvoiceOverviewDtoV1'];
         };
       };
     };
   };
-  /** Send invoice */
   updateInvoice: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -8974,6 +10953,7 @@ export interface operations {
          */
         invoiceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -8983,15 +10963,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['InvoiceOverviewDtoV1'];
         };
       };
     };
   };
-  /** Delete invoice */
   deleteInvoice: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -9004,17 +10988,23 @@ export interface operations {
          */
         invoiceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
-        content: never;
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
       };
     };
   };
-  /** Duplicate invoice */
   duplicateInvoice: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents invoice identifier across the system.
@@ -9022,17 +11012,21 @@ export interface operations {
          */
         invoiceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['InvoiceOverviewDtoV1'];
         };
       };
     };
   };
-  /** Export invoice */
   exportInvoice: {
     parameters: {
       query: {
@@ -9042,6 +11036,7 @@ export interface operations {
          */
         userLocale: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents invoice identifier across the system.
@@ -9054,31 +11049,36 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           '*/*': string[];
         };
       };
     };
   };
-  /** Get payments for invoice */
   getPaymentsForInvoice: {
     parameters: {
       query?: {
         /**
-         * @description page
+         * @description Page number.
          * @example 1
          */
         page?: string;
         /**
-         * @description page size
+         * @description Page size.
          * @example 50
          */
         'page-size'?: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -9091,19 +11091,25 @@ export interface operations {
          */
         invoiceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['InvoicePaymentDtoV1'][];
         };
       };
     };
   };
-  /** Add payment to invoice */
   createInvoicePayment: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -9116,6 +11122,7 @@ export interface operations {
          */
         invoiceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -9125,15 +11132,19 @@ export interface operations {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['InvoiceOverviewDtoV1'];
         };
       };
     };
   };
-  /** Delete payment from invoice */
   deletePaymentById: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents invoice identifier across the system.
@@ -9151,19 +11162,25 @@ export interface operations {
          */
         paymentId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['InvoiceOverviewDtoV1'];
         };
       };
     };
   };
-  /** Change invoice status */
   changeInvoiceStatus: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -9176,6 +11193,7 @@ export interface operations {
          */
         invoiceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -9185,13 +11203,17 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
-        content: never;
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
       };
     };
   };
-  /** Get member's profile */
   getMemberProfile: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -9204,19 +11226,25 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['MemberProfileDtoV1'];
         };
       };
     };
   };
-  /** Update member's profile */
   updateMemberProfileWithAdditionalData: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -9229,6 +11257,7 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -9238,15 +11267,18 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['MemberProfileDtoV1'];
         };
       };
     };
   };
-  /** Update user's email */
   changeUserMemberEmail: {
     parameters: {
+      query?: never;
       header?: {
         /**
          * @description Represents a subdomain name.
@@ -9266,6 +11298,7 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -9275,11 +11308,13 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
-        content: never;
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
       };
     };
   };
-  /** Get all projects on workspace */
   getProjects: {
     parameters: {
       query?: {
@@ -9288,63 +11323,69 @@ export interface operations {
          * @example Software Development
          */
         name?: string;
-        /** @description Flag to toggle on/off strict search mode. */
+        /** @description Flag to toggle on/off strict search mode. When set to true, search by name will only return projects whose name exactly matches the string value given for the 'name' parameter. When set to false, results will also include projects whose name contain the string value, but could be longer than the string value itself. For example, if there is a project with the name 'applications', and the search value is 'app', setting strict-name-search to true will not return that project in the results, whereas setting it to false will. */
         'strict-name-search'?: string;
-        /** @description If provided, you'll get a filtered list of projects that matches the boolean whether a project is archived or not. */
+        /** @description If provided and set to true, you'll only get archived projects. If omitted, you'll get both archived and non-archived projects. */
         archived?: string;
-        /** @description If provided, you'll get a filtered list of projects that contains the boolean whether a project is billable or not. */
+        /** @description If provided and set to true, you'll only get billable projects. If omitted, you'll get both billable and non-billable projects. */
         billable?: string;
         /**
-         * @description If provided, you'll get a filtered list of projects that matches any of the client names provided in the project client.
+         * @description If provided, you'll get a filtered list of projects that contain clients which match any of the provided ids.
          * @example [
-         *   "Client X",
-         *   "Client Y"
-         * ]
+         *       "5a0ab5acb07987125438b60f",
+         *       "64c777ddd3fcab07cfbb210c"
+         *     ]
          */
         clients?: string;
-        /** @description If set to true, you'll get a filtered list of projects that contains the provided string(s) in the clients. */
+        /** @description If set to true, you'll get a filtered list of projects that contain clients which match the provided id(s) in 'clients' field. If set to false, you'll get a filtered list of projects which do NOT contain clients that match the provided id(s) in 'clients' field. */
         'contains-client'?: string;
         /**
          * @description Filters projects based on client status provided.
          * @example ACTIVE
          */
-        'client-status'?: string;
+        'client-status'?: 'ACTIVE' | 'ARCHIVED' | 'ALL';
         /**
-         * @description Valid array of string(s).
+         * @description If provided, you'll get a filtered list of projects that contain users which match any of the provided ids.
          * @example [
-         *   "5a0ab5acb07987125438b60f",
-         *   "64c777ddd3fcab07cfbb210c"
-         * ]
+         *       "5a0ab5acb07987125438b60f",
+         *       "64c777ddd3fcab07cfbb210c"
+         *     ]
          */
         users?: string;
-        /** @description If set to true, you'll get a filtered list of projects that contains the provided string(s) in the users. */
+        /** @description If set to true, you'll get a filtered list of projects that contain users which match the provided id(s) in 'users' field. If set to false, you'll get a filtered list of projects which do NOT contain users which match the provided id(s) in 'users' field. */
         'contains-user'?: string;
         /**
-         * @description Filters projects based on client status provided.
+         * @description Filters projects based on user status provided.
          * @example ALL
          */
-        'user-status'?: string;
-        /** @description Filters projects whether it is used as template or not. */
+        'user-status'?: 'PENDING' | 'ACTIVE' | 'DECLINED' | 'INACTIVE' | 'ALL';
+        /** @description Filters projects based on whether they are used as a template or not. */
         'is-template'?: string;
         /**
-         * @description Sorts the results by the given column/field
+         * @description Sorts the results by the given column/field.
          * @example NAME
          */
-        'sort-column'?: string;
+        'sort-column'?:
+          | 'ID'
+          | 'NAME'
+          | 'CLIENT_NAME'
+          | 'DURATION'
+          | 'BUDGET'
+          | 'PROGRESS';
         /**
-         * @description Sorting mode. Possible values: ASCENDING, DESCENDING
+         * @description Sorting mode.
          * @example ASCENDING
          */
-        'sort-order'?: string;
+        'sort-order'?: 'ASCENDING' | 'DESCENDING';
         /** @description If set to true, results will contain additional information about the project. */
         hydrated?: string;
         /**
-         * @description page
+         * @description Page number.
          * @example 1
          */
         page?: string;
         /**
-         * @description page size
+         * @description Page size.
          * @example 50
          */
         'page-size'?: string;
@@ -9352,10 +11393,19 @@ export interface operations {
          * @description Valid set of string(s). If provided, you'll get a filtered list of projects that matches the provided access.
          * @example PUBLIC
          */
-        access?: string;
-        'expense-limit'?: number;
+        access?: 'PUBLIC' | 'PRIVATE';
+        /**
+         * @description Represents maximum number of expenses to fetch.
+         * @example 10
+         */
+        'expense-limit'?: string;
+        /**
+         * @description If provided, you will get expenses dated before the provided value in yyyy-MM-dd format.
+         * @example 2024-12-31
+         */
         'expense-date'?: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -9363,19 +11413,25 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ProjectDtoV1'][];
         };
       };
     };
   };
-  /** Add a new project */
   createNewProject: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -9383,6 +11439,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -9392,13 +11449,15 @@ export interface operations {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ProjectDtoImplV1'];
         };
       };
     };
   };
-  /** Find project by ID */
   getProject: {
     parameters: {
       query?: {
@@ -9409,9 +11468,18 @@ export interface operations {
          * @example TIMEENTRY
          */
         customFieldEntityType?: 'TIMEENTRY' | 'USER';
-        'expense-limit'?: number;
+        /**
+         * @description Represents maximum number of expenses to fetch.
+         * @example 10
+         */
+        'expense-limit'?: string;
+        /**
+         * @description If provided, you will get expenses dated before the provided value in yyyy-MM-dd format.
+         * @example 2024-12-31
+         */
         'expense-date'?: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -9424,19 +11492,25 @@ export interface operations {
          */
         projectId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ProjectDtoV1'];
         };
       };
     };
   };
-  /** Update project on workspace */
   updateProject: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -9449,6 +11523,7 @@ export interface operations {
          */
         projectId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -9458,15 +11533,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ProjectDtoImplV1'];
         };
       };
     };
   };
-  /** Delete project from workspace */
   deleteProject: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -9479,17 +11558,21 @@ export interface operations {
          */
         projectId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ProjectDtoImplV1'];
         };
       };
     };
   };
-  /** Get custom fields on project */
   getCustomFieldsOfProject: {
     parameters: {
       query: {
@@ -9501,6 +11584,7 @@ export interface operations {
         /** @example TIMEENTRY */
         entityType?: 'TIMEENTRY' | 'USER';
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -9513,19 +11597,25 @@ export interface operations {
          */
         projectId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['CustomFieldDtoV1'][];
         };
       };
     };
   };
-  /** Remove custom field from project */
   removeDefaultValueOfProject: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -9543,19 +11633,25 @@ export interface operations {
          */
         customFieldId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['CustomFieldDtoV1'];
         };
       };
     };
   };
-  /** Update custom field on project */
   editProjectCustomFieldDefaultValue: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -9573,6 +11669,7 @@ export interface operations {
          */
         customFieldId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -9582,15 +11679,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['CustomFieldDtoV1'];
         };
       };
     };
   };
-  /** Update project estimate */
   updateEstimate: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -9603,6 +11704,7 @@ export interface operations {
          */
         projectId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -9612,37 +11714,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ProjectDtoImplV1'];
         };
       };
     };
   };
-  /** Assign/remove users to/from the project */
   addUsersToProject: {
     parameters: {
-      path: {
-        workspaceId: string;
-        projectId: string;
-      };
-    };
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['AddUsersToProjectRequestV1'];
-      };
-    };
-    responses: {
-      /** @description OK */
-      200: {
-        content: {
-          '*/*': components['schemas']['ProjectDtoImplV1'];
-        };
-      };
-    };
-  };
-  /** Update project memberships */
-  updateMemberships: {
-    parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -9655,6 +11739,42 @@ export interface operations {
          */
         projectId: string;
       };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['AddUsersToProjectRequestV1'];
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          '*/*': components['schemas']['ProjectDtoImplV1'];
+        };
+      };
+    };
+  };
+  updateMemberships: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /**
+         * @description Represents workspace identifier across the system.
+         * @example 64a687e29ae1f428e7ebe303
+         */
+        workspaceId: string;
+        /**
+         * @description Represents project identifier across the system.
+         * @example 5b641568b07987035750505e
+         */
+        projectId: string;
+      };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -9664,32 +11784,34 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ProjectDtoImplV1'];
         };
       };
     };
   };
-  /** Find tasks on project */
   getTasks: {
     parameters: {
       query?: {
         /**
-         * @description If provided, you'll get a filtered list of tasks that matchesthe provided string in their name.
+         * @description If provided, you'll get a filtered list of tasks that matches the provided string in their name.
          * @example Bugfixing
          */
         name?: string;
-        /** @description Flag to toggle on/off strict name search mode. */
+        /** @description Flag to toggle on/off strict search mode. When set to true, search by name only will return tasks whose name exactly matches the string value given for the 'name' parameter. When set to false, results will also include tasks whose name contain the string value, but could be longer than the string value itself. For example, if there is a task with the name 'applications', and the search value is 'app', setting strict-name-search to true will not return that task in the results, whereas setting it to false will. */
         'strict-name-search'?: string;
         /** @description Filters search results whether task is active or not. */
         'is-active'?: string;
         /**
-         * @description page
+         * @description Page number.
          * @example 1
          */
         page?: string;
         /**
-         * @description page
+         * @description Page size.
          * @example 1
          */
         'page-size'?: string;
@@ -9697,13 +11819,14 @@ export interface operations {
          * @description Represents the column as criteria for sorting tasks.
          * @example ID
          */
-        'sort-column'?: string;
+        'sort-column'?: 'ID' | 'NAME';
         /**
-         * @description Sorting mode. Possible values: ASCENDING, DESCENDING
+         * @description Sorting mode.
          * @example ASCENDING
          */
-        'sort-order'?: string;
+        'sort-order'?: 'ASCENDING' | 'DESCENDING';
       };
+      header?: never;
       path: {
         /**
          * @description Represents project identifier across the system.
@@ -9716,23 +11839,28 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TaskDtoV1'][];
         };
       };
     };
   };
-  /** Add a new task on project */
   createTask: {
     parameters: {
       query?: {
-        /** @description Flag to set whetherr task will have assignee or none. Default value is true. */
+        /** @description Flag to set whether task will have assignee or none. */
         'contains-assignee'?: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents project identifier across the system.
@@ -9745,6 +11873,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -9754,15 +11883,19 @@ export interface operations {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TaskDtoV1'];
         };
       };
     };
   };
-  /** Update task cost rate */
   setTaskCostRate: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents project identifier across the system.
@@ -9780,6 +11913,7 @@ export interface operations {
          */
         id: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -9789,15 +11923,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TaskDtoV1'];
         };
       };
     };
   };
-  /** Update task billable rate */
   setTaskHourlyRate: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents project identifier across the system.
@@ -9815,6 +11953,7 @@ export interface operations {
          */
         id: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -9824,15 +11963,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TaskDtoV1'];
         };
       };
     };
   };
-  /** Get task by id */
   getTask: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents task identifier across the system.
@@ -9850,21 +11993,25 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TaskDtoV1'];
         };
       };
     };
   };
-  /** Update task on project */
   updateTask: {
     parameters: {
       query?: {
-        /** @description Flag to set whetherr task will have assignee or none. Default value is true. */
+        /** @description Flag to set whether task will have assignee or none. */
         'contains-assignee'?: string;
         /**
          * @description Represents a membership status.
@@ -9877,6 +12024,7 @@ export interface operations {
           | 'INACTIVE'
           | 'ALL';
       };
+      header?: never;
       path: {
         /**
          * @description Represents task identifier across the system.
@@ -9894,6 +12042,7 @@ export interface operations {
          */
         projectId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -9903,15 +12052,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TaskDtoV1'];
         };
       };
     };
   };
-  /** Delete task from project */
   deleteTask: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents task identifier across the system.
@@ -9929,19 +12082,25 @@ export interface operations {
          */
         projectId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TaskDtoV1'];
         };
       };
     };
   };
-  /** Update project template */
   updateIsProjectTemplate: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -9954,6 +12113,7 @@ export interface operations {
          */
         projectId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -9963,15 +12123,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ProjectDtoImplV1'];
         };
       };
     };
   };
-  /** Update project user cost rate */
   addUsersCostRate: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -9989,6 +12153,7 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -9998,15 +12163,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ProjectDtoImplV1'];
         };
       };
     };
   };
-  /** Update project user billable rate */
   addUsersHourlyRate: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10024,6 +12193,7 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -10033,13 +12203,15 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ProjectDtoImplV1'];
         };
       };
     };
   };
-  /** Get all assignments */
   getAllAssignments: {
     parameters: {
       query: {
@@ -10069,16 +12241,17 @@ export interface operations {
          */
         'sort-order'?: 'ASCENDING' | 'DESCENDING';
         /**
-         * @description page
+         * @description Page number.
          * @example 1
          */
         page?: string;
         /**
-         * @description max page-size 5000
+         * @description Page size.
          * @example 50
          */
         'page-size'?: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10086,23 +12259,27 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['AssignmentHydratedDtoV1'][];
         };
       };
     };
   };
-  /** Get all scheduled assignments per project */
   getProjectTotals: {
     parameters: {
       query: {
         /**
-         * @description Represents search keyword
-         * @example keyword
+         * @description Represents term for searching projects and clients by name.
+         * @example Project name
          */
         search?: string;
         /**
@@ -10116,16 +12293,17 @@ export interface operations {
          */
         end: string;
         /**
-         * @description page
+         * @description Page number.
          * @example 1
          */
         page?: string;
         /**
-         * @description max page-size 200
+         * @description Page size.
          * @example 50
          */
         'page-size'?: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10133,17 +12311,21 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['SchedulingProjectsTotalsDtoV1'][];
         };
       };
     };
   };
-  /** Get all scheduled assignments on project */
   getProjectTotalsForSingleProject: {
     parameters: {
       query: {
@@ -10158,6 +12340,7 @@ export interface operations {
          */
         end: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10170,19 +12353,25 @@ export interface operations {
          */
         projectId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['SchedulingProjectsTotalsDtoV1'];
         };
       };
     };
   };
-  /** Publish assignments */
   publishAssignments: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10190,6 +12379,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -10199,13 +12389,17 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
-        content: never;
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
       };
     };
   };
-  /** Create recurring assignment */
   createRecurring: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10213,6 +12407,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -10222,13 +12417,15 @@ export interface operations {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['AssignmentDtoV1'][];
         };
       };
     };
   };
-  /** Delete recurring assignment */
   deleteRRecurringAssignment: {
     parameters: {
       query?: {
@@ -10238,6 +12435,7 @@ export interface operations {
          */
         seriesUpdateOption?: 'THIS_ONE' | 'THIS_AND_FOLLOWING' | 'ALL';
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10250,19 +12448,25 @@ export interface operations {
          */
         assignmentId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['AssignmentDtoV1'][];
         };
       };
     };
   };
-  /** Update recurring assignment */
   editRecurring: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10275,6 +12479,7 @@ export interface operations {
          */
         assignmentId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -10284,15 +12489,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['AssignmentDtoV1'][];
         };
       };
     };
   };
-  /** Change recurring period */
   editRecurringPeriod: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10305,6 +12514,7 @@ export interface operations {
          */
         assignmentId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -10314,15 +12524,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['AssignmentDtoV1'][];
         };
       };
     };
   };
-  /** Get total of users' capacity on workspace */
   getUserTotals: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10330,6 +12544,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -10339,23 +12554,25 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['SchedulingUsersTotalsDtoV1'][];
         };
       };
     };
   };
-  /** Get total capacity of a user */
   getUserTotalsForSingleUser: {
     parameters: {
       query: {
         /**
-         * @description page
+         * @description Page number.
          * @example 1
          */
         page?: string;
         /**
-         * @description page
+         * @description Page size.
          * @example 50
          */
         'page-size'?: string;
@@ -10370,6 +12587,7 @@ export interface operations {
          */
         end: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10382,19 +12600,25 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['SchedulingUsersTotalsDtoV1'];
         };
       };
     };
   };
-  /** Copy scheduled assignment */
   copyAssignment: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10407,6 +12631,7 @@ export interface operations {
          */
         assignmentId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -10416,13 +12641,15 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['AssignmentDtoV1'][];
         };
       };
     };
   };
-  /** Find tags on workspace */
   getTags: {
     parameters: {
       query?: {
@@ -10431,36 +12658,33 @@ export interface operations {
          * @example feature_X
          */
         name?: string;
-        /**
-         * @description Flag to toggle on/off strict search mode.
-         * @example true
-         */
+        /** @description Flag to toggle on/off strict search mode. When set to true, search by name will only return tags whose name exactly matches the string value given for the 'name' parameter. When set to false, results will also include tags whose name contain the string value, but could be longer than the string value itself. For example, if there is a tag with the name 'applications', and the search value is 'app', setting strict-name-search to true will not return that tag in the results, whereas setting it to false will. */
         'strict-name-search'?: string;
         /**
          * @description Represents a list of excluded ids
          * @example [
-         *   "90p687e29ae1f428e7ebe657",
-         *   "3r8687e29ae1f428e7eg567y"
-         * ]
+         *       "90p687e29ae1f428e7ebe657",
+         *       "3r8687e29ae1f428e7eg567y"
+         *     ]
          */
         excludedIds?: string;
         /**
          * @description Represents column to be used as sorting criteria.
          * @example NAME
          */
-        'sort-column'?: string;
+        'sort-column'?: 'ID' | 'NAME';
         /**
-         * @description Represents sorting mode. Possible values: ASCENDING, DESCENDING
+         * @description Represents sorting mode.
          * @example ASCENDING
          */
-        'sort-order'?: string;
+        'sort-order'?: 'ASCENDING' | 'DESCENDING';
         /**
-         * @description page
+         * @description Page number.
          * @example 1
          */
         page?: string;
         /**
-         * @description page size
+         * @description Page size.
          * @example 50
          */
         'page-size'?: string;
@@ -10470,6 +12694,7 @@ export interface operations {
          */
         archived?: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10477,19 +12702,25 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TagDtoV1'][];
         };
       };
     };
   };
-  /** Add a new tag */
   createNewTag: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10497,6 +12728,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -10506,15 +12738,19 @@ export interface operations {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TagDtoV1'];
         };
       };
     };
   };
-  /** Get tag by ID */
   getTag: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents tag identifier across the system.
@@ -10527,19 +12763,25 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TagDtoV1'];
         };
       };
     };
   };
-  /** Update tag */
   updateTag: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents tag identifier across the system.
@@ -10552,6 +12794,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -10561,15 +12804,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TagDtoV1'];
         };
       };
     };
   };
-  /** Delete tag */
   deleteTag: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents tag identifier across the system.
@@ -10582,19 +12829,25 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TagDtoV1'];
         };
       };
     };
   };
-  /** Add a new time entry */
   createTimeEntry: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10602,6 +12855,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -10611,15 +12865,19 @@ export interface operations {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TimeEntryDtoImplV1'];
         };
       };
     };
   };
-  /** Mark time entries as invoiced */
   updateInvoicedStatus: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10627,6 +12885,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -10636,17 +12895,45 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
-        content: never;
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
       };
     };
   };
-  /** Get a specific time entry on workspace */
+  getInProgressTimeEntries: {
+    parameters: {
+      query?: {
+        page?: number;
+        'page-size'?: number;
+      };
+      header?: never;
+      path: {
+        workspaceId: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description OK */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          '*/*': components['schemas']['TimeEntryWithRatesDtoV1'][];
+        };
+      };
+    };
+  };
   getTimeEntry: {
     parameters: {
       query?: {
         /** @description Flag to set whether to include additional information of a time entry or not. */
         hydrated?: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10659,19 +12946,25 @@ export interface operations {
          */
         id: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TimeEntryWithRatesDtoV1'];
         };
       };
     };
   };
-  /** Update time entry on workspace */
   updateTimeEntry: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10684,6 +12977,7 @@ export interface operations {
          */
         id: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -10693,15 +12987,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TimeEntryDtoImplV1'];
         };
       };
     };
   };
-  /** Delete time entry from workspace */
   deleteTimeEntry: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10714,15 +13012,19 @@ export interface operations {
          */
         id: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description No Content */
       204: {
-        content: never;
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
       };
     };
   };
-  /** Find all groups on workspace */
   getUserGroups: {
     parameters: {
       query?: {
@@ -10740,23 +13042,24 @@ export interface operations {
          * @description Column to be used as the sorting criteria.
          * @example NAME
          */
-        'sort-column'?: string;
+        'sort-column'?: 'ID' | 'NAME';
         /**
-         * @description Sorting mode. Possible values: ASCENDING, DESCENDING
+         * @description Sorting mode.
          * @example ASCENDING
          */
-        'sort-order'?: string;
+        'sort-order'?: 'ASCENDING' | 'DESCENDING';
         /**
-         * @description page
+         * @description Page number.
          * @example 1
          */
         page?: string;
         /**
-         * @description page size
+         * @description Page size.
          * @example 50
          */
         'page-size'?: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10764,19 +13067,25 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['UserGroupDtoV1'][];
         };
       };
     };
   };
-  /** Add a new group */
   createUserGroup: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10784,6 +13093,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -10793,15 +13103,19 @@ export interface operations {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['UserGroupDtoV1'];
         };
       };
     };
   };
-  /** Update group */
   updateUserGroup: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents user group identifier across the system.
@@ -10814,6 +13128,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -10823,15 +13138,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['UserGroupDtoV1'];
         };
       };
     };
   };
-  /** Delete group */
   deleteUserGroup: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10844,19 +13163,25 @@ export interface operations {
          */
         id: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['UserGroupDtoV1'];
         };
       };
     };
   };
-  /** Add users to group */
   addUser: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10869,6 +13194,7 @@ export interface operations {
          */
         userGroupId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -10878,15 +13204,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['UserGroupDtoV1'];
         };
       };
     };
   };
-  /** Remove user from group */
   deleteUser: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10904,23 +13234,27 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['UserGroupDtoV1'];
         };
       };
     };
   };
-  /** Get time entries for a user on workspace */
   getTimeEntries: {
     parameters: {
       query?: {
         /**
-         * @description Represents a time entry description.
-         * @example This is a sample time entry description.
+         * @description Represents term for searching time entries by description.
+         * @example Description keywords
          */
         description?: string;
         /**
@@ -10944,30 +13278,30 @@ export interface operations {
          */
         task?: string;
         /**
-         * @description If provided, you'll get a filtered list of time entries that matches the provided string(s) in their tag id.
+         * @description If provided, you'll get a filtered list of time entries that matches the provided string(s) in their tag id(s).
          * @example [
-         *   "5e4117fe8c625f38930d57b7",
-         *   "7e4117fe8c625f38930d57b8"
-         * ]
+         *       "5e4117fe8c625f38930d57b7",
+         *       "7e4117fe8c625f38930d57b8"
+         *     ]
          */
         tags?: string;
-        /** @description Flag to set whether to require project or not. */
+        /** @description Flag to set whether to only get time entries which have a project. */
         'project-required'?: string;
-        /** @description Flag to set whether to require task or not. */
+        /** @description Flag to set whether to only get time entries which have tasks. */
         'task-required'?: string;
         /** @description Flag to set whether to include additional information on time entries or not. */
         hydrated?: string;
         /**
-         * @description page
+         * @description Page number.
          * @example 1
          */
         page?: string;
         /**
-         * @description page size
+         * @description Page size.
          * @example 50
          */
         'page-size'?: string;
-        /** @description Flag to set whether to filter in progress time entries only or not. */
+        /** @description Flag to set whether to filter only in progress time entries. */
         'in-progress'?: boolean;
         /**
          * @description Valid yyyy-MM-ddThh:mm:ssZ format date. If provided, filters results within the week before the datetime provided and only those entries with assigned project or task.
@@ -10975,6 +13309,7 @@ export interface operations {
          */
         'get-week-before'?: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -10987,23 +13322,28 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TimeEntryWithRatesDtoV1'][];
         };
       };
     };
   };
-  /** Bulk edit time entries */
   replaceMany: {
     parameters: {
       query?: {
         /** @description If set to true, results will contain additional information about the time entry. */
         hydrated?: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11016,6 +13356,7 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -11025,13 +13366,15 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TimeEntryDtoV1'][];
         };
       };
     };
   };
-  /** Add a new time entry for another user on workspace */
   createForOthers: {
     parameters: {
       query?: {
@@ -11041,6 +13384,7 @@ export interface operations {
          */
         'from-entry'?: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11053,6 +13397,7 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -11062,13 +13407,15 @@ export interface operations {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TimeEntryDtoImplV1'];
         };
       };
     };
   };
-  /** Delete all time entries for user on workspace */
   deleteMany: {
     parameters: {
       query: {
@@ -11078,6 +13425,7 @@ export interface operations {
          */
         'time-entry-ids': string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11090,19 +13438,25 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TimeEntryDtoImplV1'][];
         };
       };
     };
   };
-  /** Stop currently running timer on workspace for user */
   stopRunningTimeEntry: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11115,6 +13469,7 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -11124,15 +13479,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TimeEntryDtoImplV1'];
         };
       };
     };
   };
-  /** Duplicate time entry */
   duplicateTimeEntry: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11144,19 +13503,27 @@ export interface operations {
          * @example 5a0ab5acb07987125438b60f
          */
         userId: string;
+        /**
+         * @description Represents time entry identifier across the system.
+         * @example 8j39fn9307hh5125439g2ast
+         */
         id: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TimeEntryDtoImplV1'];
         };
       };
     };
   };
-  /** Find all users on workspace */
   getUsersOfWorkspace: {
     parameters: {
       query?: {
@@ -11176,12 +13543,17 @@ export interface operations {
          */
         status?: 'PENDING' | 'ACTIVE' | 'DECLINED' | 'INACTIVE' | 'ALL';
         /**
+         * @description If provided, you'll get a filtered list of users with the corresponding account status filter. If not, this will only filter ACTIVE, PENDING_EMAIL_VERIFICATION, and NOT_REGISTERED Users.
+         * @example LIMITED
+         */
+        accountStatuses?: string;
+        /**
          * @description If provided, you'll get a filtered list of users that contain the provided string in their name
          * @example John
          */
         name?: string;
         /**
-         * @description Sorting column criteria. Default value is EMAIL.
+         * @description Sorting column criteria. Default value: EMAIL
          * @example ID
          */
         'sort-column'?:
@@ -11193,28 +13565,29 @@ export interface operations {
           | 'HOURLYRATE'
           | 'COSTRATE';
         /**
-         * @description Sorting mode. Default value is ASCENDING.
+         * @description Sorting mode. Default value: ASCENDING
          * @example ASCENDING
          */
         'sort-order'?: 'ASCENDING' | 'DESCENDING';
         /**
-         * @description Specifies the current page. Default value is 1
+         * @description Specifies the current page.
          * @example 1
          */
         page?: string;
         /**
-         * @description Specifies the page size. Default value is 50 and max page-size is 5000
+         * @description Specifies the page size.
          * @example 50
          */
         'page-size'?: string;
         /**
-         * @description If provided, you'll get all users along with what workspaces, groups, or projects they have access to. Default value is NONE.
+         * @description If provided, you'll get all users along with workspaces, groups, or projects they have access to. Default value is NONE.
          * @example WORKSPACE
          */
         memberships?: 'ALL' | 'NONE' | 'WORKSPACE' | 'PROJECT' | 'USERGROUP';
         /** @description If you pass along includeRoles=true, you'll get each user's detailed manager role (including projects and members for whome they're managers) */
         includeRoles?: boolean;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11222,26 +13595,28 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['UserDtoV1'][];
         };
       };
     };
   };
-  /**
-   * Add user
-   * @description You can add users to a workspace via API only if that workspace has a paid subscription. If the workspace has a paid subscription, you can add as many users as you want but you are limited by the number of paid user seats on that workspace.
-   */
   addUsers: {
     parameters: {
       query?: {
         /** @description Indicates whether to send an email when user is added to the workspace. */
         sendEmail?: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11249,6 +13624,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -11258,15 +13634,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['WorkspaceDtoV1'];
         };
       };
     };
   };
-  /** Filter workspace users */
   filterUsersOfWorkspace: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11274,6 +13654,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -11283,15 +13664,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['UserDtoV1'][];
         };
       };
     };
   };
-  /** Update user's status */
   updateUserStatus: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11304,6 +13689,7 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -11313,15 +13699,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['WorkspaceDtoV1'];
         };
       };
     };
   };
-  /** Remove user from workspace */
   removeMember: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11334,19 +13724,25 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['WorkspaceDtoV1'];
         };
       };
     };
   };
-  /** Update user's cost rate */
   setCostRateForUser: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11359,6 +13755,7 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -11368,15 +13765,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['WorkspaceDtoV1'];
         };
       };
     };
   };
-  /** Update user's custom field */
   upsertUserCustomFieldValue: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11394,6 +13795,7 @@ export interface operations {
          */
         customFieldId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -11403,15 +13805,19 @@ export interface operations {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['UserCustomFieldValueDtoV1'];
         };
       };
     };
   };
-  /** Update user's hourly rate */
   setHourlyRateForUser: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11424,6 +13830,7 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -11433,13 +13840,15 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['WorkspaceDtoV1'];
         };
       };
     };
   };
-  /** Find user's team manager */
   getManagersOfUser: {
     parameters: {
       query?: {
@@ -11461,16 +13870,17 @@ export interface operations {
          */
         'sort-order'?: 'ASCENDING' | 'DESCENDING';
         /**
-         * @description page
+         * @description Page number.
          * @example 1
          */
         page?: string;
         /**
-         * @description max page-size 5000
+         * @description Page size.
          * @example 50
          */
         'page-size'?: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11483,19 +13893,25 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['UserDtoV1'][];
         };
       };
     };
   };
-  /** Give user manager role */
   createUserRole: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11508,6 +13924,7 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -11517,15 +13934,19 @@ export interface operations {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['RoleDetailsDtoV1'][];
         };
       };
     };
   };
-  /** Remove user's manager role */
   deleteUserRole: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11538,6 +13959,7 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -11547,20 +13969,23 @@ export interface operations {
     responses: {
       /** @description No Content */
       204: {
-        content: never;
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
       };
     };
   };
-  /** Get all webhooks on workspace */
   getWebhooks: {
     parameters: {
       query?: {
         /**
-         * @description Represents a webhook type enum.
+         * @description Represents webhook type.
          * @example USER_CREATED
          */
         type?: 'USER_CREATED' | 'SYSTEM' | 'ADDON';
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11568,22 +13993,25 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['WebhooksDtoV1'];
         };
       };
     };
   };
-  /**
-   * Create webhooks
-   * @description Creating a webhook generates a new token which can be used to verify that the webhook being sent was sent by Clockify, as it will always be present in the header.
-   */
   createWebhook: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11591,6 +14019,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -11600,15 +14029,19 @@ export interface operations {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['WebhookDtoV1'];
         };
       };
     };
   };
-  /** Get a specific webhook by id */
   getWebhook: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11621,19 +14054,25 @@ export interface operations {
          */
         webhookId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['WebhookDtoV1'];
         };
       };
     };
   };
-  /** Update a webhook */
   updateWebhook: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11646,6 +14085,7 @@ export interface operations {
          */
         webhookId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -11655,15 +14095,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['WebhookDtoV1'];
         };
       };
     };
   };
-  /** Delete webhook */
   deleteWebhook: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11676,29 +14120,38 @@ export interface operations {
          */
         webhookId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
-        content: never;
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
       };
     };
   };
-  /** Get logs for a webhook */
   getLogsForWebhook: {
     parameters: {
       query?: {
-        page?: number;
-        size?: number;
+        /** @description Page number. */
+        page?: string;
+        /** @description Page size. */
+        size?: string;
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
          * @example 64a687e29ae1f428e7ebe303
          */
         workspaceId: string;
+        /** @description Represents webhook identifier across the system. */
         webhookId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -11708,18 +14161,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
-          '*/*': components['schemas']['WebhookLogDtoV1'][];
+          'application/json': components['schemas']['WebhookLogDtoV1'][];
         };
       };
     };
   };
-  /**
-   * Generate new token
-   * @description Generates a new webhook token and invalidates previous one
-   */
   generateNewToken: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11732,17 +14186,21 @@ export interface operations {
          */
         webhookId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['WebhookDtoV1'];
         };
       };
     };
   };
-  /** Get balance by policy */
   getBalancesForPolicy: {
     parameters: {
       query?: {
@@ -11756,11 +14214,12 @@ export interface operations {
          */
         sort?: 'USER' | 'POLICY' | 'USED' | 'BALANCE' | 'TOTAL';
         /**
-         * @description Sort result in ascending or descending order
+         * @description Sort results in ascending or descending order.
          * @example ASCENDING
          */
         'sort-order'?: 'ASCENDING' | 'DESCENDING';
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11773,19 +14232,25 @@ export interface operations {
          */
         policyId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['BalancesWithCountDtoV1'];
         };
       };
     };
   };
-  /** Update balance */
   updateBalancesForUsers: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11798,6 +14263,7 @@ export interface operations {
          */
         policyId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -11807,17 +14273,19 @@ export interface operations {
     responses: {
       /** @description No Content */
       204: {
-        content: never;
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
       };
     };
   };
-  /** Get balance by user */
   getBalancesForUser: {
     parameters: {
       query?: {
-        /** @description page */
+        /** @description Page number. */
         page?: number;
-        /** @description max page-size 200 */
+        /** @description Page size. */
         'page-size'?: number;
         /**
          * @description Sort result based on given criteria
@@ -11830,6 +14298,7 @@ export interface operations {
          */
         'sort-order'?: 'ASCENDING' | 'DESCENDING';
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11842,25 +14311,35 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['BalancesWithCountDtoV1'];
         };
       };
     };
   };
-  /** Get policies on workspace */
   findPoliciesForWorkspace: {
     parameters: {
       query?: {
-        /** @description page */
+        /** @description Page number. */
         page?: number;
-        /** @example 50 */
+        /**
+         * @description Page size.
+         * @example 50
+         */
         'page-size'?: string;
-        /** @description Filter resulting policies by name */
+        /**
+         * @description If provided, you'll get a filtered list of policies that contain the provided string in their name.
+         * @example Holidays
+         */
         name?: string;
         /**
          * @description If provided, you'll get a filtered list of policies with the corresponding status.
@@ -11868,6 +14347,7 @@ export interface operations {
          */
         status?: 'ACTIVE' | 'ARCHIVED' | 'ALL';
       };
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11875,19 +14355,25 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['PolicyDtoV1'][];
         };
       };
     };
   };
-  /** Create time off policy */
   createPolicy: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11895,6 +14381,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -11904,15 +14391,19 @@ export interface operations {
     responses: {
       /** @description Created */
       201: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['PolicyDtoV1'];
         };
       };
     };
   };
-  /** Get time off policy */
   getPolicy: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11925,19 +14416,25 @@ export interface operations {
          */
         id: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['PolicyDtoV1'];
         };
       };
     };
   };
-  /** Update policy */
   updatePolicy: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11950,6 +14447,7 @@ export interface operations {
          */
         id: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -11959,15 +14457,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['PolicyDtoV1'];
         };
       };
     };
   };
-  /** Delete policy */
   deletePolicy: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -11980,17 +14482,23 @@ export interface operations {
          */
         id: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
-        content: never;
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
       };
     };
   };
-  /** Change policy status */
   updatePolicyStatus: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -12003,6 +14511,7 @@ export interface operations {
          */
         id: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -12012,15 +14521,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['PolicyDtoV1'];
         };
       };
     };
   };
-  /** Create time off request (for day policies) */
   createTimeOffRequest: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -12033,6 +14546,7 @@ export interface operations {
          */
         policyId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -12042,15 +14556,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TimeOffRequestFullDtoNewV1'];
         };
       };
     };
   };
-  /** Delete request */
   deleteTimeOffRequest: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -12068,19 +14586,25 @@ export interface operations {
          */
         requestId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TimeOffRequestDtoV1'];
         };
       };
     };
   };
-  /** Change time off request status */
   changeTimeOffRequestStatus: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -12098,6 +14622,7 @@ export interface operations {
          */
         requestId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -12107,15 +14632,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TimeOffRequestDtoV1'];
         };
       };
     };
   };
-  /** Create time off request */
   createTimeOffRequestForOther: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -12133,6 +14662,7 @@ export interface operations {
          */
         userId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -12142,15 +14672,19 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TimeOffRequestFullDtoNewV1'];
         };
       };
     };
   };
-  /** Get all time off requests on workspace */
   getTimeOffRequests: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         /**
          * @description Represents workspace identifier across the system.
@@ -12158,6 +14692,7 @@ export interface operations {
          */
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -12167,18 +14702,15 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['TimeOffRequestsWithCountDtoV1'];
         };
       };
     };
   };
-  /**
-   * Generate shared report by ID
-   * @description Response depends on report type and export type. Given example is for SUMMARY report and JSON exportType.
-   *
-   * Shared report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
-   */
   generateSharedReportV1: {
     parameters: {
       query?: {
@@ -12190,25 +14722,33 @@ export interface operations {
         page?: number;
         pageSize?: number;
       };
+      header?: never;
       path: {
         id: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           '*/*': components['schemas']['TimeEntrySummaryReportDto'];
         };
       };
     };
   };
-  /** Generate attendance report */
   generateAttendanceReport: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody?: {
       content: {
@@ -12218,21 +14758,23 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           '*/*': components['schemas']['AttendanceReportDtoV1'];
         };
       };
     };
   };
-  /**
-   * Detailed report
-   * @description Detailed report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
-   */
   generateDetailedReport: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody?: {
       content: {
@@ -12242,21 +14784,23 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           '*/*': components['schemas']['TimeEntryDetailedReportDto'];
         };
       };
     };
   };
-  /**
-   * Generate expense report
-   * @description Expense report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
-   */
   generateDetailedReportV1: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody?: {
       content: {
@@ -12266,21 +14810,23 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           'application/json': components['schemas']['ExpenseDetailedReportDtoV1'];
         };
       };
     };
   };
-  /**
-   * Summary report
-   * @description Summary report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
-   */
   generateSummaryReport: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody?: {
       content: {
@@ -12290,21 +14836,23 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           '*/*': components['schemas']['TimeEntrySummaryReportDto'];
         };
       };
     };
   };
-  /**
-   * Weekly report
-   * @description Weekly report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
-   */
   generateWeeklyReport: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody?: {
       content: {
@@ -12314,16 +14862,15 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           '*/*': components['schemas']['TimeEntryWeeklyReportDto'];
         };
       };
     };
   };
-  /**
-   * Get all my shared reports
-   * @description Gets all shared reports for current user on given workspace
-   */
   getSharedReportsV1: {
     parameters: {
       query?: {
@@ -12331,30 +14878,33 @@ export interface operations {
         pageSize?: number;
         sharedReportsFilter?: 'ALL' | 'CREATED_BY_ME' | 'SHARED_WITH_ME';
       };
+      header?: never;
       path: {
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           '*/*': components['schemas']['SharedReportsAndCountDtoV1'];
         };
       };
     };
   };
-  /**
-   * Create shared report
-   * @description Saves shared report with name, options and report filter.
-   *
-   * Shared report data on FREE subscription plan is limited to a maximum interval length of one year (366 days).
-   */
   saveSharedReportV1: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         workspaceId: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -12364,22 +14914,24 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           '*/*': components['schemas']['SharedReportV1'];
         };
       };
     };
   };
-  /**
-   * Update shared report
-   * @description Updates shared report name and/or options
-   */
   updateSharedReportV1: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         workspaceId: string;
         id: string;
       };
+      cookie?: never;
     };
     requestBody: {
       content: {
@@ -12389,24 +14941,33 @@ export interface operations {
     responses: {
       /** @description OK */
       200: {
+        headers: {
+          [name: string]: unknown;
+        };
         content: {
           '*/*': components['schemas']['SharedReportV1'];
         };
       };
     };
   };
-  /** Delete shared report */
   deleteSharedReportV1: {
     parameters: {
+      query?: never;
+      header?: never;
       path: {
         id: string;
         workspaceId: string;
       };
+      cookie?: never;
     };
+    requestBody?: never;
     responses: {
       /** @description Success */
       204: {
-        content: never;
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
       };
     };
   };
