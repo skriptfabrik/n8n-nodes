@@ -19,6 +19,7 @@
     "openapi-typescript": "openapi-typescript",
     "setup": "node tools/scripts/setup.mjs"
   },
+  "private": true,
   "bugs": {
     "url": "https://github.com/skriptfabrik/n8n-nodes/issues"
   },
@@ -63,5 +64,11 @@
     "ts-node": "^10.9.2",
     "typescript": "5.5.2",
     "verdaccio": "^5.30.3"
-  }
+  },
+  "nx": {
+    "includedScripts": []
+  },
+  "workspaces": [
+    "nodes/*"
+  ]
 }
