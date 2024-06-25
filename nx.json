@@ -9,6 +9,7 @@
       "commitMessage": "chore(release): {projectName}-{version}"
     },
     "version": {
+      "preVersionCommand": "npx nx run-many -t build",
       "conventionalCommits": true,
       "generatorOptions": {
         "skipLockFileUpdate": true
