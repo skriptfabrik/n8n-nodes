@@ -1,0 +1,30 @@
+name: dependabot Pull Request Enhancer
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - reopened
+
+jobs:
+  trigger-nx-dependency-update-workflow:
+    name: Trigger nx Dependency Update Workflow
+    uses: ./.github/workflows/nx-dependency-update.yaml
+    with:
+      pull_request_ref: ${{ github.event.pull_request.head.ref }}
+    if: github.actor == 'dependabot[bot]' && contains(github.event.pull_request.title, 'Bump nx')
+    permissions:
+      contents: write
+      pull-requests: write
+
+  trigger-n8n-dependency-update-workflow:
+    name: Trigger n8n Dependency update Workflow
+    uses: ./.github/workflows/n8n-dependency-update.yaml
+    with:
+      pull_request_ref: ${{ github.event.pull_request.head.ref }}
+    if: github.actor == 'dependabot[bot]' && contains(github.event.pull_request.title, 'Bump n8n')
+    permissions:
+      contents: write
+      pull-requests: write
