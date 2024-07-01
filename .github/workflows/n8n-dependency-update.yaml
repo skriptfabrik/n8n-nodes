@@ -8,7 +8,8 @@ on:
         type: string
 
 env:
-  YQ_VERSION: v4.44.1
+  NODE_VERSION: '20.13.1'
+  YQ_VERSION: 'v4.44.1'
 
 jobs:
   update-node-version:
@@ -21,22 +22,26 @@ jobs:
         with:
           ref: ${{ inputs.pull_request_ref }}
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          cache: npm
+          cache: pnpm
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Retrieve target versions
         id: target-versions
         # yamllint disable rule:line-length
         run: |
           set -e
-          n8n_version=$(npm list n8n --json | jq --raw-output --exit-status '.dependencies.n8n.version')
+          n8n_version=$(pnpm list n8n --filter @skriptfabrik/n8n-nodes --json | jq --raw-output --exit-status '.[0].devDependencies.n8n.version')
           node_version=$(docker run --rm --entrypoint node n8nio/n8n:${n8n_version} --version | sed 's/^v//')
-          node_types_version=$(npm show @types/node versions --json | jq --raw-output --arg node_version "${node_version}" 'map(select(. <= $node_version)) | map(split(".") | map(tonumber)) | max_by(.) | join(".")')
+          node_types_version=$(pnpm show @types/node versions --json | jq --raw-output --arg node_version "${node_version}" 'map(select(. <= $node_version)) | map(split(".") | map(tonumber)) | max_by(.) | join(".")')
           echo "node_version=${node_version}" >> "$GITHUB_OUTPUT"
           echo "node_types_version=${node_types_version}" >> "$GITHUB_OUTPUT"
         # yamllint enable rule:line-length
@@ -59,7 +64,7 @@ jobs:
 
       - name: Update @types/node
         run: |
-          npm install @types/node@~${{ steps.target-versions.outputs.node_types_version }} \
+          pnpm add @types/node@~${{ steps.target-versions.outputs.node_types_version }} \
             --save-dev
 
       - name: Commit @types/node update
@@ -80,13 +85,17 @@ jobs:
         with:
           ref: ${{ inputs.pull_request_ref }}
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          cache: npm
+          cache: pnpm
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Retrieve target versions
         id: target-versions
@@ -102,7 +111,7 @@ jobs:
       - name: Update n8n-nodes-base
         # yamllint disable rule:line-length
         run: |
-          npm install n8n-nodes-base@${{ steps.target-versions.outputs.n8n_nodes_base_version }} \
+          pnpm add n8n-nodes-base@${{ steps.target-versions.outputs.n8n_nodes_base_version }} \
             --save-dev \
             --save-exact
         # yamllint enable rule:line-length
@@ -117,7 +126,7 @@ jobs:
       - name: Update n8n-workflow
         # yamllint disable rule:line-length
         run: |
-          npm install n8n-workflow@${{ steps.target-versions.outputs.n8n_workflow_version }} \
+          pnpm add n8n-workflow@${{ steps.target-versions.outputs.n8n_workflow_version }} \
             --save-dev \
             --save-exact
         # yamllint enable rule:line-length
@@ -164,13 +173,17 @@ jobs:
         with:
           ref: ${{ inputs.pull_request_ref }}
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          cache: npm
+          cache: pnpm
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Retrieve target versions
         id: target-versions
@@ -220,13 +233,17 @@ jobs:
         with:
           ref: ${{ inputs.pull_request_ref }}
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          cache: npm
+          cache: pnpm
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Retrieve target versions
         id: target-versions

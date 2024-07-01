@@ -5,7 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const N8N_CREDENTIALS = process.env.N8N_CREDENTIALS || '{"credentials":[]}';
-const N8N_HOST = process.env.N8N_HOST || process.env.HOSTNAME || "localhost";
+const N8N_HOST = process.env.N8N_HOST || process.env.HOSTNAME || 'localhost';
 const N8N_URL = process.env.N8N_URL || `http://${N8N_HOST}:5678`;
 const OWNER_EMAIL = process.env.OWNER_EMAIL || 'owner@n8n.local';
 const OWNER_FIRST_NAME = process.env.OWNER_FIRST_NAME || 'n8n';
@@ -38,7 +38,7 @@ export async function parseArgs(args) {
 export async function directoryExists(dirpath) {
   try {
     return (await fs.stat(dirpath)).isDirectory();
-  } catch (e) {
+  } catch {
     return false;
   }
 }
@@ -46,7 +46,7 @@ export async function directoryExists(dirpath) {
 export async function fileExists(filepath) {
   try {
     return (await fs.stat(filepath)).isFile();
-  } catch (e) {
+  } catch {
     return false;
   }
 }
