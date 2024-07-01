@@ -20,15 +20,14 @@
     "link": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "dist/nodes/kaufland-marketplace",
-        "command": "npm link --no-audit"
+        "command": "node tools/scripts/link.mjs {projectName}"
       },
       "dependsOn": ["build"]
     },
     "install": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "node tools/scripts/install.mjs kaufland-marketplace"
+        "command": "node tools/scripts/install.mjs {projectName}"
       },
       "dependsOn": ["link"]
     }

@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 env:
-  NODE_VERSION: 20.13.1
+  NODE_VERSION: '20.13.1'
 
 jobs:
   tag-and-publish-package:
@@ -38,19 +38,22 @@ jobs:
       - name: Setup git user
         uses: fregante/setup-git-user@v2
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          cache: npm
+          cache: pnpm
           node-version: ${{ env.NODE_VERSION }}
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Create tag and publish package
         run: |
-          npx nx release \
+          pnpm exec nx release \
             --projects=${{ steps.extract_package.outputs.package }} \
             --yes
         env:

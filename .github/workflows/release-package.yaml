@@ -23,7 +23,7 @@ permissions:
   pull-requests: write
 
 env:
-  NODE_VERSION: 20.13.1
+  NODE_VERSION: '20.13.1'
 
 jobs:
   release-package:
@@ -58,18 +58,21 @@ jobs:
         # yamllint disable-line rule:line-length
         run: git switch --force-create release-${{ github.event.inputs.package }}@${{ steps.short_commit_hash.outputs.short_commit_hash }}
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          cache: npm
+          cache: pnpm
           node-version: ${{ env.NODE_VERSION }}
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Bump version and create changelog
         run: |
-          npx nx release \
+          pnpm exec nx release \
             --projects=${{ github.event.inputs.package }} \
             --skip-publish
 

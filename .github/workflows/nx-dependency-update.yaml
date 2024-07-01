@@ -7,6 +7,9 @@ on:
         required: true
         type: string
 
+env:
+  NODE_VERSION: '20.13.1'
+
 jobs:
   update-nx-dependencies:
     name: Update nx dependencies and apply migrations
@@ -25,21 +28,25 @@ jobs:
         id: dependabot-metadata
         uses: dependabot/fetch-metadata@v2
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          cache: npm
+          cache: pnpm
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Install Dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Migrate nx
         run: |
-          npx nx migrate ${{ steps.dependabot-metadata.outputs.new-version }} \
+          pnpm exec nx migrate ${{ steps.dependabot-metadata.outputs.new-version }} \
             --from nx@${{ steps.dependabot-metadata.outputs.previous-version }}
 
       - name: Install updated depenencies
-        run: npm install
+        run: pnpm install
 
       - name: Commit changes to package(-lock).json
         uses: stefanzweifel/git-auto-commit-action@v5
@@ -52,7 +59,7 @@ jobs:
           skip_checkout: true
 
       - name: Execute migrations
-        run: npx nx migrate --run-migrations --if-exists --create-commits
+        run: pnpm exec nx migrate --run-migrations --if-exists --create-commits
         env:
           npm_config_legacy_peer_deps: false
 

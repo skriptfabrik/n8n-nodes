@@ -8,10 +8,10 @@ on:
       - synchronize
 
 env:
-  COMMITLINT_CLI_VERSION: ~19.3.0
-  COMMITLINT_CONFIG_CONVENTIONAL_VERSION: ~19.2.2
-  COMMITLINT_CONFIG_NX_SCOPES_VERSION: ~19.3.1
-  NODE_VERSION: 20.13.1
+  COMMITLINT_CLI_VERSION: '~19.3.0'
+  COMMITLINT_CONFIG_CONVENTIONAL_VERSION: '~19.2.2'
+  COMMITLINT_CONFIG_NX_SCOPES_VERSION: '~19.3.1'
+  NODE_VERSION: '20.13.1'
 
 jobs:
   check-commit-messages:
@@ -25,18 +25,21 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          cache: npm
+          cache: pnpm
           node-version: ${{ env.NODE_VERSION }}
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Install commitlint dependencies
         run: |
-          npm install -g --save-dev \
+          pnpm add --global --save-dev \
             @commitlint/cli@${{ env.COMMITLINT_CLI_VERSION }} \
             @commitlint/config-conventional@${{ env.COMMITLINT_CONFIG_CONVENTIONAL_VERSION }} \
             @commitlint/config-nx-scopes@${{ env.COMMITLINT_CONFIG_NX_SCOPES_VERSION }} \
@@ -44,7 +47,7 @@ jobs:
 
       - name: Lint commits
         run: |
-          npx commitlint \
+          pnpm exec commitlint \
             --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} \
             --to ${{ github.event.pull_request.head.sha }}
 
@@ -58,29 +61,32 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          cache: npm
+          cache: pnpm
           node-version: ${{ env.NODE_VERSION }}
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v4
 
       - name: Check format
-        run: npx nx format:check
+        run: pnpm exec nx format:check
 
       - name: Lint source code affected by changes
-        run: npx nx affected --target=lint --parallel=3
+        run: pnpm exec nx affected --target=lint --parallel=3
 
       - name: Test source code affected by changes
-        run: npx nx affected --target=test --exclude=n8n-nodes --parallel=3 --coverage
+        run: pnpm exec nx affected --target=test --exclude=n8n-nodes --parallel=3 --coverage
 
       - name: Run build of packages affected by changes
-        run: npx nx affected --target=build --parallel=3
+        run: pnpm exec nx affected --target=build --parallel=3
 
   lint-markdown:
     name: Lint Markdown

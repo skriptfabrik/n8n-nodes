@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 env:
-  NODE_VERSION: 20.13.1
+  NODE_VERSION: '20.13.1'
 
 jobs:
   create-release:
@@ -53,17 +53,20 @@ jobs:
           echo -e "${{ steps.changelog.outputs.release_notes }}" > $RELEASE_NOTES_FILE
           echo "release_notes_file=$RELEASE_NOTES_FILE" >> "$GITHUB_OUTPUT"
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          cache: npm
+          cache: pnpm
           node-version: ${{ env.NODE_VERSION }}
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Build package
-        run: npx nx build --project ${{ steps.extract_package.outputs.package }}
+        run: pnpm exec nx build --project ${{ steps.extract_package.outputs.package }}
 
       - name: Zip package
         # yamllint disable-line rule:line-length

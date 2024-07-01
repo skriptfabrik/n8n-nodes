@@ -9,19 +9,25 @@ import { parseArgs, readJson } from './setup.mjs';
 const N8N_USER_FOLDER = process.env.N8N_USER_FOLDER || os.homedir();
 
 async function initCustomDirectory(cwd) {
-  await fs.mkdir(cwd, { recursive: true });
+  try {
+    await fs.access(path.join(cwd, 'package.json'), fs.constants.F_OK);
 
-  const args = ['npm', 'init', '-y'];
+    return Promise.resolve({ error: null, stdout: '', stderr: '' });
+  } catch {
+    await fs.mkdir(cwd, { recursive: true });
 
-  return await new Promise((resolve) =>
-    exec(args.join(' '), { cwd }, (error, stdout, stderr) =>
-      resolve({ error, stdout, stderr }),
-    ),
-  );
+    const args = ['pnpm', 'init'];
+
+    return await new Promise((resolve) =>
+      exec(args.join(' '), { cwd }, (error, stdout, stderr) =>
+        resolve({ error, stdout, stderr }),
+      ),
+    );
+  }
 }
 
 async function installCustomPackageLink(cwd, name) {
-  const args = ['npm', 'link', name];
+  const args = ['pnpm', 'link', '--global', name];
 
   return await new Promise((resolve) =>
     exec(args.join(' '), { cwd }, (error, stdout, stderr) =>
@@ -56,6 +62,12 @@ async function main() {
 
   for (const nodeName of args.arguments) {
     const project = graph.nodes[nodeName];
+
+    if (!project) {
+      console.error(`Could not find project "${nodeName}".`);
+      process.exit(1);
+    }
+
     const name = project.data?.name;
     const outputPath = project.data?.targets?.build?.options?.outputPath;
 

@@ -17,6 +17,7 @@
     "n8n": "n8n",
     "nx": "nx",
     "openapi-typescript": "openapi-typescript",
+    "preinstall": "npx only-allow pnpm",
     "setup": "node tools/scripts/setup.mjs"
   },
   "private": true,
@@ -27,6 +28,7 @@
     "tslib": "^2.6.3"
   },
   "devDependencies": {
+    "@nx/devkit": "19.2.3",
     "@nx/eslint": "19.2.3",
     "@nx/eslint-plugin": "19.2.3",
     "@nx/jest": "19.2.3",
@@ -37,6 +39,7 @@
     "@swc-node/register": "1.9.2",
     "@swc/core": "1.5.29",
     "@swc/helpers": "0.5.11",
+    "@types/express": "^4.17.21",
     "@types/jest": "^29.5.12",
     "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "~20.13.0",
@@ -68,7 +71,5 @@
   "nx": {
     "includedScripts": []
   },
-  "workspaces": [
-    "nodes/*"
-  ]
+  "packageManager": "pnpm@9.4.0"
 }
