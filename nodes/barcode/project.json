@@ -25,7 +25,7 @@
     "install": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "node tools/scripts/install.mjs n8n-nodes-barcode"
+        "command": "node tools/scripts/install.mjs barcode"
       },
       "dependsOn": ["link"]
     }
