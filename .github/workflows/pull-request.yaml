@@ -8,9 +8,6 @@ on:
       - synchronize
 
 env:
-  COMMITLINT_CLI_VERSION: '~19.3.0'
-  COMMITLINT_CONFIG_CONVENTIONAL_VERSION: '~19.2.2'
-  COMMITLINT_CONFIG_NX_SCOPES_VERSION: '~19.3.1'
   NODE_VERSION: '20.13.1'
 
 jobs:
@@ -36,14 +33,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-
-      - name: Install commitlint dependencies
-        run: |
-          pnpm add --global --save-dev \
-            @commitlint/cli@${{ env.COMMITLINT_CLI_VERSION }} \
-            @commitlint/config-conventional@${{ env.COMMITLINT_CONFIG_CONVENTIONAL_VERSION }} \
-            @commitlint/config-nx-scopes@${{ env.COMMITLINT_CONFIG_NX_SCOPES_VERSION }} \
-            nx@$(jq -r '.packages["node_modules/nx"].version' package-lock.json)
 
       - name: Lint commits
         run: |
