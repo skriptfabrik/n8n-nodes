@@ -38,7 +38,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
       - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Migrate nx
         run: |
@@ -46,7 +46,7 @@ jobs:
             --from nx@${{ steps.dependabot-metadata.outputs.previous-version }}
 
       - name: Install updated depenencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: Commit changes to package(-lock).json
         uses: stefanzweifel/git-auto-commit-action@v5

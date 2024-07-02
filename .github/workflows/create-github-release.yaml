@@ -63,7 +63,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Build package
         run: pnpm exec nx build --project ${{ steps.extract_package.outputs.package }}
