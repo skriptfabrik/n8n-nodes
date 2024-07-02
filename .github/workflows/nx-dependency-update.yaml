@@ -53,7 +53,7 @@ jobs:
         with:
           # yamllint disable-line rule:line-length
           commit_message: 'chore: bump nx dependencies to ${{ steps.dependabot-metadata.outputs.new-version }}'
-          file_pattern: 'package.json package-lock.json'
+          file_pattern: 'package.json pnpm-lock.yaml'
           push_options: --dry-run
           skip_fetch: true
           skip_checkout: true
