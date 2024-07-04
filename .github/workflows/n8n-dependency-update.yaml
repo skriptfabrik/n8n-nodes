@@ -9,7 +9,6 @@ on:
 
 env:
   NODE_VERSION: '20.13.1'
-  YQ_VERSION: 'v4.44.1'
 
 jobs:
   update-node-version:
@@ -45,11 +44,6 @@ jobs:
           echo "node_version=${node_version}" >> "$GITHUB_OUTPUT"
           echo "node_types_version=${node_types_version}" >> "$GITHUB_OUTPUT"
         # yamllint enable rule:line-length
-
-      - name: Setup YQ
-        uses: chrisdickinson/setup-yq@v1.0.1
-        with:
-          yq-version: ${{ env.YQ_VERSION }}
 
       - name: Update node version in devcontainer.json
         # yamllint disable-line rule:line-length
@@ -199,11 +193,6 @@ jobs:
           echo "n8n_workflow_version=${n8n_workflow_version}" >> "$GITHUB_OUTPUT"
         # yamllint enable rule:line-length
 
-      - name: Setup YQ
-        uses: chrisdickinson/setup-yq@v1.0.1
-        with:
-          yq-version: ${{ env.YQ_VERSION }}
-
       - name: Update n8n-nodes-base version
         # yamllint disable rule:line-length
         run: |
@@ -261,11 +250,6 @@ jobs:
           n8n_version=$(npm list n8n --json | jq --raw-output --exit-status '.dependencies.n8n.version')
           node_version=$(docker run --rm --entrypoint node n8nio/n8n:${n8n_version} --version | sed 's/^v//')
           echo "node_version=${node_version}" >> "$GITHUB_OUTPUT"
-
-      - name: Setup YQ
-        uses: chrisdickinson/setup-yq@v1.0.1
-        with:
-          yq-version: ${{ env.YQ_VERSION }}
 
       - name: Check Node.js version
         id: check_node_version
