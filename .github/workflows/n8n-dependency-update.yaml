@@ -205,8 +205,11 @@ jobs:
           yq-version: ${{ env.YQ_VERSION }}
 
       - name: Update n8n-nodes-base version
-        # yamllint disable-line rule:line-length
-        run: yq --inplace --exit-status '.peerDependencies.n8n-nodes-base = "${{ steps.target-versions.outputs.n8n_nodes_base_version }}"' ${{ matrix.package.json }}
+        # yamllint disable rule:line-length
+        run: |
+          yq --inplace --exit-status '.peerDependencies.n8n-nodes-base = "${{ steps.target-versions.outputs.n8n_nodes_base_version }}"' ${{ matrix.package.json }}
+          pnpm install --no-frozen-lockfile
+        # yamllint enable rule:line-length
 
       - name: Commit n8n-nodes-base version update
         uses: stefanzweifel/git-auto-commit-action@v5
@@ -216,8 +219,11 @@ jobs:
           skip_dirty_check: false
 
       - name: Update n8n-workflow version
-        # yamllint disable-line rule:line-length
-        run: yq --inplace --exit-status '.peerDependencies.n8n-workflow = "${{ steps.target-versions.outputs.n8n_workflow_version }}"' ${{ matrix.package.json }}
+        # yamllint disable rule:line-length
+        run: |
+          yq --inplace --exit-status '.peerDependencies.n8n-workflow = "${{ steps.target-versions.outputs.n8n_workflow_version }}"' ${{ matrix.package.json }}
+          pnpm install --no-frozen-lockfile
+        # yamllint enable rule:line-length
 
       - name: Commit n8n-workflow version update
         uses: stefanzweifel/git-auto-commit-action@v5
