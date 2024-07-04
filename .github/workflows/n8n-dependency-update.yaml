@@ -207,7 +207,7 @@ jobs:
       - name: Update n8n-nodes-base version
         # yamllint disable rule:line-length
         run: |
-          yq --inplace --exit-status '.peerDependencies.n8n-nodes-base = "${{ steps.target-versions.outputs.n8n_nodes_base_version }}"' ${{ matrix.package.json }}
+          yq --inplace --exit-status '(select(.peerDependencies.n8n-nodes-base) | .peerDependencies.n8n-nodes-base) = "${{ steps.target-versions.outputs.n8n_nodes_base_version }}"' ${{ matrix.package.json }}
           pnpm install --no-frozen-lockfile
         # yamllint enable rule:line-length
 
@@ -221,7 +221,7 @@ jobs:
       - name: Update n8n-workflow version
         # yamllint disable rule:line-length
         run: |
-          yq --inplace --exit-status '.peerDependencies.n8n-workflow = "${{ steps.target-versions.outputs.n8n_workflow_version }}"' ${{ matrix.package.json }}
+          yq --inplace --exit-status '(select(.peerDependencies.n8n-workflow) | .peerDependencies.n8n-workflow) = "${{ steps.target-versions.outputs.n8n_workflow_version }}"' ${{ matrix.package.json }}
           pnpm install --no-frozen-lockfile
         # yamllint enable rule:line-length
 
