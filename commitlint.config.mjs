@@ -5,7 +5,13 @@ export default {
   },
   ignores: [
     (message) =>
-      /^Signed-off-by: dependabot\[bot\] <support@github\.com>$/m.test(message),
+      /^Signed-off-by: (dependabot|github-actions)\[bot\] <support@github\.com>$/m.test(
+        message,
+      ),
+    (message) =>
+      /^Signed-off-by: (dependabot|github-actions)\[bot\] <(49699333|41898282)\+(dependabot|github-actions)\[bot\]@users.noreply.github\.com>$/m.test(
+        message,
+      ),
   ],
   parserPreset: {
     parserOpts: {
