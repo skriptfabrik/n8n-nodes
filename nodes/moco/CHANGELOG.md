@@ -1,3 +1,15 @@
+## 0.3.3 (2024-07-05)
+
+
+### 🩹 Fixes
+
+- **moco:** bump n8n-workflow version to 1.46.0
+
+
+### ❤️  Thank You
+
+- Marco Spengler
+
 ## 0.3.2 (2024-06-18)
 
 
