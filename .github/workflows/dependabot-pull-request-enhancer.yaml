@@ -9,6 +9,33 @@ on:
       - reopened
 
 jobs:
+  cancel-code-check:
+    name: Cancel Code Check
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cancel Code Check
+        # yamllint disable rule:line-length
+        run: |
+          set -e
+
+          run_id=$(gh run list --branch ${{ github.event.pull_request.head.ref }} --workflow "Code Check" --json status,databaseId --jq 'first(.[] | select(.status == "queued" or .status == "in_progress" or .status == "requested" or .status == "waiting" or .status == "completed") | .databaseId)')
+
+          if [ -n "$run_id" ]; then
+            gh run cancel ${run_id}
+          else
+            echo "No matching run found to cancel."
+          fi
+        # yamllint enable rule:line-length
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   trigger-nx-dependency-update-workflow:
     name: Trigger nx Dependency Update Workflow
     uses: ./.github/workflows/nx-dependency-update.yaml
