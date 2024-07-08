@@ -10,9 +10,6 @@ on:
 permissions:
   contents: write
 
-env:
-  NODE_VERSION: '20.14.0'
-
 jobs:
   tag-and-publish-package:
     name: Create Tag and Publish Package
@@ -45,7 +42,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           cache: pnpm
-          node-version: ${{ env.NODE_VERSION }}
+          node-version-file: package.json
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
