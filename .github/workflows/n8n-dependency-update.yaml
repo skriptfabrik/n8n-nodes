@@ -42,6 +42,17 @@ jobs:
           echo "node_types_version=${node_types_version}" >> "$GITHUB_OUTPUT"
         # yamllint enable rule:line-length
 
+      - name: Update node version in package.json
+        # yamllint disable-line rule:line-length
+        run: yq --inplace --exit-status '.engines.node = "${{steps.target-versions.outputs.node_version}}"' package.json
+
+      - name: Commit node version update in package.json
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          # yamllint disable-line rule:line-length
+          commit_message: 'chore: bump node version in package.json to ${{steps.target-versions.outputs.node_version}}'
+          commit_options: '--signoff'
+
       - name: Update node version in devcontainer.json
         # yamllint disable-line rule:line-length
         run: yq --inplace --exit-status '.features."ghcr.io/devcontainers/features/node:1".version = "${{steps.target-versions.outputs.node_version}}"' .devcontainer/devcontainer.json
