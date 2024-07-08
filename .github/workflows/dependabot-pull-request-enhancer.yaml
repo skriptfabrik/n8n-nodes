@@ -44,7 +44,6 @@ jobs:
     if: github.actor == 'dependabot[bot]' && contains(github.event.pull_request.title, 'Bump nx')
     permissions:
       contents: write
-      pull-requests: write
 
   trigger-n8n-dependency-update-workflow:
     name: Trigger n8n Dependency update Workflow
@@ -54,7 +53,6 @@ jobs:
     if: github.actor == 'dependabot[bot]' && contains(github.event.pull_request.title, 'Bump n8n')
     permissions:
       contents: write
-      pull-requests: write
 
   trigger-code-check-workflow:
     name: Trigger Code Check Workflow
