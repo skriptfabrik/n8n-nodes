@@ -28,3 +28,14 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+
+  trigger-code-check-workflow:
+    name: Trigger Code Check Workflow
+    uses: ./.github/workflows/code-check.yaml
+    with:
+      pull_request_ref: ${{ github.event.pull_request.head.ref }}
+    # yamllint disable-line rule:line-length
+    if: always() && (needs.trigger-nx-dependency-update-workflow.result == 'success' || needs.trigger-n8n-dependency-update-workflow.result == 'success')
+    needs:
+      - trigger-nx-dependency-update-workflow
+      - trigger-n8n-dependency-update-workflow
