@@ -7,9 +7,6 @@ on:
       - reopened
       - synchronize
 
-env:
-  NODE_VERSION: '20.14.0'
-
 jobs:
   check-commit-messages:
     name: Check Commit Messages
@@ -29,7 +26,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           cache: pnpm
-          node-version: ${{ env.NODE_VERSION }}
+          node-version-file: package.json
 
       - name: Install dependencies
         run: pnpm install
