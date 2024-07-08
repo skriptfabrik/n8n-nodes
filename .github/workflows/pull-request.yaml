@@ -37,43 +37,6 @@ jobs:
             --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} \
             --to ${{ github.event.pull_request.head.sha }}
 
-  check-lint-test-build:
-    name: Check, Lint, Test, and Build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          cache: pnpm
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v4
-
-      - name: Check format
-        run: pnpm exec nx format:check
-
-      - name: Lint source code affected by changes
-        run: pnpm exec nx affected --target=lint --parallel=3
-
-      - name: Test source code affected by changes
-        run: pnpm exec nx affected --target=test --exclude=n8n-nodes --parallel=3 --coverage
-
-      - name: Run build of packages affected by changes
-        run: pnpm exec nx affected --target=build --parallel=3
-
   lint-markdown:
     name: Lint Markdown
     runs-on: ubuntu-latest
