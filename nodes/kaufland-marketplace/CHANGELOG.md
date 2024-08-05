@@ -1,3 +1,10 @@
+## 0.1.3 (2024-08-05)
+
+
+### 🩹 Fixes
+
+- **kaufland-marketplace:** bump n8n-workflow version to 1.51.0
+
 ## 0.1.2 (2024-07-05)
 
 
