@@ -12,7 +12,6 @@ jobs:
   cancel-code-check:
     name: Cancel Code Check
     runs-on: ubuntu-latest
-    # yamllint disable-line rule:line-length
     if: github.actor == 'dependabot[bot]' && (contains(github.event.pull_request.title, 'Bump nx') || contains(github.event.pull_request.title, 'Bump n8n'))
     permissions:
       actions: write
@@ -23,7 +22,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Cancel Code Check
-        # yamllint disable rule:line-length
         run: |
           set -e
 
@@ -34,7 +32,6 @@ jobs:
           else
             echo "No matching run found to cancel."
           fi
-        # yamllint enable rule:line-length
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -61,7 +58,6 @@ jobs:
     uses: ./.github/workflows/code-check.yaml
     with:
       pull_request_ref: ${{ github.event.pull_request.head.ref }}
-    # yamllint disable-line rule:line-length
     if: always() && (needs.trigger-nx-dependency-update-workflow.result == 'success' || needs.trigger-n8n-dependency-update-workflow.result == 'success')
     needs:
       - trigger-nx-dependency-update-workflow

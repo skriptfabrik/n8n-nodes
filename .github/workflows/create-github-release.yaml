@@ -66,11 +66,9 @@ jobs:
         run: pnpm exec nx build --project ${{ steps.extract_package.outputs.package }}
 
       - name: Zip package
-        # yamllint disable-line rule:line-length
         run: zip -9 -r -q ${{ steps.extract_package.outputs.package }}-${{ steps.extract_version.outputs.version }}.zip dist/nodes/${{ steps.extract_package.outputs.package }}/
 
       - name: Tar package
-        # yamllint disable-line rule:line-length
         run: tar --create --file ${{ steps.extract_package.outputs.package }}-${{steps.extract_version.outputs.version }}.tar.gz --gzip dist/nodes/${{ steps.extract_package.outputs.package }}/
 
       - name: Create GitHub release
