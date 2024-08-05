@@ -108,6 +108,23 @@ export interface paths {
     patch?: never;
     trace?: never;
   };
+  '/v1/workspaces/{workspaceId}/approval-requests/resubmit-entries-for-approval': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /** Re-submit rejected/withdrawn entries/expenses for approval */
+    post: operations['resubmitApprovalRequest'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
   '/v1/workspaces/{workspaceId}/approval-requests/users/{userId}': {
     parameters: {
       query?: never;
@@ -119,6 +136,23 @@ export interface paths {
     put?: never;
     /** Submit approval request for user */
     post: operations['createApprovalForOther'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/v1/workspaces/{workspaceId}/approval-requests/users/{userId}/resubmit-entries-for-approval': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /** Re-submit rejected/withdrawn entries/expenses for approval for user */
+    post: operations['resubmitApprovalRequestForOther'];
     delete?: never;
     options?: never;
     head?: never;
@@ -2515,7 +2549,7 @@ export interface components {
        * @description Represents an amount as integer.
        * @example 20000
        */
-      amount?: number;
+      amount: number;
       /**
        * @description Represents a date and time in yyyy-MM-ddThh:mm:ssZ format.
        * @example 2020-01-01T00:00:00Z
@@ -2607,6 +2641,11 @@ export interface components {
        * @example 25b687e29ae1f428e7ebe123
        */
       projectId: string;
+      /**
+       * @description Represents task identifier across the system.
+       * @example 54m377ddd3fcab07cfbb432w
+       */
+      taskId?: string;
       /**
        * @description Represents user identifier across the system.
        * @example 89b687e29ae1f428e7ebe912
@@ -3408,6 +3447,11 @@ export interface components {
        */
       quantity?: number;
       /**
+       * @description Represents task identifier across the system.
+       * @example 25b687e29ae1f428e7ebe123
+       */
+      taskId?: string;
+      /**
        * Format: double
        * @description Represents expense total as double data type.
        * @example 10500.5
@@ -3431,6 +3475,12 @@ export interface components {
        * @example 445687e29ae1f428e7ebe893
        */
       approvalRequestId?: string;
+      /**
+       * @description Represents the approval status of the expense
+       * @example PENDING
+       * @enum {string}
+       */
+      approvalStatus?: 'PENDING' | 'APPROVED' | 'UNSUBMITTED';
       /** @description Indicates whether expense is billable or not. */
       billable?: boolean;
       category?: components['schemas']['ExpenseCategoryDto'];
@@ -3472,6 +3522,7 @@ export interface components {
        * @description Represents expense quantity as double data type.
        */
       quantity?: number;
+      task?: components['schemas']['TaskInfoDto'];
       /**
        * Format: double
        * @description Represents expense total as double data type.
@@ -3527,6 +3578,7 @@ export interface components {
        * @description Represents expense quantity as double data type.
        */
       quantity?: number;
+      task?: components['schemas']['TaskInfoDto'];
       /**
        * Format: double
        * @description Represents expense total as double data type.
@@ -5582,7 +5634,7 @@ export interface components {
        */
       userGroupIds?: string[];
     };
-    /** @description Represents a task object. */
+    /** @description Represents task info object. */
     TaskInfoDto: {
       /**
        * @description Represents task identifier across the system.
@@ -6171,6 +6223,7 @@ export interface components {
         | 'USER'
         | 'DATE'
         | 'PROJECT'
+        | 'TASK'
         | 'CATEGORY'
         | 'NOTES'
         | 'AMOUNT'
@@ -6195,6 +6248,11 @@ export interface components {
        * @example 25b687e29ae1f428e7ebe123
        */
       projectId?: string;
+      /**
+       * @description Represents task identifier across the system.
+       * @example 25b687e29ae1f428e7ebe123
+       */
+      taskId?: string;
       /**
        * @description Represents user identifier across the system.
        * @example 89b687e29ae1f428e7ebe912
@@ -6991,7 +7049,8 @@ export interface components {
         | 'HOLIDAY'
         | 'EMAIL_KEY_REQUEST'
         | 'EMAIL_SESSION_REQUEST'
-        | 'FEATURE_SUBSCRIPTION';
+        | 'FEATURE_SUBSCRIPTION'
+        | 'TIME_OFF_REQUEST';
     } & (
       | 'PROJECT_ID'
       | 'USER_ID'
@@ -7187,10 +7246,12 @@ export interface components {
     };
     /** @description Workspace settings also include Time Duration Format settings.
      *
-     *     The Time Duration Format can be changed by setting the correct values of the following boolean fields:
-     *     decimalFormat and trackTimeDownToSecond
+     *     Setting Time Duration Format by changing the boolean fields
+     *     decimalFormat and trackTimeDownToSecond is now deprecated.
      *
-     *     There are three different Time Duration modes:
+     *     Time Duration Format can be set by durationFormat enum field.
+     *
+     *     Three different Time Duration modes will still map the boolean fields:
      *
      *         1. Full (hh:mm:ss) -> decimalFormat = false, trackTimeDownToSecond = true,
      *
@@ -7221,10 +7282,14 @@ export interface components {
         | 'VALUE_SPACE_CURRENCY'
         | 'CURRENCY_VALUE'
         | 'VALUE_CURRENCY';
-      /** @description Set decimalFormat alongside trackTimeDownToSecond to manage Time Duration Format as explained in class description */
-      decimalFormat?: boolean;
       /** @description Indicates whether projects are billable by default. */
       defaultBillableProjects?: boolean;
+      /**
+       * @description Represents a clockify duration format enum. Used to set Duration format instead of setting decimalFormat and trackTimeDownToSecond.
+       * @example FULL
+       * @enum {string}
+       */
+      durationFormat?: 'FULL' | 'COMPACT' | 'DECIMAL';
       /** @description Indicates whether description are forced or not. */
       forceDescription?: boolean;
       /** @description Indicates whether projects are forced or not. */
@@ -7282,7 +7347,10 @@ export interface components {
        * @enum {string}
        */
       timeTrackingMode?: 'DEFAULT' | 'STOPWATCH_ONLY';
-      /** @description Indicates whether time tracking is seconds-accurate. Set decimalFormat alongside trackTimeDownToSecond to manage Time Duration Format as explained in class description" */
+      /**
+       * @deprecated
+       * @description Indicates whether time tracking is seconds-accurate. This is now deprecated and durationFormat can now be used to manage Time Duration Format.
+       */
       trackTimeDownToSecond?: boolean;
     };
     /** @description Represents the workspace subdomain */
@@ -7520,8 +7588,8 @@ export interface components {
        * @enum {string}
        */
       timeUnit?: 'DAYS' | 'HOURS';
-      userGroups?: components['schemas']['UserGroupIdsSchema'];
-      users?: components['schemas']['UserIdsSchema'];
+      userGroups?: components['schemas']['PTOUserGroupIdsSchema'];
+      users?: components['schemas']['PTOUserIdsSchema'];
     };
     CreateTimeOffRequestV1Request: {
       /**
@@ -7538,25 +7606,27 @@ export interface components {
     GetTimeOffRequestsV1Request: {
       /**
        * Format: date-time
-       * @description Returns time off requests created before provided date in YYYY-MM-DDTHH:MM:SS.ssssssZ format.
+       * @description Return time off requests created before the specified time in requester's time zone. Provide end in format YYYY-MM-DDTHH:MM:SS.ssssssZ
        * @example 2022-08-26T23:55:06.281873Z
        */
       end?: string;
       /**
        * Format: int32
        * @description Page number.
+       * @default 1
        * @example 1
        */
-      page?: number;
+      page: number;
       /**
        * Format: int32
        * @description Page size.
+       * @default 50
        * @example 50
        */
-      pageSize?: number;
+      pageSize: number;
       /**
        * Format: date-time
-       * @description Returns time off requests created after provided date in YYYY-MM-DDTHH:MM:SS.ssssssZ format.
+       * @description Return time off requests created after the specified time in requester's time zone. Provide start in format YYYY-MM-DDTHH:MM:SS.ssssssZ
        * @example 2022-08-26T08:00:06.281873Z
        */
       start?: string;
@@ -7576,7 +7646,7 @@ export interface components {
        */
       userGroups?: string[];
       /**
-       * @description Provide the user ids of time off requests.
+       * @description Provide the user ids of time off requests.If empty will return time off requests of all users (with a maximum of 5000 users).
        * @example [
        *       "5b715612b079875110791432",
        *       "b715612b079875110791234"
@@ -7614,6 +7684,52 @@ export interface components {
        * @enum {string}
        */
       timeUnit?: 'DAYS' | 'HOURS';
+    };
+    /** @description Provide list with user group ids and corresponding status. */
+    PTOUserGroupIdsSchema: {
+      /**
+       * @example CONTAINS
+       * @enum {string}
+       */
+      contains?: 'CONTAINS' | 'DOES_NOT_CONTAIN';
+      /**
+       * @description Represents ids upon which filtering is performed.
+       * @example [
+       *       "5b715612b079875110791111",
+       *       "5b715612b079875110791222"
+       *     ]
+       */
+      ids?: string[];
+      membershipStatuses?: number[];
+      /**
+       * @description Represents user status.
+       * @example ALL
+       * @enum {string}
+       */
+      status?: 'ALL' | 'ACTIVE' | 'INACTIVE';
+    };
+    /** @description Provide list with user ids and corresponding status. */
+    PTOUserIdsSchema: {
+      /**
+       * @example CONTAINS
+       * @enum {string}
+       */
+      contains?: 'CONTAINS' | 'DOES_NOT_CONTAIN';
+      /**
+       * @description Represents ids upon which filtering is performed.
+       * @example [
+       *       "5b715612b079875110791111",
+       *       "5b715612b079875110791222"
+       *     ]
+       */
+      ids?: string[];
+      membershipStatuses?: number[];
+      /**
+       * @description Represents user status.
+       * @example ALL
+       * @enum {string}
+       */
+      status?: 'ALL' | 'ACTIVE' | 'INACTIVE';
     };
     /** @description Indicates half day hours period of time off. */
     Period: {
@@ -8023,8 +8139,8 @@ export interface components {
        */
       name: string;
       negativeBalance?: components['schemas']['NegativeBalanceRequest'];
-      userGroups: components['schemas']['UserGroupIdsSchema'];
-      users: components['schemas']['UserIdsSchema'];
+      userGroups: components['schemas']['PTOUserGroupIdsSchema'];
+      users: components['schemas']['PTOUserIdsSchema'];
     };
     /** @description List of amounts */
     AmountDto: {
@@ -8084,6 +8200,8 @@ export interface components {
         imageUrl?: string;
         /** Format: int64 */
         overtime?: number;
+        /** Format: int64 */
+        remainingCapacity?: number;
         startTime?: string;
         /** Format: int64 */
         timeOff?: number;
@@ -8221,7 +8339,7 @@ export interface components {
        */
       status?: 'ACTIVE' | 'ARCHIVED' | 'ALL';
     };
-    /** @description Represents object for filtering entries by tasks. */
+    /** @description Represents filter criteria for expenses associated with tasks. */
     ContainsTaskFilterV1: {
       /**
        * @description Represents contains type.
@@ -8604,6 +8722,7 @@ export interface components {
        * @enum {string}
        */
       sortOrder?: 'ASCENDING' | 'DESCENDING';
+      tasks?: components['schemas']['ContainsTaskFilterV1'];
       /**
        * @description Represents time zone
        * @example Europe/Budapest
@@ -9343,6 +9462,8 @@ export interface components {
       imageUrl?: string;
       /** Format: int64 */
       overtime?: number;
+      /** Format: int64 */
+      remainingCapacity?: number;
       startTime?: string;
       /** Format: int64 */
       timeOff?: number;
@@ -9722,6 +9843,36 @@ export interface operations {
       };
     };
   };
+  resubmitApprovalRequest: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /**
+         * @description Represents workspace identifier across the system.
+         * @example 64a687e29ae1f428e7ebe303
+         */
+        workspaceId: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['CreateApprovalRequest'];
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          '*/*': components['schemas']['ApprovalRequestDtoV1'];
+        };
+      };
+    };
+  };
   createApprovalForOther: {
     parameters: {
       query?: never;
@@ -9753,6 +9904,41 @@ export interface operations {
         };
         content: {
           'application/json': components['schemas']['ApprovalRequestDtoV1'];
+        };
+      };
+    };
+  };
+  resubmitApprovalRequestForOther: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /**
+         * @description Represents workspace identifier across the system.
+         * @example 64a687e29ae1f428e7ebe303
+         */
+        workspaceId: string;
+        /**
+         * @description Represents user identifier across the system.
+         * @example 5a0ab5acb07987125438b60f
+         */
+        userId: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['CreateApprovalRequest'];
+      };
+    };
+    responses: {
+      /** @description OK */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          '*/*': components['schemas']['ApprovalRequestDtoV1'];
         };
       };
     };
