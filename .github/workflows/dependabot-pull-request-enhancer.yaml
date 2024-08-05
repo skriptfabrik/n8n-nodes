@@ -12,6 +12,8 @@ jobs:
   cancel-code-check:
     name: Cancel Code Check
     runs-on: ubuntu-latest
+    # yamllint disable-line rule:line-length
+    if: github.actor == 'dependabot[bot]' && (contains(github.event.pull_request.title, 'Bump nx') || contains(github.event.pull_request.title, 'Bump n8n'))
     permissions:
       actions: write
       contents: read
