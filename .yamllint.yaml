@@ -9,6 +9,8 @@ rules:
   document-start: false
   line-length:
     max: 120
+    ignore:
+      - /.github/workflows/*.yaml
   new-lines:
     type: unix
   new-line-at-end-of-file:

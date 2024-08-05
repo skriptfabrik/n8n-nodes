@@ -22,7 +22,6 @@ jobs:
     steps:
       - name: Extract package from head ref
         id: extract_package
-        # yamllint disable-line rule:line-length
         run: echo "package=$(echo ${{ github.event.pull_request.head.ref }} | sed -E 's/release-(.*)@.*/\1/')" >> "$GITHUB_OUTPUT"
 
       - name: Checkout

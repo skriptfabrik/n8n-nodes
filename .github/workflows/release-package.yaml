@@ -36,13 +36,11 @@ jobs:
           fetch-tags: true
 
       - name: Check on existing release branch
-        # yamllint disable rule:line-length
         run: |
           if git ls-remote --heads origin | grep "refs/heads/release-${{ github.event.inputs.package }}@*"; then
             echo "::error ::Release branch already exists for package: \"${{ github.event.inputs.package }}\" please remove or merge branch before executing again."
             exit 1
           fi
-        # yamllint enable rule:line-length
 
       - name: Setup git user
         uses: fregante/setup-git-user@v2
@@ -52,7 +50,6 @@ jobs:
         run: echo "short_commit_hash=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Switch to release branch
-        # yamllint disable-line rule:line-length
         run: git switch --force-create release-${{ github.event.inputs.package }}@${{ steps.short_commit_hash.outputs.short_commit_hash }}
 
       - name: Setup pnpm
@@ -74,11 +71,9 @@ jobs:
             --skip-publish
 
       - name: Push changes
-        # yamllint disable-line rule:line-length
         run: git push origin release-${{ github.event.inputs.package }}@${{ steps.short_commit_hash.outputs.short_commit_hash }}
 
       - name: Create pull request
-        # yamllint disable rule:line-length
         run: |
           gh pr create \
             --base main \
@@ -87,6 +82,5 @@ jobs:
             --label release \
             --reviewer ${{ github.actor }} \
             --title "Release ${{ github.event.inputs.package }}"
-        # yamllint enable rule:line-length
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
