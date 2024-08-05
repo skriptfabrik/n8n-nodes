@@ -1,3 +1,17 @@
+## 0.1.3 (2024-08-05)
+
+
+### 🩹 Fixes
+
+- **fulfillmenttools:** bump n8n-workflow version to 1.51.0
+
+- **fulfillmenttools:** regenerate API definitions with openapi-typescript 7.3.0 (N8N-6)
+
+
+### ❤️  Thank You
+
+- Marco Spengler
+
 ## 0.1.2 (2024-07-05)
 
 
