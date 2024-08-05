@@ -112,6 +112,42 @@ export interface paths {
     patch: operations['updateCarrierCountryServiceMapping'];
     trace?: never;
   };
+  '/api/configurations/transittime': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    /**
+     * Get a tenant wide transit time time config
+     * @description <center><img src='https://storage.googleapis.com/ocff-assets/api/beta_174x74.png'
+     *       /></center> <br /> <i>This part of the API is currently under development.
+     *       That means that this endpoint, model, etc. can contain breaking changes
+     *       and / or might not be available at all times in your API instance. It
+     *       could disappear also without warning. Thus, it currently does not fall
+     *       under our SLA regulations. For details on this topic please check our
+     *       <a href="https://docs.fulfillmenttools.com/api-docs/connecting-to-fulfillmenttools/restful-api/general-topics/api-release-life-cycle">documentation</a></i><br /><br />
+     */
+    get: operations['getTransitTimeConfiguration'];
+    /**
+     * Update transit time configuration of a tenant
+     * @description <center><img src='https://storage.googleapis.com/ocff-assets/api/beta_174x74.png'
+     *       /></center> <br /> <i>This part of the API is currently under development.
+     *       That means that this endpoint, model, etc. can contain breaking changes
+     *       and / or might not be available at all times in your API instance. It
+     *       could disappear also without warning. Thus, it currently does not fall
+     *       under our SLA regulations. For details on this topic please check our
+     *       <a href="https://docs.fulfillmenttools.com/api-docs/connecting-to-fulfillmenttools/restful-api/general-topics/api-release-life-cycle">documentation</a></i><br /><br />
+     */
+    put: operations['putTransitTimeConfiguration'];
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
   '/api/configurations/cutofftime': {
     parameters: {
       query?: never;
@@ -284,7 +320,24 @@ export interface paths {
      *       <a href="https://docs.fulfillmenttools.com/api-docs/connecting-to-fulfillmenttools/restful-api/general-topics/api-release-life-cycle">documentation</a>
      *       </i><br /><br />
      */
-    put: operations['putHandoverConfiguration'];
+    put: operations['upsertHandoverConfiguration'];
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/api/configurations/handover/refusereasons': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    /** Get all tenant wide refuse reasons */
+    get: operations['getAllRefuseReasons'];
+    put?: never;
     post?: never;
     delete?: never;
     options?: never;
@@ -2045,6 +2098,34 @@ export interface paths {
     patch?: never;
     trace?: never;
   };
+  '/api/itemreturnjobs/{itemReturnJobId}/itemreturns/{itemReturnId}/parcels': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /**
+     * Create a parcel for an itemReturn
+     * @description <i><center>
+     *       <img src='https://storage.googleapis.com/ocff-assets/api/fft-alpha_174x51.png'/>
+     *       </center> <br /> This part of the API is currently under development.
+     *       That means that this endpoint, model, etc. can contain breaking changes
+     *       and / or might not be available at all times in your API instance. It
+     *       could disappear also without warning. Thus, it currently does not fall
+     *       under our SLA regulations. For details on this topic please check our
+     *       <a href="https://docs.fulfillmenttools.com/api-docs/connecting-to-fulfillmenttools/restful-api/general-topics/api-release-life-cycle">documentation</a>
+     *       </i><br /><br />
+     */
+    post: operations['createItemReturnParcel'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
   '/api/subscriptions': {
     parameters: {
       query?: never;
@@ -2530,6 +2611,40 @@ export interface paths {
     };
     /** Get a deliverynote for the pack job with the given ID */
     get: operations['getPackJobDeliveryNote'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/api/packjobs/{packJobId}/targetcontainers/{targetcontainerId}/returnnote': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    /** Get the return note for the packingTargetContainer with the given ID */
+    get: operations['getReturnNotesForPackingTargetContainer'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/api/packjobs/{packJobId}/targetcontainers/{targetcontainerId}/deliverynote': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    /** Get a deliverynote for the packingTargetContainer with the given ID */
+    get: operations['getPackingTargetContainerDeliveryNote'];
     put?: never;
     post?: never;
     delete?: never;
@@ -4462,6 +4577,62 @@ export interface paths {
     patch?: never;
     trace?: never;
   };
+  '/api/promises/checkoutoptions/delivery/earliest': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /**
+     * delivery/earliest
+     * @description <i><center>
+     *       <img src='https://storage.googleapis.com/ocff-assets/api/fft-alpha_174x51.png'/>
+     *       </center> <br /> This part of the API is currently under development.
+     *       That means that this endpoint, model, etc. can contain breaking changes
+     *       and / or might not be available at all times in your API instance. It
+     *       could disappear also without warning. Thus, it currently does not fall
+     *       under our SLA regulations. For details on this topic please check our
+     *       <a href="https://docs.fulfillmenttools.com/api-docs/connecting-to-fulfillmenttools/restful-api/general-topics/api-release-life-cycle">documentation</a>
+     *       </i><br /><br />The list of items depicts the items you would like to get information about their earliest possbile delivery. The provided list of tenant article ids are considered individual (as if not in a basket together, but seperately ordered). Additionally you can add information about the address these items should be delivered to to further refine the response.
+     */
+    post: operations['checkoutoptionDeliveryEarliest'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/api/promises/checkoutoptions/delivery/timeperiod': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /**
+     * delivery/timeperiod
+     * @description <i><center>
+     *       <img src='https://storage.googleapis.com/ocff-assets/api/fft-alpha_174x51.png'/>
+     *       </center> <br /> This part of the API is currently under development.
+     *       That means that this endpoint, model, etc. can contain breaking changes
+     *       and / or might not be available at all times in your API instance. It
+     *       could disappear also without warning. Thus, it currently does not fall
+     *       under our SLA regulations. For details on this topic please check our
+     *       <a href="https://docs.fulfillmenttools.com/api-docs/connecting-to-fulfillmenttools/restful-api/general-topics/api-release-life-cycle">documentation</a>
+     *       </i><br /><br />The basket attribute depicts the items you would like to get details about their possbile delivery. All the provided tenantArticleIds within the basket are considered together (as if they are in the same basket/order). Additionally you can add information about the address these items should be delivered to to further refine the quality of the response.
+     */
+    post: operations['checkoutoptionDeliveryTimePeriod'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
   '/api/promises/checkoutoptions': {
     parameters: {
       query?: never;
@@ -4484,6 +4655,34 @@ export interface paths {
      *       </i><br /><br />
      */
     post: operations['postCheckoutOptions'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/api/promises/checkoutoptions/delivery/timepoint': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /**
+     * This endpoint is to be used to get information about the possible delivery of items
+     * @description <i><center>
+     *       <img src='https://storage.googleapis.com/ocff-assets/api/fft-alpha_174x51.png'/>
+     *       </center> <br /> This part of the API is currently under development.
+     *       That means that this endpoint, model, etc. can contain breaking changes
+     *       and / or might not be available at all times in your API instance. It
+     *       could disappear also without warning. Thus, it currently does not fall
+     *       under our SLA regulations. For details on this topic please check our
+     *       <a href="https://docs.fulfillmenttools.com/api-docs/connecting-to-fulfillmenttools/restful-api/general-topics/api-release-life-cycle">documentation</a>
+     *       </i><br /><br />
+     */
+    post: operations['checkoutOptionsTimepoint'];
     delete?: never;
     options?: never;
     head?: never;
@@ -4536,6 +4735,23 @@ export interface paths {
     put?: never;
     /** Call a single action on a given order */
     post: operations['orderAction'];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/api/orders/{orderId}/orderlineitems/{orderLineItemId}/actions': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /** Call a single action on a given order and line item */
+    post: operations['orderLineItemAction'];
     delete?: never;
     options?: never;
     head?: never;
@@ -4976,6 +5192,33 @@ export interface paths {
     get: operations['getOrderRoutingConfiguration'];
     /** Change the tenant wide order routing configuration */
     put: operations['putOrderRoutingConfiguration'];
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/api/configurations/ordercancelation': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    /**
+     * Get the tenant wide order cancelation configuration
+     * @description <center><img src='https://storage.googleapis.com/ocff-assets/api/beta_174x74.png'
+     *       /></center> <br /> <i>This part of the API is currently under development.
+     *       That means that this endpoint, model, etc. can contain breaking changes
+     *       and / or might not be available at all times in your API instance. It
+     *       could disappear also without warning. Thus, it currently does not fall
+     *       under our SLA regulations. For details on this topic please check our
+     *       <a href="https://docs.fulfillmenttools.com/api-docs/connecting-to-fulfillmenttools/restful-api/general-topics/api-release-life-cycle">documentation</a></i><br /><br />
+     */
+    get: operations['getOrderCancelationConfiguration'];
+    /** Change the tenant wide order cancelation configuration */
+    put: operations['putOrderCancelationConfiguration'];
     post?: never;
     delete?: never;
     options?: never;
@@ -6515,6 +6758,25 @@ export interface components {
        */
       version: number;
     };
+    NonDeliveryDaysPerCountryAndProvince: {
+      country: string;
+      nonDeliveryDays: components['schemas']['NonDeliveryDays'][];
+      recurringNonDeliveryWeekdays: components['schemas']['WeekDay'][];
+      nonDeliveryDaysPerProvince: components['schemas']['NonDeliveryDaysPerProvince'][];
+    };
+    NonDeliveryDaysPerProvince: {
+      province: string;
+      nonDeliveryDays: components['schemas']['NonDeliveryDays'][];
+      recurringNonDeliveryWeekdays: components['schemas']['WeekDay'][];
+    };
+    NonDeliveryDays: {
+      /** @default SINGLE */
+      nonDeliveryType: components['schemas']['NonDeliveryType'];
+      /** @example 2020-02-03 */
+      nonDeliveryDay: string;
+    };
+    /** @enum {string} */
+    NonDeliveryType: 'SINGLE' | 'RECURRING';
     /** @enum {string} */
     SortDirection: 'ASCENDING' | 'DESCENDING';
     SortParameter: {
@@ -6627,6 +6889,15 @@ export interface components {
       clearName: string;
       version: number;
     } & WithRequired<components['schemas']['VersionedResource'], 'version'>;
+    TransitTimeConfiguration: {
+      /** @enum {string} */
+      calculationStrategy: 'EARLIEST' | 'LATEST';
+      id: string;
+    } & components['schemas']['VersionedResource'];
+    TransitTimeConfigurationForUpsert: {
+      /** @enum {string} */
+      calculationStrategy: 'EARLIEST' | 'LATEST';
+    } & components['schemas']['VersionedResource'];
     CutoffTimeConfiguration: {
       clickAndCollect: components['schemas']['CutoffTime'];
       shipFromStore: components['schemas']['CutoffTime'];
@@ -6776,7 +7047,11 @@ export interface components {
      * @example SIGNATURE
      * @enum {string}
      */
-    CarrierServices: 'SIGNATURE';
+    CarrierServices:
+      | 'SIGNATURE'
+      | 'CUSTOMER_SIGNATURE'
+      | 'ADULT_SIGNATURE'
+      | 'SATURDAY_DELIVERY';
     DHLV2CarrierCredentials: {
       key: 'DHLV2CarrierCredentials';
     } & (Omit<components['schemas']['AbstractCarrierCredentials'], 'key'> & {
@@ -6856,6 +7131,9 @@ export interface components {
     StickerConfiguration: {
       offeredStickersByTag?: components['schemas']['OfferedStickersByTag'][];
     };
+    ExpectedPickLineItemForCreation: {
+      transferId: string;
+    } & components['schemas']['PickLineItemForCreation'];
     PickLineItemForCreation: {
       article: components['schemas']['PickLineItemArticle'];
       /** @description Attributes that can be added to the pick line. These attributes cannot be used within fulfillment processes, but it could be useful to have the information carried here. */
@@ -6943,6 +7221,13 @@ export interface components {
         scanningType?: components['schemas']['ScanningRuleValue'][];
       };
       shortPickReason?: components['schemas']['PickLineShortPickReason'];
+    };
+    ExpectedPickLineItem: components['schemas']['ExpectedPickLineItemForCreation'] & {
+      /**
+       * @description The id of this lineItem. It is generated during creation automatically and suits as the primary identifier of the described entity.
+       * @example climk4dcQFiPdA5ULuhS
+       */
+      id: string;
     };
     PickLineShortPickReason: {
       /** @description translated reasonLocalized according to the given locale */
@@ -7334,6 +7619,10 @@ export interface components {
       id?: string;
     } & WithRequired<components['schemas']['VersionedResource'], 'version'>;
     HandoverLineItem: {
+      id: string;
+    } & components['schemas']['HandoverLineItemForCreation'];
+    HandoverLineItemForCreation: {
+      refused?: components['schemas']['RefusedItem'][];
       article: components['schemas']['HandoverLineItemArticle'];
       /**
        * Format: int64
@@ -7377,12 +7666,15 @@ export interface components {
        * @example 20
        */
       handedOverQuantity?: number;
+      id?: string;
+      refused?: components['schemas']['RefusedItem'][];
     };
     Handoverjob: components['schemas']['VersionedResource'] &
       WithRequired<
         components['schemas']['HandoverjobForCreation'],
         'status'
       > & {
+        handoverJobLineItems?: unknown;
         /**
          * @description Indicates if gdpr related data was anonymized
          * @example false
@@ -7415,7 +7707,7 @@ export interface components {
        * @example Esb20gpHBL94X5NdMp3C
        */
       facilityRef: string;
-      handoverJobLineItems?: components['schemas']['HandoverLineItem'][];
+      handoverJobLineItems?: components['schemas']['HandoverLineItemForCreation'][];
       /** @description Reference to array of load unit Refs */
       loadUnitRefs?: string[];
       /**
@@ -7490,15 +7782,55 @@ export interface components {
       | 'CONSUMER_REJECTS'
       | 'ORDER_CANCELED';
     HandoverConfiguration: {
-      availableRefusedReasons: unknown;
+      availableRefusedReasons?: unknown;
     } & components['schemas']['VersionedResource'];
+    HandoverConfigurationForCreate: {
+      version: number;
+      availableRefusedReasons?: unknown;
+    };
     AvailableRefusedReason: {
+      active: boolean;
       refusedReasonLocalized: components['schemas']['LocaleString'];
       /**
        * @description translated refusedReason selected from refusedReasonLocalized
        * @example Broken Item
        */
       refusedReason?: string;
+    };
+    AvailableRefuseReasonForCreation: {
+      /** @example true */
+      active: boolean;
+      /**
+       * @description Localized reason
+       * @example { en_US: 'SomeName' }
+       */
+      refusedReasonLocalized: components['schemas']['LocaleString'];
+    };
+    AvailableRefuseReasonForUpdate: {
+      /** @example true */
+      active: boolean;
+      /**
+       * Format: int64
+       * @description The version of the document to be used in optimistic locking mechanisms.
+       * @example 42
+       */
+      version: number;
+      /**
+       * @description Localized reason
+       * @example { en_US: 'SomeName' }
+       */
+      refusedReasonLocalized: components['schemas']['LocaleString'];
+    };
+    UpdateRefuseReasonParameter: {
+      handoverConfigurationVersion: number;
+      availableRefuseReasonForUpdate: components['schemas']['AvailableRefuseReasonForUpdate'];
+    };
+    DeleteRefuseReasonParameter: {
+      handoverConfigurationVersion: number;
+    };
+    AddRefuseReasonParameter: {
+      handoverConfigurationVersion: number;
+      availableRefuseReasonForCreation: components['schemas']['AvailableRefuseReasonForCreation'];
     };
     LinkedConfiguration: {
       ref?: string;
@@ -7629,9 +7961,7 @@ export interface components {
        */
       currency?: components['schemas']['CurrencyCode'] | null;
       stockProperties?: {
-        [key: string]:
-          | components['schemas']['StockPropertyDefinition']
-          | undefined;
+        [key: string]: components['schemas']['StockPropertyDefinition'];
       };
       stockAvailableUntil?: components['schemas']['AvailableUntilDefinition'];
       legal?: components['schemas']['ListingLegal'];
@@ -7642,7 +7972,7 @@ export interface components {
      *       "color": "yellow"
      *     } */
     PickingStockProperty: {
-      [key: string]: string | undefined;
+      [key: string]: string;
     };
     PickingStockPropertyPreset: {
       expiry?: string;
@@ -7917,7 +8247,7 @@ export interface components {
      *       "RU": "ru_RU"
      *     } */
     CountryLanguageMapping: {
-      [key: string]: string | undefined;
+      [key: string]: string;
     };
     MeasurementUnit: {
       /**
@@ -8234,11 +8564,19 @@ export interface components {
        * @enum {string}
        */
       action: 'ModifyParcel';
-      /** @description The state of the parcel we want to change. */
       status?: components['schemas']['ParcelStatus'];
-      /** @description The result of the parcel */
       result?: components['schemas']['ParcelResult'];
       customAttributes?: Record<string, never>;
+      dimensions?: components['schemas']['ParcelDimensions'];
+      /**
+       * @description Monetary value of all goods in this parcel. Needed for sending cross border packages (customs) To be interpreted as money in the currency given under paymentInformation.currency
+       * @example 12.5
+       */
+      productValue?: number | null;
+      pickUpInformation?: components['schemas']['ParcelPickUpInformation'];
+      services?: components['schemas']['ParcelServices'];
+      /** @description Only changable on status OPEN or FAILED of the existing Parcel */
+      carrierProduct?: string | null;
     });
     ModifyParcelLoadUnitsAction: {
       action: 'ModifyParcelLoadUnitsAction';
@@ -8368,9 +8706,7 @@ export interface components {
       /** @example kg */
       measurementUnitKey?: string | null;
       stockProperties?: {
-        [key: string]:
-          | components['schemas']['StockPropertyDefinition']
-          | undefined;
+        [key: string]: components['schemas']['StockPropertyDefinition'];
       } | null;
       stockAvailableUntil?: components['schemas']['AvailableUntilDefinition'];
       legal?: components['schemas']['ListingLegal'];
@@ -8690,11 +9026,18 @@ export interface components {
        * @example 25
        */
       width?: number;
-    };
+    } | null;
     ParcelServices: {
       bulkyGoods?: boolean;
+      /** @description Signature from anyone needed */
       signature?: boolean;
-    };
+      /** @description Signature from some adult */
+      adultSignature?: boolean;
+      /** @description Signature from the ordering customer needed */
+      customerSignature?: boolean;
+      /** @description Saturday Delivery */
+      saturdayDelivery?: boolean;
+    } | null;
     Parcel: components['schemas']['VersionedResource'] & {
       /**
        * @description Indicates if gdpr related data was anonymized
@@ -8727,6 +9070,7 @@ export interface components {
       recipient: components['schemas']['ConsumerAddress'];
       invoice?: components['schemas']['ConsumerAddress'];
       processRef: string;
+      facilityRef?: string;
       operativeProcessRef?: string;
       items?: components['schemas']['ParcelItem'][];
       postalCharges?: components['schemas']['ParcelPostalCharge'];
@@ -8737,7 +9081,7 @@ export interface components {
        * @description The id of this shipment this parcel has been created for.
        * @example 95EWrieX09OmeriXIUbb
        */
-      shipmentRef: string;
+      shipmentRef?: string;
       status: components['schemas']['ParcelStatus'];
       paymentInformation?: components['schemas']['PaymentInformation'];
       pickUpInformation?: components['schemas']['ParcelPickUpInformation'];
@@ -8755,13 +9099,15 @@ export interface components {
        * @example EXPRESS
        */
       carrierProduct?: string;
+      /** @description references the carrier to be used for sending. Can not be set when creating a parcel for an existing shipment. */
+      carrierRef?: string;
       /** @description Attributes that can be added to the parcel. These attributes cannot be used within fulfillment processes, but it could be useful to have the information carried here. */
       customAttributes?: Record<string, never>;
       dimensions?: components['schemas']['ParcelDimensions'];
       services?: components['schemas']['ParcelServices'];
       /** @description Reference to array of load unit Refs */
       loadUnitRefs?: string[];
-      items?: components['schemas']['ParcelItem'][];
+      items?: components['schemas']['ParcelItemForCreation'][];
       recipient?: components['schemas']['ConsumerAddress'];
       invoice?: components['schemas']['ConsumerAddress'];
       sender?: components['schemas']['FacilityAddress'];
@@ -8776,31 +9122,7 @@ export interface components {
       result?: components['schemas']['ParcelResult'];
       transfers?: components['schemas']['OperativeTransfer'][];
     };
-    ParcelPickUpInformation: {
-      /**
-       * Format: date-time
-       * @description needs to be before end time
-       */
-      startTime: string;
-      /**
-       * Format: date-time
-       * @description needs to be after start time
-       */
-      endTime: string;
-    };
-    ParcelPostalCharge: {
-      /**
-       * @description Monetary Value in the given currency
-       * @example 15.5
-       */
-      value: number;
-      /**
-       * @description Currency of the given value
-       * @example EUR
-       */
-      currency: string;
-    };
-    ParcelItem: {
+    ParcelItemForCreation: {
       /**
        * @description amount of the given items
        * @example 5
@@ -8821,6 +9143,83 @@ export interface components {
       countryOfManufacture?: string;
       article?: components['schemas']['ParcelItemArticle'];
     };
+    ParcelItemForUpdate: {
+      /**
+       * @description The id of this parcelItem. It is generated during creation automatically and suits as the primary identifier of the described entity.
+       * @example ae3ba67c-a42c-4816-96ac-16231e49640c
+       */
+      id: string;
+      parcelItemValue?: components['schemas']['ParcelItemValue'];
+      /**
+       * @description Weight of a single item in gram
+       * @example 10000
+       */
+      weightInGram?: number | null;
+    };
+    ParcelPickUpInformation: {
+      /**
+       * Format: date-time
+       * @description needs to be before end time
+       */
+      startTime: string;
+      /**
+       * Format: date-time
+       * @description needs to be after start time
+       */
+      endTime: string;
+    } | null;
+    ParcelPostalCharge: {
+      /**
+       * @description Monetary Value in the given currency
+       * @example 15.5
+       */
+      value: number;
+      /**
+       * @description Currency of the given value
+       * @example EUR
+       */
+      currency: string;
+    };
+    ParcelItem: {
+      /**
+       * @description The id of this parcelItem.
+       * @example ae3ba67c-a42c-4816-96ac-16231e49640c
+       */
+      id: string;
+      /**
+       * @description amount of the given items
+       * @example 5
+       */
+      quantity: number;
+      /**
+       * @deprecated
+       * @description Deprecated - use article.attribute.hsCode instead
+       */
+      hsCode?: string;
+      /**
+       * @deprecated
+       * @description Description - article.title will be used instead - of the given item/items
+       * @example Item Description
+       */
+      description?: string;
+      /**
+       * @deprecated
+       * @description Deprecated - use article.attribute.weightPerUnit instead - Weight of a single item in gram
+       * @example 10000
+       */
+      weightInGram?: number;
+      /**
+       * @deprecated
+       * @description Deprecated - use article.attribute.pricePerUnit and article.attribute.currency instead
+       */
+      parcelItemValue?: components['schemas']['ParcelItemValue'];
+      /**
+       * @deprecated
+       * @description Deprecated - use article.attribute.countryOfManufacture instead
+       */
+      countryOfManufacture?: string;
+      article?: components['schemas']['ParcelItemArticle'];
+    };
     ParcelItemArticle: components['schemas']['AbstractArticle'] & {
       attributes?: components['schemas']['ArticleAttributeItem'][];
     };
@@ -8835,7 +9234,7 @@ export interface components {
        * @example EUR
        */
       currency: string;
-    };
+    } | null;
     /** @enum {string} */
     ParcelStatus:
       | 'OPEN'
@@ -8869,6 +9268,7 @@ export interface components {
          */
         id: string;
         pickLineItems: components['schemas']['PickLineItem'][];
+        expectedPickLineItems?: components['schemas']['ExpectedPickLineItem'][];
         /**
          * @description A short identifier that helps assigning a pickJob to a customer. This is automatically created during creation.
          * @example AS12
@@ -8912,6 +9312,7 @@ export interface components {
        */
       orderRef?: string;
       pickLineItems: components['schemas']['PickLineItemForCreation'][];
+      expectedPickLineItems?: components['schemas']['ExpectedPickLineItemForCreation'][];
       paymentInformation?: components['schemas']['PaymentInformation'];
       /** @description Id of the global process related to this entity. For example used for starting the GDPR process and others. */
       processId?: string;
@@ -8953,6 +9354,7 @@ export interface components {
        */
       productName?: string;
       mandatoryShippingAttributes?: components['schemas']['MandatoryShippingAttribute'][];
+      mandatoryShippingArticleAttributes?: components['schemas']['MandatoryShippingArticleAttribute'][];
       mandatoryShippingItemAttributes?: components['schemas']['MandatoryShippingItemAttribute'][];
     };
     /**
@@ -8967,7 +9369,8 @@ export interface components {
       | 'REROUTED'
       | 'REJECTED'
       | 'RESTOWED'
-      | 'EXPIRED';
+      | 'EXPIRED'
+      | 'WAITING_FOR_INPUT';
     /**
      * @description The status of a pickjob.
      * @enum {string}
@@ -8983,7 +9386,8 @@ export interface components {
       | 'RESTOWED'
       | 'EXPIRED'
       | 'CANCELED'
-      | 'OBSOLETE';
+      | 'OBSOLETE'
+      | 'WAITING_FOR_INPUT';
     PickJobLineItemPartialStockLocationForUpdate: {
       tenantPartialStockId: string;
       /**
@@ -9036,6 +9440,10 @@ export interface components {
     };
     PickLineItemArticle: components['schemas']['AbstractArticle'] & {
       attributes?: components['schemas']['ArticleAttributeItem'][];
+      /**
+       * @deprecated
+       * @description <center><img src='https://storage.googleapis.com/ocff-assets/api/fft-deprectated_254x51.png'></center> <br /> <i>This endpoint is deprecated and has been replaced.</i><br /><br />
+       */
       prices?: components['schemas']['ArticlePrice'][];
     };
     ArticlePrice: {
@@ -9282,7 +9690,9 @@ export interface components {
     };
     /** @enum {string} */
     PickRunCancelActionEnum: 'CANCEL';
-    HandoverJobActionsParameter: components['schemas']['HandoverJobCancelActionParameter'];
+    HandoverJobActionsParameter:
+      | components['schemas']['HandoverJobCancelActionParameter']
+      | components['schemas']['HandoverJobLineItemUpdateActionParameter'];
     HandoverJobCancelActionParameter: {
       name: components['schemas']['HandoverJobCancelActionEnum'];
       /** @description Version of the entity to be changed */
@@ -9291,8 +9701,35 @@ export interface components {
         handoverJobCancelReason: components['schemas']['HandoverJobCancelReason'];
       };
     };
+    HandoverJobLineItemUpdateActionParameter: {
+      name: components['schemas']['HandoverJobLineItemUpdateActionEnum'];
+      /** @description Version of the entity to be changed */
+      version: number;
+      lineItem: {
+        id: string;
+        refused?: unknown;
+        substituteItems?: components['schemas']['HandoverSubstituteLineItemForUpdate'][];
+      };
+    };
+    RefusedItem: {
+      quantity: number;
+      reason?: string;
+      reasonLocalized: components['schemas']['LocaleString'];
+      comment?: string;
+    };
+    RefusedItemForUpdate: {
+      quantity: number;
+      reasonLocalized: components['schemas']['LocaleString'];
+      comment?: string;
+    };
+    HandoverSubstituteLineItemForUpdate: {
+      id: string;
+      refused?: components['schemas']['RefusedItemForUpdate'][];
+    };
     /** @enum {string} */
     HandoverJobCancelActionEnum: 'CANCEL';
+    /** @enum {string} */
+    HandoverJobLineItemUpdateActionEnum: 'UPDATE_LINEITEM';
     ModifyPickRunLineItemAction: {
       action: 'ModifyPickRunLineItemAction';
     } & (Omit<components['schemas']['AbstractModificationAction'], 'action'> & {
@@ -9357,8 +9794,9 @@ export interface components {
         };
         shipping?: {
           carrierKey?: string;
+          carrierProductCategory?: components['schemas']['CarrierProductCategory'];
           /**
-           * @description Desired product of given carrier to choose when ordering a label
+           * @description Desired product of given carrier to choose when ordering a label, this is specific to a carrier
            * @example EXPRESS
            */
           carrierProduct?: string;
@@ -9497,7 +9935,7 @@ export interface components {
       returnStatus: components['schemas']['ProcessStatus'];
       /** @description Overview of the different domain adherent status of the process. */
       domainStatuses?: {
-        [key: string]: components['schemas']['DomainStatus'] | undefined;
+        [key: string]: components['schemas']['DomainStatus'];
       };
       /** @description The last domain statuses of each domain */
       lastDomainEntityStatuses?: components['schemas']['LastDomainEntityStatusItem'][];
@@ -9562,7 +10000,13 @@ export interface components {
       | 'SERVICE_JOB'
       | 'ITEM_RETURN_JOB';
     /** @enum {string} */
-    Section: 'ORDER' | 'PACKJOB' | 'PICKJOB' | 'HANDOVERJOB' | 'PARCEL';
+    Section:
+      | 'ORDER'
+      | 'PACKJOB'
+      | 'PICKJOB'
+      | 'HANDOVERJOB'
+      | 'PARCEL'
+      | 'PACKING_TARGET_CONTAINER';
     /** @enum {string} */
     DocumentType: 'PDF' | 'PNG' | 'JPG' | 'GIF' | 'JPEG';
     ExternalDocument: {
@@ -10407,6 +10851,8 @@ export interface components {
     };
     SubstituteAttributeItem: components['schemas']['ArticleAttributeItem'];
     SubstituteLineItem: {
+      id?: string;
+      refused?: components['schemas']['RefusedItem'][];
       article: components['schemas']['SubstituteLineItemArticle'];
       /** @description This field allows you to rank substitutes against each other. The lowest number is the most preferrable substitute. */
       priority?: number;
@@ -10782,9 +11228,23 @@ export interface components {
        * @example max@speedyboxales.com
        */
       fallBackTrackAndTraceEmail?: string;
+      nonDeliveryDaysPerCountryAndProvince?: components['schemas']['NonDeliveryDaysPerCountryAndProvince'][];
+      /** @description Deprecated - manual country service mapping is deprecated, please use the predefined staticCountryServiceMappings if available to see which fields are needed */
       countryServiceMappings?: components['schemas']['CarrierCountryServiceMapping'][];
+      staticCountryServiceMappings?: components['schemas']['StaticCarrierCountryServiceMapping'][];
+      thresholdPriceValue?: components['schemas']['ThresholdPriceValue'];
       serviceUrl?: string;
     } & components['schemas']['VersionedResource'];
+    ThresholdPriceValue: {
+      priority: number;
+      priceRange: components['schemas']['PriceRange'];
+    };
+    PriceRange: {
+      /** @example 12.99 */
+      from: number;
+      /** @example 2500 */
+      to: number;
+    };
     DeliveryCost: {
       /**
        * @description The cost of sending with a carrier
@@ -10797,33 +11257,38 @@ export interface components {
        */
       currency: string;
     };
-    CarrierCountryServiceMapping: {
+    StaticCarrierCountryServiceMapping: {
+      source: components['schemas']['RegionInformation'];
+      /** @description The destination regions this mapping should be applied to. */
+      destinations: components['schemas']['RegionInformation'][];
+      mandatoryShippingArticleAttributes?: components['schemas']['MandatoryShippingArticleAttribute'][];
+      mandatoryShippingAttributes?: components['schemas']['MandatoryShippingAttribute'][];
+      /**
+       * @deprecated
+       * @description Deprecated - use mandatoryShippingArticleAttributes instead
+       */
+      mandatoryShippingItemAttributes?: components['schemas']['MandatoryShippingItemAttribute'][];
+      /** @description Array of products for the given mapping */
+      products?: string[];
+      /** @description Services which can be provided by the carrier */
+      carrierServices?: components['schemas']['CarrierServices'][];
+      carrierProductCategory?: components['schemas']['CarrierProductCategory'];
+      transitTime?: components['schemas']['CarrierTransitTime'];
+      deliveryCosts?: components['schemas']['DeliveryCost'][];
+    };
+    CarrierCountryServiceMapping: components['schemas']['StaticCarrierCountryServiceMapping'] & {
       /**
        * @description unique identifier for a countryServiceMapping
        * @example bc5b581a-8f65-45b0-9f81-6e0d4babbcb2
        */
       id: string;
-      source: components['schemas']['RegionInformation'];
-      /** @description The destination regions this mapping should be applied to. */
-      destinations: components['schemas']['RegionInformation'][];
       /**
-       * @deprecated
-       * @description <center><img src='https://storage.googleapis.com/ocff-assets/api/fft-deprectated_254x51.png'></center> <br /> <i>This endpoint is deprecated and has been replaced.</i><br /><br />@deprecated Use source instead.
+       * @description <center><img src='https://storage.googleapis.com/ocff-assets/api/fft-deprectated_254x51.png'></center> <br /> <i>This endpoint is deprecated and has been replaced.</i><br /><br />@deprecated - Use source instead.
        * @example DE
        */
       sourceCountry?: string;
-      /**
-       * @deprecated
-       * @description <center><img src='https://storage.googleapis.com/ocff-assets/api/fft-deprectated_254x51.png'></center> <br /> <i>This endpoint is deprecated and has been replaced.</i><br /><br />@deprecated Use destination instead.
-       */
+      /** @description <center><img src='https://storage.googleapis.com/ocff-assets/api/fft-deprectated_254x51.png'></center> <br /> <i>This endpoint is deprecated and has been replaced.</i><br /><br />@deprecated - Use destination instead. */
       destinationCountries?: components['schemas']['CountryCode'][];
-      mandatoryShippingAttributes?: components['schemas']['MandatoryShippingAttribute'][];
-      mandatoryShippingItemAttributes?: components['schemas']['MandatoryShippingItemAttribute'][];
-      /** @example EXPRESS */
-      product?: string;
-      carrierProductCategory?: components['schemas']['CarrierProductCategory'];
-      transitTime?: components['schemas']['CarrierTransitTime'];
-      deliveryCosts?: components['schemas']['DeliveryCost'][];
     };
     CarrierCountryServiceMappingForCreation: {
       /**
@@ -10848,8 +11313,8 @@ export interface components {
       destinationCountries?: components['schemas']['CountryCode'][];
       mandatoryShippingAttributes?: components['schemas']['MandatoryShippingAttribute'][];
       mandatoryShippingItemAttributes?: components['schemas']['MandatoryShippingItemAttribute'][];
-      /** @example EXPRESS */
-      product?: string;
+      mandatoryShippingArticleAttributes?: components['schemas']['MandatoryShippingArticleAttribute'][];
+      products?: string[];
       carrierProductCategory?: components['schemas']['CarrierProductCategory'];
       transitTime?: components['schemas']['CarrierTransitTime'];
       deliveryCosts?: components['schemas']['DeliveryCost'][];
@@ -10877,13 +11342,17 @@ export interface components {
       destinationCountries?: components['schemas']['CountryCode'][];
       mandatoryShippingAttributes?: components['schemas']['MandatoryShippingAttribute'][];
       mandatoryShippingItemAttributes?: components['schemas']['MandatoryShippingItemAttribute'][];
-      /** @example EXPRESS */
-      product?: string;
+      mandatoryShippingArticleAttributes?: components['schemas']['MandatoryShippingArticleAttribute'][];
+      /** @description Array of products for the given mapping */
+      products?: string[];
       carrierProductCategory?: components['schemas']['CarrierProductCategory'];
       transitTime?: components['schemas']['CarrierTransitTime'];
       deliveryCosts?: components['schemas']['DeliveryCost'][];
     };
-    /** @enum {string} */
+    /**
+     * @description Desired product class to choose when ordering a label, this is not a carrier specific value
+     * @enum {string}
+     */
     CarrierProductCategory: 'STANDARD' | 'EXPRESS' | 'VALUE' | 'FORWARDING';
     CarrierTransitTime: {
       /**
@@ -10899,7 +11368,14 @@ export interface components {
     };
     MandatoryShippingItemAttribute: {
       /**
-       * @description Deprecated: quantity, this field is now mandatory in the item
+       * @description Deprecated:
+       *       - description: article.title will be used instead
+       *       - weightInGram: use MandatoryShippingArticleAttribute.attributes.weightPerUnit
+       *       - quantity, this field is now mandatory in the item
+       *       - parcelItemValue.value: use MandatoryShippingArticleAttribute.attributes.pricePerUnit
+       *       - parcelItemValue.currency: use MandatoryShippingArticleAttribute.attributes.currency
+       *       - countryOfManufacture: use MandatoryShippingArticleAttribute.attributes.countryOfManufacture
+       *       - tenantArticleId: mandatory on line item article
        * @enum {string}
        */
       referencedField?:
@@ -10915,8 +11391,29 @@ export interface components {
       description?: string;
       descriptionLocalized?: components['schemas']['LocaleString'];
     };
+    MandatoryShippingArticleAttribute: {
+      referencedField: components['schemas']['MandatoryShippingArticleAttributeReferencedField'];
+      dataType: components['schemas']['MandatoryShippingArticleAttributeDataType'];
+      category: components['schemas']['MandatoryShippingArticleAttributeCategory'];
+      description?: string;
+      descriptionLocalized: components['schemas']['LocaleString'];
+    };
+    /** @enum {string} */
+    MandatoryShippingArticleAttributeReferencedField:
+      | 'attributes.weightPerUnit'
+      | 'attributes.hsCode'
+      | 'attributes.currency'
+      | 'attributes.valuePerUnit'
+      | 'attributes.countryOfManufacture';
+    /** @enum {string} */
+    MandatoryShippingArticleAttributeCategory: 'customs' | 'dimensions';
+    /** @enum {string} */
+    MandatoryShippingArticleAttributeDataType: 'NUMBER' | 'STRING';
     MandatoryShippingAttribute: {
-      /** @enum {string} */
+      /**
+       * @description - dimensions.weight: will be calculated from MandatoryShippingArticleAttribute.attributes.weightPerUnit if items with weightPerUnit is set on all items - productValue: will be calculated from MandatoryShippingArticleAttribute.attributes.pricePerUnit if items with pricePerUnit is set on all items
+       * @enum {string}
+       */
       referencedField?:
         | 'dimensions.weight'
         | 'productValue'
@@ -11366,6 +11863,8 @@ export interface components {
       rerouteDescriptionId?: string;
     });
     PackingTargetContainer: {
+      /** @description Reference to the documents collection from this entity */
+      documentsRef?: string;
       description?: string;
       descriptionLocalized?: components['schemas']['LocaleString'];
       /**
@@ -11374,6 +11873,7 @@ export interface components {
        */
       facilityRef: string;
       packJobRef: string;
+      operativeProcessRef?: string;
       iconUrl?: string;
       id: string;
       dimensions?: components['schemas']['ContainerDimensions'];
@@ -11385,6 +11885,7 @@ export interface components {
       name?: string;
       nameLocalized: components['schemas']['LocaleString'];
       lineItems: unknown;
+      parcels?: components['schemas']['Parcel'][];
     } & (WithRequired<components['schemas']['VersionedResource'], 'version'> &
       WithRequired<
         components['schemas']['PackingTargetContainerForCreation'],
@@ -11947,6 +12448,7 @@ export interface components {
       status: components['schemas']['ItemReturnStatus'];
       tenantOrderId?: string;
       scannableCodes?: string[];
+      parcelRefs?: string[];
       returnedLineItems: components['schemas']['ItemReturnLineItem'][];
     };
     /** @enum {string} */
@@ -12139,7 +12641,8 @@ export interface components {
       | 'SERVICE_JOB'
       | 'RESTOW_ITEM'
       | 'ITEM_RETURN_JOB'
-      | 'LINKED_SERVICE_JOBS';
+      | 'LINKED_SERVICE_JOBS'
+      | 'PACKING_TARGET_CONTAINER';
     ExpiryEntity: {
       /**
        * @description Generated identifier of this entity
@@ -12436,7 +12939,7 @@ export interface components {
      * @description The type of an external action
      * @enum {string}
      */
-    ExternalActionType: 'BLANK_LINK' | 'FORM';
+    ExternalActionType: 'BLANK_LINK' | 'FORM' | 'COMMENT';
     ExternalFormActionDefinition: {
       /**
        * @description discriminator enum property added by openapi-typescript
@@ -12447,8 +12950,8 @@ export interface components {
         | components['schemas']['ExternalFormActionElement']
         | components['schemas']['ExternalFormActionInputElement']
       )[];
-      success: components['schemas']['ExternalFormActionButton'];
-      cancel?: components['schemas']['ExternalFormActionButton'];
+      success?: components['schemas']['ExternalFormActionButton'];
+      cancel: components['schemas']['ExternalFormActionButton'];
     };
     /** @enum {string} */
     ExternalFormActionElementType:
@@ -12519,6 +13022,14 @@ export interface components {
       type: 'BLANK_LINK';
       linkUrl: string;
     };
+    /** @description This action provides a possibility to set comments. It also enables a possibility to save action results for other actions. */
+    ExternalCommentActionDefinition: {
+      /**
+       * @description discriminator enum property added by openapi-typescript
+       * @enum {string}
+       */
+      type: 'ExternalCommentActionDefinition';
+    };
     ExternalActionForCreation: {
       /** @description Id of the global process related to this entity. */
       processRef: string;
@@ -12530,7 +13041,8 @@ export interface components {
       groups: string[];
       action:
         | components['schemas']['ExternalFormActionDefinition']
-        | components['schemas']['ExternalLinkActionDefinition'];
+        | components['schemas']['ExternalLinkActionDefinition']
+        | components['schemas']['ExternalCommentActionDefinition'];
     };
     ExternalActionForReplacement: {
       /**
@@ -12546,7 +13058,8 @@ export interface components {
       groups: string[];
       action:
         | components['schemas']['ExternalFormActionDefinition']
-        | components['schemas']['ExternalLinkActionDefinition'];
+        | components['schemas']['ExternalLinkActionDefinition']
+        | components['schemas']['ExternalCommentActionDefinition'];
     };
     ExternalAction: {
       /**
@@ -12591,11 +13104,19 @@ export interface components {
     ExternalFormActionLogPayload: {
       elements: components['schemas']['ExternalFormActionLogPayloadElement'][];
     };
+    /** @description This action payload provides a possibility to set comments. It also enables a possibility to save action results for other actions. */
+    ExternalCommentActionLogPayload: {
+      /** @description The actual comment. */
+      comment: string;
+      /** @description An existing external action id you want to link with. The action have to be in the same process. */
+      externalActionRef?: string;
+    };
     ExternalActionLogForCreation: {
       requiresAnonymization: boolean;
       actionPayload:
         | components['schemas']['ExternalLinkActionLogPayload']
-        | components['schemas']['ExternalFormActionLogPayload'];
+        | components['schemas']['ExternalFormActionLogPayload']
+        | components['schemas']['ExternalCommentActionLogPayload'];
     };
     ExternalActionLog: {
       id: string;
@@ -12777,6 +13298,7 @@ export interface components {
     AbstractFacilityCarrierConfiguration: {
       key: string;
       serviceUrl?: string;
+      thresholdPriceValue?: components['schemas']['ThresholdPriceValue'];
     };
     DhlV2FacilityCarrierConfiguration: {
       key: 'DhlV2FacilityCarrierConfiguration';
@@ -13505,7 +14027,7 @@ export interface components {
      *     }
      */
     LocaleString: {
-      [key: string]: string | undefined;
+      [key: string]: string;
     };
     ArticleAttributeItem: {
       /**
@@ -13516,7 +14038,15 @@ export interface components {
        *     Default value: miscellaneous
        * @enum {string}
        */
-      category?: 'descriptive' | 'miscellaneous' | 'pickingSequence';
+      category?:
+        | 'descriptive'
+        | 'miscellaneous'
+        | 'pickingSequence'
+        | 'customs'
+        | 'insurance'
+        | 'shop'
+        | 'dimensions'
+        | 'carrierService';
       /**
        * @description Providing the key %%subtitle%% (see example) here will cause the
        *     value to appear for example in the App directly under the title.
@@ -13541,6 +14071,12 @@ export interface components {
       value: string;
       /** @description The translations for the key of the attribute. This can be only filled with a descriptive category */
       valueLocalized?: components['schemas']['LocaleString'];
+      /**
+       * @description The type of the attribute.
+       * @default STRING
+       * @enum {string}
+       */
+      type: 'STRING' | 'NUMBER' | 'CURRENCY' | 'BOOLEAN';
     };
     AbstractArticle: {
       /** @description Attributes that can be added to this entity. These attributes **cannot** be used within fulfillment processes, but enable you to attach custom data from your systems to fulfillmenttools entities. */
@@ -13609,6 +14145,8 @@ export interface components {
       customServiceRef?: string;
       /** @description if true all articles below this service are intrpreted as a bundle */
       isBundled?: boolean;
+      /** @description Attributes that can be added to the consumer. These attributes cannot be used within fulfillment processes, but it could be useful to have the informations carried here. */
+      customAttributes?: Record<string, never>;
       /** @description Additional information necessary to fulfil the custom service */
       additionalInformation?: {
         /** @description A reference to the specific additional information of the custom service */
@@ -13705,6 +14243,26 @@ export interface components {
       /** @example Hauptstr. */
       street?: string;
     };
+    CheckoutOptionsDeliveryEarliestResponse: {
+      /** @description The results of the corresponding request containing information, if present, on when the items can supposingly be delivered earliest. Please note: When it was not possible to calculate the delivery information for a requested tenantArticleId there is no entry here. */
+      checkoutOptions: components['schemas']['CheckoutOptionsDeliveryEarliestResponseItem'][];
+    };
+    CheckoutOptionsDeliveryEarliestResponseItem: {
+      /** @example DE-ZGT-4711 */
+      tenantArticleId: string;
+      /**
+       * Format: date-time
+       * @example 2020-02-03T08:45:50.525Z
+       */
+      earliestPredictedDeliveryDate?: string;
+      /** @description List of available carriers. */
+      availableCarriers?: components['schemas']['CheckoutOptionsDeliveryEarliestResponseItemAvailableCarrier'][];
+    };
+    CheckoutOptionsDeliveryEarliestResponseItemAvailableCarrier: {
+      /** @example DHL */
+      name?: string;
+      nonDeliveryDays?: string[];
+    };
     CheckoutOptionsInput: {
       consumerAddress?: components['schemas']['CheckoutOptionsConsumerAddress'];
       deliveryPreferences: components['schemas']['DeliveryPreferences'];
@@ -13728,6 +14286,11 @@ export interface components {
       products: components['schemas']['PromiseDeliveryOptions'][];
       /** Format: date-time */
       deliveryPromiseValidUntil?: string;
+      /**
+       * Format: date-time
+       * @example 2020-02-03T09:45:51.525Z
+       */
+      latestPickingStart?: string;
     };
     EstimatedDeliveryTime: {
       /**
@@ -13746,6 +14309,30 @@ export interface components {
       transitTime?: components['schemas']['CarrierTransitTime'];
       estimatedDeliveryTime?: components['schemas']['EstimatedDeliveryTime'];
       deliveryCosts: components['schemas']['DeliveryCost'][];
+    };
+    CheckoutOptionsDeliveryEarliestRequest: {
+      /**
+       * Format: date-time
+       * @description The date from which to search for the earliest potential delivery date. Defaults to "now" (timestamp of the request)
+       * @default now
+       * @example 2024-06-01T00:00:00.000Z
+       */
+      earliestDeliveryDate: string;
+      tenantArticleIds: string[];
+      consumerAddress?: components['schemas']['CheckoutOptionsConsumerAddress'];
+    };
+    CheckoutOptionsDeliveryTimePeriodResponse: {
+      checkoutOptions: components['schemas']['CheckoutOptionsDeliveryTimePeriodResponseItem'][];
+    };
+    CheckoutOptionsDeliveryTimePeriodResponseItem: {
+      /** @enum {string} */
+      overallStatus: 'ALL' | 'PARTIAL' | 'NONE';
+      /**
+       * Format: date-time
+       * @example 2020-02-03T00:00:00.000Z
+       */
+      date: string;
+      availableCarriers?: components['schemas']['CheckoutOptionsDeliveryEarliestResponseItemAvailableCarrier'][];
     };
     CheckoutOptionsCustomServices: {
       customServiceRef: string;
@@ -14881,6 +15468,29 @@ export interface components {
      *       and / or might not be available at all times in your API instance. It
      *       could disappear also without warning. Thus, it currently does not fall
      *       under our SLA regulations. For details on this topic please check our
+     *       <a href="https://docs.fulfillmenttools.com/api-docs/connecting-to-fulfillmenttools/restful-api/general-topics/api-release-life-cycle">documentation</a></i><br /><br />This configuration is to define specific rules for canceling orders such as the forced cancelation. */
+    OrderCancelationConfiguration: {
+      /**
+       * Format: date-time
+       * @description The date this order was created at the platform. This value is generated by the service.
+       * @example 2020-02-03T08:45:51.525Z
+       */
+      created?: string;
+      id?: string;
+      /**
+       * Format: int64
+       * @description The version of the document to be used in optimistic locking mechanisms.
+       * @example 42
+       */
+      version: number;
+      allowForceCancelOrder: boolean;
+    };
+    /** @description <center><img src='https://storage.googleapis.com/ocff-assets/api/beta_174x74.png'
+     *       /></center> <br /> <i>This part of the API is currently under development.
+     *       That means that this endpoint, model, etc. can contain breaking changes
+     *       and / or might not be available at all times in your API instance. It
+     *       could disappear also without warning. Thus, it currently does not fall
+     *       under our SLA regulations. For details on this topic please check our
      *       <a href="https://docs.fulfillmenttools.com/api-docs/connecting-to-fulfillmenttools/restful-api/general-topics/api-release-life-cycle">documentation</a></i><br /><br />This is the configuration for the distributing order management system. By changing the configuration you are able to change the behavior of the routing of orders henceforth. */
     RoutingConfiguration: {
       /**
@@ -15140,7 +15750,7 @@ export interface components {
       carrierServices?: components['schemas']['CarrierServices'][];
     };
     /** @enum {unknown} */
-    DeliveryReservationMode: 'SCHEDULED' | 'ASAP';
+    DeliveryReservationMode: 'SCHEDULED' | 'ASAP' | 'ALAP';
     DeliveryReservationPreferences: {
       mode: components['schemas']['DeliveryReservationMode'];
       /**
@@ -15184,6 +15794,7 @@ export interface components {
     OrderActionsParameter:
       | components['schemas']['OrderUnlockActionParameter']
       | components['schemas']['OrderCancelActionParameter']
+      | components['schemas']['OrderForceCancelActionParameter']
       | components['schemas']['PromiseConfirmActionParameter']
       | components['schemas']['PromiseExtendActionParameter']
       | components['schemas']['OrderConsumerAddressChangeActionParameter']
@@ -15191,6 +15802,12 @@ export interface components {
     AbstractOrderActionsParameter: {
       name: string;
       /** @description Version of the entity to be changed */
+      version: number;
+    };
+    OrderLineItemActionsParameter: components['schemas']['OrderLineItemCustomAttributesChangeParameter'];
+    AbstractOrderLineItemActionsParameter: {
+      name: string;
+      /** @description Version of the order to be changed */
       version: number;
     };
     OrderUnlockActionParameter: {
@@ -15210,6 +15827,17 @@ export interface components {
       cancelationReasonId?: string;
       /** @enum {string} */
       name: 'CANCEL';
+    } & Omit<
+      WithRequired<
+        components['schemas']['AbstractOrderActionsParameter'],
+        'name' | 'version'
+      >,
+      'name'
+    >;
+    OrderForceCancelActionParameter: {
+      name: 'OrderForceCancelActionParameter';
+      /** @enum {string} */
+      name: 'FORCE_CANCEL';
     } & Omit<
       WithRequired<
         components['schemas']['AbstractOrderActionsParameter'],
@@ -15238,6 +15866,19 @@ export interface components {
     } & Omit<
       WithRequired<
         components['schemas']['AbstractOrderActionsParameter'],
+        'name' | 'version'
+      >,
+      'name'
+    >;
+    OrderLineItemCustomAttributesChangeParameter: {
+      name: 'OrderLineItemCustomAttributesChangeParameter';
+      /** @enum {string} */
+      name: 'CHANGE_CUSTOM_ATTRIBUTES';
+      /** @description Attributes that can be added to the orderline. These attributes cannot be used within fulfillment processes, but it could be useful to have the informations carried here. */
+      customAttributes: Record<string, never>;
+    } & Omit<
+      WithRequired<
+        components['schemas']['AbstractOrderLineItemActionsParameter'],
         'name' | 'version'
       >,
       'name'
@@ -15329,6 +15970,80 @@ export interface components {
       rerouteDescriptions: components['schemas']['RerouteDescription'][];
       reasons: components['schemas']['RerouteDescription'][];
     } & WithRequired<components['schemas']['AbstractReasons'], 'reasons'>;
+    CheckoutOptionsDeliveryTimePeriodRequest: {
+      /**
+       * Format: date-time
+       * @description The start of the evaluated time period. Defaults to "now" (timestamp of the request)
+       * @default now
+       * @example 2024-06-03T00:00:00.000Z
+       */
+      startDate: string;
+      /**
+       * Format: date-time
+       * @description The end of the evaluated time period. Default is the start date + 60 days. Please note that the maximum time period can not exceed 60 days.
+       * @example 2024-07-013T00:00:00.000Z
+       */
+      endDate?: string;
+      /** @description Items, that are considered to be delivered together. */
+      basket: components['schemas']['BasketItem'][];
+      consumerAddress?: components['schemas']['CheckoutOptionsConsumerAddress'];
+      deliveryPreferences?: components['schemas']['CheckoutOptionsDeliveryPreferences'];
+    };
+    CheckoutOptionsDeliveryTimePointRequest: {
+      /**
+       * Format: date-time
+       * @description The desired delivery date. (timestamp of the request)
+       * @example 2024-06-03T00:00:00.000Z
+       */
+      desiredDeliveryDate: string;
+      tenantArticleIds: string[];
+      /** @description Pair of facilityRef and latestPickingStart values */
+      facilities: components['schemas']['FacilityRefLatestPickingStartPair'][];
+    };
+    CheckoutOptionsDeliveryTimePointResponse: {
+      items: components['schemas']['CheckoutOptionsDeliveryTimePointResponseItem'][];
+    };
+    CheckoutOptionsDeliveryTimePointResponseItem: {
+      /** @example DE-ZGT-4711 */
+      tenantArticleId: string;
+      /** @example 4 */
+      available: number;
+      facilityRef: string;
+    };
+    CheckoutOptionsDeliveryPreferences: {
+      /**
+       * @description DELIVERY: The parcel will reach the recipient according to the cycle time of the carrier, typically 1-3 days when shipping nationaly.
+       *     EXPRESS: The parcel will reach the recipient using an express service level.
+       * @enum {string}
+       */
+      serviceLevel?: 'DELIVERY' | 'EXPRESS';
+      /** @example DPD */
+      preferredCarriers?: string[];
+      preferredCarriersWithProduct?: components['schemas']['CheckoutOptionsDeliveryPreferencesPreferredCarriersWithProduct'];
+    };
+    BasketItem: {
+      /** @example DE-ZGT-4711 */
+      tenantArticleId: string;
+      /** @example 4 */
+      quantity: number;
+    };
+    CheckoutOptionsDeliveryPreferencesPreferredCarriersWithProduct: {
+      /** @example DPD */
+      carrierKey?: string;
+      /** @example WORLDWIDE */
+      carrierProduct?: string;
+      carrierServices?: string[];
+      /** @example STANDARD */
+      carrierProductCategory?: string;
+    };
+    FacilityRefLatestPickingStartPair: {
+      facilityRef: string;
+      /**
+       * Format: date-time
+       * @example 2020-02-03T09:45:51.525Z
+       */
+      latestPickingStart: string;
+    };
     InventoryArticle: {
       attributes?: components['schemas']['ListingAttributeItem'][];
       imageUrl: string;
@@ -15377,7 +16092,7 @@ export interface components {
       tenantArticleId: string;
       quantity: components['schemas']['Quantity'];
       stockProperties?: {
-        [key: string]: string | undefined;
+        [key: string]: string;
       } & components['schemas']['StockPropertyPreset'];
     };
     PurchaseOrderSupplier: {
@@ -15630,7 +16345,7 @@ export interface components {
       comments: components['schemas']['InboundReceiptComment'][];
       storageLocationRef?: string;
       stockProperties?: {
-        [key: string]: string | undefined;
+        [key: string]: string;
       } & components['schemas']['StockPropertyPreset'];
     };
     InboundProcess: {
@@ -15788,7 +16503,10 @@ export interface components {
     };
     InventoryConfiguration: {
       version: number;
-      /** @deprecated */
+      /**
+       * @deprecated
+       * @description This configuration setting is deprecated and no longer has any effect. Please use the new [remote config](https://docs.fulfillmenttools.com/api-docs/clients/backoffice/facility-view/storage-locations) to enable/disable the storage location view in the backoffice
+       */
       enableStorageLocationOverview: boolean;
       isMixedStorage?: boolean;
     };
@@ -15954,7 +16672,7 @@ export interface components {
       value: number;
       locationRef?: string;
       properties?: {
-        [key: string]: string | undefined;
+        [key: string]: string;
       } & components['schemas']['StockPropertyPreset'];
       /** Format: date-time */
       receiptDate?: string;
@@ -15982,7 +16700,7 @@ export interface components {
       scores?: string[];
       scannableCodes?: string[];
       properties?: {
-        [key: string]: string | undefined;
+        [key: string]: string;
       };
       serializedProperties: string;
       /** Format: date-time */
@@ -16203,6 +16921,18 @@ export interface components {
       payload: components['schemas']['PickLineItem'];
       pickJobRef: string;
     } & components['schemas']['WebHookEvent'];
+    ExternalActionExecutedWebHookEvent: {
+      payload: components['schemas']['ExternalActionExecutedWebHookEventPayload'];
+    } & components['schemas']['WebHookEvent'];
+    ExternalActionExecutedWebHookEventPayload: {
+      logId: string;
+      externalActionRef: string;
+      type: components['schemas']['ExternalActionType'];
+      editor: components['schemas']['Editor'];
+      actionPayload:
+        | components['schemas']['ExternalLinkActionLogPayload']
+        | components['schemas']['ExternalFormActionLogPayload'];
+    };
     PickjobPickingCommencedWebHookEvent: {
       payload: components['schemas']['PickJob'];
     } & components['schemas']['WebHookEvent'];
@@ -16260,6 +16990,15 @@ export interface components {
     UserDeletedWebHookEvent: {
       payload: components['schemas']['User'];
     } & components['schemas']['WebHookEvent'];
+    ServiceJobCreatedWebHookEvent: {
+      payload: components['schemas']['ServiceJob'];
+    } & components['schemas']['WebHookEvent'];
+    ServiceJobFinishedWebHookEvent: {
+      payload: components['schemas']['ServiceJob'];
+    } & components['schemas']['WebHookEvent'];
+    RefundTriggerWebHookEvent: {
+      payload: components['schemas']['ItemReturn'];
+    } & components['schemas']['WebHookEvent'];
     EmailReceiver: {
       /** Format: email */
       email: string;
@@ -16270,7 +17009,8 @@ export interface components {
       /** @description Supported events for triggering external notifications:
        *           - PICK_JOB_CREATED: Available for facility scoped config and tenant wide config
        *           - ROUTING_PLAN_NOT_ROUTABLE: Available for tenant wide config
-       *           - ROUTING_PLAN_WAITING: Available for tenant wide config */
+       *           - ROUTING_PLAN_WAITING: Available for tenant wide config
+       *        */
       events: (
         | 'PICK_JOB_CREATED'
         | 'ROUTING_PLAN_NOT_ROUTABLE'
@@ -16300,7 +17040,8 @@ export interface components {
       /** @description Supported events for triggering external notifications:
        *           - PICK_JOB_CREATED: Available for facility scoped config and tenant wide config
        *           - ROUTING_PLAN_NOT_ROUTABLE: Available for tenant wide config
-       *           - ROUTING_PLAN_WAITING: Available for tenant wide config */
+       *           - ROUTING_PLAN_WAITING: Available for tenant wide config
+       *        */
       events: (
         | 'PICK_JOB_CREATED'
         | 'ROUTING_PLAN_NOT_ROUTABLE'
@@ -17091,6 +17832,104 @@ export interface operations {
       };
     };
   };
+  getTransitTimeConfiguration: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Transit time configuration was found & you were allowed to access it. The result is in the body. */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['TransitTimeConfiguration'];
+        };
+      };
+      /** @description Your user is not allowed to operate against this API instance */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description Your user, although recognized, is not authorized to use this endpoint */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description Cutoff time configuration not found */
+      404: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+    };
+  };
+  putTransitTimeConfiguration: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['TransitTimeConfigurationForUpsert'];
+      };
+    };
+    responses: {
+      /** @description Transit time configuration was written successfully */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['TransitTimeConfiguration'];
+        };
+      };
+      /** @description Your user is not allowed to operate against this API instance */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description Your user, although recognized, is not authorized to use this endpoint */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description Transit time configuration not found */
+      404: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+    };
+  };
   getCutoffTimeConfiguration: {
     parameters: {
       query?: never;
@@ -17587,7 +18426,7 @@ export interface operations {
       };
     };
   };
-  putHandoverConfiguration: {
+  upsertHandoverConfiguration: {
     parameters: {
       query?: never;
       header?: never;
@@ -17597,7 +18436,7 @@ export interface operations {
     /** @description Desired HandoverConfiguration */
     requestBody: {
       content: {
-        'application/json': components['schemas']['HandoverConfiguration'];
+        'application/json': components['schemas']['HandoverConfigurationForCreate'];
       };
     };
     responses: {
@@ -17608,6 +18447,53 @@ export interface operations {
         };
         content: {
           'application/json': components['schemas']['HandoverConfiguration'];
+        };
+      };
+      /** @description Invalid input. See response for details */
+      400: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description Your user is not allowed to operate against this API instance */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description Your user, although recognized, is not authorized to use this endpoint */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+    };
+  };
+  getAllRefuseReasons: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Existing refuse reasons */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['AvailableRefusedReason'][];
         };
       };
       /** @description Invalid input. See response for details */
@@ -24478,6 +25364,63 @@ export interface operations {
       };
     };
   };
+  createItemReturnParcel: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description itemReturnJobId */
+        itemReturnJobId: string;
+        /** @description id of the itemReturn to create a parcel for */
+        itemReturnId: string;
+      };
+      cookie?: never;
+    };
+    /** @description Payload of the parcel you want to create */
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['ParcelForCreation'];
+      };
+    };
+    responses: {
+      /** @description Create a parcel for an itemReturn */
+      201: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['Parcel'];
+        };
+      };
+      /** @description Your user is not allowed to operate against this API instance */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description Your user, although recognized, is not authorized to use this endpoint */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description Entity not found */
+      404: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+    };
+  };
   getSubscriptions: {
     parameters: {
       query?: {
@@ -26286,6 +27229,116 @@ export interface operations {
     requestBody?: never;
     responses: {
       /** @description The deliverynote for the given packjob */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/pdf': unknown;
+        };
+      };
+      /** @description Your user is not allowed to operate against this API instance */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description Your user, although recognized, is not authorized to use this endpoint */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description Entity not found */
+      404: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+    };
+  };
+  getReturnNotesForPackingTargetContainer: {
+    parameters: {
+      query?: {
+        /** @description Provide the localized values for the return note. If not provided the default locale is used. For example de_DE. */
+        locale?: string;
+      };
+      header?: never;
+      path: {
+        /** @description ID of the pack job for which you want to get a deliverynote */
+        packJobId: string;
+        /** @description ID of the PackingTargetContainer */
+        targetcontainerId: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Returns a return note for the PackingTargetContainer. */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/pdf': unknown;
+        };
+      };
+      /** @description Your user is not allowed to operate against this API instance */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/pdf': unknown;
+        };
+      };
+      /** @description Your user, although recognized, is not authorized to use this endpoint */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/pdf': unknown;
+        };
+      };
+      /** @description Entity not found */
+      404: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/pdf': unknown;
+        };
+      };
+    };
+  };
+  getPackingTargetContainerDeliveryNote: {
+    parameters: {
+      query?: {
+        /** @description Provide the localized values for the delivery note. If not provided the default locale is used. For example de_DE. */
+        locale?: string;
+      };
+      header?: never;
+      path: {
+        /** @description ID of the pack job for which you want to get a deliverynote */
+        packJobId: string;
+        /** @description ID of the packingTargetContainer for which you want to get a deliverynote */
+        targetcontainerId: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description The deliverynote for the given packingTargetContainer */
       200: {
         headers: {
           [name: string]: unknown;
@@ -32105,6 +33158,112 @@ export interface operations {
       };
     };
   };
+  checkoutoptionDeliveryEarliest: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['CheckoutOptionsDeliveryEarliestRequest'];
+      };
+    };
+    responses: {
+      /** @description
+       *     The request could be evaluated. */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['CheckoutOptionsDeliveryEarliestResponse'];
+        };
+      };
+      /** @description Invalid input. See response for details */
+      400: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description Your user is not allowed to operate against this API instance */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description
+       *     Your user, although recognized, is not authorized to use this
+       *     endpoint */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+    };
+  };
+  checkoutoptionDeliveryTimePeriod: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['CheckoutOptionsDeliveryTimePeriodRequest'];
+      };
+    };
+    responses: {
+      /** @description
+       *     The request could be evaluated. */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['CheckoutOptionsDeliveryTimePeriodResponse'];
+        };
+      };
+      /** @description Invalid input. See response for details */
+      400: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description Your user is not allowed to operate against this API instance */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description Your user, although recognized, is not authorized to use this endpoint */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+    };
+  };
   postCheckoutOptions: {
     parameters: {
       query?: never;
@@ -32127,6 +33286,58 @@ export interface operations {
           'application/json':
             | components['schemas']['ResponseForCNCCheckoutOptions']
             | components['schemas']['ResponseForSFSCheckoutOptions'];
+        };
+      };
+      /** @description Invalid input. See response for details */
+      400: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description Your user is not allowed to operate against this API instance */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description Your user, although recognized, is not authorized to use this endpoint */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+    };
+  };
+  checkoutOptionsTimepoint: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['CheckoutOptionsDeliveryTimePointRequest'];
+      };
+    };
+    responses: {
+      /** @description
+       *     The request could be evaluated. */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['CheckoutOptionsDeliveryTimePointResponse'];
         };
       };
       /** @description Invalid input. See response for details */
@@ -32318,6 +33529,53 @@ export interface operations {
     requestBody?: {
       content: {
         'application/json': components['schemas']['OrderActionsParameter'];
+      };
+    };
+    responses: {
+      /** @description Updated Order in the body. */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['Order'];
+        };
+      };
+      /** @description Your user is not allowed to operate against this API instance */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description Your user, although recognized, is not authorized to use this endpoint */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+    };
+  };
+  orderLineItemAction: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Reference to the order you want to call the action for */
+        orderId: string;
+        /** @description Reference to the order line item you want to call the action for */
+        orderLineItemId: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: {
+      content: {
+        'application/json': components['schemas']['OrderLineItemActionsParameter'];
       };
     };
     responses: {
@@ -33883,6 +35141,105 @@ export interface operations {
       };
     };
   };
+  getOrderCancelationConfiguration: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description The Order Cancelation Configuration can be found in the body. */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['OrderCancelationConfiguration'];
+        };
+      };
+      /** @description Your user is not allowed to operate against this API instance */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description Your user, although recognized, is not authorized to use this endpoint */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+    };
+  };
+  putOrderCancelationConfiguration: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    /** @description Desired order cancelation configuration to create/update */
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['OrderCancelationConfiguration'];
+      };
+    };
+    responses: {
+      /** @description The order cancelation configuration was successfully updated. */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['OrderCancelationConfiguration'];
+        };
+      };
+      /** @description The order cancelation configuration was successfully created. */
+      201: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['OrderCancelationConfiguration'];
+        };
+      };
+      /** @description Invalid input. See response for details */
+      400: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description Your user is not allowed to operate against this API instance */
+      401: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+      /** @description Your user, although recognized, is not authorized to use this endpoint */
+      403: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': unknown;
+        };
+      };
+    };
+  };
   getArticles: {
     parameters: {
       query?: {
@@ -34162,6 +35519,7 @@ export interface operations {
           | 'REQUESTED_DATE_DESC'
           | 'LAST_MODIFIED_DESC';
         facilityRef?: string[];
+        scannableCode?: string;
         status?: ('OPEN' | 'PARTIAL_DELIVERY' | 'ON_HOLD' | 'CLOSED')[];
         /** @description Matches partial values; The queries terms and therefore the result set of the query can change in the future:
          *     - tenantInboundProcessId
