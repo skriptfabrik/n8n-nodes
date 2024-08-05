@@ -205,8 +205,8 @@ importers:
         specifier: ^0.5.45
         version: 0.5.45
       n8n-nodes-base:
-        specifier: 1.47.0
-        version: 1.47.0(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
+        specifier: 1.52.0
+        version: 1.52.0(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
       n8n-workflow:
         specifier: 1.46.0
         version: 1.46.0
@@ -2100,9 +2100,6 @@ packages:
   '@n8n/config@1.2.0':
     resolution: {integrity: sha512-uUaH2porrmOvDTxzsh9+NhNziKY7vc8vdio/XFIe0ZZswmrjRDtQqBBBKUh+eVylwKf4CYcQ0UH0n1cta7GiiQ==}
 
-  '@n8n/imap@0.4.0':
-    resolution: {integrity: sha512-mGffWwWpvngYg0u+SynPR0P32GPD9v9H+0O8faeGIXa9lqbB+TJelZGcoaYz5D9GL3VaRydMWERI9kKgWkn7uw==}
-
   '@n8n/imap@0.6.0':
     resolution: {integrity: sha512-ZyTtL2A6Xpw8c5SqxQrXydoIxmphYPPI8mAyJTs+d7dbQtt+vmmwQmsDYGFIgZh7gJsWIEt/5z6LDmmU+9bCuw==}
 
@@ -3791,9 +3788,6 @@ packages:
   bl@4.1.0:
     resolution: {integrity: sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==}
 
-  bl@5.1.0:
-    resolution: {integrity: sha512-tv1ZJHLfTDnXE6tMHv73YgSJaWR2AFuPwMntBe7XL/GBFHnT0CLnsHMogfk5+GzCDC5ZWarSCYaIGATZt9dNsQ==}
-
   bl@6.0.13:
     resolution: {integrity: sha512-tMncAcpsyjZgAVbVFupVIaB2xud13xxT59fdHkuszY2jdZkqIWfpQdmII1fOe3kOGAz0mNLTIHEm+KxpYsQKKg==}
 
@@ -4252,9 +4246,6 @@ packages:
   cron-parser@4.9.0:
     resolution: {integrity: sha512-p0SaNjrHOnQeR8/VnfGbmg9te2kfyYSQ7Sc/j/6DtPL3JQvKxmjO9TSjNFpujqV3vEYYBvNNvXSxzyksBWAx1Q==}
     engines: {node: '>=12.0.0'}
-
-  cron@1.7.2:
-    resolution: {integrity: sha512-+SaJ2OfeRvfQqwXQ2kgr0Y5pzBR/lijf5OpnnaruwWnmI799JfWr2jN2ItOV9s3A/+TFOt6mxvKzQq5F0Jp6VQ==}
 
   cron@3.1.7:
     resolution: {integrity: sha512-tlBg7ARsAMQLzgwqVxy8AZl/qlTc5nibqYwtNGoCrd+cV+ugI+tvZC1oT/8dFH8W455YrywGykx/KMmAqOr7Jw==}
@@ -5156,11 +5147,6 @@ packages:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
     deprecated: Glob versions prior to v9 are no longer supported
 
-  glob@8.1.0:
-    resolution: {integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==}
-    engines: {node: '>=12'}
-    deprecated: Glob versions prior to v9 are no longer supported
-
   glob@9.3.5:
     resolution: {integrity: sha512-e1LleDykUz2Iu+MTYdkSsuWX8lvAjAcs0Xef0lNIu0S2wOAzuTxCJtcd9S3cijlwYF18EsU3rzb8jPVobxDh9Q==}
     engines: {node: '>=16 || 14 >=14.17'}
@@ -5285,9 +5271,6 @@ packages:
   helmet@7.1.0:
     resolution: {integrity: sha512-g+HZqgfbpXdCkme/Cd/mZkV0aV3BZZZSugecH03kl38m/Kmdx8jKjBikpDj2cr+Iynv4KpYEviojNdTJActJAg==}
     engines: {node: '>=16.0.0'}
-
-  help-me@4.2.0:
-    resolution: {integrity: sha512-TAOnTB8Tz5Dw8penUuzHVrKNKlCIbwwbHnXraNJxPwf8LRtE2HlM84RYuezMFcwOJmoYOCWVDyJ8TQGxn9PgxA==}
 
   help-me@5.0.0:
     resolution: {integrity: sha512-7xgomUX6ADmcYzFik0HzAxh/73YlKR9bmFzf51CZwR+b6YtzU2m0u49hQCqV6SvlqIqsaxovfwdvbnsw3b/zpg==}
@@ -6828,16 +6811,8 @@ packages:
       socks:
         optional: true
 
-  mqtt-packet@8.2.1:
-    resolution: {integrity: sha512-vrHHjwhmuxzQIe3fJWoOLQHF4H5FETUrQGYD5g1qGfEmpjkQUkPONfygA0cI8Wtb3IUCfu66WmZiVSCgGm8oUw==}
-
   mqtt-packet@9.0.0:
     resolution: {integrity: sha512-8v+HkX+fwbodsWAZIZTI074XIoxVBOmPeggQuDFCGg1SqNcC+uoRMWu7J6QlJPqIUIJXmjNYYHxBBLr1Y/Df4w==}
-
-  mqtt@5.0.2:
-    resolution: {integrity: sha512-JctWQpxjVVjn5LqAAhfgutMNMbHZf+puG9LnbWga0wRbWW7QVfHPu4Vz2iDSyHfGpW8HWLF+jb01vySDDzIKnQ==}
-    engines: {node: '>=16.0.0'}
-    hasBin: true
 
   mqtt@5.7.2:
     resolution: {integrity: sha512-b5xIA9J/K1LTubSWKaNYYLxYIusQdip6o9/8bRWad2TelRr8xLifjQt+SnamDAwMp3O6NdvR9E8ae7VMuN02kg==}
@@ -6887,9 +6862,6 @@ packages:
 
   n8n-editor-ui@1.52.2:
     resolution: {integrity: sha512-qdyYXH2U8DGbc3AJ+gSGIw6B5OcyPlZEhHCLQRjcPN4scwyBkOl7aSp0c1g03va7xtJVqd48zQJq/DKm+kYKsA==}
-
-  n8n-nodes-base@1.47.0:
-    resolution: {integrity: sha512-uGr+8CH3TcwmvzHuh2OngCGvGaViC4T2mnm7c/X1QP3RI5WIHX4uusC0GfAEN3ugv6wGJs07nOJPoweLz0IUnA==}
 
   n8n-nodes-base@1.52.0:
     resolution: {integrity: sha512-2rAAB7+tk4F35VT4/IsiqfZzstMu1eZKkqsxrQHO+oe6v7Nc9tDANK0XihwyLoqCEflMDgLywI7dWj3+2NIIlA==}
@@ -7010,10 +6982,6 @@ packages:
 
   node-rsa@1.1.1:
     resolution: {integrity: sha512-Jd4cvbJMryN21r5HgxQOpMEqv+ooke/korixNNK3mGqfGJmy0M77WDDzo/05969+OkMy3XW1UuZsSmW9KQm7Fw==}
-
-  node-ssh@12.0.5:
-    resolution: {integrity: sha512-uN2GTGdBRUUKkZmcNBr9OM+xKL6zq74emnkSyb1TshBdVWegj3boue6QallQeqZzo7YGVheP5gAovUL+8hZSig==}
-    engines: {node: '>= 10'}
 
   node-ssh@13.2.0:
     resolution: {integrity: sha512-7vsKR2Bbs66th6IWCy/7SN4MSwlVt+G6QrHB631BjRUM8/LmvDugtYhi0uAmgvHS/+PVurfNBOmELf30rm0MZg==}
@@ -11930,14 +11898,6 @@ snapshots:
       reflect-metadata: 0.2.2
       typedi: 0.10.0
 
-  '@n8n/imap@0.4.0':
-    dependencies:
-      iconv-lite: 0.6.3
-      imap: 0.8.19
-      quoted-printable: 1.0.1
-      utf8: 3.0.0
-      uuencode: 0.0.4
-
   '@n8n/imap@0.6.0':
     dependencies:
       iconv-lite: 0.6.3
@@ -14583,12 +14543,6 @@ snapshots:
       inherits: 2.0.4
       readable-stream: 3.6.2
 
-  bl@5.1.0:
-    dependencies:
-      buffer: 6.0.3
-      inherits: 2.0.4
-      readable-stream: 3.6.2
-
   bl@6.0.13:
     dependencies:
       '@types/readable-stream': 4.0.14
@@ -15150,10 +15104,6 @@ snapshots:
   cron-parser@4.9.0:
     dependencies:
       luxon: 3.4.4
-
-  cron@1.7.2:
-    dependencies:
-      moment-timezone: 0.5.45
 
   cron@3.1.7:
     dependencies:
@@ -16273,14 +16223,6 @@ snapshots:
       once: 1.4.0
       path-is-absolute: 1.0.1
 
-  glob@8.1.0:
-    dependencies:
-      fs.realpath: 1.0.0
-      inflight: 1.0.6
-      inherits: 2.0.4
-      minimatch: 5.1.6
-      once: 1.4.0
-
   glob@9.3.5:
     dependencies:
       fs.realpath: 1.0.0
@@ -16463,11 +16405,6 @@ snapshots:
   heap@0.2.7: {}
 
   helmet@7.1.0: {}
-
-  help-me@4.2.0:
-    dependencies:
-      glob: 8.1.0
-      readable-stream: 3.6.2
 
   help-me@5.0.0: {}
 
@@ -18015,14 +17952,6 @@ snapshots:
       gcp-metadata: 5.3.0(encoding@0.1.13)
       socks: 2.8.3
 
-  mqtt-packet@8.2.1:
-    dependencies:
-      bl: 5.1.0
-      debug: 4.3.5
-      process-nextick-args: 2.0.1
-    transitivePeerDependencies:
-      - supports-color
-
   mqtt-packet@9.0.0:
     dependencies:
       bl: 6.0.13
@@ -18030,27 +17959,6 @@ snapshots:
       process-nextick-args: 2.0.1
     transitivePeerDependencies:
       - supports-color
-
-  mqtt@5.0.2:
-    dependencies:
-      commist: 3.2.0
-      concat-stream: 2.0.0
-      debug: 4.3.5
-      duplexify: 4.1.3
-      help-me: 4.2.0
-      lru-cache: 7.18.3
-      minimist: 1.2.8
-      mqtt-packet: 8.2.1
-      number-allocator: 1.0.14
-      readable-stream: 4.5.2
-      reinterval: 1.1.0
-      rfdc: 1.4.1
-      split2: 4.2.0
-      ws: 8.17.1
-    transitivePeerDependencies:
-      - bufferutil
-      - supports-color
-      - utf-8-validate
 
   mqtt@5.7.2:
     dependencies:
@@ -18163,93 +18071,6 @@ snapshots:
       - debug
 
   n8n-editor-ui@1.52.2: {}
-
-  n8n-nodes-base@1.47.0(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8):
-    dependencies:
-      '@kafkajs/confluent-schema-registry': 1.0.6
-      '@n8n/imap': 0.4.0
-      '@n8n/vm2': 3.9.20
-      amqplib: 0.10.3
-      aws4: 1.11.0
-      basic-auth: 2.0.1
-      change-case: 4.1.2
-      cheerio: 1.0.0-rc.6
-      chokidar: 3.5.2
-      cron: 1.7.2
-      csv-parse: 5.5.0
-      currency-codes: 2.1.0
-      eventsource: 2.0.2
-      fast-glob: 3.2.12
-      fflate: 0.7.4
-      get-system-fonts: 2.0.2
-      gm: 1.25.0
-      html-to-text: 9.0.5
-      iconv-lite: 0.6.3
-      ics: 2.40.0
-      isbot: 3.6.13
-      iso-639-1: 2.1.15
-      js-nacl: 1.4.0
-      jsonwebtoken: 9.0.2
-      kafkajs: 1.16.0
-      ldapts: 4.2.6
-      lodash: 4.17.21
-      lossless-json: 1.0.5
-      luxon: 3.3.0
-      mailparser: 3.6.7
-      minifaker: 1.34.1
-      moment-timezone: 0.5.37
-      mongodb: 6.3.0(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.3)
-      mqtt: 5.0.2
-      mssql: 10.0.2
-      mysql2: 3.10.0
-      n8n-workflow: 1.46.0
-      nanoid: 3.3.6
-      node-html-markdown: 1.2.0
-      node-ssh: 12.0.5
-      nodemailer: 6.9.9
-      otpauth: 9.1.1
-      pdfjs-dist: 2.16.105
-      pg: 8.11.3
-      pg-promise: 10.15.4
-      pretty-bytes: 5.6.0
-      promise-ftp: 1.3.5(promise-ftp-common@1.1.5)
-      pyodide: 0.23.4(encoding@0.1.13)
-      redis: 4.6.12
-      rfc2047: 4.0.1
-      rhea: 1.0.24
-      rrule: 2.8.1
-      rss-parser: 3.13.0
-      semver: 7.5.4
-      showdown: 2.1.0
-      simple-git: 3.17.0
-      snowflake-sdk: 1.9.2(asn1.js@5.4.1)(encoding@0.1.13)
-      ssh2-sftp-client: 7.2.3
-      tmp-promise: 3.0.3
-      ts-ics: 1.4.0(date-fns@3.6.0)(lodash@4.17.21)(zod@3.23.8)
-      typedi: 0.10.0
-      uuid: 8.3.2
-      xlsx: https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz
-      xml2js: 0.6.2
-    transitivePeerDependencies:
-      - '@aws-sdk/credential-providers'
-      - '@mongodb-js/zstd'
-      - asn1.js
-      - aws-crt
-      - bufferutil
-      - date-fns
-      - debug
-      - encoding
-      - gcp-metadata
-      - kerberos
-      - mongodb-client-encryption
-      - pg-native
-      - promise-ftp-common
-      - snappy
-      - socks
-      - supports-color
-      - utf-8-validate
-      - worker-loader
-      - zod
 
   n8n-nodes-base@1.52.0(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.22.4):
     dependencies:
@@ -18789,15 +18610,6 @@ snapshots:
   node-rsa@1.1.1:
     dependencies:
       asn1: 0.2.6
-
-  node-ssh@12.0.5:
-    dependencies:
-      is-stream: 2.0.1
-      make-dir: 3.1.0
-      sb-promise-queue: 2.1.0
-      sb-scandir: 3.1.0
-      shell-escape: 0.2.0
-      ssh2: 1.15.0
 
   node-ssh@13.2.0:
     dependencies:
