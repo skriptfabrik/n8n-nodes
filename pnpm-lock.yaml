@@ -247,8 +247,8 @@ importers:
   nodes/sentry-io-enhanced:
     dependencies:
       n8n-workflow:
-        specifier: 1.51.0
-        version: 1.51.0
+        specifier: 1.52.1
+        version: 1.52.1
       tslib:
         specifier: ^2.6.2
         version: 2.6.3
@@ -2116,10 +2116,6 @@ packages:
 
   '@n8n/permissions@0.11.0':
     resolution: {integrity: sha512-RINlawGAMk8pzgmG1tJWf8sRrEyVljRZKPkZ26yQ2WuzC+yV3NOikvYVeDAr2DK3RzIbG04y09GynUSCL1EleQ==}
-
-  '@n8n/tournament@1.0.2':
-    resolution: {integrity: sha512-fTpi7F8ra5flGSVfRzohPyG7czAAKCZPlLjdKdwbLJivLoI/Ekhgodov1jfVSCVFVbwQ06gRQRxLEDzl2jl8ig==}
-    engines: {node: '>=18.10', pnpm: '>=8.6'}
 
   '@n8n/tournament@1.0.3':
     resolution: {integrity: sha512-GnmDD5wKAxKfxnSzhENHPn5n91/1c3/psnuT7D+jHHVQdMe8qaCcSq15rcGRfDfTf2v+BZBT0yeyK8Cfexr9yw==}
@@ -6435,10 +6431,6 @@ packages:
     resolution: {integrity: sha512-ERJq3FOzJTxBbFjZ7iDs+NiK4VI9Wz+RdrrAB8dio1oV+YvdPzUEE4QNiT2VD51DkIbCYRUUzCRkssXCHqSnKQ==}
     engines: {node: 14 || >=16.14}
 
-  luxon@3.3.0:
-    resolution: {integrity: sha512-An0UCfG/rSiqtAIiBPO0Y9/zAnHUZxAMiCpTd5h2smgsj7GGmcenvrvww2cqNA8/4A5ZrD1gJpHN2mIHZQF+Mg==}
-    engines: {node: '>=12'}
-
   luxon@3.4.4:
     resolution: {integrity: sha512-zobTr7akeGHnv7eBOXcRgMeCP6+uyYsczwmeRCauvpvaAltgNyTbLH/+VaEAPUeWBT+1GuNmz4wC/6jtQzbbVA==}
     engines: {node: '>=12'}
@@ -6750,9 +6742,6 @@ packages:
 
   n8n-nodes-base@1.53.2:
     resolution: {integrity: sha512-C+NLYOAmaej0q5cqJNJaPW1abX83q2k2tx4Z12g48Q0H9wc81Db59h3Jx3EddgjQQgDdGDrd/o/Qd10hHKTBfQ==}
-
-  n8n-workflow@1.51.0:
-    resolution: {integrity: sha512-7XKIxZkNNgaSljwMbGU/v53W4fimLJVrEPdMlJZpmWXZhn0kK1UglgLdsMnxHA9nSUSvusCycclw1D3O+Bn3IQ==}
 
   n8n-workflow@1.52.1:
     resolution: {integrity: sha512-CZPpgCGUAJwKkORS9YzFFM5x/04/0cieT0OF2xUrQ8Ss9eLuBM+YKnEtGRgZfizNdXWJWIpuCCU6yZOsjUBDcQ==}
@@ -11913,13 +11902,6 @@ snapshots:
       retry: 0.13.1
 
   '@n8n/permissions@0.11.0': {}
-
-  '@n8n/tournament@1.0.2':
-    dependencies:
-      '@n8n_io/riot-tmpl': 4.0.1
-      ast-types: 0.16.1
-      esprima-next: 5.8.4
-      recast: 0.22.0
 
   '@n8n/tournament@1.0.3':
     dependencies:
@@ -17446,8 +17428,6 @@ snapshots:
 
   lru-cache@9.1.2: {}
 
-  luxon@3.3.0: {}
-
   luxon@3.4.4: {}
 
   mailparser@3.6.7:
@@ -17993,29 +17973,6 @@ snapshots:
       - utf-8-validate
       - worker-loader
       - zod
-
-  n8n-workflow@1.51.0:
-    dependencies:
-      '@n8n/tournament': 1.0.2
-      '@n8n_io/riot-tmpl': 4.0.0
-      ast-types: 0.15.2
-      axios: 1.6.7
-      callsites: 3.1.0
-      deep-equal: 2.2.0
-      esprima-next: 5.8.4
-      form-data: 4.0.0
-      jmespath: 0.16.0
-      js-base64: 3.7.2
-      jssha: 3.3.1
-      lodash: 4.17.21
-      luxon: 3.3.0
-      md5: 2.3.0
-      recast: 0.21.5
-      title-case: 3.0.3
-      transliteration: 2.3.5
-      xml2js: 0.6.2
-    transitivePeerDependencies:
-      - debug
 
   n8n-workflow@1.52.1:
     dependencies:
