@@ -1,3 +1,12 @@
+## 0.4.6 (2024-08-13)
+
+
+### 🩹 Fixes
+
+- **clockify-enhanced:** bump n8n-nodes-base version to 1.53.2
+
+- **clockify-enhanced:** bump n8n-workflow version to 1.52.1
+
 ## 0.4.5 (2024-08-05)
 
 
