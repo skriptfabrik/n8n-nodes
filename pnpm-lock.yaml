@@ -109,8 +109,8 @@ importers:
         specifier: ^0.5.45
         version: 0.5.45
       n8n:
-        specifier: 1.52.2
-        version: 1.52.2(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-s3@3.606.0)(@azure/storage-blob@12.23.0)(@google-cloud/storage@6.12.0(encoding@0.1.13))(@smithy/eventstream-codec@2.2.0)(@smithy/protocol-http@3.3.0)(@smithy/signature-v4@2.3.0)(@smithy/util-utf8@2.3.0)(@supabase/postgrest-js@1.15.2)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(chokidar@3.5.2)(crypto-js@4.2.0)(date-fns@3.6.0)(encoding@0.1.13)(fast-xml-parser@4.4.0)(gcp-metadata@5.3.0(encoding@0.1.13))(google-auth-library@9.11.0(encoding@0.1.13))(ignore@5.3.1)(mssql@10.0.2)(promise-ftp-common@1.1.5)(redis@4.6.12)(socks@2.8.3)(ts-node@10.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@20.14.14)(typescript@5.5.4))(ts-toolbelt@9.6.0)(tslib@2.6.3)(typescript@5.5.4)
+        specifier: 1.53.2
+        version: 1.53.2(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-s3@3.606.0)(@azure/storage-blob@12.23.0)(@google-cloud/storage@6.12.0(encoding@0.1.13))(@smithy/eventstream-codec@2.2.0)(@smithy/protocol-http@3.3.0)(@smithy/signature-v4@2.3.0)(@smithy/util-utf8@2.3.0)(@supabase/postgrest-js@1.15.2)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(chokidar@3.5.2)(crypto-js@4.2.0)(date-fns@3.6.0)(encoding@0.1.13)(fast-xml-parser@4.4.0)(gcp-metadata@5.3.0(encoding@0.1.13))(google-auth-library@9.11.0(encoding@0.1.13))(ignore@5.3.1)(mssql@10.0.2)(promise-ftp-common@1.1.5)(redis@4.6.12)(socks@2.8.3)(ts-node@10.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@20.14.14)(typescript@5.5.4))(ts-toolbelt@9.6.0)(tslib@2.6.3)(typescript@5.5.4)
       n8n-nodes-base:
         specifier: 1.52.0
         version: 1.52.0(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
@@ -263,8 +263,8 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
-  '@anthropic-ai/sdk@0.21.1':
-    resolution: {integrity: sha512-fqdt74RTdplnaFOYhwNjjK/Ec09Dqv9ekYr7PuC6GdhV1RWkziqbpJBewn42CYYqCr92JeX6g+IXVgXmq9l7XQ==}
+  '@anthropic-ai/sdk@0.22.0':
+    resolution: {integrity: sha512-dv4BCC6FZJw3w66WNLsHlUFjhu19fS1L/5jMPApwhZLa/Oy1j0A2i3RypmDtHEPp4Wwg3aZkSHksp7VzYWjzmw==}
 
   '@apidevtools/json-schema-ref-parser@9.1.2':
     resolution: {integrity: sha512-r1w81DpR+KyRWd3f+rk6TNqMgedmAxZP5v5KWlXQWlgMUUtyEJch0DKEci1SorPMiSeM8XPl7MZ3miJ60JIpQg==}
@@ -1412,11 +1412,11 @@ packages:
   '@gar/promisify@1.1.3':
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
 
-  '@getzep/zep-cloud@1.0.6':
-    resolution: {integrity: sha512-AQCkOb4raRrRglfS6ESvukUay5z1bugakFhGcPswKtvUL/Dbwb7jQkJxN0mJO8iqoxbacOBDuC8n61ZoxHUy2w==}
+  '@getzep/zep-cloud@1.0.11':
+    resolution: {integrity: sha512-rJLGzoQoOWmW+IMmfmTerR3P/W1VbTLGD022KKn1j9Cdv98Nb/lKBp+vFKUg9s/IDSz4s7xjMI2lZJzRN9Tz+Q==}
     peerDependencies:
-      '@langchain/core': ~0.1.29
-      langchain: ~0.1.19
+      '@langchain/core': '>=0.1.29 <0.3.0'
+      langchain: '>=0.1.19 <0.3.0'
     peerDependenciesMeta:
       '@langchain/core':
         optional: true
@@ -1445,6 +1445,10 @@ packages:
 
   '@google-cloud/resource-manager@5.3.0':
     resolution: {integrity: sha512-uWJJf6S2PJL7oZ4ezv16aZl9+IJqPo5GzUv1pZ3/qRiMj13p0ylEgX1+LxBpX71eEPKTwMHoJV2IBBe3EAq7Xw==}
+    engines: {node: '>=14.0.0'}
+
+  '@google-cloud/secret-manager@5.6.0':
+    resolution: {integrity: sha512-0daW/OXQEVc6VQKPyJTQNyD+563I/TYQ7GCQJx4dq3lB666R9FUPvqHx9b/o/qQtZ5pfuoCbGZl3krpxgTSW8Q==}
     engines: {node: '>=14.0.0'}
 
   '@google-cloud/storage@6.12.0':
@@ -1612,16 +1616,16 @@ packages:
   '@kwsites/promise-deferred@1.1.1':
     resolution: {integrity: sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==}
 
-  '@langchain/anthropic@0.1.21':
-    resolution: {integrity: sha512-7L5UDhO93UYfBwdaGxIqc5ZGSQ4wgMyYdENflLYhA9Aeho+BSHd0Krqh6zEHNGy4p+OrCElyDy58G8yiDEpxvw==}
+  '@langchain/anthropic@0.2.9':
+    resolution: {integrity: sha512-i0ZXDPVvQUhpsQjKEYwrMHlhr0Z/q+Dzgidn/5c1v3n2LhJ8SjZVc6vugFvVxl0m8HlkuHxhIOlG5APVbyKjYg==}
     engines: {node: '>=18'}
 
   '@langchain/cohere@0.0.10':
     resolution: {integrity: sha512-qGeYeDKu6Itago3uSmVPjYD7BjHnA5miCYT3v4oRTXz2mDON4IrQit6Uk5dERLSrMKOrHCnRE9LYJEAyvo0s0Q==}
     engines: {node: '>=18'}
 
-  '@langchain/community@0.2.13':
-    resolution: {integrity: sha512-f0GZCGM5XP0r+H643GpUU4YelKHsUdhUY1Kb8rKpCoy8zgs1nUkiYDVylAf0ezwUOT4NYCEuwpw0jj8hQSLn1Q==}
+  '@langchain/community@0.2.20':
+    resolution: {integrity: sha512-3RyaH2CoFzn+2d9aDjHVFqK9499aL5BUixjFVJ8dGcarMN1vpgdLqkUMrJnpgZ06o7+SHhD8mvMmsMLSNSc4yA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -1650,6 +1654,7 @@ packages:
       '@google-cloud/storage': ^6.10.1 || ^7.7.0
       '@gradientai/nodejs-sdk': ^1.2.0
       '@huggingface/inference': ^2.6.4
+      '@langchain/langgraph': ~0.0.26
       '@layerup/layerup-security': ^1.5.12
       '@mendable/firecrawl-js': ^0.0.13
       '@mlc-ai/web-llm': 0.2.46
@@ -1680,10 +1685,10 @@ packages:
       '@vercel/postgres': ^0.5.0
       '@writerai/writer-sdk': ^0.40.2
       '@xata.io/client': ^0.28.0
-      '@xenova/transformers': ^2.5.4
+      '@xenova/transformers': ^2.17.2
       '@zilliz/milvus2-sdk-node': '>=2.3.5'
       apify-client: ^2.7.1
-      assemblyai: ^4.0.0
+      assemblyai: ^4.6.0
       better-sqlite3: '>=9.4.0 <12.0.0'
       cassandra-driver: ^4.7.2
       cborg: ^4.1.1
@@ -1796,6 +1801,8 @@ packages:
       '@gradientai/nodejs-sdk':
         optional: true
       '@huggingface/inference':
+        optional: true
+      '@langchain/langgraph':
         optional: true
       '@layerup/layerup-security':
         optional: true
@@ -1986,16 +1993,12 @@ packages:
       youtubei.js:
         optional: true
 
-  '@langchain/core@0.2.11':
-    resolution: {integrity: sha512-d4SNL7WI0c3oHrV4WxCRH1/TNqdePXEzYjYwIb4aEH6lW1aM0utGhLbNthX+aYkOL4Ynx2FoG4h91ECIipiKWQ==}
+  '@langchain/core@0.2.18':
+    resolution: {integrity: sha512-ru542BwNcsnDfjTeDbIkFIchwa54ctHZR+kVrC8U9NPS9/36iM8p8ruprOV7Zccj/oxtLE5UpEhV+9MZhVcFlA==}
     engines: {node: '>=18'}
 
   '@langchain/core@0.2.20':
     resolution: {integrity: sha512-WPBjrzOj79/yqjloDUIw1GDhuRQfHis07TyyDj+qS81nHh0svSasetKcqAZ3L5JoPcBmEL7rRBtM+OcyC3mLVg==}
-    engines: {node: '>=18'}
-
-  '@langchain/core@0.2.9':
-    resolution: {integrity: sha512-pJshopBZqMNF020q0OrrO+vfApWTZUlZecRYMM7TWA5M8/zvEyU/mgA9DlzeRjjDmG6pwF6dIKVjpl6fIGVXlQ==}
     engines: {node: '>=18'}
 
   '@langchain/google-common@0.0.22':
@@ -2006,32 +2009,32 @@ packages:
     resolution: {integrity: sha512-2vaWACcocuklCL6XtRnTJD/QkrOmv/rF9yHibeDo4QGMbKzCrA9/TXE9T9N6hRl6tQD5qH2IR2rAp/f8ZUSfIQ==}
     engines: {node: '>=18'}
 
-  '@langchain/google-genai@0.0.16':
-    resolution: {integrity: sha512-aUHEeY7sTwxNqj7L5scvnOhNLOKPVSvf7HR6p1Y3M7BPyU63fXP7faB+qyuHmibtKU8pj+ApoXPpjRflYKSv4w==}
+  '@langchain/google-genai@0.0.23':
+    resolution: {integrity: sha512-MTSCJEoKsfU1inz0PWvAjITdNFM4s41uvBCwLpcgx3jWJIEisczFD82x86ahYqJlb2fD6tohYSaCH/4tKAdkXA==}
     engines: {node: '>=18'}
 
-  '@langchain/google-vertexai@0.0.19':
-    resolution: {integrity: sha512-yqXi0S44dtwmdgHfQZ80A7MsIUJR97I5QUe1urorfUvN42s2NMM1PTY+3VHFtVpUPV9506Pp2+/Fg7NEQz/cDw==}
+  '@langchain/google-vertexai@0.0.21':
+    resolution: {integrity: sha512-G1whuGxqs3Bj+qV62SIoYSlJxOr12nOqY/1pIqRha1X5AdLc4J1jlQcLQkkKguS94U6Uqhx6IjNtxPF9O/rWPQ==}
     engines: {node: '>=18'}
 
-  '@langchain/groq@0.0.12':
-    resolution: {integrity: sha512-qgrVBdUnK9Qe8fzMc9gmMPGzc/8swDYbQuHoqsZmeK7M3wxEPR60rKdZvbbkFzqn+1NdquyRTeVKSgihPCib5Q==}
+  '@langchain/groq@0.0.15':
+    resolution: {integrity: sha512-JN6dlPNHZEFKc8JjQzO+H7IqCpcE3s/1nYnb+sHxpc22Amr3yxXgp6CvanLhmD+R8Wj1AE1vG7AkzjM8MLtv+A==}
     engines: {node: '>=18'}
 
-  '@langchain/mistralai@0.0.22':
-    resolution: {integrity: sha512-cZ+HBz32Gq2zjkXcDs5hDnr8W0QxlRXhWAXu9zepwzLNe3aXxAD/lhz9l654o2fo89bqnuhtYgbGx8ZVYcDvCw==}
+  '@langchain/mistralai@0.0.27':
+    resolution: {integrity: sha512-dMFqUanzrNyFjMZ2PyVbu37lHOSeWfhYsrZqwbgavEu6/WPP4RJW9SvsKJ4pyDd2KF4eoTg+GmkFvluuTDiWOg==}
     engines: {node: '>=18'}
 
-  '@langchain/openai@0.0.33':
-    resolution: {integrity: sha512-hTBo9y9bHtFvMT5ySBW7TrmKhLSA91iNahigeqAFBVrLmBDz+6rzzLFc1mpq6JEAR3fZKdaUXqso3nB23jIpTw==}
+  '@langchain/ollama@0.0.2':
+    resolution: {integrity: sha512-RMgEensnUeL9+4/5Z2v8E2bjEazyq0THQtYEXF9M4cd2DRwIwq9KJmQMLwOqIZO4vNVWJd5Vn4v17ZRnikGytg==}
     engines: {node: '>=18'}
 
-  '@langchain/openai@0.1.3':
-    resolution: {integrity: sha512-riv/JC9x2A8b7GcHu8sx+mlZJ8KAwSSi231IPTlcciYnKozmrQ5H0vrtiD31fxiDbaRsk7tyCpkSBIOQEo7CyQ==}
+  '@langchain/openai@0.2.5':
+    resolution: {integrity: sha512-gQXS5VBFyAco0jgSnUVan6fYVSIxlffmDaeDGpXrAmz2nQPgiN/h24KYOt2NOZ1zRheRzRuO/CfRagMhyVUaFA==}
     engines: {node: '>=18'}
 
-  '@langchain/pinecone@0.0.6':
-    resolution: {integrity: sha512-iSi+3DZwK/ocwRVNDAAzjC9oa3E4yRlcgx53GSZ/w22QdDfb5PsxQoOXeqviEwUejLsGawbbex2ip1J4LKJ4/g==}
+  '@langchain/pinecone@0.0.8':
+    resolution: {integrity: sha512-pV23SUebsNoMDOKbervrFNzCD48KVPLRd85jl/k6Ir8fLJDYmvon76T/SyBbrxZBDmWTaszq/LMwtJTh/VyUJg==}
     engines: {node: '>=18'}
 
   '@langchain/qdrant@0.0.5':
@@ -2042,10 +2045,6 @@ packages:
     resolution: {integrity: sha512-Jleqg5nbZ4795r8ctdwawafjJs4/1gdQnpcz1VnQEBrGqPne+4jwuwBDzeMhByMBLRBB/I6jaiVs9t5wi5H7Tg==}
     engines: {node: '>=18'}
 
-  '@langchain/textsplitters@0.0.2':
-    resolution: {integrity: sha512-6bQOuYHTGYlkgPY/8M5WPq4nnXZpEysGzRopQCYjg2WLcEoIPUMMrXsAaNNdvU3BOeMrhin8izvpDPD165hX6Q==}
-    engines: {node: '>=18'}
-
   '@langchain/textsplitters@0.0.3':
     resolution: {integrity: sha512-cXWgKE3sdWLSqAa8ykbCcUsUF1Kyr5J3HOWYGuobhPEycXW4WI++d5DhzdpL238mzoEXTi90VqfSCra37l5YqA==}
     engines: {node: '>=18'}
@@ -2054,8 +2053,8 @@ packages:
     resolution: {integrity: sha512-Yhlar6v9WQgUp/He7BdgzOz8lqMQ8sU+jkCq7Wx8Myc5YFJLbEe7lgui/V7G1qB1DJykHSGwreceSaD60Y0PUQ==}
     hasBin: true
 
-  '@mistralai/mistralai@0.1.3':
-    resolution: {integrity: sha512-WUHxC2xdeqX9PTXJEqdiNY54vT2ir72WSJrZTTBKRnkfhX6zIfCYA24faRlWjUB5WTpn+wfdGsTMl3ArijlXFA==}
+  '@mistralai/mistralai@0.4.0':
+    resolution: {integrity: sha512-KmFzNro1RKxIFh19J3osmUQhucefBBauMXN5fa9doG6dT9OHR/moBvvn+riVlR7c0AVfuxO8Dfa03AyLYYzbyg==}
 
   '@mongodb-js/saslprep@1.1.7':
     resolution: {integrity: sha512-dCHW/oEX0KJ4NjDULBo3JiOaK5+6axtpBbS+ao2ZInoAL9/YRQLhXzSNAFz7hP4nzLkIqsfYAK/PDE3+XHny0Q==}
@@ -2094,11 +2093,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@n8n/client-oauth2@0.19.0':
-    resolution: {integrity: sha512-hiRHfDzaiVTm5/EKnLapmGnTePLiRQaVK/4hA5ODDCsXrCP3btL/w5XAemuFh8Z5VN4IpMHUTzfU0u8imZtMMg==}
+  '@n8n/client-oauth2@0.20.0':
+    resolution: {integrity: sha512-nNfIG0Ubkfr5hM3L9hKK2S0/R0e7D2JlZ126+/gsQih483dLSWmu7X76CBx8JtSzM6LYIPBakiTg+LfxiinHsg==}
 
-  '@n8n/config@1.2.0':
-    resolution: {integrity: sha512-uUaH2porrmOvDTxzsh9+NhNziKY7vc8vdio/XFIe0ZZswmrjRDtQqBBBKUh+eVylwKf4CYcQ0UH0n1cta7GiiQ==}
+  '@n8n/config@1.3.0':
+    resolution: {integrity: sha512-tdB7iwwDwZnlq10Tn208/WAqdnoRJ1MLsZbKhOKiRmjjXOmLh6pktEYaC8eVZF0schG7DEoZPwafBLPzrbSTsw==}
 
   '@n8n/imap@0.6.0':
     resolution: {integrity: sha512-ZyTtL2A6Xpw8c5SqxQrXydoIxmphYPPI8mAyJTs+d7dbQtt+vmmwQmsDYGFIgZh7gJsWIEt/5z6LDmmU+9bCuw==}
@@ -2108,8 +2107,8 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
-  '@n8n/n8n-nodes-langchain@1.52.0':
-    resolution: {integrity: sha512-2rjZE7AZ488ODmfcbU0k49Daxs1c+I2pvXxVJPw0o8RDxoWFueS90BB8V6JUwdDHgH822twfe9xNTWPgYArDAA==}
+  '@n8n/n8n-nodes-langchain@1.53.2':
+    resolution: {integrity: sha512-IF10ZURYHnZo05dospDgN9QySJPHzWN+7nQALmORfINTvXbaldqyHykgB2069TzEABT9VCPtdKYQyTIHD9RR/Q==}
 
   '@n8n/p-retry@6.2.0-2':
     resolution: {integrity: sha512-rbnMnSdEwq2yuYMgzOQ4jTXm+oH7yjN/0ISfB/7O6pUcEPsZt9UW60BYfQ1WWHkKa/evI8vgER2zV5/RC1BupQ==}
@@ -2120,6 +2119,10 @@ packages:
 
   '@n8n/tournament@1.0.2':
     resolution: {integrity: sha512-fTpi7F8ra5flGSVfRzohPyG7czAAKCZPlLjdKdwbLJivLoI/Ekhgodov1jfVSCVFVbwQ06gRQRxLEDzl2jl8ig==}
+    engines: {node: '>=18.10', pnpm: '>=8.6'}
+
+  '@n8n/tournament@1.0.3':
+    resolution: {integrity: sha512-GnmDD5wKAxKfxnSzhENHPn5n91/1c3/psnuT7D+jHHVQdMe8qaCcSq15rcGRfDfTf2v+BZBT0yeyK8Cfexr9yw==}
     engines: {node: '>=18.10', pnpm: '>=8.6'}
 
   '@n8n/typeorm@0.3.20-10':
@@ -2189,6 +2192,11 @@ packages:
   '@n8n/vm2@3.9.20':
     resolution: {integrity: sha512-qk2oJYkuFRVSTxoro4obX/sv/wT1pViZjHh/isjOvFB93D52QIg3TCjMPsHOfHTmkxCKJffjLrUvjIwvWzSMCQ==}
     engines: {node: '>=18.10', pnpm: '>=8.6.12'}
+    hasBin: true
+
+  '@n8n/vm2@3.9.25':
+    resolution: {integrity: sha512-qoGLFzyHBW7HKpwXkl05QKsIh3GkDw6lOiTOWYlUDnOIQ1b7EgM+O5EMjrMGy7r+kz52+Q7o6GLxBIcxVI8rEg==}
+    engines: {node: '>=18.10', pnpm: '>=9.6'}
     hasBin: true
 
   '@n8n_io/license-sdk@2.13.0':
@@ -2358,13 +2366,9 @@ packages:
     peerDependencies:
       typescript: ^3 || ^4 || ^5
 
-  '@pinecone-database/pinecone@2.2.1':
-    resolution: {integrity: sha512-8i6oT8EzYLlxi5Th4tJ8Cae+VPyHzlEsiVSxCOEx+EahbzaiWmpQMZSmO/RlXF/dOjOI+pXvqfcFYcF1awtPlw==}
-    engines: {node: '>=14.0.0'}
-
-  '@pinecone-database/pinecone@2.2.2':
-    resolution: {integrity: sha512-gbe/4SowHc64pHIm0kBdgY9hVdzsQnnnpcWviwYMB33gOmsL8brvE8fUSpl1dLDvdyXzKcQkzdBsjCDlqgpdMA==}
-    engines: {node: '>=14.0.0'}
+  '@pinecone-database/pinecone@3.0.0':
+    resolution: {integrity: sha512-ppBRr9MZRW8U2eww3QU1s5oTa0sXbaHrRJRS8x1++WVUPclcb6T6me/5sv9cLZDvldvsZY26k3fnrEoXLNnPUQ==}
+    engines: {node: '>=18.0.0'}
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -6040,8 +6044,8 @@ packages:
   kuler@2.0.0:
     resolution: {integrity: sha512-Xq9nH7KlWZmXAtodXDDRE7vs6DU1gTU8zYDHDiWLSip45Egwq3plLHzPn27NgvzL2r1LMPC1vdqh98sQxtqj4A==}
 
-  langchain@0.2.2:
-    resolution: {integrity: sha512-4tt2QuwW8AXdIL8CRkQeGOCoYYH3QbLHfQ09yD0iWLV1rwUYJ8mIYFAz/+u6CB8YNEyR/HI105s4xrxFQbWa9g==}
+  langchain@0.2.11:
+    resolution: {integrity: sha512-6FQWKNAXuTmwuhHHMOmurLo8pydSRu5C/FwCYvYbR4ulCLqcsj+jre/kfXvA5BdHOZHNo6oQn0/5kxDNnhxMUA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-s3': ^3.310.0
@@ -6053,7 +6057,16 @@ packages:
       '@gomomento/sdk': ^1.51.1
       '@gomomento/sdk-core': ^1.51.1
       '@gomomento/sdk-web': ^1.51.1
-      '@google-ai/generativelanguage': ^2.5.0
+      '@langchain/anthropic': '*'
+      '@langchain/aws': '*'
+      '@langchain/cohere': '*'
+      '@langchain/community': '*'
+      '@langchain/google-genai': '*'
+      '@langchain/google-vertexai': '*'
+      '@langchain/google-vertexai-web': '*'
+      '@langchain/groq': '*'
+      '@langchain/mistralai': '*'
+      '@langchain/ollama': '*'
       '@mendable/firecrawl-js': ^0.0.13
       '@notionhq/client': ^2.2.10
       '@pinecone-database/pinecone': '*'
@@ -6061,7 +6074,7 @@ packages:
       '@vercel/kv': ^0.2.3
       '@xata.io/client': ^0.28.0
       apify-client: ^2.7.1
-      assemblyai: ^4.0.0
+      assemblyai: ^4.6.0
       axios: '*'
       cheerio: ^1.0.0-rc.12
       chromadb: '*'
@@ -6089,7 +6102,7 @@ packages:
       redis: ^4.6.4
       sonix-speech-recognition: ^2.1.1
       srt-parser-2: ^1.2.3
-      typeorm: ^0.3.12
+      typeorm: ^0.3.20
       weaviate-ts-client: '*'
       web-auth-library: ^1.0.3
       ws: ^8.14.2
@@ -6114,163 +6127,25 @@ packages:
         optional: true
       '@gomomento/sdk-web':
         optional: true
-      '@google-ai/generativelanguage':
+      '@langchain/anthropic':
         optional: true
-      '@mendable/firecrawl-js':
+      '@langchain/aws':
         optional: true
-      '@notionhq/client':
+      '@langchain/cohere':
         optional: true
-      '@pinecone-database/pinecone':
+      '@langchain/community':
         optional: true
-      '@supabase/supabase-js':
+      '@langchain/google-genai':
         optional: true
-      '@vercel/kv':
+      '@langchain/google-vertexai':
         optional: true
-      '@xata.io/client':
+      '@langchain/google-vertexai-web':
         optional: true
-      apify-client:
+      '@langchain/groq':
         optional: true
-      assemblyai:
+      '@langchain/mistralai':
         optional: true
-      axios:
-        optional: true
-      cheerio:
-        optional: true
-      chromadb:
-        optional: true
-      convex:
-        optional: true
-      couchbase:
-        optional: true
-      d3-dsv:
-        optional: true
-      epub2:
-        optional: true
-      faiss-node:
-        optional: true
-      fast-xml-parser:
-        optional: true
-      handlebars:
-        optional: true
-      html-to-text:
-        optional: true
-      ignore:
-        optional: true
-      ioredis:
-        optional: true
-      jsdom:
-        optional: true
-      mammoth:
-        optional: true
-      mongodb:
-        optional: true
-      node-llama-cpp:
-        optional: true
-      notion-to-md:
-        optional: true
-      officeparser:
-        optional: true
-      pdf-parse:
-        optional: true
-      peggy:
-        optional: true
-      playwright:
-        optional: true
-      puppeteer:
-        optional: true
-      pyodide:
-        optional: true
-      redis:
-        optional: true
-      sonix-speech-recognition:
-        optional: true
-      srt-parser-2:
-        optional: true
-      typeorm:
-        optional: true
-      weaviate-ts-client:
-        optional: true
-      web-auth-library:
-        optional: true
-      ws:
-        optional: true
-      youtube-transcript:
-        optional: true
-      youtubei.js:
-        optional: true
-
-  langchain@0.2.3:
-    resolution: {integrity: sha512-T9xR7zd+Nj0oXy6WoYKmZLy0DlQiDLFPGYWdOXDxy+AvqlujoPdVQgDSpdqiOHvAjezrByAoKxoHCz5XMwTP/Q==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      '@aws-sdk/client-s3': ^3.310.0
-      '@aws-sdk/client-sagemaker-runtime': ^3.310.0
-      '@aws-sdk/client-sfn': ^3.310.0
-      '@aws-sdk/credential-provider-node': ^3.388.0
-      '@azure/storage-blob': ^12.15.0
-      '@browserbasehq/sdk': '*'
-      '@gomomento/sdk': ^1.51.1
-      '@gomomento/sdk-core': ^1.51.1
-      '@gomomento/sdk-web': ^1.51.1
-      '@mendable/firecrawl-js': ^0.0.13
-      '@notionhq/client': ^2.2.10
-      '@pinecone-database/pinecone': '*'
-      '@supabase/supabase-js': ^2.10.0
-      '@vercel/kv': ^0.2.3
-      '@xata.io/client': ^0.28.0
-      apify-client: ^2.7.1
-      assemblyai: ^4.0.0
-      axios: '*'
-      cheerio: ^1.0.0-rc.12
-      chromadb: '*'
-      convex: ^1.3.1
-      couchbase: ^4.3.0
-      d3-dsv: ^2.0.0
-      epub2: ^3.0.1
-      faiss-node: '*'
-      fast-xml-parser: '*'
-      handlebars: ^4.7.8
-      html-to-text: ^9.0.5
-      ignore: ^5.2.0
-      ioredis: ^5.3.2
-      jsdom: '*'
-      mammoth: ^1.6.0
-      mongodb: '>=5.2.0'
-      node-llama-cpp: '*'
-      notion-to-md: ^3.1.0
-      officeparser: ^4.0.4
-      pdf-parse: 1.1.1
-      peggy: ^3.0.2
-      playwright: ^1.32.1
-      puppeteer: ^19.7.2
-      pyodide: ^0.24.1
-      redis: ^4.6.4
-      sonix-speech-recognition: ^2.1.1
-      srt-parser-2: ^1.2.3
-      typeorm: ^0.3.12
-      weaviate-ts-client: '*'
-      web-auth-library: ^1.0.3
-      ws: ^8.14.2
-      youtube-transcript: ^1.0.6
-      youtubei.js: ^9.1.0
-    peerDependenciesMeta:
-      '@aws-sdk/client-s3':
-        optional: true
-      '@aws-sdk/client-sagemaker-runtime':
-        optional: true
-      '@aws-sdk/client-sfn':
-        optional: true
-      '@aws-sdk/credential-provider-node':
-        optional: true
-      '@azure/storage-blob':
-        optional: true
-      '@browserbasehq/sdk':
-        optional: true
-      '@gomomento/sdk':
-        optional: true
-      '@gomomento/sdk-core':
-        optional: true
-      '@gomomento/sdk-web':
+      '@langchain/ollama':
         optional: true
       '@mendable/firecrawl-js':
         optional: true
@@ -6357,20 +6232,6 @@ packages:
 
   langchainhub@0.0.11:
     resolution: {integrity: sha512-WnKI4g9kU2bHQP136orXr2bcRdgz9iiTBpTN0jWt9IlScUKnJBoD0aa2HOzHURQKeQDnt2JwqVmQ6Depf5uDLQ==}
-
-  langsmith@0.1.34:
-    resolution: {integrity: sha512-aMv2k8kEaovhTuZnK6/6DMCoM7Jurvm1AzdESn+yN+HramRxp3sK32jFRz3ogkXP6GjAjOIofcnNkzhHXSUXGA==}
-    peerDependencies:
-      '@langchain/core': '*'
-      langchain: '*'
-      openai: '*'
-    peerDependenciesMeta:
-      '@langchain/core':
-        optional: true
-      langchain:
-        optional: true
-      openai:
-        optional: true
 
   langsmith@0.1.40:
     resolution: {integrity: sha512-11E2WLbh/+41+Qc0w8fJJTC/iz91BA+zXRMX/Wz0KSstnfzIPBoiWa++Kp2X8yCIDNywWWLJhy/B8gYzm7VKig==}
@@ -6510,9 +6371,6 @@ packages:
 
   lodash.once@4.1.1:
     resolution: {integrity: sha512-Sb487aTOCr9drQVL8pIxOzVhafOjZN9UU54hiN8PU3uAiSV7lx1yYNpbNmex2PK6dSJoNTSJUUswT651yww3Mg==}
-
-  lodash.set@4.3.2:
-    resolution: {integrity: sha512-4hNPN5jlm/N/HLMCO43v8BXKq9Z7QdAGc/VGrRD61w8gN9g/6jF9A4L1pbUgBLCffi0w9VsXfTOij5x8iTyFvg==}
 
   lodash.snakecase@4.1.1:
     resolution: {integrity: sha512-QZ1d4xoBHYUeuouhEq3lk3Uq7ldgyFXGBhg04+oRLnIz8o9T65Eh+8YdroUwn846zchkA9yDsDl5CVVaV2nqYw==}
@@ -6888,21 +6746,27 @@ packages:
     resolution: {integrity: sha512-qx0mfWYt1DpTPkw8mAcHW/OwqqyNqBLBHvY5IjN8+icIYTjt6znrgYJ+gxqNNRpVknb5Wc/gcCM4XjbCR0j5tw==}
     engines: {node: '>= 8.0'}
 
-  n8n-core@1.52.0:
-    resolution: {integrity: sha512-bESgq5zCz//2ZegcSTaCSBbeBg2P8jOPueC/EMIAtgqkLV9cCYF/4B8myw+1wSHAZYGBZ0KzsQ3DOdkGHhTrqQ==}
+  n8n-core@1.53.1:
+    resolution: {integrity: sha512-v7mYnoxvWJLnsbRu1lds+FXc5vpPFaKdRMWhEphMJPcABjNSrhdOfWMxPyTXlbFWMF3cBYKMUv5gBESK5+6Hfw==}
     hasBin: true
 
-  n8n-editor-ui@1.52.2:
-    resolution: {integrity: sha512-qdyYXH2U8DGbc3AJ+gSGIw6B5OcyPlZEhHCLQRjcPN4scwyBkOl7aSp0c1g03va7xtJVqd48zQJq/DKm+kYKsA==}
+  n8n-editor-ui@1.53.1:
+    resolution: {integrity: sha512-XhRdncRWUHNVxNAmqWrfJB+7n0ocIbQW8s3Zb7qPwgQfc+X48yafZQ9AVw0y7939XrMVch9apq9/vSiN8quGow==}
 
   n8n-nodes-base@1.52.0:
     resolution: {integrity: sha512-2rAAB7+tk4F35VT4/IsiqfZzstMu1eZKkqsxrQHO+oe6v7Nc9tDANK0XihwyLoqCEflMDgLywI7dWj3+2NIIlA==}
 
+  n8n-nodes-base@1.53.2:
+    resolution: {integrity: sha512-C+NLYOAmaej0q5cqJNJaPW1abX83q2k2tx4Z12g48Q0H9wc81Db59h3Jx3EddgjQQgDdGDrd/o/Qd10hHKTBfQ==}
+
   n8n-workflow@1.51.0:
     resolution: {integrity: sha512-7XKIxZkNNgaSljwMbGU/v53W4fimLJVrEPdMlJZpmWXZhn0kK1UglgLdsMnxHA9nSUSvusCycclw1D3O+Bn3IQ==}
 
-  n8n@1.52.2:
-    resolution: {integrity: sha512-JGcV/lvT6yFyx1JNQlv7isD5Uah+MlPkKV5RYUmicWFcB41dQEPqefZ5U7QRQkroNNx6gzXYRZtPTBJ4bs+O5g==}
+  n8n-workflow@1.52.1:
+    resolution: {integrity: sha512-CZPpgCGUAJwKkORS9YzFFM5x/04/0cieT0OF2xUrQ8Ss9eLuBM+YKnEtGRgZfizNdXWJWIpuCCU6yZOsjUBDcQ==}
+
+  n8n@1.53.2:
+    resolution: {integrity: sha512-Rn7RvHcXtgBO6D19iCZ/Qn3v6NGTX4Ix/C+H8Sh2AUgm/rE3P1yz6IjNX2AoPsfdn1f2YTNXZFA2hUp/gb9P4Q==}
     engines: {node: '>=18.10'}
     hasBin: true
 
@@ -7115,6 +6979,9 @@ packages:
   obuf@1.1.2:
     resolution: {integrity: sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==}
 
+  ollama@0.5.8:
+    resolution: {integrity: sha512-frBGdfSV34i7JybLZUeyCYDx0CMyDiG4On8xOK+cNRWM04HImhoWgIMpF4p7vTkQumadbSxOteR7SZyKqNmOXg==}
+
   on-exit-leak-free@0.2.0:
     resolution: {integrity: sha512-dqaz3u44QbRXQooZLTUKU41ZrzYrcvLISVgbrzbyCMxpmSLJvZ3ZamIJIZ29P6OhZIkNIQKosdeM6t1LYbA9hg==}
 
@@ -7155,12 +7022,8 @@ packages:
     resolution: {integrity: sha512-7x81NCL719oNbsq/3mh+hVrAWmFuEYUqrq/Iw3kUzH8ReypT9QQ0BLoJS7/G9k6N81XjW4qHWtjWwe/9eLy1EQ==}
     engines: {node: '>=12'}
 
-  openai@4.47.1:
-    resolution: {integrity: sha512-WWSxhC/69ZhYWxH/OBsLEirIjUcfpQ5+ihkXKp06hmeYXgBBIUCa9IptMzYx6NdkiOCsSGYCnTIsxaic3AjRCQ==}
-    hasBin: true
-
-  openai@4.52.2:
-    resolution: {integrity: sha512-mMc0XgFuVSkcm0lRIi8zaw++otC82ZlfkCur1qguXYWPETr/+ZwL9A/vvp3YahX+shpaT6j03dwsmUyLAfmEfg==}
+  openai@4.53.0:
+    resolution: {integrity: sha512-XoMaJsSLuedW5eoMEMmZbdNoXgML3ujcU5KfwRnC6rnbmZkHE2Q4J/SArwhqCxQRqJwHnQUj1LpiROmKPExZJA==}
     hasBin: true
 
   openapi-types@10.0.0:
@@ -8814,6 +8677,9 @@ packages:
     resolution: {integrity: sha512-6qN4hJdMwfYBtE3YBTTHhoeuUrDBPZmbQaxWAqSALV/MeEnR5z1xd8UKud2RAkFoPkmB+hli1TZSnyi84xz1vQ==}
     engines: {node: '>=18'}
 
+  whatwg-fetch@3.6.20:
+    resolution: {integrity: sha512-EqhiFU6daOA8kpjOWTL0olhVOF3i7OrFzSYiGsEMB8GcXS+RrzauAERX65xMeNWVqxA6HXH2m69Z9LaKKdisfg==}
+
   whatwg-mimetype@4.0.0:
     resolution: {integrity: sha512-QaKxh0eNIi2mE9p2vEdzfagOKHCcj1pJ56EEHGQOVxp8r9/iszLUUV7v89x9O1p/T+NlTM5W7jW6+cz4Fq1YVg==}
     engines: {node: '>=18'}
@@ -9054,7 +8920,7 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@anthropic-ai/sdk@0.21.1(encoding@0.1.13)':
+  '@anthropic-ai/sdk@0.22.0(encoding@0.1.13)':
     dependencies:
       '@types/node': 18.19.39
       '@types/node-fetch': 2.6.11
@@ -11191,7 +11057,7 @@ snapshots:
   '@gar/promisify@1.1.3':
     optional: true
 
-  '@getzep/zep-cloud@1.0.6(culd7vt2s64nkprka4ub3kve7i)':
+  '@getzep/zep-cloud@1.0.11(@langchain/core@0.2.18)(encoding@0.1.13)(langchain@0.2.11)':
     dependencies:
       form-data: 4.0.0
       node-fetch: 2.7.0(encoding@0.1.13)
@@ -11199,8 +11065,8 @@ snapshots:
       url-join: 4.0.1
       zod: 3.23.8
     optionalDependencies:
-      '@langchain/core': 0.2.9(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      langchain: 0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1)
+      '@langchain/core': 0.2.18(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
+      langchain: 0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1)
     transitivePeerDependencies:
       - encoding
 
@@ -11227,6 +11093,13 @@ snapshots:
   '@google-cloud/promisify@3.0.1': {}
 
   '@google-cloud/resource-manager@5.3.0(encoding@0.1.13)':
+    dependencies:
+      google-gax: 4.3.7(encoding@0.1.13)
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+
+  '@google-cloud/secret-manager@5.6.0(encoding@0.1.13)':
     dependencies:
       google-gax: 4.3.7(encoding@0.1.13)
     transitivePeerDependencies:
@@ -11520,10 +11393,10 @@ snapshots:
 
   '@kwsites/promise-deferred@1.1.1': {}
 
-  '@langchain/anthropic@0.1.21(encoding@0.1.13)(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))':
+  '@langchain/anthropic@0.2.9(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))':
     dependencies:
-      '@anthropic-ai/sdk': 0.21.1(encoding@0.1.13)
-      '@langchain/core': 0.2.11(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
+      '@anthropic-ai/sdk': 0.22.0(encoding@0.1.13)
+      '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
       fast-xml-parser: 4.4.0
       zod: 3.23.8
       zod-to-json-schema: 3.23.1(zod@3.23.8)
@@ -11532,26 +11405,26 @@ snapshots:
       - langchain
       - openai
 
-  '@langchain/cohere@0.0.10(encoding@0.1.13)(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))':
+  '@langchain/cohere@0.0.10(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))':
     dependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
+      '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
       cohere-ai: 7.10.1(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
       - langchain
       - openai
 
-  '@langchain/community@0.2.13(73q7bxjbh6v4n64hbovxzthote)':
+  '@langchain/community@0.2.20(kmxknpbln5xdhfd7v2czqglpq4)':
     dependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.3(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      '@langchain/openai': 0.1.3(encoding@0.1.13)(langchain@0.2.3(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))
+      '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
+      '@langchain/openai': 0.2.5(encoding@0.1.13)(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))
       binary-extensions: 2.3.0
       expr-eval: 2.0.2
       flat: 5.0.2
       js-yaml: 4.1.0
-      langchain: 0.2.3(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1)
-      langsmith: 0.1.34(rry6nug6gwlc7sqfmofcczr554)
-      uuid: 9.0.1
+      langchain: 0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1)
+      langsmith: 0.1.40(dwd4n3qe4r3oa5m6gzdwuaowxq)
+      uuid: 10.0.0
       zod: 3.23.8
       zod-to-json-schema: 3.23.1(zod@3.23.8)
     optionalDependencies:
@@ -11560,13 +11433,13 @@ snapshots:
       '@aws-sdk/client-s3': 3.606.0
       '@aws-sdk/credential-provider-node': 3.535.0
       '@azure/storage-blob': 12.23.0
-      '@getzep/zep-cloud': 1.0.6(culd7vt2s64nkprka4ub3kve7i)
+      '@getzep/zep-cloud': 1.0.11(@langchain/core@0.2.18)(encoding@0.1.13)(langchain@0.2.11)
       '@getzep/zep-js': 0.9.0
       '@google-ai/generativelanguage': 2.5.0(encoding@0.1.13)
       '@google-cloud/storage': 6.12.0(encoding@0.1.13)
       '@huggingface/inference': 2.7.0
       '@mozilla/readability': 0.5.0
-      '@pinecone-database/pinecone': 2.2.1
+      '@pinecone-database/pinecone': 3.0.0
       '@qdrant/js-client-rest': 1.9.0(typescript@5.5.4)
       '@smithy/eventstream-codec': 2.2.0
       '@smithy/protocol-http': 3.3.0
@@ -11590,11 +11463,20 @@ snapshots:
       mammoth: 1.7.2
       mysql2: 3.10.0
       pdf-parse: 1.1.1
-      pg: 8.11.3
+      pg: 8.8.0
       redis: 4.6.12
       ws: 8.17.1
     transitivePeerDependencies:
       - '@gomomento/sdk-web'
+      - '@langchain/anthropic'
+      - '@langchain/aws'
+      - '@langchain/cohere'
+      - '@langchain/google-genai'
+      - '@langchain/google-vertexai'
+      - '@langchain/google-vertexai-web'
+      - '@langchain/groq'
+      - '@langchain/mistralai'
+      - '@langchain/ollama'
       - axios
       - encoding
       - fast-xml-parser
@@ -11603,85 +11485,14 @@ snapshots:
       - peggy
       - pyodide
 
-  '@langchain/core@0.2.11(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))':
+  '@langchain/core@0.2.18(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))':
     dependencies:
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.12
-      langsmith: 0.1.34(6ij7r5czklknuwz5pbwkqpmidq)
+      langsmith: 0.1.40(@langchain/core@0.2.18(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13)))(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
       ml-distance: 4.0.1
-      mustache: 4.2.0
-      p-queue: 6.6.2
-      p-retry: 4.6.2
-      uuid: 9.0.1
-      zod: 3.23.8
-      zod-to-json-schema: 3.23.1(zod@3.23.8)
-    transitivePeerDependencies:
-      - langchain
-      - openai
-
-  '@langchain/core@0.2.11(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.52.2(encoding@0.1.13))':
-    dependencies:
-      ansi-styles: 5.2.0
-      camelcase: 6.3.0
-      decamelize: 1.2.0
-      js-tiktoken: 1.0.12
-      langsmith: 0.1.34(o3fi3z3secgpv3jxtimuib2xaa)
-      ml-distance: 4.0.1
-      mustache: 4.2.0
-      p-queue: 6.6.2
-      p-retry: 4.6.2
-      uuid: 9.0.1
-      zod: 3.23.8
-      zod-to-json-schema: 3.23.1(zod@3.23.8)
-    transitivePeerDependencies:
-      - langchain
-      - openai
-
-  '@langchain/core@0.2.11(langchain@0.2.3(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))':
-    dependencies:
-      ansi-styles: 5.2.0
-      camelcase: 6.3.0
-      decamelize: 1.2.0
-      js-tiktoken: 1.0.12
-      langsmith: 0.1.34(rry6nug6gwlc7sqfmofcczr554)
-      ml-distance: 4.0.1
-      mustache: 4.2.0
-      p-queue: 6.6.2
-      p-retry: 4.6.2
-      uuid: 9.0.1
-      zod: 3.23.8
-      zod-to-json-schema: 3.23.1(zod@3.23.8)
-    transitivePeerDependencies:
-      - langchain
-      - openai
-
-  '@langchain/core@0.2.11(langchain@0.2.3(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.52.2(encoding@0.1.13))':
-    dependencies:
-      ansi-styles: 5.2.0
-      camelcase: 6.3.0
-      decamelize: 1.2.0
-      js-tiktoken: 1.0.12
-      langsmith: 0.1.34(mbkyk5ufjso2qyojlonaswqyii)
-      ml-distance: 4.0.1
-      mustache: 4.2.0
-      p-queue: 6.6.2
-      p-retry: 4.6.2
-      uuid: 9.0.1
-      zod: 3.23.8
-      zod-to-json-schema: 3.23.1(zod@3.23.8)
-    transitivePeerDependencies:
-      - langchain
-      - openai
-
-  '@langchain/core@0.2.20(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))':
-    dependencies:
-      ansi-styles: 5.2.0
-      camelcase: 6.3.0
-      decamelize: 1.2.0
-      js-tiktoken: 1.0.12
-      langsmith: 0.1.40(efxqrfdzo73sq37w3cbdql73oa)
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -11692,27 +11503,26 @@ snapshots:
       - langchain
       - openai
 
-  '@langchain/core@0.2.9(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))':
+  '@langchain/core@0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))':
     dependencies:
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.12
-      langsmith: 0.1.34(mipiihryghuqcujkmavhf76vtu)
-      ml-distance: 4.0.1
+      langsmith: 0.1.40(dwd4n3qe4r3oa5m6gzdwuaowxq)
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
-      uuid: 9.0.1
+      uuid: 10.0.0
       zod: 3.23.8
       zod-to-json-schema: 3.23.1(zod@3.23.8)
     transitivePeerDependencies:
       - langchain
       - openai
 
-  '@langchain/google-common@0.0.22(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))(zod@3.23.8)':
+  '@langchain/google-common@0.0.22(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))(zod@3.23.8)':
     dependencies:
-      '@langchain/core': 0.2.20(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
+      '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
       uuid: 10.0.0
       zod-to-json-schema: 3.23.1(zod@3.23.8)
     transitivePeerDependencies:
@@ -11720,10 +11530,10 @@ snapshots:
       - openai
       - zod
 
-  '@langchain/google-gauth@0.0.21(encoding@0.1.13)(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))(zod@3.23.8)':
+  '@langchain/google-gauth@0.0.21(encoding@0.1.13)(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))(zod@3.23.8)':
     dependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      '@langchain/google-common': 0.0.22(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))(zod@3.23.8)
+      '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
+      '@langchain/google-common': 0.0.22(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))(zod@3.23.8)
       google-auth-library: 8.9.0(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
@@ -11732,20 +11542,20 @@ snapshots:
       - supports-color
       - zod
 
-  '@langchain/google-genai@0.0.16(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))(zod@3.23.8)':
+  '@langchain/google-genai@0.0.23(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))(zod@3.23.8)':
     dependencies:
       '@google/generative-ai': 0.7.1
-      '@langchain/core': 0.2.11(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
+      '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
       zod-to-json-schema: 3.23.1(zod@3.23.8)
     transitivePeerDependencies:
       - langchain
       - openai
       - zod
 
-  '@langchain/google-vertexai@0.0.19(encoding@0.1.13)(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))(zod@3.23.8)':
+  '@langchain/google-vertexai@0.0.21(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))(zod@3.23.8)':
     dependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      '@langchain/google-gauth': 0.0.21(encoding@0.1.13)(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))(zod@3.23.8)
+      '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
+      '@langchain/google-gauth': 0.0.21(encoding@0.1.13)(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))(zod@3.23.8)
     transitivePeerDependencies:
       - encoding
       - langchain
@@ -11753,10 +11563,10 @@ snapshots:
       - supports-color
       - zod
 
-  '@langchain/groq@0.0.12(encoding@0.1.13)(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))':
+  '@langchain/groq@0.0.15(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))':
     dependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      '@langchain/openai': 0.0.33(encoding@0.1.13)(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))
+      '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
+      '@langchain/openai': 0.2.5(encoding@0.1.13)(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))
       groq-sdk: 0.3.3(encoding@0.1.13)
       zod: 3.23.8
       zod-to-json-schema: 3.23.1(zod@3.23.8)
@@ -11765,11 +11575,11 @@ snapshots:
       - langchain
       - openai
 
-  '@langchain/mistralai@0.0.22(encoding@0.1.13)(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))':
+  '@langchain/mistralai@0.0.27(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))':
     dependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      '@mistralai/mistralai': 0.1.3(encoding@0.1.13)
-      uuid: 9.0.1
+      '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
+      '@mistralai/mistralai': 0.4.0(encoding@0.1.13)
+      uuid: 10.0.0
       zod: 3.23.8
       zod-to-json-schema: 3.23.1(zod@3.23.8)
     transitivePeerDependencies:
@@ -11777,52 +11587,39 @@ snapshots:
       - langchain
       - openai
 
-  '@langchain/openai@0.0.33(encoding@0.1.13)(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))':
+  '@langchain/ollama@0.0.2(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))':
     dependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.52.2(encoding@0.1.13))
+      '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
+      ollama: 0.5.8
+      uuid: 10.0.0
+    transitivePeerDependencies:
+      - langchain
+      - openai
+
+  '@langchain/openai@0.2.5(encoding@0.1.13)(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))':
+    dependencies:
+      '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
       js-tiktoken: 1.0.12
-      openai: 4.52.2(encoding@0.1.13)
+      openai: 4.53.0(encoding@0.1.13)
       zod: 3.23.8
       zod-to-json-schema: 3.23.1(zod@3.23.8)
     transitivePeerDependencies:
       - encoding
       - langchain
 
-  '@langchain/openai@0.0.33(encoding@0.1.13)(langchain@0.2.3(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))':
+  '@langchain/pinecone@0.0.8(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))':
     dependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.3(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.52.2(encoding@0.1.13))
-      js-tiktoken: 1.0.12
-      openai: 4.52.2(encoding@0.1.13)
-      zod: 3.23.8
-      zod-to-json-schema: 3.23.1(zod@3.23.8)
-    transitivePeerDependencies:
-      - encoding
-      - langchain
-
-  '@langchain/openai@0.1.3(encoding@0.1.13)(langchain@0.2.3(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))':
-    dependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.3(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.52.2(encoding@0.1.13))
-      js-tiktoken: 1.0.12
-      openai: 4.52.2(encoding@0.1.13)
-      zod: 3.23.8
-      zod-to-json-schema: 3.23.1(zod@3.23.8)
-    transitivePeerDependencies:
-      - encoding
-      - langchain
-
-  '@langchain/pinecone@0.0.6(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))':
-    dependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      '@pinecone-database/pinecone': 2.2.2
+      '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
+      '@pinecone-database/pinecone': 3.0.0
       flat: 5.0.2
-      uuid: 9.0.1
+      uuid: 10.0.0
     transitivePeerDependencies:
       - langchain
       - openai
 
-  '@langchain/qdrant@0.0.5(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))(typescript@5.5.4)':
+  '@langchain/qdrant@0.0.5(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))(typescript@5.5.4)':
     dependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
+      '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
       '@qdrant/js-client-rest': 1.9.0(typescript@5.5.4)
       uuid: 9.0.1
     transitivePeerDependencies:
@@ -11830,33 +11627,17 @@ snapshots:
       - openai
       - typescript
 
-  '@langchain/redis@0.0.5(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))':
+  '@langchain/redis@0.0.5(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))':
     dependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
+      '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
       redis: 4.6.14
     transitivePeerDependencies:
       - langchain
       - openai
 
-  '@langchain/textsplitters@0.0.2(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))':
+  '@langchain/textsplitters@0.0.3(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))':
     dependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      js-tiktoken: 1.0.12
-    transitivePeerDependencies:
-      - langchain
-      - openai
-
-  '@langchain/textsplitters@0.0.3(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))':
-    dependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      js-tiktoken: 1.0.12
-    transitivePeerDependencies:
-      - langchain
-      - openai
-
-  '@langchain/textsplitters@0.0.3(langchain@0.2.3(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))':
-    dependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.3(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
+      '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
       js-tiktoken: 1.0.12
     transitivePeerDependencies:
       - langchain
@@ -11877,7 +11658,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@mistralai/mistralai@0.1.3(encoding@0.1.13)':
+  '@mistralai/mistralai@0.4.0(encoding@0.1.13)':
     dependencies:
       node-fetch: 2.7.0(encoding@0.1.13)
     transitivePeerDependencies:
@@ -11907,13 +11688,13 @@ snapshots:
   '@msgpackr-extract/msgpackr-extract-win32-x64@3.0.3':
     optional: true
 
-  '@n8n/client-oauth2@0.19.0':
+  '@n8n/client-oauth2@0.20.0':
     dependencies:
       axios: 1.6.7
     transitivePeerDependencies:
       - debug
 
-  '@n8n/config@1.2.0':
+  '@n8n/config@1.3.0':
     dependencies:
       reflect-metadata: 0.2.2
       typedi: 0.10.0
@@ -11935,33 +11716,34 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@n8n/n8n-nodes-langchain@1.52.0(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-s3@3.606.0)(@azure/storage-blob@12.23.0)(@google-cloud/storage@6.12.0(encoding@0.1.13))(@sentry/node@7.87.0)(@smithy/eventstream-codec@2.2.0)(@smithy/protocol-http@3.3.0)(@smithy/signature-v4@2.3.0)(@smithy/util-utf8@2.3.0)(@supabase/postgrest-js@1.15.2)(asn1.js@5.4.1)(axios@1.6.7)(canvas@2.11.2(encoding@0.1.13))(crypto-js@4.2.0)(date-fns@3.6.0)(encoding@0.1.13)(fast-xml-parser@4.4.0)(gcp-metadata@5.3.0(encoding@0.1.13))(google-auth-library@9.11.0(encoding@0.1.13))(handlebars@4.7.8)(ignore@5.3.1)(ioredis@5.3.2)(jsonwebtoken@9.0.2)(mssql@10.0.2)(mysql2@3.10.0)(promise-ftp-common@1.1.5)(socks@2.8.3)(ts-node@10.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@20.14.14)(typescript@5.5.4))(ts-toolbelt@9.6.0)(typescript@5.5.4)(ws@8.17.1)':
+  '@n8n/n8n-nodes-langchain@1.53.2(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-s3@3.606.0)(@azure/storage-blob@12.23.0)(@google-cloud/storage@6.12.0(encoding@0.1.13))(@sentry/node@7.87.0)(@smithy/eventstream-codec@2.2.0)(@smithy/protocol-http@3.3.0)(@smithy/signature-v4@2.3.0)(@smithy/util-utf8@2.3.0)(@supabase/postgrest-js@1.15.2)(asn1.js@5.4.1)(axios@1.6.7)(canvas@2.11.2(encoding@0.1.13))(crypto-js@4.2.0)(date-fns@3.6.0)(encoding@0.1.13)(fast-xml-parser@4.4.0)(gcp-metadata@5.3.0(encoding@0.1.13))(google-auth-library@9.11.0(encoding@0.1.13))(handlebars@4.7.8)(ignore@5.3.1)(ioredis@5.3.2)(jsonwebtoken@9.0.2)(mssql@10.0.2)(mysql2@3.10.0)(promise-ftp-common@1.1.5)(socks@2.8.3)(ts-node@10.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@20.14.14)(typescript@5.5.4))(ts-toolbelt@9.6.0)(typescript@5.5.4)(ws@8.17.1)':
     dependencies:
       '@aws-sdk/client-bedrock-runtime': 3.535.0
       '@aws-sdk/credential-provider-node': 3.535.0
-      '@getzep/zep-cloud': 1.0.6(culd7vt2s64nkprka4ub3kve7i)
+      '@getzep/zep-cloud': 1.0.11(@langchain/core@0.2.18)(encoding@0.1.13)(langchain@0.2.11)
       '@getzep/zep-js': 0.9.0
       '@google-ai/generativelanguage': 2.5.0(encoding@0.1.13)
       '@google-cloud/resource-manager': 5.3.0(encoding@0.1.13)
       '@google/generative-ai': 0.11.4
       '@huggingface/inference': 2.7.0
-      '@langchain/anthropic': 0.1.21(encoding@0.1.13)(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      '@langchain/cohere': 0.0.10(encoding@0.1.13)(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      '@langchain/community': 0.2.13(73q7bxjbh6v4n64hbovxzthote)
-      '@langchain/core': 0.2.9(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      '@langchain/google-genai': 0.0.16(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))(zod@3.23.8)
-      '@langchain/google-vertexai': 0.0.19(encoding@0.1.13)(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))(zod@3.23.8)
-      '@langchain/groq': 0.0.12(encoding@0.1.13)(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      '@langchain/mistralai': 0.0.22(encoding@0.1.13)(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      '@langchain/openai': 0.0.33(encoding@0.1.13)(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))
-      '@langchain/pinecone': 0.0.6(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      '@langchain/qdrant': 0.0.5(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))(typescript@5.5.4)
-      '@langchain/redis': 0.0.5(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      '@langchain/textsplitters': 0.0.2(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
+      '@langchain/anthropic': 0.2.9(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
+      '@langchain/cohere': 0.0.10(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
+      '@langchain/community': 0.2.20(kmxknpbln5xdhfd7v2czqglpq4)
+      '@langchain/core': 0.2.18(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
+      '@langchain/google-genai': 0.0.23(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))(zod@3.23.8)
+      '@langchain/google-vertexai': 0.0.21(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))(zod@3.23.8)
+      '@langchain/groq': 0.0.15(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
+      '@langchain/mistralai': 0.0.27(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
+      '@langchain/ollama': 0.0.2(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
+      '@langchain/openai': 0.2.5(encoding@0.1.13)(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))
+      '@langchain/pinecone': 0.0.8(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
+      '@langchain/qdrant': 0.0.5(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))(typescript@5.5.4)
+      '@langchain/redis': 0.0.5(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
+      '@langchain/textsplitters': 0.0.3(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
       '@mozilla/readability': 0.5.0
       '@n8n/typeorm': 0.3.20-10(@sentry/node@7.87.0)(ioredis@5.3.2)(mssql@10.0.2)(mysql2@3.10.0)(pg@8.11.3)(redis@4.6.12)(sqlite3@5.1.7)(ts-node@10.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@20.14.14)(typescript@5.5.4))
-      '@n8n/vm2': 3.9.20
-      '@pinecone-database/pinecone': 2.2.1
+      '@n8n/vm2': 3.9.25
+      '@pinecone-database/pinecone': 3.0.0
       '@qdrant/js-client-rest': 1.9.0(typescript@5.5.4)
       '@supabase/supabase-js': 2.43.4
       '@types/pg': 8.11.6
@@ -11976,12 +11758,12 @@ snapshots:
       html-to-text: 9.0.5
       jsdom: 23.2.0(canvas@2.11.2(encoding@0.1.13))
       json-schema-to-zod: 2.1.0
-      langchain: 0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1)
+      langchain: 0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1)
       lodash: 4.17.21
       mammoth: 1.7.2
-      n8n-nodes-base: 1.52.0(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
-      n8n-workflow: 1.51.0
-      openai: 4.47.1(encoding@0.1.13)
+      n8n-nodes-base: 1.53.2(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
+      n8n-workflow: 1.52.1
+      openai: 4.53.0(encoding@0.1.13)
       pdf-parse: 1.1.1
       pg: 8.11.3
       redis: 4.6.12
@@ -12014,6 +11796,9 @@ snapshots:
       - '@google-cloud/spanner'
       - '@google-cloud/storage'
       - '@gradientai/nodejs-sdk'
+      - '@langchain/aws'
+      - '@langchain/google-vertexai-web'
+      - '@langchain/langgraph'
       - '@layerup/layerup-security'
       - '@libsql/client'
       - '@mendable/firecrawl-js'
@@ -12144,6 +11929,13 @@ snapshots:
       esprima-next: 5.8.4
       recast: 0.22.0
 
+  '@n8n/tournament@1.0.3':
+    dependencies:
+      '@n8n_io/riot-tmpl': 4.0.1
+      ast-types: 0.16.1
+      esprima-next: 5.8.4
+      recast: 0.22.0
+
   '@n8n/typeorm@0.3.20-10(@sentry/node@7.87.0)(ioredis@5.3.2)(mssql@10.0.2)(mysql2@3.10.0)(pg@8.11.3)(redis@4.6.12)(sqlite3@5.1.7)(ts-node@10.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@20.14.14)(typescript@5.5.4))':
     dependencies:
       '@n8n/p-retry': 6.2.0-2
@@ -12178,6 +11970,11 @@ snapshots:
   '@n8n/vm2@3.9.20':
     dependencies:
       acorn: 8.12.0
+      acorn-walk: 8.3.3
+
+  '@n8n/vm2@3.9.25':
+    dependencies:
+      acorn: 8.12.1
       acorn-walk: 8.3.3
 
   '@n8n_io/license-sdk@2.13.0':
@@ -12627,14 +12424,7 @@ snapshots:
       esquery: 1.5.0
       typescript: 5.5.4
 
-  '@pinecone-database/pinecone@2.2.1':
-    dependencies:
-      '@sinclair/typebox': 0.29.6
-      ajv: 8.16.0
-      cross-fetch: 3.1.8(encoding@0.1.13)
-      encoding: 0.1.13
-
-  '@pinecone-database/pinecone@2.2.2':
+  '@pinecone-database/pinecone@3.0.0':
     dependencies:
       '@sinclair/typebox': 0.29.6
       ajv: 8.16.0
@@ -17404,21 +17194,21 @@ snapshots:
 
   kuler@2.0.0: {}
 
-  langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1):
+  langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1):
     dependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      '@langchain/openai': 0.0.33(encoding@0.1.13)(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))
-      '@langchain/textsplitters': 0.0.3(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
+      '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
+      '@langchain/openai': 0.2.5(encoding@0.1.13)(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))
+      '@langchain/textsplitters': 0.0.3(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
       binary-extensions: 2.3.0
       js-tiktoken: 1.0.12
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
       langchainhub: 0.0.11
-      langsmith: 0.1.34(6ij7r5czklknuwz5pbwkqpmidq)
+      langsmith: 0.1.40(dwd4n3qe4r3oa5m6gzdwuaowxq)
       ml-distance: 4.0.1
       openapi-types: 12.1.3
       p-retry: 4.6.2
-      uuid: 9.0.1
+      uuid: 10.0.0
       yaml: 2.4.5
       zod: 3.23.8
       zod-to-json-schema: 3.23.1(zod@3.23.8)
@@ -17426,51 +17216,15 @@ snapshots:
       '@aws-sdk/client-s3': 3.606.0
       '@aws-sdk/credential-provider-node': 3.535.0
       '@azure/storage-blob': 12.23.0
-      '@google-ai/generativelanguage': 2.5.0(encoding@0.1.13)
-      '@pinecone-database/pinecone': 2.2.1
-      '@supabase/supabase-js': 2.43.4
-      '@xata.io/client': 0.28.4(typescript@5.5.4)
-      axios: 1.6.7
-      cheerio: 1.0.0-rc.12
-      d3-dsv: 2.0.0
-      epub2: 3.0.2(ts-toolbelt@9.6.0)
-      fast-xml-parser: 4.4.0
-      handlebars: 4.7.8
-      html-to-text: 9.0.5
-      ignore: 5.3.1
-      ioredis: 5.3.2
-      jsdom: 23.2.0(canvas@2.11.2(encoding@0.1.13))
-      mammoth: 1.7.2
-      pdf-parse: 1.1.1
-      redis: 4.6.12
-      ws: 8.17.1
-    transitivePeerDependencies:
-      - encoding
-      - openai
-
-  langchain@0.2.3(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1):
-    dependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.3(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      '@langchain/openai': 0.0.33(encoding@0.1.13)(langchain@0.2.3(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))
-      '@langchain/textsplitters': 0.0.3(langchain@0.2.3(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      binary-extensions: 2.3.0
-      js-tiktoken: 1.0.12
-      js-yaml: 4.1.0
-      jsonpointer: 5.0.1
-      langchainhub: 0.0.11
-      langsmith: 0.1.34(rry6nug6gwlc7sqfmofcczr554)
-      ml-distance: 4.0.1
-      openapi-types: 12.1.3
-      p-retry: 4.6.2
-      uuid: 9.0.1
-      yaml: 2.4.5
-      zod: 3.23.8
-      zod-to-json-schema: 3.23.1(zod@3.23.8)
-    optionalDependencies:
-      '@aws-sdk/client-s3': 3.606.0
-      '@aws-sdk/credential-provider-node': 3.535.0
-      '@azure/storage-blob': 12.23.0
-      '@pinecone-database/pinecone': 2.2.1
+      '@langchain/anthropic': 0.2.9(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
+      '@langchain/cohere': 0.0.10(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
+      '@langchain/community': 0.2.20(kmxknpbln5xdhfd7v2czqglpq4)
+      '@langchain/google-genai': 0.0.23(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))(zod@3.23.8)
+      '@langchain/google-vertexai': 0.0.21(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))(zod@3.23.8)
+      '@langchain/groq': 0.0.15(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
+      '@langchain/mistralai': 0.0.27(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
+      '@langchain/ollama': 0.0.2(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
+      '@pinecone-database/pinecone': 3.0.0
       '@supabase/supabase-js': 2.43.4
       '@xata.io/client': 0.28.4(typescript@5.5.4)
       axios: 1.6.7
@@ -17493,72 +17247,7 @@ snapshots:
 
   langchainhub@0.0.11: {}
 
-  langsmith@0.1.34(6ij7r5czklknuwz5pbwkqpmidq):
-    dependencies:
-      '@types/uuid': 9.0.8
-      commander: 10.0.1
-      lodash.set: 4.3.2
-      p-queue: 6.6.2
-      p-retry: 4.6.2
-      uuid: 9.0.1
-    optionalDependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      langchain: 0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1)
-      openai: 4.47.1(encoding@0.1.13)
-
-  langsmith@0.1.34(mbkyk5ufjso2qyojlonaswqyii):
-    dependencies:
-      '@types/uuid': 9.0.8
-      commander: 10.0.1
-      lodash.set: 4.3.2
-      p-queue: 6.6.2
-      p-retry: 4.6.2
-      uuid: 9.0.1
-    optionalDependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.3(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.52.2(encoding@0.1.13))
-      langchain: 0.2.3(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1)
-      openai: 4.52.2(encoding@0.1.13)
-
-  langsmith@0.1.34(mipiihryghuqcujkmavhf76vtu):
-    dependencies:
-      '@types/uuid': 9.0.8
-      commander: 10.0.1
-      lodash.set: 4.3.2
-      p-queue: 6.6.2
-      p-retry: 4.6.2
-      uuid: 9.0.1
-    optionalDependencies:
-      '@langchain/core': 0.2.9(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      langchain: 0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1)
-      openai: 4.47.1(encoding@0.1.13)
-
-  langsmith@0.1.34(o3fi3z3secgpv3jxtimuib2xaa):
-    dependencies:
-      '@types/uuid': 9.0.8
-      commander: 10.0.1
-      lodash.set: 4.3.2
-      p-queue: 6.6.2
-      p-retry: 4.6.2
-      uuid: 9.0.1
-    optionalDependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.52.2(encoding@0.1.13))
-      langchain: 0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1)
-      openai: 4.52.2(encoding@0.1.13)
-
-  langsmith@0.1.34(rry6nug6gwlc7sqfmofcczr554):
-    dependencies:
-      '@types/uuid': 9.0.8
-      commander: 10.0.1
-      lodash.set: 4.3.2
-      p-queue: 6.6.2
-      p-retry: 4.6.2
-      uuid: 9.0.1
-    optionalDependencies:
-      '@langchain/core': 0.2.11(langchain@0.2.3(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      langchain: 0.2.3(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1)
-      openai: 4.47.1(encoding@0.1.13)
-
-  langsmith@0.1.40(efxqrfdzo73sq37w3cbdql73oa):
+  langsmith@0.1.40(@langchain/core@0.2.18(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13)))(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13)):
     dependencies:
       '@types/uuid': 9.0.8
       commander: 10.0.1
@@ -17567,9 +17256,22 @@ snapshots:
       semver: 7.6.3
       uuid: 9.0.1
     optionalDependencies:
-      '@langchain/core': 0.2.20(langchain@0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.47.1(encoding@0.1.13))
-      langchain: 0.2.2(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@google-ai/generativelanguage@2.5.0(encoding@0.1.13))(@pinecone-database/pinecone@2.2.1)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.47.1(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1)
-      openai: 4.47.1(encoding@0.1.13)
+      '@langchain/core': 0.2.18(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
+      langchain: 0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1)
+      openai: 4.53.0(encoding@0.1.13)
+
+  langsmith@0.1.40(dwd4n3qe4r3oa5m6gzdwuaowxq):
+    dependencies:
+      '@types/uuid': 9.0.8
+      commander: 10.0.1
+      p-queue: 6.6.2
+      p-retry: 4.6.2
+      semver: 7.6.3
+      uuid: 9.0.1
+    optionalDependencies:
+      '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
+      langchain: 0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1)
+      openai: 4.53.0(encoding@0.1.13)
 
   ldapts@4.2.6:
     dependencies:
@@ -17687,8 +17389,6 @@ snapshots:
   lodash.mergewith@4.6.2: {}
 
   lodash.once@4.1.1: {}
-
-  lodash.set@4.3.2: {}
 
   lodash.snakecase@4.1.1: {}
 
@@ -18108,9 +17808,9 @@ snapshots:
       seq-queue: 0.0.5
       sqlstring: 2.3.3
 
-  n8n-core@1.52.0:
+  n8n-core@1.53.1:
     dependencies:
-      '@n8n/client-oauth2': 0.19.0
+      '@n8n/client-oauth2': 0.20.0
       aws4: 1.11.0
       axios: 1.6.7
       concat-stream: 2.0.0
@@ -18121,7 +17821,7 @@ snapshots:
       lodash: 4.17.21
       luxon: 3.4.4
       mime-types: 2.1.35
-      n8n-workflow: 1.51.0
+      n8n-workflow: 1.52.1
       oauth-1.0a: 2.2.6
       p-cancelable: 2.1.1
       pretty-bytes: 5.6.0
@@ -18133,93 +17833,7 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  n8n-editor-ui@1.52.2: {}
-
-  n8n-nodes-base@1.52.0(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.22.4):
-    dependencies:
-      '@kafkajs/confluent-schema-registry': 1.0.6
-      '@n8n/imap': 0.6.0
-      '@n8n/vm2': 3.9.20
-      alasql: 4.5.1(encoding@0.1.13)
-      amqplib: 0.10.3
-      aws4: 1.11.0
-      basic-auth: 2.0.1
-      change-case: 4.1.2
-      cheerio: 1.0.0-rc.6
-      chokidar: 3.5.2
-      cron: 3.1.7
-      csv-parse: 5.5.0
-      currency-codes: 2.1.0
-      eventsource: 2.0.2
-      fast-glob: 3.2.12
-      fflate: 0.7.4
-      get-system-fonts: 2.0.2
-      gm: 1.25.0
-      html-to-text: 9.0.5
-      iconv-lite: 0.6.3
-      ics: 2.40.0
-      isbot: 3.6.13
-      iso-639-1: 2.1.15
-      js-nacl: 1.4.0
-      jsonwebtoken: 9.0.2
-      kafkajs: 1.16.0
-      ldapts: 4.2.6
-      lodash: 4.17.21
-      lossless-json: 1.0.5
-      luxon: 3.3.0
-      mailparser: 3.6.7
-      minifaker: 1.34.1
-      moment-timezone: 0.5.37
-      mongodb: 6.3.0(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.3)
-      mqtt: 5.7.2
-      mssql: 10.0.2
-      mysql2: 3.10.0
-      n8n-workflow: 1.51.0
-      node-html-markdown: 1.2.0
-      node-ssh: 13.2.0
-      nodemailer: 6.9.9
-      otpauth: 9.1.1
-      pdfjs-dist: 2.16.105
-      pg: 8.11.3
-      pg-promise: 10.15.4
-      promise-ftp: 1.3.5(promise-ftp-common@1.1.5)
-      pyodide: 0.23.4(encoding@0.1.13)
-      redis: 4.6.14
-      rfc2047: 4.0.1
-      rhea: 1.0.24
-      rrule: 2.8.1
-      rss-parser: 3.13.0
-      semver: 7.5.4
-      showdown: 2.1.0
-      simple-git: 3.17.0
-      snowflake-sdk: 1.9.2(asn1.js@5.4.1)(encoding@0.1.13)
-      ssh2-sftp-client: 7.2.3
-      tmp-promise: 3.0.3
-      ts-ics: 1.4.0(date-fns@3.6.0)(lodash@4.17.21)(zod@3.22.4)
-      typedi: 0.10.0
-      uuid: 8.3.2
-      xlsx: https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz
-      xml2js: 0.6.2
-    transitivePeerDependencies:
-      - '@aws-sdk/credential-providers'
-      - '@mongodb-js/zstd'
-      - asn1.js
-      - aws-crt
-      - bufferutil
-      - date-fns
-      - debug
-      - encoding
-      - gcp-metadata
-      - kerberos
-      - mongodb-client-encryption
-      - pg-native
-      - promise-ftp-common
-      - snappy
-      - socks
-      - supports-color
-      - utf-8-validate
-      - worker-loader
-      - zod
+  n8n-editor-ui@1.53.1: {}
 
   n8n-nodes-base@1.52.0(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8):
     dependencies:
@@ -18307,6 +17921,178 @@ snapshots:
       - worker-loader
       - zod
 
+  n8n-nodes-base@1.53.2(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.22.4):
+    dependencies:
+      '@kafkajs/confluent-schema-registry': 1.0.6
+      '@n8n/imap': 0.6.0
+      '@n8n/vm2': 3.9.25
+      alasql: 4.5.1(encoding@0.1.13)
+      amqplib: 0.10.3
+      aws4: 1.11.0
+      basic-auth: 2.0.1
+      change-case: 4.1.2
+      cheerio: 1.0.0-rc.6
+      chokidar: 3.5.2
+      cron: 3.1.7
+      csv-parse: 5.5.0
+      currency-codes: 2.1.0
+      eventsource: 2.0.2
+      fast-glob: 3.2.12
+      fflate: 0.7.4
+      get-system-fonts: 2.0.2
+      gm: 1.25.0
+      html-to-text: 9.0.5
+      iconv-lite: 0.6.3
+      ics: 2.40.0
+      isbot: 3.6.13
+      iso-639-1: 2.1.15
+      js-nacl: 1.4.0
+      jsonwebtoken: 9.0.2
+      kafkajs: 1.16.0
+      ldapts: 4.2.6
+      lodash: 4.17.21
+      lossless-json: 1.0.5
+      luxon: 3.4.4
+      mailparser: 3.6.7
+      minifaker: 1.34.1
+      moment-timezone: 0.5.37
+      mongodb: 6.3.0(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.3)
+      mqtt: 5.7.2
+      mssql: 10.0.2
+      mysql2: 3.10.0
+      n8n-workflow: 1.52.1
+      node-html-markdown: 1.2.0
+      node-ssh: 13.2.0
+      nodemailer: 6.9.9
+      otpauth: 9.1.1
+      pdfjs-dist: 2.16.105
+      pg: 8.11.3
+      pg-promise: 10.15.4
+      promise-ftp: 1.3.5(promise-ftp-common@1.1.5)
+      pyodide: 0.23.4(encoding@0.1.13)
+      redis: 4.6.14
+      rfc2047: 4.0.1
+      rhea: 1.0.24
+      rrule: 2.8.1
+      rss-parser: 3.13.0
+      semver: 7.5.4
+      showdown: 2.1.0
+      simple-git: 3.17.0
+      snowflake-sdk: 1.9.2(asn1.js@5.4.1)(encoding@0.1.13)
+      ssh2-sftp-client: 7.2.3
+      tmp-promise: 3.0.3
+      ts-ics: 1.4.0(date-fns@3.6.0)(lodash@4.17.21)(zod@3.22.4)
+      typedi: 0.10.0
+      uuid: 8.3.2
+      xlsx: https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz
+      xml2js: 0.6.2
+    transitivePeerDependencies:
+      - '@aws-sdk/credential-providers'
+      - '@mongodb-js/zstd'
+      - asn1.js
+      - aws-crt
+      - bufferutil
+      - date-fns
+      - debug
+      - encoding
+      - gcp-metadata
+      - kerberos
+      - mongodb-client-encryption
+      - pg-native
+      - promise-ftp-common
+      - snappy
+      - socks
+      - supports-color
+      - utf-8-validate
+      - worker-loader
+      - zod
+
+  n8n-nodes-base@1.53.2(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8):
+    dependencies:
+      '@kafkajs/confluent-schema-registry': 1.0.6
+      '@n8n/imap': 0.6.0
+      '@n8n/vm2': 3.9.25
+      alasql: 4.5.1(encoding@0.1.13)
+      amqplib: 0.10.3
+      aws4: 1.11.0
+      basic-auth: 2.0.1
+      change-case: 4.1.2
+      cheerio: 1.0.0-rc.6
+      chokidar: 3.5.2
+      cron: 3.1.7
+      csv-parse: 5.5.0
+      currency-codes: 2.1.0
+      eventsource: 2.0.2
+      fast-glob: 3.2.12
+      fflate: 0.7.4
+      get-system-fonts: 2.0.2
+      gm: 1.25.0
+      html-to-text: 9.0.5
+      iconv-lite: 0.6.3
+      ics: 2.40.0
+      isbot: 3.6.13
+      iso-639-1: 2.1.15
+      js-nacl: 1.4.0
+      jsonwebtoken: 9.0.2
+      kafkajs: 1.16.0
+      ldapts: 4.2.6
+      lodash: 4.17.21
+      lossless-json: 1.0.5
+      luxon: 3.4.4
+      mailparser: 3.6.7
+      minifaker: 1.34.1
+      moment-timezone: 0.5.37
+      mongodb: 6.3.0(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.3)
+      mqtt: 5.7.2
+      mssql: 10.0.2
+      mysql2: 3.10.0
+      n8n-workflow: 1.52.1
+      node-html-markdown: 1.2.0
+      node-ssh: 13.2.0
+      nodemailer: 6.9.9
+      otpauth: 9.1.1
+      pdfjs-dist: 2.16.105
+      pg: 8.11.3
+      pg-promise: 10.15.4
+      promise-ftp: 1.3.5(promise-ftp-common@1.1.5)
+      pyodide: 0.23.4(encoding@0.1.13)
+      redis: 4.6.14
+      rfc2047: 4.0.1
+      rhea: 1.0.24
+      rrule: 2.8.1
+      rss-parser: 3.13.0
+      semver: 7.5.4
+      showdown: 2.1.0
+      simple-git: 3.17.0
+      snowflake-sdk: 1.9.2(asn1.js@5.4.1)(encoding@0.1.13)
+      ssh2-sftp-client: 7.2.3
+      tmp-promise: 3.0.3
+      ts-ics: 1.4.0(date-fns@3.6.0)(lodash@4.17.21)(zod@3.23.8)
+      typedi: 0.10.0
+      uuid: 8.3.2
+      xlsx: https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz
+      xml2js: 0.6.2
+    transitivePeerDependencies:
+      - '@aws-sdk/credential-providers'
+      - '@mongodb-js/zstd'
+      - asn1.js
+      - aws-crt
+      - bufferutil
+      - date-fns
+      - debug
+      - encoding
+      - gcp-metadata
+      - kerberos
+      - mongodb-client-encryption
+      - pg-native
+      - promise-ftp-common
+      - snappy
+      - socks
+      - supports-color
+      - utf-8-validate
+      - worker-loader
+      - zod
+
   n8n-workflow@1.51.0:
     dependencies:
       '@n8n/tournament': 1.0.2
@@ -18330,14 +18116,38 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  n8n@1.52.2(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-s3@3.606.0)(@azure/storage-blob@12.23.0)(@google-cloud/storage@6.12.0(encoding@0.1.13))(@smithy/eventstream-codec@2.2.0)(@smithy/protocol-http@3.3.0)(@smithy/signature-v4@2.3.0)(@smithy/util-utf8@2.3.0)(@supabase/postgrest-js@1.15.2)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(chokidar@3.5.2)(crypto-js@4.2.0)(date-fns@3.6.0)(encoding@0.1.13)(fast-xml-parser@4.4.0)(gcp-metadata@5.3.0(encoding@0.1.13))(google-auth-library@9.11.0(encoding@0.1.13))(ignore@5.3.1)(mssql@10.0.2)(promise-ftp-common@1.1.5)(redis@4.6.12)(socks@2.8.3)(ts-node@10.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@20.14.14)(typescript@5.5.4))(ts-toolbelt@9.6.0)(tslib@2.6.3)(typescript@5.5.4):
+  n8n-workflow@1.52.1:
+    dependencies:
+      '@n8n/tournament': 1.0.3
+      '@n8n_io/riot-tmpl': 4.0.0
+      ast-types: 0.15.2
+      axios: 1.6.7
+      callsites: 3.1.0
+      deep-equal: 2.2.0
+      esprima-next: 5.8.4
+      form-data: 4.0.0
+      jmespath: 0.16.0
+      js-base64: 3.7.2
+      jssha: 3.3.1
+      lodash: 4.17.21
+      luxon: 3.4.4
+      md5: 2.3.0
+      recast: 0.21.5
+      title-case: 3.0.3
+      transliteration: 2.3.5
+      xml2js: 0.6.2
+    transitivePeerDependencies:
+      - debug
+
+  n8n@1.53.2(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-s3@3.606.0)(@azure/storage-blob@12.23.0)(@google-cloud/storage@6.12.0(encoding@0.1.13))(@smithy/eventstream-codec@2.2.0)(@smithy/protocol-http@3.3.0)(@smithy/signature-v4@2.3.0)(@smithy/util-utf8@2.3.0)(@supabase/postgrest-js@1.15.2)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(chokidar@3.5.2)(crypto-js@4.2.0)(date-fns@3.6.0)(encoding@0.1.13)(fast-xml-parser@4.4.0)(gcp-metadata@5.3.0(encoding@0.1.13))(google-auth-library@9.11.0(encoding@0.1.13))(ignore@5.3.1)(mssql@10.0.2)(promise-ftp-common@1.1.5)(redis@4.6.12)(socks@2.8.3)(ts-node@10.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@20.14.14)(typescript@5.5.4))(ts-toolbelt@9.6.0)(tslib@2.6.3)(typescript@5.5.4):
     dependencies:
       '@azure/identity': 4.4.1
       '@azure/keyvault-secrets': 4.8.0
-      '@n8n/client-oauth2': 0.19.0
-      '@n8n/config': 1.2.0
+      '@google-cloud/secret-manager': 5.6.0(encoding@0.1.13)
+      '@n8n/client-oauth2': 0.20.0
+      '@n8n/config': 1.3.0
       '@n8n/localtunnel': 2.1.0
-      '@n8n/n8n-nodes-langchain': 1.52.0(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-s3@3.606.0)(@azure/storage-blob@12.23.0)(@google-cloud/storage@6.12.0(encoding@0.1.13))(@sentry/node@7.87.0)(@smithy/eventstream-codec@2.2.0)(@smithy/protocol-http@3.3.0)(@smithy/signature-v4@2.3.0)(@smithy/util-utf8@2.3.0)(@supabase/postgrest-js@1.15.2)(asn1.js@5.4.1)(axios@1.6.7)(canvas@2.11.2(encoding@0.1.13))(crypto-js@4.2.0)(date-fns@3.6.0)(encoding@0.1.13)(fast-xml-parser@4.4.0)(gcp-metadata@5.3.0(encoding@0.1.13))(google-auth-library@9.11.0(encoding@0.1.13))(handlebars@4.7.8)(ignore@5.3.1)(ioredis@5.3.2)(jsonwebtoken@9.0.2)(mssql@10.0.2)(mysql2@3.10.0)(promise-ftp-common@1.1.5)(socks@2.8.3)(ts-node@10.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@20.14.14)(typescript@5.5.4))(ts-toolbelt@9.6.0)(typescript@5.5.4)(ws@8.17.1)
+      '@n8n/n8n-nodes-langchain': 1.53.2(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-s3@3.606.0)(@azure/storage-blob@12.23.0)(@google-cloud/storage@6.12.0(encoding@0.1.13))(@sentry/node@7.87.0)(@smithy/eventstream-codec@2.2.0)(@smithy/protocol-http@3.3.0)(@smithy/signature-v4@2.3.0)(@smithy/util-utf8@2.3.0)(@supabase/postgrest-js@1.15.2)(asn1.js@5.4.1)(axios@1.6.7)(canvas@2.11.2(encoding@0.1.13))(crypto-js@4.2.0)(date-fns@3.6.0)(encoding@0.1.13)(fast-xml-parser@4.4.0)(gcp-metadata@5.3.0(encoding@0.1.13))(google-auth-library@9.11.0(encoding@0.1.13))(handlebars@4.7.8)(ignore@5.3.1)(ioredis@5.3.2)(jsonwebtoken@9.0.2)(mssql@10.0.2)(mysql2@3.10.0)(promise-ftp-common@1.1.5)(socks@2.8.3)(ts-node@10.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@20.14.14)(typescript@5.5.4))(ts-toolbelt@9.6.0)(typescript@5.5.4)(ws@8.17.1)
       '@n8n/permissions': 0.11.0
       '@n8n/typeorm': 0.3.20-10(@sentry/node@7.87.0)(ioredis@5.3.2)(mssql@10.0.2)(mysql2@3.10.0)(pg@8.11.3)(redis@4.6.12)(sqlite3@5.1.7)(ts-node@10.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@20.14.14)(typescript@5.5.4))
       '@n8n_io/license-sdk': 2.13.0
@@ -18380,12 +18190,12 @@ snapshots:
       jsonwebtoken: 9.0.2
       ldapts: 4.2.6
       lodash: 4.17.21
-      luxon: 3.3.0
+      luxon: 3.4.4
       mysql2: 3.10.0
-      n8n-core: 1.52.0
-      n8n-editor-ui: 1.52.2
-      n8n-nodes-base: 1.52.0(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.22.4)
-      n8n-workflow: 1.51.0
+      n8n-core: 1.53.1
+      n8n-editor-ui: 1.53.1
+      n8n-nodes-base: 1.53.2(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.22.4)
+      n8n-workflow: 1.52.1
       nanoid: 3.3.6
       nodemailer: 6.9.9
       oauth-1.0a: 2.2.6
@@ -18446,6 +18256,9 @@ snapshots:
       - '@google-cloud/spanner'
       - '@google-cloud/storage'
       - '@gradientai/nodejs-sdk'
+      - '@langchain/aws'
+      - '@langchain/google-vertexai-web'
+      - '@langchain/langgraph'
       - '@layerup/layerup-security'
       - '@libsql/client'
       - '@mendable/firecrawl-js'
@@ -18798,6 +18611,10 @@ snapshots:
 
   obuf@1.1.2: {}
 
+  ollama@0.5.8:
+    dependencies:
+      whatwg-fetch: 3.6.20
+
   on-exit-leak-free@0.2.0: {}
 
   on-exit-leak-free@2.1.2: {}
@@ -18839,20 +18656,7 @@ snapshots:
       is-docker: 2.2.1
       is-wsl: 2.2.0
 
-  openai@4.47.1(encoding@0.1.13):
-    dependencies:
-      '@types/node': 18.19.39
-      '@types/node-fetch': 2.6.11
-      abort-controller: 3.0.0
-      agentkeepalive: 4.5.0
-      form-data-encoder: 1.7.2
-      formdata-node: 4.4.1
-      node-fetch: 2.7.0(encoding@0.1.13)
-      web-streams-polyfill: 3.3.3
-    transitivePeerDependencies:
-      - encoding
-
-  openai@4.52.2(encoding@0.1.13):
+  openai@4.53.0(encoding@0.1.13):
     dependencies:
       '@types/node': 18.19.39
       '@types/node-fetch': 2.6.11
@@ -20749,6 +20553,8 @@ snapshots:
   whatwg-encoding@3.1.1:
     dependencies:
       iconv-lite: 0.6.3
+
+  whatwg-fetch@3.6.20: {}
 
   whatwg-mimetype@4.0.0: {}
 
