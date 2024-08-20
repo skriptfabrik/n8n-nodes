@@ -112,8 +112,8 @@ importers:
         specifier: 1.54.4
         version: 1.54.4(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-s3@3.606.0)(@azure/storage-blob@12.23.0)(@google-cloud/storage@6.12.0(encoding@0.1.13))(@smithy/eventstream-codec@2.2.0)(@smithy/protocol-http@3.3.0)(@smithy/signature-v4@2.3.0)(@smithy/util-utf8@2.3.0)(@supabase/postgrest-js@1.15.2)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(chokidar@3.5.2)(crypto-js@4.2.0)(date-fns@3.6.0)(encoding@0.1.13)(fast-xml-parser@4.4.0)(gcp-metadata@5.3.0(encoding@0.1.13))(google-auth-library@9.11.0(encoding@0.1.13))(ignore@5.3.1)(mssql@10.0.2)(promise-ftp-common@1.1.5)(redis@4.6.12)(socks@2.8.3)(ts-node@10.9.2(@swc/core@1.5.29(@swc/helpers@0.5.12))(@types/node@20.15.0)(typescript@5.5.4))(ts-toolbelt@9.6.0)(tslib@2.6.3)(typescript@5.5.4)
       n8n-nodes-base:
-        specifier: 1.53.2
-        version: 1.53.2(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.22.4)
+        specifier: 1.54.1
+        version: 1.54.1(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
       n8n-workflow:
         specifier: 1.52.1
         version: 1.52.1
@@ -8903,7 +8903,7 @@ snapshots:
   '@acuminous/bitsyntax@0.1.2':
     dependencies:
       buffer-more-ints: 1.0.0
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       safe-buffer: 5.1.2
     transitivePeerDependencies:
       - supports-color
@@ -9884,7 +9884,7 @@ snapshots:
       '@azure/core-util': 1.9.0
       '@azure/logger': 1.1.2
       http-proxy-agent: 7.0.2
-      https-proxy-agent: 7.0.5(supports-color@9.4.0)
+      https-proxy-agent: 7.0.5
       tslib: 2.6.3
     transitivePeerDependencies:
       - supports-color
@@ -10027,7 +10027,7 @@ snapshots:
       '@babel/traverse': 7.24.7
       '@babel/types': 7.24.7
       convert-source-map: 2.0.0
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -10087,7 +10087,7 @@ snapshots:
       '@babel/core': 7.24.7
       '@babel/helper-compilation-targets': 7.24.7
       '@babel/helper-plugin-utils': 7.24.7
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       lodash.debounce: 4.0.8
       resolve: 1.22.8
     transitivePeerDependencies:
@@ -10826,7 +10826,7 @@ snapshots:
       '@babel/helper-split-export-declaration': 7.24.7
       '@babel/parser': 7.24.7
       '@babel/types': 7.24.7
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -11028,7 +11028,7 @@ snapshots:
   '@eslint/eslintrc@2.1.4':
     dependencies:
       ajv: 6.12.6
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       espree: 9.6.1
       globals: 13.24.0
       ignore: 5.3.1
@@ -11148,7 +11148,7 @@ snapshots:
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
@@ -11380,7 +11380,7 @@ snapshots:
 
   '@kwsites/file-exists@1.1.1':
     dependencies:
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
     transitivePeerDependencies:
       - supports-color
 
@@ -11407,7 +11407,7 @@ snapshots:
       - langchain
       - openai
 
-  '@langchain/community@0.2.20(kmxknpbln5xdhfd7v2czqglpq4)':
+  '@langchain/community@0.2.20(jvp37ngbpe6uyszgw53ujrs75y)':
     dependencies:
       '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
       '@langchain/openai': 0.2.5(encoding@0.1.13)(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))
@@ -11456,7 +11456,7 @@ snapshots:
       mammoth: 1.7.2
       mysql2: 3.10.0
       pdf-parse: 1.1.1
-      pg: 8.8.0
+      pg: 8.11.3
       redis: 4.6.12
       ws: 8.17.1
     transitivePeerDependencies:
@@ -11535,7 +11535,7 @@ snapshots:
       - supports-color
       - zod
 
-  '@langchain/google-genai@0.0.23(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))(zod@3.22.4)':
+  '@langchain/google-genai@0.0.23(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))(zod@3.23.8)':
     dependencies:
       '@google/generative-ai': 0.7.1
       '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
@@ -11545,7 +11545,7 @@ snapshots:
       - openai
       - zod
 
-  '@langchain/google-vertexai@0.0.21(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))(zod@3.22.4)':
+  '@langchain/google-vertexai@0.0.21(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))(zod@3.23.8)':
     dependencies:
       '@langchain/core': 0.2.20(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))
       '@langchain/google-gauth': 0.0.21(encoding@0.1.13)(langchain@0.2.11(@aws-sdk/client-s3@3.606.0)(@aws-sdk/credential-provider-node@3.535.0)(@azure/storage-blob@12.23.0)(@langchain/anthropic@0.2.9)(@langchain/cohere@0.0.10)(@langchain/community@0.2.20)(@langchain/google-genai@0.0.23)(@langchain/google-vertexai@0.0.21)(@langchain/groq@0.0.15)(@langchain/mistralai@0.0.27)(@langchain/ollama@0.0.2)(@pinecone-database/pinecone@3.0.0)(@supabase/supabase-js@2.43.4)(@xata.io/client@0.28.4(typescript@5.5.4))(axios@1.6.7)(cheerio@1.0.0-rc.12)(d3-dsv@2.0.0)(encoding@0.1.13)(epub2@3.0.2(ts-toolbelt@9.6.0))(fast-xml-parser@4.4.0)(handlebars@4.7.8)(html-to-text@9.0.5)(ignore@5.3.1)(ioredis@5.3.2)(jsdom@23.2.0(canvas@2.11.2(encoding@0.1.13)))(mammoth@1.7.2)(openai@4.53.0(encoding@0.1.13))(pdf-parse@1.1.1)(redis@4.6.12)(ws@8.17.1))(openai@4.53.0(encoding@0.1.13))(zod@3.23.8)
@@ -11721,10 +11721,10 @@ snapshots:
       '@huggingface/inference': 2.7.0
       '@langchain/anthropic': 0.2.9(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
       '@langchain/cohere': 0.0.10(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
-      '@langchain/community': 0.2.20(kmxknpbln5xdhfd7v2czqglpq4)
+      '@langchain/community': 0.2.20(jvp37ngbpe6uyszgw53ujrs75y)
       '@langchain/core': 0.2.18(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
-      '@langchain/google-genai': 0.0.23(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))(zod@3.22.4)
-      '@langchain/google-vertexai': 0.0.21(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))(zod@3.22.4)
+      '@langchain/google-genai': 0.0.23(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))(zod@3.23.8)
+      '@langchain/google-vertexai': 0.0.21(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))(zod@3.23.8)
       '@langchain/groq': 0.0.15(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
       '@langchain/mistralai': 0.0.27(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
       '@langchain/ollama': 0.0.2(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
@@ -11931,7 +11931,7 @@ snapshots:
       buffer: 6.0.3
       chalk: 4.1.2
       dayjs: 1.11.11
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       dotenv: 16.4.5
       glob: 10.4.2
       mkdirp: 2.1.6
@@ -13295,7 +13295,7 @@ snapshots:
       '@swc-node/sourcemap-support': 0.5.0
       '@swc/core': 1.5.29(@swc/helpers@0.5.12)
       colorette: 2.0.20
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       pirates: 4.0.6
       tslib: 2.6.3
       typescript: 5.5.4
@@ -13527,7 +13527,7 @@ snapshots:
 
   '@types/readable-stream@4.0.14':
     dependencies:
-      '@types/node': 20.14.15
+      '@types/node': 20.15.0
       safe-buffer: 5.1.2
 
   '@types/request@2.48.12':
@@ -13576,7 +13576,7 @@ snapshots:
 
   '@types/ws@8.5.10':
     dependencies:
-      '@types/node': 20.14.15
+      '@types/node': 20.15.0
 
   '@types/yargs-parser@21.0.3': {}
 
@@ -13608,7 +13608,7 @@ snapshots:
       '@typescript-eslint/types': 7.18.0
       '@typescript-eslint/typescript-estree': 7.18.0(typescript@5.5.4)
       '@typescript-eslint/visitor-keys': 7.18.0
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       eslint: 8.57.0
     optionalDependencies:
       typescript: 5.5.4
@@ -13634,7 +13634,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/typescript-estree': 7.18.0(typescript@5.5.4)
       '@typescript-eslint/utils': 7.18.0(eslint@8.57.0)(typescript@5.5.4)
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       eslint: 8.57.0
       ts-api-utils: 1.3.0(typescript@5.5.4)
     optionalDependencies:
@@ -13652,7 +13652,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 6.21.0
       '@typescript-eslint/visitor-keys': 6.21.0
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.3
@@ -13667,7 +13667,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 7.18.0
       '@typescript-eslint/visitor-keys': 7.18.0
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.5
@@ -13682,7 +13682,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.1.0
       '@typescript-eslint/visitor-keys': 8.1.0
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.5
@@ -13958,7 +13958,13 @@ snapshots:
 
   agent-base@6.0.2:
     dependencies:
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
+    transitivePeerDependencies:
+      - supports-color
+
+  agent-base@7.1.1:
+    dependencies:
+      debug: 4.3.5
     transitivePeerDependencies:
       - supports-color
 
@@ -14197,7 +14203,7 @@ snapshots:
 
   axios@1.6.5:
     dependencies:
-      follow-redirects: 1.15.6(debug@3.2.7)
+      follow-redirects: 1.15.6
       form-data: 4.0.0
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -14205,7 +14211,15 @@ snapshots:
 
   axios@1.6.7:
     dependencies:
-      follow-redirects: 1.15.6(debug@3.2.7)
+      follow-redirects: 1.15.6
+      form-data: 4.0.0
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
+
+  axios@1.7.4:
+    dependencies:
+      follow-redirects: 1.15.6
       form-data: 4.0.0
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -15065,6 +15079,10 @@ snapshots:
     dependencies:
       ms: 2.1.2
 
+  debug@4.3.5:
+    dependencies:
+      ms: 2.1.2
+
   debug@4.3.5(supports-color@8.1.1):
     dependencies:
       ms: 2.1.2
@@ -15158,7 +15176,7 @@ snapshots:
   detect-port@1.6.1:
     dependencies:
       address: 1.2.2
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
     transitivePeerDependencies:
       - supports-color
 
@@ -15481,7 +15499,7 @@ snapshots:
       ajv: 6.12.6
       chalk: 4.1.2
       cross-spawn: 7.0.3
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.2.2
@@ -15804,6 +15822,8 @@ snapshots:
 
   fn.name@1.1.0: {}
 
+  follow-redirects@1.15.6: {}
+
   follow-redirects@1.15.6(debug@3.2.7):
     optionalDependencies:
       debug: 3.2.7
@@ -15931,7 +15951,7 @@ snapshots:
   gaxios@6.7.0(encoding@0.1.13):
     dependencies:
       extend: 3.0.2
-      https-proxy-agent: 7.0.5(supports-color@9.4.0)
+      https-proxy-agent: 7.0.5
       is-stream: 2.0.1
       node-fetch: 2.7.0(encoding@0.1.13)
       uuid: 10.0.0
@@ -16278,7 +16298,7 @@ snapshots:
     dependencies:
       '@tootallnate/once': 1.1.2
       agent-base: 6.0.2
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
     transitivePeerDependencies:
       - supports-color
     optional: true
@@ -16287,14 +16307,14 @@ snapshots:
     dependencies:
       '@tootallnate/once': 2.0.0
       agent-base: 6.0.2
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
     transitivePeerDependencies:
       - supports-color
 
   http-proxy-agent@7.0.2:
     dependencies:
-      agent-base: 7.1.1(supports-color@9.4.0)
-      debug: 4.3.5(supports-color@9.4.0)
+      agent-base: 7.1.1
+      debug: 4.3.5
     transitivePeerDependencies:
       - supports-color
 
@@ -16311,7 +16331,14 @@ snapshots:
   https-proxy-agent@5.0.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
+    transitivePeerDependencies:
+      - supports-color
+
+  https-proxy-agent@7.0.5:
+    dependencies:
+      agent-base: 7.1.1
+      debug: 4.3.5
     transitivePeerDependencies:
       - supports-color
 
@@ -16385,7 +16412,7 @@ snapshots:
 
   infisical-node@1.3.0:
     dependencies:
-      axios: 1.7.4(debug@3.2.7)
+      axios: 1.7.4
       dotenv: 16.4.5
       tweetnacl: 1.0.3
       tweetnacl-util: 0.15.1
@@ -16415,7 +16442,7 @@ snapshots:
     dependencies:
       '@ioredis/commands': 1.2.0
       cluster-key-slot: 1.1.2
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       denque: 2.1.0
       lodash.defaults: 4.2.0
       lodash.isarguments: 3.1.0
@@ -16624,7 +16651,7 @@ snapshots:
 
   istanbul-lib-source-maps@4.0.1:
     dependencies:
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       istanbul-lib-coverage: 3.2.2
       source-map: 0.6.1
     transitivePeerDependencies:
@@ -17043,7 +17070,7 @@ snapshots:
       form-data: 4.0.0
       html-encoding-sniffer: 4.0.0
       http-proxy-agent: 7.0.2
-      https-proxy-agent: 7.0.5(supports-color@9.4.0)
+      https-proxy-agent: 7.0.5
       is-potential-custom-element-name: 1.0.1
       parse5: 7.1.2
       rrweb-cssom: 0.6.0
@@ -17206,9 +17233,9 @@ snapshots:
       '@azure/storage-blob': 12.23.0
       '@langchain/anthropic': 0.2.9(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
       '@langchain/cohere': 0.0.10(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
-      '@langchain/community': 0.2.20(kmxknpbln5xdhfd7v2czqglpq4)
-      '@langchain/google-genai': 0.0.23(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))(zod@3.22.4)
-      '@langchain/google-vertexai': 0.0.21(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))(zod@3.22.4)
+      '@langchain/community': 0.2.20(jvp37ngbpe6uyszgw53ujrs75y)
+      '@langchain/google-genai': 0.0.23(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))(zod@3.23.8)
+      '@langchain/google-vertexai': 0.0.21(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))(zod@3.23.8)
       '@langchain/groq': 0.0.15(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
       '@langchain/mistralai': 0.0.27(encoding@0.1.13)(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
       '@langchain/ollama': 0.0.2(langchain@0.2.11)(openai@4.53.0(encoding@0.1.13))
@@ -17267,7 +17294,7 @@ snapshots:
       '@types/node': 20.14.15
       '@types/uuid': 10.0.0
       asn1: 0.2.6
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       strict-event-emitter-types: 2.0.0
       uuid: 9.0.1
     transitivePeerDependencies:
@@ -17704,7 +17731,7 @@ snapshots:
   mqtt-packet@9.0.0:
     dependencies:
       bl: 6.0.13
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       process-nextick-args: 2.0.1
     transitivePeerDependencies:
       - supports-color
@@ -17715,7 +17742,7 @@ snapshots:
       '@types/ws': 8.5.10
       commist: 3.2.0
       concat-stream: 2.0.0
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       help-me: 5.0.0
       lru-cache: 10.3.0
       minimist: 1.2.8
@@ -17758,7 +17785,7 @@ snapshots:
     dependencies:
       '@tediousjs/connection-string': 0.5.0
       commander: 11.1.0
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       rfdc: 1.4.1
       tarn: 3.0.2
       tedious: 16.7.1
@@ -17820,92 +17847,6 @@ snapshots:
       - debug
 
   n8n-editor-ui@1.54.0: {}
-
-  n8n-nodes-base@1.53.2(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.22.4):
-    dependencies:
-      '@kafkajs/confluent-schema-registry': 1.0.6
-      '@n8n/imap': 0.6.0
-      '@n8n/vm2': 3.9.25
-      alasql: 4.5.1(encoding@0.1.13)
-      amqplib: 0.10.3
-      aws4: 1.11.0
-      basic-auth: 2.0.1
-      change-case: 4.1.2
-      cheerio: 1.0.0-rc.6
-      chokidar: 3.5.2
-      cron: 3.1.7
-      csv-parse: 5.5.0
-      currency-codes: 2.1.0
-      eventsource: 2.0.2
-      fast-glob: 3.2.12
-      fflate: 0.7.4
-      get-system-fonts: 2.0.2
-      gm: 1.25.0
-      html-to-text: 9.0.5
-      iconv-lite: 0.6.3
-      ics: 2.40.0
-      isbot: 3.6.13
-      iso-639-1: 2.1.15
-      js-nacl: 1.4.0
-      jsonwebtoken: 9.0.2
-      kafkajs: 1.16.0
-      ldapts: 4.2.6
-      lodash: 4.17.21
-      lossless-json: 1.0.5
-      luxon: 3.4.4
-      mailparser: 3.6.7
-      minifaker: 1.34.1
-      moment-timezone: 0.5.37
-      mongodb: 6.3.0(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.3)
-      mqtt: 5.7.2
-      mssql: 10.0.2
-      mysql2: 3.10.0
-      n8n-workflow: 1.52.1
-      node-html-markdown: 1.2.0
-      node-ssh: 13.2.0
-      nodemailer: 6.9.9
-      otpauth: 9.1.1
-      pdfjs-dist: 2.16.105
-      pg: 8.11.3
-      pg-promise: 10.15.4
-      promise-ftp: 1.3.5(promise-ftp-common@1.1.5)
-      pyodide: 0.23.4(encoding@0.1.13)
-      redis: 4.6.14
-      rfc2047: 4.0.1
-      rhea: 1.0.24
-      rrule: 2.8.1
-      rss-parser: 3.13.0
-      semver: 7.5.4
-      showdown: 2.1.0
-      simple-git: 3.17.0
-      snowflake-sdk: 1.9.2(asn1.js@5.4.1)(encoding@0.1.13)
-      ssh2-sftp-client: 7.2.3
-      tmp-promise: 3.0.3
-      ts-ics: 1.4.0(date-fns@3.6.0)(lodash@4.17.21)(zod@3.22.4)
-      typedi: 0.10.0
-      uuid: 8.3.2
-      xlsx: https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz
-      xml2js: 0.6.2
-    transitivePeerDependencies:
-      - '@aws-sdk/credential-providers'
-      - '@mongodb-js/zstd'
-      - asn1.js
-      - aws-crt
-      - bufferutil
-      - date-fns
-      - debug
-      - encoding
-      - gcp-metadata
-      - kerberos
-      - mongodb-client-encryption
-      - pg-native
-      - promise-ftp-common
-      - snappy
-      - socks
-      - supports-color
-      - utf-8-validate
-      - worker-loader
-      - zod
 
   n8n-nodes-base@1.53.2(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8):
     dependencies:
@@ -18593,7 +18534,7 @@ snapshots:
 
   number-allocator@1.0.14:
     dependencies:
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       js-sdsl: 4.3.0
     transitivePeerDependencies:
       - supports-color
@@ -18613,7 +18554,7 @@ snapshots:
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.0-rc.46
       '@zkochan/js-yaml': 0.0.7
-      axios: 1.7.4(debug@3.2.7)
+      axios: 1.7.4
       chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
@@ -19112,7 +19053,7 @@ snapshots:
 
   posthog-node@3.2.1:
     dependencies:
-      axios: 1.7.4(debug@3.2.7)
+      axios: 1.7.4
       rusha: 0.8.14
     transitivePeerDependencies:
       - debug
@@ -19470,7 +19411,7 @@ snapshots:
 
   retry-request@5.0.2:
     dependencies:
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       extend: 3.0.2
     transitivePeerDependencies:
       - supports-color
@@ -19710,7 +19651,7 @@ snapshots:
     dependencies:
       '@kwsites/file-exists': 1.1.1
       '@kwsites/promise-deferred': 1.1.1
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
     transitivePeerDependencies:
       - supports-color
 
@@ -19755,7 +19696,7 @@ snapshots:
       fastest-levenshtein: 1.0.16
       generic-pool: 3.9.0
       glob: 9.3.5
-      https-proxy-agent: 7.0.5(supports-color@9.4.0)
+      https-proxy-agent: 7.0.5
       jsonwebtoken: 9.0.2
       mime-types: 2.1.35
       mkdirp: 1.0.4
@@ -19775,7 +19716,7 @@ snapshots:
   socks-proxy-agent@6.2.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       socks: 2.8.3
     transitivePeerDependencies:
       - supports-color
@@ -20574,7 +20515,7 @@ snapshots:
       clipanion: 4.0.0-rc.3(typanion@3.14.0)
       compression: 1.7.4
       cors: 2.8.5
-      debug: 4.3.5(supports-color@9.4.0)
+      debug: 4.3.5
       envinfo: 7.13.0
       express: 4.19.2
       express-rate-limit: 5.5.1
