@@ -1,3 +1,10 @@
+## 0.1.5 (2024-08-20)
+
+
+### 🩹 Fixes
+
+- **fulfillmenttools:** bump n8n-workflow version to 1.53.0
+
 ## 0.1.4 (2024-08-13)
 
 
