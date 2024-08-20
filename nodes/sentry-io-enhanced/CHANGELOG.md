@@ -1,3 +1,10 @@
+## 0.2.7 (2024-08-20)
+
+
+### 🩹 Fixes
+
+- **sentry-io-enhanced:** bump n8n-workflow version to 1.53.0
+
 ## 0.2.6 (2024-08-13)
 
 
