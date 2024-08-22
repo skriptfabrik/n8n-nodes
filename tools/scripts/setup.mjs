@@ -118,7 +118,6 @@ export async function createOwnerSetup(options) {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
-      cookie: options.cookie,
     },
     body: JSON.stringify(options.data),
   });
@@ -200,14 +199,7 @@ export async function authorizeOwner() {
   }
 
   if (settings.data.userManagement.showSetupOnFirstLoad) {
-    const setupCookie = await getSetupCookie();
-
-    if (setupCookie.error) {
-      return setupCookie;
-    }
-
     const owner = await createOwnerSetup({
-      cookie: setupCookie.cookie,
       data: {
         email: OWNER_EMAIL,
         firstName: OWNER_FIRST_NAME,
