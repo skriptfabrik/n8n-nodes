@@ -130,7 +130,9 @@ export async function mocoApiRequest(
       {},
       {
         message: response.statusMessage,
+        description: JSON.stringify(response.body) as string,
         httpCode: response.statusCode.toString(),
+        itemIndex,
       },
     );
   }
