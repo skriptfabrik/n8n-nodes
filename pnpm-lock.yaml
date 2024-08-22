@@ -247,8 +247,8 @@ importers:
   nodes/sentry-io-enhanced:
     dependencies:
       n8n-workflow:
-        specifier: 1.53.0
-        version: 1.53.0
+        specifier: 1.54.0
+        version: 1.54.0
       tslib:
         specifier: ^2.6.2
         version: 2.6.3
@@ -2116,10 +2116,6 @@ packages:
 
   '@n8n/permissions@0.12.0':
     resolution: {integrity: sha512-4JuxnO/k9eWHTdFXqQZcvZ/smopwEDHlJEfEQxWDlTbCLSQnXj1Lv3bsUgjiWR8c4UPYIio9fZ1gD94QOlRgLQ==}
-
-  '@n8n/tournament@1.0.3':
-    resolution: {integrity: sha512-GnmDD5wKAxKfxnSzhENHPn5n91/1c3/psnuT7D+jHHVQdMe8qaCcSq15rcGRfDfTf2v+BZBT0yeyK8Cfexr9yw==}
-    engines: {node: '>=18.10', pnpm: '>=8.6'}
 
   '@n8n/tournament@1.0.5':
     resolution: {integrity: sha512-IPBHa7gC0wwHVct/dnBquHz+uMCDZaZ05cor1D/rjlwaOe/PVu5mtoZaPHYuR98R3W1/IyxC5PuBd0JizDP9gg==}
@@ -6765,9 +6761,6 @@ packages:
 
   n8n-nodes-base@1.55.0:
     resolution: {integrity: sha512-bA/6tZpGhbeC9iBcULCYG6+5KkEvhqZt8bbLjDVVDDgciYsEdkS4OuI+fiQOfGXYuopAjRQvcHEBAnLLRTxxWQ==}
-
-  n8n-workflow@1.53.0:
-    resolution: {integrity: sha512-cuA6V3TBk8cSFCIcFC7eAWsCKuH3o/tNeXxOg+HPS5TM7eAsCaKAjvlXS9UdMr4s8SYIvlVUyNeyDm/dOJUQwA==}
 
   n8n-workflow@1.54.0:
     resolution: {integrity: sha512-lnFKdX2H10s8Y3Cfb+fivQzDNTGfsTBfdC8+NeYGFYIOXdgzpaFm4wRv1r5bhFSwE7PA98YX1dcECH9w468XlQ==}
@@ -11929,13 +11922,6 @@ snapshots:
       retry: 0.13.1
 
   '@n8n/permissions@0.12.0': {}
-
-  '@n8n/tournament@1.0.3':
-    dependencies:
-      '@n8n_io/riot-tmpl': 4.0.1
-      ast-types: 0.16.1
-      esprima-next: 5.8.4
-      recast: 0.22.0
 
   '@n8n/tournament@1.0.5':
     dependencies:
@@ -18036,29 +18022,6 @@ snapshots:
       - utf-8-validate
       - worker-loader
       - zod
-
-  n8n-workflow@1.53.0:
-    dependencies:
-      '@n8n/tournament': 1.0.3
-      '@n8n_io/riot-tmpl': 4.0.0
-      ast-types: 0.15.2
-      axios: 1.6.7
-      callsites: 3.1.0
-      deep-equal: 2.2.0
-      esprima-next: 5.8.4
-      form-data: 4.0.0
-      jmespath: 0.16.0
-      js-base64: 3.7.2
-      jssha: 3.3.1
-      lodash: 4.17.21
-      luxon: 3.4.4
-      md5: 2.3.0
-      recast: 0.21.5
-      title-case: 3.0.3
-      transliteration: 2.3.5
-      xml2js: 0.6.2
-    transitivePeerDependencies:
-      - debug
 
   n8n-workflow@1.54.0:
     dependencies:
