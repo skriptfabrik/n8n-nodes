@@ -1,3 +1,10 @@
+## 0.1.6 (2024-08-22)
+
+
+### 🩹 Fixes
+
+- **barcode:** bump n8n-workflow version to 1.54.0
+
 ## 0.1.5 (2024-08-20)
 
 
