@@ -1,3 +1,15 @@
+## 0.3.8 (2024-08-26)
+
+
+### 🩹 Fixes
+
+- **moco:** add stringyfied response body and item index to node api error (N8N-22)
+
+
+### ❤️  Thank You
+
+- Marco Spengler
+
 ## 0.3.7 (2024-08-22)
 
 
