@@ -433,6 +433,23 @@ export const activityFields: INodeProperties[] = [
   /*                                 activity:update                            */
   /* -------------------------------------------------------------------------- */
   {
+    displayName: 'Impersonate User Name or ID',
+    name: 'impersonateUserId',
+    type: 'options',
+    default: '',
+    typeOptions: {
+      loadOptionsMethod: 'listUsers',
+    },
+    description:
+      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+    displayOptions: {
+      show: {
+        resource: ['activity'],
+        operation: ['update'],
+      },
+    },
+  },
+  {
     displayName: 'Activity ID',
     name: 'activityId',
     type: 'string',

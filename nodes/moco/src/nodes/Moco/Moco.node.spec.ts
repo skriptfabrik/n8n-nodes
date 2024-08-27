@@ -770,7 +770,10 @@ describe('Moco', () => {
       0,
       'PUT',
       `/activities/${activityId}`,
-      { body },
+      {
+        impersonateUserId: undefined,
+        body,
+      },
     );
   });
 

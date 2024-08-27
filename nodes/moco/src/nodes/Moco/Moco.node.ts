@@ -379,6 +379,10 @@ export class Moco implements INodeType {
           if (operation === 'update') {
             const activityId = this.getNodeParameter('activityId', item);
 
+            const impersonateUserId =
+              (this.getNodeParameter('impersonateUserId', item) as string) ||
+              undefined;
+
             const body: ActivityParameters = {
               date: this.getNodeParameter('date', item) as string,
               project_id: this.getNodeParameter('projectId', item) as number,
@@ -398,7 +402,7 @@ export class Moco implements INodeType {
               item,
               'PUT',
               `/activities/${activityId}`,
-              { body },
+              { impersonateUserId, body },
             )) as User;
           }
         }
