@@ -312,11 +312,16 @@ export class Moco implements INodeType {
           if (operation === 'delete') {
             const activityId = this.getNodeParameter('activityId', item);
 
+            const impersonateUserId =
+              (this.getNodeParameter('impersonateUserId', item) as string) ||
+              undefined;
+
             responseData = (await mocoApiRequest.call(
               this,
               item,
               'DELETE',
               `/activities/${activityId}`,
+              { impersonateUserId },
             )) as never;
           }
 

@@ -458,6 +458,9 @@ describe('Moco', () => {
       0,
       'DELETE',
       `/activities/${activityId}`,
+      {
+        impersonateUserId: undefined,
+      },
     );
   });
 
