@@ -205,8 +205,8 @@ importers:
         specifier: ^0.5.45
         version: 0.5.45
       n8n-nodes-base:
-        specifier: 1.55.0
-        version: 1.55.0(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
+        specifier: 1.56.1
+        version: 1.56.1(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
       n8n-workflow:
         specifier: 1.54.0
         version: 1.54.0
@@ -1450,25 +1450,13 @@ packages:
     resolution: {integrity: sha512-M3ihN10el2mfoDWdnpzWNv8vcoqKFNmDaY7IviujAv5c+/p8kSwvjk2haTcOQ8lQOiihAWX3I7YtP1K4UaGnyA==}
     engines: {node: '>=14.0.0'}
 
-  '@google-cloud/paginator@3.0.7':
-    resolution: {integrity: sha512-jJNutk0arIQhmpUUQJPJErsojqo834KcyB6X7a1mxuic8i1tKXxde8E69IZxNZawRIlZdIK2QY4WALvlK5MzYQ==}
-    engines: {node: '>=10'}
-
   '@google-cloud/paginator@5.0.2':
     resolution: {integrity: sha512-DJS3s0OVH4zFDB1PzjxAsHqJT6sKVbRwwML0ZBP9PbU7Yebtu/7SWMRzvO2J3nUi9pRNITCfu4LJeooM2w4pjg==}
     engines: {node: '>=14.0.0'}
 
-  '@google-cloud/projectify@3.0.0':
-    resolution: {integrity: sha512-HRkZsNmjScY6Li8/kb70wjGlDDyLkVk3KvoEo9uIoxSjYLJasGiCch9+PqRVDOCGUFvEIqyogl+BeqILL4OJHA==}
-    engines: {node: '>=12.0.0'}
-
   '@google-cloud/projectify@4.0.0':
     resolution: {integrity: sha512-MmaX6HeSvyPbWGwFq7mXdo0uQZLGBYCwziiLIGq5JVX+/bdI3SAq6bP98trV5eTWfLuvsMcIC1YJOF2vfteLFA==}
     engines: {node: '>=14.0.0'}
-
-  '@google-cloud/promisify@3.0.1':
-    resolution: {integrity: sha512-z1CjRjtQyBOYL+5Qr9DdYIfrdLBe746jRTYfaYU6MeXkqp7UfYs/jX16lFFVzZ7PGEJvqZNqYUEtb1mvDww4pA==}
-    engines: {node: '>=12'}
 
   '@google-cloud/promisify@4.0.0':
     resolution: {integrity: sha512-Orxzlfb9c67A15cq2JQEyVc7wEsmFBmHjZWZYQMUyJ1qivXyMwdyNOs9odi79hze+2zqdTtu1E19IM/FtqZ10g==}
@@ -1481,10 +1469,6 @@ packages:
   '@google-cloud/secret-manager@5.6.0':
     resolution: {integrity: sha512-0daW/OXQEVc6VQKPyJTQNyD+563I/TYQ7GCQJx4dq3lB666R9FUPvqHx9b/o/qQtZ5pfuoCbGZl3krpxgTSW8Q==}
     engines: {node: '>=14.0.0'}
-
-  '@google-cloud/storage@6.12.0':
-    resolution: {integrity: sha512-78nNAY7iiZ4O/BouWMWTD/oSF2YtYgYB3GZirn0To6eBOugjXVoK+GXgUXOl+HlqbAOyHxAVXOlsj3snfbQ1dw==}
-    engines: {node: '>=12'}
 
   '@google-cloud/storage@7.12.1':
     resolution: {integrity: sha512-Z3ZzOnF3YKLuvpkvF+TjQ6lztxcAyTILp+FjKonmVpEwPa9vFvxpZjubLR4sB6bf19i/8HL2AXRjA0YFgHFRmQ==}
@@ -4684,10 +4668,6 @@ packages:
     resolution: {integrity: sha512-yjNnPr315/FjS4zIsUxYguYUPP2e1NK4d7E7ZOLiyYCcbFBiTMyID+2wvm2w6+pZ/odMA7cRkjhsPbltwBOrLg==}
     engines: {node: '>=8.6'}
 
-  ent@2.2.1:
-    resolution: {integrity: sha512-QHuXVeZx9d+tIQAz/XztU0ZwZf2Agg9CcXcgE1rurqvdBeDBrpSwjl8/6XUqMg7tw2Y7uAdKb2sRv+bSEFqQ5A==}
-    engines: {node: '>= 0.4'}
-
   entities@2.2.0:
     resolution: {integrity: sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==}
 
@@ -5234,10 +5214,6 @@ packages:
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
     deprecated: Glob versions prior to v9 are no longer supported
-
-  glob@9.3.5:
-    resolution: {integrity: sha512-e1LleDykUz2Iu+MTYdkSsuWX8lvAjAcs0Xef0lNIu0S2wOAzuTxCJtcd9S3cijlwYF18EsU3rzb8jPVobxDh9Q==}
-    engines: {node: '>=16 || 14 >=14.17'}
 
   global-directory@4.0.1:
     resolution: {integrity: sha512-wHTUcDUoZ1H5/0iVqEudYW4/kAlN5cZ3j/bXn0Dpbizl9iaUVeWSHqiOjsgk6OW2bkLclbBjzewBz6weQ1zA2Q==}
@@ -6626,10 +6602,6 @@ packages:
     resolution: {integrity: sha512-sBz8G/YjVniEz6lKPNpKxXwazJe4c19fEfV2GDMX6AjFz+MX9uDWIZW8XreVhkFW3fkIdTv/gxWr/Kks5FFAVw==}
     engines: {node: '>=10'}
 
-  minimatch@8.0.4:
-    resolution: {integrity: sha512-W0Wvr9HyFXZRGIDgCicunpQ299OKXs9RgZfaukz4qAW/pJhcpUfupc9c+OObPOFueNy8VSrZgEmDtk6Kh4WzDA==}
-    engines: {node: '>=16 || 14 >=14.17'}
-
   minimatch@9.0.3:
     resolution: {integrity: sha512-RHiac9mvaRw0x3AYRgDC1CxAP7HTcNrrECeA8YYJeWnpo+2Q5CegtZjaotWTWxDG3UeGA1coE05iH1mPjT/2mg==}
     engines: {node: '>=16 || 14 >=14.17'}
@@ -6663,10 +6635,6 @@ packages:
 
   minipass@3.3.6:
     resolution: {integrity: sha512-DxiNidxSEK+tHG6zOIklvNOwm3hvCrbUrdtzY74U6HKTJxvIDfOUL5W5P2Ghd3DTkhhKPYGqeNUIh5qcM4YBfw==}
-    engines: {node: '>=8'}
-
-  minipass@4.2.8:
-    resolution: {integrity: sha512-fNzuVyifolSLFL4NzpF+wEF4qrgqaaKX0haXPQEdQ7NKAN+WecoKMHV09YcuL/DHxrUsYQOK3MiuDf7Ip2OXfQ==}
     engines: {node: '>=8'}
 
   minipass@5.0.0:
@@ -6803,9 +6771,6 @@ packages:
 
   n8n-editor-ui@1.56.1:
     resolution: {integrity: sha512-jvOnIEkOuVLL3UCZjUm6g2lYrBX/J6mA25nO+CXIIVTbmwRPsiRW5d5hzgx5y9IkFCFxl9yTNJP6IBp2NLQL2w==}
-
-  n8n-nodes-base@1.55.0:
-    resolution: {integrity: sha512-bA/6tZpGhbeC9iBcULCYG6+5KkEvhqZt8bbLjDVVDDgciYsEdkS4OuI+fiQOfGXYuopAjRQvcHEBAnLLRTxxWQ==}
 
   n8n-nodes-base@1.56.1:
     resolution: {integrity: sha512-vmA5l60ayCLafX+6Jcoe8JbpdgtMQKGV0JGJOlNfN3oecgDM9/aca0sKEXtUR6Aqc/NOLQD/PThO2m+fARLWdA==}
@@ -7527,9 +7492,6 @@ packages:
   pumpify@1.5.1:
     resolution: {integrity: sha512-oClZI37HvuUJJxSKKrC17bZ9Cu0ZYhEAGPsPUy9KlMUmv9dKX2o77RUmq7f3XjIxbwyGwYzbzQ1L2Ks8sIradQ==}
 
-  punycode@1.4.1:
-    resolution: {integrity: sha512-jmYNElW7yvO7TV33CjSmvSiE2yco3bV2czu/OzDKdMNVZQWfxCblURLhf+47syQRBntjfLdd/H0egrzIG+oaFQ==}
-
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
@@ -7732,10 +7694,6 @@ packages:
   restore-cursor@3.1.0:
     resolution: {integrity: sha512-l+sSefzHpj5qimhFSE5a8nufZYAM3sBSVMAPtYkmC+4EH2anSGaEMXSD0izRQbu9nfyQ9y5JrVmp7E8oZrUjvA==}
     engines: {node: '>=8'}
-
-  retry-request@5.0.2:
-    resolution: {integrity: sha512-wfI3pk7EE80lCIXprqh7ym48IHYdwmAAzESdbU8Q9l7pnRCk9LEhpbOTNKjz6FARLm/Bl5m+4F0ABxOkYUujSQ==}
-    engines: {node: '>=12'}
 
   retry-request@7.0.2:
     resolution: {integrity: sha512-dUOvLMJ0/JJYEn8NrpOaGNE7X3vpI5XlZS/u0ANjqtcZVKnIxP7IgCFwrKTxENw29emmwug53awKtaMm4i9g5w==}
@@ -7966,11 +7924,6 @@ packages:
 
   snowflake-sdk@1.12.0:
     resolution: {integrity: sha512-ZUFYR327vh+Tgo4s/1NhZTjg24g6t7rA3VTgP13sy9WBxdgPVuKN2G4rgeoml8vYKfARPCYmQBr6ysVF/y7EKw==}
-    peerDependencies:
-      asn1.js: ^5.4.1
-
-  snowflake-sdk@1.9.2:
-    resolution: {integrity: sha512-pPTE8V6RHw78KBAn56rGVri3LRciuJDz/oDUmkJej3fUnOHP28YBLl3kjiW0J5bbPzDPHhSAkeeCsjrbGyAB/w==}
     peerDependencies:
       asn1.js: ^5.4.1
 
@@ -8247,10 +8200,6 @@ packages:
   tedious@16.7.1:
     resolution: {integrity: sha512-NmedZS0NJiTv3CoYnf1FtjxIDUgVYzEmavrc8q2WHRb+lP4deI9BpQfmNnBZZaWusDbP5FVFZCcvzb3xOlNVlQ==}
     engines: {node: '>=16'}
-
-  teeny-request@8.0.3:
-    resolution: {integrity: sha512-jJZpA5He2y52yUhA7pyAGZlgQpcB+xLjcN0eUFxr9c8hP/H7uOXbBNVo/O0C/xVfJLJs680jvkFgVJEEvk9+ww==}
-    engines: {node: '>=12'}
 
   teeny-request@9.0.0:
     resolution: {integrity: sha512-resvxdc6Mgb7YEThw6G6bExlXKkv6+YbuzGg9xuXxSgxJF7Ozs+o8Y9+2R3sArdWdW8nOokoQb1yrpFB0pQK2g==}
@@ -8968,7 +8917,7 @@ snapshots:
   '@acuminous/bitsyntax@0.1.2':
     dependencies:
       buffer-more-ints: 1.0.0
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
       safe-buffer: 5.1.2
     transitivePeerDependencies:
       - supports-color
@@ -9972,7 +9921,7 @@ snapshots:
       '@azure/core-util': 1.9.0
       '@azure/logger': 1.1.2
       http-proxy-agent: 7.0.2
-      https-proxy-agent: 7.0.5
+      https-proxy-agent: 7.0.5(supports-color@9.4.0)
       tslib: 2.7.0
     transitivePeerDependencies:
       - supports-color
@@ -9993,8 +9942,9 @@ snapshots:
 
   '@azure/core-xml@1.4.2':
     dependencies:
-      fast-xml-parser: 4.4.0
+      fast-xml-parser: 4.5.0
       tslib: 2.7.0
+    optional: true
 
   '@azure/identity@3.4.2':
     dependencies:
@@ -10112,6 +10062,7 @@ snapshots:
       tslib: 2.7.0
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   '@babel/code-frame@7.24.7':
     dependencies:
@@ -10133,7 +10084,7 @@ snapshots:
       '@babel/traverse': 7.24.7
       '@babel/types': 7.24.7
       convert-source-map: 2.0.0
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -10193,7 +10144,7 @@ snapshots:
       '@babel/core': 7.24.7
       '@babel/helper-compilation-targets': 7.24.7
       '@babel/helper-plugin-utils': 7.24.7
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
       lodash.debounce: 4.0.8
       resolve: 1.22.8
     transitivePeerDependencies:
@@ -10932,7 +10883,7 @@ snapshots:
       '@babel/helper-split-export-declaration': 7.24.7
       '@babel/parser': 7.24.7
       '@babel/types': 7.24.7
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -11182,21 +11133,12 @@ snapshots:
       - encoding
       - supports-color
 
-  '@google-cloud/paginator@3.0.7':
-    dependencies:
-      arrify: 2.0.1
-      extend: 3.0.2
-
   '@google-cloud/paginator@5.0.2':
     dependencies:
       arrify: 2.0.1
       extend: 3.0.2
 
-  '@google-cloud/projectify@3.0.0': {}
-
   '@google-cloud/projectify@4.0.0': {}
-
-  '@google-cloud/promisify@3.0.1': {}
 
   '@google-cloud/promisify@4.0.0': {}
 
@@ -11210,30 +11152,6 @@ snapshots:
   '@google-cloud/secret-manager@5.6.0(encoding@0.1.13)':
     dependencies:
       google-gax: 4.3.7(encoding@0.1.13)
-    transitivePeerDependencies:
-      - encoding
-      - supports-color
-
-  '@google-cloud/storage@6.12.0(encoding@0.1.13)':
-    dependencies:
-      '@google-cloud/paginator': 3.0.7
-      '@google-cloud/projectify': 3.0.0
-      '@google-cloud/promisify': 3.0.1
-      abort-controller: 3.0.0
-      async-retry: 1.3.3
-      compressible: 2.0.18
-      duplexify: 4.1.3
-      ent: 2.2.1
-      extend: 3.0.2
-      fast-xml-parser: 4.4.0
-      gaxios: 5.1.3(encoding@0.1.13)
-      google-auth-library: 8.9.0(encoding@0.1.13)
-      mime: 3.0.0
-      mime-types: 2.1.35
-      p-limit: 3.1.0
-      retry-request: 5.0.2
-      teeny-request: 8.0.3(encoding@0.1.13)
-      uuid: 8.3.2
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -11516,7 +11434,7 @@ snapshots:
 
   '@kwsites/file-exists@1.1.1':
     dependencies:
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -11839,7 +11757,7 @@ snapshots:
   '@n8n/localtunnel@3.0.0':
     dependencies:
       axios: 1.7.4(debug@4.3.6)
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -12065,7 +11983,7 @@ snapshots:
       buffer: 6.0.3
       chalk: 4.1.2
       dayjs: 1.11.11
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
       dotenv: 16.4.5
       glob: 10.4.2
       mkdirp: 2.1.6
@@ -12670,7 +12588,7 @@ snapshots:
 
   '@rudderstack/rudder-sdk-node@2.0.9(tslib@2.7.0)':
     dependencies:
-      axios: 1.7.4
+      axios: 1.7.4(debug@4.3.6)
       axios-retry: 3.7.0
       component-type: 1.2.1
       join-component: 1.1.0
@@ -13798,7 +13716,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 6.21.0
       '@typescript-eslint/visitor-keys': 6.21.0
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.3
@@ -13828,7 +13746,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.4.0
       '@typescript-eslint/visitor-keys': 8.4.0
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
       fast-glob: 3.3.2
       is-glob: 4.0.3
       minimatch: 9.0.5
@@ -14104,13 +14022,7 @@ snapshots:
 
   agent-base@6.0.2:
     dependencies:
-      debug: 4.3.6
-    transitivePeerDependencies:
-      - supports-color
-
-  agent-base@7.1.1:
-    dependencies:
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -14343,7 +14255,7 @@ snapshots:
 
   axios@1.6.7:
     dependencies:
-      follow-redirects: 1.15.6
+      follow-redirects: 1.15.6(debug@4.3.6)
       form-data: 4.0.0
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -14351,23 +14263,7 @@ snapshots:
 
   axios@1.7.3:
     dependencies:
-      follow-redirects: 1.15.6
-      form-data: 4.0.0
-      proxy-from-env: 1.1.0
-    transitivePeerDependencies:
-      - debug
-
-  axios@1.7.4:
-    dependencies:
-      follow-redirects: 1.15.6
-      form-data: 4.0.0
-      proxy-from-env: 1.1.0
-    transitivePeerDependencies:
-      - debug
-
-  axios@1.7.4(debug@3.2.7):
-    dependencies:
-      follow-redirects: 1.15.6(debug@3.2.7)
+      follow-redirects: 1.15.6(debug@4.3.6)
       form-data: 4.0.0
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -15229,10 +15125,6 @@ snapshots:
     dependencies:
       ms: 2.1.2
 
-  debug@4.3.6:
-    dependencies:
-      ms: 2.1.2
-
   debug@4.3.6(supports-color@8.1.1):
     dependencies:
       ms: 2.1.2
@@ -15326,7 +15218,7 @@ snapshots:
   detect-port@1.6.1:
     dependencies:
       address: 1.2.2
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -15473,10 +15365,6 @@ snapshots:
   enquirer@2.3.6:
     dependencies:
       ansi-colors: 4.1.3
-
-  ent@2.2.1:
-    dependencies:
-      punycode: 1.4.1
 
   entities@2.2.0: {}
 
@@ -15977,15 +15865,9 @@ snapshots:
 
   fn.name@1.1.0: {}
 
-  follow-redirects@1.15.6: {}
-
-  follow-redirects@1.15.6(debug@3.2.7):
-    optionalDependencies:
-      debug: 3.2.7
-
   follow-redirects@1.15.6(debug@4.3.6):
     optionalDependencies:
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
 
   for-each@0.3.3:
     dependencies:
@@ -16106,7 +15988,7 @@ snapshots:
   gaxios@6.7.0(encoding@0.1.13):
     dependencies:
       extend: 3.0.2
-      https-proxy-agent: 7.0.5
+      https-proxy-agent: 7.0.5(supports-color@9.4.0)
       is-stream: 2.0.1
       node-fetch: 2.7.0(encoding@0.1.13)
       uuid: 10.0.0
@@ -16214,13 +16096,6 @@ snapshots:
       minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
-
-  glob@9.3.5:
-    dependencies:
-      fs.realpath: 1.0.0
-      minimatch: 8.0.4
-      minipass: 4.2.8
-      path-scurry: 1.11.1
 
   global-directory@4.0.1:
     dependencies:
@@ -16455,7 +16330,7 @@ snapshots:
     dependencies:
       '@tootallnate/once': 1.1.2
       agent-base: 6.0.2
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
     optional: true
@@ -16464,14 +16339,14 @@ snapshots:
     dependencies:
       '@tootallnate/once': 2.0.0
       agent-base: 6.0.2
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
   http-proxy-agent@7.0.2:
     dependencies:
-      agent-base: 7.1.1
-      debug: 4.3.6
+      agent-base: 7.1.1(supports-color@9.4.0)
+      debug: 4.3.6(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -16488,14 +16363,7 @@ snapshots:
   https-proxy-agent@5.0.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.6
-    transitivePeerDependencies:
-      - supports-color
-
-  https-proxy-agent@7.0.5:
-    dependencies:
-      agent-base: 7.1.1
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -16569,7 +16437,7 @@ snapshots:
 
   infisical-node@1.3.0:
     dependencies:
-      axios: 1.7.4
+      axios: 1.7.4(debug@4.3.6)
       dotenv: 16.4.5
       tweetnacl: 1.0.3
       tweetnacl-util: 0.15.1
@@ -16599,7 +16467,7 @@ snapshots:
     dependencies:
       '@ioredis/commands': 1.2.0
       cluster-key-slot: 1.1.2
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
       denque: 2.1.0
       lodash.defaults: 4.2.0
       lodash.isarguments: 3.1.0
@@ -16808,7 +16676,7 @@ snapshots:
 
   istanbul-lib-source-maps@4.0.1:
     dependencies:
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
       istanbul-lib-coverage: 3.2.2
       source-map: 0.6.1
     transitivePeerDependencies:
@@ -17227,7 +17095,7 @@ snapshots:
       form-data: 4.0.0
       html-encoding-sniffer: 4.0.0
       http-proxy-agent: 7.0.2
-      https-proxy-agent: 7.0.5
+      https-proxy-agent: 7.0.5(supports-color@9.4.0)
       is-potential-custom-element-name: 1.0.1
       parse5: 7.1.2
       rrweb-cssom: 0.6.0
@@ -17399,7 +17267,7 @@ snapshots:
       '@pinecone-database/pinecone': 3.0.0
       '@supabase/supabase-js': 2.43.4
       '@xata.io/client': 0.28.4(typescript@5.5.4)
-      axios: 1.7.4
+      axios: 1.7.4(debug@4.3.6)
       cheerio: 1.0.0-rc.12
       d3-dsv: 2.0.0
       epub2: 3.0.2(ts-toolbelt@9.6.0)
@@ -17451,7 +17319,7 @@ snapshots:
       '@types/node': 20.15.0
       '@types/uuid': 10.0.0
       asn1: 0.2.6
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
       strict-event-emitter-types: 2.0.0
       uuid: 9.0.1
     transitivePeerDependencies:
@@ -17772,10 +17640,6 @@ snapshots:
     dependencies:
       brace-expansion: 2.0.1
 
-  minimatch@8.0.4:
-    dependencies:
-      brace-expansion: 2.0.1
-
   minimatch@9.0.3:
     dependencies:
       brace-expansion: 2.0.1
@@ -17818,8 +17682,6 @@ snapshots:
   minipass@3.3.6:
     dependencies:
       yallist: 4.0.0
-
-  minipass@4.2.8: {}
 
   minipass@5.0.0: {}
 
@@ -17888,7 +17750,7 @@ snapshots:
   mqtt-packet@9.0.0:
     dependencies:
       bl: 6.0.13
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
       process-nextick-args: 2.0.1
     transitivePeerDependencies:
       - supports-color
@@ -17899,7 +17761,7 @@ snapshots:
       '@types/ws': 8.5.10
       commist: 3.2.0
       concat-stream: 2.0.0
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
       help-me: 5.0.0
       lru-cache: 10.3.0
       minimist: 1.2.8
@@ -17942,7 +17804,7 @@ snapshots:
     dependencies:
       '@tediousjs/connection-string': 0.5.0
       commander: 11.1.0
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
       rfdc: 1.4.1
       tarn: 3.0.2
       tedious: 16.7.1
@@ -17983,7 +17845,7 @@ snapshots:
     dependencies:
       '@n8n/client-oauth2': 0.20.0
       aws4: 1.11.0
-      axios: 1.7.4
+      axios: 1.7.4(debug@4.3.6)
       concat-stream: 2.0.0
       cron: 3.1.7
       fast-glob: 3.2.12
@@ -18005,92 +17867,6 @@ snapshots:
       - debug
 
   n8n-editor-ui@1.56.1: {}
-
-  n8n-nodes-base@1.55.0(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8):
-    dependencies:
-      '@kafkajs/confluent-schema-registry': 1.0.6
-      '@n8n/imap': 0.6.0
-      '@n8n/vm2': 3.9.25
-      alasql: 4.5.1(encoding@0.1.13)
-      amqplib: 0.10.3
-      aws4: 1.11.0
-      basic-auth: 2.0.1
-      change-case: 4.1.2
-      cheerio: 1.0.0-rc.6
-      chokidar: 3.5.2
-      cron: 3.1.7
-      csv-parse: 5.5.0
-      currency-codes: 2.1.0
-      eventsource: 2.0.2
-      fast-glob: 3.2.12
-      fflate: 0.7.4
-      get-system-fonts: 2.0.2
-      gm: 1.25.0
-      html-to-text: 9.0.5
-      iconv-lite: 0.6.3
-      ics: 2.40.0
-      isbot: 3.6.13
-      iso-639-1: 2.1.15
-      js-nacl: 1.4.0
-      jsonwebtoken: 9.0.2
-      kafkajs: 1.16.0
-      ldapts: 4.2.6
-      lodash: 4.17.21
-      lossless-json: 1.0.5
-      luxon: 3.4.4
-      mailparser: 3.6.7
-      minifaker: 1.34.1
-      moment-timezone: 0.5.37
-      mongodb: 6.3.0(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.3)
-      mqtt: 5.7.2
-      mssql: 10.0.2
-      mysql2: 3.11.0
-      n8n-workflow: 1.54.0
-      node-html-markdown: 1.2.0
-      node-ssh: 13.2.0
-      nodemailer: 6.9.9
-      otpauth: 9.1.1
-      pdfjs-dist: 2.16.105
-      pg: 8.12.0
-      pg-promise: 11.9.1
-      promise-ftp: 1.3.5(promise-ftp-common@1.1.5)
-      pyodide: 0.23.4(encoding@0.1.13)
-      redis: 4.6.14
-      rfc2047: 4.0.1
-      rhea: 1.0.24
-      rrule: 2.8.1
-      rss-parser: 3.13.0
-      semver: 7.5.4
-      showdown: 2.1.0
-      simple-git: 3.17.0
-      snowflake-sdk: 1.9.2(asn1.js@5.4.1)(encoding@0.1.13)
-      ssh2-sftp-client: 7.2.3
-      tmp-promise: 3.0.3
-      ts-ics: 1.4.0(date-fns@3.6.0)(lodash@4.17.21)(zod@3.23.8)
-      typedi: 0.10.0
-      uuid: 8.3.2
-      xlsx: https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz
-      xml2js: 0.6.2
-    transitivePeerDependencies:
-      - '@aws-sdk/credential-providers'
-      - '@mongodb-js/zstd'
-      - asn1.js
-      - aws-crt
-      - bufferutil
-      - date-fns
-      - debug
-      - encoding
-      - gcp-metadata
-      - kerberos
-      - mongodb-client-encryption
-      - pg-native
-      - promise-ftp-common
-      - snappy
-      - socks
-      - supports-color
-      - utf-8-validate
-      - worker-loader
-      - zod
 
   n8n-nodes-base@1.56.1(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.22.4):
     dependencies:
@@ -18292,7 +18068,7 @@ snapshots:
       '@n8n/tournament': 1.0.5
       '@n8n_io/riot-tmpl': 4.0.0
       ast-types: 0.15.2
-      axios: 1.7.4
+      axios: 1.7.4(debug@4.3.6)
       callsites: 3.1.0
       deep-equal: 2.2.0
       esprima-next: 5.8.4
@@ -18328,7 +18104,7 @@ snapshots:
       '@sentry/integrations': 7.87.0
       '@sentry/node': 7.87.0
       aws4: 1.11.0
-      axios: 1.7.4
+      axios: 1.7.4(debug@4.3.6)
       bcryptjs: 2.4.3
       bull: 4.12.1
       cache-manager: 5.2.3
@@ -18696,7 +18472,7 @@ snapshots:
 
   number-allocator@1.0.14:
     dependencies:
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
       js-sdsl: 4.3.0
     transitivePeerDependencies:
       - supports-color
@@ -18716,7 +18492,7 @@ snapshots:
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.0-rc.46
       '@zkochan/js-yaml': 0.0.7
-      axios: 1.7.4
+      axios: 1.7.4(debug@4.3.6)
       chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
@@ -19193,7 +18969,7 @@ snapshots:
 
   posthog-node@3.2.1:
     dependencies:
-      axios: 1.7.4
+      axios: 1.7.4(debug@4.3.6)
       rusha: 0.8.14
     transitivePeerDependencies:
       - debug
@@ -19307,8 +19083,6 @@ snapshots:
       duplexify: 3.7.1
       inherits: 2.0.4
       pump: 2.0.1
-
-  punycode@1.4.1: {}
 
   punycode@2.3.1: {}
 
@@ -19549,13 +19323,6 @@ snapshots:
       onetime: 5.1.2
       signal-exit: 3.0.7
 
-  retry-request@5.0.2:
-    dependencies:
-      debug: 4.3.6
-      extend: 3.0.2
-    transitivePeerDependencies:
-      - supports-color
-
   retry-request@7.0.2(encoding@0.1.13):
     dependencies:
       '@types/request': 2.48.12
@@ -19791,7 +19558,7 @@ snapshots:
     dependencies:
       '@kwsites/file-exists': 1.1.1
       '@kwsites/promise-deferred': 1.1.1
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -19823,7 +19590,7 @@ snapshots:
       asn1.js: 5.4.1
       asn1.js-rfc2560: 5.0.1(asn1.js@5.4.1)
       asn1.js-rfc5280: 3.0.0
-      axios: 1.7.4
+      axios: 1.7.4(debug@4.3.6)
       big-integer: 1.6.52
       bignumber.js: 9.1.2
       binascii: 0.0.2
@@ -19834,7 +19601,7 @@ snapshots:
       fastest-levenshtein: 1.0.16
       generic-pool: 3.9.0
       glob: 10.4.2
-      https-proxy-agent: 7.0.5
+      https-proxy-agent: 7.0.5(supports-color@9.4.0)
       jsonwebtoken: 9.0.2
       mime-types: 2.1.35
       mkdirp: 1.0.4
@@ -19852,50 +19619,10 @@ snapshots:
       - encoding
       - supports-color
 
-  snowflake-sdk@1.9.2(asn1.js@5.4.1)(encoding@0.1.13):
-    dependencies:
-      '@aws-sdk/client-s3': 3.606.0
-      '@azure/storage-blob': 12.23.0
-      '@google-cloud/storage': 6.12.0(encoding@0.1.13)
-      '@techteamer/ocsp': 1.0.1
-      agent-base: 6.0.2
-      asn1.js: 5.4.1
-      asn1.js-rfc2560: 5.0.1(asn1.js@5.4.1)
-      asn1.js-rfc5280: 3.0.0
-      axios: 1.7.4(debug@3.2.7)
-      big-integer: 1.6.52
-      bignumber.js: 9.1.2
-      binascii: 0.0.2
-      bn.js: 5.2.1
-      browser-request: 0.3.3
-      debug: 3.2.7
-      expand-tilde: 2.0.2
-      extend: 3.0.2
-      fast-xml-parser: 4.4.0
-      fastest-levenshtein: 1.0.16
-      generic-pool: 3.9.0
-      glob: 9.3.5
-      https-proxy-agent: 7.0.5
-      jsonwebtoken: 9.0.2
-      mime-types: 2.1.35
-      mkdirp: 1.0.4
-      moment: 2.30.1
-      moment-timezone: 0.5.45
-      open: 7.4.2
-      python-struct: 1.1.3
-      simple-lru-cache: 0.0.2
-      tmp: 0.2.3
-      uuid: 8.3.2
-      winston: 3.13.0
-    transitivePeerDependencies:
-      - aws-crt
-      - encoding
-      - supports-color
-
   socks-proxy-agent@6.2.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.6
+      debug: 4.3.6(supports-color@9.4.0)
       socks: 2.8.3
     transitivePeerDependencies:
       - supports-color
@@ -20214,17 +19941,6 @@ snapshots:
       node-abort-controller: 3.1.1
       sprintf-js: 1.1.3
     transitivePeerDependencies:
-      - supports-color
-
-  teeny-request@8.0.3(encoding@0.1.13):
-    dependencies:
-      http-proxy-agent: 5.0.0
-      https-proxy-agent: 5.0.1
-      node-fetch: 2.7.0(encoding@0.1.13)
-      stream-events: 1.0.5
-      uuid: 9.0.1
-    transitivePeerDependencies:
-      - encoding
       - supports-color
 
   teeny-request@9.0.0(encoding@0.1.13):
