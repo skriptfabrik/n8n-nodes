@@ -1,3 +1,12 @@
+## 0.1.9 (2024-09-04)
+
+
+### 🩹 Fixes
+
+- **google-enhanced:** bump n8n-nodes-base version to 1.56.1
+
+- **google-enhanced:** bump n8n-workflow version to 1.55.0
+
 ## 0.1.8 (2024-08-22)
 
 
