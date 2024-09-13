@@ -4,6 +4,7 @@ import {
   INodeExecutionData,
   INodeType,
   INodeTypeDescription,
+  NodeConnectionType,
 } from 'n8n-workflow';
 import {
   returnsOperations,
@@ -30,8 +31,8 @@ export class KauflandMarketplace implements INodeType {
     defaults: {
       name: 'Kaufland Marketplace',
     },
-    inputs: ['main'],
-    outputs: ['main'],
+    inputs: [NodeConnectionType.Main],
+    outputs: [NodeConnectionType.Main],
     credentials: [
       {
         name: 'kauflandMarketplaceApi',
