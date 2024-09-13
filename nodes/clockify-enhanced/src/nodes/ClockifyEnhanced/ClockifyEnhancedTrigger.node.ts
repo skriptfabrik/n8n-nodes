@@ -1,13 +1,14 @@
 import { clockifyApiRequest } from 'n8n-nodes-base/dist/nodes/Clockify/GenericFunctions';
-import type {
-  IDataObject,
-  IHookFunctions,
-  ILoadOptionsFunctions,
-  INodePropertyOptions,
-  INodeType,
-  INodeTypeDescription,
-  IWebhookFunctions,
-  IWebhookResponseData,
+import {
+  NodeConnectionType,
+  type IDataObject,
+  type IHookFunctions,
+  type ILoadOptionsFunctions,
+  type INodePropertyOptions,
+  type INodeType,
+  type INodeTypeDescription,
+  type IWebhookFunctions,
+  type IWebhookResponseData,
 } from 'n8n-workflow';
 import { components } from '../../api';
 
@@ -61,7 +62,7 @@ export class ClockifyEnhancedTrigger implements INodeType {
       name: 'Clockify Enhanced Trigger',
     },
     inputs: [],
-    outputs: ['main'],
+    outputs: [NodeConnectionType.Main],
     credentials: [
       {
         name: 'clockifyApi',
