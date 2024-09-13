@@ -60,7 +60,7 @@ export const activityFields: INodeProperties[] = [
       loadOptionsMethod: 'listUsers',
     },
     description:
-      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
     displayOptions: {
       show: {
         resource: ['activity'],
@@ -92,7 +92,7 @@ export const activityFields: INodeProperties[] = [
     },
     required: true,
     description:
-      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
     displayOptions: {
       show: {
         resource: ['activity'],
@@ -111,7 +111,7 @@ export const activityFields: INodeProperties[] = [
     },
     required: true,
     description:
-      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
     displayOptions: {
       show: {
         resource: ['activity'],
@@ -169,11 +169,11 @@ export const activityFields: INodeProperties[] = [
         description: 'Whether the activity is billable or not',
       },
       {
-        displayName: 'Tag',
-        name: 'tag',
+        displayName: 'Remote ID',
+        name: 'remoteId',
         type: 'string',
         default: '',
-        description: 'Tag for the activity being created',
+        description: 'Remote ID for the activity being created',
       },
       {
         displayName: 'Remote Service Name or ID',
@@ -227,14 +227,7 @@ export const activityFields: INodeProperties[] = [
           },
         ],
         description:
-          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
-      },
-      {
-        displayName: 'Remote ID',
-        name: 'remoteId',
-        type: 'string',
-        default: '',
-        description: 'Remote ID for the activity being created',
+          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
       },
       {
         displayName: 'Remote URL',
@@ -242,6 +235,13 @@ export const activityFields: INodeProperties[] = [
         type: 'string',
         default: '',
         description: 'Remote URL for the activity being created',
+      },
+      {
+        displayName: 'Tag',
+        name: 'tag',
+        type: 'string',
+        default: '',
+        description: 'Tag for the activity being created',
       },
     ],
   },
@@ -354,6 +354,14 @@ export const activityFields: INodeProperties[] = [
     },
     options: [
       {
+        displayName: 'Company Name or ID',
+        name: 'companyId',
+        type: 'options',
+        default: '',
+        description:
+          "Choose from the list, or specify an ID using an <a href='https://docs.n8n.io/code/expressions/'>expression</a>",
+      },
+      {
         displayName: 'From',
         name: 'from',
         type: 'string',
@@ -362,63 +370,12 @@ export const activityFields: INodeProperties[] = [
           'From date for the activities being listed (format: YYYY-MM-DD)',
       },
       {
-        displayName: 'To',
-        name: 'to',
-        type: 'string',
-        default: '',
-        description:
-          'To date for the activities being listed (format: YYYY-MM-DD)',
-      },
-      {
-        displayName: 'User Name or ID',
-        name: 'userId',
-        type: 'options',
-        default: '',
-        typeOptions: {
-          loadOptionsMethod: 'listUsers',
-        },
-        description:
-          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
-      },
-      {
         displayName: 'Project Name or ID',
         name: 'projectId',
         type: 'options',
         default: '',
-        typeOptions: {
-          loadOptionsMethod: 'listProjects',
-        },
         description:
-          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
-      },
-      {
-        displayName: 'Task Name or ID',
-        name: 'taskId',
-        type: 'options',
-        default: '',
-        typeOptions: {
-          loadOptionsMethod: 'listProjectTasks',
-        },
-        description:
-          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
-      },
-      {
-        displayName: 'Company Name or ID',
-        name: 'companyId',
-        type: 'options',
-        default: '',
-        typeOptions: {
-          loadOptionsMethod: 'listCompanies',
-        },
-        description:
-          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
-      },
-      {
-        displayName: 'Term',
-        name: 'term',
-        type: 'string',
-        default: '',
-        description: 'Search term for the activities being listed',
+          "Choose from the list, or specify an ID using an <a href='https://docs.n8n.io/code/expressions/'>expression</a>",
       },
       {
         displayName: 'Sort By',
@@ -426,6 +383,28 @@ export const activityFields: INodeProperties[] = [
         type: 'string',
         default: '',
         description: 'The field to sort the results by',
+      },
+      {
+        displayName: 'Sort By',
+        name: 'sortBy',
+        type: 'string',
+        default: '',
+        description: 'The field to sort the results by',
+      },
+      {
+        displayName: 'Task Name or ID',
+        name: 'taskId',
+        type: 'options',
+        default: '',
+        description:
+          "Choose from the list, or specify an ID using an <a href='https://docs.n8n.io/code/expressions/'>expression</a>",
+      },
+      {
+        displayName: 'Term',
+        name: 'term',
+        type: 'string',
+        default: '',
+        description: 'Search term for the activities being listed',
       },
     ],
   },
@@ -467,7 +446,7 @@ export const activityFields: INodeProperties[] = [
       loadOptionsMethod: 'listProjects',
     },
     description:
-      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
     displayOptions: {
       show: {
         resource: ['activity'],
@@ -485,7 +464,7 @@ export const activityFields: INodeProperties[] = [
       loadOptionsDependsOn: ['projectId'],
     },
     description:
-      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
     displayOptions: {
       show: {
         resource: ['activity'],
@@ -543,11 +522,11 @@ export const activityFields: INodeProperties[] = [
         description: 'Whether the activity is billable or not',
       },
       {
-        displayName: 'Tag',
-        name: 'tag',
+        displayName: 'Remote ID',
+        name: 'remoteId',
         type: 'string',
         default: '',
-        description: 'Tag for the activity being created',
+        description: 'Remote ID for the activity being created',
       },
       {
         displayName: 'Remote Service Name or ID',
@@ -558,14 +537,7 @@ export const activityFields: INodeProperties[] = [
           loadOptionsMethod: 'listRemoteServices',
         },
         description:
-          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
-      },
-      {
-        displayName: 'Remote ID',
-        name: 'remoteId',
-        type: 'string',
-        default: '',
-        description: 'Remote ID for the activity being created',
+          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
       },
       {
         displayName: 'Remote URL',
@@ -573,6 +545,13 @@ export const activityFields: INodeProperties[] = [
         type: 'string',
         default: '',
         description: 'Remote URL for the activity being created',
+      },
+      {
+        displayName: 'Tag',
+        name: 'tag',
+        type: 'string',
+        default: '',
+        description: 'Tag for the activity being created',
       },
     ],
   },
