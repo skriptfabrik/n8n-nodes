@@ -1,10 +1,11 @@
-import type {
-  IDataObject,
-  IExecuteFunctions,
-  INodeExecutionData,
-  INodeType,
-  INodeTypeDescription,
-  NodeApiError,
+import {
+  NodeConnectionType,
+  type IDataObject,
+  type IExecuteFunctions,
+  type INodeExecutionData,
+  type INodeType,
+  type INodeTypeDescription,
+  type NodeApiError,
 } from 'n8n-workflow';
 
 import type { SentryIoDSNApiCredential } from '../../credentials/SentryIoDSNApi.credentials';
@@ -28,9 +29,9 @@ export class SentryIoEnhanced implements INodeType {
       name: 'Sentry.io Enhanced',
     },
 
-    inputs: ['main'],
+    inputs: [NodeConnectionType.Main],
 
-    outputs: ['main'],
+    outputs: [NodeConnectionType.Main],
 
     credentials: [
       {
