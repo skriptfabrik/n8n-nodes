@@ -1,11 +1,12 @@
 import { createHmac } from 'crypto';
-import type {
-  IDataObject,
-  IHookFunctions,
-  INodeType,
-  INodeTypeDescription,
-  IWebhookFunctions,
-  IWebhookResponseData,
+import {
+  NodeConnectionType,
+  type IDataObject,
+  type IHookFunctions,
+  type INodeType,
+  type INodeTypeDescription,
+  type IWebhookFunctions,
+  type IWebhookResponseData,
 } from 'n8n-workflow';
 import { CredentialData } from '../../credentials/MocoApi.credentials';
 import { mocoApiRequest, mocoApiRequestAllItems } from './GenericFunctions';
@@ -28,7 +29,7 @@ export class MocoTrigger implements INodeType {
       name: 'MOCO Trigger',
     },
     inputs: [],
-    outputs: ['main'],
+    outputs: [NodeConnectionType.Main],
     credentials: [
       {
         name: 'mocoApi',
