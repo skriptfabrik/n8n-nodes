@@ -4,6 +4,7 @@ import {
   INodeExecutionData,
   INodeType,
   INodeTypeDescription,
+  NodeConnectionType,
 } from 'n8n-workflow';
 import { OttoMarketRequest, OttoMarketRequestData } from './GenericFunctions';
 import {
@@ -27,8 +28,8 @@ export class OttoMarket implements INodeType {
     defaults: {
       name: 'OTTO Market',
     },
-    inputs: ['main'],
-    outputs: ['main'],
+    inputs: [NodeConnectionType.Main],
+    outputs: [NodeConnectionType.Main],
     credentials: [
       {
         name: 'ottoMarketApi',
