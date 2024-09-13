@@ -85,8 +85,8 @@ importers:
         specifier: ^9.1.0
         version: 9.1.0(eslint@8.57.0)
       eslint-plugin-n8n-nodes-base:
-        specifier: ^1.16.1
-        version: 1.16.1(eslint@8.57.0)(typescript@5.6.2)
+        specifier: ^1.16.2
+        version: 1.16.2(eslint@8.57.0)(typescript@5.6.2)
       form-data:
         specifier: ^4.0.0
         version: 4.0.0
@@ -4769,9 +4769,12 @@ packages:
   eslint-config-riot@1.0.0:
     resolution: {integrity: sha512-NB/L/1Y30qyJcG5xZxCJKW/+bqyj+llbcCwo9DEz8bESIP0SLTOQ8T1DWCCFc+wJ61AMEstj4511PSScqMMfCw==}
 
-  eslint-plugin-n8n-nodes-base@1.16.1:
-    resolution: {integrity: sha512-TMlOiDj67tjv8eodnM6tsB0GeBwVpRbUN8/AQ/MRc7weP/rgLxfhUhzWkeiJMxYUJC3NLjemJbw7QDafKG9Kog==}
-    engines: {node: '>=18.10', pnpm: '>=8.6'}
+  eslint-plugin-local@1.0.0:
+    resolution: {integrity: sha512-bcwcQnKL/Iw5Vi/F2lG1he5oKD2OGjhsLmrcctkWrWq5TujgiaYb0cj3pZgr3XI54inNVnneOFdAx1daLoYLJQ==}
+
+  eslint-plugin-n8n-nodes-base@1.16.2:
+    resolution: {integrity: sha512-Qj8S+YgymYkt/5Fr1buwOTjl0jAERJBp3MA5V8M6NR1HYfErKazVjpOPEy5+04c0vAQZO1mPLGAzanxqqNUIng==}
+    engines: {node: '>=20.15', pnpm: '>=9.6'}
 
   eslint-scope@7.2.2:
     resolution: {integrity: sha512-dOt21O7lTMhDM+X9mB4GX+DZrZtCUJPL/wlcTqxyrx5IvO0IYtILdtrQGQp+8n5S0gwSVmOf9NQrjMOgfQZlIg==}
@@ -10147,7 +10150,7 @@ snapshots:
       '@babel/core': 7.24.7
       '@babel/helper-compilation-targets': 7.24.7
       '@babel/helper-plugin-utils': 7.24.7
-      debug: 4.3.6(supports-color@9.4.0)
+      debug: 4.3.7(supports-color@9.4.0)
       lodash.debounce: 4.0.8
       resolve: 1.22.8
     transitivePeerDependencies:
@@ -13718,7 +13721,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 6.21.0
       '@typescript-eslint/visitor-keys': 6.21.0
-      debug: 4.3.6(supports-color@9.4.0)
+      debug: 4.3.7(supports-color@9.4.0)
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.3
@@ -13820,7 +13823,7 @@ snapshots:
       '@verdaccio/logger': 8.0.0-next-8.1
       '@verdaccio/signature': 8.0.0-next-8.0
       '@verdaccio/utils': 7.0.1-next-8.1
-      debug: 4.3.7
+      debug: 4.3.7(supports-color@9.4.0)
       lodash: 4.17.21
       verdaccio-htpasswd: 13.0.0-next-8.1
     transitivePeerDependencies:
@@ -13835,7 +13838,7 @@ snapshots:
     dependencies:
       '@verdaccio/core': 8.0.0-next-8.1
       '@verdaccio/utils': 7.0.1-next-8.1
-      debug: 4.3.7
+      debug: 4.3.7(supports-color@9.4.0)
       js-yaml: 4.1.0
       lodash: 4.17.21
       minimatch: 7.4.6
@@ -13862,7 +13865,7 @@ snapshots:
   '@verdaccio/loaders@8.0.0-next-8.1':
     dependencies:
       '@verdaccio/logger': 8.0.0-next-8.1
-      debug: 4.3.7
+      debug: 4.3.7(supports-color@9.4.0)
       lodash: 4.17.21
     transitivePeerDependencies:
       - supports-color
@@ -13892,7 +13895,7 @@ snapshots:
       '@verdaccio/core': 8.0.0-next-8.1
       '@verdaccio/logger-prettify': 8.0.0-next-8.0
       colorette: 2.0.20
-      debug: 4.3.7
+      debug: 4.3.7(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -13917,7 +13920,7 @@ snapshots:
       '@verdaccio/core': 8.0.0-next-8.1
       '@verdaccio/url': 13.0.0-next-8.1
       '@verdaccio/utils': 7.0.1-next-8.1
-      debug: 4.3.7
+      debug: 4.3.7(supports-color@9.4.0)
       express: 4.21.0
       express-rate-limit: 5.5.1
       lodash: 4.17.21
@@ -13930,7 +13933,7 @@ snapshots:
 
   '@verdaccio/signature@8.0.0-next-8.0':
     dependencies:
-      debug: 4.3.7
+      debug: 4.3.7(supports-color@9.4.0)
       jsonwebtoken: 9.0.2
     transitivePeerDependencies:
       - supports-color
@@ -13942,7 +13945,7 @@ snapshots:
       '@verdaccio/core': 8.0.0-next-8.1
       '@verdaccio/url': 13.0.0-next-8.1
       '@verdaccio/utils': 7.0.1-next-8.1
-      debug: 4.3.7
+      debug: 4.3.7(supports-color@9.4.0)
       gunzip-maybe: 1.4.2
       lodash: 4.17.21
       tar-stream: 3.1.7
@@ -13954,7 +13957,7 @@ snapshots:
   '@verdaccio/url@13.0.0-next-8.1':
     dependencies:
       '@verdaccio/core': 8.0.0-next-8.1
-      debug: 4.3.7
+      debug: 4.3.7(supports-color@9.4.0)
       lodash: 4.17.21
       validator: 13.12.0
     transitivePeerDependencies:
@@ -14024,13 +14027,13 @@ snapshots:
 
   agent-base@6.0.2:
     dependencies:
-      debug: 4.3.6(supports-color@9.4.0)
+      debug: 4.3.7(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
   agent-base@7.1.1(supports-color@9.4.0):
     dependencies:
-      debug: 4.3.6(supports-color@9.4.0)
+      debug: 4.3.7(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -15150,9 +15153,11 @@ snapshots:
     optionalDependencies:
       supports-color: 9.4.0
 
-  debug@4.3.7:
+  debug@4.3.7(supports-color@9.4.0):
     dependencies:
       ms: 2.1.3
+    optionalDependencies:
+      supports-color: 9.4.0
 
   decamelize@1.2.0: {}
 
@@ -15520,10 +15525,13 @@ snapshots:
 
   eslint-config-riot@1.0.0: {}
 
-  eslint-plugin-n8n-nodes-base@1.16.1(eslint@8.57.0)(typescript@5.6.2):
+  eslint-plugin-local@1.0.0: {}
+
+  eslint-plugin-n8n-nodes-base@1.16.2(eslint@8.57.0)(typescript@5.6.2):
     dependencies:
       '@typescript-eslint/utils': 6.21.0(eslint@8.57.0)(typescript@5.6.2)
       camel-case: 4.1.2
+      eslint-plugin-local: 1.0.0
       indefinite: 2.5.1
       pascal-case: 3.1.2
       pluralize: 8.0.0
@@ -16381,7 +16389,7 @@ snapshots:
     dependencies:
       '@tootallnate/once': 1.1.2
       agent-base: 6.0.2
-      debug: 4.3.6(supports-color@9.4.0)
+      debug: 4.3.7(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
     optional: true
@@ -16390,14 +16398,14 @@ snapshots:
     dependencies:
       '@tootallnate/once': 2.0.0
       agent-base: 6.0.2
-      debug: 4.3.6(supports-color@9.4.0)
+      debug: 4.3.7(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
   http-proxy-agent@7.0.2:
     dependencies:
       agent-base: 7.1.1(supports-color@9.4.0)
-      debug: 4.3.6(supports-color@9.4.0)
+      debug: 4.3.7(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -19590,7 +19598,7 @@ snapshots:
   socks-proxy-agent@6.2.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.6(supports-color@9.4.0)
+      debug: 4.3.7(supports-color@9.4.0)
       socks: 2.8.3
     transitivePeerDependencies:
       - supports-color
@@ -20349,7 +20357,7 @@ snapshots:
       apache-md5: 1.1.8
       bcryptjs: 2.4.3
       core-js: 3.37.1
-      debug: 4.3.7
+      debug: 4.3.7(supports-color@9.4.0)
       http-errors: 2.0.0
       unix-crypt-td-js: 1.1.4
     transitivePeerDependencies:
