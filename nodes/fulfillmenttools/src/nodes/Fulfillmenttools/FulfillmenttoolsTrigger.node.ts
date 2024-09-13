@@ -1,10 +1,11 @@
-import type {
-  IDataObject,
-  IHookFunctions,
-  INodeType,
-  INodeTypeDescription,
-  IWebhookFunctions,
-  IWebhookResponseData,
+import {
+  NodeConnectionType,
+  type IDataObject,
+  type IHookFunctions,
+  type INodeType,
+  type INodeTypeDescription,
+  type IWebhookFunctions,
+  type IWebhookResponseData,
 } from 'n8n-workflow';
 import type { components } from '../../api';
 import { fulfillmenttoolsApiRequest } from './GenericFunctions';
@@ -94,7 +95,7 @@ export class FulfillmenttoolsTrigger implements INodeType {
 
     inputs: [],
 
-    outputs: ['main'],
+    outputs: [NodeConnectionType.Main],
 
     credentials: [
       {
