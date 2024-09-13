@@ -178,7 +178,7 @@ export const projectFields: INodeProperties[] = [
     },
     required: true,
     description:
-      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
     displayOptions: {
       show: {
         resource: ['project'],
@@ -196,7 +196,7 @@ export const projectFields: INodeProperties[] = [
     },
     required: true,
     description:
-      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
     displayOptions: {
       show: {
         resource: ['project'],
@@ -261,28 +261,6 @@ export const projectFields: INodeProperties[] = [
     },
     options: [
       {
-        displayName: 'Co Leader Name or ID',
-        name: 'coLeaderId',
-        type: 'options',
-        default: '',
-        typeOptions: {
-          loadOptionsMethod: 'listUsers',
-        },
-        description:
-          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
-      },
-      {
-        displayName: 'Deal Name or ID',
-        name: 'dealId',
-        type: 'options',
-        default: '',
-        typeOptions: {
-          loadOptionsMethod: 'listLeads',
-        },
-        description:
-          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
-      },
-      {
         displayName: 'Billing Address',
         name: 'billingAddress',
         type: 'string',
@@ -291,16 +269,6 @@ export const projectFields: INodeProperties[] = [
           rows: 4,
         },
         description: 'Billing address for the project being created',
-      },
-      {
-        displayName: 'Billing Email To',
-        name: 'billingEmailTo',
-        type: 'string',
-        default: '',
-        typeOptions: {
-          email: true,
-        },
-        description: 'Billing email address for the project being created',
       },
       {
         displayName: 'Billing Email CC',
@@ -313,18 +281,21 @@ export const projectFields: INodeProperties[] = [
         description: 'Billing email address copy for the project being created',
       },
       {
+        displayName: 'Billing Email To',
+        name: 'billingEmailTo',
+        type: 'string',
+        default: '',
+        typeOptions: {
+          email: true,
+        },
+        description: 'Billing email address for the project being created',
+      },
+      {
         displayName: 'Billing Notes',
         name: 'billingNotes',
         type: 'string',
         default: '',
         description: 'Billing notes for the project being created',
-      },
-      {
-        displayName: 'Setting Include Time Report',
-        name: 'settingIncludeTimeReport',
-        type: 'boolean',
-        default: false,
-        description: 'Whether to include time report or not',
       },
       {
         displayName: 'Billing Variant',
@@ -348,13 +319,6 @@ export const projectFields: INodeProperties[] = [
         description: 'Billing variant for the project being created',
       },
       {
-        displayName: 'Hourly Rate',
-        name: 'hourlyRate',
-        type: 'number',
-        default: 0,
-        description: 'Hourly rate for the project being created',
-      },
-      {
         displayName: 'Budget',
         name: 'budget',
         type: 'number',
@@ -369,24 +333,15 @@ export const projectFields: INodeProperties[] = [
         description: 'Expenses budget for the project being created',
       },
       {
-        displayName: 'Tags',
-        name: 'tags',
-        placeholder: 'Add Tag',
-        type: 'fixedCollection',
-        default: {},
+        displayName: 'Co Leader Name or ID',
+        name: 'coLeaderId',
+        type: 'options',
+        default: '',
         typeOptions: {
-          multipleValues: true,
+          loadOptionsMethod: 'listUsers',
         },
-        options: [
-          {
-            displayName: 'Tag',
-            name: 'tag',
-            type: 'string',
-            default: '',
-            description: 'Tag for the project being created',
-          },
-        ],
-        description: 'Tags for the project being created',
+        description:
+          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
       },
       {
         displayName: 'Custom Properties',
@@ -418,11 +373,56 @@ export const projectFields: INodeProperties[] = [
         description: 'Custom properties for the project being created',
       },
       {
+        displayName: 'Deal Name or ID',
+        name: 'dealId',
+        type: 'options',
+        default: '',
+        typeOptions: {
+          loadOptionsMethod: 'listLeads',
+        },
+        description:
+          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+      },
+      {
+        displayName: 'Hourly Rate',
+        name: 'hourlyRate',
+        type: 'number',
+        default: 0,
+        description: 'Hourly rate for the project being created',
+      },
+      {
         displayName: 'Info',
         name: 'info',
         type: 'string',
         default: '',
         description: 'Info for the project being created',
+      },
+      {
+        displayName: 'Setting Include Time Report',
+        name: 'settingIncludeTimeReport',
+        type: 'boolean',
+        default: false,
+        description: 'Whether to include time report or not',
+      },
+      {
+        displayName: 'Tags',
+        name: 'tags',
+        placeholder: 'Add Tag',
+        type: 'fixedCollection',
+        default: {},
+        typeOptions: {
+          multipleValues: true,
+        },
+        options: [
+          {
+            displayName: 'Tag',
+            name: 'tag',
+            type: 'string',
+            default: '',
+            description: 'Tag for the project being created',
+          },
+        ],
+        description: 'Tags for the project being created',
       },
     ],
   },
@@ -535,6 +535,38 @@ export const projectFields: INodeProperties[] = [
     },
     options: [
       {
+        displayName: 'Company Name or ID',
+        name: 'companyId',
+        type: 'options',
+        typeOptions: {
+          loadOptionsMethod: 'listCompanies',
+        },
+        default: '',
+        description:
+          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+      },
+      {
+        displayName: 'Created From',
+        name: 'createdFrom',
+        type: 'string',
+        default: '',
+        description: 'Created from date for the projects being listed',
+      },
+      {
+        displayName: 'Created To',
+        name: 'createdTo',
+        type: 'string',
+        default: '',
+        description: 'Created to date for the projects being listed',
+      },
+      {
+        displayName: 'Identifier',
+        name: 'identifier',
+        type: 'string',
+        default: '',
+        description: 'Identifier of the project being listed',
+      },
+      {
         displayName: 'Include Archived',
         name: 'includeArchived',
         type: 'boolean',
@@ -558,32 +590,35 @@ export const projectFields: INodeProperties[] = [
         },
         default: '',
         description:
-          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
       },
       {
-        displayName: 'Company Name or ID',
-        name: 'companyId',
-        type: 'options',
-        typeOptions: {
-          loadOptionsMethod: 'listCompanies',
-        },
+        displayName: 'Project Group ID',
+        name: 'projectGroupId',
+        type: 'number',
         default: '',
-        description:
-          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+        description: 'ID of the project group for the projects being listed',
       },
       {
-        displayName: 'Created From',
-        name: 'createdFrom',
+        displayName: 'Retainer',
+        name: 'retainer',
+        type: 'boolean',
+        default: false,
+        description: 'Whether the projects being listed are retainer or not',
+      },
+      {
+        displayName: 'Sort By',
+        name: 'sortBy',
         type: 'string',
         default: '',
-        description: 'Created from date for the projects being listed',
+        description: 'The field to sort the results by',
       },
       {
-        displayName: 'Created To',
-        name: 'createdTo',
+        displayName: 'Tags',
+        name: 'tags',
         type: 'string',
         default: '',
-        description: 'Created to date for the projects being listed',
+        description: 'Comma-separated list of tags to filter by',
       },
       {
         displayName: 'Updated From',
@@ -598,41 +633,6 @@ export const projectFields: INodeProperties[] = [
         type: 'string',
         default: '',
         description: 'Updated to date for the projects being listed',
-      },
-      {
-        displayName: 'Tags',
-        name: 'tags',
-        type: 'string',
-        default: '',
-        description: 'Comma-separated list of tags to filter by',
-      },
-      {
-        displayName: 'Identifier',
-        name: 'identifier',
-        type: 'string',
-        default: '',
-        description: 'Identifier of the project being listed',
-      },
-      {
-        displayName: 'Retainer',
-        name: 'retainer',
-        type: 'boolean',
-        default: false,
-        description: 'Whether the projects being listed are retainer or not',
-      },
-      {
-        displayName: 'Project Group ID',
-        name: 'projectGroupId',
-        type: 'number',
-        default: '',
-        description: 'ID of the project group for the projects being listed',
-      },
-      {
-        displayName: 'Sort By',
-        name: 'sortBy',
-        type: 'string',
-        default: '',
-        description: 'The field to sort the results by',
       },
     ],
   },
@@ -728,7 +728,7 @@ export const projectFields: INodeProperties[] = [
       loadOptionsMethod: 'listUsers',
     },
     description:
-      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
     displayOptions: {
       show: {
         resource: ['project'],
@@ -745,7 +745,7 @@ export const projectFields: INodeProperties[] = [
       loadOptionsMethod: 'listCustomers',
     },
     description:
-      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
     displayOptions: {
       show: {
         resource: ['project'],
@@ -794,28 +794,6 @@ export const projectFields: INodeProperties[] = [
     },
     options: [
       {
-        displayName: 'Co Leader Name or ID',
-        name: 'coLeaderId',
-        type: 'options',
-        default: '',
-        typeOptions: {
-          loadOptionsMethod: 'listUsers',
-        },
-        description:
-          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
-      },
-      {
-        displayName: 'Deal Name or ID',
-        name: 'dealId',
-        type: 'options',
-        default: '',
-        typeOptions: {
-          loadOptionsMethod: 'listLeads',
-        },
-        description:
-          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
-      },
-      {
         displayName: 'Billing Address',
         name: 'billingAddress',
         type: 'string',
@@ -824,16 +802,6 @@ export const projectFields: INodeProperties[] = [
           rows: 4,
         },
         description: 'Billing address for the project being created',
-      },
-      {
-        displayName: 'Billing Email To',
-        name: 'billingEmailTo',
-        type: 'string',
-        default: '',
-        typeOptions: {
-          email: true,
-        },
-        description: 'Billing email address for the project being created',
       },
       {
         displayName: 'Billing Email CC',
@@ -846,18 +814,21 @@ export const projectFields: INodeProperties[] = [
         description: 'Billing email address copy for the project being created',
       },
       {
+        displayName: 'Billing Email To',
+        name: 'billingEmailTo',
+        type: 'string',
+        default: '',
+        typeOptions: {
+          email: true,
+        },
+        description: 'Billing email address for the project being created',
+      },
+      {
         displayName: 'Billing Notes',
         name: 'billingNotes',
         type: 'string',
         default: '',
         description: 'Billing notes for the project being created',
-      },
-      {
-        displayName: 'Setting Include Time Report',
-        name: 'settingIncludeTimeReport',
-        type: 'boolean',
-        default: false,
-        description: 'Whether to include time report or not',
       },
       {
         displayName: 'Billing Variant',
@@ -881,13 +852,6 @@ export const projectFields: INodeProperties[] = [
         description: 'Billing variant for the project being created',
       },
       {
-        displayName: 'Hourly Rate',
-        name: 'hourlyRate',
-        type: 'number',
-        default: 0,
-        description: 'Hourly rate for the project being created',
-      },
-      {
         displayName: 'Budget',
         name: 'budget',
         type: 'number',
@@ -902,24 +866,15 @@ export const projectFields: INodeProperties[] = [
         description: 'Expenses budget for the project being created',
       },
       {
-        displayName: 'Tags',
-        name: 'tags',
-        placeholder: 'Add Tag',
-        type: 'fixedCollection',
-        default: {},
+        displayName: 'Co Leader Name or ID',
+        name: 'coLeaderId',
+        type: 'options',
+        default: '',
         typeOptions: {
-          multipleValues: true,
+          loadOptionsMethod: 'listUsers',
         },
-        options: [
-          {
-            displayName: 'Tag',
-            name: 'tag',
-            type: 'string',
-            default: '',
-            description: 'Tag for the project being created',
-          },
-        ],
-        description: 'Tags for the project being created',
+        description:
+          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
       },
       {
         displayName: 'Custom Properties',
@@ -951,11 +906,56 @@ export const projectFields: INodeProperties[] = [
         description: 'Custom properties for the project being created',
       },
       {
+        displayName: 'Deal Name or ID',
+        name: 'dealId',
+        type: 'options',
+        default: '',
+        typeOptions: {
+          loadOptionsMethod: 'listLeads',
+        },
+        description:
+          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+      },
+      {
+        displayName: 'Hourly Rate',
+        name: 'hourlyRate',
+        type: 'number',
+        default: 0,
+        description: 'Hourly rate for the project being created',
+      },
+      {
         displayName: 'Info',
         name: 'info',
         type: 'string',
         default: '',
         description: 'Info for the project being created',
+      },
+      {
+        displayName: 'Setting Include Time Report',
+        name: 'settingIncludeTimeReport',
+        type: 'boolean',
+        default: false,
+        description: 'Whether to include time report or not',
+      },
+      {
+        displayName: 'Tags',
+        name: 'tags',
+        placeholder: 'Add Tag',
+        type: 'fixedCollection',
+        default: {},
+        typeOptions: {
+          multipleValues: true,
+        },
+        options: [
+          {
+            displayName: 'Tag',
+            name: 'tag',
+            type: 'string',
+            default: '',
+            description: 'Tag for the project being created',
+          },
+        ],
+        description: 'Tags for the project being created',
       },
     ],
   },
