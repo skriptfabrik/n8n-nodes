@@ -1,13 +1,14 @@
-import type {
-  IDataObject,
-  IExecuteFunctions,
-  ILoadOptionsFunctions,
-  INodeExecutionData,
-  INodePropertyOptions,
-  INodeType,
-  INodeTypeDescription,
-  NodeApiError,
-  NodeParameterValue,
+import {
+  NodeConnectionType,
+  type IDataObject,
+  type IExecuteFunctions,
+  type ILoadOptionsFunctions,
+  type INodeExecutionData,
+  type INodePropertyOptions,
+  type INodeType,
+  type INodeTypeDescription,
+  type NodeApiError,
+  type NodeParameterValue,
 } from 'n8n-workflow';
 import type {
   Activity,
@@ -48,8 +49,8 @@ export class Moco implements INodeType {
     defaults: {
       name: 'MOCO',
     },
-    inputs: ['main'],
-    outputs: ['main'],
+    inputs: [NodeConnectionType.Main],
+    outputs: [NodeConnectionType.Main],
     credentials: [
       {
         name: 'mocoApi',
