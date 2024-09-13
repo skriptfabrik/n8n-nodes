@@ -10,6 +10,7 @@ import {
   INodeExecutionData,
   INodeType,
   INodeTypeDescription,
+  NodeConnectionType,
 } from 'n8n-workflow';
 
 export class Barcode implements INodeType {
@@ -23,8 +24,8 @@ export class Barcode implements INodeType {
     defaults: {
       name: 'Barcode',
     },
-    inputs: ['main'],
-    outputs: ['main'],
+    inputs: [NodeConnectionType.Main],
+    outputs: [NodeConnectionType.Main],
     properties: [
       {
         displayName: 'Data',
