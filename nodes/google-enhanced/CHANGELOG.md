@@ -1,3 +1,19 @@
+## 0.1.10 (2024-09-16)
+
+
+### 🩹 Fixes
+
+- **google-enhanced:** bump n8n-nodes-base version to 1.58.1
+
+- **google-enhanced:** bump n8n-workflow version to 1.57.1
+
+- **google-enhanced:** update node inputs and outputs (N8N-6)
+
+
+### ❤️  Thank You
+
+- Marco Spengler
+
 ## 0.1.9 (2024-09-04)
 
 
