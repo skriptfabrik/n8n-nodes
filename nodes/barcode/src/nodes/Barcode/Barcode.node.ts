@@ -50,6 +50,12 @@ export class Barcode implements INodeType {
         type: 'collection',
         options: [
           {
+            displayName: 'Background Color',
+            name: 'background',
+            type: 'color',
+            default: '#ffffff',
+          },
+          {
             displayName: 'Barcode Type',
             name: 'format',
             type: 'options',
@@ -126,24 +132,10 @@ export class Barcode implements INodeType {
             default: 'CODE128',
           },
           {
-            displayName: 'Width Of A Single Bar',
-            name: 'width',
-            type: 'number',
-            typeOptions: {
-              minValue: 1,
-              numberStepSize: 1,
-            },
-            default: 2,
-          },
-          {
-            displayName: 'Height Of The Barcode',
-            name: 'height',
-            type: 'number',
-            typeOptions: {
-              minValue: 1,
-              numberStepSize: 1,
-            },
-            default: 100,
+            displayName: 'Color Of The Bars And The Text',
+            name: 'lineColor',
+            type: 'color',
+            default: '#000000',
           },
           {
             displayName: 'Display Value',
@@ -152,10 +144,10 @@ export class Barcode implements INodeType {
             default: true,
           },
           {
-            displayName: 'Overide The Text That Is Displayed',
-            name: 'text',
-            type: 'string',
-            default: '',
+            displayName: 'Flat (Only For EAN8/EAN13)',
+            name: 'flat',
+            type: 'boolean',
+            default: false,
           },
           {
             displayName: 'Font Options',
@@ -164,10 +156,22 @@ export class Barcode implements INodeType {
             default: '',
           },
           {
+            displayName: 'Font Size',
+            name: 'fontSize',
+            type: 'number',
+            default: 20,
+          },
+          {
             displayName: 'Font Used For The Text In The Generated Barcode',
             name: 'font',
             type: 'string',
             default: 'monospace',
+          },
+          {
+            displayName: 'Height Of The Barcode',
+            name: 'height',
+            type: 'number',
+            default: 100,
           },
           {
             displayName: 'Horizontal Alignment Of The Text',
@@ -190,6 +194,24 @@ export class Barcode implements INodeType {
             default: 'center',
           },
           {
+            displayName: 'Overide The Text That Is Displayed',
+            name: 'text',
+            type: 'string',
+            default: '',
+          },
+          {
+            displayName: 'Space Margin Around The Barcode',
+            name: 'margin',
+            type: 'number',
+            default: 10,
+          },
+          {
+            displayName: 'Text Margin',
+            name: 'textMargin',
+            type: 'number',
+            default: 2,
+          },
+          {
             displayName: 'Vertical Position Of The Text',
             name: 'textPosition',
             type: 'options',
@@ -206,52 +228,10 @@ export class Barcode implements INodeType {
             default: 'bottom',
           },
           {
-            displayName: 'Text Margin',
-            name: 'textMargin',
+            displayName: 'Width Of A Single Bar',
+            name: 'width',
             type: 'number',
-            typeOptions: {
-              minValue: 1,
-              numberStepSize: 1,
-            },
             default: 2,
-          },
-          {
-            displayName: 'Font Size',
-            name: 'fontSize',
-            type: 'number',
-            typeOptions: {
-              minValue: 1,
-              numberStepSize: 1,
-            },
-            default: 20,
-          },
-          {
-            displayName: 'Background Color',
-            name: 'background',
-            type: 'color',
-            default: '#ffffff',
-          },
-          {
-            displayName: 'Color Of The Bars And The Text',
-            name: 'lineColor',
-            type: 'color',
-            default: '#000000',
-          },
-          {
-            displayName: 'Space Margin Around The Barcode',
-            name: 'margin',
-            type: 'number',
-            typeOptions: {
-              minValue: 1,
-              numberStepSize: 1,
-            },
-            default: 10,
-          },
-          {
-            displayName: 'Flat (Only For EAN8/EAN13)',
-            name: 'flat',
-            type: 'boolean',
-            default: false,
           },
         ],
         default: {},
