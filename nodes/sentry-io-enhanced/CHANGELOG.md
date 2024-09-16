@@ -1,3 +1,17 @@
+## 0.2.10 (2024-09-16)
+
+
+### 🩹 Fixes
+
+- **sentry-io-enhanced:** bump n8n-workflow version to 1.57.1
+
+- **sentry-io-enhanced:** update node inputs and outputs (N8N-6)
+
+
+### ❤️  Thank You
+
+- Marco Spengler
+
 ## 0.2.9 (2024-09-04)
 
 
