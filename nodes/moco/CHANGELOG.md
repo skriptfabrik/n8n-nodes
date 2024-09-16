@@ -1,3 +1,19 @@
+## 0.3.10 (2024-09-16)
+
+
+### 🩹 Fixes
+
+- **moco:** bump n8n-workflow version to 1.57.1
+
+- **moco:** update node inputs and outputs (N8N-6)
+
+- **moco:** update order of node options due to n8n node options rule set (N8N-6)
+
+
+### ❤️  Thank You
+
+- Marco Spengler
+
 ## 0.3.9 (2024-09-04)
 
 
