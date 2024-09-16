@@ -1,3 +1,19 @@
+## 0.1.8 (2024-09-16)
+
+
+### 🩹 Fixes
+
+- **barcode:** bump n8n-workflow version to 1.57.1
+
+- **barcode:** update node inputs and outputs (N8N-6)
+
+- **barcode:** update order of node options due to n8n node options rule set (N8N-6)
+
+
+### ❤️  Thank You
+
+- Marco Spengler
+
 ## 0.1.7 (2024-09-04)
 
 
