@@ -49,7 +49,7 @@ export const projectMembershipFields: INodeProperties[] = [
     },
     default: '',
     description:
-      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
     displayOptions: {
       show: {
         operation: ['patch', 'assign', 'remove'],
@@ -70,7 +70,7 @@ export const projectMembershipFields: INodeProperties[] = [
     },
     default: [],
     description:
-      'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+      'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
     displayOptions: {
       show: {
         operation: ['patch'],
@@ -90,7 +90,7 @@ export const projectMembershipFields: INodeProperties[] = [
     },
     default: [],
     description:
-      'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+      'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
     displayOptions: {
       show: {
         operation: ['assign'],
@@ -111,7 +111,7 @@ export const projectMembershipFields: INodeProperties[] = [
     },
     default: [],
     description:
-      'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+      'Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
     displayOptions: {
       show: {
         operation: ['remove'],

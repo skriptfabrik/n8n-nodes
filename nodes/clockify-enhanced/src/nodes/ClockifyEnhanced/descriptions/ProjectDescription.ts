@@ -32,7 +32,7 @@ export const projectFields: INodeProperties[] = [
     name: 'projectId',
     type: 'options',
     description:
-      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+      'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
     typeOptions: {
       loadOptionsDependsOn: ['workspaceId'],
       loadOptionsMethod: 'loadProjects',
@@ -78,7 +78,7 @@ export const projectFields: INodeProperties[] = [
         name: 'clientId',
         type: 'options',
         description:
-          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
+          'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
         typeOptions: {
           loadOptionsDependsOn: ['workspaceId'],
           loadOptionsMethod: 'loadClients',
