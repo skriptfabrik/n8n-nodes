@@ -1,3 +1,21 @@
+## 0.4.10 (2024-09-16)
+
+
+### 🩹 Fixes
+
+- **clockify-enhanced:** bump n8n-nodes-base version to 1.58.1
+
+- **clockify-enhanced:** bump n8n-workflow version to 1.57.1
+
+- **clockify-enhanced:** update node inputs and outputs (N8N-6)
+
+- **clockify-enhanced:** update order of node options due to n8n node options rule set (N8N-6)
+
+
+### ❤️  Thank You
+
+- Marco Spengler
+
 ## 0.4.9 (2024-09-04)
 
 
