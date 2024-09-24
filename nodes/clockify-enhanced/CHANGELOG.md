@@ -1,3 +1,12 @@
+## 0.4.11 (2024-09-24)
+
+
+### 🩹 Fixes
+
+- **clockify-enhanced:** bump n8n-nodes-base version to 1.59.1 ([71135b8](https://github.com/skriptfabrik/n8n-nodes/commit/71135b8))
+
+- **clockify-enhanced:** bump n8n-workflow version to 1.58.0 ([bf452a8](https://github.com/skriptfabrik/n8n-nodes/commit/bf452a8))
+
 ## 0.4.10 (2024-09-16)
 
 
