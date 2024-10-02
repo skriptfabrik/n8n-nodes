@@ -1,3 +1,10 @@
+## 0.1.10 (2024-10-02)
+
+
+### 🩹 Fixes
+
+- **cronhooks:** bump n8n-workflow version to 1.59.0 ([5acd6f7](https://github.com/skriptfabrik/n8n-nodes/commit/5acd6f7))
+
 ## 0.1.9 (2024-09-24)
 
 
