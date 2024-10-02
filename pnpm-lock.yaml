@@ -148,8 +148,8 @@ importers:
         specifier: ^3.11.5
         version: 3.11.6
       n8n-workflow:
-        specifier: 1.58.0
-        version: 1.58.0
+        specifier: 1.59.0
+        version: 1.59.0
       tslib:
         specifier: ^2.7.0
         version: 2.7.0
@@ -9762,24 +9762,6 @@ snapshots:
       - '@aws-sdk/client-sso-oidc'
       - aws-crt
 
-  '@aws-sdk/credential-provider-ini@3.645.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.606.0)':
-    dependencies:
-      '@aws-sdk/client-sts': 3.606.0
-      '@aws-sdk/credential-provider-env': 3.620.1
-      '@aws-sdk/credential-provider-http': 3.635.0
-      '@aws-sdk/credential-provider-process': 3.620.1
-      '@aws-sdk/credential-provider-sso': 3.645.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))
-      '@aws-sdk/credential-provider-web-identity': 3.621.0(@aws-sdk/client-sts@3.606.0)
-      '@aws-sdk/types': 3.609.0
-      '@smithy/credential-provider-imds': 3.2.3
-      '@smithy/property-provider': 3.1.6
-      '@smithy/shared-ini-file-loader': 3.1.7
-      '@smithy/types': 3.4.2
-      tslib: 2.7.0
-    transitivePeerDependencies:
-      - '@aws-sdk/client-sso-oidc'
-      - aws-crt
-
   '@aws-sdk/credential-provider-ini@3.645.0(@aws-sdk/client-sso-oidc@3.645.0(@aws-sdk/client-sts@3.645.0))(@aws-sdk/client-sts@3.645.0)':
     dependencies:
       '@aws-sdk/client-sts': 3.645.0
@@ -9798,15 +9780,15 @@ snapshots:
       - '@aws-sdk/client-sso-oidc'
       - aws-crt
 
-  '@aws-sdk/credential-provider-ini@3.654.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.654.0)':
+  '@aws-sdk/credential-provider-ini@3.645.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.606.0)':
     dependencies:
-      '@aws-sdk/client-sts': 3.654.0
-      '@aws-sdk/credential-provider-env': 3.654.0
-      '@aws-sdk/credential-provider-http': 3.654.0
-      '@aws-sdk/credential-provider-process': 3.654.0
-      '@aws-sdk/credential-provider-sso': 3.654.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))
-      '@aws-sdk/credential-provider-web-identity': 3.654.0(@aws-sdk/client-sts@3.654.0)
-      '@aws-sdk/types': 3.654.0
+      '@aws-sdk/client-sts': 3.606.0
+      '@aws-sdk/credential-provider-env': 3.620.1
+      '@aws-sdk/credential-provider-http': 3.635.0
+      '@aws-sdk/credential-provider-process': 3.620.1
+      '@aws-sdk/credential-provider-sso': 3.645.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))
+      '@aws-sdk/credential-provider-web-identity': 3.621.0(@aws-sdk/client-sts@3.606.0)
+      '@aws-sdk/types': 3.609.0
       '@smithy/credential-provider-imds': 3.2.3
       '@smithy/property-provider': 3.1.6
       '@smithy/shared-ini-file-loader': 3.1.7
@@ -9824,6 +9806,24 @@ snapshots:
       '@aws-sdk/credential-provider-process': 3.654.0
       '@aws-sdk/credential-provider-sso': 3.654.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))
       '@aws-sdk/credential-provider-web-identity': 3.654.0(@aws-sdk/client-sts@3.606.0)
+      '@aws-sdk/types': 3.654.0
+      '@smithy/credential-provider-imds': 3.2.3
+      '@smithy/property-provider': 3.1.6
+      '@smithy/shared-ini-file-loader': 3.1.7
+      '@smithy/types': 3.4.2
+      tslib: 2.7.0
+    transitivePeerDependencies:
+      - '@aws-sdk/client-sso-oidc'
+      - aws-crt
+
+  '@aws-sdk/credential-provider-ini@3.654.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.654.0)':
+    dependencies:
+      '@aws-sdk/client-sts': 3.654.0
+      '@aws-sdk/credential-provider-env': 3.654.0
+      '@aws-sdk/credential-provider-http': 3.654.0
+      '@aws-sdk/credential-provider-process': 3.654.0
+      '@aws-sdk/credential-provider-sso': 3.654.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))
+      '@aws-sdk/credential-provider-web-identity': 3.654.0(@aws-sdk/client-sts@3.654.0)
       '@aws-sdk/types': 3.654.0
       '@smithy/credential-provider-imds': 3.2.3
       '@smithy/property-provider': 3.1.6
@@ -9871,25 +9871,6 @@ snapshots:
       - '@aws-sdk/client-sts'
       - aws-crt
 
-  '@aws-sdk/credential-provider-node@3.645.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.606.0)':
-    dependencies:
-      '@aws-sdk/credential-provider-env': 3.620.1
-      '@aws-sdk/credential-provider-http': 3.635.0
-      '@aws-sdk/credential-provider-ini': 3.645.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.606.0)
-      '@aws-sdk/credential-provider-process': 3.620.1
-      '@aws-sdk/credential-provider-sso': 3.645.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))
-      '@aws-sdk/credential-provider-web-identity': 3.621.0(@aws-sdk/client-sts@3.606.0)
-      '@aws-sdk/types': 3.609.0
-      '@smithy/credential-provider-imds': 3.2.3
-      '@smithy/property-provider': 3.1.6
-      '@smithy/shared-ini-file-loader': 3.1.7
-      '@smithy/types': 3.4.2
-      tslib: 2.7.0
-    transitivePeerDependencies:
-      - '@aws-sdk/client-sso-oidc'
-      - '@aws-sdk/client-sts'
-      - aws-crt
-
   '@aws-sdk/credential-provider-node@3.645.0(@aws-sdk/client-sso-oidc@3.645.0(@aws-sdk/client-sts@3.645.0))(@aws-sdk/client-sts@3.645.0)':
     dependencies:
       '@aws-sdk/credential-provider-env': 3.620.1
@@ -9909,15 +9890,15 @@ snapshots:
       - '@aws-sdk/client-sts'
       - aws-crt
 
-  '@aws-sdk/credential-provider-node@3.654.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.654.0)':
+  '@aws-sdk/credential-provider-node@3.645.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.606.0)':
     dependencies:
-      '@aws-sdk/credential-provider-env': 3.654.0
-      '@aws-sdk/credential-provider-http': 3.654.0
-      '@aws-sdk/credential-provider-ini': 3.654.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.654.0)
-      '@aws-sdk/credential-provider-process': 3.654.0
-      '@aws-sdk/credential-provider-sso': 3.654.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))
-      '@aws-sdk/credential-provider-web-identity': 3.654.0(@aws-sdk/client-sts@3.654.0)
-      '@aws-sdk/types': 3.654.0
+      '@aws-sdk/credential-provider-env': 3.620.1
+      '@aws-sdk/credential-provider-http': 3.635.0
+      '@aws-sdk/credential-provider-ini': 3.645.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.606.0)
+      '@aws-sdk/credential-provider-process': 3.620.1
+      '@aws-sdk/credential-provider-sso': 3.645.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))
+      '@aws-sdk/credential-provider-web-identity': 3.621.0(@aws-sdk/client-sts@3.606.0)
+      '@aws-sdk/types': 3.609.0
       '@smithy/credential-provider-imds': 3.2.3
       '@smithy/property-provider': 3.1.6
       '@smithy/shared-ini-file-loader': 3.1.7
@@ -9936,6 +9917,25 @@ snapshots:
       '@aws-sdk/credential-provider-process': 3.654.0
       '@aws-sdk/credential-provider-sso': 3.654.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))
       '@aws-sdk/credential-provider-web-identity': 3.654.0(@aws-sdk/client-sts@3.606.0)
+      '@aws-sdk/types': 3.654.0
+      '@smithy/credential-provider-imds': 3.2.3
+      '@smithy/property-provider': 3.1.6
+      '@smithy/shared-ini-file-loader': 3.1.7
+      '@smithy/types': 3.4.2
+      tslib: 2.7.0
+    transitivePeerDependencies:
+      - '@aws-sdk/client-sso-oidc'
+      - '@aws-sdk/client-sts'
+      - aws-crt
+
+  '@aws-sdk/credential-provider-node@3.654.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.654.0)':
+    dependencies:
+      '@aws-sdk/credential-provider-env': 3.654.0
+      '@aws-sdk/credential-provider-http': 3.654.0
+      '@aws-sdk/credential-provider-ini': 3.654.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.654.0)
+      '@aws-sdk/credential-provider-process': 3.654.0
+      '@aws-sdk/credential-provider-sso': 3.654.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))
+      '@aws-sdk/credential-provider-web-identity': 3.654.0(@aws-sdk/client-sts@3.654.0)
       '@aws-sdk/types': 3.654.0
       '@smithy/credential-provider-imds': 3.2.3
       '@smithy/property-provider': 3.1.6
@@ -10003,19 +10003,6 @@ snapshots:
       - '@aws-sdk/client-sso-oidc'
       - aws-crt
 
-  '@aws-sdk/credential-provider-sso@3.645.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))':
-    dependencies:
-      '@aws-sdk/client-sso': 3.645.0
-      '@aws-sdk/token-providers': 3.614.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))
-      '@aws-sdk/types': 3.609.0
-      '@smithy/property-provider': 3.1.6
-      '@smithy/shared-ini-file-loader': 3.1.7
-      '@smithy/types': 3.4.2
-      tslib: 2.7.0
-    transitivePeerDependencies:
-      - '@aws-sdk/client-sso-oidc'
-      - aws-crt
-
   '@aws-sdk/credential-provider-sso@3.645.0(@aws-sdk/client-sso-oidc@3.645.0(@aws-sdk/client-sts@3.645.0))':
     dependencies:
       '@aws-sdk/client-sso': 3.645.0
@@ -10029,11 +10016,11 @@ snapshots:
       - '@aws-sdk/client-sso-oidc'
       - aws-crt
 
-  '@aws-sdk/credential-provider-sso@3.654.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))':
+  '@aws-sdk/credential-provider-sso@3.645.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))':
     dependencies:
-      '@aws-sdk/client-sso': 3.654.0
-      '@aws-sdk/token-providers': 3.654.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))
-      '@aws-sdk/types': 3.654.0
+      '@aws-sdk/client-sso': 3.645.0
+      '@aws-sdk/token-providers': 3.614.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))
+      '@aws-sdk/types': 3.609.0
       '@smithy/property-provider': 3.1.6
       '@smithy/shared-ini-file-loader': 3.1.7
       '@smithy/types': 3.4.2
@@ -10108,7 +10095,7 @@ snapshots:
       '@smithy/types': 3.4.2
       tslib: 2.7.0
 
-  '@aws-sdk/credential-providers@3.654.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))':
+  '@aws-sdk/credential-providers@3.654.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))':
     dependencies:
       '@aws-sdk/client-cognito-identity': 3.654.0
       '@aws-sdk/client-sso': 3.654.0
@@ -10116,10 +10103,10 @@ snapshots:
       '@aws-sdk/credential-provider-cognito-identity': 3.654.0
       '@aws-sdk/credential-provider-env': 3.654.0
       '@aws-sdk/credential-provider-http': 3.654.0
-      '@aws-sdk/credential-provider-ini': 3.654.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.654.0)
-      '@aws-sdk/credential-provider-node': 3.654.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.654.0)
+      '@aws-sdk/credential-provider-ini': 3.654.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.654.0)
+      '@aws-sdk/credential-provider-node': 3.654.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.654.0)
       '@aws-sdk/credential-provider-process': 3.654.0
-      '@aws-sdk/credential-provider-sso': 3.654.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))
+      '@aws-sdk/credential-provider-sso': 3.654.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))
       '@aws-sdk/credential-provider-web-identity': 3.654.0(@aws-sdk/client-sts@3.654.0)
       '@aws-sdk/types': 3.654.0
       '@smithy/credential-provider-imds': 3.2.3
@@ -10336,15 +10323,6 @@ snapshots:
       '@smithy/types': 3.4.2
       tslib: 2.7.0
 
-  '@aws-sdk/token-providers@3.614.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))':
-    dependencies:
-      '@aws-sdk/client-sso-oidc': 3.606.0(@aws-sdk/client-sts@3.606.0)
-      '@aws-sdk/types': 3.609.0
-      '@smithy/property-provider': 3.1.6
-      '@smithy/shared-ini-file-loader': 3.1.7
-      '@smithy/types': 3.4.2
-      tslib: 2.7.0
-
   '@aws-sdk/token-providers@3.614.0(@aws-sdk/client-sso-oidc@3.645.0(@aws-sdk/client-sts@3.645.0))':
     dependencies:
       '@aws-sdk/client-sso-oidc': 3.645.0(@aws-sdk/client-sts@3.645.0)
@@ -10354,10 +10332,10 @@ snapshots:
       '@smithy/types': 3.4.2
       tslib: 2.7.0
 
-  '@aws-sdk/token-providers@3.654.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))':
+  '@aws-sdk/token-providers@3.614.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))':
     dependencies:
-      '@aws-sdk/client-sso-oidc': 3.606.0(@aws-sdk/client-sts@3.606.0)
-      '@aws-sdk/types': 3.654.0
+      '@aws-sdk/client-sso-oidc': 3.654.0(@aws-sdk/client-sts@3.606.0)
+      '@aws-sdk/types': 3.609.0
       '@smithy/property-provider': 3.1.6
       '@smithy/shared-ini-file-loader': 3.1.7
       '@smithy/types': 3.4.2
@@ -11744,7 +11722,7 @@ snapshots:
       zod: 3.23.8
     optionalDependencies:
       '@langchain/core': 0.2.31(openai@4.58.0(encoding@0.1.13)(zod@3.23.8))
-      langchain: 0.2.18(a4r2rwkjglbohxpqhsilhx4fnm)
+      langchain: 0.2.18(d3wc5w6wrkfznuolyf2x5k6b7y)
     transitivePeerDependencies:
       - encoding
 
@@ -12082,7 +12060,7 @@ snapshots:
   '@langchain/cohere@0.2.2(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))(encoding@0.1.13)(openai@4.58.0(encoding@0.1.13)(zod@3.23.8))':
     dependencies:
       '@langchain/core': 0.2.31(openai@4.58.0(encoding@0.1.13)(zod@3.23.8))
-      cohere-ai: 7.13.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))(encoding@0.1.13)
+      cohere-ai: 7.13.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))(encoding@0.1.13)
       uuid: 10.0.0
       zod: 3.23.8
       zod-to-json-schema: 3.23.2(zod@3.23.8)
@@ -12092,7 +12070,7 @@ snapshots:
       - encoding
       - openai
 
-  '@langchain/community@0.2.32(3ymu7pfcubxuzabkz63jpiztsy)':
+  '@langchain/community@0.2.32(sy5wxdihvuyb2s5stz4ao4ydn4)':
     dependencies:
       '@langchain/core': 0.2.31(openai@4.58.0(encoding@0.1.13)(zod@3.23.8))
       '@langchain/openai': 0.2.10(encoding@0.1.13)
@@ -12100,7 +12078,7 @@ snapshots:
       expr-eval: 2.0.2
       flat: 5.0.2
       js-yaml: 4.1.0
-      langchain: 0.2.18(a4r2rwkjglbohxpqhsilhx4fnm)
+      langchain: 0.2.18(d3wc5w6wrkfznuolyf2x5k6b7y)
       langsmith: 0.1.59(openai@4.58.0(encoding@0.1.13)(zod@3.23.8))
       uuid: 10.0.0
       zod: 3.23.8
@@ -12109,7 +12087,7 @@ snapshots:
       '@aws-crypto/sha256-js': 5.2.0
       '@aws-sdk/client-bedrock-runtime': 3.645.0
       '@aws-sdk/client-s3': 3.606.0
-      '@aws-sdk/credential-provider-node': 3.645.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.606.0)
+      '@aws-sdk/credential-provider-node': 3.645.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.606.0)
       '@azure/storage-blob': 12.23.0
       '@getzep/zep-cloud': 1.0.11(@langchain/core@0.2.31(openai@4.58.0(encoding@0.1.13)(zod@3.23.8)))(encoding@0.1.13)(langchain@0.2.18)
       '@getzep/zep-js': 0.9.0
@@ -12126,7 +12104,7 @@ snapshots:
       '@supabase/supabase-js': 2.45.3
       '@xata.io/client': 0.28.4(typescript@5.6.2)
       cheerio: 1.0.0-rc.12
-      cohere-ai: 7.13.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))(encoding@0.1.13)
+      cohere-ai: 7.13.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))(encoding@0.1.13)
       crypto-js: 4.2.0
       d3-dsv: 2.0.0
       epub2: 3.0.2(ts-toolbelt@9.6.0)
@@ -12373,7 +12351,7 @@ snapshots:
     dependencies:
       '@aws-sdk/client-bedrock-runtime': 3.645.0
       '@aws-sdk/client-sso-oidc': 3.654.0(@aws-sdk/client-sts@3.606.0)
-      '@aws-sdk/credential-provider-node': 3.645.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.606.0)
+      '@aws-sdk/credential-provider-node': 3.645.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.606.0)
       '@getzep/zep-cloud': 1.0.11(@langchain/core@0.2.31(openai@4.58.0(encoding@0.1.13)(zod@3.23.8)))(encoding@0.1.13)(langchain@0.2.18)
       '@getzep/zep-js': 0.9.0
       '@google-ai/generativelanguage': 2.5.0(encoding@0.1.13)
@@ -12382,7 +12360,7 @@ snapshots:
       '@huggingface/inference': 2.8.0
       '@langchain/anthropic': 0.2.16(encoding@0.1.13)(openai@4.58.0(encoding@0.1.13)(zod@3.23.8))
       '@langchain/cohere': 0.2.2(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))(encoding@0.1.13)(openai@4.58.0(encoding@0.1.13)(zod@3.23.8))
-      '@langchain/community': 0.2.32(3ymu7pfcubxuzabkz63jpiztsy)
+      '@langchain/community': 0.2.32(sy5wxdihvuyb2s5stz4ao4ydn4)
       '@langchain/core': 0.2.31(openai@4.58.0(encoding@0.1.13)(zod@3.23.8))
       '@langchain/google-genai': 0.0.26(openai@4.58.0(encoding@0.1.13)(zod@3.23.8))(zod@3.23.8)
       '@langchain/google-vertexai': 0.0.27(encoding@0.1.13)(openai@4.58.0(encoding@0.1.13)(zod@3.23.8))(zod@3.23.8)
@@ -12404,7 +12382,7 @@ snapshots:
       '@xata.io/client': 0.28.4(typescript@5.6.2)
       basic-auth: 2.0.1
       cheerio: 1.0.0-rc.12
-      cohere-ai: 7.13.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))(encoding@0.1.13)
+      cohere-ai: 7.13.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))(encoding@0.1.13)
       d3-dsv: 2.0.0
       epub2: 3.0.2(ts-toolbelt@9.6.0)
       form-data: 4.0.0
@@ -12412,7 +12390,7 @@ snapshots:
       html-to-text: 9.0.5
       jsdom: 23.2.0(canvas@2.11.2(encoding@0.1.13))
       json-schema-to-zod: 2.1.0
-      langchain: 0.2.18(a4r2rwkjglbohxpqhsilhx4fnm)
+      langchain: 0.2.18(d3wc5w6wrkfznuolyf2x5k6b7y)
       lodash: 4.17.21
       mammoth: 1.7.2
       n8n-nodes-base: 1.60.0(@aws-sdk/credential-providers@3.654.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
@@ -15200,10 +15178,10 @@ snapshots:
 
   co@4.6.0: {}
 
-  cohere-ai@7.13.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))(encoding@0.1.13):
+  cohere-ai@7.13.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))(encoding@0.1.13):
     dependencies:
       '@aws-sdk/client-sagemaker': 3.656.0
-      '@aws-sdk/credential-providers': 3.654.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))
+      '@aws-sdk/credential-providers': 3.654.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))
       '@aws-sdk/protocol-http': 3.374.0
       '@aws-sdk/signature-v4': 3.374.0
       form-data: 4.0.0
@@ -17633,7 +17611,7 @@ snapshots:
 
   kuler@2.0.0: {}
 
-  langchain@0.2.18(a4r2rwkjglbohxpqhsilhx4fnm):
+  langchain@0.2.18(d3wc5w6wrkfznuolyf2x5k6b7y):
     dependencies:
       '@langchain/core': 0.2.31(openai@4.58.0(encoding@0.1.13)(zod@3.23.8))
       '@langchain/openai': 0.2.10(encoding@0.1.13)
@@ -17651,11 +17629,11 @@ snapshots:
       zod-to-json-schema: 3.23.2(zod@3.23.8)
     optionalDependencies:
       '@aws-sdk/client-s3': 3.606.0
-      '@aws-sdk/credential-provider-node': 3.645.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.606.0)
+      '@aws-sdk/credential-provider-node': 3.645.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))(@aws-sdk/client-sts@3.606.0)
       '@azure/storage-blob': 12.23.0
       '@langchain/anthropic': 0.2.16(encoding@0.1.13)(openai@4.58.0(encoding@0.1.13)(zod@3.23.8))
       '@langchain/cohere': 0.2.2(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))(encoding@0.1.13)(openai@4.58.0(encoding@0.1.13)(zod@3.23.8))
-      '@langchain/community': 0.2.32(3ymu7pfcubxuzabkz63jpiztsy)
+      '@langchain/community': 0.2.32(sy5wxdihvuyb2s5stz4ao4ydn4)
       '@langchain/google-genai': 0.0.26(openai@4.58.0(encoding@0.1.13)(zod@3.23.8))(zod@3.23.8)
       '@langchain/google-vertexai': 0.0.27(encoding@0.1.13)(openai@4.58.0(encoding@0.1.13)(zod@3.23.8))(zod@3.23.8)
       '@langchain/groq': 0.0.17(encoding@0.1.13)(openai@4.58.0(encoding@0.1.13)(zod@3.23.8))
@@ -18101,7 +18079,7 @@ snapshots:
       bson: 6.8.0
       mongodb-connection-string-url: 3.0.1
     optionalDependencies:
-      '@aws-sdk/credential-providers': 3.654.0(@aws-sdk/client-sso-oidc@3.606.0(@aws-sdk/client-sts@3.606.0))
+      '@aws-sdk/credential-providers': 3.654.0(@aws-sdk/client-sso-oidc@3.654.0(@aws-sdk/client-sts@3.606.0))
       gcp-metadata: 5.3.0(encoding@0.1.13)
       socks: 2.8.3
 
