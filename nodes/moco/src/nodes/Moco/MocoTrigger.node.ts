@@ -410,7 +410,7 @@ export class MocoTrigger implements INodeType {
             'DELETE',
             `/account/web_hooks/${webhookData.hookId}`,
           );
-        } catch (error) {
+        } catch {
           return false;
         }
 

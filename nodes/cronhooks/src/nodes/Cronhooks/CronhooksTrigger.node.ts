@@ -197,7 +197,7 @@ export class CronhooksTrigger implements INodeType {
             'DELETE',
             `/schedules/${staticData.scheduleId}`,
           );
-        } catch (error) {
+        } catch {
           return false;
         }
 
