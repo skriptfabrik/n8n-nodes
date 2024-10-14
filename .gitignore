@@ -1,27 +1,44 @@
-# Build files
-/dist
+# compiled output
+dist
+tmp
+/out-tsc
 
-# Caches and logs
-/.cache
-/.nx/cache
-/.nx/workspace-data
-/migrations.json
-
-# Coverage
-/coverage
-
-# Dependencies
+# dependencies
 node_modules
 
 # IDEs and editors
 /.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
 
 # N8N
 /.n8n
 
-# System files
-.DS_Store
-Thumbs.db
-
-# Temp files
-/tmp
+.nx/cache
+.nx/workspace-data
+/migrations.json
