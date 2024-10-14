@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'n8n-nodes-barcode',
   preset: '../../jest.preset.js',
