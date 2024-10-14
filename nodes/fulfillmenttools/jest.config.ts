@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'n8n-nodes-fulfillmenttools',
   preset: '../../jest.preset.js',
