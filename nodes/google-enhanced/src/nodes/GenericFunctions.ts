@@ -38,7 +38,7 @@ export function parseBodyData(bodyData: IDataObject, fields: string[]) {
 
     try {
       bodyData[field] = JSON.parse(bodyData[field] as string);
-    } catch (error) {
+    } catch {
       continue;
     }
   }

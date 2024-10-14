@@ -353,7 +353,7 @@ export class FulfillmenttoolsTrigger implements INodeType {
             'DELETE',
             `/subscriptions/${staticData.subscriptionId}`,
           );
-        } catch (error) {
+        } catch {
           return false;
         }
 

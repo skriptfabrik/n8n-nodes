@@ -314,7 +314,7 @@ export class ClockifyEnhancedTrigger implements INodeType {
             'DELETE',
             `workspaces/${workspaceId}/webhooks/${webhookData.webhookId}`,
           );
-        } catch (error) {
+        } catch {
           return false;
         }
 
