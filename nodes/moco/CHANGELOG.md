@@ -1,3 +1,9 @@
+## 0.3.13 (2024-10-21)
+
+### 🩹 Fixes
+
+- **moco:** bump n8n-workflow version to 1.61.1 ([ead7448](https://github.com/skriptfabrik/n8n-nodes/commit/ead7448))
+
 ## 0.3.12 (2024-10-02)
 
 
