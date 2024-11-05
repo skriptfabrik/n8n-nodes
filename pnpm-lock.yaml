@@ -110,10 +110,10 @@ importers:
         version: 0.5.46
       n8n:
         specifier: 1.64.3
-        version: 1.64.3(l6mzywq7w6lm2xin5jszj63764)
+        version: 1.64.3(resedylzjf3z3ffwvwxiei5xhy)
       n8n-nodes-base:
         specifier: 1.64.1
-        version: 1.64.1(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
+        version: 1.64.1(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.682.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
       n8n-workflow:
         specifier: 1.63.0
         version: 1.63.0
@@ -160,8 +160,8 @@ importers:
   nodes/channable:
     dependencies:
       n8n-workflow:
-        specifier: 1.62.0
-        version: 1.62.0
+        specifier: 1.63.0
+        version: 1.63.0
       tslib:
         specifier: ^2.8.0
         version: 2.8.0
@@ -170,7 +170,7 @@ importers:
     dependencies:
       n8n-nodes-base:
         specifier: 1.63.0
-        version: 1.63.0(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
+        version: 1.63.0(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.682.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
       n8n-workflow:
         specifier: 1.62.0
         version: 1.62.0
@@ -209,7 +209,7 @@ importers:
         version: 0.5.46
       n8n-nodes-base:
         specifier: 1.63.0
-        version: 1.63.0(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
+        version: 1.63.0(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.682.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
       n8n-workflow:
         specifier: 1.62.0
         version: 1.62.0
@@ -9927,13 +9927,13 @@ snapshots:
 
   '@azure/abort-controller@2.1.2':
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@azure/core-auth@1.9.0':
     dependencies:
       '@azure/abort-controller': 2.1.2
       '@azure/core-util': 1.11.0
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@azure/core-client@1.9.2':
     dependencies:
@@ -9943,7 +9943,7 @@ snapshots:
       '@azure/core-tracing': 1.2.0
       '@azure/core-util': 1.11.0
       '@azure/logger': 1.1.4
-      tslib: 2.8.0
+      tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
@@ -9979,11 +9979,11 @@ snapshots:
       '@azure/abort-controller': 2.1.2
       '@azure/core-util': 1.11.0
       '@azure/logger': 1.1.4
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@azure/core-paging@1.6.2':
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@azure/core-rest-pipeline@1.17.0':
     dependencies:
@@ -9994,7 +9994,7 @@ snapshots:
       '@azure/logger': 1.1.4
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.5(supports-color@9.4.0)
-      tslib: 2.8.0
+      tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
@@ -10005,12 +10005,12 @@ snapshots:
 
   '@azure/core-tracing@1.2.0':
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@azure/core-util@1.11.0':
     dependencies:
       '@azure/abort-controller': 2.1.2
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@azure/core-xml@1.4.4':
     dependencies:
@@ -10065,7 +10065,7 @@ snapshots:
       '@azure/core-tracing': 1.2.0
       '@azure/core-util': 1.11.0
       '@azure/logger': 1.1.4
-      tslib: 2.8.0
+      tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
@@ -10105,7 +10105,7 @@ snapshots:
 
   '@azure/logger@1.1.4':
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@azure/msal-browser@3.26.1':
     dependencies:
@@ -11153,15 +11153,15 @@ snapshots:
   '@emnapi/core@1.2.0':
     dependencies:
       '@emnapi/wasi-threads': 1.0.1
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@emnapi/runtime@1.2.0':
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@emnapi/wasi-threads@1.0.1':
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@eslint-community/eslint-utils@4.4.0(eslint@9.14.0(jiti@1.21.6))':
     dependencies:
@@ -11561,7 +11561,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@langchain/aws@0.1.0(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))':
+  '@langchain/aws@0.1.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))':
     dependencies:
       '@aws-sdk/client-bedrock-agent-runtime': 3.682.0
       '@aws-sdk/client-bedrock-runtime': 3.682.0
@@ -11575,7 +11575,7 @@ snapshots:
       - '@aws-sdk/client-sts'
       - aws-crt
 
-  '@langchain/cohere@0.3.0(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))(encoding@0.1.13)':
+  '@langchain/cohere@0.3.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.682.0))(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))(encoding@0.1.13)':
     dependencies:
       '@langchain/core': 0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8))
       cohere-ai: 7.13.2(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.682.0))(encoding@0.1.13)
@@ -11587,7 +11587,7 @@ snapshots:
       - aws-crt
       - encoding
 
-  '@langchain/community@0.3.2(x5wr73vxg7tt6ztb33p7l5hnvy)':
+  '@langchain/community@0.3.2(h5eifij6srejqrzb3krst4uzky)':
     dependencies:
       '@langchain/core': 0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8))
       '@langchain/openai': 0.3.0(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))(encoding@0.1.13)
@@ -11606,7 +11606,7 @@ snapshots:
       '@aws-sdk/client-bedrock-runtime': 3.682.0
       '@aws-sdk/client-kendra': 3.682.0
       '@aws-sdk/client-s3': 3.685.0
-      '@aws-sdk/credential-provider-node': 3.682.0(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)
+      '@aws-sdk/credential-provider-node': 3.682.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)
       '@azure/storage-blob': 12.23.0
       '@getzep/zep-cloud': 1.0.12(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))(encoding@0.1.13)(langchain@0.3.2(6rin33c4abkpy6abzuzq3nnw2m))
       '@getzep/zep-js': 0.9.0
@@ -11849,7 +11849,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@n8n/n8n-nodes-langchain@1.64.1(75nrzxjvxwhakomeusuvlstcwy)':
+  '@n8n/n8n-nodes-langchain@1.64.1(6jwq67wgk3imhjddrwr2k72st4)':
     dependencies:
       '@aws-sdk/client-sso-oidc': 3.666.0(@aws-sdk/client-sts@3.682.0)
       '@getzep/zep-cloud': 1.0.12(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))(encoding@0.1.13)(langchain@0.3.2(6rin33c4abkpy6abzuzq3nnw2m))
@@ -11859,9 +11859,9 @@ snapshots:
       '@google/generative-ai': 0.19.0
       '@huggingface/inference': 2.8.0
       '@langchain/anthropic': 0.3.1(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))(encoding@0.1.13)
-      '@langchain/aws': 0.1.0(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))
-      '@langchain/cohere': 0.3.0(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))(encoding@0.1.13)
-      '@langchain/community': 0.3.2(x5wr73vxg7tt6ztb33p7l5hnvy)
+      '@langchain/aws': 0.1.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))
+      '@langchain/cohere': 0.3.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.682.0))(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))(encoding@0.1.13)
+      '@langchain/community': 0.3.2(h5eifij6srejqrzb3krst4uzky)
       '@langchain/core': 0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8))
       '@langchain/google-genai': 0.1.0(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))(zod@3.23.8)
       '@langchain/google-vertexai': 0.1.0(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))(encoding@0.1.13)(zod@3.23.8)
@@ -11894,7 +11894,7 @@ snapshots:
       lodash: 4.17.21
       mammoth: 1.7.2
       mime-types: 2.1.35
-      n8n-nodes-base: 1.64.1(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
+      n8n-nodes-base: 1.64.1(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.682.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
       n8n-workflow: 1.63.0
       openai: 4.63.0(encoding@0.1.13)(zod@3.23.8)
       pdf-parse: 1.1.1
@@ -13257,7 +13257,7 @@ snapshots:
 
   '@tybys/wasm-util@0.9.0':
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@types/asn1@0.2.4':
     dependencies:
@@ -14020,7 +14020,7 @@ snapshots:
 
   ast-types@0.15.2:
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   ast-types@0.16.1:
     dependencies:
@@ -14406,7 +14406,7 @@ snapshots:
   capital-case@1.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.8.0
+      tslib: 2.8.1
       upper-case-first: 2.0.2
 
   caseless@0.12.0: {}
@@ -14678,7 +14678,7 @@ snapshots:
   constant-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.8.0
+      tslib: 2.8.1
       upper-case: 2.0.2
 
   content-disposition@0.5.4:
@@ -15085,7 +15085,7 @@ snapshots:
   dot-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   dot-prop@5.3.0:
     dependencies:
@@ -16103,7 +16103,7 @@ snapshots:
   header-case@2.0.4:
     dependencies:
       capital-case: 1.0.4
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   heap@0.2.7: {}
 
@@ -17052,8 +17052,8 @@ snapshots:
       zod-to-json-schema: 3.23.3(zod@3.23.8)
     optionalDependencies:
       '@langchain/anthropic': 0.3.1(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))(encoding@0.1.13)
-      '@langchain/aws': 0.1.0(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))
-      '@langchain/cohere': 0.3.0(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0))(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))(encoding@0.1.13)
+      '@langchain/aws': 0.1.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.682.0))(@aws-sdk/client-sts@3.682.0)(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))
+      '@langchain/cohere': 0.3.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.682.0))(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))(encoding@0.1.13)
       '@langchain/google-genai': 0.1.0(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))(zod@3.23.8)
       '@langchain/google-vertexai': 0.1.0(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))(encoding@0.1.13)(zod@3.23.8)
       '@langchain/groq': 0.1.2(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))(encoding@0.1.13)
@@ -17240,7 +17240,7 @@ snapshots:
 
   lower-case@2.0.2:
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   lru-cache@10.4.3: {}
 
@@ -17484,7 +17484,7 @@ snapshots:
       '@types/whatwg-url': 11.0.5
       whatwg-url: 13.0.0
 
-  mongodb@6.3.0(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0)))(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.3):
+  mongodb@6.3.0(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.682.0)))(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.3):
     dependencies:
       '@mongodb-js/saslprep': 1.1.9
       bson: 6.9.0
@@ -17619,7 +17619,7 @@ snapshots:
 
   n8n-editor-ui@1.64.1: {}
 
-  n8n-nodes-base@1.63.0(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8):
+  n8n-nodes-base@1.63.0(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.682.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8):
     dependencies:
       '@aws-sdk/client-sso-oidc': 3.666.0(@aws-sdk/client-sts@3.682.0)
       '@kafkajs/confluent-schema-registry': 1.0.6
@@ -17656,7 +17656,7 @@ snapshots:
       mailparser: 3.6.7
       minifaker: 1.34.1
       moment-timezone: 0.5.37
-      mongodb: 6.3.0(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0)))(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.3)
+      mongodb: 6.3.0(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.682.0)))(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.3)
       mqtt: 5.7.2
       mssql: 10.0.2
       mysql2: 3.11.0
@@ -17708,7 +17708,7 @@ snapshots:
       - worker-loader
       - zod
 
-  n8n-nodes-base@1.64.1(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8):
+  n8n-nodes-base@1.64.1(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.682.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8):
     dependencies:
       '@aws-sdk/client-sso-oidc': 3.666.0(@aws-sdk/client-sts@3.682.0)
       '@kafkajs/confluent-schema-registry': 1.0.6
@@ -17745,7 +17745,7 @@ snapshots:
       mailparser: 3.6.7
       minifaker: 1.34.1
       moment-timezone: 0.5.37
-      mongodb: 6.3.0(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0)))(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.3)
+      mongodb: 6.3.0(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.682.0)))(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.3)
       mqtt: 5.7.2
       mssql: 10.0.2
       mysql2: 3.11.0
@@ -17843,7 +17843,7 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  n8n@1.64.3(l6mzywq7w6lm2xin5jszj63764):
+  n8n@1.64.3(resedylzjf3z3ffwvwxiei5xhy):
     dependencies:
       '@azure/identity': 4.5.0
       '@azure/keyvault-secrets': 4.9.0
@@ -17852,7 +17852,7 @@ snapshots:
       '@n8n/client-oauth2': 0.21.0
       '@n8n/config': 1.14.0
       '@n8n/localtunnel': 3.0.0
-      '@n8n/n8n-nodes-langchain': 1.64.1(75nrzxjvxwhakomeusuvlstcwy)
+      '@n8n/n8n-nodes-langchain': 1.64.1(6jwq67wgk3imhjddrwr2k72st4)
       '@n8n/permissions': 0.14.0
       '@n8n/task-runner': 1.2.0(openai@4.63.0(encoding@0.1.13)(zod@3.23.8))
       '@n8n/typeorm': 0.3.20-12(@sentry/node@7.87.0)(ioredis@5.3.2)(mssql@10.0.2)(mysql2@3.11.0)(pg@8.12.0)(redis@4.6.12)(sqlite3@5.1.7)(ts-node@10.9.2(@swc/core@1.8.0(@swc/helpers@0.5.13))(@types/node@20.17.6)(typescript@5.6.3))
@@ -17901,7 +17901,7 @@ snapshots:
       mysql2: 3.11.0
       n8n-core: 1.64.0(openai@4.63.0(encoding@0.1.13)(zod@3.23.8))
       n8n-editor-ui: 1.64.1
-      n8n-nodes-base: 1.64.1(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.682.0(@aws-sdk/client-sts@3.682.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
+      n8n-nodes-base: 1.64.1(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.685.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.682.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
       n8n-workflow: 1.63.0
       nanoid: 3.3.6
       nodemailer: 6.9.9
@@ -18109,7 +18109,7 @@ snapshots:
   no-case@3.0.4:
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   node-abi@3.71.0:
     dependencies:
@@ -18471,7 +18471,7 @@ snapshots:
   param-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   parent-module@1.0.1:
     dependencies:
@@ -18526,7 +18526,7 @@ snapshots:
   path-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   path-exists@4.0.0: {}
 
@@ -18947,7 +18947,7 @@ snapshots:
       ast-types: 0.15.2
       esprima: 4.0.1
       source-map: 0.6.1
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   recast@0.22.0:
     dependencies:
@@ -19322,7 +19322,7 @@ snapshots:
   snake-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   snowflake-sdk@1.12.0(asn1.js@5.4.1)(encoding@0.1.13):
     dependencies:
@@ -20057,7 +20057,7 @@ snapshots:
 
   upper-case-first@2.0.2:
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   upper-case@2.0.2:
     dependencies:
