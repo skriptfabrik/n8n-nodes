@@ -109,8 +109,8 @@ importers:
         specifier: ^0.5.46
         version: 0.5.46
       n8n:
-        specifier: 1.63.4
-        version: 1.63.4(ikrqeroqz7y6jshxwo7asqypsy)
+        specifier: 1.65.2
+        version: 1.65.2(ikrqeroqz7y6jshxwo7asqypsy)
       n8n-nodes-base:
         specifier: 1.63.0
         version: 1.63.0(@aws-sdk/client-sts@3.606.0)(@aws-sdk/credential-providers@3.654.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.606.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
@@ -2485,8 +2485,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@n8n/api-types@0.4.0':
-    resolution: {integrity: sha512-a2GlTDGnDsF5V96LlSZYJmYL5Eci1tlJ/HuDIORRJtfj8RuTWJSHSZSahQJbifA8evd4Z1DrprtsVEjigX0aPQ==}
+  '@n8n/api-types@0.5.0':
+    resolution: {integrity: sha512-HGpVjOhC/Le5QuCsjPFwk44p2OU+UXgHnjog7SsftjQZu6+FuqHb6T0FOkqSZqP1CJQU8N796Xa4+HdlZeSwJQ==}
 
   '@n8n/client-oauth2@0.21.0':
     resolution: {integrity: sha512-o3kmCzvJJnmq+8Ae0KaUkTG80V0OxGKw1PM7i+1d3S3s+s3VioOlf9iyBk4jU+dsgbIMvDkFl9kEKz1wlg5VPw==}
@@ -2494,25 +2494,33 @@ packages:
   '@n8n/config@1.13.0':
     resolution: {integrity: sha512-8cO3DM4V6+AVdVPbG7HIdJQl6vDUpA+qe2MILET7z4as842+tD5tANcW3ljeLyKzOML46CyCUYAR1zOfW7RwxQ==}
 
+  '@n8n/config@1.15.0':
+    resolution: {integrity: sha512-3a/Nr32bWvTq5a62zg23rSwRShlYTQnqcIWGrY1Uv0YJxWsowAzCXg+jYq76pqqEbcnsWuLUIpSnRC6oMmnwyQ==}
+
   '@n8n/imap@0.7.0':
     resolution: {integrity: sha512-39dNpUf6HbXr8IxNxLFDUybjV1iU+9J9xfKNzQXQhHCflGHKyofjXULIrWp8JYy1x6BMnc/96LxjgziaCPUJeA==}
+
+  '@n8n/json-schema-to-zod@1.1.0':
+    resolution: {integrity: sha512-HfL3jq5NSb0Mng56QCfUnzD09F4wxWR543jYJZ+XBQpb0f9B102r6K3qEtdXVTs1mwHVnxz5KBaesqipFYPjww==}
+    peerDependencies:
+      zod: ^3.0.0
 
   '@n8n/localtunnel@3.0.0':
     resolution: {integrity: sha512-0t/AUiZ8Oqo7AqYp2q2qmEC2p2lPP4CEdrGRB0J6nSC7ivOtr0p46Pw739UvUfJMU1bIKvzHIc5M9wCjH5Byjg==}
     engines: {node: '>=18.0.0'}
 
-  '@n8n/n8n-nodes-langchain@1.63.0':
-    resolution: {integrity: sha512-jtsazBA2zyiA5t03C3S6obuR6ZQ1vitLNmQxfjFrN0P6MWhDh3MN29qoGK0c6/TbImSpaz41CYsqgBlm52TD1g==}
+  '@n8n/n8n-nodes-langchain@1.65.0':
+    resolution: {integrity: sha512-+luLveF5X4K76JKLbIu8h1ftef8tsS8i2rftUygGn62gBZZXkZTGssJTjLrzj83Om5vMPNjZzmE2XOhnd0a3KQ==}
 
   '@n8n/p-retry@6.2.0-2':
     resolution: {integrity: sha512-rbnMnSdEwq2yuYMgzOQ4jTXm+oH7yjN/0ISfB/7O6pUcEPsZt9UW60BYfQ1WWHkKa/evI8vgER2zV5/RC1BupQ==}
     engines: {node: '>=18.10'}
 
-  '@n8n/permissions@0.14.0':
-    resolution: {integrity: sha512-kzKwKjWUWzMk9/0zvITEtMBP9Cjopu13/0ibAAF4ERbIjZUDq6PcfCNJ3g8LPklg8ckZwIqMU6qV/WJrPXcJyw==}
+  '@n8n/permissions@0.15.0':
+    resolution: {integrity: sha512-jXAELZ+zxDwJbLPFiKfnJVbSJTUWUc3aRpQ35N/H4aDVc3XDHU42uhvCBVsuDA/8krbVCMYgcEpF69upIKfwiA==}
 
-  '@n8n/task-runner@1.1.0':
-    resolution: {integrity: sha512-/74aq17y2vB+hWqhdu+Sni2R/r6xl8DgylPtnXjwH1jGZTyUVJwpFIAe1Q7sQ/oWRia6j171V/wmEQKtO6G6dw==}
+  '@n8n/task-runner@1.3.0':
+    resolution: {integrity: sha512-1JtLS1tRzC+97bJpXoJ9fIsdVJC6P6z3keS5Z2mRh48ME0ZsPVaky1HhaT92oNjoNxDHZBmHMfhPA5R9Lf5YeA==}
 
   '@n8n/tournament@1.0.5':
     resolution: {integrity: sha512-IPBHa7gC0wwHVct/dnBquHz+uMCDZaZ05cor1D/rjlwaOe/PVu5mtoZaPHYuR98R3W1/IyxC5PuBd0JizDP9gg==}
@@ -6242,10 +6250,6 @@ packages:
   json-parse-even-better-errors@2.3.1:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==}
 
-  json-schema-to-zod@2.1.0:
-    resolution: {integrity: sha512-7ishNgYY+AbIKeeHcp5xCOdJbdVwSfDx/4V2ktc16LUusCJJbz2fEKdWUmAxhKIiYzhZ9Fp4E8OsAoM/h9cOLA==}
-    hasBin: true
-
   json-schema-traverse@0.4.1:
     resolution: {integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==}
 
@@ -6847,22 +6851,28 @@ packages:
     resolution: {integrity: sha512-J9phbsXGvTOcRVPR95YedzVSxJecpW5A5+cQ57rhHIFXteTP10HCs+VBjS7DHIKfEaI1zQ5tlVrquCd64A6YvA==}
     engines: {node: '>= 8.0'}
 
-  n8n-core@1.63.0:
-    resolution: {integrity: sha512-015FsxPWXQUHQXsUZ6Ig//ZWkcOUh+lvfgZjX7UY/vxlN1xrC0nzpBGFm61ZKm78ZE22f2x0jJ1F3kkW4pZNPg==}
+  n8n-core@1.65.0:
+    resolution: {integrity: sha512-kguSvhfTAQeV16UJ6Gqp15IRX2UTmKXYfHd0kL3G/JCIsCPFXEwl+BYzYoMUN9bRJZ3nX+r3ahlkiXcek0nLHA==}
     hasBin: true
 
-  n8n-editor-ui@1.63.2:
-    resolution: {integrity: sha512-5NOMaolZxb4dD7cldVHjN7JZ4+qCkJgNQKn2O/YP5qw/glUwR9sxEo4eTzkbiHWJMCYCw/RwGHsGukFgVmaI4g==}
+  n8n-editor-ui@1.65.1:
+    resolution: {integrity: sha512-YNQRIu+XbFRKRUyFt/Wg15TDxlqujBfLiq9ljhw8zaUy4lijO+nJnL2AL8/aZwLTH/rC2sgjP5QMVEBbHnuPiw==}
 
   n8n-nodes-base@1.63.0:
     resolution: {integrity: sha512-UXHGMl77ecH1MDLqC4b6Sr/vrrUAeVFbLjIYih7R/tuVYTU++HOHnpFSWDDWZc9jVr/lLVedElDMOOe+HVToQw==}
 
+  n8n-nodes-base@1.65.0:
+    resolution: {integrity: sha512-lwR/pxgJdbEMTyt5V9O7/uTskYpGnbtno8YcOfyekdHxqyEOAamPShOZnuiw08QiqoXjC/4cPeyfE+oJvCTJng==}
+
   n8n-workflow@1.62.0:
     resolution: {integrity: sha512-cLDHM03dMlmPvkWb9XSkY/6dZ+BWxmeUJJnWyugzkI7EtRMlrLtVx/PMJ+CxPVZuR2y7gTaVHma9GdO/XQeQhw==}
 
-  n8n@1.63.4:
-    resolution: {integrity: sha512-b4y355fFCMrfX9FT/11DcqwjtEjLuA2gkV6QKQBtee2QEkku3MzZB/z92+luQS/kuYPLmNmAhweKtF8LO0LqJg==}
-    engines: {node: '>=18.10'}
+  n8n-workflow@1.64.0:
+    resolution: {integrity: sha512-0eQg/Szneny+WXOagpmMn1ueVxj+bpcpUhy5vHDOQTo7V9lad7Be9sJYbWDNi17uqVQCgo6284aZfL3IuNf0pw==}
+
+  n8n@1.65.2:
+    resolution: {integrity: sha512-eRDKmo4RwrKTdf3q6bp7hD+/fq/92Blk6jfEOcwICHOjsqRyv1+RVBX2mIT2xkis1q9dNnote9YB1ETSPia72Q==}
+    engines: {node: '>=18.17 <= 22'}
     hasBin: true
 
   named-placeholders@1.1.3:
@@ -8031,9 +8041,6 @@ packages:
     resolution: {integrity: sha512-qC9iz2FlN7DQl3+wjwn3802RTyjCx7sDvfQEXchwa6CWOx07/WVfh91gBmQ9fahw8snwGEWU3xGzOt4tFyHLxg==}
     engines: {node: '>= 0.6'}
 
-  sse-channel@4.0.0:
-    resolution: {integrity: sha512-I539Tc0gyDTQ2QCSg4v78Flxo/UbqR9x7JoyPcqaPtwo+qzeOw/fF+aPSbk0xTvBQAAAZk7Dlkc8K1bum5GUnw==}
-
   ssh2-sftp-client@7.2.3:
     resolution: {integrity: sha512-Bmq4Uewu3e0XOwu5bnPbiS5KRQYv+dff5H6+85V4GZrPrt0Fkt1nUH+uXanyAkoNxUpzjnAPEEoLdOaBO9c3xw==}
     engines: {node: '>=10.24.1'}
@@ -8962,7 +8969,7 @@ snapshots:
   '@acuminous/bitsyntax@0.1.2':
     dependencies:
       buffer-more-ints: 1.0.0
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       safe-buffer: 5.1.2
     transitivePeerDependencies:
       - supports-color
@@ -8999,19 +9006,19 @@ snapshots:
   '@aws-crypto/crc32@3.0.0':
     dependencies:
       '@aws-crypto/util': 3.0.0
-      '@aws-sdk/types': 3.664.0
+      '@aws-sdk/types': 3.667.0
       tslib: 1.14.1
 
   '@aws-crypto/crc32@5.2.0':
     dependencies:
       '@aws-crypto/util': 5.2.0
-      '@aws-sdk/types': 3.664.0
+      '@aws-sdk/types': 3.667.0
       tslib: 2.8.0
 
   '@aws-crypto/crc32c@5.2.0':
     dependencies:
       '@aws-crypto/util': 5.2.0
-      '@aws-sdk/types': 3.664.0
+      '@aws-sdk/types': 3.667.0
       tslib: 2.8.0
 
   '@aws-crypto/sha1-browser@5.2.0':
@@ -9045,7 +9052,7 @@ snapshots:
 
   '@aws-crypto/util@3.0.0':
     dependencies:
-      '@aws-sdk/types': 3.664.0
+      '@aws-sdk/types': 3.667.0
       '@aws-sdk/util-utf8-browser': 3.259.0
       tslib: 1.14.1
 
@@ -11287,7 +11294,7 @@ snapshots:
       '@azure/core-util': 1.9.0
       '@azure/logger': 1.1.2
       http-proxy-agent: 7.0.2
-      https-proxy-agent: 7.0.5
+      https-proxy-agent: 7.0.5(supports-color@9.4.0)
       tslib: 2.8.0
     transitivePeerDependencies:
       - supports-color
@@ -11450,7 +11457,7 @@ snapshots:
       '@babel/traverse': 7.24.7
       '@babel/types': 7.24.7
       convert-source-map: 2.0.0
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -11510,7 +11517,7 @@ snapshots:
       '@babel/core': 7.24.7
       '@babel/helper-compilation-targets': 7.24.7
       '@babel/helper-plugin-utils': 7.24.7
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       lodash.debounce: 4.0.8
       resolve: 1.22.8
     transitivePeerDependencies:
@@ -12249,7 +12256,7 @@ snapshots:
       '@babel/helper-split-export-declaration': 7.24.7
       '@babel/parser': 7.24.7
       '@babel/types': 7.24.7
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -12454,7 +12461,7 @@ snapshots:
   '@eslint/config-array@0.18.0':
     dependencies:
       '@eslint/object-schema': 2.1.4
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
@@ -12464,7 +12471,7 @@ snapshots:
   '@eslint/eslintrc@3.1.0':
     dependencies:
       ajv: 6.12.6
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       espree: 10.2.0
       globals: 14.0.0
       ignore: 5.3.1
@@ -12626,7 +12633,7 @@ snapshots:
   '@jest/console@29.7.0':
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 20.16.11
+      '@types/node': 20.17.0
       chalk: 4.1.2
       jest-message-util: 29.7.0
       jest-util: 29.7.0
@@ -12820,7 +12827,7 @@ snapshots:
 
   '@kwsites/file-exists@1.1.1':
     dependencies:
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -13087,7 +13094,7 @@ snapshots:
   '@msgpackr-extract/msgpackr-extract-win32-x64@3.0.3':
     optional: true
 
-  '@n8n/api-types@0.4.0':
+  '@n8n/api-types@0.5.0':
     dependencies:
       xss: 1.0.15
       zod: 3.23.8
@@ -13104,6 +13111,11 @@ snapshots:
       reflect-metadata: 0.2.2
       typedi: 0.10.0
 
+  '@n8n/config@1.15.0':
+    dependencies:
+      reflect-metadata: 0.2.2
+      typedi: 0.10.0
+
   '@n8n/imap@0.7.0':
     dependencies:
       iconv-lite: 0.6.3
@@ -13112,14 +13124,18 @@ snapshots:
       utf8: 3.0.0
       uuencode: 0.0.4
 
+  '@n8n/json-schema-to-zod@1.1.0(zod@3.23.8)':
+    dependencies:
+      zod: 3.23.8
+
   '@n8n/localtunnel@3.0.0':
     dependencies:
       axios: 1.7.4(debug@4.3.7)
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@n8n/n8n-nodes-langchain@1.63.0(csuy5t4t2sy2hyefyhugzypy2m)':
+  '@n8n/n8n-nodes-langchain@1.65.0(csuy5t4t2sy2hyefyhugzypy2m)':
     dependencies:
       '@aws-sdk/client-sso-oidc': 3.666.0(@aws-sdk/client-sts@3.606.0)
       '@getzep/zep-cloud': 1.0.12(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))(encoding@0.1.13)(langchain@0.3.2(pxfx4mq7xpdvrldyly7zoe34le))
@@ -13144,6 +13160,7 @@ snapshots:
       '@langchain/redis': 0.1.0(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))
       '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)))
       '@mozilla/readability': 0.5.0
+      '@n8n/json-schema-to-zod': 1.1.0(zod@3.23.8)
       '@n8n/typeorm': 0.3.20-12(@sentry/node@7.87.0)(ioredis@5.3.2)(mssql@10.0.2)(mysql2@3.11.0)(pg@8.12.0)(redis@4.6.12)(sqlite3@5.1.7)(ts-node@10.9.2(@swc/core@1.8.0(@swc/helpers@0.5.13))(@types/node@20.17.0)(typescript@5.6.3))
       '@n8n/vm2': 3.9.25
       '@pinecone-database/pinecone': 3.0.3
@@ -13159,12 +13176,12 @@ snapshots:
       generate-schema: 2.6.0
       html-to-text: 9.0.5
       jsdom: 23.0.1(canvas@2.11.2(encoding@0.1.13))
-      json-schema-to-zod: 2.1.0
       langchain: 0.3.2(pxfx4mq7xpdvrldyly7zoe34le)
       lodash: 4.17.21
       mammoth: 1.7.2
-      n8n-nodes-base: 1.63.0(@aws-sdk/client-sts@3.606.0)(@aws-sdk/credential-providers@3.654.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.606.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
-      n8n-workflow: 1.62.0
+      mime-types: 2.1.35
+      n8n-nodes-base: 1.65.0(@aws-sdk/client-sts@3.606.0)(@aws-sdk/credential-providers@3.654.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.606.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
+      n8n-workflow: 1.64.0
       openai: 4.63.0(encoding@0.1.13)(zod@3.23.8)
       pdf-parse: 1.1.1
       pg: 8.12.0
@@ -13320,12 +13337,12 @@ snapshots:
       '@types/retry': 0.12.5
       retry: 0.13.1
 
-  '@n8n/permissions@0.14.0': {}
+  '@n8n/permissions@0.15.0': {}
 
-  '@n8n/task-runner@1.1.0(openai@4.63.0(encoding@0.1.13)(zod@3.23.8))':
+  '@n8n/task-runner@1.3.0(openai@4.63.0(encoding@0.1.13)(zod@3.23.8))':
     dependencies:
-      n8n-core: 1.63.0(openai@4.63.0(encoding@0.1.13)(zod@3.23.8))
-      n8n-workflow: 1.62.0
+      n8n-core: 1.65.0(openai@4.63.0(encoding@0.1.13)(zod@3.23.8))
+      n8n-workflow: 1.64.0
       nanoid: 3.3.7
       ws: 8.18.0
     transitivePeerDependencies:
@@ -13350,7 +13367,7 @@ snapshots:
       buffer: 6.0.3
       chalk: 4.1.2
       dayjs: 1.11.13
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       dotenv: 16.4.5
       glob: 10.4.2
       mkdirp: 2.1.6
@@ -14511,7 +14528,7 @@ snapshots:
 
   '@types/asn1@0.2.4':
     dependencies:
-      '@types/node': 20.16.11
+      '@types/node': 20.17.0
 
   '@types/babel__core@7.20.5':
     dependencies:
@@ -14543,7 +14560,7 @@ snapshots:
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 20.16.11
+      '@types/node': 20.17.0
 
   '@types/conventional-commits-parser@5.0.0':
     dependencies:
@@ -14615,7 +14632,7 @@ snapshots:
 
   '@types/node-fetch@2.6.11':
     dependencies:
-      '@types/node': 20.16.11
+      '@types/node': 20.17.0
       form-data: 4.0.1
 
   '@types/node@18.19.39':
@@ -14646,7 +14663,7 @@ snapshots:
   '@types/request@2.48.12':
     dependencies:
       '@types/caseless': 0.12.5
-      '@types/node': 20.16.11
+      '@types/node': 20.17.0
       '@types/tough-cookie': 4.0.5
       form-data: 2.5.1
 
@@ -14659,7 +14676,7 @@ snapshots:
   '@types/send@0.17.4':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 20.16.11
+      '@types/node': 20.17.0
 
   '@types/serve-static@1.15.7':
     dependencies:
@@ -14723,7 +14740,7 @@ snapshots:
       '@typescript-eslint/types': 8.12.1
       '@typescript-eslint/typescript-estree': 8.12.1(typescript@5.6.3)
       '@typescript-eslint/visitor-keys': 8.12.1
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       eslint: 9.14.0(jiti@1.21.6)
     optionalDependencies:
       typescript: 5.6.3
@@ -14749,7 +14766,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/typescript-estree': 8.10.0(typescript@5.6.3)
       '@typescript-eslint/utils': 8.10.0(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       ts-api-utils: 1.3.0(typescript@5.6.3)
     optionalDependencies:
       typescript: 5.6.3
@@ -14761,7 +14778,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/typescript-estree': 8.12.1(typescript@5.6.3)
       '@typescript-eslint/utils': 8.12.1(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       ts-api-utils: 1.3.0(typescript@5.6.3)
     optionalDependencies:
       typescript: 5.6.3
@@ -14779,7 +14796,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 6.21.0
       '@typescript-eslint/visitor-keys': 6.21.0
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.3
@@ -14794,7 +14811,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.10.0
       '@typescript-eslint/visitor-keys': 8.10.0
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       fast-glob: 3.3.2
       is-glob: 4.0.3
       minimatch: 9.0.5
@@ -14809,7 +14826,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.12.1
       '@typescript-eslint/visitor-keys': 8.12.1
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       fast-glob: 3.3.2
       is-glob: 4.0.3
       minimatch: 9.0.5
@@ -14879,7 +14896,7 @@ snapshots:
       '@verdaccio/logger': 8.0.0-next-8.1
       '@verdaccio/signature': 8.0.0-next-8.0
       '@verdaccio/utils': 7.0.1-next-8.1
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       lodash: 4.17.21
       verdaccio-htpasswd: 13.0.0-next-8.1
     transitivePeerDependencies:
@@ -14894,7 +14911,7 @@ snapshots:
     dependencies:
       '@verdaccio/core': 8.0.0-next-8.1
       '@verdaccio/utils': 7.0.1-next-8.1
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       js-yaml: 4.1.0
       lodash: 4.17.21
       minimatch: 7.4.6
@@ -14921,7 +14938,7 @@ snapshots:
   '@verdaccio/loaders@8.0.0-next-8.1':
     dependencies:
       '@verdaccio/logger': 8.0.0-next-8.1
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       lodash: 4.17.21
     transitivePeerDependencies:
       - supports-color
@@ -14951,7 +14968,7 @@ snapshots:
       '@verdaccio/core': 8.0.0-next-8.1
       '@verdaccio/logger-prettify': 8.0.0-next-8.0
       colorette: 2.0.20
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -14976,7 +14993,7 @@ snapshots:
       '@verdaccio/core': 8.0.0-next-8.1
       '@verdaccio/url': 13.0.0-next-8.1
       '@verdaccio/utils': 7.0.1-next-8.1
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       express: 4.21.0
       express-rate-limit: 5.5.1
       lodash: 4.17.21
@@ -14989,7 +15006,7 @@ snapshots:
 
   '@verdaccio/signature@8.0.0-next-8.0':
     dependencies:
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       jsonwebtoken: 9.0.2
     transitivePeerDependencies:
       - supports-color
@@ -15001,7 +15018,7 @@ snapshots:
       '@verdaccio/core': 8.0.0-next-8.1
       '@verdaccio/url': 13.0.0-next-8.1
       '@verdaccio/utils': 7.0.1-next-8.1
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       gunzip-maybe: 1.4.2
       lodash: 4.17.21
       tar-stream: 3.1.7
@@ -15013,7 +15030,7 @@ snapshots:
   '@verdaccio/url@13.0.0-next-8.1':
     dependencies:
       '@verdaccio/core': 8.0.0-next-8.1
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       lodash: 4.17.21
       validator: 13.12.0
     transitivePeerDependencies:
@@ -15085,13 +15102,7 @@ snapshots:
 
   agent-base@6.0.2:
     dependencies:
-      debug: 4.3.7(supports-color@8.1.1)
-    transitivePeerDependencies:
-      - supports-color
-
-  agent-base@7.1.1:
-    dependencies:
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -16271,7 +16282,7 @@ snapshots:
   detect-port@1.6.1:
     dependencies:
       address: 1.2.2
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -16595,7 +16606,7 @@ snapshots:
       ajv: 6.12.6
       chalk: 4.1.2
       cross-spawn: 7.0.3
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       escape-string-regexp: 4.0.0
       eslint-scope: 8.2.0
       eslint-visitor-keys: 4.2.0
@@ -16951,7 +16962,7 @@ snapshots:
 
   follow-redirects@1.15.6(debug@4.3.7):
     optionalDependencies:
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
 
   for-each@0.3.3:
     dependencies:
@@ -17072,7 +17083,7 @@ snapshots:
   gaxios@6.7.0(encoding@0.1.13):
     dependencies:
       extend: 3.0.2
-      https-proxy-agent: 7.0.5
+      https-proxy-agent: 7.0.5(supports-color@9.4.0)
       is-stream: 2.0.1
       node-fetch: 2.7.0(encoding@0.1.13)
       uuid: 10.0.0
@@ -17418,7 +17429,7 @@ snapshots:
     dependencies:
       '@tootallnate/once': 1.1.2
       agent-base: 6.0.2
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
     optional: true
@@ -17427,14 +17438,14 @@ snapshots:
     dependencies:
       '@tootallnate/once': 2.0.0
       agent-base: 6.0.2
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
   http-proxy-agent@7.0.2:
     dependencies:
-      agent-base: 7.1.1
-      debug: 4.3.7(supports-color@8.1.1)
+      agent-base: 7.1.1(supports-color@9.4.0)
+      debug: 4.3.7(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -17451,14 +17462,7 @@ snapshots:
   https-proxy-agent@5.0.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.7(supports-color@8.1.1)
-    transitivePeerDependencies:
-      - supports-color
-
-  https-proxy-agent@7.0.5:
-    dependencies:
-      agent-base: 7.1.1
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -17560,7 +17564,7 @@ snapshots:
     dependencies:
       '@ioredis/commands': 1.2.0
       cluster-key-slot: 1.1.2
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       denque: 2.1.0
       lodash.defaults: 4.2.0
       lodash.isarguments: 3.1.0
@@ -17764,7 +17768,7 @@ snapshots:
 
   istanbul-lib-source-maps@4.0.1:
     dependencies:
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       istanbul-lib-coverage: 3.2.2
       source-map: 0.6.1
     transitivePeerDependencies:
@@ -17935,7 +17939,7 @@ snapshots:
     dependencies:
       '@jest/types': 29.6.3
       '@types/graceful-fs': 4.1.9
-      '@types/node': 20.16.11
+      '@types/node': 20.17.0
       anymatch: 3.1.3
       fb-watchman: 2.0.2
       graceful-fs: 4.2.11
@@ -18015,7 +18019,7 @@ snapshots:
       '@jest/test-result': 29.7.0
       '@jest/transform': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.16.11
+      '@types/node': 20.17.0
       chalk: 4.1.2
       emittery: 0.13.1
       graceful-fs: 4.2.11
@@ -18043,7 +18047,7 @@ snapshots:
       '@jest/test-result': 29.7.0
       '@jest/transform': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.16.11
+      '@types/node': 20.17.0
       chalk: 4.1.2
       cjs-module-lexer: 1.3.1
       collect-v8-coverage: 1.0.2
@@ -18108,7 +18112,7 @@ snapshots:
     dependencies:
       '@jest/test-result': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.16.11
+      '@types/node': 20.17.0
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       emittery: 0.13.1
@@ -18182,7 +18186,7 @@ snapshots:
       form-data: 4.0.1
       html-encoding-sniffer: 4.0.0
       http-proxy-agent: 7.0.2
-      https-proxy-agent: 7.0.5
+      https-proxy-agent: 7.0.5(supports-color@9.4.0)
       is-potential-custom-element-name: 1.0.1
       nwsapi: 2.2.13
       parse5: 7.1.2
@@ -18223,8 +18227,6 @@ snapshots:
       dreamopt: 0.8.0
 
   json-parse-even-better-errors@2.3.1: {}
-
-  json-schema-to-zod@2.1.0: {}
 
   json-schema-traverse@0.4.1: {}
 
@@ -18361,10 +18363,10 @@ snapshots:
   ldapts@4.2.6:
     dependencies:
       '@types/asn1': 0.2.4
-      '@types/node': 20.16.11
+      '@types/node': 20.17.0
       '@types/uuid': 10.0.0
       asn1: 0.2.6
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       strict-event-emitter-types: 2.0.0
       uuid: 9.0.1
     transitivePeerDependencies:
@@ -18771,7 +18773,7 @@ snapshots:
   mqtt-packet@9.0.0:
     dependencies:
       bl: 6.0.13
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       process-nextick-args: 2.0.1
     transitivePeerDependencies:
       - supports-color
@@ -18782,7 +18784,7 @@ snapshots:
       '@types/ws': 8.5.10
       commist: 3.2.0
       concat-stream: 2.0.0
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       help-me: 5.0.0
       lru-cache: 10.3.0
       minimist: 1.2.8
@@ -18825,7 +18827,7 @@ snapshots:
     dependencies:
       '@tediousjs/connection-string': 0.5.0
       commander: 11.1.0
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       rfdc: 1.4.1
       tarn: 3.0.2
       tedious: 16.7.1
@@ -18862,10 +18864,11 @@ snapshots:
       seq-queue: 0.0.5
       sqlstring: 2.3.3
 
-  n8n-core@1.63.0(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)):
+  n8n-core@1.65.0(openai@4.63.0(encoding@0.1.13)(zod@3.23.8)):
     dependencies:
       '@langchain/core': 0.3.3(openai@4.63.0(encoding@0.1.13)(zod@3.23.8))
       '@n8n/client-oauth2': 0.21.0
+      '@n8n/config': 1.15.0
       aws4: 1.11.0
       axios: 1.7.4(debug@4.3.7)
       concat-stream: 2.0.0
@@ -18876,7 +18879,8 @@ snapshots:
       lodash: 4.17.21
       luxon: 3.4.4
       mime-types: 2.1.35
-      n8n-workflow: 1.62.0
+      n8n-workflow: 1.64.0
+      nanoid: 3.3.6
       oauth-1.0a: 2.2.6
       p-cancelable: 2.1.1
       pretty-bytes: 5.6.0
@@ -18890,7 +18894,7 @@ snapshots:
       - debug
       - openai
 
-  n8n-editor-ui@1.63.2: {}
+  n8n-editor-ui@1.65.1: {}
 
   n8n-nodes-base@1.63.0(@aws-sdk/client-sts@3.606.0)(@aws-sdk/credential-providers@3.654.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.606.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8):
     dependencies:
@@ -19070,6 +19074,95 @@ snapshots:
       - worker-loader
       - zod
 
+  n8n-nodes-base@1.65.0(@aws-sdk/client-sts@3.606.0)(@aws-sdk/credential-providers@3.654.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.606.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8):
+    dependencies:
+      '@aws-sdk/client-sso-oidc': 3.666.0(@aws-sdk/client-sts@3.606.0)
+      '@kafkajs/confluent-schema-registry': 1.0.6
+      '@n8n/config': 1.15.0
+      '@n8n/imap': 0.7.0
+      '@n8n/vm2': 3.9.25
+      alasql: 4.4.0(encoding@0.1.13)
+      amqplib: 0.10.3
+      aws4: 1.11.0
+      basic-auth: 2.0.1
+      change-case: 4.1.2
+      cheerio: 1.0.0-rc.6
+      chokidar: 4.0.1
+      cron: 3.1.7
+      csv-parse: 5.5.0
+      currency-codes: 2.1.0
+      eventsource: 2.0.2
+      fast-glob: 3.2.12
+      fflate: 0.7.4
+      get-system-fonts: 2.0.2
+      gm: 1.25.0
+      html-to-text: 9.0.5
+      iconv-lite: 0.6.3
+      ics: 2.40.0
+      isbot: 3.6.13
+      iso-639-1: 2.1.15
+      js-nacl: 1.4.0
+      jsonwebtoken: 9.0.2
+      kafkajs: 1.16.0
+      ldapts: 4.2.6
+      lodash: 4.17.21
+      lossless-json: 1.0.5
+      luxon: 3.4.4
+      mailparser: 3.6.7
+      minifaker: 1.34.1
+      moment-timezone: 0.5.37
+      mongodb: 6.3.0(@aws-sdk/credential-providers@3.654.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.606.0)))(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.3)
+      mqtt: 5.7.2
+      mssql: 10.0.2
+      mysql2: 3.11.0
+      n8n-workflow: 1.64.0
+      node-html-markdown: 1.2.0
+      node-ssh: 13.2.0
+      nodemailer: 6.9.9
+      otpauth: 9.1.1
+      pdfjs-dist: 2.16.105
+      pg: 8.12.0
+      pg-promise: 11.9.1
+      promise-ftp: 1.3.5(promise-ftp-common@1.1.5)
+      pyodide: 0.23.4(encoding@0.1.13)
+      redis: 4.6.14
+      rfc2047: 4.0.1
+      rhea: 1.0.24
+      rrule: 2.8.1
+      rss-parser: 3.13.0
+      semver: 7.5.4
+      showdown: 2.1.0
+      simple-git: 3.17.0
+      snowflake-sdk: 1.12.0(asn1.js@5.4.1)(encoding@0.1.13)
+      ssh2-sftp-client: 7.2.3
+      tmp-promise: 3.0.3
+      ts-ics: 1.2.2(date-fns@3.6.0)(lodash@4.17.21)(zod@3.23.8)
+      typedi: 0.10.0
+      uuid: 10.0.0
+      xlsx: https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz
+      xml2js: 0.6.2
+    transitivePeerDependencies:
+      - '@aws-sdk/client-sts'
+      - '@aws-sdk/credential-providers'
+      - '@mongodb-js/zstd'
+      - asn1.js
+      - aws-crt
+      - bufferutil
+      - date-fns
+      - debug
+      - encoding
+      - gcp-metadata
+      - kerberos
+      - mongodb-client-encryption
+      - pg-native
+      - promise-ftp-common
+      - snappy
+      - socks
+      - supports-color
+      - utf-8-validate
+      - worker-loader
+      - zod
+
   n8n-workflow@1.62.0:
     dependencies:
       '@n8n/tournament': 1.0.5
@@ -19093,18 +19186,41 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  n8n@1.63.4(ikrqeroqz7y6jshxwo7asqypsy):
+  n8n-workflow@1.64.0:
+    dependencies:
+      '@n8n/tournament': 1.0.5
+      '@n8n_io/riot-tmpl': 4.0.0
+      ast-types: 0.15.2
+      axios: 1.7.4(debug@4.3.7)
+      callsites: 3.1.0
+      deep-equal: 2.2.0
+      esprima-next: 5.8.4
+      form-data: 4.0.0
+      jmespath: 0.16.0
+      js-base64: 3.7.2
+      jssha: 3.3.1
+      lodash: 4.17.21
+      luxon: 3.4.4
+      md5: 2.3.0
+      recast: 0.21.5
+      title-case: 3.0.3
+      transliteration: 2.3.5
+      xml2js: 0.6.2
+    transitivePeerDependencies:
+      - debug
+
+  n8n@1.65.2(ikrqeroqz7y6jshxwo7asqypsy):
     dependencies:
       '@azure/identity': 4.4.1
       '@azure/keyvault-secrets': 4.8.0
       '@google-cloud/secret-manager': 5.6.0(encoding@0.1.13)
-      '@n8n/api-types': 0.4.0
+      '@n8n/api-types': 0.5.0
       '@n8n/client-oauth2': 0.21.0
-      '@n8n/config': 1.13.0
+      '@n8n/config': 1.15.0
       '@n8n/localtunnel': 3.0.0
-      '@n8n/n8n-nodes-langchain': 1.63.0(csuy5t4t2sy2hyefyhugzypy2m)
-      '@n8n/permissions': 0.14.0
-      '@n8n/task-runner': 1.1.0(openai@4.63.0(encoding@0.1.13)(zod@3.23.8))
+      '@n8n/n8n-nodes-langchain': 1.65.0(csuy5t4t2sy2hyefyhugzypy2m)
+      '@n8n/permissions': 0.15.0
+      '@n8n/task-runner': 1.3.0(openai@4.63.0(encoding@0.1.13)(zod@3.23.8))
       '@n8n/typeorm': 0.3.20-12(@sentry/node@7.87.0)(ioredis@5.3.2)(mssql@10.0.2)(mysql2@3.11.0)(pg@8.12.0)(redis@4.6.12)(sqlite3@5.1.7)(ts-node@10.9.2(@swc/core@1.8.0(@swc/helpers@0.5.13))(@types/node@20.17.0)(typescript@5.6.3))
       '@n8n_io/ai-assistant-sdk': 1.10.3
       '@n8n_io/license-sdk': 2.13.1
@@ -19149,10 +19265,10 @@ snapshots:
       lodash: 4.17.21
       luxon: 3.4.4
       mysql2: 3.11.0
-      n8n-core: 1.63.0(openai@4.63.0(encoding@0.1.13)(zod@3.23.8))
-      n8n-editor-ui: 1.63.2
-      n8n-nodes-base: 1.63.0(@aws-sdk/client-sts@3.606.0)(@aws-sdk/credential-providers@3.654.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.606.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
-      n8n-workflow: 1.62.0
+      n8n-core: 1.65.0(openai@4.63.0(encoding@0.1.13)(zod@3.23.8))
+      n8n-editor-ui: 1.65.1
+      n8n-nodes-base: 1.65.0(@aws-sdk/client-sts@3.606.0)(@aws-sdk/credential-providers@3.654.0(@aws-sdk/client-sso-oidc@3.666.0(@aws-sdk/client-sts@3.606.0)))(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.3)(zod@3.23.8)
+      n8n-workflow: 1.64.0
       nanoid: 3.3.6
       nodemailer: 6.9.9
       oauth-1.0a: 2.2.6
@@ -19176,7 +19292,6 @@ snapshots:
       simple-git: 3.17.0
       source-map-support: 0.5.21
       sqlite3: 5.1.7
-      sse-channel: 4.0.0
       sshpk: 1.17.0
       swagger-ui-express: 5.0.1(express@4.21.1)
       syslog-client: 1.1.1
@@ -19474,7 +19589,7 @@ snapshots:
 
   number-allocator@1.0.14:
     dependencies:
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       js-sdsl: 4.3.0
     transitivePeerDependencies:
       - supports-color
@@ -20025,7 +20140,7 @@ snapshots:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 20.16.11
+      '@types/node': 20.17.0
       long: 5.2.3
 
   proxy-addr@2.0.7:
@@ -20536,7 +20651,7 @@ snapshots:
     dependencies:
       '@kwsites/file-exists': 1.1.1
       '@kwsites/promise-deferred': 1.1.1
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -20579,7 +20694,7 @@ snapshots:
       fastest-levenshtein: 1.0.16
       generic-pool: 3.9.0
       glob: 10.4.2
-      https-proxy-agent: 7.0.5
+      https-proxy-agent: 7.0.5(supports-color@9.4.0)
       jsonwebtoken: 9.0.2
       mime-types: 2.1.35
       mkdirp: 1.0.4
@@ -20600,7 +20715,7 @@ snapshots:
   socks-proxy-agent@6.2.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       socks: 2.8.3
     transitivePeerDependencies:
       - supports-color
@@ -20668,8 +20783,6 @@ snapshots:
       - supports-color
 
   sqlstring@2.3.3: {}
-
-  sse-channel@4.0.0: {}
 
   ssh2-sftp-client@7.2.3:
     dependencies:
@@ -21361,7 +21474,7 @@ snapshots:
       apache-md5: 1.1.8
       bcryptjs: 2.4.3
       core-js: 3.37.1
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7(supports-color@9.4.0)
       http-errors: 2.0.0
       unix-crypt-td-js: 1.1.4
     transitivePeerDependencies:
