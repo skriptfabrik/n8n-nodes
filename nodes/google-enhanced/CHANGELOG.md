@@ -1,3 +1,14 @@
+## 0.1.16 (2024-11-18)
+
+### 🩹 Fixes
+
+- **google-enhanced:** bump n8n-workflow version to 1.66.0 ([a565b8b](https://github.com/skriptfabrik/n8n-nodes/commit/a565b8b))
+- **google-enhanced:** bump n8n-nodes-base version to 1.67.0 ([1001eb7](https://github.com/skriptfabrik/n8n-nodes/commit/1001eb7))
+
+### ❤️  Thank You
+
+- MaSpeng @MaSpeng
+
 ## 0.1.15 (2024-11-06)
 
 ### 🩹 Fixes
