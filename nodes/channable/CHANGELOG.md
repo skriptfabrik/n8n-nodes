@@ -1,3 +1,13 @@
+## 0.1.14 (2024-11-18)
+
+### 🩹 Fixes
+
+- **channable:** bump n8n-workflow version to 1.66.0 ([dba57a7](https://github.com/skriptfabrik/n8n-nodes/commit/dba57a7))
+
+### ❤️  Thank You
+
+- MaSpeng @MaSpeng
+
 ## 0.1.13 (2024-11-06)
 
 ### 🩹 Fixes
