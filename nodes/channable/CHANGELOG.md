@@ -1,3 +1,13 @@
+## 0.1.15 (2024-11-28)
+
+### 🩹 Fixes
+
+- **channable:** bump n8n-workflow version to 1.67.0 ([4b1e5b8](https://github.com/skriptfabrik/n8n-nodes/commit/4b1e5b8))
+
+### ❤️ Thank You
+
+- MaSpeng @MaSpeng
+
 ## 0.1.14 (2024-11-18)
 
 ### 🩹 Fixes
