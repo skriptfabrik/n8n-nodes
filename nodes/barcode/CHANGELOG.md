@@ -1,3 +1,9 @@
+## 0.1.16 (2024-12-02)
+
+### 🩹 Fixes
+
+- **barcode:** bump n8n-workflow version to 1.68.0 ([dfe3032](https://github.com/skriptfabrik/n8n-nodes/commit/dfe3032))
+
 ## 0.1.15 (2024-11-28)
 
 ### 🩹 Fixes
