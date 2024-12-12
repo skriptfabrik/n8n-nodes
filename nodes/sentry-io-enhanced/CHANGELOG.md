@@ -1,3 +1,9 @@
+## 0.2.20 (2024-12-12)
+
+### 🩹 Fixes
+
+- **sentry-io-enhanced:** bump n8n-workflow version to 1.70.0 ([8df0b8c](https://github.com/skriptfabrik/n8n-nodes/commit/8df0b8c))
+
 ## 0.2.19 (2024-12-06)
 
 ### 🩹 Fixes
