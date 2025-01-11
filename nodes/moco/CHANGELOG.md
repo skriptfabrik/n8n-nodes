@@ -1,3 +1,9 @@
+## 0.3.23 (2025-01-11)
+
+### 🩹 Fixes
+
+- **moco:** bump n8n-workflow version to 1.72.0 ([881064b](https://github.com/skriptfabrik/n8n-nodes/commit/881064b))
+
 ## 0.3.22 (2024-12-24)
 
 ### 🩹 Fixes
