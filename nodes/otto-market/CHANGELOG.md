@@ -1,3 +1,9 @@
+## 0.1.21 (2025-01-11)
+
+### 🩹 Fixes
+
+- **otto-market:** bump n8n-workflow version to 1.72.0 ([2bc9b14](https://github.com/skriptfabrik/n8n-nodes/commit/2bc9b14))
+
 ## 0.1.20 (2024-12-24)
 
 ### 🩹 Fixes
