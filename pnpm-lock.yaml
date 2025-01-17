@@ -250,8 +250,8 @@ importers:
   nodes/sentry-io-enhanced:
     dependencies:
       n8n-workflow:
-        specifier: 1.72.0
-        version: 1.72.0
+        specifier: 1.73.0
+        version: 1.73.0
       tslib:
         specifier: ^2.8.1
         version: 2.8.1
@@ -2232,10 +2232,6 @@ packages:
 
   '@n8n/task-runner@1.12.0':
     resolution: {integrity: sha512-gV0MmFOeL1WI3LxeKYS/5CiqJykgsn4QGadLBA029b6LUeKI3BlVXHqJEyImeeGNLpQPOvosblRXtD/AZXbuQg==}
-
-  '@n8n/tournament@1.0.5':
-    resolution: {integrity: sha512-IPBHa7gC0wwHVct/dnBquHz+uMCDZaZ05cor1D/rjlwaOe/PVu5mtoZaPHYuR98R3W1/IyxC5PuBd0JizDP9gg==}
-    engines: {node: '>=20.15', pnpm: '>=9.5'}
 
   '@n8n/tournament@1.0.6':
     resolution: {integrity: sha512-UGSxYXXVuOX0yL6HTLBStKYwLIa0+JmRKiSZSCMcM2s2Wax984KWT6XIA1TR/27i7yYpDk1MY14KsTPnuEp27A==}
@@ -6824,9 +6820,6 @@ packages:
 
   n8n-nodes-base@1.74.1:
     resolution: {integrity: sha512-O9N9oTPq/GpnOeM6+BAJMn6Q2czabBC49tcTdOCK1pUx5yxNc2FVURnkmU+/MO7e+AMWFKYmMOLVaqS3RPFzlQ==}
-
-  n8n-workflow@1.72.0:
-    resolution: {integrity: sha512-ZVPaZFBetOucDny7WFDRWQeuUaeKi8cCWCvxJx0oszZfAO5I1FNQK3gxfuQqYIOl80bVlsxhIGMqBjVAOShwpA==}
 
   n8n-workflow@1.73.0:
     resolution: {integrity: sha512-WIUdiq3ROcBLvnG2hjB1gj9Opn5N+Gr8Hrv5z6Zj5sRP0cmljBRVpnMb0aca2QarGoNdZ4yzZI+pdY2uO0BstQ==}
@@ -12318,13 +12311,6 @@ snapshots:
       - openai
       - supports-color
       - utf-8-validate
-
-  '@n8n/tournament@1.0.5':
-    dependencies:
-      '@n8n_io/riot-tmpl': 4.0.1
-      ast-types: 0.16.1
-      esprima-next: 5.8.4
-      recast: 0.22.0
 
   '@n8n/tournament@1.0.6':
     dependencies:
@@ -18325,29 +18311,6 @@ snapshots:
       - utf-8-validate
       - worker-loader
       - zod
-
-  n8n-workflow@1.72.0:
-    dependencies:
-      '@n8n/tournament': 1.0.5
-      '@n8n_io/riot-tmpl': 4.0.0
-      ast-types: 0.15.2
-      axios: 1.7.4(debug@4.3.7)
-      callsites: 3.1.0
-      deep-equal: 2.2.0
-      esprima-next: 5.8.4
-      form-data: 4.0.0
-      jmespath: 0.16.0
-      js-base64: 3.7.2
-      jssha: 3.3.1
-      lodash: 4.17.21
-      luxon: 3.4.4
-      md5: 2.3.0
-      recast: 0.21.5
-      title-case: 3.0.3
-      transliteration: 2.3.5
-      xml2js: 0.6.2
-    transitivePeerDependencies:
-      - debug
 
   n8n-workflow@1.73.0:
     dependencies:
