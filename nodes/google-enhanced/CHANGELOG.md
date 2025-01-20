@@ -1,3 +1,9 @@
+## 0.1.25 (2025-01-20)
+
+### 🩹 Fixes
+
+- **google-enhanced:** bump n8n-nodes-base version to 1.74.2 ([4810403](https://github.com/skriptfabrik/n8n-nodes/commit/4810403))
+
 ## 0.1.24 (2025-01-17)
 
 ### 🩹 Fixes
