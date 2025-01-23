@@ -1,3 +1,9 @@
+## 0.1.23 (2025-01-23)
+
+### 🩹 Fixes
+
+- **barcode:** bump n8n-workflow version to 1.74.0 ([7c6ff52](https://github.com/skriptfabrik/n8n-nodes/commit/7c6ff52))
+
 ## 0.1.22 (2025-01-17)
 
 ### 🩹 Fixes
