@@ -121,8 +121,8 @@ importers:
         specifier: 20.4.0
         version: 20.4.0(@swc-node/register@1.9.2(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.12(@swc/helpers@0.5.15))
       openapi-typescript:
-        specifier: ^7.6.0
-        version: 7.6.0(encoding@0.1.13)(typescript@5.7.3)
+        specifier: ^7.6.1
+        version: 7.6.1(typescript@5.7.3)
       prettier:
         specifier: ^3.4.2
         version: 3.4.2
@@ -2902,12 +2902,12 @@ packages:
   '@redocly/ajv@8.11.2':
     resolution: {integrity: sha512-io1JpnwtIcvojV7QKDUSIuMN/ikdOUd1ReEnUnMKGfDVridQZ31J0MmIuqwuRjWDZfmvr+Q0MqCcfHM2gTivOg==}
 
-  '@redocly/config@0.20.2':
-    resolution: {integrity: sha512-b9sP9IOV0AW6ZZGh+fgffhU9xvMRSvVodPLWzoW1GvoxhUja3ZbPOCrI54VBowPocZ+9a7pIqNt0Ge32Sh34pA==}
+  '@redocly/config@0.20.3':
+    resolution: {integrity: sha512-Nyyv1Bj7GgYwj/l46O0nkH1GTKWbO3Ixe7KFcn021aZipkZd+z8Vlu1BwkhqtVgivcKaClaExtWU/lDHkjBzag==}
 
-  '@redocly/openapi-core@1.27.2':
-    resolution: {integrity: sha512-qVrDc27DHpeO2NRCMeRdb4299nijKQE3BY0wrA+WUHlOLScorIi/y7JzammLk22IaTvjR9Mv9aTAdjE1aUwJnA==}
-    engines: {node: '>=14.19.0', npm: '>=7.0.0'}
+  '@redocly/openapi-core@1.28.1':
+    resolution: {integrity: sha512-f9sx2WEhhU6YxajyqE+vQC7/DWiQxk8TiLA6Axba7wnvQUCknvmZ6xOeOdlV1lyfaADhbJ/5hBQHNwfcc0pMhg==}
+    engines: {node: '>=18.17.0', npm: '>=10.8.2'}
 
   '@rudderstack/rudder-sdk-node@2.0.9':
     resolution: {integrity: sha512-Icm7a2x+CrVM9cHsXDRaFqGyvlaRDdALsrhzLHyRE+gIXubzJT730+fHS8KNdv9/r4Et/Cy1epjbkT3Qagd1VQ==}
@@ -7470,8 +7470,8 @@ packages:
   openapi-types@12.1.3:
     resolution: {integrity: sha512-N4YtSYJqghVu4iek2ZUvcN/0aqH1kRDuNqzcycDxhOUpg7GdvLa2F3DgS6yBNhInhv2r/6I0Flkn7CqL8+nIcw==}
 
-  openapi-typescript@7.6.0:
-    resolution: {integrity: sha512-p/xxKcWFR7aZDOAdnqYBQ1NdNyWdine+gHKHKvjxGXmlq8JT1G9+SkY8I5csKaktLHMbDDH6ZDeWQpydwBHa+Q==}
+  openapi-typescript@7.6.1:
+    resolution: {integrity: sha512-F7RXEeo/heF3O9lOXo2bNjCOtfp7u+D6W3a3VNEH2xE6v+fxLtn5nq0uvUcA1F5aT+CMhNeC5Uqtg5tlXFX/ag==}
     hasBin: true
     peerDependencies:
       typescript: ^5.x
@@ -13745,22 +13745,20 @@ snapshots:
       require-from-string: 2.0.2
       uri-js-replace: 1.0.1
 
-  '@redocly/config@0.20.2': {}
+  '@redocly/config@0.20.3': {}
 
-  '@redocly/openapi-core@1.27.2(encoding@0.1.13)(supports-color@9.4.0)':
+  '@redocly/openapi-core@1.28.1(supports-color@9.4.0)':
     dependencies:
       '@redocly/ajv': 8.11.2
-      '@redocly/config': 0.20.2
+      '@redocly/config': 0.20.3
       colorette: 1.4.0
       https-proxy-agent: 7.0.6(supports-color@9.4.0)
       js-levenshtein: 1.1.6
       js-yaml: 4.1.0
       minimatch: 5.1.6
-      node-fetch: 2.7.0(encoding@0.1.13)
       pluralize: 8.0.0
       yaml-ast-parser: 0.0.43
     transitivePeerDependencies:
-      - encoding
       - supports-color
 
   '@rudderstack/rudder-sdk-node@2.0.9(tslib@2.8.1)':
@@ -17367,7 +17365,7 @@ snapshots:
   gaxios@6.7.1(encoding@0.1.13):
     dependencies:
       extend: 3.0.2
-      https-proxy-agent: 7.0.5
+      https-proxy-agent: 7.0.6(supports-color@9.4.0)
       is-stream: 2.0.1
       node-fetch: 2.7.0(encoding@0.1.13)
       uuid: 9.0.1
@@ -19907,17 +19905,15 @@ snapshots:
 
   openapi-types@12.1.3: {}
 
-  openapi-typescript@7.6.0(encoding@0.1.13)(typescript@5.7.3):
+  openapi-typescript@7.6.1(typescript@5.7.3):
     dependencies:
-      '@redocly/openapi-core': 1.27.2(encoding@0.1.13)(supports-color@9.4.0)
+      '@redocly/openapi-core': 1.28.1(supports-color@9.4.0)
       ansi-colors: 4.1.3
       change-case: 5.4.4
       parse-json: 8.1.0
       supports-color: 9.4.0
       typescript: 5.7.3
       yargs-parser: 21.1.1
-    transitivePeerDependencies:
-      - encoding
 
   option@0.2.4: {}
 
