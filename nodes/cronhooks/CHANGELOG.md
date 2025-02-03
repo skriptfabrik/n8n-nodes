@@ -1,3 +1,9 @@
+## 0.1.24 (2025-02-03)
+
+### 🩹 Fixes
+
+- **cronhooks:** bump n8n-workflow version to 1.75.0 ([e2ca1cb](https://github.com/skriptfabrik/n8n-nodes/commit/e2ca1cb))
+
 ## 0.1.23 (2025-01-23)
 
 ### 🩹 Fixes
