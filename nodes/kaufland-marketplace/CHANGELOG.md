@@ -1,3 +1,9 @@
+## 0.1.26 (2025-02-10)
+
+### 🩹 Fixes
+
+- **kaufland-marketplace:** bump n8n-workflow version to 1.76.2 ([9adb57f](https://github.com/skriptfabrik/n8n-nodes/commit/9adb57f))
+
 ## 0.1.25 (2025-02-06)
 
 ### 🩹 Fixes
