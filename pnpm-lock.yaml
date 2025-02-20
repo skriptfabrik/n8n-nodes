@@ -250,8 +250,8 @@ importers:
   nodes/sentry-io-enhanced:
     dependencies:
       n8n-workflow:
-        specifier: 1.77.0
-        version: 1.77.0
+        specifier: 1.78.1
+        version: 1.78.1
       tslib:
         specifier: ^2.8.1
         version: 2.8.1
@@ -7175,9 +7175,6 @@ packages:
 
   n8n-nodes-base@1.79.1:
     resolution: {integrity: sha512-d8SLRs8dST0FIC9NSYwwqKPujFLgDq9lz5OBM0DqUqGAwtOPtc/EnXT7Eqa70KfqcAyX1m5PbpkJIRJP8cX+pg==}
-
-  n8n-workflow@1.77.0:
-    resolution: {integrity: sha512-Le7tm14d+QKmyAjuWRPrlKgKoJ5YSHm238sy7kp2ml97OpBwhOHGTt/cY9d8wGgMNXTUwPpwFdTKLY1VqyjStg==}
 
   n8n-workflow@1.78.1:
     resolution: {integrity: sha512-UJsHGKsqHoYKpGocWx47gWSsJ6145EP1qbGUhG2AQbpkzBXrhngHuQ4pbgFzhCsd4+qlPfzFdwzTWp2lsm+rbw==}
@@ -19226,30 +19223,6 @@ snapshots:
       - utf-8-validate
       - worker-loader
       - zod
-
-  n8n-workflow@1.77.0:
-    dependencies:
-      '@n8n/tournament': 1.0.6
-      '@n8n_io/riot-tmpl': 4.0.0
-      ast-types: 0.15.2
-      axios: 1.7.4(debug@4.4.0)
-      callsites: 3.1.0
-      deep-equal: 2.2.0
-      esprima-next: 5.8.4
-      form-data: 4.0.0
-      jmespath: 0.16.0
-      js-base64: 3.7.2
-      jssha: 3.3.1
-      lodash: 4.17.21
-      luxon: 3.4.4
-      md5: 2.3.0
-      recast: 0.21.5
-      title-case: 3.0.3
-      transliteration: 2.3.5
-      xml2js: 0.6.2
-      zod: 3.24.1
-    transitivePeerDependencies:
-      - debug
 
   n8n-workflow@1.78.1:
     dependencies:
