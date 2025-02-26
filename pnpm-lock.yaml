@@ -112,8 +112,8 @@ importers:
         specifier: 1.80.3
         version: 1.80.3(wp7t26bmsafm6pnyvr5l5dtv5q)
       n8n-nodes-base:
-        specifier: 1.79.1
-        version: 1.79.1(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.750.0)(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.1)
+        specifier: 1.79.2
+        version: 1.79.2(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.750.0)(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.1)
       n8n-workflow:
         specifier: 1.78.1
         version: 1.78.1
@@ -7155,9 +7155,6 @@ packages:
 
   nan@2.20.0:
     resolution: {integrity: sha512-bk3gXBZDGILuuo/6sKtr0DQmSThYHLtNCdSdXk9YkxD/jK6X2vmCyyXBBxyqZ4XcnzTyYEAThfX3DCEnLf6igw==}
-
-  nan@2.22.0:
-    resolution: {integrity: sha512-nbajikzWTMwsW+eSsNm3QwlOs7het9gGJU5dDZzRTQGk03vyBOauxgI4VakDzE0PtsGTmXPsXTbbjVhRwR5mpw==}
 
   nan@2.22.1:
     resolution: {integrity: sha512-pfRR4ZcNTSm2ZFHaztuvbICf+hyiG6ecA06SfAxoPmuHjvMu0KUIae7Y8GyVkbBqeEIidsmXeYooWIX9+qjfRQ==}
@@ -19495,9 +19492,6 @@ snapshots:
 
   nan@2.20.0: {}
 
-  nan@2.22.0:
-    optional: true
-
   nan@2.22.1:
     optional: true
 
@@ -20948,7 +20942,7 @@ snapshots:
       bcrypt-pbkdf: 1.0.2
     optionalDependencies:
       cpu-features: 0.0.10
-      nan: 2.22.0
+      nan: 2.22.1
 
   sshpk@1.17.0:
     dependencies:
