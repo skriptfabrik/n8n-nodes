@@ -1,3 +1,9 @@
+## 0.4.32 (2025-02-26)
+
+### 🩹 Fixes
+
+- **clockify-enhanced:** bump n8n-nodes-base version to 1.79.2 ([c0c1314](https://github.com/skriptfabrik/n8n-nodes/commit/c0c1314))
+
 ## 0.4.31 (2025-02-20)
 
 ### 🩹 Fixes
