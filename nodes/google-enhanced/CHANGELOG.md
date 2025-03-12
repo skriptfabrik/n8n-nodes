@@ -1,3 +1,10 @@
+## 0.1.35 (2025-03-12)
+
+### 🩹 Fixes
+
+- **google-enhanced:** bump n8n-workflow version to 1.80.0 ([505ad1b](https://github.com/skriptfabrik/n8n-nodes/commit/505ad1b))
+- **google-enhanced:** bump n8n-nodes-base version to 1.81.1 ([7a8a455](https://github.com/skriptfabrik/n8n-nodes/commit/7a8a455))
+
 ## 0.1.34 (2025-03-04)
 
 ### 🩹 Fixes
