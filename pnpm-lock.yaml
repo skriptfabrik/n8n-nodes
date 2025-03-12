@@ -112,8 +112,8 @@ importers:
         specifier: 1.82.1
         version: 1.82.1(sot54li2pgsd3iiu34qvc37diq)
       n8n-nodes-base:
-        specifier: 1.80.3
-        version: 1.80.3(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.758.0)(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.1)
+        specifier: 1.81.1
+        version: 1.81.1(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.758.0)(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.1)
       n8n-workflow:
         specifier: 1.79.1
         version: 1.79.1
@@ -3760,9 +3760,6 @@ packages:
 
   '@types/ws@8.18.0':
     resolution: {integrity: sha512-8svvI3hMyvN0kKCJMvTJP/x6Y/EoQbepff882wL+Sn5QsXb3etnamgrJq4isrBxSJj5L2AuXcI0+bgkoAXGUJw==}
-
-  '@types/ws@8.5.14':
-    resolution: {integrity: sha512-bd/YFLW+URhBzMXurx7lWByOu+xzU9+kb3RboOteXYDfW+tr+JZa99OyNmPINEGB/ahzKrEuc8rcv4gnpJmxTw==}
 
   '@types/yargs-parser@21.0.3':
     resolution: {integrity: sha512-I4q9QU9MQv4oEOz4tAHJtNz1cwuLxn2F3xcc2iV5WdqLPpUnj30aUuxt1mAxYTG+oe8CZMV/+6rU4S4gRDzqtQ==}
@@ -12987,7 +12984,7 @@ snapshots:
 
   '@n8n/vm2@3.9.25':
     dependencies:
-      acorn: 8.14.0
+      acorn: 8.14.1
       acorn-walk: 8.3.4
 
   '@n8n_io/ai-assistant-sdk@1.13.0': {}
@@ -14946,10 +14943,6 @@ snapshots:
       '@types/webidl-conversions': 7.0.3
 
   '@types/ws@8.18.0':
-    dependencies:
-      '@types/node': 20.17.24
-
-  '@types/ws@8.5.14':
     dependencies:
       '@types/node': 20.17.24
 
@@ -19026,7 +19019,7 @@ snapshots:
   mqtt@5.7.2:
     dependencies:
       '@types/readable-stream': 4.0.18
-      '@types/ws': 8.5.14
+      '@types/ws': 8.18.0
       commist: 3.2.0
       concat-stream: 2.0.0
       debug: 4.4.0(supports-color@9.4.0)
@@ -21927,19 +21920,19 @@ snapshots:
 
   worker-timers-broker@6.1.8:
     dependencies:
-      '@babel/runtime': 7.26.9
+      '@babel/runtime': 7.26.10
       fast-unique-numbers: 8.0.13
       tslib: 2.8.1
       worker-timers-worker: 7.0.71
 
   worker-timers-worker@7.0.71:
     dependencies:
-      '@babel/runtime': 7.26.9
+      '@babel/runtime': 7.26.10
       tslib: 2.8.1
 
   worker-timers@7.1.8:
     dependencies:
-      '@babel/runtime': 7.26.9
+      '@babel/runtime': 7.26.10
       tslib: 2.8.1
       worker-timers-broker: 6.1.8
       worker-timers-worker: 7.0.71
@@ -22058,7 +22051,7 @@ snapshots:
 
   yup@0.32.11:
     dependencies:
-      '@babel/runtime': 7.26.9
+      '@babel/runtime': 7.26.10
       '@types/lodash': 4.17.13
       lodash: 4.17.21
       lodash-es: 4.17.21
