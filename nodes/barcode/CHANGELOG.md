@@ -1,3 +1,9 @@
+## 0.1.31 (2025-03-12)
+
+### 🩹 Fixes
+
+- **barcode:** bump n8n-workflow version to 1.80.0 ([c3ddd30](https://github.com/skriptfabrik/n8n-nodes/commit/c3ddd30))
+
 ## 0.1.30 (2025-03-04)
 
 ### 🩹 Fixes
