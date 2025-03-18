@@ -109,8 +109,8 @@ importers:
         specifier: ^0.5.47
         version: 0.5.47
       n8n:
-        specifier: 1.82.3
-        version: 1.82.3(4o5mcanernu573blkd4kotrj3e)
+        specifier: 1.83.2
+        version: 1.83.2(4o5mcanernu573blkd4kotrj3e)
       n8n-nodes-base:
         specifier: 1.81.2
         version: 1.81.2(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.768.0)(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.1)
@@ -2273,8 +2273,8 @@ packages:
     resolution: {integrity: sha512-Yhlar6v9WQgUp/He7BdgzOz8lqMQ8sU+jkCq7Wx8Myc5YFJLbEe7lgui/V7G1qB1DJykHSGwreceSaD60Y0PUQ==}
     hasBin: true
 
-  '@mistralai/mistralai@1.5.1':
-    resolution: {integrity: sha512-Ie0EH4dAO11MEXR5N2kS2cgr+ycTWvqN/yP9bKrtmUEqjdcF4i7DLxtrFMUw5l2dOPhrkX93G4SziFiATPWu2w==}
+  '@mistralai/mistralai@1.5.2':
+    resolution: {integrity: sha512-mBTIDQmuAX9RowMYteZFHJIYlEwDcHzzaxgXzrFtlvH9CkKXK7R1VnZ1sZSe+uLMg0dIXUVdPRUh1SwyFeSqXw==}
     peerDependencies:
       zod: '>= 3'
 
@@ -2315,14 +2315,17 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@n8n/api-types@0.17.1':
-    resolution: {integrity: sha512-ACw63t+RDPdO9oi6ggNvDtspLDxqkJts3S0nP6zBycYLQRJqugbConr9zFym+s3mCsxl1JqJU9za4P2gVbzVQA==}
+  '@n8n/api-types@0.18.0':
+    resolution: {integrity: sha512-WeTxRQnWzQYPqaR7gnOfUkpLk5kw3NZoUnEblz7bCiCmiFc1h/vpYyef+INTd/JK8Pt3kGKNAnXb3Fqk8JRuyQ==}
 
   '@n8n/client-oauth2@0.23.0':
     resolution: {integrity: sha512-6stBfnZb/0uYENFVQppK5RRmZRF33VMBogChe6+Kch5CDrkTWRpBA6U+SMmWVuQm/FWoJWs3cjPrjB4Gqnjj+w==}
 
   '@n8n/config@1.31.0':
     resolution: {integrity: sha512-2PAzy5tONCA3VTi0YFQoSanrw5Z7i/supBw5GjwZGvbbUQhGljaa5MXk9Q7plReD+Br+Sn+KeR62b+GFLIxkVg==}
+
+  '@n8n/config@1.32.0':
+    resolution: {integrity: sha512-JAsu3x4KhfMG4VORO/zlmK7y6tJZIminygmeARaoajAUEjzPh1Yy2akC2Z1VLAll24/jLW6Cq47fbic2Yt2NFQ==}
 
   '@n8n/di@0.4.0':
     resolution: {integrity: sha512-CMmFl9uP4b49De9VIu/4N48zb5QorwUqliBqvqt/eAKoAWHf94Sr0S1WD9MPQuaEnnNNAbTS8El/3ukxeuj3fg==}
@@ -2339,8 +2342,8 @@ packages:
     resolution: {integrity: sha512-0t/AUiZ8Oqo7AqYp2q2qmEC2p2lPP4CEdrGRB0J6nSC7ivOtr0p46Pw739UvUfJMU1bIKvzHIc5M9wCjH5Byjg==}
     engines: {node: '>=18.0.0'}
 
-  '@n8n/n8n-nodes-langchain@1.82.2':
-    resolution: {integrity: sha512-H5gW5e/wGg3zRuRJvAE3g/Jsfej46rxnYlgNwm5dtow8lRPr95LvpYzRRsa4doU8y9+TQMI9N5od79KaJkiNAA==}
+  '@n8n/n8n-nodes-langchain@1.83.1':
+    resolution: {integrity: sha512-+oLxPz5DP4hnTS5nSMKCeM+Pg0Dgsl248wOUJ6th8SbUJRN12bOF8l1ieIr2SyrpK3hIkp/6XPf/SkSb6gGCBg==}
 
   '@n8n/p-retry@6.2.0-2':
     resolution: {integrity: sha512-rbnMnSdEwq2yuYMgzOQ4jTXm+oH7yjN/0ISfB/7O6pUcEPsZt9UW60BYfQ1WWHkKa/evI8vgER2zV5/RC1BupQ==}
@@ -2349,8 +2352,8 @@ packages:
   '@n8n/permissions@0.19.0':
     resolution: {integrity: sha512-lBAUpdKVIOLABbtCJUbyw0mNyRb3fm55IDXJbDBoQMbMwW7540xK8Ko5Ic1zUokmowgXBdtjMBFjWp+NmPrpLA==}
 
-  '@n8n/task-runner@1.19.1':
-    resolution: {integrity: sha512-HbzVEnc21uQShMNlvQeEZXLWhWAdkqGT4BbhU4TpJyQfoCqxuVdn0ODOWq038l0ZJMlMjXmBEc3I0o4aV29cOQ==}
+  '@n8n/task-runner@1.20.2':
+    resolution: {integrity: sha512-vOCFBSmvlU4Kk21A/mP9HycnLFx+2y8EHpZgOJCdNwfn9d2Vex+JDdZVE+WzVC5WyM0FHaPbetIDVsQoUyXevw==}
 
   '@n8n/tournament@1.0.6':
     resolution: {integrity: sha512-UGSxYXXVuOX0yL6HTLBStKYwLIa0+JmRKiSZSCMcM2s2Wax984KWT6XIA1TR/27i7yYpDk1MY14KsTPnuEp27A==}
@@ -7139,21 +7142,27 @@ packages:
     resolution: {integrity: sha512-J9phbsXGvTOcRVPR95YedzVSxJecpW5A5+cQ57rhHIFXteTP10HCs+VBjS7DHIKfEaI1zQ5tlVrquCd64A6YvA==}
     engines: {node: '>= 8.0'}
 
-  n8n-core@1.81.1:
-    resolution: {integrity: sha512-meNURh6kInbQD1e6/Q2pNamc1ryjfB0UVItOPO+SSWF009+V9DBY8HF1jrguB8wXtk+Pq8klpDCLiq7HuUyMVQ==}
+  n8n-core@1.82.2:
+    resolution: {integrity: sha512-+ijPH5w2vToFU37rju90j5ZM9N3Zup+PJME7ThUYyksllYqiLdG8KlFiv5gjWquNnOZ5YN8d0M28Watojgrwsw==}
     hasBin: true
 
-  n8n-editor-ui@1.82.2:
-    resolution: {integrity: sha512-+cQtW/3mWkezdAgA50elSUDsR/e20L+CJiPWck3N1/hEMVh3SWSz22d2TSbFa4dHD2wnR16t6dxMHoGhoDOqQQ==}
+  n8n-editor-ui@1.83.2:
+    resolution: {integrity: sha512-TL654ZFl7niykTVHN5Quaa8SLtpqn919U2kMVd7xjTW00M2yB4ZqfCxGTtefUzIASpzQe23DFOuGwFkH0NFz9w==}
 
   n8n-nodes-base@1.81.2:
     resolution: {integrity: sha512-kLKRqU950QWymylh7KHN0E9RetynLZmK0X09tc6uPOiuR6/1NeXpi7gSvtGqK4+5Y+V0LaAwDhMfJs6pCgjvLQ==}
 
+  n8n-nodes-base@1.82.1:
+    resolution: {integrity: sha512-aLU515PGJ5y2eu1/NuHAu7DbcJt2yTBjXusY+1KB7tyUtTymB1Ko12Sgh5CRfYk4qUXDdAcqBdLfOXqve8czvw==}
+
   n8n-workflow@1.80.1:
     resolution: {integrity: sha512-Lc7+jAhtBdjNHkTUB2g9H7GALPcA1o+shDWMV+bRZaoRzsPrgiDujJizR+IlGPF792ecVa/UeDwneBAZwOW4QQ==}
 
-  n8n@1.82.3:
-    resolution: {integrity: sha512-I17e+ZBAr4Hgj+R/EoHnW4HtKPs4ZSvNtlfb5SFtRRZNig6sUY3cHsMa46CkuHtyzgROyWauMnnUrBW1uMzt5g==}
+  n8n-workflow@1.81.1:
+    resolution: {integrity: sha512-4l9NjIwcjDv0Tx4WJcoR8Okh3+8louNRJVO9j9ma8zuKhJYWjrdgUHZM3DIb6uEEzGw8H6s0WPiUmfpAB4LQyw==}
+
+  n8n@1.83.2:
+    resolution: {integrity: sha512-3fbIC6uXbXFJ1q+GvTr1isbtPxVff2qQ5h9Nz0bEwPrKsITvGkWnTVgGQ8wD8jI6CoUsbWYouqEAUR+TbUWOhg==}
     engines: {node: '>=18.17 <= 22'}
     hasBin: true
 
@@ -7313,8 +7322,8 @@ packages:
   number-allocator@1.0.14:
     resolution: {integrity: sha512-OrL44UTVAvkKdOdRQZIJpLkAdjXGTRda052sN4sO77bKEzYYqWKMBjQvrJFzqygI99gL6Z4u2xctPW1tB8ErvA==}
 
-  nwsapi@2.2.18:
-    resolution: {integrity: sha512-p1TRH/edngVEHVbwqWnxUViEmq5znDvyB+Sik5cmuLpGOIfDf/39zLiq3swPF8Vakqn+gvNiOQAZu8djYlQILA==}
+  nwsapi@2.2.19:
+    resolution: {integrity: sha512-94bcyI3RsqiZufXjkr3ltkI86iEl+I7uiHVDtcq9wJUTwYQJ5odHDeSzkkrRzi80jJ8MaeZgqKjH1bAWAFw9bA==}
 
   nx@20.6.0:
     resolution: {integrity: sha512-2b9YeQPXShw62KeOHfZ/0FqeHx28GK15uoIh7jfNg0hzVnvLVSJrThUjWHY0a8F4km+B4VKeKO8a3KtdN2cwig==}
@@ -12550,7 +12559,7 @@ snapshots:
   '@langchain/mistralai@0.2.0(@langchain/core@0.3.30(openai@4.78.1(encoding@0.1.13)(zod@3.24.1)))':
     dependencies:
       '@langchain/core': 0.3.30(openai@4.78.1(encoding@0.1.13)(zod@3.24.1))
-      '@mistralai/mistralai': 1.5.1(zod@3.24.1)
+      '@mistralai/mistralai': 1.5.2(zod@3.24.1)
       uuid: 10.0.0
       zod: 3.24.1
       zod-to-json-schema: 3.24.4(zod@3.24.1)
@@ -12611,7 +12620,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@mistralai/mistralai@1.5.1(zod@3.24.1)':
+  '@mistralai/mistralai@1.5.2(zod@3.24.1)':
     dependencies:
       zod: 3.24.1
       zod-to-json-schema: 3.24.4(zod@3.24.1)
@@ -12640,7 +12649,7 @@ snapshots:
   '@msgpackr-extract/msgpackr-extract-win32-x64@3.0.3':
     optional: true
 
-  '@n8n/api-types@0.17.1':
+  '@n8n/api-types@0.18.0':
     dependencies:
       xss: 1.0.15
       zod: 3.24.1
@@ -12653,6 +12662,11 @@ snapshots:
       - debug
 
   '@n8n/config@1.31.0':
+    dependencies:
+      '@n8n/di': 0.4.0
+      reflect-metadata: 0.2.2
+
+  '@n8n/config@1.32.0':
     dependencies:
       '@n8n/di': 0.4.0
       reflect-metadata: 0.2.2
@@ -12675,12 +12689,12 @@ snapshots:
 
   '@n8n/localtunnel@3.0.0':
     dependencies:
-      axios: 1.7.4(debug@4.4.0)
+      axios: 1.8.3(debug@4.4.0)
       debug: 4.4.0(supports-color@9.4.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@n8n/n8n-nodes-langchain@1.82.2(6lafbbpm3u5q7mlxqtjeut4vmm)':
+  '@n8n/n8n-nodes-langchain@1.83.1(6lafbbpm3u5q7mlxqtjeut4vmm)':
     dependencies:
       '@aws-sdk/client-sso-oidc': 3.666.0(@aws-sdk/client-sts@3.682.0)
       '@getzep/zep-cloud': 1.0.12(@langchain/core@0.3.30(openai@4.78.1(encoding@0.1.13)(zod@3.24.1)))(encoding@0.1.13)(langchain@0.3.11(7po3gpi4u4dsfqcsluihoykmny))
@@ -12726,8 +12740,8 @@ snapshots:
       lodash: 4.17.21
       mammoth: 1.7.2
       mime-types: 2.1.35
-      n8n-nodes-base: 1.81.2(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.768.0)(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.1)
-      n8n-workflow: 1.80.1
+      n8n-nodes-base: 1.82.1(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.768.0)(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.1)
+      n8n-workflow: 1.81.1
       openai: 4.78.1(encoding@0.1.13)(zod@3.24.1)
       pdf-parse: 1.1.1
       pg: 8.12.0
@@ -12890,17 +12904,17 @@ snapshots:
 
   '@n8n/permissions@0.19.0': {}
 
-  '@n8n/task-runner@1.19.1(openai@4.78.1(encoding@0.1.13)(zod@3.24.1))':
+  '@n8n/task-runner@1.20.2(openai@4.78.1(encoding@0.1.13)(zod@3.24.1))':
     dependencies:
-      '@n8n/config': 1.31.0
+      '@n8n/config': 1.32.0
       '@n8n/di': 0.4.0
       '@sentry/node': 8.52.1
       acorn: 8.14.0
       acorn-walk: 8.3.4
       lodash: 4.17.21
       luxon: 3.4.4
-      n8n-core: 1.81.1(openai@4.78.1(encoding@0.1.13)(zod@3.24.1))
-      n8n-workflow: 1.80.1
+      n8n-core: 1.82.2(openai@4.78.1(encoding@0.1.13)(zod@3.24.1))
+      n8n-workflow: 1.81.1
       nanoid: 3.3.8
       ws: 8.18.1
     transitivePeerDependencies:
@@ -15488,7 +15502,7 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  axios@1.8.3:
+  axios@1.8.3(debug@4.4.0):
     dependencies:
       follow-redirects: 1.15.9(debug@4.4.0)
       form-data: 4.0.2
@@ -17736,7 +17750,7 @@ snapshots:
 
   infisical-node@1.3.0:
     dependencies:
-      axios: 1.7.4(debug@4.4.0)
+      axios: 1.8.3(debug@4.4.0)
       dotenv: 16.4.7
       tweetnacl: 1.0.3
       tweetnacl-util: 0.15.1
@@ -18389,7 +18403,7 @@ snapshots:
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6(supports-color@9.4.0)
       is-potential-custom-element-name: 1.0.1
-      nwsapi: 2.2.18
+      nwsapi: 2.2.19
       parse5: 7.2.1
       rrweb-cssom: 0.6.0
       saxes: 6.0.0
@@ -19058,11 +19072,11 @@ snapshots:
       seq-queue: 0.0.5
       sqlstring: 2.3.3
 
-  n8n-core@1.81.1(openai@4.78.1(encoding@0.1.13)(zod@3.24.1)):
+  n8n-core@1.82.2(openai@4.78.1(encoding@0.1.13)(zod@3.24.1)):
     dependencies:
       '@langchain/core': 0.3.30(openai@4.78.1(encoding@0.1.13)(zod@3.24.1))
       '@n8n/client-oauth2': 0.23.0
-      '@n8n/config': 1.31.0
+      '@n8n/config': 1.32.0
       '@n8n/di': 0.4.0
       '@sentry/node': 8.52.1
       aws4: 1.11.0
@@ -19078,7 +19092,7 @@ snapshots:
       lodash: 4.17.21
       luxon: 3.4.4
       mime-types: 2.1.35
-      n8n-workflow: 1.80.1
+      n8n-workflow: 1.81.1
       nanoid: 3.3.8
       oauth-1.0a: 2.2.6
       p-cancelable: 2.1.1
@@ -19095,7 +19109,7 @@ snapshots:
       - openai
       - supports-color
 
-  n8n-editor-ui@1.82.2: {}
+  n8n-editor-ui@1.83.2: {}
 
   n8n-nodes-base@1.81.2(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.768.0)(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.1):
     dependencies:
@@ -19188,6 +19202,97 @@ snapshots:
       - worker-loader
       - zod
 
+  n8n-nodes-base@1.82.1(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.768.0)(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.1):
+    dependencies:
+      '@aws-sdk/client-sso-oidc': 3.666.0(@aws-sdk/client-sts@3.682.0)
+      '@kafkajs/confluent-schema-registry': 1.0.6
+      '@n8n/config': 1.32.0
+      '@n8n/di': 0.4.0
+      '@n8n/imap': 0.9.0
+      '@n8n/vm2': 3.9.25
+      alasql: 4.4.0(encoding@0.1.13)
+      amqplib: 0.10.3
+      aws4: 1.11.0
+      basic-auth: 2.0.1
+      change-case: 4.1.2
+      cheerio: 1.0.0-rc.6
+      chokidar: 4.0.1
+      cron: 3.1.7
+      csv-parse: 5.5.0
+      currency-codes: 2.1.0
+      eventsource: 2.0.2
+      fast-glob: 3.2.12
+      fflate: 0.7.4
+      generate-schema: 2.6.0
+      get-system-fonts: 2.0.2
+      gm: 1.25.0
+      html-to-text: 9.0.5
+      iconv-lite: 0.6.3
+      ics: 2.40.0
+      isbot: 3.6.13
+      iso-639-1: 2.1.15
+      js-nacl: 1.4.0
+      jsonwebtoken: 9.0.2
+      kafkajs: 1.16.0
+      ldapts: 4.2.6
+      lodash: 4.17.21
+      lossless-json: 1.0.5
+      luxon: 3.4.4
+      mailparser: 3.6.7
+      minifaker: 1.34.1
+      moment-timezone: 0.5.37
+      mongodb: 6.11.0(@aws-sdk/credential-providers@3.768.0)(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.4)
+      mqtt: 5.7.2
+      mssql: 10.0.2
+      mysql2: 3.11.0
+      n8n-workflow: 1.81.1
+      node-html-markdown: 1.2.0
+      node-ssh: 13.2.0
+      nodemailer: 6.9.9
+      otpauth: 9.1.1
+      pdfjs-dist: 2.16.105
+      pg: 8.12.0
+      pg-promise: 11.9.1
+      promise-ftp: 1.3.5(promise-ftp-common@1.1.5)
+      pyodide: 0.23.4(encoding@0.1.13)
+      redis: 4.6.14
+      rfc2047: 4.0.1
+      rhea: 1.0.24
+      rrule: 2.8.1
+      rss-parser: 3.13.0
+      sanitize-html: 2.12.1
+      semver: 7.5.4
+      showdown: 2.1.0
+      simple-git: 3.17.0
+      snowflake-sdk: 1.12.0(asn1.js@5.4.1)(encoding@0.1.13)
+      ssh2-sftp-client: 7.2.3
+      tmp-promise: 3.0.3
+      ts-ics: 1.2.2(date-fns@3.6.0)(lodash@4.17.21)(zod@3.24.1)
+      uuid: 10.0.0
+      xlsx: https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz
+      xml2js: 0.6.2
+    transitivePeerDependencies:
+      - '@aws-sdk/client-sts'
+      - '@aws-sdk/credential-providers'
+      - '@mongodb-js/zstd'
+      - asn1.js
+      - aws-crt
+      - bufferutil
+      - date-fns
+      - debug
+      - encoding
+      - gcp-metadata
+      - kerberos
+      - mongodb-client-encryption
+      - pg-native
+      - promise-ftp-common
+      - snappy
+      - socks
+      - supports-color
+      - utf-8-validate
+      - worker-loader
+      - zod
+
   n8n-workflow@1.80.1:
     dependencies:
       '@n8n/tournament': 1.0.6
@@ -19212,19 +19317,43 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  n8n@1.82.3(4o5mcanernu573blkd4kotrj3e):
+  n8n-workflow@1.81.1:
+    dependencies:
+      '@n8n/tournament': 1.0.6
+      '@n8n_io/riot-tmpl': 4.0.0
+      ast-types: 0.15.2
+      axios: 1.7.4(debug@4.4.0)
+      callsites: 3.1.0
+      deep-equal: 2.2.0
+      esprima-next: 5.8.4
+      form-data: 4.0.0
+      jmespath: 0.16.0
+      js-base64: 3.7.2
+      jssha: 3.3.1
+      lodash: 4.17.21
+      luxon: 3.4.4
+      md5: 2.3.0
+      recast: 0.21.5
+      title-case: 3.0.3
+      transliteration: 2.3.5
+      xml2js: 0.6.2
+      zod: 3.24.1
+    transitivePeerDependencies:
+      - debug
+
+  n8n@1.83.2(4o5mcanernu573blkd4kotrj3e):
     dependencies:
       '@azure/identity': 4.8.0
       '@azure/keyvault-secrets': 4.9.0
       '@google-cloud/secret-manager': 5.6.0(encoding@0.1.13)
-      '@n8n/api-types': 0.17.1
+      '@n8n/api-types': 0.18.0
       '@n8n/client-oauth2': 0.23.0
-      '@n8n/config': 1.31.0
+      '@n8n/config': 1.32.0
       '@n8n/di': 0.4.0
       '@n8n/localtunnel': 3.0.0
-      '@n8n/n8n-nodes-langchain': 1.82.2(6lafbbpm3u5q7mlxqtjeut4vmm)
+      '@n8n/n8n-nodes-langchain': 1.83.1(6lafbbpm3u5q7mlxqtjeut4vmm)
       '@n8n/permissions': 0.19.0
-      '@n8n/task-runner': 1.19.1(openai@4.78.1(encoding@0.1.13)(zod@3.24.1))
+      '@n8n/task-runner': 1.20.2(openai@4.78.1(encoding@0.1.13)(zod@3.24.1))
       '@n8n/typeorm': 0.3.20-12(@sentry/node@8.52.1)(ioredis@5.3.2)(mssql@10.0.2)(mysql2@3.11.0)(pg@8.12.0)(redis@4.6.12)(sqlite3@5.1.7)(ts-node@10.9.2(@swc/core@1.11.10(@swc/helpers@0.5.15))(@types/node@20.17.24)(typescript@5.8.2))
       '@n8n_io/ai-assistant-sdk': 1.13.0
       '@n8n_io/license-sdk': 2.17.0
@@ -19266,10 +19395,10 @@ snapshots:
       lodash: 4.17.21
       luxon: 3.4.4
       mysql2: 3.11.0
-      n8n-core: 1.81.1(openai@4.78.1(encoding@0.1.13)(zod@3.24.1))
-      n8n-editor-ui: 1.82.2
-      n8n-nodes-base: 1.81.2(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.768.0)(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.1)
-      n8n-workflow: 1.80.1
+      n8n-core: 1.82.2(openai@4.78.1(encoding@0.1.13)(zod@3.24.1))
+      n8n-editor-ui: 1.83.2
+      n8n-nodes-base: 1.82.1(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.768.0)(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.1)
+      n8n-workflow: 1.81.1
       nanoid: 3.3.8
       nodemailer: 6.9.9
       oauth-1.0a: 2.2.6
@@ -19599,7 +19728,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  nwsapi@2.2.18: {}
+  nwsapi@2.2.19: {}
 
   nx@20.6.0(@swc-node/register@1.9.2(@swc/core@1.11.10(@swc/helpers@0.5.15))(@swc/types@0.1.19)(typescript@5.8.2))(@swc/core@1.11.10(@swc/helpers@0.5.15)):
     dependencies:
@@ -19607,7 +19736,7 @@ snapshots:
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.2
       '@zkochan/js-yaml': 0.0.7
-      axios: 1.8.3
+      axios: 1.8.3(debug@4.4.0)
       chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
@@ -20070,7 +20199,7 @@ snapshots:
 
   posthog-node@3.2.1:
     dependencies:
-      axios: 1.7.4(debug@4.4.0)
+      axios: 1.8.3(debug@4.4.0)
       rusha: 0.8.14
     transitivePeerDependencies:
       - debug
@@ -20760,7 +20889,7 @@ snapshots:
       asn1.js: 5.4.1
       asn1.js-rfc2560: 5.0.1(asn1.js@5.4.1)
       asn1.js-rfc5280: 3.0.0
-      axios: 1.8.3
+      axios: 1.8.3(debug@4.4.0)
       big-integer: 1.6.52
       bignumber.js: 9.1.2
       binascii: 0.0.2
