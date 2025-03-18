@@ -1,3 +1,9 @@
+## 0.2.35 (2025-03-18)
+
+### 🩹 Fixes
+
+- **sentry-io-enhanced:** bump n8n-workflow version to 1.81.1 ([2097225](https://github.com/skriptfabrik/n8n-nodes/commit/2097225))
+
 ## 0.2.34 (2025-03-17)
 
 ### 🩹 Fixes
