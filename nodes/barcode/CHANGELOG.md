@@ -1,3 +1,9 @@
+## 0.1.34 (2025-03-25)
+
+### 🩹 Fixes
+
+- **barcode:** bump n8n-workflow version to 1.82.0 ([dbf695a](https://github.com/skriptfabrik/n8n-nodes/commit/dbf695a))
+
 ## 0.1.33 (2025-03-18)
 
 ### 🩹 Fixes
