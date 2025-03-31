@@ -1,5 +1,5 @@
 import {
-  NodeConnectionType,
+  NodeConnectionTypes,
   type IDataObject,
   type IExecuteFunctions,
   type INodeExecutionData,
@@ -29,9 +29,9 @@ export class SentryIoEnhanced implements INodeType {
       name: 'Sentry.io Enhanced',
     },
 
-    inputs: [NodeConnectionType.Main],
+    inputs: [NodeConnectionTypes.Main],
 
-    outputs: [NodeConnectionType.Main],
+    outputs: [NodeConnectionTypes.Main],
 
     credentials: [
       {
