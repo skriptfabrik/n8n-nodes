@@ -4,7 +4,7 @@ import {
   INodeExecutionData,
   INodeType,
   INodeTypeDescription,
-  NodeConnectionType,
+  NodeConnectionTypes,
 } from 'n8n-workflow';
 import { ChannableRequest, ChannableRequestData } from './GenericFunctions';
 import {
@@ -32,8 +32,8 @@ export class Channable implements INodeType {
     defaults: {
       name: 'Channable',
     },
-    inputs: [NodeConnectionType.Main],
-    outputs: [NodeConnectionType.Main],
+    inputs: [NodeConnectionTypes.Main],
+    outputs: [NodeConnectionTypes.Main],
     credentials: [
       {
         name: 'channableApi',
