@@ -1,5 +1,5 @@
 import {
-  NodeConnectionType,
+  NodeConnectionTypes,
   type IDataObject,
   type IExecuteFunctions,
   type ILoadOptionsFunctions,
@@ -49,8 +49,8 @@ export class Moco implements INodeType {
     defaults: {
       name: 'MOCO',
     },
-    inputs: [NodeConnectionType.Main],
-    outputs: [NodeConnectionType.Main],
+    inputs: [NodeConnectionTypes.Main],
+    outputs: [NodeConnectionTypes.Main],
     credentials: [
       {
         name: 'mocoApi',
