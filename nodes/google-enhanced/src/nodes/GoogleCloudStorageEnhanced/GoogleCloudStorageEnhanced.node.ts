@@ -9,7 +9,7 @@ import {
 import {
   BINARY_ENCODING,
   NodeApiError,
-  NodeConnectionType,
+  NodeConnectionTypes,
   type IDataObject,
   type IExecuteFunctions,
   type INodeExecutionData,
@@ -32,8 +32,8 @@ export class GoogleCloudStorageEnhanced implements INodeType {
     defaults: {
       name: 'Google Cloud Storage Enhanced',
     },
-    inputs: [NodeConnectionType.Main],
-    outputs: [NodeConnectionType.Main],
+    inputs: [NodeConnectionTypes.Main],
+    outputs: [NodeConnectionTypes.Main],
     credentials: [
       {
         name: 'googleApi',
