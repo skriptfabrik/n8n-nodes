@@ -1,6 +1,6 @@
 import { clockifyApiRequest } from 'n8n-nodes-base/dist/nodes/Clockify/GenericFunctions';
 import {
-  NodeConnectionType,
+  NodeConnectionTypes,
   type IDataObject,
   type IHookFunctions,
   type ILoadOptionsFunctions,
@@ -62,7 +62,7 @@ export class ClockifyEnhancedTrigger implements INodeType {
       name: 'Clockify Enhanced Trigger',
     },
     inputs: [],
-    outputs: [NodeConnectionType.Main],
+    outputs: [NodeConnectionTypes.Main],
     credentials: [
       {
         name: 'clockifyApi',

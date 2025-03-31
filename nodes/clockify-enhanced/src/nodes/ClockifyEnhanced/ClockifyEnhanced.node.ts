@@ -1,5 +1,5 @@
 import {
-  NodeConnectionType,
+  NodeConnectionTypes,
   type IDataObject,
   type IExecuteFunctions,
   type ILoadOptionsFunctions,
@@ -61,9 +61,9 @@ export class ClockifyEnhanced implements INodeType {
       name: 'Clockify Enhanced',
     },
 
-    inputs: [NodeConnectionType.Main],
+    inputs: [NodeConnectionTypes.Main],
 
-    outputs: [NodeConnectionType.Main],
+    outputs: [NodeConnectionTypes.Main],
 
     credentials: [
       {
