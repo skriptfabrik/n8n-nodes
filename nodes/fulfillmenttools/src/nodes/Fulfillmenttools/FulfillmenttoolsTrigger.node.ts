@@ -1,5 +1,5 @@
 import {
-  NodeConnectionType,
+  NodeConnectionTypes,
   type IDataObject,
   type IHookFunctions,
   type INodeType,
@@ -95,7 +95,7 @@ export class FulfillmenttoolsTrigger implements INodeType {
 
     inputs: [],
 
-    outputs: [NodeConnectionType.Main],
+    outputs: [NodeConnectionTypes.Main],
 
     credentials: [
       {

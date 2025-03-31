@@ -1,5 +1,5 @@
 import {
-  NodeConnectionType,
+  NodeConnectionTypes,
   type IDataObject,
   type IExecuteFunctions,
   type INodeExecutionData,
@@ -69,9 +69,9 @@ export class Fulfillmenttools implements INodeType {
       name: 'fulfillmenttools',
     },
 
-    inputs: [NodeConnectionType.Main],
+    inputs: [NodeConnectionTypes.Main],
 
-    outputs: [NodeConnectionType.Main],
+    outputs: [NodeConnectionTypes.Main],
 
     credentials: [
       {
