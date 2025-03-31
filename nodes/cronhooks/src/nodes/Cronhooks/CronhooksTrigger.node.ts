@@ -7,7 +7,7 @@ import {
   IWebhookFunctions,
   IWebhookResponseData,
   NodeApiError,
-  NodeConnectionType,
+  NodeConnectionTypes,
 } from 'n8n-workflow';
 import {
   cronhooksApiRequest,
@@ -50,7 +50,7 @@ export class CronhooksTrigger implements INodeType {
 
     inputs: [],
 
-    outputs: [NodeConnectionType.Main],
+    outputs: [NodeConnectionTypes.Main],
 
     credentials: [
       {
