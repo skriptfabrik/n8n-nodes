@@ -1,6 +1,6 @@
 import { createHmac } from 'crypto';
 import {
-  NodeConnectionType,
+  NodeConnectionTypes,
   type IDataObject,
   type IHookFunctions,
   type INodeType,
@@ -29,7 +29,7 @@ export class MocoTrigger implements INodeType {
       name: 'MOCO Trigger',
     },
     inputs: [],
-    outputs: [NodeConnectionType.Main],
+    outputs: [NodeConnectionTypes.Main],
     credentials: [
       {
         name: 'mocoApi',
