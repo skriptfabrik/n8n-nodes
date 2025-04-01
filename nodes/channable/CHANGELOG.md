@@ -1,3 +1,14 @@
+## 0.1.35 (2025-04-01)
+
+### 🩹 Fixes
+
+- **channable:** exchange NodeConnectionType with NodeConnectionsType (N8N-6) ([cdc91ee](https://github.com/skriptfabrik/n8n-nodes/commit/cdc91ee))
+- **channable:** bump n8n-workflow version to 1.83.0 ([b8eb433](https://github.com/skriptfabrik/n8n-nodes/commit/b8eb433))
+
+### ❤️ Thank You
+
+- Marco Spengler @MaSpeng
+
 ## 0.1.34 (2025-03-25)
 
 ### 🩹 Fixes
