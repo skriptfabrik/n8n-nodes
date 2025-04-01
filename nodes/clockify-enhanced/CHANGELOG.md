@@ -1,3 +1,15 @@
+## 0.4.39 (2025-04-01)
+
+### 🩹 Fixes
+
+- **clockify-enhanced:** exchange NodeConnectionType with NodeConnectionsType (N8N-6) ([9905ea0](https://github.com/skriptfabrik/n8n-nodes/commit/9905ea0))
+- **clockify-enhanced:** bump n8n-workflow version to 1.83.0 ([5ece6b6](https://github.com/skriptfabrik/n8n-nodes/commit/5ece6b6))
+- **clockify-enhanced:** bump n8n-nodes-base version to 1.84.0 ([c4e86b5](https://github.com/skriptfabrik/n8n-nodes/commit/c4e86b5))
+
+### ❤️ Thank You
+
+- Marco Spengler @MaSpeng
+
 ## 0.4.38 (2025-03-25)
 
 ### 🩹 Fixes
