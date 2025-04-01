@@ -1,3 +1,15 @@
+## 0.1.39 (2025-04-01)
+
+### 🩹 Fixes
+
+- **google-enhanced:** exchange NodeConnectionType with NodeConnectionsType (N8N-6) ([8e9491b](https://github.com/skriptfabrik/n8n-nodes/commit/8e9491b))
+- **google-enhanced:** bump n8n-workflow version to 1.83.0 ([cc40fdf](https://github.com/skriptfabrik/n8n-nodes/commit/cc40fdf))
+- **google-enhanced:** bump n8n-nodes-base version to 1.84.0 ([4c532b2](https://github.com/skriptfabrik/n8n-nodes/commit/4c532b2))
+
+### ❤️ Thank You
+
+- Marco Spengler @MaSpeng
+
 ## 0.1.38 (2025-03-25)
 
 ### 🩹 Fixes
