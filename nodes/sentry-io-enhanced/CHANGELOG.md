@@ -1,3 +1,14 @@
+## 0.2.37 (2025-04-01)
+
+### 🩹 Fixes
+
+- **sentry-io-enhanced:** exchange NodeConnectionType with NodeConnectionsType (N8N-6) ([7c19a8f](https://github.com/skriptfabrik/n8n-nodes/commit/7c19a8f))
+- **sentry-io-enhanced:** bump n8n-workflow version to 1.83.0 ([a48c548](https://github.com/skriptfabrik/n8n-nodes/commit/a48c548))
+
+### ❤️ Thank You
+
+- Marco Spengler @MaSpeng
+
 ## 0.2.36 (2025-03-25)
 
 ### 🩹 Fixes
