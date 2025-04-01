@@ -1,3 +1,14 @@
+## 0.1.35 (2025-04-01)
+
+### 🩹 Fixes
+
+- **otto-market:** exchange NodeConnectionType with NodeConnectionsType (N8N-6) ([29101f4](https://github.com/skriptfabrik/n8n-nodes/commit/29101f4))
+- **otto-market:** bump n8n-workflow version to 1.83.0 ([5bc5dd5](https://github.com/skriptfabrik/n8n-nodes/commit/5bc5dd5))
+
+### ❤️ Thank You
+
+- Marco Spengler @MaSpeng
+
 ## 0.1.34 (2025-03-25)
 
 ### 🩹 Fixes
