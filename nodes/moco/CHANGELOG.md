@@ -1,3 +1,14 @@
+## 0.3.37 (2025-04-01)
+
+### 🩹 Fixes
+
+- **moco:** exchange NodeConnectionType with NodeConnectionsType (N8N-6) ([a5a5962](https://github.com/skriptfabrik/n8n-nodes/commit/a5a5962))
+- **moco:** bump n8n-workflow version to 1.83.0 ([e753873](https://github.com/skriptfabrik/n8n-nodes/commit/e753873))
+
+### ❤️ Thank You
+
+- Marco Spengler @MaSpeng
+
 ## 0.3.36 (2025-03-25)
 
 ### 🩹 Fixes
