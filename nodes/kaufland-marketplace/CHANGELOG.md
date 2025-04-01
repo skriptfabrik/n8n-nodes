@@ -1,3 +1,14 @@
+## 0.1.35 (2025-04-01)
+
+### 🩹 Fixes
+
+- **kaufland-marketplace:** exchange NodeConnectionType with NodeConnectionsType (N8N-6) ([85acaf4](https://github.com/skriptfabrik/n8n-nodes/commit/85acaf4))
+- **kaufland-marketplace:** bump n8n-workflow version to 1.83.0 ([0da1cad](https://github.com/skriptfabrik/n8n-nodes/commit/0da1cad))
+
+### ❤️ Thank You
+
+- Marco Spengler @MaSpeng
+
 ## 0.1.34 (2025-03-25)
 
 ### 🩹 Fixes
