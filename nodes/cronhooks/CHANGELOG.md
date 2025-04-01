@@ -1,3 +1,14 @@
+## 0.1.35 (2025-04-01)
+
+### 🩹 Fixes
+
+- **cronhooks:** exchange NodeConnectionType with NodeConnectionsType (N8N-6) ([937e2ee](https://github.com/skriptfabrik/n8n-nodes/commit/937e2ee))
+- **cronhooks:** bump n8n-workflow version to 1.83.0 ([812b1b0](https://github.com/skriptfabrik/n8n-nodes/commit/812b1b0))
+
+### ❤️ Thank You
+
+- Marco Spengler @MaSpeng
+
 ## 0.1.34 (2025-03-25)
 
 ### 🩹 Fixes
