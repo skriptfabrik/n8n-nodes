@@ -1,3 +1,9 @@
+## 0.1.36 (2025-04-14)
+
+### 🩹 Fixes
+
+- **cronhooks:** bump n8n-workflow version to 1.84.0 ([d94aaad](https://github.com/skriptfabrik/n8n-nodes/commit/d94aaad))
+
 ## 0.1.35 (2025-04-01)
 
 ### 🩹 Fixes
