@@ -1,3 +1,9 @@
+## 0.1.36 (2025-04-14)
+
+### 🩹 Fixes
+
+- **otto-market:** bump n8n-workflow version to 1.84.0 ([e414f49](https://github.com/skriptfabrik/n8n-nodes/commit/e414f49))
+
 ## 0.1.35 (2025-04-01)
 
 ### 🩹 Fixes
