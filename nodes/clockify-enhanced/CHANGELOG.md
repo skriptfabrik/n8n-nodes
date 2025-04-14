@@ -1,3 +1,15 @@
+## 0.4.40 (2025-04-14)
+
+### 🩹 Fixes
+
+- **clockify-enhanced:** add declarations for vendor removed ones (N8N-29) ([da58e2d](https://github.com/skriptfabrik/n8n-nodes/commit/da58e2d))
+- **clockify-enhanced:** bump n8n-workflow version to 1.84.0 ([4a74253](https://github.com/skriptfabrik/n8n-nodes/commit/4a74253))
+- **clockify-enhanced:** bump n8n-nodes-base version to 1.85.1 ([5ee1c10](https://github.com/skriptfabrik/n8n-nodes/commit/5ee1c10))
+
+### ❤️ Thank You
+
+- Marco Spengler @MaSpeng
+
 ## 0.4.39 (2025-04-01)
 
 ### 🩹 Fixes
