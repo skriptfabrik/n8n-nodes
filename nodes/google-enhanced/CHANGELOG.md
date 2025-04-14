@@ -1,3 +1,15 @@
+## 0.1.40 (2025-04-14)
+
+### 🩹 Fixes
+
+- **google-enhanced:** add declarations for vendor removed ones (N8N-29) ([dd493a6](https://github.com/skriptfabrik/n8n-nodes/commit/dd493a6))
+- **google-enhanced:** bump n8n-workflow version to 1.84.0 ([25e75d1](https://github.com/skriptfabrik/n8n-nodes/commit/25e75d1))
+- **google-enhanced:** bump n8n-nodes-base version to 1.85.1 ([804fac5](https://github.com/skriptfabrik/n8n-nodes/commit/804fac5))
+
+### ❤️ Thank You
+
+- Marco Spengler @MaSpeng
+
 ## 0.1.39 (2025-04-01)
 
 ### 🩹 Fixes
