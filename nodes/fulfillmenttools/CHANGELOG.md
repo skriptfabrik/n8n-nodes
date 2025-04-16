@@ -1,3 +1,9 @@
+## 0.1.37 (2025-04-16)
+
+### 🩹 Fixes
+
+- **fulfillmenttools:** bump n8n-workflow version to 1.86.0 ([0962d05](https://github.com/skriptfabrik/n8n-nodes/commit/0962d05))
+
 ## 0.1.36 (2025-04-14)
 
 ### 🩹 Fixes
