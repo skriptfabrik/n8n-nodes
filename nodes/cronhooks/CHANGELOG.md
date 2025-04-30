@@ -1,3 +1,14 @@
+## 0.1.38 (2025-04-30)
+
+### 🩹 Fixes
+
+- **cronhooks:** add n8n-workflow to dev dependencies (N8N-6) ([cb14d39](https://github.com/skriptfabrik/n8n-nodes/commit/cb14d39))
+- **cronhooks:** update version range for n8n-workflow to ^1.86.0 (N8N-6) ([8ed9356](https://github.com/skriptfabrik/n8n-nodes/commit/8ed9356))
+
+### ❤️ Thank You
+
+- Marco Spengler @MaSpeng
+
 ## 0.1.37 (2025-04-16)
 
 ### 🩹 Fixes
