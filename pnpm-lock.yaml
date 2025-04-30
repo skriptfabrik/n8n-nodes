@@ -212,15 +212,16 @@ importers:
       moment-timezone:
         specifier: ^0.5.48
         version: 0.5.48
-      n8n-nodes-base:
-        specifier: ^1.87.0
-        version: 1.87.0(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.799.0)(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.1)
       n8n-workflow:
         specifier: 1.86.0
         version: 1.86.0
       tslib:
         specifier: ^2.8.1
         version: 2.8.1
+    devDependencies:
+      n8n-nodes-base:
+        specifier: ^1.87.0
+        version: 1.89.0(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.799.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.1)
 
   nodes/kaufland-marketplace:
     dependencies:
@@ -2346,14 +2347,8 @@ packages:
   '@n8n/client-oauth2@0.23.0':
     resolution: {integrity: sha512-6stBfnZb/0uYENFVQppK5RRmZRF33VMBogChe6+Kch5CDrkTWRpBA6U+SMmWVuQm/FWoJWs3cjPrjB4Gqnjj+w==}
 
-  '@n8n/config@1.35.0':
-    resolution: {integrity: sha512-3pLG0ix8jl1bWWCe3RpxtiIw6nHzYwjsZ8nsil1IZ8Q/Nd3bdvYN2b8ytzTYYbT+lu+9At3WUyOodORjlXzsYg==}
-
   '@n8n/config@1.37.0':
     resolution: {integrity: sha512-E4TVrWvQ14oBHHUggnHOMrCGajzf20fXYGuUbWWuVT2K4FCqjumsyc9gyKmDNpPTistql9Z3j9FMMO+tmofA1w==}
-
-  '@n8n/di@0.4.0':
-    resolution: {integrity: sha512-CMmFl9uP4b49De9VIu/4N48zb5QorwUqliBqvqt/eAKoAWHf94Sr0S1WD9MPQuaEnnNNAbTS8El/3ukxeuj3fg==}
 
   '@n8n/di@0.5.0':
     resolution: {integrity: sha512-ZJ7keaV6wNMdTOL1z4pTZNZ+Av2M329YB/uluy11H8dQqRhIIuWKaDSThEfavU+7A9LnLeKs+ubpVtpV7uXoDA==}
@@ -4855,9 +4850,6 @@ packages:
   cross-fetch@4.1.0:
     resolution: {integrity: sha512-uKm5PU+MHTootlWEY+mZ4vvXoCn4fLQxT9dSc1sXVMSFkINTJVN8cAQROpwcKm8bJ/c7rgZVIBWzH5T78sNZZw==}
 
-  cross-spawn@4.0.2:
-    resolution: {integrity: sha512-yAXz/pA1tD8Gtg2S98Ekf/sewp3Lcp3YoFKJ4Hkp5h5yLWnKVTDU0kwjKJ8NDCYcfTLfyGkzTikst+jWypT1iA==}
-
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
@@ -5835,11 +5827,6 @@ packages:
   globby@11.1.0:
     resolution: {integrity: sha512-jhIXaOzy1sb8IyocaruWSn1TjmnBVs8Ayhcy83rmxNJ8q2uWKCAj3CnJY+KpGSXCueAPc0i05kVvVKtP1t9S3g==}
     engines: {node: '>=10'}
-
-  gm@1.25.0:
-    resolution: {integrity: sha512-4kKdWXTtgQ4biIo7hZA396HT062nDVVHPjQcurNZ3o/voYN+o5FUC5kOwuORbpExp3XbTJ3SU7iRipiIhQtovw==}
-    engines: {node: '>=14'}
-    deprecated: The gm module has been sunset. Please migrate to an alternative. https://github.com/aheckmann/gm?tab=readme-ov-file#2025-02-24-this-project-is-not-maintained
 
   gm@1.25.1:
     resolution: {integrity: sha512-jgcs2vKir9hFogGhXIfs0ODhJTfIrbECCehg38tqFgHm8zqXx7kAJyCYAFK4jTjx71AxrkFtkJBawbAxYUPX9A==}
@@ -6915,9 +6902,6 @@ packages:
     resolution: {integrity: sha512-QIXZUBJUx+2zHUdQujWejBkcD9+cs94tLn0+YL8UrCh+D5sCXZ4c7LaEH48pNwRY3MLDgqUFyhlCyjJPf1WP0A==}
     engines: {node: 20 || >=22}
 
-  lru-cache@4.1.5:
-    resolution: {integrity: sha512-sWZlbEP2OsHNkXrMl5GYk/jKk70MBng6UU4YI/qGDYbgf6YbP4EvmqISbXCoJiRKs+1bSpFHVgQxvJ17F2li5g==}
-
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
@@ -7238,9 +7222,6 @@ packages:
 
   n8n-editor-ui@1.90.1:
     resolution: {integrity: sha512-8Hap2w+8iMADUJEl/pSGP+L633+dcAPTuNM2giiDgoOAPUMqPHTaDOUiaNjwN1B3pb4YRlZHlHttXrjPcnw2Cg==}
-
-  n8n-nodes-base@1.87.0:
-    resolution: {integrity: sha512-1eUc35QjEwZ8rRzThGe9Cc7nhIySnn2tKM9xsoH/P++1CCIPOSk8YE2J/h9U7i1OOzUwlvx2YLsGp/AU5tX3Wg==}
 
   n8n-nodes-base@1.89.0:
     resolution: {integrity: sha512-nJxVrt3gCYVh5WurH6vbkTXSm19LyQ8ikmrSaTs8I4ZQG7lSyPuxZJ+kCtPeRh1eaN9+xGX+ZtzaPkzKt116qA==}
@@ -7929,9 +7910,6 @@ packages:
 
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
-
-  pseudomap@1.0.2:
-    resolution: {integrity: sha512-b/YwNhb8lk1Zz2+bXXpS/LK9OisiZZ1SNsSLxN1x2OXVEhW2Ckr/7mWE5vrC1ZTiJlD9g19jWszTmJsB+oEpFQ==}
 
   psl@1.15.0:
     resolution: {integrity: sha512-JZd3gMVBAVQkSs6HdNZo9Sdo0LNcQeMNP3CozBJb3JYC/QUYZTnKxP+f8oWRX4rHP5EurWxqAHTSwUCjlNKa1w==}
@@ -9215,10 +9193,6 @@ packages:
     resolution: {integrity: sha512-rEvr90Bck4WZt9HHFC4DJMsjvu7x+r6bImz0/BrbWb7A2djJ8hnZMrWnHo9F8ssv0OMErasDhftrfROTyqSDrw==}
     engines: {node: '>= 0.4'}
 
-  which@1.3.1:
-    resolution: {integrity: sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ==}
-    hasBin: true
-
   which@2.0.2:
     resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
     engines: {node: '>= 8'}
@@ -9360,9 +9334,6 @@ packages:
   y18n@5.0.8:
     resolution: {integrity: sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA==}
     engines: {node: '>=10'}
-
-  yallist@2.1.2:
-    resolution: {integrity: sha512-ncTzHV7NvsQZkYe1DW7cbDLm0YpzHmZF5r/iyP3ZnQtMiJ+pjzisCiMNI+Sj+xQF5pXhSHxSB3uDbsBTzY/c2A==}
 
   yallist@3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
@@ -12814,20 +12785,11 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  '@n8n/config@1.35.0':
-    dependencies:
-      '@n8n/di': 0.4.0
-      reflect-metadata: 0.2.2
-
   '@n8n/config@1.37.0':
     dependencies:
       '@n8n/di': 0.5.0
       reflect-metadata: 0.2.2
       zod: 3.24.1
-
-  '@n8n/di@0.4.0':
-    dependencies:
-      reflect-metadata: 0.2.2
 
   '@n8n/di@0.5.0':
     dependencies:
@@ -16366,11 +16328,6 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  cross-spawn@4.0.2:
-    dependencies:
-      lru-cache: 4.1.5
-      which: 1.3.1
-
   cross-spawn@7.0.6:
     dependencies:
       path-key: 3.1.1
@@ -17557,15 +17514,6 @@ snapshots:
       ignore: 5.3.2
       merge2: 1.4.1
       slash: 3.0.0
-
-  gm@1.25.0:
-    dependencies:
-      array-parallel: 0.1.3
-      array-series: 0.1.5
-      cross-spawn: 4.0.2
-      debug: 3.2.7
-    transitivePeerDependencies:
-      - supports-color
 
   gm@1.25.1:
     dependencies:
@@ -18900,11 +18848,6 @@ snapshots:
 
   lru-cache@11.1.0: {}
 
-  lru-cache@4.1.5:
-    dependencies:
-      pseudomap: 1.0.2
-      yallist: 2.1.2
-
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
@@ -19291,97 +19234,6 @@ snapshots:
       - supports-color
 
   n8n-editor-ui@1.90.1: {}
-
-  n8n-nodes-base@1.87.0(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.799.0)(asn1.js@5.4.1)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.1):
-    dependencies:
-      '@aws-sdk/client-sso-oidc': 3.666.0(@aws-sdk/client-sts@3.682.0)
-      '@kafkajs/confluent-schema-registry': 3.8.0
-      '@n8n/config': 1.35.0
-      '@n8n/di': 0.4.0
-      '@n8n/imap': 0.9.0
-      '@n8n/vm2': 3.9.25
-      alasql: 4.4.0(encoding@0.1.13)
-      amqplib: 0.10.3
-      aws4: 1.11.0
-      basic-auth: 2.0.1
-      change-case: 4.1.2
-      cheerio: 1.0.0-rc.6
-      chokidar: 4.0.1
-      cron: 3.1.7
-      csv-parse: 5.5.0
-      currency-codes: 2.1.0
-      eventsource: 2.0.2
-      fast-glob: 3.2.12
-      fflate: 0.7.4
-      generate-schema: 2.6.0
-      get-system-fonts: 2.0.2
-      gm: 1.25.0
-      html-to-text: 9.0.5
-      iconv-lite: 0.6.3
-      ics: 2.40.0
-      isbot: 3.6.13
-      iso-639-1: 2.1.15
-      js-nacl: 1.4.0
-      jsonwebtoken: 9.0.2
-      kafkajs: 2.2.4
-      ldapts: 4.2.6
-      lodash: 4.17.21
-      lossless-json: 1.0.5
-      luxon: 3.4.4
-      mailparser: 3.6.7
-      minifaker: 1.34.1
-      moment-timezone: 0.5.37
-      mongodb: 6.11.0(@aws-sdk/credential-providers@3.799.0)(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.4)
-      mqtt: 5.7.2
-      mssql: 10.0.2
-      mysql2: 3.11.0
-      n8n-workflow: 1.86.0
-      node-html-markdown: 1.2.0
-      node-ssh: 13.2.0
-      nodemailer: 6.9.9
-      otpauth: 9.1.1
-      pdfjs-dist: 2.16.105
-      pg: 8.12.0
-      pg-promise: 11.9.1
-      promise-ftp: 1.3.5(promise-ftp-common@1.1.5)
-      pyodide: 0.23.4(encoding@0.1.13)
-      redis: 4.6.14
-      rfc2047: 4.0.1
-      rhea: 1.0.24
-      rrule: 2.8.1
-      rss-parser: 3.13.0
-      sanitize-html: 2.12.1
-      semver: 7.5.4
-      showdown: 2.1.0
-      simple-git: 3.17.0
-      snowflake-sdk: 1.12.0(asn1.js@5.4.1)(encoding@0.1.13)
-      ssh2-sftp-client: 7.2.3
-      tmp-promise: 3.0.3
-      ts-ics: 1.2.2(date-fns@3.6.0)(lodash@4.17.21)(zod@3.24.1)
-      uuid: 10.0.0
-      xlsx: https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz
-      xml2js: 0.6.2
-    transitivePeerDependencies:
-      - '@aws-sdk/client-sts'
-      - '@aws-sdk/credential-providers'
-      - '@mongodb-js/zstd'
-      - asn1.js
-      - aws-crt
-      - bufferutil
-      - date-fns
-      - debug
-      - encoding
-      - gcp-metadata
-      - kerberos
-      - mongodb-client-encryption
-      - pg-native
-      - promise-ftp-common
-      - snappy
-      - socks
-      - supports-color
-      - utf-8-validate
-      - worker-loader
-      - zod
 
   n8n-nodes-base@1.89.0(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.799.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.1):
     dependencies:
@@ -20479,8 +20331,6 @@ snapshots:
 
   proxy-from-env@1.1.0: {}
 
-  pseudomap@1.0.2: {}
-
   psl@1.15.0:
     dependencies:
       punycode: 2.3.1
@@ -21128,7 +20978,7 @@ snapshots:
       mime-types: 2.1.35
       mkdirp: 1.0.4
       moment: 2.30.1
-      moment-timezone: 0.5.37
+      moment-timezone: 0.5.48
       open: 7.4.2
       python-struct: 1.1.3
       simple-lru-cache: 0.0.2
@@ -22019,10 +21869,6 @@ snapshots:
       gopd: 1.2.0
       has-tostringtag: 1.0.2
 
-  which@1.3.1:
-    dependencies:
-      isexe: 2.0.0
-
   which@2.0.2:
     dependencies:
       isexe: 2.0.0
@@ -22158,8 +22004,6 @@ snapshots:
   xtend@4.0.2: {}
 
   y18n@5.0.8: {}
-
-  yallist@2.1.2: {}
 
   yallist@3.1.1: {}
 
