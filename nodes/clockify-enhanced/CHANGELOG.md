@@ -1,3 +1,16 @@
+## 0.4.42 (2025-04-30)
+
+### 🩹 Fixes
+
+- **clockify-enhanced:** add n8n-workflow to dev dependencies (N8N-6) ([1e36b96](https://github.com/skriptfabrik/n8n-nodes/commit/1e36b96))
+- **clockify-enhanced:** update version range for n8n-workflow to ^1.86.0 (N8N-6) ([b2b9c0a](https://github.com/skriptfabrik/n8n-nodes/commit/b2b9c0a))
+- **clockify-enhanced:** add n8n-nodes-base to dev dependencies (N8N-6) ([4d8eaba](https://github.com/skriptfabrik/n8n-nodes/commit/4d8eaba))
+- **clockify-enhanced:** update version range for n8n-nodes-base to ^1.87.0 (N8N-6) ([18f7104](https://github.com/skriptfabrik/n8n-nodes/commit/18f7104))
+
+### ❤️ Thank You
+
+- Marco Spengler @MaSpeng
+
 ## 0.4.41 (2025-04-16)
 
 ### 🩹 Fixes
