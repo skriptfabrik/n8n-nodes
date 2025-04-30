@@ -1,3 +1,14 @@
+## 0.1.38 (2025-04-30)
+
+### 🩹 Fixes
+
+- **barcode:** add n8n-workflow to dev dependencies (N8N-6) ([9e9dc00](https://github.com/skriptfabrik/n8n-nodes/commit/9e9dc00))
+- **barcode:** update version range for n8n-workflow to ^1.86.0 (N8N-6) ([53b6ccc](https://github.com/skriptfabrik/n8n-nodes/commit/53b6ccc))
+
+### ❤️ Thank You
+
+- Marco Spengler @MaSpeng
+
 ## 0.1.37 (2025-04-16)
 
 ### 🩹 Fixes
