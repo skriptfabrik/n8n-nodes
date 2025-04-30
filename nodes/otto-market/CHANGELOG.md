@@ -1,3 +1,14 @@
+## 0.1.38 (2025-04-30)
+
+### 🩹 Fixes
+
+- **otto-market:** add n8n-workflow to dev dependencies (N8N-6) ([3626019](https://github.com/skriptfabrik/n8n-nodes/commit/3626019))
+- **otto-market:** update version range for n8n-workflow to ^1.86.0 (N8N-6) ([7fb54d3](https://github.com/skriptfabrik/n8n-nodes/commit/7fb54d3))
+
+### ❤️ Thank You
+
+- Marco Spengler @MaSpeng
+
 ## 0.1.37 (2025-04-16)
 
 ### 🩹 Fixes
