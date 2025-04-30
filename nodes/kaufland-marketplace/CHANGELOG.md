@@ -1,3 +1,14 @@
+## 0.1.38 (2025-04-30)
+
+### 🩹 Fixes
+
+- **kaufland-marketplace:** add n8n-workflow to dev dependencies (N8N-6) ([af2781a](https://github.com/skriptfabrik/n8n-nodes/commit/af2781a))
+- **kaufland-marketplace:** update version range for n8n-workflow to ^1.86.0 (N8N-6) ([c590a5b](https://github.com/skriptfabrik/n8n-nodes/commit/c590a5b))
+
+### ❤️ Thank You
+
+- Marco Spengler @MaSpeng
+
 ## 0.1.37 (2025-04-16)
 
 ### 🩹 Fixes
