@@ -1,3 +1,16 @@
+## 0.1.42 (2025-04-30)
+
+### 🩹 Fixes
+
+- **google-enhanced:** add n8n-workflow to dev dependencies (N8N-6) ([4e8f2c6](https://github.com/skriptfabrik/n8n-nodes/commit/4e8f2c6))
+- **google-enhanced:** update version range for n8n-workflow to ^1.86.0 (N8N-6) ([efd8c43](https://github.com/skriptfabrik/n8n-nodes/commit/efd8c43))
+- **google-enhanced:** add n8n-nodes-base to dev dependencies (N8N-6) ([bfae225](https://github.com/skriptfabrik/n8n-nodes/commit/bfae225))
+- **google-enhanced:** update version range for n8n-nodes-base to ^1.87.0 (N8N-6) ([b5d608a](https://github.com/skriptfabrik/n8n-nodes/commit/b5d608a))
+
+### ❤️ Thank You
+
+- Marco Spengler @MaSpeng
+
 ## 0.1.41 (2025-04-16)
 
 ### 🩹 Fixes
