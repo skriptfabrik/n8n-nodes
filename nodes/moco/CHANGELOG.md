@@ -1,3 +1,14 @@
+## 0.3.40 (2025-04-30)
+
+### 🩹 Fixes
+
+- **moco:** add n8n-workflow to dev dependencies (N8N-6) ([4576613](https://github.com/skriptfabrik/n8n-nodes/commit/4576613))
+- **moco:** update version range for n8n-workflow to ^1.86.0 (N8N-6) ([f5be7c2](https://github.com/skriptfabrik/n8n-nodes/commit/f5be7c2))
+
+### ❤️ Thank You
+
+- Marco Spengler @MaSpeng
+
 ## 0.3.39 (2025-04-16)
 
 ### 🩹 Fixes
