@@ -189,7 +189,7 @@ jobs:
       - name: Update n8n-nodes-base version
         run: |
           pnpm update n8n-nodes-base@${{ steps.target-versions.outputs.n8n_workflow_version }} \
-            --filter ${{ matrix.package.name }}
+            --filter ${{ matrix.package.name }} \
             --no-save
 
       - name: Commit n8n-nodes-base version update
@@ -201,7 +201,7 @@ jobs:
       - name: Update n8n-workflow version
         run: |
           pnpm update n8n-workflow@${{ steps.target-versions.outputs.n8n_workflow_version }} \
-            --filter ${{ matrix.package.name }}
+            --filter ${{ matrix.package.name }} \
             --no-save
 
       - name: Commit n8n-workflow version update
