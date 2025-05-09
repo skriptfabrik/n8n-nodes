@@ -19,8 +19,8 @@ importers:
         specifier: ^19.8.1
         version: 19.8.1
       '@commitlint/config-nx-scopes':
-        specifier: ^19.8.0
-        version: 19.8.0(nx@21.0.0(@swc-node/register@1.9.2(@swc/core@1.11.24(@swc/helpers@0.5.17))(@swc/types@0.1.21)(typescript@5.8.3))(@swc/core@1.11.24(@swc/helpers@0.5.17)))
+        specifier: ^19.8.1
+        version: 19.8.1(nx@21.0.0(@swc-node/register@1.9.2(@swc/core@1.11.24(@swc/helpers@0.5.17))(@swc/types@0.1.21)(typescript@5.8.3))(@swc/core@1.11.24(@swc/helpers@0.5.17)))
       '@eslint/compat':
         specifier: ^1.2.9
         version: 1.2.9(eslint@9.26.0(jiti@2.4.2))
@@ -1497,8 +1497,8 @@ packages:
     resolution: {integrity: sha512-/AZHJL6F6B/G959CsMAzrPKKZjeEiAVifRyEwXxcT6qtqbPwGw+iQxmNS+Bu+i09OCtdNRW6pNpBvgPrtMr9EQ==}
     engines: {node: '>=v18'}
 
-  '@commitlint/config-nx-scopes@19.8.0':
-    resolution: {integrity: sha512-cHyonFkbKN12EYFjnb5+CgNJZYMRTUBmkNLhnecRVZcB5qlQREs9kqqmrS6Vahme8PD2gmPA7I6b7kFfMHqRoQ==}
+  '@commitlint/config-nx-scopes@19.8.1':
+    resolution: {integrity: sha512-BPkNs+grzc0bPmQCCP52Ml1FnGmS4JESOuD61Rz0oO/SaM0GM5+0XJBThb7xdgpu4YltH8tYBg5cVqVu93CMug==}
     engines: {node: '>=v18'}
     peerDependencies:
       nx: '>=14.0.0'
@@ -1560,10 +1560,6 @@ packages:
 
   '@commitlint/top-level@19.8.1':
     resolution: {integrity: sha512-Ph8IN1IOHPSDhURCSXBz44+CIu+60duFwRsg6HqaISFHQHbmBtxVw4ZrFNIYUzEP7WwrNPxa2/5qJ//NK1FGcw==}
-    engines: {node: '>=v18'}
-
-  '@commitlint/types@19.8.0':
-    resolution: {integrity: sha512-LRjP623jPyf3Poyfb0ohMj8I3ORyBDOwXAgxxVPbSD0unJuW2mJWeiRfaQinjtccMqC5Wy1HOMfa4btKjbNxbg==}
     engines: {node: '>=v18'}
 
   '@commitlint/types@19.8.1':
@@ -12445,9 +12441,9 @@ snapshots:
       '@commitlint/types': 19.8.1
       conventional-changelog-conventionalcommits: 7.0.2
 
-  '@commitlint/config-nx-scopes@19.8.0(nx@21.0.0(@swc-node/register@1.9.2(@swc/core@1.11.24(@swc/helpers@0.5.17))(@swc/types@0.1.21)(typescript@5.8.3))(@swc/core@1.11.24(@swc/helpers@0.5.17)))':
+  '@commitlint/config-nx-scopes@19.8.1(nx@21.0.0(@swc-node/register@1.9.2(@swc/core@1.11.24(@swc/helpers@0.5.17))(@swc/types@0.1.21)(typescript@5.8.3))(@swc/core@1.11.24(@swc/helpers@0.5.17)))':
     dependencies:
-      '@commitlint/types': 19.8.0
+      '@commitlint/types': 19.8.1
     optionalDependencies:
       nx: 21.0.0(@swc-node/register@1.9.2(@swc/core@1.11.24(@swc/helpers@0.5.17))(@swc/types@0.1.21)(typescript@5.8.3))(@swc/core@1.11.24(@swc/helpers@0.5.17))
 
@@ -12537,11 +12533,6 @@ snapshots:
   '@commitlint/top-level@19.8.1':
     dependencies:
       find-up: 7.0.0
-
-  '@commitlint/types@19.8.0':
-    dependencies:
-      '@types/conventional-commits-parser': 5.0.1
-      chalk: 5.4.1
 
   '@commitlint/types@19.8.1':
     dependencies:
