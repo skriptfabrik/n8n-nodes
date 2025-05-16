@@ -215,7 +215,7 @@ importers:
     devDependencies:
       n8n-nodes-base:
         specifier: ^1.87.0
-        version: 1.89.0(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.810.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.4)
+        version: 1.90.0(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.810.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.4)
       n8n-workflow:
         specifier: ^1.86.0
         version: 1.89.0
@@ -2505,9 +2505,6 @@ packages:
   '@n8n/client-oauth2@0.24.0':
     resolution: {integrity: sha512-FDTb5i7Lb3FBv9PNqs1BVR9Rhg2zuhfahNOrWE8dHujX5rt2+bRvLuY1aKgM98yQYR39jDhLawSN6sqXhSE/8w==}
 
-  '@n8n/config@1.37.0':
-    resolution: {integrity: sha512-E4TVrWvQ14oBHHUggnHOMrCGajzf20fXYGuUbWWuVT2K4FCqjumsyc9gyKmDNpPTistql9Z3j9FMMO+tmofA1w==}
-
   '@n8n/config@1.38.0':
     resolution: {integrity: sha512-7jTvR4WrSv2xC8dmUur7cwL7pDHNekOfEnjCdKmNn9fFWsbtSOm/5Zt6xgE2R2/S4PxJHfciS5P7F7NTsVq2Yg==}
 
@@ -4632,9 +4629,6 @@ packages:
 
   bare-events@2.5.4:
     resolution: {integrity: sha512-+gFfDkR8pj4/TrWCGUGWmJIkBwuxPS5F+a5yWjOHQt2hHvNZd5YLzadjmDUtFmMM4y429bnKLa8bYBMHcYdnQA==}
-
-  base-64@1.0.0:
-    resolution: {integrity: sha512-kwDPIFCGx0NZHog36dj+tHiwP4QMzsZ3AgMViUBKI0+V5n4U0ufTCUMhnQ04diaRI8EX/QcPfql7zlhZ7j4zgg==}
 
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
@@ -7535,17 +7529,11 @@ packages:
   n8n-editor-ui@1.92.0:
     resolution: {integrity: sha512-PAveVbCWYF40s10DrHLGhWYbNnWr0PoBD0MZoJUtDPkJ0EO6eEuerUhepCjDDs0Ynz1afv5qxGioHj86MKm+pQ==}
 
-  n8n-nodes-base@1.89.0:
-    resolution: {integrity: sha512-nJxVrt3gCYVh5WurH6vbkTXSm19LyQ8ikmrSaTs8I4ZQG7lSyPuxZJ+kCtPeRh1eaN9+xGX+ZtzaPkzKt116qA==}
-
   n8n-nodes-base@1.90.0:
     resolution: {integrity: sha512-L5IPPiUo0+mvg3rGkuG/FcrYvw0bBFvM+YkKsRm/UDSNx8VKW23f82Lj7juc5TRMU0wb1fPnISGzPuz69Yaa+g==}
 
   n8n-nodes-base@1.91.1:
     resolution: {integrity: sha512-JRm1vehpr7fbpQRDn4hsS1NDctI05xAOSFu+jhbkaHMZDaDt2wcz3d/y13SP1uYsynh9MJm/zxb222J8Oer23Q==}
-
-  n8n-workflow@1.88.0:
-    resolution: {integrity: sha512-Vlp4mQJ6Cak5AioDw9Ms77h+VbfE193898mO57G0aMGD22o6VCHCr+hlaJDMs62JRFPABI9UJcYhcfHr59MuMQ==}
 
   n8n-workflow@1.89.0:
     resolution: {integrity: sha512-ukKffh9JG1TlabnDGvlvaR4dWQ3WPQKirdvoU8TaiMHUwkBrbLMSpuCfXZ44lJAJTinbXX5T6qPAc5swJH9tfA==}
@@ -8282,9 +8270,6 @@ packages:
 
   pure-rand@6.1.0:
     resolution: {integrity: sha512-bVWawvoZoBYpp6yIoQtQXHZjmz35RSVHnUOTefl8Vcjr8snTPY1wnpSPMWekcFwbxI6gtmT7rSYPFvz71ldiOA==}
-
-  pyodide@0.23.4:
-    resolution: {integrity: sha512-WpQUHaIXQ1xede5BMqPAjBcmopxN22s5hEsYOR8T7/UW/fkNLFUn07SaemUgthbtvedD5JGymMMj4VpD9sGMTg==}
 
   pyodide@0.27.5:
     resolution: {integrity: sha512-nXErpLzEdtQolt+sNQ/5mKuN9XTUwhxR2MRhRhZ6oDRGpYLXrOp5+kkTPGEwK+wn1ZA8+poNmoxKTj2sq/p9og==}
@@ -13840,12 +13825,6 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  '@n8n/config@1.37.0':
-    dependencies:
-      '@n8n/di': 0.5.0
-      reflect-metadata: 0.2.2
-      zod: 3.24.1
-
   '@n8n/config@1.38.0':
     dependencies:
       '@n8n/di': 0.5.0
@@ -16095,7 +16074,7 @@ snapshots:
 
   '@types/asn1@0.2.4':
     dependencies:
-      '@types/node': 20.17.47
+      '@types/node': 22.15.18
 
   '@types/babel__core@7.20.5':
     dependencies:
@@ -17034,8 +17013,6 @@ snapshots:
 
   bare-events@2.5.4:
     optional: true
-
-  base-64@1.0.0: {}
 
   base64-js@1.5.1: {}
 
@@ -20030,7 +20007,7 @@ snapshots:
   ldapts@4.2.6:
     dependencies:
       '@types/asn1': 0.2.4
-      '@types/node': 20.17.47
+      '@types/node': 22.15.18
       '@types/uuid': 10.0.0
       asn1: 0.2.6
       debug: 4.3.7
@@ -20574,100 +20551,6 @@ snapshots:
 
   n8n-editor-ui@1.92.0: {}
 
-  n8n-nodes-base@1.89.0(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.810.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.4):
-    dependencies:
-      '@aws-sdk/client-sso-oidc': 3.666.0(@aws-sdk/client-sts@3.682.0)
-      '@kafkajs/confluent-schema-registry': 3.8.0
-      '@mozilla/readability': 0.6.0
-      '@n8n/config': 1.37.0
-      '@n8n/di': 0.5.0
-      '@n8n/imap': 0.9.0
-      '@n8n/vm2': 3.9.25
-      alasql: 4.4.0(encoding@0.1.13)
-      amqplib: 0.10.3
-      aws4: 1.11.0
-      basic-auth: 2.0.1
-      change-case: 4.1.2
-      cheerio: 1.0.0-rc.6
-      chokidar: 4.0.1
-      cron: 3.1.7
-      csv-parse: 5.5.0
-      currency-codes: 2.1.0
-      eventsource: 2.0.2
-      fast-glob: 3.2.12
-      fflate: 0.7.4
-      generate-schema: 2.6.0
-      get-system-fonts: 2.0.2
-      gm: 1.25.1
-      html-to-text: 9.0.5
-      iconv-lite: 0.6.3
-      ics: 2.40.0
-      isbot: 3.6.13
-      iso-639-1: 2.1.15
-      js-nacl: 1.4.0
-      jsdom: 23.0.1(canvas@2.11.2(encoding@0.1.13))
-      jsonwebtoken: 9.0.2
-      kafkajs: 2.2.4
-      ldapts: 4.2.6
-      lodash: 4.17.21
-      lossless-json: 1.0.5
-      luxon: 3.4.4
-      mailparser: 3.6.7
-      minifaker: 1.34.1
-      moment-timezone: 0.5.37
-      mongodb: 6.11.0(@aws-sdk/credential-providers@3.810.0)(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.4)
-      mqtt: 5.7.2
-      mssql: 10.0.2
-      mysql2: 3.11.0
-      n8n-workflow: 1.88.0
-      node-html-markdown: 1.2.0
-      node-ssh: 13.2.0
-      nodemailer: 6.9.9
-      otpauth: 9.1.1
-      pdfjs-dist: 2.16.105
-      pg: 8.12.0
-      pg-promise: 11.9.1
-      promise-ftp: 1.3.5(promise-ftp-common@1.1.5)
-      pyodide: 0.23.4(encoding@0.1.13)
-      redis: 4.6.14
-      rfc2047: 4.0.1
-      rhea: 1.0.24
-      rrule: 2.8.1
-      rss-parser: 3.13.0
-      sanitize-html: 2.12.1
-      semver: 7.5.4
-      showdown: 2.1.0
-      simple-git: 3.17.0
-      snowflake-sdk: 1.12.0(asn1.js@5.4.1)(encoding@0.1.13)
-      ssh2-sftp-client: 7.2.3
-      tmp-promise: 3.0.3
-      ts-ics: 1.2.2(date-fns@3.6.0)(lodash@4.17.21)(zod@3.24.4)
-      uuid: 10.0.0
-      xlsx: https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz
-      xml2js: 0.6.2
-    transitivePeerDependencies:
-      - '@aws-sdk/client-sts'
-      - '@aws-sdk/credential-providers'
-      - '@mongodb-js/zstd'
-      - asn1.js
-      - aws-crt
-      - bufferutil
-      - canvas
-      - date-fns
-      - debug
-      - encoding
-      - gcp-metadata
-      - kerberos
-      - mongodb-client-encryption
-      - pg-native
-      - promise-ftp-common
-      - snappy
-      - socks
-      - supports-color
-      - utf-8-validate
-      - worker-loader
-      - zod
-
   n8n-nodes-base@1.90.0(@aws-sdk/client-sts@3.682.0)(@aws-sdk/credential-providers@3.810.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.4):
     dependencies:
       '@aws-sdk/client-sso-oidc': 3.666.0(@aws-sdk/client-sts@3.682.0)
@@ -20857,30 +20740,6 @@ snapshots:
       - utf-8-validate
       - worker-loader
       - zod
-
-  n8n-workflow@1.88.0:
-    dependencies:
-      '@n8n/tournament': 1.0.6
-      '@n8n_io/riot-tmpl': 4.0.0
-      ast-types: 0.15.2
-      axios: 1.8.2
-      callsites: 3.1.0
-      deep-equal: 2.2.0
-      esprima-next: 5.8.4
-      form-data: 4.0.0
-      jmespath: 0.16.0
-      js-base64: 3.7.2
-      jssha: 3.3.1
-      lodash: 4.17.21
-      luxon: 3.4.4
-      md5: 2.3.0
-      recast: 0.21.5
-      title-case: 3.0.3
-      transliteration: 2.3.5
-      xml2js: 0.6.2
-      zod: 3.24.1
-    transitivePeerDependencies:
-      - debug
 
   n8n-workflow@1.89.0:
     dependencies:
@@ -21995,16 +21854,6 @@ snapshots:
   punycode@2.3.1: {}
 
   pure-rand@6.1.0: {}
-
-  pyodide@0.23.4(encoding@0.1.13):
-    dependencies:
-      base-64: 1.0.0
-      node-fetch: 2.7.0(encoding@0.1.13)
-      ws: 8.18.2
-    transitivePeerDependencies:
-      - bufferutil
-      - encoding
-      - utf-8-validate
 
   pyodide@0.27.5:
     dependencies:
