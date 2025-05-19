@@ -110,7 +110,7 @@ importers:
         version: 1.93.0(lfv7usuwht7yhsilna6645kety)
       n8n-nodes-base:
         specifier: ^1.87.0
-        version: 1.91.1(@aws-sdk/client-sts@3.666.0)(@aws-sdk/credential-providers@3.812.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.1)
+        version: 1.92.0(@aws-sdk/client-sts@3.666.0)(@aws-sdk/credential-providers@3.812.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.1)
       n8n-workflow:
         specifier: ^1.86.0
         version: 1.90.0
@@ -7559,9 +7559,6 @@ packages:
   n8n-nodes-base@1.90.0:
     resolution: {integrity: sha512-L5IPPiUo0+mvg3rGkuG/FcrYvw0bBFvM+YkKsRm/UDSNx8VKW23f82Lj7juc5TRMU0wb1fPnISGzPuz69Yaa+g==}
 
-  n8n-nodes-base@1.91.1:
-    resolution: {integrity: sha512-JRm1vehpr7fbpQRDn4hsS1NDctI05xAOSFu+jhbkaHMZDaDt2wcz3d/y13SP1uYsynh9MJm/zxb222J8Oer23Q==}
-
   n8n-nodes-base@1.92.0:
     resolution: {integrity: sha512-DciHHxx7BQZbbnscch9+HGjuek0zqiUufJZz5lTfD3WHuq2dpOs44rPEyKLqrDMPaQDvQwDziGtWpPvGbMMh5w==}
 
@@ -13152,7 +13149,7 @@ snapshots:
   '@getzep/zep-js@0.9.0':
     dependencies:
       '@supercharge/promise-pool': 3.2.0
-      semver: 7.7.2
+      semver: 7.5.4
       typescript: 5.8.3
 
   '@google-ai/generativelanguage@2.6.0(encoding@0.1.13)':
@@ -14252,7 +14249,7 @@ snapshots:
   '@npmcli/fs@1.1.1':
     dependencies:
       '@gar/promisify': 1.1.3
-      semver: 7.7.2
+      semver: 7.5.4
     optional: true
 
   '@npmcli/move-file@1.1.2':
@@ -14640,7 +14637,7 @@ snapshots:
       '@opentelemetry/instrumentation': 0.56.0(@opentelemetry/api@1.9.0)
       '@opentelemetry/semantic-conventions': 1.28.0
       forwarded-parse: 2.1.2
-      semver: 7.7.2
+      semver: 7.5.4
     transitivePeerDependencies:
       - supports-color
 
@@ -14773,7 +14770,7 @@ snapshots:
       '@types/shimmer': 1.2.0
       import-in-the-middle: 1.13.2
       require-in-the-middle: 7.5.2
-      semver: 7.7.2
+      semver: 7.5.4
       shimmer: 1.2.1
     transitivePeerDependencies:
       - supports-color
@@ -14785,7 +14782,7 @@ snapshots:
       '@types/shimmer': 1.2.0
       import-in-the-middle: 1.13.2
       require-in-the-middle: 7.5.2
-      semver: 7.7.2
+      semver: 7.5.4
       shimmer: 1.2.1
     transitivePeerDependencies:
       - supports-color
@@ -15969,7 +15966,7 @@ snapshots:
       '@supabase/node-fetch': 2.6.15
       '@types/phoenix': 1.6.6
       '@types/ws': 8.18.1
-      ws: 8.18.2
+      ws: 8.17.1
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -20716,101 +20713,6 @@ snapshots:
       - worker-loader
       - zod
 
-  n8n-nodes-base@1.91.1(@aws-sdk/client-sts@3.666.0)(@aws-sdk/credential-providers@3.812.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.1):
-    dependencies:
-      '@aws-sdk/client-sso-oidc': 3.666.0(@aws-sdk/client-sts@3.666.0)
-      '@kafkajs/confluent-schema-registry': 3.8.0
-      '@mozilla/readability': 0.6.0
-      '@n8n/config': 1.38.0
-      '@n8n/di': 0.5.0
-      '@n8n/imap': 0.9.0
-      '@n8n/vm2': 3.9.25
-      alasql: 4.4.0(encoding@0.1.13)
-      amqplib: 0.10.3
-      aws4: 1.11.0
-      basic-auth: 2.0.1
-      change-case: 4.1.2
-      cheerio: 1.0.0-rc.6
-      chokidar: 4.0.1
-      cron: 3.1.7
-      csv-parse: 5.5.0
-      currency-codes: 2.1.0
-      eventsource: 2.0.2
-      fast-glob: 3.2.12
-      fflate: 0.7.4
-      generate-schema: 2.6.0
-      get-system-fonts: 2.0.2
-      gm: 1.25.1
-      html-to-text: 9.0.5
-      iconv-lite: 0.6.3
-      ics: 2.40.0
-      isbot: 3.6.13
-      iso-639-1: 2.1.15
-      js-nacl: 1.4.0
-      jsdom: 23.0.1(canvas@2.11.2(encoding@0.1.13))
-      jsonwebtoken: 9.0.2
-      kafkajs: 2.2.4
-      ldapts: 4.2.6
-      lodash: 4.17.21
-      lossless-json: 1.0.5
-      luxon: 3.4.4
-      mailparser: 3.6.7
-      minifaker: 1.34.1
-      moment-timezone: 0.5.37
-      mongodb: 6.11.0(@aws-sdk/credential-providers@3.812.0)(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.4)
-      mqtt: 5.7.2
-      mssql: 10.0.2
-      mysql2: 3.11.0
-      n8n-workflow: 1.90.0
-      node-html-markdown: 1.2.0
-      node-ssh: 13.2.0
-      nodemailer: 6.9.9
-      otpauth: 9.1.1
-      pdfjs-dist: 2.16.105
-      pg: 8.12.0
-      pg-promise: 11.9.1
-      promise-ftp: 1.3.5(promise-ftp-common@1.1.5)
-      pyodide: 0.27.5
-      redis: 4.6.14
-      rfc2047: 4.0.1
-      rhea: 1.0.24
-      rrule: 2.8.1
-      rss-parser: 3.13.0
-      sanitize-html: 2.12.1
-      semver: 7.5.4
-      showdown: 2.1.0
-      simple-git: 3.17.0
-      snowflake-sdk: 1.12.0(asn1.js@5.4.1)(encoding@0.1.13)
-      ssh2-sftp-client: 7.2.3
-      tmp-promise: 3.0.3
-      ts-ics: 1.2.2(date-fns@3.6.0)(lodash@4.17.21)(zod@3.24.1)
-      uuid: 10.0.0
-      xlsx: https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz
-      xml2js: 0.6.2
-      xmlhttprequest-ssl: 3.1.0
-    transitivePeerDependencies:
-      - '@aws-sdk/client-sts'
-      - '@aws-sdk/credential-providers'
-      - '@mongodb-js/zstd'
-      - asn1.js
-      - aws-crt
-      - bufferutil
-      - canvas
-      - date-fns
-      - debug
-      - encoding
-      - gcp-metadata
-      - kerberos
-      - mongodb-client-encryption
-      - pg-native
-      - promise-ftp-common
-      - snappy
-      - socks
-      - supports-color
-      - utf-8-validate
-      - worker-loader
-      - zod
-
   n8n-nodes-base@1.92.0(@aws-sdk/client-sts@3.666.0)(@aws-sdk/credential-providers@3.812.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.4)(zod@3.24.1):
     dependencies:
       '@aws-sdk/client-sso-oidc': 3.666.0(@aws-sdk/client-sts@3.666.0)
@@ -21289,7 +21191,7 @@ snapshots:
       nopt: 5.0.0
       npmlog: 6.0.2
       rimraf: 3.0.2
-      semver: 7.7.2
+      semver: 7.5.4
       tar: 6.2.1
       which: 2.0.2
     transitivePeerDependencies:
