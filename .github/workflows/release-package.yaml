@@ -35,6 +35,9 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
+      - name: Install canvas deps
+        uses: ./.github/actions/install-canvas-deps
+
       - name: Check on existing release branch
         run: |
           if git ls-remote --heads origin | grep "refs/heads/release-${{ github.event.inputs.package }}@*"; then
