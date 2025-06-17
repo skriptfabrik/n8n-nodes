@@ -18,6 +18,9 @@ jobs:
         with:
           ref: ${{ inputs.pull_request_ref }}
 
+      - name: Install canvas deps
+        uses: ./.github/actions/install-canvas-deps
+
       - name: Setup git user
         uses: fregante/setup-git-user@v2
 
