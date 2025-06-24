@@ -55,12 +55,13 @@ describe('Kaufland Marketplace', () => {
     jest.mocked(kauflandMarketplaceRequest).mockResolvedValue({ data: [] });
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'orders',
           operation: 'getOne',
           id: 'abc123',
-        })[paramName],
+        })[parameterName],
     );
     await kauflandMarketplace.execute.call(executeFunctions);
     expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
@@ -74,12 +75,13 @@ describe('Kaufland Marketplace', () => {
     jest.mocked(kauflandMarketplaceRequest).mockResolvedValue({ data: [] });
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (parameterName: string): any =>
         ({
           resource: 'returns',
           operation: 'returningOrderUnits',
           orderUnits: [],
-        })[paramName],
+        })[parameterName],
     );
     await kauflandMarketplace.execute.call(executeFunctions);
     expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
@@ -93,13 +95,14 @@ describe('Kaufland Marketplace', () => {
     jest.mocked(kauflandMarketplaceRequest).mockResolvedValue({ data: [] });
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'returns',
           operation: 'retrievingReturnInformationStatus',
           status: ['status'],
           query: '',
-        })[paramName],
+        })[parameterName],
     );
     await kauflandMarketplace.execute.call(executeFunctions);
     expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
@@ -113,13 +116,14 @@ describe('Kaufland Marketplace', () => {
     jest.mocked(kauflandMarketplaceRequest).mockResolvedValue({ data: [] });
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'returns',
           operation: 'retrievingReturnInformationTracking',
           trackingcode: 'foobar',
           query: '',
-        })[paramName],
+        })[parameterName],
     );
     await kauflandMarketplace.execute.call(executeFunctions);
     expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
@@ -133,14 +137,15 @@ describe('Kaufland Marketplace', () => {
     jest.mocked(kauflandMarketplaceRequest).mockResolvedValue({ data: [] });
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'returns',
           operation: 'retrievingReturnInformationId',
           returnId: 'foobar',
           embedReturnUnits: true,
           embedBuyer: true,
-        })[paramName],
+        })[parameterName],
     );
     await kauflandMarketplace.execute.call(executeFunctions);
     expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
@@ -154,13 +159,14 @@ describe('Kaufland Marketplace', () => {
     jest.mocked(kauflandMarketplaceRequest).mockResolvedValue({ data: [] });
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'returns',
           operation: 'clarifyingReturns',
           returnUnitId: 'foobar',
           message: 'my message',
-        })[paramName],
+        })[parameterName],
     );
     await kauflandMarketplace.execute.call(executeFunctions);
     expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
@@ -174,13 +180,14 @@ describe('Kaufland Marketplace', () => {
     jest.mocked(kauflandMarketplaceRequest).mockResolvedValue({ data: [] });
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'returns',
           operation: 'rejectingReturns',
           returnUnitId: 'foobar',
           message: 'my message',
-        })[paramName],
+        })[parameterName],
     );
     await kauflandMarketplace.execute.call(executeFunctions);
     expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
@@ -194,12 +201,13 @@ describe('Kaufland Marketplace', () => {
     jest.mocked(kauflandMarketplaceRequest).mockResolvedValue({ data: [] });
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'returns',
           operation: 'repairingReturns',
           returnUnitId: 'foobar',
-        })[paramName],
+        })[parameterName],
     );
     await kauflandMarketplace.execute.call(executeFunctions);
     expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
@@ -213,12 +221,13 @@ describe('Kaufland Marketplace', () => {
     jest.mocked(kauflandMarketplaceRequest).mockResolvedValue({ data: [] });
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'returns',
           operation: 'acceptingReturns',
           returnUnitId: 'foobar',
-        })[paramName],
+        })[parameterName],
     );
     await kauflandMarketplace.execute.call(executeFunctions);
     expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {

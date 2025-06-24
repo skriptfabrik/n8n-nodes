@@ -23,8 +23,9 @@ describe('Barcode', () => {
     const binaryData = mock<IBinaryData>();
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) => {
-        switch (paramName) {
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) => {
+        switch (parameterName) {
           case 'data':
             return 'data';
           case 'output':
