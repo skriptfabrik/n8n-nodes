@@ -31,6 +31,7 @@ describe('Kaufland Marketplace', () => {
   });
 
   afterEach(() => {
+    mockClear(kauflandMarketplaceRequest);
     mockClear(executeFunctions);
   });
 
@@ -51,6 +52,39 @@ describe('Kaufland Marketplace', () => {
     );
   });
 
+  it('should not call kaufland api for unknown resource', async () => {
+    jest.mocked(kauflandMarketplaceRequest);
+
+    executeFunctions.getNodeParameter.mockImplementation(
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
+        ({
+          resource: '_unknown_',
+        })[parameterName],
+    );
+
+    await kauflandMarketplace.execute.call(executeFunctions);
+
+    expect(kauflandMarketplaceRequest).toHaveBeenCalledTimes(0);
+  });
+
+  it('should not call kaufland api for resource orders and operation other than getOne', async () => {
+    jest.mocked(kauflandMarketplaceRequest);
+
+    executeFunctions.getNodeParameter.mockImplementation(
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
+        ({
+          resource: 'orders',
+          operation: '_unknown_',
+        })[parameterName],
+    );
+
+    await kauflandMarketplace.execute.call(executeFunctions);
+
+    expect(kauflandMarketplaceRequest).toHaveBeenCalledTimes(0);
+  });
+
   it('should call kaufland api for orders:getOne', async () => {
     jest.mocked(kauflandMarketplaceRequest).mockResolvedValue({ data: [] });
 
@@ -63,12 +97,31 @@ describe('Kaufland Marketplace', () => {
           id: 'abc123',
         })[parameterName],
     );
+
     await kauflandMarketplace.execute.call(executeFunctions);
+
     expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
       body: '',
       method: 'GET',
       uri: 'https://sellerapi.kaufland.com/v2/orders/abc123',
     });
+  });
+
+  it('should not call kaufland api for resource returns and operation a unknown operation', async () => {
+    jest.mocked(kauflandMarketplaceRequest);
+
+    executeFunctions.getNodeParameter.mockImplementation(
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
+        ({
+          resource: 'returns',
+          operation: '_unknown_',
+        })[parameterName],
+    );
+
+    await kauflandMarketplace.execute.call(executeFunctions);
+
+    expect(kauflandMarketplaceRequest).toHaveBeenCalledTimes(0);
   });
 
   it('should call kaufland api for returns:returningOrderUnits', async () => {
@@ -83,7 +136,9 @@ describe('Kaufland Marketplace', () => {
           orderUnits: [],
         })[parameterName],
     );
+
     await kauflandMarketplace.execute.call(executeFunctions);
+
     expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
       body: [],
       method: 'POST',
@@ -104,7 +159,9 @@ describe('Kaufland Marketplace', () => {
           query: '',
         })[parameterName],
     );
+
     await kauflandMarketplace.execute.call(executeFunctions);
+
     expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
       body: '',
       method: 'GET',
@@ -125,11 +182,13 @@ describe('Kaufland Marketplace', () => {
           query: '',
         })[parameterName],
     );
+
     await kauflandMarketplace.execute.call(executeFunctions);
+
     expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
-      body: [],
-      method: 'POST',
-      uri: 'https://sellerapi.kaufland.com/v2/returns',
+      body: '',
+      method: 'GET',
+      uri: 'https://sellerapi.kaufland.com/v2/returns?tracking_code=foobar',
     });
   });
 
@@ -147,11 +206,37 @@ describe('Kaufland Marketplace', () => {
           embedBuyer: true,
         })[parameterName],
     );
+
     await kauflandMarketplace.execute.call(executeFunctions);
+
     expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
       body: '',
       method: 'GET',
       uri: 'https://sellerapi.kaufland.com/v2/returns/foobar?status=buyer&status=return_units',
+    });
+  });
+
+  it('should call kaufland api for returns:retrievingReturnInformationId without embedReturnUnits and embedBuyer', async () => {
+    jest.mocked(kauflandMarketplaceRequest).mockResolvedValue({ data: [] });
+
+    executeFunctions.getNodeParameter.mockImplementation(
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
+        ({
+          resource: 'returns',
+          operation: 'retrievingReturnInformationId',
+          returnId: 'foobar',
+          embedReturnUnits: false,
+          embedBuyer: false,
+        })[parameterName],
+    );
+
+    await kauflandMarketplace.execute.call(executeFunctions);
+
+    expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
+      body: '',
+      method: 'GET',
+      uri: 'https://sellerapi.kaufland.com/v2/returns/foobar?',
     });
   });
 
@@ -168,7 +253,9 @@ describe('Kaufland Marketplace', () => {
           message: 'my message',
         })[parameterName],
     );
+
     await kauflandMarketplace.execute.call(executeFunctions);
+
     expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
       body: { message: 'my message' },
       method: 'PATCH',
@@ -189,7 +276,9 @@ describe('Kaufland Marketplace', () => {
           message: 'my message',
         })[parameterName],
     );
+
     await kauflandMarketplace.execute.call(executeFunctions);
+
     expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
       body: { message: 'my message' },
       method: 'PATCH',
@@ -209,7 +298,9 @@ describe('Kaufland Marketplace', () => {
           returnUnitId: 'foobar',
         })[parameterName],
     );
+
     await kauflandMarketplace.execute.call(executeFunctions);
+
     expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
       body: '',
       method: 'PATCH',
@@ -229,7 +320,9 @@ describe('Kaufland Marketplace', () => {
           returnUnitId: 'foobar',
         })[parameterName],
     );
+
     await kauflandMarketplace.execute.call(executeFunctions);
+
     expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
       body: '',
       method: 'PATCH',
