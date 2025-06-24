@@ -55,13 +55,15 @@ describe('OTTO Market', () => {
       .mockResolvedValue([{ json: { foo: 'bar' } }]);
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
-        ({
-          resource: 'orders',
-          operation: 'getOne',
-          id: 'abc123',
-        })[paramName],
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
+      ({
+        resource: 'orders',
+        operation: 'getOne',
+        id: 'abc123',
+      })[parameterName],
     );
+
     await ottoMarket.execute.call(executeFunctions);
     expect(OttoMarketRequest).toHaveBeenCalledWith(
       executeFunctions,
@@ -80,12 +82,13 @@ describe('OTTO Market', () => {
       .mockResolvedValue([{ json: { foo: 'bar' } }]);
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'returns',
           operation: 'list',
           status: 'status',
-        })[paramName],
+        })[parameterName],
     );
     await ottoMarket.execute.call(executeFunctions);
     expect(OttoMarketRequest).toHaveBeenCalledWith(
@@ -105,12 +108,13 @@ describe('OTTO Market', () => {
       .mockResolvedValue([{ json: { foo: 'bar' } }]);
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'returns',
           operation: 'accept',
           positionItems: [],
-        })[paramName],
+        })[parameterName],
     );
     await ottoMarket.execute.call(executeFunctions);
     expect(OttoMarketRequest).toHaveBeenCalledWith(
@@ -132,12 +136,13 @@ describe('OTTO Market', () => {
       .mockResolvedValue([{ json: { foo: 'bar' } }]);
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'returns',
           operation: 'reject',
           positionItems: [],
-        })[paramName],
+        })[parameterName],
     );
     await ottoMarket.execute.call(executeFunctions);
     expect(OttoMarketRequest).toHaveBeenCalledWith(

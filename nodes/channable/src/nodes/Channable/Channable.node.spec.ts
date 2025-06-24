@@ -57,13 +57,14 @@ describe('Channable', () => {
     jest.mocked(ChannableRequest).mockResolvedValue([{ json: { foo: 'bar' } }]);
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'orders',
           operation: 'getOne',
           projectId: 'projectId',
           id: 'abc123',
-        })[paramName],
+        })[parameterName],
     );
     await channable.execute.call(executeFunctions);
     expect(ChannableRequest).toHaveBeenCalledWith(
@@ -81,14 +82,15 @@ describe('Channable', () => {
     jest.mocked(ChannableRequest).mockResolvedValue([{ json: { foo: 'bar' } }]);
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'orders',
           operation: 'returnManual',
           projectId: 'projectId',
           id: 'abc123',
           products: [],
-        })[paramName],
+        })[parameterName],
     );
     await channable.execute.call(executeFunctions);
     expect(ChannableRequest).toHaveBeenCalledWith(
@@ -106,13 +108,14 @@ describe('Channable', () => {
     jest.mocked(ChannableRequest).mockResolvedValue([{ json: { foo: 'bar' } }]);
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'stockUpdates',
           operation: 'updateStock',
           projectId: 'projectId',
           stocks: [],
-        })[paramName],
+        })[parameterName],
     );
     await channable.execute.call(executeFunctions);
     expect(ChannableRequest).toHaveBeenCalledWith(
@@ -130,7 +133,8 @@ describe('Channable', () => {
     jest.mocked(ChannableRequest).mockResolvedValue([{ json: { foo: 'bar' } }]);
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'returns',
           operation: 'list',
@@ -138,7 +142,7 @@ describe('Channable', () => {
           additionalFields: {
             search: 'foobar',
           },
-        })[paramName],
+        })[parameterName],
     );
     await channable.execute.call(executeFunctions);
     expect(ChannableRequest).toHaveBeenCalledWith(
@@ -159,7 +163,8 @@ describe('Channable', () => {
     jest.mocked(ChannableRequest).mockResolvedValue([{ json: { foo: 'bar' } }]);
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'returns',
           operation: 'listAnonymized',
@@ -167,7 +172,7 @@ describe('Channable', () => {
           additionalFields: {
             search: 'foobar',
           },
-        })[paramName],
+        })[parameterName],
     );
     await channable.execute.call(executeFunctions);
     expect(ChannableRequest).toHaveBeenCalledWith(
@@ -188,13 +193,14 @@ describe('Channable', () => {
     jest.mocked(ChannableRequest).mockResolvedValue([{ json: { foo: 'bar' } }]);
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'returns',
           operation: 'getOne',
           projectId: 'projectId',
           id: 'abc123',
-        })[paramName],
+        })[parameterName],
     );
     await channable.execute.call(executeFunctions);
     expect(ChannableRequest).toHaveBeenCalledWith(
@@ -212,13 +218,14 @@ describe('Channable', () => {
     jest.mocked(ChannableRequest).mockResolvedValue([{ json: { foo: 'bar' } }]);
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'returns',
           operation: 'createTest',
           projectId: 'projectId',
           id: 'abc123',
-        })[paramName],
+        })[parameterName],
     );
     await channable.execute.call(executeFunctions);
     expect(ChannableRequest).toHaveBeenCalledWith(
@@ -238,14 +245,15 @@ describe('Channable', () => {
     jest.mocked(ChannableRequest).mockResolvedValue([{ json: { foo: 'bar' } }]);
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (paramName: string) =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'returns',
           operation: 'update',
           projectId: 'projectId',
           id: 'abc123',
           status: 'accepted',
-        })[paramName],
+        })[parameterName],
     );
     await channable.execute.call(executeFunctions);
     expect(ChannableRequest).toHaveBeenCalledWith(
