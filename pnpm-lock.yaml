@@ -94,8 +94,8 @@ importers:
         specifier: ^30.0.2
         version: 30.0.2
       jest-mock-extended:
-        specifier: ^3.0.7
-        version: 3.0.7(jest@29.7.0(@types/node@22.15.32)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.12.6(@swc/helpers@0.5.17))(@types/node@22.15.32)(typescript@5.8.3)))(typescript@5.8.3)
+        specifier: ^4.0.0
+        version: 4.0.0(@jest/globals@29.7.0)(jest@29.7.0(@types/node@22.15.32)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.12.6(@swc/helpers@0.5.17))(@types/node@22.15.32)(typescript@5.8.3)))(typescript@5.8.3)
       jsbarcode:
         specifier: ^3.12.1
         version: 3.12.1
@@ -6494,10 +6494,11 @@ packages:
     resolution: {integrity: sha512-vXywcxmr0SsKXF/bAD7t7nMamRvPuJkras00gqYeB1V0WllxZrbZ0paRr3XqpFU2sYYjD0qAaG2fRyn/CGZ0aw==}
     engines: {node: ^18.14.0 || ^20.0.0 || ^22.0.0 || >=24.0.0}
 
-  jest-mock-extended@3.0.7:
-    resolution: {integrity: sha512-7lsKdLFcW9B9l5NzZ66S/yTQ9k8rFtnwYdCNuRU/81fqDWicNDVhitTSPnrGmNeNm0xyw0JHexEOShrIKRCIRQ==}
+  jest-mock-extended@4.0.0:
+    resolution: {integrity: sha512-7BZpfuvLam+/HC+NxifIi9b+5VXj/utUDMPUqrDJehGWVuXPtLS9Jqlob2mJLrI/pg2k1S8DMfKDvEB88QNjaQ==}
     peerDependencies:
-      jest: ^24.0.0 || ^25.0.0 || ^26.0.0 || ^27.0.0 || ^28.0.0 || ^29.0.0
+      '@jest/globals': ^28.0.0 || ^29.0.0 || ^30.0.0
+      jest: ^24.0.0 || ^25.0.0 || ^26.0.0 || ^27.0.0 || ^28.0.0 || ^29.0.0 || ^30.0.0
       typescript: ^3.0.0 || ^4.0.0 || ^5.0.0
 
   jest-mock@29.7.0:
@@ -8903,8 +8904,8 @@ packages:
     peerDependencies:
       typescript: '>=4.8.4'
 
-  ts-essentials@10.0.1:
-    resolution: {integrity: sha512-HPH+H2bkkO8FkMDau+hFvv7KYozzned9Zr1Urn7rRPXMF4mZmCKOq+u4AI1AAW+2bofIOXTuSdKo9drQuni2dQ==}
+  ts-essentials@10.1.1:
+    resolution: {integrity: sha512-4aTB7KLHKmUvkjNj8V+EdnmuVTiECzn3K+zIbRthumvHu+j44x3w63xpfs0JL3NGIzGXqoQ7AV591xHO+XrOTw==}
     peerDependencies:
       typescript: '>=4.5.0'
     peerDependenciesMeta:
@@ -18435,10 +18436,11 @@ snapshots:
       slash: 3.0.0
       stack-utils: 2.0.6
 
-  jest-mock-extended@3.0.7(jest@29.7.0(@types/node@22.15.32)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.12.6(@swc/helpers@0.5.17))(@types/node@22.15.32)(typescript@5.8.3)))(typescript@5.8.3):
+  jest-mock-extended@4.0.0(@jest/globals@29.7.0)(jest@29.7.0(@types/node@22.15.32)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.12.6(@swc/helpers@0.5.17))(@types/node@22.15.32)(typescript@5.8.3)))(typescript@5.8.3):
     dependencies:
+      '@jest/globals': 29.7.0
       jest: 29.7.0(@types/node@22.15.32)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.12.6(@swc/helpers@0.5.17))(@types/node@22.15.32)(typescript@5.8.3))
-      ts-essentials: 10.0.1(typescript@5.8.3)
+      ts-essentials: 10.1.1(typescript@5.8.3)
       typescript: 5.8.3
 
   jest-mock@29.7.0:
@@ -21761,7 +21763,7 @@ snapshots:
     dependencies:
       typescript: 5.8.3
 
-  ts-essentials@10.0.1(typescript@5.8.3):
+  ts-essentials@10.1.1(typescript@5.8.3):
     optionalDependencies:
       typescript: 5.8.3
 
