@@ -73,8 +73,8 @@ importers:
         specifier: ~22.15.32
         version: 22.15.32
       canvas:
-        specifier: ^2.11.2
-        version: 2.11.2(encoding@0.1.13)
+        specifier: ^3.1.0
+        version: 3.1.0
       eslint:
         specifier: ^9.29.0
         version: 9.29.0(jiti@2.4.2)
@@ -107,10 +107,10 @@ importers:
         version: 0.6.0
       n8n:
         specifier: 1.99.1
-        version: 1.99.1(skqcemmd6iwoeiccfyac7qhlou)
+        version: 1.99.1(6spjrgfhdtvv7srujfmekkw7sa)
       n8n-nodes-base:
         specifier: ^1.87.0
-        version: 1.97.1(@aws-sdk/credential-providers@3.834.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.5)(zod@3.24.1)
+        version: 1.97.1(@aws-sdk/credential-providers@3.834.0)(asn1.js@5.4.1)(canvas@3.1.0)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.5)(zod@3.24.1)
       n8n-workflow:
         specifier: ^1.86.0
         version: 1.96.0
@@ -5302,10 +5302,6 @@ packages:
     resolution: {integrity: sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg==}
     engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
 
-  detect-libc@2.0.3:
-    resolution: {integrity: sha512-bwy0MGW55bG41VqxxypOsdSdGqLwXPI/focwgTYCFMbdUiBAxLg9CFzG08sz2aqzknwiX7Hkl0bQENjg8iLByw==}
-    engines: {node: '>=8'}
-
   detect-libc@2.0.4:
     resolution: {integrity: sha512-3UDv+G9CsCKO1WKMGw9fwq/SWJYbI0c5Y7LU1AXYoDdbhE2AHQ6N6Nb34sG8Fj7T5APy8qXDCKuuIHd1BR0tVA==}
     engines: {node: '>=8'}
@@ -5453,9 +5449,6 @@ packages:
 
   encoding@0.1.13:
     resolution: {integrity: sha512-ETBauow1T35Y/WZMkio9jiM0Z5xjHHmJ4XmjZOq1l/dXz3lr2sRn87nJy20RupqSh1F2m3HHPSp8ShIPQJrJ3A==}
-
-  end-of-stream@1.4.4:
-    resolution: {integrity: sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q==}
 
   end-of-stream@1.4.5:
     resolution: {integrity: sha512-ooEGc6HP26xXq/N+GCGOT0JKCLDGrq2bQUZrQ7gyrJiZANJ/8YDTxTpQBXGMn+WbIQXNVpyWymm7KYVICQnyOg==}
@@ -7613,9 +7606,6 @@ packages:
     resolution: {integrity: sha512-eLoBxg6wE/rZkJPhU/xRX1WTpkFEwDJEN96oxFrTsqBdbT5ec295Q+CoHrL9IT0DipqKhmGcaZmwOt8OON5x1w==}
     engines: {node: '>=12.0.0'}
 
-  nan@2.20.0:
-    resolution: {integrity: sha512-bk3gXBZDGILuuo/6sKtr0DQmSThYHLtNCdSdXk9YkxD/jK6X2vmCyyXBBxyqZ4XcnzTyYEAThfX3DCEnLf6igw==}
-
   nan@2.22.2:
     resolution: {integrity: sha512-DANghxFkS1plDdRsX0X9pm0Z6SJNN6gBdtXfanwoZ8hooC5gosGFSBGRYHUVPz1asKA/kMRqDRdHrluZ61SpBQ==}
 
@@ -7664,8 +7654,8 @@ packages:
   no-case@3.0.4:
     resolution: {integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==}
 
-  node-abi@3.73.0:
-    resolution: {integrity: sha512-z8iYzQGBu35ZkTQ9mtR8RqugJZ9RCLn8fv3d7LsgDBzOijGQP3RdKTX4LA7LXw03ZhU5z0l4xfhIMgSES31+cg==}
+  node-abi@3.75.0:
+    resolution: {integrity: sha512-OhYaY5sDsIka7H7AtijtI9jwGYLyl29eQn/W623DiN/MIv5sUqc4g7BIDThX+gb7di9f6xK02nkp8sdfFWZLTg==}
     engines: {node: '>=10'}
 
   node-abort-controller@3.1.1:
@@ -8320,8 +8310,8 @@ packages:
   pump@2.0.1:
     resolution: {integrity: sha512-ruPMNRkN3MHP1cWJc9OWr+T/xDP0jhXYCLfJcBuX54hhfIBnaQmAUMfDcG4DM5UMWByBbJY69QSphm3jtDKIkA==}
 
-  pump@3.0.2:
-    resolution: {integrity: sha512-tUPXtzlGM8FE3P0ZL6DVs/3P58k9nk8/jZeQCurTJylQA8qFYzHFfhBJkuqyE0FifOsQ0uKWekiZ5g8wtr28cw==}
+  pump@3.0.3:
+    resolution: {integrity: sha512-todwxLMY7/heScKmntwQG8CXVkWUOdYxIvY2s0VWAAMh/nd8SoYiRaKjlr7+iCs984f2P8zvrfWcDDYVb73NfA==}
 
   pumpify@1.5.1:
     resolution: {integrity: sha512-oClZI37HvuUJJxSKKrC17bZ9Cu0ZYhEAGPsPUy9KlMUmv9dKX2o77RUmq7f3XjIxbwyGwYzbzQ1L2Ks8sIradQ==}
@@ -9035,8 +9025,8 @@ packages:
   syslog-client@1.1.1:
     resolution: {integrity: sha512-c3qKw8JzCuHt0mwrzKQr8eqOc3RB28HgOpFuwGMO3GLscVpfR+0ECevWLZq/yIJTbx3WTb3QXBFVpTFtKAPDrw==}
 
-  tar-fs@2.1.2:
-    resolution: {integrity: sha512-EsaAXwxmx8UB7FRKqeozqEPop69DXcmYwTQwXvyAPF352HJsPdkVhvTaDPYqfNgruveJIJy3TA2l+2zj8LJIJA==}
+  tar-fs@2.1.3:
+    resolution: {integrity: sha512-090nwYJDmlhwFwEW3QQl+vaNnxsO2yVsd45eTKRBzSzu+hlb1w2K9inVq5b0ngXuLVqQ4ApvsUHHnu/zQNkWAg==}
 
   tar-stream@2.2.0:
     resolution: {integrity: sha512-ujeqbceABgwMZxEJnk2HDY2DlnUZ+9oEcb1KzTVfYHio0UE6dG71n60d8D2I4qNvleWrrXpmjpt7vZeF1LnMZQ==}
@@ -13148,7 +13138,7 @@ snapshots:
       - aws-crt
       - encoding
 
-  '@langchain/community@0.3.24(6lnfwaa6jl5cjy7ukdzpv6w3li)':
+  '@langchain/community@0.3.24(iqzupisdsepanhaz4vpdzqxguu)':
     dependencies:
       '@browserbasehq/stagehand': 1.11.0(@playwright/test@1.50.0)(deepmerge@4.3.1)(dotenv@16.5.0)(encoding@0.1.13)(openai@4.78.1(encoding@0.1.13)(zod@3.24.1))(zod@3.24.1)
       '@ibm-cloud/watsonx-ai': 1.1.3
@@ -13199,7 +13189,7 @@ snapshots:
       html-to-text: 9.0.5
       ignore: 5.3.2
       ioredis: 5.3.2
-      jsdom: 23.0.1(canvas@2.11.2(encoding@0.1.13))
+      jsdom: 23.0.1(canvas@3.1.0)
       jsonwebtoken: 9.0.2
       lodash: 4.17.21
       mammoth: 1.7.2
@@ -13389,7 +13379,7 @@ snapshots:
 
   '@mapbox/node-pre-gyp@1.0.11(encoding@0.1.13)':
     dependencies:
-      detect-libc: 2.0.3
+      detect-libc: 2.0.4
       https-proxy-agent: 5.0.1
       make-dir: 3.1.0
       node-fetch: 2.7.0(encoding@0.1.13)
@@ -13401,6 +13391,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
       - supports-color
+    optional: true
 
   '@mistralai/mistralai@1.7.2(zod@3.24.4)':
     dependencies:
@@ -13581,7 +13572,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@n8n/n8n-nodes-langchain@1.98.1(aspvwd7nbzj7kdgpxyqzzsncae)':
+  '@n8n/n8n-nodes-langchain@1.98.1(gmn43ubazey5jszczomvdrloly)':
     dependencies:
       '@aws-sdk/client-sso-oidc': 3.808.0
       '@azure/identity': 4.3.0
@@ -13594,7 +13585,7 @@ snapshots:
       '@langchain/anthropic': 0.3.21(@langchain/core@0.3.48(openai@4.78.1(encoding@0.1.13)(zod@3.24.1)))(encoding@0.1.13)
       '@langchain/aws': 0.1.10(@langchain/core@0.3.48(openai@4.78.1(encoding@0.1.13)(zod@3.24.1)))
       '@langchain/cohere': 0.3.2(@langchain/core@0.3.48(openai@4.78.1(encoding@0.1.13)(zod@3.24.1)))(encoding@0.1.13)
-      '@langchain/community': 0.3.24(6lnfwaa6jl5cjy7ukdzpv6w3li)
+      '@langchain/community': 0.3.24(iqzupisdsepanhaz4vpdzqxguu)
       '@langchain/core': 0.3.48(openai@4.78.1(encoding@0.1.13)(zod@3.24.1))
       '@langchain/google-genai': 0.1.6(@langchain/core@0.3.48(openai@4.78.1(encoding@0.1.13)(zod@3.24.1)))(zod@3.24.1)
       '@langchain/google-vertexai': 0.1.8(@langchain/core@0.3.48(openai@4.78.1(encoding@0.1.13)(zod@3.24.1)))(encoding@0.1.13)(zod@3.24.1)
@@ -13628,13 +13619,13 @@ snapshots:
       generate-schema: 2.6.0
       html-to-text: 9.0.5
       https-proxy-agent: 7.0.6(supports-color@10.0.0)
-      jsdom: 23.0.1(canvas@2.11.2(encoding@0.1.13))
+      jsdom: 23.0.1(canvas@3.1.0)
       langchain: 0.3.11(44vm3gojgk474xrkwhr5bw23l4)
       lodash: 4.17.21
       mammoth: 1.7.2
       mime-types: 2.1.35
       mongodb: 6.11.0(@aws-sdk/credential-providers@3.834.0)(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.5)
-      n8n-nodes-base: 1.97.1(@aws-sdk/credential-providers@3.834.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.5)(zod@3.24.1)
+      n8n-nodes-base: 1.97.1(@aws-sdk/credential-providers@3.834.0)(asn1.js@5.4.1)(canvas@3.1.0)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.5)(zod@3.24.1)
       n8n-workflow: 1.96.0
       openai: 4.78.1(encoding@0.1.13)(zod@3.24.1)
       pdf-parse: 1.1.1
@@ -15969,7 +15960,8 @@ snapshots:
       jsonparse: 1.3.1
       through: 2.3.8
 
-  abbrev@1.1.1: {}
+  abbrev@1.1.1:
+    optional: true
 
   abort-controller@3.0.0:
     dependencies:
@@ -16106,12 +16098,14 @@ snapshots:
 
   append-field@1.0.0: {}
 
-  aproba@2.0.0: {}
+  aproba@2.0.0:
+    optional: true
 
   are-we-there-yet@2.0.0:
     dependencies:
       delegates: 1.0.0
       readable-stream: 3.6.2
+    optional: true
 
   are-we-there-yet@3.0.1:
     dependencies:
@@ -16649,11 +16643,12 @@ snapshots:
   canvas@2.11.2(encoding@0.1.13):
     dependencies:
       '@mapbox/node-pre-gyp': 1.0.11(encoding@0.1.13)
-      nan: 2.20.0
+      nan: 2.22.2
       simple-get: 3.1.1
     transitivePeerDependencies:
       - encoding
       - supports-color
+    optional: true
 
   canvas@3.1.0:
     dependencies:
@@ -16838,7 +16833,8 @@ snapshots:
       color-name: 1.1.4
       simple-swizzle: 0.2.2
 
-  color-support@1.1.3: {}
+  color-support@1.1.3:
+    optional: true
 
   color@3.2.1:
     dependencies:
@@ -16911,7 +16907,8 @@ snapshots:
 
   confusing-browser-globals@1.0.11: {}
 
-  console-control-strings@1.1.0: {}
+  console-control-strings@1.1.0:
+    optional: true
 
   console-table-printer@2.14.3:
     dependencies:
@@ -17175,6 +17172,7 @@ snapshots:
   decompress-response@4.2.1:
     dependencies:
       mimic-response: 2.1.0
+    optional: true
 
   decompress-response@6.0.0:
     dependencies:
@@ -17218,7 +17216,8 @@ snapshots:
 
   delayed-stream@1.0.0: {}
 
-  delegates@1.0.0: {}
+  delegates@1.0.0:
+    optional: true
 
   denque@2.1.0: {}
 
@@ -17226,10 +17225,7 @@ snapshots:
 
   destroy@1.2.0: {}
 
-  detect-libc@2.0.3: {}
-
-  detect-libc@2.0.4:
-    optional: true
+  detect-libc@2.0.4: {}
 
   detect-newline@3.1.0: {}
 
@@ -17379,10 +17375,6 @@ snapshots:
   encoding@0.1.13:
     dependencies:
       iconv-lite: 0.6.3
-
-  end-of-stream@1.4.4:
-    dependencies:
-      once: 1.4.0
 
   end-of-stream@1.4.5:
     dependencies:
@@ -18039,6 +18031,7 @@ snapshots:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       wide-align: 1.1.5
+    optional: true
 
   gauge@4.0.4:
     dependencies:
@@ -18344,7 +18337,8 @@ snapshots:
     dependencies:
       has-symbols: 1.1.0
 
-  has-unicode@2.0.1: {}
+  has-unicode@2.0.1:
+    optional: true
 
   hasown@2.0.2:
     dependencies:
@@ -19524,6 +19518,36 @@ snapshots:
       - supports-color
       - utf-8-validate
 
+  jsdom@23.0.1(canvas@3.1.0):
+    dependencies:
+      cssstyle: 3.0.0
+      data-urls: 5.0.0
+      decimal.js: 10.5.0
+      form-data: 4.0.3
+      html-encoding-sniffer: 4.0.0
+      http-proxy-agent: 7.0.2
+      https-proxy-agent: 7.0.6(supports-color@10.0.0)
+      is-potential-custom-element-name: 1.0.1
+      nwsapi: 2.2.20
+      parse5: 7.3.0
+      rrweb-cssom: 0.6.0
+      saxes: 6.0.0
+      symbol-tree: 3.2.4
+      tough-cookie: 4.1.4
+      w3c-xmlserializer: 5.0.0
+      webidl-conversions: 7.0.0
+      whatwg-encoding: 3.1.1
+      whatwg-mimetype: 4.0.0
+      whatwg-url: 14.2.0
+      ws: 8.18.2
+      xml-name-validator: 5.0.0
+    optionalDependencies:
+      canvas: 3.1.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
   jsesc@0.5.0: {}
 
   jsesc@2.5.2: {}
@@ -19988,7 +20012,8 @@ snapshots:
 
   mimic-fn@2.1.0: {}
 
-  mimic-response@2.1.0: {}
+  mimic-response@2.1.0:
+    optional: true
 
   mimic-response@3.1.0: {}
 
@@ -20336,7 +20361,7 @@ snapshots:
       - utf-8-validate
       - zod
 
-  n8n-nodes-base@1.97.1(@aws-sdk/credential-providers@3.834.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.5)(zod@3.24.1):
+  n8n-nodes-base@1.97.1(@aws-sdk/credential-providers@3.834.0)(asn1.js@5.4.1)(canvas@3.1.0)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.5)(zod@3.24.1):
     dependencies:
       '@aws-sdk/client-sso-oidc': 3.808.0
       '@kafkajs/confluent-schema-registry': 3.8.0
@@ -20367,7 +20392,7 @@ snapshots:
       isbot: 3.6.13
       iso-639-1: 2.1.15
       js-nacl: 1.4.0
-      jsdom: 23.0.1(canvas@2.11.2(encoding@0.1.13))
+      jsdom: 23.0.1(canvas@3.1.0)
       jsonwebtoken: 9.0.2
       kafkajs: 2.2.4
       ldapts: 4.2.6
@@ -20467,7 +20492,7 @@ snapshots:
       xml2js: 0.6.2
       zod: 3.24.1
 
-  n8n@1.99.1(skqcemmd6iwoeiccfyac7qhlou):
+  n8n@1.99.1(6spjrgfhdtvv7srujfmekkw7sa):
     dependencies:
       '@aws-sdk/client-secrets-manager': 3.808.0
       '@azure/identity': 4.3.0
@@ -20484,7 +20509,7 @@ snapshots:
       '@n8n/di': 0.6.0
       '@n8n/integration-test-utils': 0.2.0
       '@n8n/localtunnel': 3.0.0
-      '@n8n/n8n-nodes-langchain': 1.98.1(aspvwd7nbzj7kdgpxyqzzsncae)
+      '@n8n/n8n-nodes-langchain': 1.98.1(gmn43ubazey5jszczomvdrloly)
       '@n8n/permissions': 0.28.0
       '@n8n/task-runner': 1.35.0(openai@4.78.1(encoding@0.1.13)(zod@3.24.1))
       '@n8n/typeorm': 0.3.20-12(@sentry/node@8.52.1)(ioredis@5.3.2)(mongodb@6.11.0(@aws-sdk/credential-providers@3.834.0)(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.5))(mssql@10.0.2)(mysql2@3.11.0)(pg@8.12.0)(redis@4.6.12)(sqlite3@5.1.7)(ts-node@10.9.2(@swc/core@1.12.6(@swc/helpers@0.5.17))(@types/node@22.15.32)(typescript@5.8.3))
@@ -20529,7 +20554,7 @@ snapshots:
       mysql2: 3.11.0
       n8n-core: 1.98.0(openai@4.78.1(encoding@0.1.13)(zod@3.24.1))
       n8n-editor-ui: 1.99.1
-      n8n-nodes-base: 1.97.1(@aws-sdk/credential-providers@3.834.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.5)(zod@3.24.1)
+      n8n-nodes-base: 1.97.1(@aws-sdk/credential-providers@3.834.0)(asn1.js@5.4.1)(canvas@3.1.0)(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.5)(zod@3.24.1)
       n8n-workflow: 1.96.0
       nanoid: 3.3.8
       nodemailer: 6.9.9
@@ -20707,8 +20732,6 @@ snapshots:
     dependencies:
       lru-cache: 7.18.3
 
-  nan@2.20.0: {}
-
   nan@2.22.2:
     optional: true
 
@@ -20739,7 +20762,7 @@ snapshots:
       lower-case: 2.0.2
       tslib: 2.8.1
 
-  node-abi@3.73.0:
+  node-abi@3.75.0:
     dependencies:
       semver: 7.7.2
 
@@ -20822,6 +20845,7 @@ snapshots:
   nopt@5.0.0:
     dependencies:
       abbrev: 1.1.1
+    optional: true
 
   normalize-path@3.0.0: {}
 
@@ -20842,6 +20866,7 @@ snapshots:
       console-control-strings: 1.1.0
       gauge: 3.0.2
       set-blocking: 2.0.0
+    optional: true
 
   npmlog@6.0.2:
     dependencies:
@@ -21378,17 +21403,17 @@ snapshots:
 
   prebuild-install@7.1.3:
     dependencies:
-      detect-libc: 2.0.3
+      detect-libc: 2.0.4
       expand-template: 2.0.3
       github-from-package: 0.0.0
       minimist: 1.2.8
       mkdirp-classic: 0.5.3
       napi-build-utils: 2.0.0
-      node-abi: 3.73.0
-      pump: 3.0.2
+      node-abi: 3.75.0
+      pump: 3.0.3
       rc: 1.2.8
       simple-get: 4.0.1
-      tar-fs: 2.1.2
+      tar-fs: 2.1.3
       tunnel-agent: 0.6.0
 
   prelude-ls@1.2.1: {}
@@ -21479,9 +21504,9 @@ snapshots:
       end-of-stream: 1.4.5
       once: 1.4.0
 
-  pump@3.0.2:
+  pump@3.0.3:
     dependencies:
-      end-of-stream: 1.4.4
+      end-of-stream: 1.4.5
       once: 1.4.0
 
   pumpify@1.5.1:
@@ -21776,6 +21801,7 @@ snapshots:
   rimraf@3.0.2:
     dependencies:
       glob: 7.2.3
+    optional: true
 
   rndm@1.2.0: {}
 
@@ -21950,7 +21976,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  set-blocking@2.0.0: {}
+  set-blocking@2.0.0:
+    optional: true
 
   set-function-length@1.2.2:
     dependencies:
@@ -22044,6 +22071,7 @@ snapshots:
       decompress-response: 4.2.1
       once: 1.4.0
       simple-concat: 1.0.1
+    optional: true
 
   simple-get@4.0.1:
     dependencies:
@@ -22375,11 +22403,11 @@ snapshots:
 
   syslog-client@1.1.1: {}
 
-  tar-fs@2.1.2:
+  tar-fs@2.1.3:
     dependencies:
       chownr: 1.1.4
       mkdirp-classic: 0.5.3
-      pump: 3.0.2
+      pump: 3.0.3
       tar-stream: 2.2.0
 
   tar-stream@2.2.0:
@@ -23032,6 +23060,7 @@ snapshots:
   wide-align@1.1.5:
     dependencies:
       string-width: 4.2.3
+    optional: true
 
   widest-line@3.1.0:
     dependencies:
