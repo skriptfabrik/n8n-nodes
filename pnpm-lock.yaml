@@ -64,8 +64,8 @@ importers:
         specifier: 4.17.21
         version: 4.17.21
       '@types/jest':
-        specifier: 29.5.12
-        version: 29.5.12
+        specifier: 30.0.0
+        version: 30.0.0
       '@types/jsonwebtoken':
         specifier: ^9.0.6
         version: 9.0.6
@@ -125,7 +125,7 @@ importers:
         version: 3.6.0
       ts-jest:
         specifier: ^29.4.0
-        version: 29.4.0(@babel/core@7.24.7)(@jest/transform@30.0.2)(@jest/types@30.0.1)(babel-jest@30.0.2(@babel/core@7.24.7))(jest-util@30.0.2)(jest@30.0.2(@types/node@22.15.32)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.12.6(@swc/helpers@0.5.17))(@types/node@22.15.32)(typescript@5.8.3)))(typescript@5.8.3)
+        version: 29.4.0(@babel/core@7.27.4)(@jest/transform@30.0.2)(@jest/types@30.0.1)(babel-jest@30.0.2(@babel/core@7.27.4))(jest-util@30.0.2)(jest@30.0.2(@types/node@22.15.32)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.12.6(@swc/helpers@0.5.17))(@types/node@22.15.32)(typescript@5.8.3)))(typescript@5.8.3)
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@swc/core@1.12.6(@swc/helpers@0.5.17))(@types/node@22.15.32)(typescript@5.8.3)
@@ -3689,8 +3689,8 @@ packages:
   '@types/istanbul-reports@3.0.4':
     resolution: {integrity: sha512-pk2B1NWalF9toCRu6gjBzR69syFjP4Od8WRAX+0mmf9lAjCRicLOWc+ZrxZHx/0XRjotgkF9t6iaMJ+aXcOdZQ==}
 
-  '@types/jest@29.5.12':
-    resolution: {integrity: sha512-eDC8bTvT/QhYdxJAulQikueigY5AsdBRH2yDKW3yveW7svY3+DzN84/2NUgkw10RTiJbWqZrTtoGVdYlvFJdLw==}
+  '@types/jest@30.0.0':
+    resolution: {integrity: sha512-XTYugzhuwqWjws0CVz8QpM36+T+Dz5mTEBKhNs/esGLnCIlGdRy+Dq78NRjd7ls7r8BC8ZRMOrKlkO1hU0JOwA==}
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -11686,12 +11686,6 @@ snapshots:
       '@babel/core': 7.24.7
       '@babel/helper-plugin-utils': 7.24.7
 
-  '@babel/plugin-syntax-import-attributes@7.27.1(@babel/core@7.24.7)':
-    dependencies:
-      '@babel/core': 7.24.7
-      '@babel/helper-plugin-utils': 7.27.1
-    optional: true
-
   '@babel/plugin-syntax-import-attributes@7.27.1(@babel/core@7.27.4)':
     dependencies:
       '@babel/core': 7.27.4
@@ -15399,10 +15393,10 @@ snapshots:
     dependencies:
       '@types/istanbul-lib-report': 3.0.3
 
-  '@types/jest@29.5.12':
+  '@types/jest@30.0.0':
     dependencies:
-      expect: 29.7.0
-      pretty-format: 29.7.0
+      expect: 30.0.2
+      pretty-format: 30.0.2
 
   '@types/json-schema@7.0.15': {}
 
@@ -16236,20 +16230,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  babel-jest@30.0.2(@babel/core@7.24.7):
-    dependencies:
-      '@babel/core': 7.24.7
-      '@jest/transform': 30.0.2
-      '@types/babel__core': 7.20.5
-      babel-plugin-istanbul: 7.0.0
-      babel-preset-jest: 30.0.1(@babel/core@7.24.7)
-      chalk: 4.1.2
-      graceful-fs: 4.2.11
-      slash: 3.0.0
-    transitivePeerDependencies:
-      - supports-color
-    optional: true
-
   babel-jest@30.0.2(@babel/core@7.27.4):
     dependencies:
       '@babel/core': 7.27.4
@@ -16358,26 +16338,6 @@ snapshots:
       '@babel/plugin-syntax-optional-chaining': 7.8.3(@babel/core@7.24.7)
       '@babel/plugin-syntax-top-level-await': 7.14.5(@babel/core@7.24.7)
 
-  babel-preset-current-node-syntax@1.1.0(@babel/core@7.24.7):
-    dependencies:
-      '@babel/core': 7.24.7
-      '@babel/plugin-syntax-async-generators': 7.8.4(@babel/core@7.24.7)
-      '@babel/plugin-syntax-bigint': 7.8.3(@babel/core@7.24.7)
-      '@babel/plugin-syntax-class-properties': 7.12.13(@babel/core@7.24.7)
-      '@babel/plugin-syntax-class-static-block': 7.14.5(@babel/core@7.24.7)
-      '@babel/plugin-syntax-import-attributes': 7.27.1(@babel/core@7.24.7)
-      '@babel/plugin-syntax-import-meta': 7.10.4(@babel/core@7.24.7)
-      '@babel/plugin-syntax-json-strings': 7.8.3(@babel/core@7.24.7)
-      '@babel/plugin-syntax-logical-assignment-operators': 7.10.4(@babel/core@7.24.7)
-      '@babel/plugin-syntax-nullish-coalescing-operator': 7.8.3(@babel/core@7.24.7)
-      '@babel/plugin-syntax-numeric-separator': 7.10.4(@babel/core@7.24.7)
-      '@babel/plugin-syntax-object-rest-spread': 7.8.3(@babel/core@7.24.7)
-      '@babel/plugin-syntax-optional-catch-binding': 7.8.3(@babel/core@7.24.7)
-      '@babel/plugin-syntax-optional-chaining': 7.8.3(@babel/core@7.24.7)
-      '@babel/plugin-syntax-private-property-in-object': 7.14.5(@babel/core@7.24.7)
-      '@babel/plugin-syntax-top-level-await': 7.14.5(@babel/core@7.24.7)
-    optional: true
-
   babel-preset-current-node-syntax@1.1.0(@babel/core@7.27.4):
     dependencies:
       '@babel/core': 7.27.4
@@ -16402,13 +16362,6 @@ snapshots:
       '@babel/core': 7.24.7
       babel-plugin-jest-hoist: 29.6.3
       babel-preset-current-node-syntax: 1.0.1(@babel/core@7.24.7)
-
-  babel-preset-jest@30.0.1(@babel/core@7.24.7):
-    dependencies:
-      '@babel/core': 7.24.7
-      babel-plugin-jest-hoist: 30.0.1
-      babel-preset-current-node-syntax: 1.1.0(@babel/core@7.24.7)
-    optional: true
 
   babel-preset-jest@30.0.1(@babel/core@7.27.4):
     dependencies:
@@ -22558,7 +22511,7 @@ snapshots:
       lodash: 4.17.21
       zod: 3.24.4
 
-  ts-jest@29.4.0(@babel/core@7.24.7)(@jest/transform@30.0.2)(@jest/types@30.0.1)(babel-jest@30.0.2(@babel/core@7.24.7))(jest-util@30.0.2)(jest@30.0.2(@types/node@22.15.32)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.12.6(@swc/helpers@0.5.17))(@types/node@22.15.32)(typescript@5.8.3)))(typescript@5.8.3):
+  ts-jest@29.4.0(@babel/core@7.27.4)(@jest/transform@30.0.2)(@jest/types@30.0.1)(babel-jest@30.0.2(@babel/core@7.27.4))(jest-util@30.0.2)(jest@30.0.2(@types/node@22.15.32)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.12.6(@swc/helpers@0.5.17))(@types/node@22.15.32)(typescript@5.8.3)))(typescript@5.8.3):
     dependencies:
       bs-logger: 0.2.6
       ejs: 3.1.10
@@ -22572,10 +22525,10 @@ snapshots:
       typescript: 5.8.3
       yargs-parser: 21.1.1
     optionalDependencies:
-      '@babel/core': 7.24.7
+      '@babel/core': 7.27.4
       '@jest/transform': 30.0.2
       '@jest/types': 30.0.1
-      babel-jest: 30.0.2(@babel/core@7.24.7)
+      babel-jest: 30.0.2(@babel/core@7.27.4)
       jest-util: 30.0.2
 
   ts-node@10.9.2(@swc/core@1.12.6(@swc/helpers@0.5.17))(@types/node@22.15.32)(typescript@5.8.3):
