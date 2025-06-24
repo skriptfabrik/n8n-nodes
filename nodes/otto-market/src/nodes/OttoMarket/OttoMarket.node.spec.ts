@@ -31,6 +31,7 @@ describe('OTTO Market', () => {
   });
 
   afterEach(() => {
+    mockClear(OttoMarketRequest);
     mockClear(executeFunctions);
   });
 
@@ -49,6 +50,22 @@ describe('OTTO Market', () => {
     );
   });
 
+  it('should not call otto api for unknown resource', async () => {
+    jest.mocked(OttoMarketRequest);
+
+    executeFunctions.getNodeParameter.mockImplementation(
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
+      ({
+        resource: '_unknown_',
+      })[parameterName],
+    );
+
+    await ottoMarket.execute.call(executeFunctions);
+
+    expect(OttoMarketRequest).toHaveBeenCalledTimes(0);
+  });
+
   it('should call otto api for orders:getOne', async () => {
     jest
       .mocked(OttoMarketRequest)
@@ -65,6 +82,7 @@ describe('OTTO Market', () => {
     );
 
     await ottoMarket.execute.call(executeFunctions);
+
     expect(OttoMarketRequest).toHaveBeenCalledWith(
       executeFunctions,
       {
@@ -74,6 +92,40 @@ describe('OTTO Market', () => {
       },
       0,
     );
+  });
+
+  it('should not call otto api for orders and operation other than getOne', async () => {
+    jest.mocked(OttoMarketRequest);
+
+    executeFunctions.getNodeParameter.mockImplementation(
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
+      ({
+        resource: 'orders',
+        operation: '_unknow_',
+      })[parameterName],
+    );
+
+    await ottoMarket.execute.call(executeFunctions);
+
+    expect(OttoMarketRequest).toHaveBeenCalledTimes(0);
+  });
+
+  it('should not call otto api for resource returns and operation other than accept and reject', async () => {
+    jest.mocked(OttoMarketRequest);
+
+    executeFunctions.getNodeParameter.mockImplementation(
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
+      ({
+        resource: 'returns',
+        operation: '_unknow_',
+      })[parameterName],
+    );
+
+    await ottoMarket.execute.call(executeFunctions);
+
+    expect(OttoMarketRequest).toHaveBeenCalledTimes(0);
   });
 
   it('should call otto api for returns:list', async () => {
@@ -91,6 +143,7 @@ describe('OTTO Market', () => {
         })[parameterName],
     );
     await ottoMarket.execute.call(executeFunctions);
+
     expect(OttoMarketRequest).toHaveBeenCalledWith(
       executeFunctions,
       {
@@ -117,6 +170,7 @@ describe('OTTO Market', () => {
         })[parameterName],
     );
     await ottoMarket.execute.call(executeFunctions);
+
     expect(OttoMarketRequest).toHaveBeenCalledWith(
       executeFunctions,
       {
@@ -145,6 +199,7 @@ describe('OTTO Market', () => {
         })[parameterName],
     );
     await ottoMarket.execute.call(executeFunctions);
+
     expect(OttoMarketRequest).toHaveBeenCalledWith(
       executeFunctions,
       {

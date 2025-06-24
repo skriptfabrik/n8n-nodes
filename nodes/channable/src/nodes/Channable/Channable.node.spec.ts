@@ -35,6 +35,7 @@ describe('Channable', () => {
   });
 
   afterEach(() => {
+    mockClear(ChannableRequest);
     mockClear(executeFunctions);
   });
 
@@ -53,6 +54,39 @@ describe('Channable', () => {
     );
   });
 
+  it('should not call channable api for unknown resource', async () => {
+    jest.mocked(ChannableRequest).mockResolvedValue([{ json: { foo: 'bar' } }]);
+
+    executeFunctions.getNodeParameter.mockImplementation(
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
+        ({
+          resource: '_unknown_',
+        })[parameterName],
+    );
+
+    await channable.execute.call(executeFunctions);
+
+    expect(ChannableRequest).toHaveBeenCalledTimes(0);
+  });
+
+  it('should not call channable api resource orders and a unknown operation', async () => {
+    jest.mocked(ChannableRequest).mockResolvedValue([{ json: { foo: 'bar' } }]);
+
+    executeFunctions.getNodeParameter.mockImplementation(
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
+        ({
+          resource: 'orders',
+          operation: '_unknown_',
+        })[parameterName],
+    );
+
+    await channable.execute.call(executeFunctions);
+
+    expect(ChannableRequest).toHaveBeenCalledTimes(0);
+  });
+
   it('should call channable api for orders:getOne', async () => {
     jest.mocked(ChannableRequest).mockResolvedValue([{ json: { foo: 'bar' } }]);
 
@@ -66,7 +100,9 @@ describe('Channable', () => {
           id: 'abc123',
         })[parameterName],
     );
+
     await channable.execute.call(executeFunctions);
+
     expect(ChannableRequest).toHaveBeenCalledWith(
       executeFunctions,
       {
@@ -92,7 +128,9 @@ describe('Channable', () => {
           products: [],
         })[parameterName],
     );
+
     await channable.execute.call(executeFunctions);
+
     expect(ChannableRequest).toHaveBeenCalledWith(
       executeFunctions,
       {
@@ -102,6 +140,23 @@ describe('Channable', () => {
       },
       0,
     );
+  });
+
+  it('should not call channable api resource stockUpdates and a unknown operation', async () => {
+    jest.mocked(ChannableRequest).mockResolvedValue([{ json: { foo: 'bar' } }]);
+
+    executeFunctions.getNodeParameter.mockImplementation(
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
+        ({
+          resource: 'stockUpdates',
+          operation: '_unknown_',
+        })[parameterName],
+    );
+
+    await channable.execute.call(executeFunctions);
+
+    expect(ChannableRequest).toHaveBeenCalledTimes(0);
   });
 
   it('should call channable api for stockUpdates:updateStock', async () => {
@@ -117,7 +172,9 @@ describe('Channable', () => {
           stocks: [],
         })[parameterName],
     );
+
     await channable.execute.call(executeFunctions);
+
     expect(ChannableRequest).toHaveBeenCalledWith(
       executeFunctions,
       {
@@ -127,6 +184,23 @@ describe('Channable', () => {
       },
       0,
     );
+  });
+
+  it('should not call channable api resource returns and a unknown operation', async () => {
+    jest.mocked(ChannableRequest).mockResolvedValue([{ json: { foo: 'bar' } }]);
+
+    executeFunctions.getNodeParameter.mockImplementation(
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
+        ({
+          resource: 'returns',
+          operation: '_unknown_',
+        })[parameterName],
+    );
+
+    await channable.execute.call(executeFunctions);
+
+    expect(ChannableRequest).toHaveBeenCalledTimes(0);
   });
 
   it('should call channable api for returns:list', async () => {
@@ -144,7 +218,9 @@ describe('Channable', () => {
           },
         })[parameterName],
     );
+
     await channable.execute.call(executeFunctions);
+
     expect(ChannableRequest).toHaveBeenCalledWith(
       executeFunctions,
       {
@@ -174,7 +250,9 @@ describe('Channable', () => {
           },
         })[parameterName],
     );
+
     await channable.execute.call(executeFunctions);
+
     expect(ChannableRequest).toHaveBeenCalledWith(
       executeFunctions,
       {
@@ -202,7 +280,9 @@ describe('Channable', () => {
           id: 'abc123',
         })[parameterName],
     );
+
     await channable.execute.call(executeFunctions);
+
     expect(ChannableRequest).toHaveBeenCalledWith(
       executeFunctions,
       {
@@ -227,7 +307,9 @@ describe('Channable', () => {
           id: 'abc123',
         })[parameterName],
     );
+
     await channable.execute.call(executeFunctions);
+
     expect(ChannableRequest).toHaveBeenCalledWith(
       executeFunctions,
       {
@@ -256,6 +338,7 @@ describe('Channable', () => {
         })[parameterName],
     );
     await channable.execute.call(executeFunctions);
+
     expect(ChannableRequest).toHaveBeenCalledWith(
       executeFunctions,
       {

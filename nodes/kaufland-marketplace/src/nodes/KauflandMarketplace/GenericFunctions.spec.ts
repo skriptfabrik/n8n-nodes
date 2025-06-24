@@ -11,6 +11,33 @@ describe('Kaufland Marketplace Request', () => {
   it('should be defined', () => {
     expect(kauflandMarketplaceRequest).toBeDefined();
   });
+
+  it('should not create a paginated request', async () => {
+    instance = mockDeep<IExecuteFunctions>({
+      getCredentials: jest.fn().mockResolvedValue({
+        clientId: 'testClientId',
+        clientSecret: 'testClientSecret',
+      }),
+      helpers: {
+        requestWithAuthentication: jest
+          .fn()
+          .mockResolvedValueOnce({
+            data: ['item 1', 'item 2'],
+          }),
+      },
+    });
+
+    const requestData: KauflandRequestData = {
+      method: 'POST',
+      uri: `https://sellerapi.kaufland.com/v2/returns`,
+      body: [],
+    };
+
+    expect(
+      await kauflandMarketplaceRequest(instance, requestData),
+    ).toStrictEqual({ data: ['item 1', 'item 2'] });
+  });
+
   it('should create a paginated request', async () => {
     instance = mockDeep<IExecuteFunctions>({
       getCredentials: jest.fn().mockResolvedValue({
@@ -38,15 +65,18 @@ describe('Kaufland Marketplace Request', () => {
           }),
       },
     });
+
     const requestData: KauflandRequestData = {
       method: 'POST',
       uri: `https://sellerapi.kaufland.com/v2/returns`,
       body: [],
     };
+
     expect(
       await kauflandMarketplaceRequest(instance, requestData),
     ).toStrictEqual({ data: ['item 1', 'item 2', 'item 3'] });
   });
+
   it('should create a paginated request with get parameters', async () => {
     instance = mockDeep<IExecuteFunctions>({
       getCredentials: jest.fn().mockResolvedValue({
@@ -74,15 +104,18 @@ describe('Kaufland Marketplace Request', () => {
           }),
       },
     });
+
     const requestData: KauflandRequestData = {
       method: 'POST',
       uri: `https://sellerapi.kaufland.com/v2/returns?foo=bar`,
       body: [],
     };
+
     expect(
       await kauflandMarketplaceRequest(instance, requestData, 2),
     ).toStrictEqual({ data: ['item 1', 'item 2', 'item 3'] });
   });
+
   it('should throw an error', async () => {
     instance = mockDeep<IExecuteFunctions>({
       getCredentials: jest.fn().mockResolvedValue({
@@ -95,11 +128,13 @@ describe('Kaufland Marketplace Request', () => {
           .mockRejectedValueOnce(new Error('an error occured')),
       },
     });
+
     const requestData: KauflandRequestData = {
       method: 'GET',
       uri: `/v2/returns`,
       body: '',
     };
+
     await expect(
       kauflandMarketplaceRequest(instance, requestData, 1),
     ).rejects.toThrow();

@@ -582,6 +582,43 @@ describe('ClockifyEnhanced', () => {
   });
 
   describe('node execution', () => {
+    it('should do nothing on resource project and unknown operation', () => {
+      const jsonArray = [{ json: project }];
+
+      const executionData = jsonArray.map(({ json }) => ({
+        json,
+        pairedItem: { item: 0 },
+      }));
+
+      executeFunctions.getInputData.mockReturnValue([
+        {
+          json: {},
+        },
+      ]);
+
+      executeFunctions.getNodeParameter
+        .calledWith('resource', 0)
+        .mockReturnValue('project');
+
+      executeFunctions.getNodeParameter
+        .calledWith('operation', 0)
+        .mockReturnValue('_unknown_operation_');
+
+      jest.mocked(clockifyApiRequest).mockResolvedValue(project);
+
+      executeFunctions.helpers.returnJsonArray.mockReturnValue(jsonArray);
+
+      executeFunctions.helpers.constructExecutionMetaData.mockReturnValue(
+        executionData,
+      );
+
+      expect(clockifyEnhanced.execute.call(executeFunctions)).resolves.toEqual([
+        executionData,
+      ]);
+
+      expect(clockifyApiRequest).toHaveBeenCalledTimes(0)
+    });
+
     it('should update project', () => {
       const jsonArray = [{ json: project }];
 
