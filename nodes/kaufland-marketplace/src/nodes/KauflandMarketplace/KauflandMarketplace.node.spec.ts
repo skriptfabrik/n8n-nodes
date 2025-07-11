@@ -107,6 +107,36 @@ describe('Kaufland Marketplace', () => {
     });
   });
 
+  it('should call kaufland api for orders:getAll', async () => {
+    jest.mocked(kauflandMarketplaceRequest).mockResolvedValue({
+      data: ['order1', 'order2'],
+    });
+
+    executeFunctions.getNodeParameter.mockImplementation(
+      // @ts-expect-error overload
+      (parameterName: string) =>
+        ({
+          resource: 'orders',
+          operation: 'getAll',
+          limit: 10,
+          offset: 0,
+          includeFbk: false,
+        })[parameterName],
+    );
+
+    await kauflandMarketplace.execute.call(executeFunctions);
+
+    expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
+      method: 'GET',
+      uri: 'https://sellerapi.kaufland.com/v2/orders',
+      body: '',
+      qs: {
+        limit: 10,
+        offset: 0,
+      },
+    });
+  });
+
   it('should not call kaufland api for resource returns and operation a unknown operation', async () => {
     jest.mocked(kauflandMarketplaceRequest);
 

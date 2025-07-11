@@ -8,6 +8,7 @@ export type KauflandRequestData = {
   method: 'GET' | 'POST' | 'PATCH' | 'DELETE';
   uri: string;
   body: Record<string, unknown> | Record<string, unknown>[] | string;
+  qs?: IDataObject;
   timestamp?: number;
 };
 
@@ -27,16 +28,22 @@ export async function kauflandMarketplaceRequest<T extends KauflandResponse>(
 ): Promise<T> {
   const credentialIdentifier = 'kauflandMarketplaceApi';
 
-  if (offset > 0) {
-    requestData.uri += requestData.uri.includes('?') ? '&' : '?';
-    requestData.uri += 'offset=' + offset;
-  }
+  const searchParams = new URLSearchParams(
+    requestData.qs as Record<string, string> | undefined,
+  );
+
+  if (offset > 0) searchParams.set('offset', String(offset));
+
+  const url = searchParams.size
+    ? `${requestData.uri}?${searchParams.toString()}`
+    : requestData.uri;
 
   const res = (await instance.helpers.requestWithAuthentication
     .call(instance, credentialIdentifier, {
       method: requestData.method,
-      url: requestData.uri,
+      url,
       body: requestData.body,
+      json: true,
     })
     .catch((error) => {
       throw new NodeOperationError(instance.getNode(), error);
@@ -44,15 +51,14 @@ export async function kauflandMarketplaceRequest<T extends KauflandResponse>(
 
   // If response contains pagination object and we need to fetch more data
   if (
-    res &&
-    res.pagination &&
+    res?.pagination &&
     res.pagination.offset + res.pagination.limit < res.pagination.total
   ) {
-    const remaining = (await kauflandMarketplaceRequest(
+    const remaining = await kauflandMarketplaceRequest(
       instance,
       requestData,
       res.pagination.offset + res.pagination.limit,
-    )) as { data: unknown[] };
+    );
     res.data = [...res.data, ...remaining.data];
   }
 

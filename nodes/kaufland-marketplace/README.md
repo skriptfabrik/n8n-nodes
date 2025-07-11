@@ -39,7 +39,7 @@ After installing the node, you can use it like any other node. n8n displays the 
 
 It supports these operations:
 
-- Retrieve a order with the given ID
+- Retrieve single or multiple orders
 - Accept returns
 - Clarify returns
 - Reject returns
