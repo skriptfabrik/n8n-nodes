@@ -71,14 +71,14 @@ export class KauflandMarketplace implements INodeType {
     const items = this.getInputData();
     let responseData: IDataObject | IDataObject[];
     const returnData: IDataObject | IDataObject[] = [];
-    const resource = this.getNodeParameter('resource', 0) as string;
-    const operation = this.getNodeParameter('operation', 0) as string;
 
     for (let i = 0; i < items.length; i++) {
+      const resource = this.getNodeParameter('resource', i) as string;
+      const operation = this.getNodeParameter('operation', i) as string;
       responseData = [];
       if (resource === 'orders') {
         if (operation === 'getOne') {
-          const orderId = this.getNodeParameter('id', 0) as string;
+          const orderId = this.getNodeParameter('id', i) as string;
 
           const requestData: KauflandRequestData = {
             method: 'GET',
@@ -89,10 +89,33 @@ export class KauflandMarketplace implements INodeType {
           responseData = await kauflandMarketplaceRequest(this, requestData);
 
           returnData.push(responseData);
+        } else if (operation === 'getAll') {
+          const limit = this.getNodeParameter('limit', i) as number;
+          const offset = this.getNodeParameter('offset', i) as number;
+          const fbk = this.getNodeParameter('includeFbk', i) as boolean;
+
+          const qs: IDataObject = { limit, offset };
+          if (fbk) qs['filter'] = 'fulfilment_type eq FBK';
+
+          const endpoint = `${baseUrl}/orders`;
+
+          const requestData: KauflandRequestData = {
+            method: 'GET',
+            uri: endpoint,
+            body: '',
+            qs,
+          };
+
+          const responseData = await kauflandMarketplaceRequest(
+            this,
+            requestData,
+          );
+
+          returnData.push(...(responseData.data as IDataObject[]));
         }
       } else if (resource === 'returns') {
         if (operation === 'returningOrderUnits') {
-          const orderUnits = this.getNodeParameter('orderUnits', 0) as Record<
+          const orderUnits = this.getNodeParameter('orderUnits', i) as Record<
             string,
             unknown
           >[];
@@ -107,7 +130,7 @@ export class KauflandMarketplace implements INodeType {
 
           returnData.push(responseData);
         } else if (operation === 'retrievingReturnInformationStatus') {
-          const status = this.getNodeParameter('status', 0) as string[];
+          const status = this.getNodeParameter('status', i) as string[];
           const query = '?' + status.map((s) => `status=${s}`).join('&');
 
           const requestData: KauflandRequestData = {
@@ -136,12 +159,12 @@ export class KauflandMarketplace implements INodeType {
 
           returnData.push(responseData);
         } else if (operation === 'retrievingReturnInformationId') {
-          const returnId = this.getNodeParameter('returnId', 0) as string;
+          const returnId = this.getNodeParameter('returnId', i) as string;
           const embedReturnUnits = this.getNodeParameter(
             'embedReturnUnits',
             0,
           ) as boolean;
-          const embedBuyer = this.getNodeParameter('embedBuyer', 0) as boolean;
+          const embedBuyer = this.getNodeParameter('embedBuyer', i) as boolean;
 
           const embeds: string[] = [];
           let query = '';
@@ -181,11 +204,11 @@ export class KauflandMarketplace implements INodeType {
           switch (operation) {
             case 'clarifyingReturns':
               uriAction = 'clarify';
-              body = { message: this.getNodeParameter('message', 0) as string };
+              body = { message: this.getNodeParameter('message', i) as string };
               break;
             case 'rejectingReturns':
               uriAction = 'reject';
-              body = { message: this.getNodeParameter('message', 0) as string };
+              body = { message: this.getNodeParameter('message', i) as string };
               break;
             case 'repairingReturns':
               uriAction = 'repair';
