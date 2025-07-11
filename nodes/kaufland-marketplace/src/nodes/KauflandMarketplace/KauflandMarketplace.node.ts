@@ -89,6 +89,29 @@ export class KauflandMarketplace implements INodeType {
           responseData = await kauflandMarketplaceRequest(this, requestData);
 
           returnData.push(responseData);
+        } else if (operation === 'getAll') {
+          const limit = this.getNodeParameter('limit', i) as number;
+          const offset = this.getNodeParameter('offset', i) as number;
+          const fbk = this.getNodeParameter('includeFbk', i) as boolean;
+
+          const qs: IDataObject = { limit, offset };
+          if (fbk) qs['filter'] = 'fulfilment_type eq FBK';
+
+          const endpoint = `${baseUrl}/orders`;
+
+          const requestData: KauflandRequestData = {
+            method: 'GET',
+            uri: endpoint,
+            body: '',
+            qs,
+          };
+
+          const responseData = await kauflandMarketplaceRequest(
+            this,
+            requestData,
+          );
+
+          returnData.push(...(responseData.data as IDataObject[]));
         }
       } else if (resource === 'returns') {
         if (operation === 'returningOrderUnits') {
