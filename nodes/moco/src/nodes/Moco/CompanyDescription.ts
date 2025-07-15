@@ -399,11 +399,11 @@ export const companyFields: INodeProperties[] = [
   /*                                 company:delete                             */
   /* -------------------------------------------------------------------------- */
   {
-    displayName: 'Project Name or ID',
-    name: 'projectId',
+    displayName: 'Company Name or ID',
+    name: 'companyId',
     type: 'options',
     typeOptions: {
-      loadOptionsMethod: 'listProjects',
+      loadOptionsMethod: 'listCompanies',
     },
     default: '',
     description:
@@ -583,11 +583,11 @@ export const companyFields: INodeProperties[] = [
   /*                                 company:update                             */
   /* -------------------------------------------------------------------------- */
   {
-    displayName: 'Project Name or ID',
-    name: 'projectId',
+    displayName: 'Company Name or ID',
+    name: 'companyId',
     type: 'options',
     typeOptions: {
-      loadOptionsMethod: 'listProjects',
+      loadOptionsMethod: 'listCompanies',
     },
     default: '',
     description:
