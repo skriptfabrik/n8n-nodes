@@ -1,3 +1,13 @@
+## 0.3.41 (2025-07-16)
+
+### 🩹 Fixes
+
+- **moco:** company update and delete specification (#N8N-30) ([5c235df](https://github.com/skriptfabrik/n8n-nodes/commit/5c235df))
+
+### ❤️ Thank You
+
+- Marco Spengler @MaSpeng
+
 ## 0.3.40 (2025-04-30)
 
 ### 🩹 Fixes
