@@ -215,7 +215,7 @@ importers:
     devDependencies:
       n8n-nodes-base:
         specifier: ^1.87.0
-        version: 1.99.1(@aws-sdk/credential-providers@3.848.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.6)(zod@3.25.67)
+        version: 1.100.0(@aws-sdk/credential-providers@3.848.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.6)(zod@3.25.67)
       n8n-workflow:
         specifier: ^1.86.0
         version: 1.99.1
@@ -2465,9 +2465,6 @@ packages:
   '@n8n/client-oauth2@0.27.0':
     resolution: {integrity: sha512-YlG44Q2EZBEgoyTPSujm/KyHekNv99D9fX0Q3EU6oEgZBvLv8t3oEP2NGFgtmxpOnd53WLyK7YodtexoelqDNg==}
 
-  '@n8n/config@1.44.0':
-    resolution: {integrity: sha512-rwpa1MygLz4hcSfUR1Sd4nNI70l/tZxrFJdRXBUQCRaPzRhlO64d6Rr5NxMhSjJmAZ6HG8s3z1VAU7H0YXpnFw==}
-
   '@n8n/config@1.45.0':
     resolution: {integrity: sha512-JLnvENsMY/lJeB6HYVec6CIPOyN5cz41s5wMqVAhIFtOXF7smmL0tN24pgHf8aXoydZx5DTaBtYqmXJg0WIpng==}
 
@@ -2483,17 +2480,11 @@ packages:
   '@n8n/decorators@0.13.0':
     resolution: {integrity: sha512-GKrMdc1LXNziIpeYBTWUVAfDFcCHN+QTxjDT9vXk94g+qQxXxO/yaE2btN9BBwSrGxmi1v9ZvtY5WjYe6qnjdQ==}
 
-  '@n8n/di@0.7.0':
-    resolution: {integrity: sha512-5BgzyFIzSfswjFPFsmcao3sWq/2ja+AVhdZuxM+0Aa3rXMO8jnnrVq8ihJYFb2vB+A0T1Wjq/K/YuuQhkieMug==}
-
   '@n8n/di@0.8.0':
     resolution: {integrity: sha512-g4lxFrObKeL+WxN82cXFaGbKjRYlD4J1oX5cw6Fcyj4j7Z9MICoavG+2IYFn5rC/0lXbA+94frwqM/LKM5PqIQ==}
 
   '@n8n/errors@0.2.0':
     resolution: {integrity: sha512-ji+Y9ZGcr+sHlvqChyDS9zmbvdVgNMh1YtDa0+1p/oIStlld+MXaojSmaERWxoo1rl6vPoQauhHKHW7K8QN2NA==}
-
-  '@n8n/imap@0.11.0':
-    resolution: {integrity: sha512-rkRQQw9iDK13oPwCnCjiQjct6AiyaGlXLEvjldmZAXf9E6E4YIeHZQIYDMfUWl+IgBZ1TU5/uFHR4ihkvqzDXw==}
 
   '@n8n/imap@0.12.0':
     resolution: {integrity: sha512-kiL3B4DAa7WSWgV65/SX3hFYlryxOvgMB1RmZe6Jwa1Ye14ECPo3ZUoBhAS6BQDyu+vREWID0f5twkALGEjaLg==}
@@ -7510,14 +7501,8 @@ packages:
   n8n-nodes-base@1.101.0:
     resolution: {integrity: sha512-TSU7iPLYotbMRfoYKLR06XygexAOw5CshX8pkP6miBCaf69zMRKJO61GnBomIj924FCcJmh5Dfb7vc4hKVFzzA==}
 
-  n8n-nodes-base@1.99.1:
-    resolution: {integrity: sha512-RjVHHwPCIU+72x91OPH+jURSOrOHJP+zzeyDsh6ekoE9VP0BLd6fazNVn4UVTpLKvmVvJD2eKc8ArsFDA5kemQ==}
-
   n8n-workflow@1.100.0:
     resolution: {integrity: sha512-KtDRWt2pasnrT+IWNLhflBP1ybix07U408aPTb9WxpFFL+ub2BdnChHZTu/3dEgy2pDWZUAtP5aTtuzxSx1pNQ==}
-
-  n8n-workflow@1.98.0:
-    resolution: {integrity: sha512-+e0WUCoJOkLYSOwtf7HCx4cnTN+1ZK4OYmDv0zME4tnRTQ4qDLMHLZH+oOk6E0Kqk47opUWpc3045p+cw7CfyQ==}
 
   n8n-workflow@1.99.0:
     resolution: {integrity: sha512-0z+UKNgj8qdbsKmcTbNpY55jns954IvQc7ifj2/Y4g46hFtqsvKbSTP4XJtewwZDt8EhObEeTo6Xbe+2V/LBLg==}
@@ -13472,12 +13457,6 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  '@n8n/config@1.44.0':
-    dependencies:
-      '@n8n/di': 0.7.0
-      reflect-metadata: 0.2.2
-      zod: 3.25.67
-
   '@n8n/config@1.45.0':
     dependencies:
       '@n8n/di': 0.8.0
@@ -13548,23 +13527,11 @@ snapshots:
       lodash: 4.17.21
       n8n-workflow: 1.100.0
 
-  '@n8n/di@0.7.0':
-    dependencies:
-      reflect-metadata: 0.2.2
-
   '@n8n/di@0.8.0':
     dependencies:
       reflect-metadata: 0.2.2
 
   '@n8n/errors@0.2.0': {}
-
-  '@n8n/imap@0.11.0':
-    dependencies:
-      iconv-lite: 0.6.3
-      imap: 0.8.19
-      quoted-printable: 1.0.1
-      utf8: 3.0.0
-      uuencode: 0.0.4
 
   '@n8n/imap@0.12.0':
     dependencies:
@@ -15488,7 +15455,7 @@ snapshots:
 
   '@types/asn1@0.2.4':
     dependencies:
-      '@types/node': 22.16.5
+      '@types/node': 24.0.15
 
   '@types/babel__core@7.20.5':
     dependencies:
@@ -19509,7 +19476,7 @@ snapshots:
   ldapts@4.2.6:
     dependencies:
       '@types/asn1': 0.2.4
-      '@types/node': 22.16.5
+      '@types/node': 24.0.15
       '@types/uuid': 10.0.0
       asn1: 0.2.6
       debug: 4.3.7
@@ -20248,119 +20215,7 @@ snapshots:
       - utf-8-validate
       - zod
 
-  n8n-nodes-base@1.99.1(@aws-sdk/credential-providers@3.848.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.6)(zod@3.25.67):
-    dependencies:
-      '@aws-sdk/client-sso-oidc': 3.808.0
-      '@kafkajs/confluent-schema-registry': 3.8.0
-      '@mozilla/readability': 0.6.0
-      '@n8n/config': 1.44.0
-      '@n8n/di': 0.7.0
-      '@n8n/imap': 0.11.0
-      '@n8n/vm2': 3.9.25
-      alasql: 4.4.0(encoding@0.1.13)
-      amqplib: 0.10.6
-      aws4: 1.11.0
-      basic-auth: 2.0.1
-      change-case: 4.1.2
-      cheerio: 1.0.0-rc.6
-      chokidar: 4.0.1
-      cron: 3.1.7
-      csv-parse: 5.5.0
-      currency-codes: 2.1.0
-      eventsource: 2.0.2
-      fast-glob: 3.2.12
-      fflate: 0.7.4
-      generate-schema: 2.6.0
-      get-system-fonts: 2.0.2
-      gm: 1.25.1
-      html-to-text: 9.0.5
-      iconv-lite: 0.6.3
-      ics: 2.40.0
-      isbot: 3.6.13
-      iso-639-1: 2.1.15
-      js-nacl: 1.4.0
-      jsdom: 23.0.1(canvas@2.11.2(encoding@0.1.13))
-      jsonwebtoken: 9.0.2
-      kafkajs: 2.2.4
-      ldapts: 4.2.6
-      lodash: 4.17.21
-      lossless-json: 1.0.5
-      luxon: 3.4.4
-      mailparser: 3.6.7
-      minifaker: 1.34.1
-      moment-timezone: 0.5.37
-      mongodb: 6.11.0(@aws-sdk/credential-providers@3.848.0)(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.6)
-      mqtt: 5.7.2
-      mssql: 10.0.2
-      mysql2: 3.11.0
-      n8n-workflow: 1.98.0
-      node-html-markdown: 1.2.0
-      node-ssh: 13.2.0
-      nodemailer: 6.9.9
-      otpauth: 9.1.1
-      pdfjs-dist: 5.3.31
-      pg: 8.12.0
-      pg-promise: 11.9.1
-      promise-ftp: 1.3.5(promise-ftp-common@1.1.5)
-      pyodide: 0.27.5
-      redis: 4.6.14
-      rfc2047: 4.0.1
-      rhea: 1.0.24
-      rrule: 2.8.1
-      rss-parser: 3.13.0
-      sanitize-html: 2.12.1
-      semver: 7.5.4
-      showdown: 2.1.0
-      simple-git: 3.17.0
-      snowflake-sdk: 2.1.0(asn1.js@5.4.1)(encoding@0.1.13)
-      ssh2-sftp-client: 7.2.3
-      tmp-promise: 3.0.3
-      ts-ics: 1.2.2(date-fns@3.6.0)(lodash@4.17.21)(zod@3.25.67)
-      uuid: 10.0.0
-      xlsx: https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz
-      xml2js: 0.6.2
-      xmlhttprequest-ssl: 3.1.0
-    transitivePeerDependencies:
-      - '@aws-sdk/credential-providers'
-      - '@mongodb-js/zstd'
-      - asn1.js
-      - aws-crt
-      - bufferutil
-      - canvas
-      - date-fns
-      - debug
-      - encoding
-      - gcp-metadata
-      - kerberos
-      - mongodb-client-encryption
-      - pg-native
-      - promise-ftp-common
-      - snappy
-      - socks
-      - supports-color
-      - utf-8-validate
-      - zod
-
   n8n-workflow@1.100.0:
-    dependencies:
-      '@n8n/tournament': 1.0.6
-      ast-types: 0.15.2
-      callsites: 3.1.0
-      esprima-next: 5.8.4
-      form-data: 4.0.0
-      jmespath: 0.16.0
-      js-base64: 3.7.2
-      jssha: 3.3.1
-      lodash: 4.17.21
-      luxon: 3.4.4
-      md5: 2.3.0
-      recast: 0.22.0
-      title-case: 3.0.3
-      transliteration: 2.3.5
-      xml2js: 0.6.2
-      zod: 3.25.67
-
-  n8n-workflow@1.98.0:
     dependencies:
       '@n8n/tournament': 1.0.6
       ast-types: 0.15.2
