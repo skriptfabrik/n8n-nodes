@@ -62,7 +62,7 @@ export async function kauflandMarketplaceRequest<T extends KauflandResponse>(
     res.data = [...res.data, ...remaining.data];
   }
 
-  if (res.pagination) delete res.pagination;
+  if (res?.pagination) delete res.pagination;
 
   return res;
 }

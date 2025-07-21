@@ -137,6 +137,37 @@ describe('Kaufland Marketplace', () => {
     });
   });
 
+  it('should include FBK filter when includeFbk=true for orders:getAll', async () => {
+    // prepare the mock so kauflandMarketplaceRequest resolves to something trivial
+    jest.mocked(kauflandMarketplaceRequest).mockResolvedValue({ data: [] });
+
+    executeFunctions.getNodeParameter.mockImplementation(
+      (param: string) =>
+        (
+          ({
+            resource: 'orders',
+            operation: 'getAll',
+            limit: 5,
+            offset: 2,
+            includeFbk: true,
+          }) as Record<string, any>
+        )[param],
+    );
+
+    await kauflandMarketplace.execute.call(executeFunctions);
+
+    expect(kauflandMarketplaceRequest).toHaveBeenCalledWith(executeFunctions, {
+      method: 'GET',
+      uri: 'https://sellerapi.kaufland.com/v2/orders',
+      body: '',
+      qs: {
+        limit: 5,
+        offset: 2,
+        filter: 'fulfilment_type eq FBK',
+      },
+    });
+  });
+
   it('should not call kaufland api for resource returns and operation a unknown operation', async () => {
     jest.mocked(kauflandMarketplaceRequest);
 
