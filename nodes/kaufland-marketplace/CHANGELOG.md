@@ -1,3 +1,18 @@
+## 0.2.0 (2025-07-22)
+
+### 🚀 Features
+
+- **kaufland-marketplace:** add support for orders:getAll (#N8N-31) ([0bc3fb5](https://github.com/skriptfabrik/n8n-nodes/commit/0bc3fb5))
+
+### 🩹 Fixes
+
+- **kaufland-marketplace:** Ref #913 – adresses review of @maspeng (#N8N-31) ([#913](https://github.com/skriptfabrik/n8n-nodes/issues/913))
+- **kaufland-marketplace:** hardcoded index in loop (#N8N-31) ([c2037ba](https://github.com/skriptfabrik/n8n-nodes/commit/c2037ba))
+
+### ❤️ Thank You
+
+- xtrcode @xtrcode
+
 ## 0.1.38 (2025-04-30)
 
 ### 🩹 Fixes
