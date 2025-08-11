@@ -1,11 +1,6 @@
 name: nx Dependency Update
 
 on:
-  workflow_dispatch:
-    inputs:
-      pull_request_ref:
-        required: true
-        type: string
   workflow_call:
     inputs:
       pull_request_ref:
@@ -50,14 +45,14 @@ jobs:
         run: |
           set -e
           new_version=$(echo '${{ steps.dependabot-metadata.outputs.updated-dependencies-json }}' | jq --raw-output --exit-status '.[] | select(.dependencyName == "nx") | .newVersion')
-          previous_version=$(echo '${{ steps.dependabot-metadata.outputs.updated-dependencies-json }}' | jq --raw-output --exit-status '.[] | select(.dependencyName == "nx") | .previousVersion')
+          prev_version=$(echo '${{ steps.dependabot-metadata.outputs.updated-dependencies-json }}' | jq --raw-output --exit-status '.[] | select(.dependencyName == "nx") | .prevVersion')
           echo "new_version=${new_version}" >> "$GITHUB_OUTPUT"
-          echo "previous_version=${previous_version}" >> "$GITHUB_OUTPUT"
+          echo "prev_version=${prev_version}" >> "$GITHUB_OUTPUT"
 
       - name: Migrate nx
         run: |
           pnpm exec nx migrate ${{ steps.target-versions.outputs.new_version }} \
-            --from nx@${{ steps.target-versions.outputs.previous-version }}
+            --from nx@${{ steps.target-versions.outputs.prev_version }}
 
       - name: Install updated depenencies
         run: pnpm install --no-frozen-lockfile
