@@ -1,6 +1,11 @@
 name: nx Dependency Update
 
 on:
+  workflow_dispatch:
+    inputs:
+      pull_request_ref:
+        required: true
+        type: string
   workflow_call:
     inputs:
       pull_request_ref:
