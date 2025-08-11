@@ -40,10 +40,19 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
+      - name: Retrieve target versions
+        id: target-versions
+        run: |
+          set -e
+          new_version=$(echo '${{ steps.dependabot-metadata.outputs.updated-dependencies-json }}' | jq --raw-output --exit-status '.[] | select(.dependencyName == "nx") | .newVersion')
+          previous_version=$(echo '${{ steps.dependabot-metadata.outputs.updated-dependencies-json }}' | jq --raw-output --exit-status '.[] | select(.dependencyName == "nx") | .previousVersion')
+          echo "new_version=${new_version}" >> "$GITHUB_OUTPUT"
+          echo "previous_version=${previous_version}" >> "$GITHUB_OUTPUT"
+
       - name: Migrate nx
         run: |
-          pnpm exec nx migrate ${{ steps.dependabot-metadata.outputs.new-version }} \
-            --from nx@${{ steps.dependabot-metadata.outputs.previous-version }}
+          pnpm exec nx migrate ${{ steps.target-versions.outputs.new_version }} \
+            --from nx@${{ steps.target-versions.outputs.previous-version }}
 
       - name: Install updated depenencies
         run: pnpm install --no-frozen-lockfile
@@ -51,7 +60,7 @@ jobs:
       - name: Commit changes to package(-lock).json
         uses: stefanzweifel/git-auto-commit-action@v6
         with:
-          commit_message: 'chore: bump nx dependencies to ${{ steps.dependabot-metadata.outputs.new-version }}'
+          commit_message: 'chore: bump nx dependencies to ${{ steps.target-versions.outputs.new_version }}'
           commit_options: '--signoff'
           file_pattern: 'package.json pnpm-lock.yaml'
           push_options: --dry-run
