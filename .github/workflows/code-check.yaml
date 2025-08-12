@@ -21,14 +21,14 @@ jobs:
     steps:
       - name: Checkout pull request branch
         if: ${{ inputs.pull_request_ref != '' }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{ inputs.pull_request_ref }}
           fetch-depth: 0
 
       - name: Checkout merge commit
         if: ${{ inputs.pull_request_ref == '' }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
