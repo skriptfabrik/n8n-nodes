@@ -184,7 +184,7 @@ describe('Kaufland Marketplace Request', () => {
       helpers: {
         requestWithAuthentication: jest
           .fn()
-          .mockResolvedValueOnce(undefined as any),
+          .mockResolvedValueOnce(undefined),
       },
     });
     const result = await kauflandMarketplaceRequest(instance, {

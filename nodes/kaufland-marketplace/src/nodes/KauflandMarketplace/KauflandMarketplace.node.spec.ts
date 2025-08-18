@@ -113,7 +113,7 @@ describe('Kaufland Marketplace', () => {
     });
 
     executeFunctions.getNodeParameter.mockImplementation(
-      // @ts-expect-error overload
+      // @ts-expect-error function does not match a overload signature
       (parameterName: string) =>
         ({
           resource: 'orders',
@@ -138,20 +138,18 @@ describe('Kaufland Marketplace', () => {
   });
 
   it('should include FBK filter when includeFbk=true for orders:getAll', async () => {
-    // prepare the mock so kauflandMarketplaceRequest resolves to something trivial
     jest.mocked(kauflandMarketplaceRequest).mockResolvedValue({ data: [] });
 
     executeFunctions.getNodeParameter.mockImplementation(
-      (param: string) =>
-        (
-          ({
-            resource: 'orders',
-            operation: 'getAll',
-            limit: 5,
-            offset: 2,
-            includeFbk: true,
-          }) as Record<string, any>
-        )[param],
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
+        ({
+          resource: 'orders',
+          operation: 'getAll',
+          limit: 5,
+          offset: 2,
+          includeFbk: true,
+        })[parameterName],
     );
 
     await kauflandMarketplace.execute.call(executeFunctions);
@@ -189,8 +187,8 @@ describe('Kaufland Marketplace', () => {
     jest.mocked(kauflandMarketplaceRequest).mockResolvedValue({ data: [] });
 
     executeFunctions.getNodeParameter.mockImplementation(
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (parameterName: string): any =>
+      // @ts-expect-error function does not match a overload signature
+      (parameterName: string) =>
         ({
           resource: 'returns',
           operation: 'returningOrderUnits',
