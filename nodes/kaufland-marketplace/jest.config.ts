@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'n8n-nodes-kaufland-marketplace',
   preset: '../../jest.preset.js',
