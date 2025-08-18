@@ -1,6 +1,9 @@
 packages:
   - nodes/**
 
+ignoredBuiltDependencies:
+  - oxc-resolver
+
 onlyBuiltDependencies:
   - '@scarf/scarf'
   - '@sentry-internal/node-native-stacktrace'
