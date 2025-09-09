@@ -264,7 +264,7 @@ importers:
     devDependencies:
       n8n-workflow:
         specifier: ^1.86.0
-        version: 1.106.0
+        version: 1.107.0
 
 packages:
 
@@ -2477,9 +2477,6 @@ packages:
 
   '@n8n/di@0.9.0':
     resolution: {integrity: sha512-eHXzxSsGfSJg6pRvPEFAJ9fMFW26qfU07JCCSDvCiI0+teFejj+x5comqS/g+lXT11+rKRoSKT//5PILZcR/CA==}
-
-  '@n8n/errors@0.4.0':
-    resolution: {integrity: sha512-+xMu7nnLTWmYOpBzghAKGpJS9+hN6hjAVb3dW12v4k88bYEP9cpnHLeEkt1c2+85P0CtxiVYJoly4IS76V0/MQ==}
 
   '@n8n/errors@0.5.0':
     resolution: {integrity: sha512-0Vk1Eb3Uor+zeF/WVnuhFgJc51wEBTZNBlVQy3mvyr3sGmW86bP1jA7wmRsd0DZbswPwN0vNOl/TmkDTEopOtQ==}
@@ -7632,9 +7629,6 @@ packages:
 
   n8n-nodes-base@1.108.0:
     resolution: {integrity: sha512-lKvDaZNOpyKCTFU5LuJymnW4KPMjn8vTZL0mZw6QfzTyfE39CiW768rG5PQX61t9ngQMarphT9C1V+z7DCXbvQ==}
-
-  n8n-workflow@1.106.0:
-    resolution: {integrity: sha512-k0oBD7fMfmcyKJTqVYmD6LLj4MMy/djvRcBl/2LGFMqLwuhQmV3f9Ym4WfYz1OJlcASU4Gj5vLI1y4VF5CVFPQ==}
 
   n8n-workflow@1.107.0:
     resolution: {integrity: sha512-oTsui8gyh74qxi0G8Dqmq71kRKjpn7ivfLq4q0hKyU/SB9pinpZXN7GWm7ttrky4cBFwphTK8JqtaJ89vuUz3Q==}
@@ -13637,10 +13631,6 @@ snapshots:
   '@n8n/di@0.9.0':
     dependencies:
       reflect-metadata: 0.2.2
-
-  '@n8n/errors@0.4.0':
-    dependencies:
-      callsites: 3.1.0
 
   '@n8n/errors@0.5.0':
     dependencies:
@@ -20677,26 +20667,6 @@ snapshots:
       - supports-color
       - utf-8-validate
       - zod
-
-  n8n-workflow@1.106.0:
-    dependencies:
-      '@n8n/errors': 0.4.0
-      '@n8n/tournament': 1.0.6
-      ast-types: 0.15.2
-      callsites: 3.1.0
-      esprima-next: 5.8.4
-      form-data: 4.0.0
-      jmespath: 0.16.0
-      js-base64: 3.7.2
-      jssha: 3.3.1
-      lodash: 4.17.21
-      luxon: 3.4.4
-      md5: 2.3.0
-      recast: 0.22.0
-      title-case: 3.0.3
-      transliteration: 2.3.5
-      xml2js: 0.6.2
-      zod: 3.25.67
 
   n8n-workflow@1.107.0:
     dependencies:
