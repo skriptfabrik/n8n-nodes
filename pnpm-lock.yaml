@@ -3794,6 +3794,9 @@ packages:
   '@types/node@22.18.6':
     resolution: {integrity: sha512-r8uszLPpeIWbNKtvWRt/DbVi5zbqZyj1PTmhRMqBMvDnaz1QpmSKujUtJLrqGZeoM8v72MfYggDceY4K1itzWQ==}
 
+  '@types/node@24.5.2':
+    resolution: {integrity: sha512-FYxk1I7wPv3K2XBaoyH2cTnocQEu8AOZ60hPbsyukMPLv5/5qr7V1i8PLHdl6Zf87I+xZXFvPCXYjiTFq+YSDQ==}
+
   '@types/parse-json@4.0.2':
     resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==}
 
@@ -9274,6 +9277,9 @@ packages:
 
   undici-types@6.21.0:
     resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
+
+  undici-types@7.12.0:
+    resolution: {integrity: sha512-goOacqME2GYyOZZfb5Lgtu+1IDmAlAEu5xnD3+xTzS10hT0vzpf0SPjkXwAw9Jm+4n/mQGDP3LO8CPbYROeBfQ==}
 
   undici@6.21.3:
     resolution: {integrity: sha512-gBLkYIlEnSp8pFbT64yFgGE6UIB9tAkhukC23PmMDCe5Nd+cRqKxSjw5y54MK2AZMgZfJWMaNE4nYUHgi1XEOw==}
@@ -15101,7 +15107,7 @@ snapshots:
 
   '@types/asn1@0.2.4':
     dependencies:
-      '@types/node': 22.18.6
+      '@types/node': 24.5.2
 
   '@types/babel__core@7.20.5':
     dependencies:
@@ -15219,6 +15225,10 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
+  '@types/node@24.5.2':
+    dependencies:
+      undici-types: 7.12.0
+
   '@types/parse-json@4.0.2': {}
 
   '@types/pg-pool@2.0.6':
@@ -15239,12 +15249,12 @@ snapshots:
 
   '@types/readable-stream@4.0.21':
     dependencies:
-      '@types/node': 22.18.6
+      '@types/node': 24.5.2
 
   '@types/request@2.48.13':
     dependencies:
       '@types/caseless': 0.12.5
-      '@types/node': 22.18.6
+      '@types/node': 24.5.2
       '@types/tough-cookie': 4.0.5
       form-data: 2.5.5
 
@@ -15297,7 +15307,7 @@ snapshots:
 
   '@types/ws@8.18.1':
     dependencies:
-      '@types/node': 22.18.6
+      '@types/node': 24.5.2
 
   '@types/yargs-parser@21.0.3': {}
 
@@ -19171,7 +19181,7 @@ snapshots:
   ldapts@4.2.6:
     dependencies:
       '@types/asn1': 0.2.4
-      '@types/node': 22.18.6
+      '@types/node': 24.5.2
       '@types/uuid': 11.0.0
       asn1: 0.2.6
       debug: 4.3.7
@@ -20949,7 +20959,7 @@ snapshots:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 22.18.6
+      '@types/node': 24.5.2
       long: 5.3.2
 
   proxy-addr@2.0.7:
@@ -22229,6 +22239,8 @@ snapshots:
   undici-types@5.26.5: {}
 
   undici-types@6.21.0: {}
+
+  undici-types@7.12.0: {}
 
   undici@6.21.3: {}
 
