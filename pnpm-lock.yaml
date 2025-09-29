@@ -218,7 +218,7 @@ importers:
     devDependencies:
       n8n-nodes-base:
         specifier: ^1.87.0
-        version: 1.104.3(@aws-sdk/credential-providers@3.896.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.7)(zod@3.25.67)
+        version: 1.110.2(@aws-sdk/credential-providers@3.896.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.7)(zod@3.25.67)
       n8n-workflow:
         specifier: ^1.86.0
         version: 1.103.3
@@ -2434,9 +2434,6 @@ packages:
   '@n8n/client-oauth2@0.29.0':
     resolution: {integrity: sha512-odf1C6ET1HwL64sA2HRxSOm4LLODdppCTv52IyaE4CkoX0Ghr5lPOMXi1qrt8RiQe1lsQwrFuQQYgVr0IZnAkQ==}
 
-  '@n8n/config@1.49.0':
-    resolution: {integrity: sha512-o2IhiC2RZc4M9zUSQ31Fd0UcBXFCNmnAZa0857isHTQwyTYjtdQy6845l9/CDiEOP182fm9SffjY8Gr2g2Jv/w==}
-
   '@n8n/config@1.55.0':
     resolution: {integrity: sha512-4C2WHUC4UxBM6F+bAQEJASvMkUrfcIirTquPwQlturf2kBXPxfNp3rKZbvYiZLZHtuPyflnUsUYp936KDjZlAg==}
 
@@ -2457,9 +2454,6 @@ packages:
 
   '@n8n/errors@0.5.0':
     resolution: {integrity: sha512-0Vk1Eb3Uor+zeF/WVnuhFgJc51wEBTZNBlVQy3mvyr3sGmW86bP1jA7wmRsd0DZbswPwN0vNOl/TmkDTEopOtQ==}
-
-  '@n8n/imap@0.14.0':
-    resolution: {integrity: sha512-9mZI7nswBMyYwbHNOf2+pobxHrTHfGm8JADIb28d18a7okEYJ9VhuHCsTMB6uu+anULVanPU2le0Z44dkSNvdg==}
 
   '@n8n/imap@0.15.0':
     resolution: {integrity: sha512-zvh7Ug8rOAt/zylKpznqpNr9WJYV/l3SwoJppQBTcFjeZuW++vaPsKAl7HEePhTHIYc+QKjjwEIG4I5RNtq1ag==}
@@ -4847,10 +4841,6 @@ packages:
   cheerio@1.0.0-rc.6:
     resolution: {integrity: sha512-hjx1XE1M/D5pAtMgvWwE21QClmAEeGHOIDfycgmndisdNgI6PE1cGRQkMGBcsbUbmEQyWu5PJLUcAOjtQS8DWw==}
     engines: {node: '>= 0.12'}
-
-  chokidar@4.0.1:
-    resolution: {integrity: sha512-n8enUVCED/KVRQlab1hr3MVpcVMvxtZjmEa956u+4YijlmQED223XMSYj2tLuKvr4jcCTzNNMpQDUer72MMmzA==}
-    engines: {node: '>= 14.16.0'}
 
   chokidar@4.0.3:
     resolution: {integrity: sha512-Qgzu8kfBvo+cA4962jnP1KkS6Dop5NS6g7R5LFYJr4b8Ub94PPQXUksCw9PvXoeXPRRddRNC5C1JQUR2SMGtnA==}
@@ -7575,9 +7565,6 @@ packages:
   module-details-from-path@1.0.4:
     resolution: {integrity: sha512-EGWKgxALGMgzvxYF1UyGTy0HXX/2vHLkw6+NvDKW2jypWbHpjQuj4UMcqQWXHERJhVGKikolT06G3bcKe4fi7w==}
 
-  moment-timezone@0.5.37:
-    resolution: {integrity: sha512-uEDzDNFhfaywRl+vwXxffjjq1q0Vzr+fcQpQ1bU0kbzorfS7zVtZnCnGc8mhWmF39d4g4YriF6kwA75mJKE/Zg==}
-
   moment-timezone@0.5.48:
     resolution: {integrity: sha512-f22b8LV1gbTO2ms2j2z13MuPogNoh5UzxL3nzNAYKGraILnbGc9NEE6dyiiiLv46DGRb8A4kg8UKWLjPthxBHw==}
 
@@ -7664,9 +7651,6 @@ packages:
 
   n8n-editor-ui@1.112.2:
     resolution: {integrity: sha512-+5J3fb91H61g25ukLHvCZY4OTkt6dcxe68QAXz5JBKnF992xtZamSExZNXZCc4SN17rqjovoXuDY3tM72QKPcA==}
-
-  n8n-nodes-base@1.104.3:
-    resolution: {integrity: sha512-oqX7WGE7zsobGNRGYnd99qznYsG5DCsDVAXFH8t5jHI/vYc0ci2U1zL0U04tDDPdTDiQ3Yh2FBrjxtictlgdmw==}
 
   n8n-nodes-base@1.110.2:
     resolution: {integrity: sha512-mNVk6Tw1qdoiBfgu14EktQ81PwjVP6dYougqpy9klkRWSEQqspXKBNp/8FQzRjt+g5zmIeiM5UO4yqWv8syqwQ==}
@@ -8416,10 +8400,6 @@ packages:
   pure-rand@7.0.1:
     resolution: {integrity: sha512-oTUZM/NAZS8p7ANR3SHh30kXB+zK2r2BPcEn/awJIbOvq82WoMN4p62AWWp3Hhw50G0xMsw1mhIBLqHw64EcNQ==}
 
-  pyodide@0.27.5:
-    resolution: {integrity: sha512-nXErpLzEdtQolt+sNQ/5mKuN9XTUwhxR2MRhRhZ6oDRGpYLXrOp5+kkTPGEwK+wn1ZA8+poNmoxKTj2sq/p9og==}
-    engines: {node: '>=18.0.0'}
-
   pyodide@0.28.0:
     resolution: {integrity: sha512-QML/Gh8eu50q5zZKLNpW6rgS0XUdK+94OSL54AUSKV8eJAxgwZrMebqj+CyM0EbF3EUX8JFJU3ryaxBViHammQ==}
     engines: {node: '>=18.0.0'}
@@ -8639,9 +8619,6 @@ packages:
   rfdc@1.4.1:
     resolution: {integrity: sha512-q1b3N5QkRUWUl7iyylaaj3kOpIT0N2i9MqIEQXP73GVsN9cw3fdx8X63cEmWhJGi2PPCF23Ijp7ktmd39rawIA==}
 
-  rhea@1.0.24:
-    resolution: {integrity: sha512-PEl62U2EhxCO5wMUZ2/bCBcXAVKN9AdMSNQOrp3+R5b77TEaOSiy16MQ0sIOmzj/iqsgIAgPs1mt3FYfu1vIXA==}
-
   rhea@3.0.4:
     resolution: {integrity: sha512-n3kw8syCdrsfJ72w3rohpoHHlmv/RZZEP9VY5BVjjo0sEGIt4YSKypBgaiA+OUSgJAzLjOECYecsclG5xbYtZw==}
 
@@ -8860,9 +8837,6 @@ packages:
 
   simple-get@4.0.1:
     resolution: {integrity: sha512-brv7p5WgH0jmQJr1ZDDfKDOSeWWg+OVypG99A/5vYGPqJ6pxiaHLy8nxtFjBA7oMa01ebA9gfh1uMCFqOuXxvA==}
-
-  simple-git@3.17.0:
-    resolution: {integrity: sha512-JozI/s8jr3nvLd9yn2jzPVHnhVzt7t7QWfcIoDcqRIGN+f1IINGv52xoZti2kkYfoRhhRvzMSNPfogHMp97rlw==}
 
   simple-git@3.28.0:
     resolution: {integrity: sha512-Rs/vQRwsn1ILH1oBUy8NucJlXmnnLeLCfcvbSehkPzbv3wwoFWIdtfd6Ndo6ZPhlPsCZ60CPI4rxurnwAa+a2w==}
@@ -12265,7 +12239,7 @@ snapshots:
       '@babel/parser': 7.28.0
       '@babel/template': 7.27.2
       '@babel/types': 7.28.2
-      debug: 4.4.3(supports-color@10.2.0)
+      debug: 4.4.1
     transitivePeerDependencies:
       - supports-color
 
@@ -12545,7 +12519,7 @@ snapshots:
       zod: 3.25.67
     optionalDependencies:
       '@langchain/core': 0.3.68(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.17.1)(zod@3.25.67))
-      langchain: 0.3.33(79a164011da7c0c99aeca16147b7410f)
+      langchain: 0.3.33(9a7cc773d5cc64df450b53983826205d)
     transitivePeerDependencies:
       - encoding
 
@@ -13438,12 +13412,6 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  '@n8n/config@1.49.0':
-    dependencies:
-      '@n8n/di': 0.9.0
-      reflect-metadata: 0.2.2
-      zod: 3.25.67
-
   '@n8n/config@1.55.0':
     dependencies:
       '@n8n/di': 0.9.0
@@ -13521,14 +13489,6 @@ snapshots:
     dependencies:
       callsites: 3.1.0
 
-  '@n8n/imap@0.14.0':
-    dependencies:
-      iconv-lite: 0.6.3
-      imap: 0.8.19
-      quoted-printable: 1.0.1
-      utf8: 3.0.0
-      uuencode: 0.0.4
-
   '@n8n/imap@0.15.0':
     dependencies:
       iconv-lite: 0.6.3
@@ -13602,7 +13562,7 @@ snapshots:
       ignore: 5.3.2
       js-tiktoken: 1.0.21
       jsdom: 23.0.1(canvas@3.2.0)
-      langchain: 0.3.33(79a164011da7c0c99aeca16147b7410f)
+      langchain: 0.3.33(9a7cc773d5cc64df450b53983826205d)
       lodash: 4.17.21
       mammoth: 1.7.2
       mime-types: 2.1.35
@@ -16738,10 +16698,6 @@ snapshots:
       parse5: 6.0.1
       parse5-htmlparser2-tree-adapter: 6.0.1
 
-  chokidar@4.0.1:
-    dependencies:
-      readdirp: 4.1.2
-
   chokidar@4.0.3:
     dependencies:
       readdirp: 4.1.2
@@ -19718,39 +19674,6 @@ snapshots:
 
   kuler@2.0.0: {}
 
-  langchain@0.3.33(79a164011da7c0c99aeca16147b7410f):
-    dependencies:
-      '@langchain/core': 0.3.68(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.17.1)(zod@3.25.67))
-      '@langchain/openai': 0.6.7(@langchain/core@0.3.68(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.17.1)(zod@3.25.67)))(ws@8.17.1)
-      '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.68(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.17.1)(zod@3.25.67)))
-      js-tiktoken: 1.0.21
-      js-yaml: 4.1.0
-      jsonpointer: 5.0.1
-      langsmith: 0.3.71(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.17.1)(zod@3.25.67))
-      openapi-types: 12.1.3
-      p-retry: 4.6.2
-      uuid: 10.0.0
-      yaml: 2.8.1
-      zod: 3.25.67
-    optionalDependencies:
-      '@langchain/anthropic': 0.3.26(@langchain/core@0.3.68(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.17.1)(zod@3.25.67)))
-      '@langchain/aws': 0.1.11(@langchain/core@0.3.68(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.17.1)(zod@3.25.67)))
-      '@langchain/cohere': 0.3.4(@langchain/core@0.3.68(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.17.1)(zod@3.25.67)))(encoding@0.1.13)
-      '@langchain/google-genai': 0.2.17(@langchain/core@0.3.68(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.17.1)(zod@3.25.67)))
-      '@langchain/google-vertexai': 0.2.13(@langchain/core@0.3.68(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.17.1)(zod@3.25.67)))
-      '@langchain/groq': 0.2.3(@langchain/core@0.3.68(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.17.1)(zod@3.25.67)))(encoding@0.1.13)
-      '@langchain/mistralai': 0.2.1(@langchain/core@0.3.68(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.17.1)(zod@3.25.67)))
-      '@langchain/ollama': 0.2.3(@langchain/core@0.3.68(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.17.1)(zod@3.25.67)))
-      axios: 1.8.3
-      cheerio: 1.0.0
-      handlebars: 4.7.8
-    transitivePeerDependencies:
-      - '@opentelemetry/api'
-      - '@opentelemetry/exporter-trace-otlp-proto'
-      - '@opentelemetry/sdk-trace-base'
-      - openai
-      - ws
-
   langchain@0.3.33(9a7cc773d5cc64df450b53983826205d):
     dependencies:
       '@langchain/core': 0.3.68(@opentelemetry/api@1.9.0)(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(openai@5.12.2(ws@8.17.1)(zod@3.25.67))
@@ -20191,10 +20114,6 @@ snapshots:
 
   module-details-from-path@1.0.4: {}
 
-  moment-timezone@0.5.37:
-    dependencies:
-      moment: 2.30.1
-
   moment-timezone@0.5.48:
     dependencies:
       moment: 2.30.1
@@ -20358,101 +20277,6 @@ snapshots:
       - supports-color
 
   n8n-editor-ui@1.112.2: {}
-
-  n8n-nodes-base@1.104.3(@aws-sdk/credential-providers@3.896.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.7)(zod@3.25.67):
-    dependencies:
-      '@aws-sdk/client-sso-oidc': 3.808.0
-      '@kafkajs/confluent-schema-registry': 3.8.0
-      '@mozilla/readability': 0.6.0
-      '@n8n/config': 1.49.0
-      '@n8n/di': 0.9.0
-      '@n8n/errors': 0.4.0
-      '@n8n/imap': 0.14.0
-      '@n8n/vm2': 3.9.25
-      alasql: 4.4.0(encoding@0.1.13)
-      amqplib: 0.10.6
-      aws4: 1.11.0
-      basic-auth: 2.0.1
-      change-case: 4.1.2
-      cheerio: 1.0.0-rc.6
-      chokidar: 4.0.1
-      cron: 3.1.7
-      csv-parse: 5.5.0
-      currency-codes: 2.1.0
-      eventsource: 2.0.2
-      fast-glob: 3.2.12
-      fastest-levenshtein: 1.0.16
-      fflate: 0.7.4
-      generate-schema: 2.6.0
-      get-system-fonts: 2.0.2
-      gm: 1.25.1
-      html-to-text: 9.0.5
-      iconv-lite: 0.6.3
-      ics: 2.40.0
-      isbot: 3.6.13
-      iso-639-1: 2.1.15
-      js-nacl: 1.4.0
-      jsdom: 23.0.1(canvas@2.11.2(encoding@0.1.13))
-      jsonwebtoken: 9.0.2
-      kafkajs: 2.2.4
-      ldapts: 4.2.6
-      lodash: 4.17.21
-      lossless-json: 1.0.5
-      luxon: 3.4.4
-      mailparser: 3.6.7
-      minifaker: 1.34.1
-      moment-timezone: 0.5.37
-      mongodb: 6.11.0(@aws-sdk/credential-providers@3.896.0)(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.7)
-      mqtt: 5.7.2
-      mssql: 10.0.2
-      mysql2: 3.11.0
-      n8n-workflow: 1.103.3
-      node-html-markdown: 1.2.0
-      node-ssh: 13.2.0
-      nodemailer: 6.9.9
-      otpauth: 9.1.1
-      pdfjs-dist: 5.3.31
-      pg: 8.12.0
-      pg-promise: 11.9.1
-      promise-ftp: 1.3.5(promise-ftp-common@1.1.5)
-      pyodide: 0.27.5
-      redis: 4.6.14
-      rfc2047: 4.0.1
-      rhea: 1.0.24
-      rrule: 2.8.1
-      rss-parser: 3.13.0
-      sanitize-html: 2.12.1
-      semver: 7.5.4
-      showdown: 2.1.0
-      simple-git: 3.17.0
-      snowflake-sdk: 2.1.0(asn1.js@5.4.1)(encoding@0.1.13)
-      ssh2-sftp-client: 12.0.1
-      tmp-promise: 3.0.3
-      ts-ics: 1.2.2(date-fns@3.6.0)(lodash@4.17.21)(zod@3.25.67)
-      uuid: 10.0.0
-      xlsx: https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz
-      xml2js: 0.6.2
-      xmlhttprequest-ssl: 3.1.0
-    transitivePeerDependencies:
-      - '@aws-sdk/credential-providers'
-      - '@mongodb-js/zstd'
-      - asn1.js
-      - aws-crt
-      - bufferutil
-      - canvas
-      - date-fns
-      - debug
-      - encoding
-      - gcp-metadata
-      - kerberos
-      - mongodb-client-encryption
-      - pg-native
-      - promise-ftp-common
-      - snappy
-      - socks
-      - supports-color
-      - utf-8-validate
-      - zod
 
   n8n-nodes-base@1.110.2(@aws-sdk/credential-providers@3.896.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.7)(zod@3.25.67):
     dependencies:
@@ -21734,13 +21558,6 @@ snapshots:
 
   pure-rand@7.0.1: {}
 
-  pyodide@0.27.5:
-    dependencies:
-      ws: 8.18.3
-    transitivePeerDependencies:
-      - bufferutil
-      - utf-8-validate
-
   pyodide@0.28.0:
     dependencies:
       ws: 8.18.3
@@ -22008,12 +21825,6 @@ snapshots:
       iconv-lite: 0.4.5
 
   rfdc@1.4.1: {}
-
-  rhea@1.0.24:
-    dependencies:
-      debug: 3.2.7
-    transitivePeerDependencies:
-      - supports-color
 
   rhea@3.0.4:
     dependencies:
@@ -22306,14 +22117,6 @@ snapshots:
       decompress-response: 6.0.0
       once: 1.4.0
       simple-concat: 1.0.1
-
-  simple-git@3.17.0:
-    dependencies:
-      '@kwsites/file-exists': 1.1.1
-      '@kwsites/promise-deferred': 1.1.1
-      debug: 4.4.1
-    transitivePeerDependencies:
-      - supports-color
 
   simple-git@3.28.0:
     dependencies:
