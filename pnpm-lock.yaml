@@ -218,7 +218,7 @@ importers:
     devDependencies:
       n8n-nodes-base:
         specifier: ^1.87.0
-        version: 1.110.2(@aws-sdk/credential-providers@3.899.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.7)(zod@3.25.67)
+        version: 1.111.2(@aws-sdk/credential-providers@3.899.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.7)(zod@3.25.67)
       n8n-workflow:
         specifier: ^1.86.0
         version: 1.109.0
@@ -2510,9 +2510,6 @@ packages:
 
   '@n8n/client-oauth2@0.29.0':
     resolution: {integrity: sha512-odf1C6ET1HwL64sA2HRxSOm4LLODdppCTv52IyaE4CkoX0Ghr5lPOMXi1qrt8RiQe1lsQwrFuQQYgVr0IZnAkQ==}
-
-  '@n8n/config@1.55.0':
-    resolution: {integrity: sha512-4C2WHUC4UxBM6F+bAQEJASvMkUrfcIirTquPwQlturf2kBXPxfNp3rKZbvYiZLZHtuPyflnUsUYp936KDjZlAg==}
 
   '@n8n/config@1.56.1':
     resolution: {integrity: sha512-3Y84MfY8v477e9GfJjghyYI+35vpxEJotIW2IpYzk2LM9asdrUMpFqWT0AAmIKUZnEsDmDCwWwxrzF1lHNN6xQ==}
@@ -7478,10 +7475,6 @@ packages:
     resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
     engines: {node: '>=12'}
 
-  lru-cache@8.0.5:
-    resolution: {integrity: sha512-MhWWlVnuab1RG5/zMRRcVGXZLCXrZTgfwMikgzCegsPnG62yDQo5JnqKkrK4jO5iKqDAZGItAqN5CtKBCBWRUA==}
-    engines: {node: '>=16.14'}
-
   lru-cache@9.1.2:
     resolution: {integrity: sha512-ERJq3FOzJTxBbFjZ7iDs+NiK4VI9Wz+RdrrAB8dio1oV+YvdPzUEE4QNiT2VD51DkIbCYRUUzCRkssXCHqSnKQ==}
     engines: {node: 14 || >=16.14}
@@ -7781,10 +7774,6 @@ packages:
     resolution: {integrity: sha512-71ippSywq5Yb7/tVYyGbkBggbU8H3u5Rz56fH60jGFgr8uHwxs+aSKeqmluIVzM0m0kB7xQjKS6qPfd0b2ZoqQ==}
     hasBin: true
 
-  mysql2@3.11.0:
-    resolution: {integrity: sha512-J9phbsXGvTOcRVPR95YedzVSxJecpW5A5+cQ57rhHIFXteTP10HCs+VBjS7DHIKfEaI1zQ5tlVrquCd64A6YvA==}
-    engines: {node: '>= 8.0'}
-
   mysql2@3.15.0:
     resolution: {integrity: sha512-tT6pomf5Z/I7Jzxu8sScgrYBMK9bUFWd7Kbo6Fs1L0M13OOIJ/ZobGKS3Z7tQ8Re4lj+LnLXIQVZZxa3fhYKzA==}
     engines: {node: '>= 8.0'}
@@ -7795,9 +7784,6 @@ packages:
 
   n8n-editor-ui@1.113.1:
     resolution: {integrity: sha512-K137PyDkJQH3FhUMrt1x7lY1+07O87wGafqEdK/P1yR3p0P5Eoddw53P9Mto0QkR05pYZUD3YTDzHoFfYRkK7w==}
-
-  n8n-nodes-base@1.110.2:
-    resolution: {integrity: sha512-mNVk6Tw1qdoiBfgu14EktQ81PwjVP6dYougqpy9klkRWSEQqspXKBNp/8FQzRjt+g5zmIeiM5UO4yqWv8syqwQ==}
 
   n8n-nodes-base@1.111.2:
     resolution: {integrity: sha512-mNi3L0vq2sH46q6MbUClE+sGL4Pdj7+P1DddHuqahpf4QXxjJpfVflGfyYGI2tV9jl/l9MWUoc4mha6mqrZb0g==}
@@ -13811,12 +13797,6 @@ snapshots:
       axios: 1.8.3
     transitivePeerDependencies:
       - debug
-
-  '@n8n/config@1.55.0':
-    dependencies:
-      '@n8n/di': 0.9.0
-      reflect-metadata: 0.2.2
-      zod: 3.25.67
 
   '@n8n/config@1.56.1':
     dependencies:
@@ -20432,8 +20412,6 @@ snapshots:
 
   lru-cache@7.18.3: {}
 
-  lru-cache@8.0.5: {}
-
   lru-cache@9.1.2: {}
 
   lru.min@1.1.2: {}
@@ -20759,18 +20737,6 @@ snapshots:
 
   mustache@4.2.0: {}
 
-  mysql2@3.11.0:
-    dependencies:
-      aws-ssl-profiles: 1.1.2
-      denque: 2.1.0
-      generate-function: 2.3.1
-      iconv-lite: 0.6.3
-      long: 5.3.2
-      lru-cache: 8.0.5
-      named-placeholders: 1.1.3
-      seq-queue: 0.0.5
-      sqlstring: 2.3.3
-
   mysql2@3.15.0:
     dependencies:
       aws-ssl-profiles: 1.1.2
@@ -20833,101 +20799,6 @@ snapshots:
       - supports-color
 
   n8n-editor-ui@1.113.1: {}
-
-  n8n-nodes-base@1.110.2(@aws-sdk/credential-providers@3.899.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.7)(zod@3.25.67):
-    dependencies:
-      '@aws-sdk/client-sso-oidc': 3.808.0
-      '@kafkajs/confluent-schema-registry': 3.8.0
-      '@mozilla/readability': 0.6.0
-      '@n8n/config': 1.55.0
-      '@n8n/di': 0.9.0
-      '@n8n/errors': 0.5.0
-      '@n8n/imap': 0.15.0
-      '@n8n/vm2': 3.9.25
-      alasql: 4.4.0(encoding@0.1.13)
-      amqplib: 0.10.6
-      aws4: 1.11.0
-      basic-auth: 2.0.1
-      change-case: 4.1.2
-      cheerio: 1.0.0-rc.6
-      chokidar: 4.0.3
-      cron: 3.1.7
-      csv-parse: 5.5.0
-      currency-codes: 2.1.0
-      eventsource: 2.0.2
-      fast-glob: 3.2.12
-      fastest-levenshtein: 1.0.16
-      fflate: 0.7.4
-      generate-schema: 2.6.0
-      get-system-fonts: 2.0.2
-      gm: 1.25.1
-      html-to-text: 9.0.5
-      iconv-lite: 0.6.3
-      ics: 2.40.0
-      isbot: 3.6.13
-      iso-639-1: 2.1.15
-      js-nacl: 1.4.0
-      jsdom: 23.0.1(canvas@2.11.2(encoding@0.1.13))
-      jsonwebtoken: 9.0.2
-      kafkajs: 2.2.4
-      ldapts: 4.2.6
-      lodash: 4.17.21
-      lossless-json: 1.0.5
-      luxon: 3.4.4
-      mailparser: 3.6.7
-      minifaker: 1.34.1
-      moment-timezone: 0.5.48
-      mongodb: 6.11.0(@aws-sdk/credential-providers@3.899.0)(gcp-metadata@5.3.0(encoding@0.1.13))(socks@2.8.7)
-      mqtt: 5.7.2
-      mssql: 10.0.2
-      mysql2: 3.11.0
-      n8n-workflow: 1.109.0
-      node-html-markdown: 1.2.0
-      node-ssh: 13.2.0
-      nodemailer: 6.9.9
-      otpauth: 9.1.1
-      pdfjs-dist: 5.3.31
-      pg: 8.12.0
-      pg-promise: 11.9.1
-      promise-ftp: 1.3.5(promise-ftp-common@1.1.5)
-      pyodide: 0.28.0
-      redis: 4.6.14
-      rfc2047: 4.0.1
-      rhea: 3.0.4
-      rrule: 2.8.1
-      rss-parser: 3.13.0
-      sanitize-html: 2.12.1
-      semver: 7.5.4
-      showdown: 2.1.0
-      simple-git: 3.28.0
-      snowflake-sdk: 2.1.0(asn1.js@5.4.1)(encoding@0.1.13)
-      ssh2-sftp-client: 12.0.1
-      tmp-promise: 3.0.3
-      ts-ics: 1.2.2(date-fns@3.6.0)(lodash@4.17.21)(zod@3.25.67)
-      uuid: 10.0.0
-      xlsx: https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz
-      xml2js: 0.6.2
-      xmlhttprequest-ssl: 3.1.0
-    transitivePeerDependencies:
-      - '@aws-sdk/credential-providers'
-      - '@mongodb-js/zstd'
-      - asn1.js
-      - aws-crt
-      - bufferutil
-      - canvas
-      - date-fns
-      - debug
-      - encoding
-      - gcp-metadata
-      - kerberos
-      - mongodb-client-encryption
-      - pg-native
-      - promise-ftp-common
-      - snappy
-      - socks
-      - supports-color
-      - utf-8-validate
-      - zod
 
   n8n-nodes-base@1.111.2(@aws-sdk/credential-providers@3.899.0)(asn1.js@5.4.1)(canvas@2.11.2(encoding@0.1.13))(date-fns@3.6.0)(encoding@0.1.13)(gcp-metadata@5.3.0(encoding@0.1.13))(promise-ftp-common@1.1.5)(socks@2.8.7)(zod@3.25.67):
     dependencies:
