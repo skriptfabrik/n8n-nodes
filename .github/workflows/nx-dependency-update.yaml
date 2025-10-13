@@ -63,8 +63,6 @@ jobs:
           commit_options: '--signoff'
           file_pattern: 'package.json pnpm-lock.yaml'
           push_options: --dry-run
-          skip_fetch: true
-          skip_checkout: true
 
       - name: Execute migrations
         run: pnpm exec nx migrate --run-migrations --if-exists --create-commits
