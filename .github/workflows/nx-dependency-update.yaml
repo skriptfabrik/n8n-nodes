@@ -57,7 +57,7 @@ jobs:
         run: pnpm install --no-frozen-lockfile
 
       - name: Commit changes to package(-lock).json
-        uses: stefanzweifel/git-auto-commit-action@v6
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: 'chore: bump nx dependencies to ${{ steps.target-versions.outputs.new_version }}'
           commit_options: '--signoff'
