@@ -53,7 +53,7 @@ jobs:
           yq --inplace --exit-status '.devEngines.runtime.version = "${{steps.target-versions.outputs.node_version}}"' package.json
 
       - name: Commit node version update in package.json
-        uses: stefanzweifel/git-auto-commit-action@v6
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: 'chore: bump node version in package.json to ${{steps.target-versions.outputs.node_version}}'
           commit_options: '--signoff'
@@ -62,7 +62,7 @@ jobs:
         run: yq --inplace --exit-status '.features."ghcr.io/devcontainers/features/node:1".version = "${{steps.target-versions.outputs.node_version}}"' .devcontainer/devcontainer.json
 
       - name: Commit node version update in devcontainer.json
-        uses: stefanzweifel/git-auto-commit-action@v6
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: 'chore: bump node version in devcontainer to ${{steps.target-versions.outputs.node_version}}'
           commit_options: '--signoff'
@@ -74,7 +74,7 @@ jobs:
             --save-dev
 
       - name: Commit @types/node update
-        uses: stefanzweifel/git-auto-commit-action@v6
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: 'chore: bump @types/node version to ${{ steps.target-versions.outputs.node_types_version }}'
           commit_options: '--signoff'
@@ -119,7 +119,7 @@ jobs:
             --no-save
 
       - name: Commit n8n-nodes-base update
-        uses: stefanzweifel/git-auto-commit-action@v6
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: 'chore: bump n8n-nodes-base version to ${{ steps.target-versions.outputs.n8n_nodes_base_version }}'
           commit_options: '--signoff'
@@ -130,7 +130,7 @@ jobs:
             --no-save
 
       - name: Commit n8n-workflow update
-        uses: stefanzweifel/git-auto-commit-action@v6
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: 'chore: bump n8n-workflow version to ${{ steps.target-versions.outputs.n8n_workflow_version }}'
           commit_options: '--signoff'
@@ -201,7 +201,7 @@ jobs:
             --no-save
 
       - name: Commit n8n-nodes-base version update
-        uses: stefanzweifel/git-auto-commit-action@v6
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: 'fix(${{matrix.package.workspace}}): bump n8n-nodes-base version to ${{ steps.target-versions.outputs.n8n_nodes_base_version }}'
           commit_options: '--signoff'
@@ -213,7 +213,7 @@ jobs:
             --no-save
 
       - name: Commit n8n-workflow version update
-        uses: stefanzweifel/git-auto-commit-action@v6
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: 'fix(${{matrix.package.workspace}}): bump n8n-workflow version to ${{ steps.target-versions.outputs.n8n_workflow_version }}'
           commit_options: '--signoff'
