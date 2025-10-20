@@ -4,11 +4,16 @@ on:
   workflow_dispatch:
     inputs:
       pull_request_ref:
+        description: 'The pull request branch to update, e.g. dependabot/npm_and_yarn/n8n-1.113.2.'
+        default: 'dependabot/npm_and_yarn/n8n-x.x.x'
         required: true
         type: string
+
   workflow_call:
     inputs:
       pull_request_ref:
+        description: 'The pull request branch to update, e.g. dependabot/npm_and_yarn/n8n-1.113.2.'
+        default: 'dependabot/npm_and_yarn/n8n-x.x.x'
         required: true
         type: string
 
