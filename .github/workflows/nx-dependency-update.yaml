@@ -1,9 +1,19 @@
 name: nx Dependency Update
 
 on:
+  workflow_dispatch:
+    inputs:
+      pull_request_ref:
+        description: 'The pull request branch to update, e.g. dependabot/npm_and_yarn/nx-21.6.5.'
+        default: 'dependabot/npm_and_yarn/nx-x.x.x'
+        required: true
+        type: string
+
   workflow_call:
     inputs:
       pull_request_ref:
+        description: 'The pull request branch to update, e.g. dependabot/npm_and_yarn/nx-21.6.5.'
+        default: 'dependabot/npm_and_yarn/nx-x.x.x'
         required: true
         type: string
 
