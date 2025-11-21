@@ -395,3 +395,55 @@ export type UserParameters = {
 export type UserFilters = GlobalFilters & {
   include_archived?: boolean;
 };
+
+export type Contact = {
+  id: number;
+  firstname: string;
+  lastname: string;
+  title: string;
+  job_position: string;
+  mobile_phone: string;
+  work_fax: string;
+  work_phone: string;
+  work_email: string;
+  home_email: string;
+  home_address: string;
+  info: string;
+  birthday: string;
+  gender: 'M' | 'W' | 'U';
+  avatar_url: string;
+  tags: string[];
+  custom_properties?: Record<string, string>;
+  company: {
+    id: number;
+    name: string;
+    type: 'customer' | 'supplier' | 'organization';
+  };
+  created_at: string;
+  updated_at: string;
+};
+
+export type ContactParameters = {
+  firstname: string;
+  lastname: string;
+  company_id: number;
+  title?: string;
+  job_position?: string;
+  mobile_phone?: string;
+  work_fax?: string;
+  work_phone?: string;
+  work_email?: string;
+  home_email?: string;
+  home_address?: string;
+  info?: string;
+  birthday?: string;
+  gender?: 'M' | 'W' | 'U';
+  tags?: string[];
+  custom_properties?: Record<string, string>;
+};
+
+export type ContactFilters = GlobalFilters & {
+  company_id?: string;
+  phone?: string;
+  term?: string;
+};
