@@ -17,6 +17,9 @@ import type {
   Company,
   CompanyParameters,
   CompanyFilters,
+  Contact,
+  ContactParameters,
+  ContactFilters,
   Deal,
   Project,
   ProjectParameters,
@@ -35,6 +38,7 @@ import {
 import { userFields, userOperations } from './UserDescription';
 import { activityFields, activityOperations } from './ActivityDescription';
 import { companyFields, companyOperations } from './CompanyDescription';
+import { contactFields, contactOperations } from './ContactDescription';
 import { projectFields, projectOperations } from './ProjectDescription';
 
 export class Moco implements INodeType {
@@ -73,6 +77,10 @@ export class Moco implements INodeType {
             value: 'company',
           },
           {
+            name: 'Contacts',
+            value: 'contacts',
+          },
+          {
             name: 'Project',
             value: 'project',
           },
@@ -87,6 +95,8 @@ export class Moco implements INodeType {
       ...activityFields,
       ...companyOperations,
       ...companyFields,
+      ...contactOperations,
+      ...contactFields,
       ...projectOperations,
       ...projectFields,
       ...userOperations,
@@ -835,6 +845,228 @@ export class Moco implements INodeType {
               `/users/${userId}`,
               { body },
             )) as User;
+          }
+        }
+
+        if (resource === 'contacts') {
+          if (operation === 'create') {
+            const additionalFields = this.getNodeParameter(
+              'additionalFields',
+              item,
+            ) as {
+              title?: string;
+              jobPosition?: string;
+              workEmail?: string;
+              homeEmail?: string;
+              mobilePhone?: string;
+              workPhone?: string;
+              workFax?: string;
+              homeAddress?: string;
+              birthday?: string;
+              gender?: 'M' | 'W' | 'U';
+              info?: string;
+              tags?: string;
+              customProperties?: { values: { key: string; value: string }[] };
+            };
+
+            const body: ContactParameters = {
+              firstname: this.getNodeParameter('firstname', item) as string,
+              lastname: this.getNodeParameter('lastname', item) as string,
+              company_id: this.getNodeParameter('companyId', item) as number,
+              ...(additionalFields.title && { title: additionalFields.title }),
+              ...(additionalFields.jobPosition && {
+                job_position: additionalFields.jobPosition,
+              }),
+              ...(additionalFields.workEmail && {
+                work_email: additionalFields.workEmail,
+              }),
+              ...(additionalFields.homeEmail && {
+                home_email: additionalFields.homeEmail,
+              }),
+              ...(additionalFields.mobilePhone && {
+                mobile_phone: additionalFields.mobilePhone,
+              }),
+              ...(additionalFields.workPhone && {
+                work_phone: additionalFields.workPhone,
+              }),
+              ...(additionalFields.workFax && {
+                work_fax: additionalFields.workFax,
+              }),
+              ...(additionalFields.homeAddress && {
+                home_address: additionalFields.homeAddress,
+              }),
+              ...(additionalFields.birthday && {
+                birthday: additionalFields.birthday,
+              }),
+              ...(additionalFields.gender && { gender: additionalFields.gender }),
+              ...(additionalFields.info && { info: additionalFields.info }),
+              ...(additionalFields.tags && {
+                tags: additionalFields.tags.split(',').map((tag) => tag.trim()),
+              }),
+            };
+
+            // Process custom properties for create
+            if (additionalFields.customProperties?.values) {
+              body.custom_properties = additionalFields.customProperties.values.reduce(
+                (acc, prop) => {
+                  acc[prop.key] = prop.value;
+                  return acc;
+                },
+                {} as Record<string, string>,
+              );
+            }
+
+            responseData = (await mocoApiRequest.call(
+              this,
+              item,
+              'POST',
+              '/contacts/people',
+              {
+                body,
+              },
+            )) as Contact;
+          }
+
+          if (operation === 'delete') {
+            const contactId = this.getNodeParameter('contactId', item);
+
+            responseData = (await mocoApiRequest.call(
+              this,
+              item,
+              'DELETE',
+              `/contacts/people/${contactId}`,
+            )) as never;
+          }
+
+          if (operation === 'get') {
+            const contactId = this.getNodeParameter('contactId', item);
+
+            responseData = (await mocoApiRequest.call(
+              this,
+              item,
+              'GET',
+              `/contacts/people/${contactId}`,
+            )) as Contact;
+          }
+
+          if (operation === 'list') {
+            const returnAll = this.getNodeParameter('returnAll', item);
+
+            const qs: ContactFilters = {
+              ...(returnAll
+                ? {}
+                : {
+                    limit:
+                      (this.getNodeParameter('limit', item) as number) ||
+                      undefined,
+                    ids:
+                      (this.getNodeParameter('ids', item) as string) ||
+                      undefined,
+                    updated_after: createUTCStringFromNodeParameter.call(
+                      this,
+                      'updatedAfter',
+                      item,
+                    ),
+                  }),
+              ...createParametersFromNodeParameter.call(
+                this,
+                'additionalFields',
+                item,
+                ['companyId', 'phone', 'term'],
+              ),
+            };
+
+            responseData = (await mocoApiRequestAllItems.call(
+              this,
+              item,
+              'GET',
+              '/contacts/people',
+              { qs },
+            )) as Contact[];
+          }
+
+          if (operation === 'update') {
+            const contactId = this.getNodeParameter('contactId', item);
+            const updateFields = this.getNodeParameter(
+              'updateFields',
+              item,
+            ) as {
+              firstname?: string;
+              lastname?: string;
+              companyId?: number;
+              title?: string;
+              jobPosition?: string;
+              workEmail?: string;
+              homeEmail?: string;
+              mobilePhone?: string;
+              workPhone?: string;
+              workFax?: string;
+              homeAddress?: string;
+              birthday?: string;
+              gender?: 'M' | 'W' | 'U';
+              info?: string;
+              tags?: string;
+              customProperties?: { values: { key: string; value: string }[] };
+            };
+
+            const body: Partial<ContactParameters> = {
+              ...(updateFields.firstname && {
+                firstname: updateFields.firstname,
+              }),
+              ...(updateFields.lastname && { lastname: updateFields.lastname }),
+              ...(updateFields.companyId && {
+                company_id: updateFields.companyId,
+              }),
+              ...(updateFields.title && { title: updateFields.title }),
+              ...(updateFields.jobPosition && {
+                job_position: updateFields.jobPosition,
+              }),
+              ...(updateFields.workEmail && {
+                work_email: updateFields.workEmail,
+              }),
+              ...(updateFields.homeEmail && {
+                home_email: updateFields.homeEmail,
+              }),
+              ...(updateFields.mobilePhone && {
+                mobile_phone: updateFields.mobilePhone,
+              }),
+              ...(updateFields.workPhone && {
+                work_phone: updateFields.workPhone,
+              }),
+              ...(updateFields.workFax && {
+                work_fax: updateFields.workFax,
+              }),
+              ...(updateFields.homeAddress && {
+                home_address: updateFields.homeAddress,
+              }),
+              ...(updateFields.birthday && {
+                birthday: updateFields.birthday,
+              }),
+              ...(updateFields.gender && { gender: updateFields.gender }),
+              ...(updateFields.info && { info: updateFields.info }),
+              ...(updateFields.tags && {
+                tags: updateFields.tags.split(',').map((tag) => tag.trim()),
+              }),
+            };
+
+            // Process custom properties for update
+            if (updateFields.customProperties?.values) {
+              body.custom_properties = updateFields.customProperties.values.reduce(
+                (acc, prop) => {
+                  acc[prop.key] = prop.value;
+                  return acc;
+                },
+                {} as Record<string, string>,
+              );
+            }
+
+            responseData = (await mocoApiRequest.call(
+              this,
+              item,
+              'PUT',
+              `/contacts/people/${contactId}`,
+              { body },
+            )) as Contact;
           }
         }
 
