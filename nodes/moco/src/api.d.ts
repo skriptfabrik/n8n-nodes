@@ -443,7 +443,7 @@ export type ContactParameters = {
 };
 
 export type ContactFilters = GlobalFilters & {
-  company_id?: string;
+  //company_id?: string;  //Filter functions for Companies not implemented in Moco API
   phone?: string;
   term?: string;
 };

@@ -972,7 +972,7 @@ export class Moco implements INodeType {
                 this,
                 'additionalFields',
                 item,
-                ['companyId', 'phone', 'term'],
+                [/*'companyId', */'phone', 'term'],
               ),
             };
 

@@ -373,7 +373,7 @@ export const contactFields: INodeProperties[] = [
       },
     },
     default: {},
-    options: [
+    options: [ /*      Filter functions for Companies not implemented in Moco API
       {
         displayName: 'Company Name or ID',
         name: 'companyId',
@@ -384,7 +384,7 @@ export const contactFields: INodeProperties[] = [
         default: '',
         description:
           'Filter contacts by company - Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
-      },
+      },*/
       {
         displayName: 'Phone',
         name: 'phone',
