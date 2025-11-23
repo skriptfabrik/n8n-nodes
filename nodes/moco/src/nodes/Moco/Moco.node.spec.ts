@@ -15,6 +15,8 @@ import {
   CommonCompanyParameters,
   Company,
   CompanyParameters,
+  Contact,
+  ContactParameters,
   CustomerCompanyParameters,
   Project,
   ProjectParameters,
@@ -2819,6 +2821,353 @@ describe('Moco', () => {
       0,
       'GET',
       `/users/${userId}`,
+    );
+  });
+
+  // Contact Tests
+  it('should create a contact', () => {
+    const body: ContactParameters = {
+      firstname: 'Will',
+      lastname: 'Moss',
+      company_id: 760253573,
+      title: 'Mr.',
+      job_position: 'Developer',
+      work_email: 'will.moss@company.com',
+      mobile_phone: '+49123456789',
+      gender: 'M',
+    };
+    const contact: Partial<Contact> = {
+      id: 12345678,
+      firstname: body.firstname,
+      lastname: body.lastname,
+      title: body.title,
+      job_position: body.job_position,
+      work_email: body.work_email,
+      mobile_phone: body.mobile_phone,
+      gender: body.gender,
+      company: {
+        id: body.company_id,
+        name: 'Test Company',
+        type: 'customer',
+      },
+    };
+    const jsonArray = [{ json: contact }];
+    const executionData = jsonArray.map(({ json }) => ({
+      json,
+      pairedItem: { item: 0 },
+    }));
+
+    executeFunctions.getInputData.mockReturnValue([
+      {
+        json: {},
+      },
+    ]);
+
+    executeFunctions.getNodeParameter
+      .calledWith('resource', 0)
+      .mockReturnValue('contacts');
+    executeFunctions.getNodeParameter
+      .calledWith('operation', 0)
+      .mockReturnValue('create');
+    executeFunctions.getNodeParameter
+      .calledWith('firstname', 0)
+      .mockReturnValue(body.firstname);
+    executeFunctions.getNodeParameter
+      .calledWith('lastname', 0)
+      .mockReturnValue(body.lastname);
+    executeFunctions.getNodeParameter
+      .calledWith('companyId', 0)
+      .mockReturnValue(body.company_id);
+    executeFunctions.getNodeParameter
+      .calledWith('additionalFields', 0)
+      .mockReturnValue({
+        title: body.title,
+        jobPosition: body.job_position,
+        workEmail: body.work_email,
+        mobilePhone: body.mobile_phone,
+        gender: body.gender,
+      });
+
+    mockedMocoApiRequest.mockResolvedValue({ body: contact, statusCode: 200 });
+    executeFunctions.helpers.returnJsonArray.mockReturnValue(jsonArray);
+    executeFunctions.helpers.constructExecutionMetaData.mockReturnValue(
+      executionData,
+    );
+
+    expect(moco.execute.call(executeFunctions)).resolves.toEqual([
+      executionData,
+    ]);
+
+    expect(mockedMocoApiRequest).toHaveBeenCalledWith(
+      0,
+      'POST',
+      '/contacts/people',
+      {
+        body,
+      },
+    );
+  });
+
+  it('should get a contact', () => {
+    const contactId = 12345678;
+    const contact: Contact = {
+      id: contactId,
+      firstname: 'Will',
+      lastname: 'Moss',
+      title: 'Mr.',
+      job_position: 'Developer',
+      mobile_phone: '+49123456789',
+      work_fax: '',
+      work_phone: '',
+      work_email: 'will.moss@company.com',
+      home_email: '',
+      home_address: '',
+      info: '',
+      birthday: '',
+      gender: 'M',
+      avatar_url: '',
+      tags: [],
+      company: {
+        id: 760253573,
+        name: 'Test Company',
+        type: 'customer',
+      },
+      created_at: '2023-11-21T10:00:00Z',
+      updated_at: '2023-11-21T10:00:00Z',
+    };
+    const jsonArray = [{ json: contact }];
+    const executionData = jsonArray.map(({ json }) => ({
+      json,
+      pairedItem: { item: 0 },
+    }));
+
+    executeFunctions.getInputData.mockReturnValue([
+      {
+        json: {},
+      },
+    ]);
+    executeFunctions.getNodeParameter
+      .calledWith('resource', 0)
+      .mockReturnValue('contacts');
+    executeFunctions.getNodeParameter
+      .calledWith('operation', 0)
+      .mockReturnValue('get');
+    executeFunctions.getNodeParameter
+      .calledWith('contactId', 0)
+      .mockReturnValue(contactId);
+
+    mockedMocoApiRequest.mockResolvedValue({ body: contact, statusCode: 200 });
+    executeFunctions.helpers.returnJsonArray.mockReturnValue(jsonArray);
+    executeFunctions.helpers.constructExecutionMetaData.mockReturnValue(
+      executionData,
+    );
+
+    expect(moco.execute.call(executeFunctions)).resolves.toEqual([
+      executionData,
+    ]);
+
+    expect(mockedMocoApiRequest).toHaveBeenCalledWith(
+      0,
+      'GET',
+      `/contacts/people/${contactId}`,
+    );
+  });
+
+  it('should update a contact', () => {
+    const contactId = 12345678;
+    const body: Partial<ContactParameters> = {
+      firstname: 'Will',
+      lastname: 'Moss',
+      work_email: 'will.moss@company.com',
+      gender: 'M',
+    };
+    const contact: Partial<Contact> = {
+      id: contactId,
+      firstname: body.firstname,
+      lastname: body.lastname,
+      work_email: body.work_email,
+      gender: body.gender,
+    };
+    const jsonArray = [{ json: contact }];
+    const executionData = jsonArray.map(({ json }) => ({
+      json,
+      pairedItem: { item: 0 },
+    }));
+
+    executeFunctions.getInputData.mockReturnValue([
+      {
+        json: {},
+      },
+    ]);
+    executeFunctions.getNodeParameter
+      .calledWith('resource', 0)
+      .mockReturnValue('contacts');
+    executeFunctions.getNodeParameter
+      .calledWith('operation', 0)
+      .mockReturnValue('update');
+    executeFunctions.getNodeParameter
+      .calledWith('contactId', 0)
+      .mockReturnValue(contactId);
+    executeFunctions.getNodeParameter
+      .calledWith('updateFields', 0)
+      .mockReturnValue({
+        firstname: body.firstname,
+        lastname: body.lastname,
+        workEmail: body.work_email,
+        gender: body.gender,
+      });
+
+    mockedMocoApiRequest.mockResolvedValue({ body: contact, statusCode: 200 });
+    executeFunctions.helpers.returnJsonArray.mockReturnValue(jsonArray);
+    executeFunctions.helpers.constructExecutionMetaData.mockReturnValue(
+      executionData,
+    );
+
+    expect(moco.execute.call(executeFunctions)).resolves.toEqual([
+      executionData,
+    ]);
+
+    expect(mockedMocoApiRequest).toHaveBeenCalledWith(
+      0,
+      'PUT',
+      `/contacts/people/${contactId}`,
+      {
+        body,
+      },
+    );
+  });
+
+  it('should delete a contact', () => {
+    const contactId = 12345678;
+    const executionData = [
+      {
+        json: { success: true },
+        pairedItem: { item: 0 },
+      },
+    ];
+
+    executeFunctions.getInputData.mockReturnValue([
+      {
+        json: {},
+      },
+    ]);
+    executeFunctions.getNodeParameter
+      .calledWith('resource', 0)
+      .mockReturnValue('contacts');
+    executeFunctions.getNodeParameter
+      .calledWith('operation', 0)
+      .mockReturnValue('delete');
+    executeFunctions.getNodeParameter
+      .calledWith('contactId', 0)
+      .mockReturnValue(contactId);
+    executeFunctions.helpers.returnJsonArray.mockReturnValue([]);
+    executeFunctions.helpers.constructExecutionMetaData.mockReturnValue(
+      executionData,
+    );
+
+    expect(moco.execute.call(executeFunctions)).resolves.toEqual([
+      executionData,
+    ]);
+
+    expect(mockedMocoApiRequest).toHaveBeenCalledWith(
+      0,
+      'DELETE',
+      `/contacts/people/${contactId}`,
+    );
+  });
+
+  it('should list contacts', () => {
+    const contacts: Contact[] = [
+      {
+        id: 12345678,
+        firstname: 'Will',
+        lastname: 'Moss',
+        title: 'Mr.',
+        job_position: 'Developer',
+        mobile_phone: '+49123456789',
+        work_fax: '',
+        work_phone: '',
+        work_email: 'will.moss@company.com',
+        home_email: '',
+        home_address: '',
+        info: '',
+        birthday: '',
+        gender: 'M',
+        avatar_url: '',
+        tags: [],
+        company: {
+          id: 760253573,
+          name: 'Test Company',
+          type: 'customer',
+        },
+        created_at: '2023-11-21T10:00:00Z',
+        updated_at: '2023-11-21T10:00:00Z',
+      },
+      {
+        id: 87654321,
+        firstname: 'Jane',
+        lastname: 'Smith',
+        title: 'Ms.',
+        job_position: 'Designer',
+        mobile_phone: '+49987654321',
+        work_fax: '',
+        work_phone: '',
+        work_email: 'jane.smith@company.com',
+        home_email: '',
+        home_address: '',
+        info: '',
+        birthday: '',
+        gender: 'W',
+        avatar_url: '',
+        tags: [],
+        company: {
+          id: 760253573,
+          name: 'Test Company',
+          type: 'customer',
+        },
+        created_at: '2023-11-21T10:00:00Z',
+        updated_at: '2023-11-21T10:00:00Z',
+      },
+    ];
+    const jsonArray = contacts.map((contact) => ({ json: contact }));
+    const executionData = jsonArray.map(({ json }, index) => ({
+      json,
+      pairedItem: { item: index },
+    }));
+
+    executeFunctions.getInputData.mockReturnValue([
+      {
+        json: {},
+      },
+    ]);
+    executeFunctions.getNodeParameter
+      .calledWith('resource', 0)
+      .mockReturnValue('contacts');
+    executeFunctions.getNodeParameter
+      .calledWith('operation', 0)
+      .mockReturnValue('list');
+    executeFunctions.getNodeParameter
+      .calledWith('returnAll', 0)
+      .mockReturnValue(true);
+    executeFunctions.getNodeParameter
+      .calledWith('additionalFields', 0)
+      .mockReturnValue({});
+
+    mockedMocoApiRequestAllItems.mockResolvedValue(contacts);
+    executeFunctions.helpers.returnJsonArray.mockReturnValue(jsonArray);
+    executeFunctions.helpers.constructExecutionMetaData.mockReturnValue(
+      executionData,
+    );
+
+    expect(moco.execute.call(executeFunctions)).resolves.toEqual([
+      executionData,
+    ]);
+
+    expect(mockedMocoApiRequestAllItems).toHaveBeenCalledWith(
+      0,
+      'GET',
+      '/contacts/people',
+      { qs: {} },
     );
   });
 });
