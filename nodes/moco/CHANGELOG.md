@@ -1,3 +1,17 @@
+## 0.4.0 (2025-11-24)
+
+### 🚀 Features
+
+- **moco:** add complete contacts resource implementation ([#1035](https://github.com/skriptfabrik/n8n-nodes/pull/1035))
+
+### 🩹 Fixes
+
+- **moco:** disable unsupported company filter for contacts list ([#1035](https://github.com/skriptfabrik/n8n-nodes/pull/1035))
+
+### ❤️ Thank You
+
+- Fabian Graf
+
 ## 0.3.41 (2025-07-16)
 
 ### 🩹 Fixes
