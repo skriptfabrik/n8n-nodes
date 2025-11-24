@@ -25,7 +25,7 @@ jobs:
         run: echo "package=$(echo ${{ github.event.pull_request.head.ref }} | sed -E 's/release-(.*)@.*/\1/')" >> "$GITHUB_OUTPUT"
 
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           filter: 'blob:none'
           fetch-depth: 0
