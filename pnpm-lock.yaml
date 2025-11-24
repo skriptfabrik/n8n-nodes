@@ -264,7 +264,7 @@ importers:
     devDependencies:
       n8n-workflow:
         specifier: ^1.86.0
-        version: 1.117.0
+        version: 1.117.1
 
 packages:
 
@@ -7565,9 +7565,6 @@ packages:
 
   n8n-nodes-base@1.118.2:
     resolution: {integrity: sha512-/9Uq4fjBv4gWShg511JaTeavqHiKxMn15TlMwhaaSJFhe/FA5UXsvuJA8mfB/ZsK394s+ag4SZi1fjm/GWLZ0w==}
-
-  n8n-workflow@1.117.0:
-    resolution: {integrity: sha512-6ITfRh6RpYZMI6XypHvtGsUqwxhAr+Ox2KY2DdQ32z6H9xhIQfAjxrSvE4tLQN1NiKDYTAjXx5CaLVEgMKmpvQ==}
 
   n8n-workflow@1.117.1:
     resolution: {integrity: sha512-LJSYrSnpmOePMRjgUXckUyVaZG5NtxRqrU3gJ5n7xId/btLxUT8naR14aV13M6YDAOZ4vfrFUq16mr/eDLYRPQ==}
@@ -20102,26 +20099,6 @@ snapshots:
       - supports-color
       - utf-8-validate
       - zod
-
-  n8n-workflow@1.117.0:
-    dependencies:
-      '@n8n/errors': 0.5.0
-      '@n8n/tournament': 1.0.6
-      ast-types: 0.15.2
-      callsites: 3.1.0
-      esprima-next: 5.8.4
-      form-data: 4.0.0
-      jmespath: 0.16.0
-      js-base64: 3.7.2
-      jssha: 3.3.1
-      lodash: 4.17.21
-      luxon: 3.4.4
-      md5: 2.3.0
-      recast: 0.22.0
-      title-case: 3.0.3
-      transliteration: 2.3.5
-      xml2js: 0.6.2
-      zod: 3.25.67
 
   n8n-workflow@1.117.1:
     dependencies:
