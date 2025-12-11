@@ -385,13 +385,6 @@ export const activityFields: INodeProperties[] = [
         description: 'The field to sort the results by',
       },
       {
-        displayName: 'Sort By',
-        name: 'sortBy',
-        type: 'string',
-        default: '',
-        description: 'The field to sort the results by',
-      },
-      {
         displayName: 'Task Name or ID',
         name: 'taskId',
         type: 'options',
