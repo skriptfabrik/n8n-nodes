@@ -1,0 +1,18 @@
+{
+  "$schema": "https://unpkg.com/release-it@19/schema/release-it.json",
+  "git": {
+    "changelog": "auto-changelog --unreleased-only --stdout",
+    "commitMessage": "chore(release): otto-market-${version}",
+    "tagAnnotation": "chore(release): otto-market-${version}",
+    "tagName": "otto-market-${version}",
+    "requireCleanWorkingDir": false,
+    "requireCommits": true
+  },
+  "github": {
+    "release": true
+  },
+  "hooks": {
+    "before:init": "turbo build",
+    "after:bump": "auto-changelog --package"
+  }
+}

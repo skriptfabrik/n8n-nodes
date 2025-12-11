@@ -1,22 +1,31 @@
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "module": "commonjs",
-    "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es2019",
+    "lib": ["es2019", "es2020", "es2022.error"],
+    "removeComments": true,
+    "useUnknownInCatchVariables": false,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+    "preserveConstEnums": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "incremental": true,
+    "declaration": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "outDir": "./dist/"
   },
-  "files": [],
-  "include": [],
-  "references": [
-    {
-      "path": "./tsconfig.lib.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
-    }
+  "include": [
+    "credentials/**/*",
+    "nodes/**/*",
+    "nodes/**/*.json",
+    "types/**/*.d.ts",
+    "package.json"
   ]
 }

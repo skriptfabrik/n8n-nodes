@@ -2,42 +2,44 @@
   "name": "@skriptfabrik/n8n-nodes-otto-market",
   "version": "0.1.38",
   "description": "OTTO Market nodes for n8n",
-  "keywords": [
-    "otto",
-    "otto-market",
-    "n8n",
-    "n8n-community-node",
-    "n8n-community-node-package"
-  ],
   "license": "MIT",
   "homepage": "https://github.com/skriptfabrik/n8n-nodes/blob/main/nodes/otto-market/README.md",
+  "bugs": "https://github.com/skriptfabrik/n8n-nodes/issues",
+  "keywords": [
+    "n8n",
+    "n8n-community-node",
+    "n8n-community-node-package",
+    "otto",
+    "otto-market"
+  ],
   "author": {
     "name": "skriptfabrik",
     "email": "info@skriptfabrik.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/skriptfabrik/n8n-nodes.git"
+  "repository": "skriptfabrik/n8n-nodes.git",
+  "scripts": {
+    "build": "n8n-node build",
+    "build:watch": "tsc --watch",
+    "dev": "n8n-node dev --external-n8n --custom-user-folder=$N8N_USER_FOLDER",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "prepublishOnly": "n8n-node prerelease",
+    "release": "release-it --increment $(node ../../tools/scripts/conventional-bump.mjs)"
   },
-  "main": "./src/index.js",
-  "typings": "./src/index.d.ts",
-  "type": "commonjs",
+  "files": [
+    "dist"
+  ],
   "n8n": {
     "n8nNodesApiVersion": 1,
+    "strict": true,
     "credentials": [
-      "src/credentials/OttoMarket.credentials.js"
+      "dist/credentials/OttoMarketApi.credentials.js"
     ],
     "nodes": [
-      "src/nodes/OttoMarket/OttoMarket.node.js"
+      "dist/nodes/OttoMarket/OttoMarket.node.js"
     ]
   },
-  "dependencies": {
-    "tslib": "^2.8.1"
-  },
-  "devDependencies": {
-    "n8n-workflow": "^1.86.0"
-  },
   "peerDependencies": {
-    "n8n-workflow": "^1.86.0"
+    "n8n-workflow": "*"
   }
 }

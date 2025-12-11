@@ -5,7 +5,8 @@
 
 > Barcode community nodes for your [n8n](https://n8n.io/) workflows
 
-This is an n8n community node. It lets you generate barcodes in various types, formats, and configurations for your n8n workflows.
+This is an n8n community node. It lets you generate barcodes in various types, formats, and configurations for your n8n
+workflows.
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
@@ -26,7 +27,8 @@ nodes documentation.
    **I understand the risks of installing unverified code from a public source**.
 5. Select **Install**.
 
-After installing the node, you can use it like any other node. n8n displays the node in search results in the **Nodes** panel.
+After installing the node, you can use it like any other node. n8n displays the node in search results in the **Nodes**
+panel.
 
 ## Operations
 

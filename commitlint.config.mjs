@@ -1,5 +1,5 @@
 export default {
-  extends: ['@commitlint/config-conventional', '@commitlint/config-nx-scopes'],
+  extends: ['@commitlint/config-conventional'],
   rules: {
     'references-empty': [2, 'never'],
   },

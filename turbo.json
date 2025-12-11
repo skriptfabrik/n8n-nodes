@@ -1,0 +1,18 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "concurrency": "20",
+  "globalEnv": ["N8N_USER_FOLDER"],
+  "tasks": {
+    "build": {
+      "outputs": ["dist/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "inputs": ["**/*.{js,ts}"]
+    }
+  }
+}
