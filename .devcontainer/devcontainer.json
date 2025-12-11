@@ -1,16 +1,20 @@
 {
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainer.base.schema.json",
   "name": "n8n-nodes",
-  "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu-22.04",
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu-24.04",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
-      "version": "22.21.0",
-      "pnpmVersion": "10.23.0",
+      "version": "24",
+      "pnpmVersion": "10.26.0",
       "nodeGypDependencies": true
     },
-    "ghcr.io/devcontainers-extra/features/markdownlint-cli:1": {
+    "ghcr.io/devcontainers-extra/features/yamllint:2": {
       "version": "latest"
     },
-    "ghcr.io/devcontainers-extra/features/yamllint:2": {
+    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+      "packages": "ghostscript,libcairo2-dev,libgif-dev,libjpeg-dev,libpango1.0-dev,librsvg2-dev"
+    },
+    "ghcr.io/skriptfabrik/devcontainer-features/yamlfix:1": {
       "version": "latest"
     }
   },
@@ -18,31 +22,37 @@
     "vscode": {
       "extensions": [
         "christian-kohler.npm-intellisense",
+        "davidanson.vscode-markdownlint",
         "dbaeumer.vscode-eslint",
-        "EditorConfig.EditorConfig",
-        "esbenp.prettier-vscode",
-        "firsttris.vscode-jest-runner",
-        "fnando.linter",
-        "GitHub.copilot",
+        "editorconfig.editorconfig",
+        "github.copilot",
         "github.vscode-github-actions",
-        "GitHub.vscode-pull-request-github",
-        "nrwl.angular-console",
-        "ritwickdey.liveserver"
-      ]
+        "github.vscode-pull-request-github",
+        "kuscamara.yamllint-fix",
+        "prettier.prettier-vscode",
+        "ritwickdey.liveserver",
+        "vercel.turbo-vsc"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "prettier.prettier-vscode",
+        "[javascript]": {
+          "editor.defaultFormatter": "prettier.prettier-vscode"
+        }
+      }
     }
   },
-  "appPort": "5678:5678",
   "remoteEnv": {
+    "DB_SQLITE_POOL_SIZE": "10",
     "GENERIC_TIMEZONE": "Europe/Berlin",
-    "N8N_CREDENTIALS": "credentials.json",
+    "N8N_DEV_RELOAD": "true",
     "N8N_DIAGNOSTICS_ENABLED": "false",
-    "N8N_ENCRYPTION_KEY": "aofXFdCRR!rdMF7grM5zLiB&@d5S8Ddr",
     "N8N_HIRING_BANNER_ENABLED": "false",
     "N8N_PERSONALIZATION_ENABLED": "false",
+    "N8N_RUNNERS_ENABLED": "true",
     "N8N_TEMPLATES_ENABLED": "false",
     "N8N_USER_FOLDER": "${containerWorkspaceFolder}",
     "N8N_VERSION_NOTIFICATIONS_ENABLED": "false",
     "TZ": "Europe/Berlin"
   },
-  "postCreateCommand": ".devcontainer/hooks/post-create.sh"
+  "postCreateCommand": "pnpm config set store-dir ~/.local/share/pnpm/store"
 }

@@ -30,7 +30,8 @@ nodes documentation.
    **I understand the risks of installing unverified code from a public source**.
 5. Select **Install**.
 
-After installing the node, you can use it like any other node. n8n displays the node in search results in the **Nodes** panel.
+After installing the node, you can use it like any other node. n8n displays the node in search results in the **Nodes**
+panel.
 
 ## Operations
 

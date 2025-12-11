@@ -1,7 +1,10 @@
 {
   "name": "@skriptfabrik/n8n-nodes-google-enhanced",
-  "version": "0.1.42",
+  "version": "0.1.43",
   "description": "Enhanced Google community nodes for n8n",
+  "license": "MIT",
+  "homepage": "https://github.com/skriptfabrik/n8n-nodes/blob/main/nodes/google-enhanced/README.md",
+  "bugs": "https://github.com/skriptfabrik/n8n-nodes/issues",
   "keywords": [
     "google",
     "google-cloud-storage",
@@ -9,38 +12,43 @@
     "n8n-community-node",
     "n8n-community-node-package"
   ],
-  "license": "MIT",
-  "homepage": "https://github.com/skriptfabrik/n8n-nodes/blob/main/nodes/google-enhanced/README.md",
   "author": {
     "name": "skriptfabrik",
     "email": "info@skriptfabrik.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/skriptfabrik/n8n-nodes.git"
+  "repository": "skriptfabrik/n8n-nodes.git",
+  "scripts": {
+    "build": "n8n-node build",
+    "build:watch": "tsc --watch",
+    "dev": "n8n-node dev --external-n8n --custom-user-folder=$N8N_USER_FOLDER",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "prepublishOnly": "n8n-node prerelease",
+    "release": "release-it --increment $(node ../../tools/scripts/conventional-bump.mjs)"
   },
-  "main": "./src/index.js",
-  "typings": "./src/index.d.ts",
-  "type": "commonjs",
+  "files": [
+    "dist"
+  ],
   "n8n": {
     "n8nNodesApiVersion": 1,
-    "credentials": [],
+    "strict": false,
+    "credentials": [
+      "dist/credentials/GoogleCloudStorageEnhancedApi.credentials.js",
+      "dist/credentials/GoogleCloudStorageEnhancedOAuth2Api.credentials.js"
+    ],
     "nodes": [
-      "src/nodes/GoogleCloudStorageEnhanced/GoogleCloudStorageEnhanced.node.js"
+      "dist/nodes/GoogleCloudStorageEnhanced/GoogleCloudStorageEnhanced.node.js"
     ]
   },
   "dependencies": {
     "form-data": "^4.0.5",
-    "jsonwebtoken": "^9.0.2",
-    "moment-timezone": "^0.6.0",
-    "tslib": "^2.8.1"
+    "jsonwebtoken": "^9.0.3",
+    "moment-timezone": "^0.6.0"
   },
   "devDependencies": {
-    "n8n-nodes-base": "^1.87.0",
-    "n8n-workflow": "^1.86.0"
+    "@types/jsonwebtoken": "^9.0.10"
   },
   "peerDependencies": {
-    "n8n-nodes-base": "^1.87.0",
-    "n8n-workflow": "^1.86.0"
+    "n8n-workflow": "*"
   }
 }
