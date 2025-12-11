@@ -36,7 +36,8 @@ nodes documentation.
    **I understand the risks of installing unverified code from a public source**.
 5. Select **Install**.
 
-After installing the node, you can use it like any other node. n8n displays the node in search results in the **Nodes** panel.
+After installing the node, you can use it like any other node. n8n displays the node in search results in the **Nodes**
+panel.
 
 ## Operations
 
@@ -44,13 +45,14 @@ It supports these operations:
 
 - Create, delete, get, list and update activities
 - Create, delete, get, list and update companies
+- Create, delete, get, list and update contracts
 - Create, delete, get, list and update projects
 - Create, delete, get, list and update users
 
 ## Credentials
 
-Create a free MOCO account [here](https://www.mocoapp.com/anmeldung/start) which allows you to test it for 30 days
-without obligation.
+Create a free [MOCO account](https://www.mocoapp.com/anmeldung/start) which allows you to test it for 30 days without
+obligation.
 
 - Remember the Sub-Domain
 - Generate an API Key here: Settings -> Extensions -> API & WebHooks -> API Keys

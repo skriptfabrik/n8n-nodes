@@ -2,43 +2,50 @@
   "name": "@skriptfabrik/n8n-nodes-moco",
   "version": "0.4.0",
   "description": "MOCO community nodes for n8n",
+  "license": "MIT",
+  "homepage": "https://github.com/skriptfabrik/n8n-nodes/blob/main/nodes/moco/README.md",
+  "bugs": "https://github.com/skriptfabrik/n8n-nodes/issues",
   "keywords": [
     "moco",
     "n8n",
     "n8n-community-node",
     "n8n-community-node-package"
   ],
-  "license": "MIT",
-  "homepage": "https://github.com/skriptfabrik/n8n-nodes/blob/main/nodes/moco/README.md",
   "author": {
     "name": "skriptfabrik",
     "email": "info@skriptfabrik.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/skriptfabrik/n8n-nodes.git"
+  "repository": "skriptfabrik/n8n-nodes.git",
+  "scripts": {
+    "build": "n8n-node build",
+    "build:watch": "tsc --watch",
+    "dev": "n8n-node dev --external-n8n --custom-user-folder=$N8N_USER_FOLDER",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "prepublishOnly": "n8n-node prerelease",
+    "release": "release-it --increment $(node ../../tools/scripts/conventional-bump.mjs)"
   },
-  "main": "./src/index.js",
-  "typings": "./src/index.d.ts",
-  "type": "commonjs",
+  "files": [
+    "dist"
+  ],
   "n8n": {
     "n8nNodesApiVersion": 1,
+    "strict": true,
     "credentials": [
-      "src/credentials/MocoApi.credentials.js"
+      "dist/credentials/MocoApi.credentials.js"
     ],
     "nodes": [
-      "src/nodes/Moco/Moco.node.js",
-      "src/nodes/Moco/MocoTrigger.node.js"
+      "dist/nodes/Moco/Moco.node.js",
+      "dist/nodes/Moco/MocoTrigger.node.js"
     ]
   },
   "dependencies": {
-    "moment-timezone": "^0.6.0",
-    "tslib": "^2.8.1"
+    "luxon": "^3.7.2"
   },
   "devDependencies": {
-    "n8n-workflow": "^1.86.0"
+    "@types/luxon": "^3.7.1"
   },
   "peerDependencies": {
-    "n8n-workflow": "^1.86.0"
+    "n8n-workflow": "*"
   }
 }

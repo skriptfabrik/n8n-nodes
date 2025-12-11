@@ -2,13 +2,15 @@
 
 Thank you for your interest in contributing!
 
-To keep the project maintainable and ensure a high-quality codebase, we ask all contributors to follow the guidelines outlined below.
+To keep the project maintainable and ensure a high-quality codebase, we ask all contributors to follow the guidelines
+outlined below.
 
 ---
 
 ## 🧩 Issues First – Always
 
-Before submitting any Pull Request, you **must first open an Issue** that clearly explains the problem, enhancement, or feature you're proposing.
+Before submitting any Pull Request, you **must first open an Issue** that clearly explains the problem, enhancement, or
+feature you're proposing.
 
 > Pull Requests without a related, pre-existing Issue will be **closed without review**.
 
@@ -18,7 +20,8 @@ This ensures that your proposal is aligned with the project's goals before any c
 
 ## 🧱 Development Environment via Devcontainer
 
-This project provides a ready-to-use [**Devcontainer**](https://code.visualstudio.com/docs/devcontainers/overview) configuration for consistent and easy local development.
+This project provides a ready-to-use [**Devcontainer**](https://code.visualstudio.com/docs/devcontainers/overview)
+configuration for consistent and easy local development.
 
 ### ✅ Requirements
 
@@ -30,82 +33,85 @@ This project provides a ready-to-use [**Devcontainer**](https://code.visualstudi
 
 1. **Clone the repository:**
 
-```bash
-git clone https://github.com/skriptfabrik/n8n-nodes.git
-cd n8n-nodes
-```
+   ```bash
+   git clone https://github.com/skriptfabrik/n8n-nodes.git
+   cd n8n-nodes
+   ```
 
 2. **Open the project in VS Code:**
 
-```bash
-code .
-```
+   ```bash
+   code .
+   ```
 
-3. **Reoping in Devcontainer:**
+3. **Reopen in Container:**
    If prompted, click “Reopen in Container”.
    If not prompted, open the Command Palette (Ctrl+Shift+P or Cmd+Shift+P) and select:
 
-```
-Dev Containers: Reopen in Container
-```
+   ```text
+   Dev Containers: Reopen in Container
+   ```
 
 4. The container will build automatically and install all required dependencies.
-
 5. You can now develop in a fully configured environment.
 
 ---
 
-## 🧪 Running Tests and Linting (via Nx)
+## 🧪 Start Development Server
 
-This project uses [Nx](https://nx.dev) as the monorepo toolchain and [pnpm](https://pnpm.io) as the package manager.
+This project uses [Turborepo](https://turborepo.com/) as the monorepo toolchain and [pnpm](https://pnpm.io) as the
+package manager.
 
 ### 🧰 Common Tasks
 
 All commands are executed via `pnpm` (not `npm` or `yarn`).
 
-### ✅ Install dependencies (only once):
+### ✅ Install dependencies
 
 ```bash
 pnpm install
 ```
 
-### 🧪 Run all unit tests:
+### 🚀 Start development server
 
 ```bash
-pnpm nx run-many --target=test --all
+pnpm run n8n:start
+```
+
+## Run initial owner setup
+
+```bash
+pnpm run n8n:owner:setup
+```
+
+You may now open [n8n](http://localhost:5678/) in your favorite Browser and sign in as owner with email `owner@n8n.local`
+and password `n8nOwner`.
+
+### Compile nodes in watch mode
+
+```bash
+pnpm run turbo:dev
+```
+
+This will compile all nodes and automatically reload or restart the application when changes occur in the source code files.
+
+### 🔍 Run linters
+
+```bash
+pnpm run turbo:lint
 ```
 
 Or for a specific project:
 
 ```bash
-pnpm nx test <project-name>
+pnpm run turbo:lint --filter=<package-name>
 ```
 
-### 🔍 Run all linters (eslint):
-
-```
-pnpm nx run-many --target=lint --all
-```
-
-Or for a specific project:
+### 🚀 Build a project (if applicable)
 
 ```bash
-pnpm nx lint <project-name>
+pnpm run turbo:build --filter=<package-name>
 ```
-
-### 🚀 Build a project (if applicable):
-
-```bash
-pnpm nx build <project-name>
-```
-
-### 🧠 See all available projects:
-
-```bash
-pnpm nx show projects
-```
-
-> Tip: You can also use nx graph for a dependency visualizer (requires graphviz).
 
 ---
 
@@ -123,21 +129,22 @@ pnpm nx show projects
 This project enforces commit message formatting using [`commitlint`](https://commitlint.js.org/).  
 All commits **must** follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
 
-### 💡 Format:
+### 💡 Format
 
-```
+```text
 <type>(<optional scope>): <short description> (#<issue-id>)
 ```
 
-### 📌 Examples:
+### 📌 Examples
 
 fix(clockify-enhanced): handle missing field error in Clockify node (#42)
 feat: add OAuth2 support for custom APIs (#128)
 refactor: simplify error handling in node loader (#77)
 
-> 🔗 **Note:** Every commit **must end with an Issue reference** in the format `(#<number>)` that links to the corresponding GitHub Issue.
+> 🔗 **Note:** Every commit **must end with an Issue reference** in the format `(#<number>)` that links to the
+> corresponding GitHub Issue.
 
-### Allowed `type` values:
+### Allowed `type` values
 
 - `feat`: Introduces a new feature
 - `fix`: Fixes a bug

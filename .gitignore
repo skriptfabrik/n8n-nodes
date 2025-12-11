@@ -1,46 +1,24 @@
-# compiled output
-dist
-tmp
-/out-tsc
+# Compiled output
+dist/
 
-# dependencies
-node_modules
+# Dependencies
+node_modules/
+
+# Dotenv environment variables file
+.env
 
 # IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
+# N8N
+.cache/n8n/
+.n8n/
 
 # System Files
 .DS_Store
 Thumbs.db
 
-# N8N
-/.n8n
-
-.nx/cache
-.nx/workspace-data
-/migrations.json
-.cursor/rules/nx-rules.mdc
-.github/instructions/nx.instructions.md
+# Turbo
+.turbo/

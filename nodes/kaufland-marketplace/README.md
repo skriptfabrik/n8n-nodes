@@ -3,7 +3,8 @@
 [![NPM Version](https://img.shields.io/npm/v/@skriptfabrik/n8n-nodes-kaufland-marketplace)](https://www.npmjs.com/package/@skriptfabrik/n8n-nodes-kaufland-marketplace)
 [![NPM Downloads](https://img.shields.io/npm/dt/@skriptfabrik/n8n-nodes-kaufland-marketplace)](https://www.npmjs.com/package/@skriptfabrik/n8n-nodes-kaufland-marketplace)
 
-> [Kaufland Marketplace](https://www.kauflandglobalmarketplace.com/en/) community nodes for your [n8n](https://n8n.io/) workflows
+> [Kaufland Marketplace](https://www.kauflandglobalmarketplace.com/en/) community nodes for your [n8n](https://n8n.io/)
+> workflows
 
 This is an n8n community node and credential. It lets you consume the [Kaufland Marketplace](https://www.kauflandglobalmarketplace.com/en/)
 API in your n8n workflows.
@@ -33,7 +34,8 @@ nodes documentation.
    **I understand the risks of installing unverified code from a public source**.
 5. Select **Install**.
 
-After installing the node, you can use it like any other node. n8n displays the node in search results in the **Nodes** panel.
+After installing the node, you can use it like any other node. n8n displays the node in search results in the **Nodes**
+panel.
 
 ## Operations
 

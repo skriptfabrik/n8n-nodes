@@ -1,0 +1,56 @@
+name: Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      node-package:
+        type: choice
+        description: Node package to publish
+        required: true
+        options:
+          - barcode
+          - channable
+          - clockify-enhanced
+          - cronhooks
+          - fulfillmenttools
+          - google-enhanced
+          - kaufland-marketplace
+          - moco
+          - otto-market
+          - sentry-io-enhanced
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  node-package:
+    name: Node Package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🏗 Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: 🏗 Install canvas deps
+        uses: awalsh128/cache-apt-pkgs-action@v1
+        with:
+          packages: libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
+          version: canvas-deps-1
+
+      - name: 🏗 Setup Turborepo
+        uses: ./.github/actions/setup-turborepo
+        with:
+          node-registry-url: https://registry.npmjs.org
+          node-version-file: .node-version
+
+      - name: 🏗 Setup git user
+        uses: fregante/setup-git-user@v2
+
+      - name: 🔨 Build, bump version, create changelog, publish package and create release
+        env:
+          GITHUB_TOKEN: ${{ secrets.RW_PAT }}
+        run: pnpm -s run release
+        working-directory: nodes/${{ github.event.inputs.node-package }}
