@@ -358,6 +358,9 @@ export const activityFields: INodeProperties[] = [
         name: 'companyId',
         type: 'options',
         default: '',
+        typeOptions: {
+          loadOptionsMethod: 'listCompanies',
+        },
         description:
           "Choose from the list, or specify an ID using an <a href='https://docs.n8n.io/code/expressions/'>expression</a>",
       },
@@ -374,6 +377,9 @@ export const activityFields: INodeProperties[] = [
         name: 'projectId',
         type: 'options',
         default: '',
+        typeOptions: {
+          loadOptionsMethod: 'listProjects',
+        },
         description:
           "Choose from the list, or specify an ID using an <a href='https://docs.n8n.io/code/expressions/'>expression</a>",
       },
@@ -389,6 +395,10 @@ export const activityFields: INodeProperties[] = [
         name: 'taskId',
         type: 'options',
         default: '',
+        typeOptions: {
+        loadOptionsMethod: 'listProjectTasks',
+          loadOptionsDependsOn: ['projectId'],
+        },
         description:
           "Choose from the list, or specify an ID using an <a href='https://docs.n8n.io/code/expressions/'>expression</a>",
       },
