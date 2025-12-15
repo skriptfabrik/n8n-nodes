@@ -1,3 +1,14 @@
+## 0.4.1 (2025-12-15)
+
+### 🩹 Fixes
+
+- add missing load options in moco activity:list description (N8N-34) ([ec99eb9](https://github.com/skriptfabrik/n8n-nodes/commit/ec99eb9))
+- drop duplicate sort by option in moco activity:list description (N8N-34) ([8cdcb3c](https://github.com/skriptfabrik/n8n-nodes/commit/8cdcb3c))
+
+### ❤️ Thank You
+
+- Marco Spengler @MaSpeng
+
 ## 0.4.0 (2025-11-24)
 
 ### 🚀 Features
