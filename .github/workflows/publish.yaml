@@ -52,5 +52,6 @@ jobs:
       - name: 🔨 Build, bump version, create changelog, publish package and create release
         env:
           GITHUB_TOKEN: ${{ secrets.RW_PAT }}
+          RELEASE_MODE: 'true'
         run: pnpm -s run release
         working-directory: nodes/${{ github.event.inputs.node-package }}
