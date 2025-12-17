@@ -1,6 +1,52 @@
 <!-- markdownlint-disable MD013 MD024 -->
 # Changelog
 
+## [moco-0.5.0](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.4.0...0.5.0)
+
+### 👷 Continuous Integration
+
+- add node package to release job name [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @Daniel Schröder [`74285d5`](https://github.com/skriptfabrik/n8n-nodes/commit/74285d56bf1ab15971aef705ce8cf2670223b209)
+- add RELEASE_MODE env to release job [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @Daniel Schröder [`18e419f`](https://github.com/skriptfabrik/n8n-nodes/commit/18e419f97a378a23f0c9e069de49a4313cf1e1ea)
+
+### ✨ New Features
+
+- migrate from Nx to Turbo [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @Daniel Schröder [`b0e1cd1`](https://github.com/skriptfabrik/n8n-nodes/commit/b0e1cd108f0d75e82bba70a828dc0947e2bb07d3)
+
+### 🐛 Bug Fixes
+
+- **moco:** bump n8n-workflow version to 1.119.1 @dependabot[bot] [`259c6cc`](https://github.com/skriptfabrik/n8n-nodes/commit/259c6ccbbea2e806cb2d0dd64ee25596297803f9)
+- **moco:** bump n8n-workflow version to 1.117.1 @dependabot[bot] [`93ebc7b`](https://github.com/skriptfabrik/n8n-nodes/commit/93ebc7bca90c6a41178bbaa5e4fd1b0cfc037dd0)
+- **moco:** bump n8n-nodes-base version to 1.120.1 @dependabot[bot] [`9f11d35`](https://github.com/skriptfabrik/n8n-nodes/commit/9f11d355a3ed485d1dd7867944af572a85a69462)
+- **moco:** bump n8n-nodes-base version to 1.118.2 @dependabot[bot] [`28b7efc`](https://github.com/skriptfabrik/n8n-nodes/commit/28b7efc6c2f427d379ab9aa1510fa41167ec058c)
+- add missing load options in moco activity:list description [N8N-34](https://skriptfabrik.atlassian.net/browse/N8N-34) @Marco Spengler [`ec99eb9`](https://github.com/skriptfabrik/n8n-nodes/commit/ec99eb9d204bf0d415f805e4e0bcda212557a5ca)
+- drop duplicate sort by option in moco activity:list description [N8N-34](https://skriptfabrik.atlassian.net/browse/N8N-34) @Marco Spengler [`8cdcb3c`](https://github.com/skriptfabrik/n8n-nodes/commit/8cdcb3c5265521274b178168894d2e895e4c10b7)
+
+### 🔧 Maintenance And Housekeeping
+
+- bump n8n from 2.0.2 to 2.0.3 @dependabot[bot] [`786d571`](https://github.com/skriptfabrik/n8n-nodes/commit/786d57118d9c6484a14e20807888a152cd3df18e)
+- bump nx from 22.1.1 to 22.1.3 @dependabot[bot] [`1a46fd3`](https://github.com/skriptfabrik/n8n-nodes/commit/1a46fd3e93bb2c979256d6bf1546bc894792ec0f)
+- bump n8n from 1.120.4 to 1.122.5 @dependabot[bot] [`fa19740`](https://github.com/skriptfabrik/n8n-nodes/commit/fa1974012c7d4b684def035752818dc87075ab0f)
+- bump n8n from 1.120.3 to 1.120.4 @dependabot[bot] [`14fe183`](https://github.com/skriptfabrik/n8n-nodes/commit/14fe183cb3e61a354ae4ac4cbfd15382f03a52d5)
+- bump n8n-nodes-base version to 1.120.1 @dependabot[bot] [`263ab7c`](https://github.com/skriptfabrik/n8n-nodes/commit/263ab7c3ca3aee9b54da48647d39909230913098)
+- bump n8n-nodes-base version to 1.118.2 @dependabot[bot] [`523d71f`](https://github.com/skriptfabrik/n8n-nodes/commit/523d71f523b0358be847e50314d3947949b4c0b1)
+- bump nx dependencies to 22.1.1 @dependabot[bot] [`22fc14e`](https://github.com/skriptfabrik/n8n-nodes/commit/22fc14e7e4f47082879e482ef064ac0bdb9a2545)
+- bump verdaccio from 6.2.1 to 6.2.2 @dependabot[bot] [`1ca3a34`](https://github.com/skriptfabrik/n8n-nodes/commit/1ca3a346cb162dec0f20d1ec703f238d3e23755e)
+- bump nx dependencies to 22.1.3 @dependabot[bot] [`11918e6`](https://github.com/skriptfabrik/n8n-nodes/commit/11918e6b6a25f013f76eb91fc7a8dcfa5ff31374)
+- bump @swc/core from 1.15.2 to 1.15.3 @dependabot[bot] [`3fceef0`](https://github.com/skriptfabrik/n8n-nodes/commit/3fceef025c96b5802569b735be827aac256eb5e3)
+- bump verdaccio from 6.2.2 to 6.2.4 @dependabot[bot] [`edf6b53`](https://github.com/skriptfabrik/n8n-nodes/commit/edf6b53e7284e70c31cb1b4d0b5348307b941da4)
+- bump nx from 22.0.4 to 22.1.1 @dependabot[bot] [`7035974`](https://github.com/skriptfabrik/n8n-nodes/commit/703597428594ca86a01963cce74189e2f1de610c)
+- bump @commitlint/config-conventional from 20.0.0 to 20.2.0 @dependabot[bot] [`161d338`](https://github.com/skriptfabrik/n8n-nodes/commit/161d338db42c04d1b7081f4b527ab7b6f90d6e7a)
+- bump n8n-workflow version to 1.119.1 @dependabot[bot] [`b5fff45`](https://github.com/skriptfabrik/n8n-nodes/commit/b5fff45547d19883f5c1d240ac42759c7b213384)
+- bump @types/node version to 22.19.1 @dependabot[bot] [`230d56e`](https://github.com/skriptfabrik/n8n-nodes/commit/230d56e9b98408a5c7e3dcf3a13163ab266824c4)
+- bump @types/node version to 22.19.1 @dependabot[bot] [`a2177f0`](https://github.com/skriptfabrik/n8n-nodes/commit/a2177f08ce3dad01b1aae1ef44295047cfbae080)
+- configure release-it to skip npm checks [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @Daniel Schröder [`99e7e31`](https://github.com/skriptfabrik/n8n-nodes/commit/99e7e315be0233deefe95a62158dac515d26c8aa)
+- bump actions/checkout from 5 to 6 @dependabot[bot] [`6acc72a`](https://github.com/skriptfabrik/n8n-nodes/commit/6acc72a0903bb091fcc3fd6118c5cc824a486106)
+- bump ts-jest from 29.4.5 to 29.4.6 @dependabot[bot] [`a41296d`](https://github.com/skriptfabrik/n8n-nodes/commit/a41296daf0e43262cab5a6c6e870b779311544ef)
+- bump pnpm from 10.20.0 to 10.23.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`a12a6fa`](https://github.com/skriptfabrik/n8n-nodes/commit/a12a6fa1b0254f6234c212a7714cf9f39dc3c83d)
+- bump actions/setup-node from v4 to v6 [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @Daniel Schröder [`24a43e3`](https://github.com/skriptfabrik/n8n-nodes/commit/24a43e355c356d94b5c02a70137643573f445ab0)
+- bump n8n-workflow version to 1.117.1 @dependabot[bot] [`97e50aa`](https://github.com/skriptfabrik/n8n-nodes/commit/97e50aaa111a167edb6bf2fa4e234df9edcf067d)
+- approve dependency builds [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`a7fffb3`](https://github.com/skriptfabrik/n8n-nodes/commit/a7fffb38e1591560fccfee80a7b8c040440c96ce)
+
 ## [moco-0.4.0](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.3.41...moco-0.4.0)
 
 ### 🔀 Merged Pull Requests
@@ -503,7 +549,6 @@
 
 ### 🔧 Maintenance And Housekeeping
 
-### 🚀 Features
 - bump n8n from 1.84.1 to 1.85.4 @dependabot[bot] [`17b724f`](https://github.com/skriptfabrik/n8n-nodes/commit/17b724f152994ab3a139f9efe26999bdc6bd5f2a)
 - bump verdaccio from 6.0.5 to 6.1.1 @dependabot[bot] [`7a54f51`](https://github.com/skriptfabrik/n8n-nodes/commit/7a54f51aa46a303dbff93d93a329d49db2255aec)
 - bump @swc/core from 1.11.11 to 1.11.13 @dependabot[bot] [`06940e5`](https://github.com/skriptfabrik/n8n-nodes/commit/06940e52b8e458d91630ab6f0d6421694adb6be9)
@@ -513,13 +558,10 @@
 - bump n8n-nodes-base version to 1.84.0 @dependabot[bot] [`e083f27`](https://github.com/skriptfabrik/n8n-nodes/commit/e083f2762c21636e0a33cad4978b28170f0f0848)
 - bump n8n-workflow version to 1.83.0 @dependabot[bot] [`f8c0bfc`](https://github.com/skriptfabrik/n8n-nodes/commit/f8c0bfc5bae07a5fe5a208d744f2e323ad752fa3)
 
-- **moco:** add complete contacts resource implementation ([#1035](https://github.com/skriptfabrik/n8n-nodes/pull/1035))
 ## [moco-0.3.36](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.3.35...moco-0.3.36)
 
-### 🩹 Fixes
 ### 🐛 Bug Fixes
 
-- **moco:** disable unsupported company filter for contacts list ([#1035](https://github.com/skriptfabrik/n8n-nodes/pull/1035))
 - **moco:** bump n8n-workflow version to 1.82.0 @dependabot[bot] [`83e09ee`](https://github.com/skriptfabrik/n8n-nodes/commit/83e09ee2639e76d01d3fcf9f6efc4b97b9e96ac3)
 
 ### 🔧 Maintenance And Housekeeping
