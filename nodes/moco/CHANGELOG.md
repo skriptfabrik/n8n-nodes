@@ -1,7 +1,18 @@
 <!-- markdownlint-disable MD013 MD024 -->
 # Changelog
 
-## [moco-0.5.0](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.4.0...0.5.0)
+## [moco-0.5.1](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.5.0...0.5.1)
+
+### 👷 Continuous Integration
+
+- use app token in publish workflow [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @Daniel Schröder [`be1ef15`](https://github.com/skriptfabrik/n8n-nodes/commit/be1ef15311dc90bd4a45952ea0030be617174b0a)
+
+### 🔧 Maintenance And Housekeeping
+
+- configure GitHub release name [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @Daniel Schröder [`7c1f474`](https://github.com/skriptfabrik/n8n-nodes/commit/7c1f474257075ff2725dfa3b1652df2a5360ecaf)
+- remove .npmignore files [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @Daniel Schröder [`e3af091`](https://github.com/skriptfabrik/n8n-nodes/commit/e3af091fcca4cb5cb2b28cd39f5026f6605adf3f)
+
+## [moco-0.5.0](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.4.0...moco-0.5.0)
 
 ### 👷 Continuous Integration
 
