@@ -9,7 +9,8 @@
     "requireCommits": true
   },
   "github": {
-    "release": true
+    "release": true,
+    "releaseName": "kaufland-marketplace ${version}"
   },
   "hooks": {
     "before:init": "turbo build",

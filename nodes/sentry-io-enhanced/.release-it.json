@@ -9,7 +9,8 @@
     "requireCommits": true
   },
   "github": {
-    "release": true
+    "release": true,
+    "releaseName": "sentry-io-enhanced ${version}"
   },
   "hooks": {
     "before:init": "turbo build",
