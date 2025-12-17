@@ -29,10 +29,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: 🏗 Create app token
+        uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ vars.GH_ACTIONS_BOT_APP_ID }}
+          private-key: ${{ secrets.GH_ACTIONS_BOT_PRIVATE_KEY }}
+
       - name: 🏗 Checkout repository
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: 🏗 Setup git user
+        uses: fregante/setup-git-user@v2
 
       - name: 🏗 Install canvas deps
         uses: awalsh128/cache-apt-pkgs-action@v1
@@ -45,9 +56,6 @@ jobs:
         with:
           node-registry-url: https://registry.npmjs.org
           node-version-file: .node-version
-
-      - name: 🏗 Setup git user
-        uses: fregante/setup-git-user@v2
 
       - name: 🔨 Build, bump version, create changelog, publish package and create release
         env:
