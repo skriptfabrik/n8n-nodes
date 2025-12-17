@@ -14,5 +14,8 @@
   "hooks": {
     "before:init": "turbo build",
     "after:bump": "auto-changelog --package"
+  },
+  "npm": {
+    "skipChecks": true
   }
 }
