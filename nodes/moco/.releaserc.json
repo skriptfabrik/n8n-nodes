@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json.schemastore.org/semantic-release",
+  "tagFormat": "moco-${version}",
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "conventionalcommits",
+        "releaseRules": [
+          { "breaking": true, "scope": false, "release": "major" },
+          { "breaking": true, "scope": "*", "release": false },
+          { "breaking": true, "scope": "moco", "release": "major" },
+          { "revert": true, "scope": false, "release": "patch" },
+          { "revert": true, "scope": "*", "release": false },
+          { "revert": true, "scope": "moco", "release": "patch" },
+          { "type": "feat", "scope": false, "release": "minor" },
+          { "type": "feat", "scope": "*", "release": false },
+          { "type": "feat", "scope": "moco", "release": "minor" },
+          { "type": "fix", "scope": false, "release": "patch" },
+          { "type": "fix", "scope": "*", "release": false },
+          { "type": "fix", "scope": "moco", "release": "patch" },
+          { "type": "perf", "scope": false, "release": "patch" },
+          { "type": "perf", "scope": "*", "release": false },
+          { "type": "perf", "scope": "moco", "release": "patch" }
+        ]
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "conventionalcommits",
+        "presetConfig": {
+          "issuePrefixes": ["N8N-"],
+          "issueUrlFormat": "https://skriptfabrik.atlassian.net/browse/{{prefix}}{{id}}",
+          "types": [
+            {
+              "type": "breaking",
+              "section": "💥 Breaking Changes",
+              "hidden": false
+            },
+            {
+              "type": "ci",
+              "section": "👷 Continuous Integration",
+              "hidden": true
+            },
+            {
+              "type": "feat",
+              "section": "✨ New Features",
+              "hidden": false
+            },
+            {
+              "type": "fix",
+              "section": "🐛 Bug Fixes",
+              "hidden": false
+            },
+            {
+              "type": "chore",
+              "section": "🔨 Maintenance and Housekeeping",
+              "hidden": true
+            },
+            {
+              "type": "docs",
+              "section": "📝 Documentation Changes",
+              "hidden": true
+            },
+            {
+              "type": "refactor",
+              "section": "♻️ Refactorings",
+              "hidden": true
+            },
+            {
+              "type": "perf",
+              "section": "🚀 Performance Improvements",
+              "hidden": false
+            },
+            {
+              "type": "style",
+              "section": "🎨 Improvements to Structure and Style",
+              "hidden": true
+            },
+            {
+              "type": "test",
+              "section": "✅ Changes to Test Assets",
+              "hidden": true
+            }
+          ]
+        }
+      }
+    ],
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogTitle": "# Changelog"
+      }
+    ]
+  ]
+}
