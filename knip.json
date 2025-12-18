@@ -2,7 +2,12 @@
   "$schema": "https://unpkg.com/knip@5/schema.json",
   "workspaces": {
     ".": {
-      "entry": ["tools/scripts/*.mjs"]
+      "entry": ["tools/scripts/*.mjs"],
+      "ignore": ["nodes/*/release.config.mjs"],
+      "ignoreDependencies": [
+        "@semantic-release/changelog",
+        "@semantic-release/exec"
+      ]
     },
     "nodes/*": {
       "entry": ["**/*.{credentials,node}.ts"],

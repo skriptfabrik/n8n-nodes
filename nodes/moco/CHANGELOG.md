@@ -4,23 +4,23 @@
 
 ### 👷 Continuous Integration
 
-- use app token in publish workflow [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @Daniel Schröder [`be1ef15`](https://github.com/skriptfabrik/n8n-nodes/commit/be1ef15311dc90bd4a45952ea0030be617174b0a)
+- use app token in publish workflow [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @schroedan [`be1ef15`](https://github.com/skriptfabrik/n8n-nodes/commit/be1ef15311dc90bd4a45952ea0030be617174b0a)
 
 ### 🔧 Maintenance And Housekeeping
 
-- configure GitHub release name [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @Daniel Schröder [`7c1f474`](https://github.com/skriptfabrik/n8n-nodes/commit/7c1f474257075ff2725dfa3b1652df2a5360ecaf)
-- remove .npmignore files [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @Daniel Schröder [`e3af091`](https://github.com/skriptfabrik/n8n-nodes/commit/e3af091fcca4cb5cb2b28cd39f5026f6605adf3f)
+- configure GitHub release name [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @schroedan [`7c1f474`](https://github.com/skriptfabrik/n8n-nodes/commit/7c1f474257075ff2725dfa3b1652df2a5360ecaf)
+- remove .npmignore files [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @schroedan [`e3af091`](https://github.com/skriptfabrik/n8n-nodes/commit/e3af091fcca4cb5cb2b28cd39f5026f6605adf3f)
 
 ## [moco-0.5.0](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.4.0...moco-0.5.0)
 
 ### 👷 Continuous Integration
 
-- add node package to release job name [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @Daniel Schröder [`74285d5`](https://github.com/skriptfabrik/n8n-nodes/commit/74285d56bf1ab15971aef705ce8cf2670223b209)
-- add RELEASE_MODE env to release job [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @Daniel Schröder [`18e419f`](https://github.com/skriptfabrik/n8n-nodes/commit/18e419f97a378a23f0c9e069de49a4313cf1e1ea)
+- add node package to release job name [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @schroedan [`74285d5`](https://github.com/skriptfabrik/n8n-nodes/commit/74285d56bf1ab15971aef705ce8cf2670223b209)
+- add RELEASE_MODE env to release job [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @schroedan [`18e419f`](https://github.com/skriptfabrik/n8n-nodes/commit/18e419f97a378a23f0c9e069de49a4313cf1e1ea)
 
 ### ✨ New Features
 
-- migrate from Nx to Turbo [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @Daniel Schröder [`b0e1cd1`](https://github.com/skriptfabrik/n8n-nodes/commit/b0e1cd108f0d75e82bba70a828dc0947e2bb07d3)
+- migrate from Nx to Turbo [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @schroedan [`b0e1cd1`](https://github.com/skriptfabrik/n8n-nodes/commit/b0e1cd108f0d75e82bba70a828dc0947e2bb07d3)
 
 ### 🐛 Bug Fixes
 
@@ -28,8 +28,8 @@
 - **moco:** bump n8n-workflow version to 1.117.1 @dependabot[bot] [`93ebc7b`](https://github.com/skriptfabrik/n8n-nodes/commit/93ebc7bca90c6a41178bbaa5e4fd1b0cfc037dd0)
 - **moco:** bump n8n-nodes-base version to 1.120.1 @dependabot[bot] [`9f11d35`](https://github.com/skriptfabrik/n8n-nodes/commit/9f11d355a3ed485d1dd7867944af572a85a69462)
 - **moco:** bump n8n-nodes-base version to 1.118.2 @dependabot[bot] [`28b7efc`](https://github.com/skriptfabrik/n8n-nodes/commit/28b7efc6c2f427d379ab9aa1510fa41167ec058c)
-- add missing load options in moco activity:list description [N8N-34](https://skriptfabrik.atlassian.net/browse/N8N-34) @Marco Spengler [`ec99eb9`](https://github.com/skriptfabrik/n8n-nodes/commit/ec99eb9d204bf0d415f805e4e0bcda212557a5ca)
-- drop duplicate sort by option in moco activity:list description [N8N-34](https://skriptfabrik.atlassian.net/browse/N8N-34) @Marco Spengler [`8cdcb3c`](https://github.com/skriptfabrik/n8n-nodes/commit/8cdcb3c5265521274b178168894d2e895e4c10b7)
+- add missing load options in moco activity:list description [N8N-34](https://skriptfabrik.atlassian.net/browse/N8N-34) @MaSpeng [`ec99eb9`](https://github.com/skriptfabrik/n8n-nodes/commit/ec99eb9d204bf0d415f805e4e0bcda212557a5ca)
+- drop duplicate sort by option in moco activity:list description [N8N-34](https://skriptfabrik.atlassian.net/browse/N8N-34) @MaSpeng [`8cdcb3c`](https://github.com/skriptfabrik/n8n-nodes/commit/8cdcb3c5265521274b178168894d2e895e4c10b7)
 
 ### 🔧 Maintenance And Housekeeping
 
@@ -49,13 +49,13 @@
 - bump n8n-workflow version to 1.119.1 @dependabot[bot] [`b5fff45`](https://github.com/skriptfabrik/n8n-nodes/commit/b5fff45547d19883f5c1d240ac42759c7b213384)
 - bump @types/node version to 22.19.1 @dependabot[bot] [`230d56e`](https://github.com/skriptfabrik/n8n-nodes/commit/230d56e9b98408a5c7e3dcf3a13163ab266824c4)
 - bump @types/node version to 22.19.1 @dependabot[bot] [`a2177f0`](https://github.com/skriptfabrik/n8n-nodes/commit/a2177f08ce3dad01b1aae1ef44295047cfbae080)
-- configure release-it to skip npm checks [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @Daniel Schröder [`99e7e31`](https://github.com/skriptfabrik/n8n-nodes/commit/99e7e315be0233deefe95a62158dac515d26c8aa)
+- configure release-it to skip npm checks [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @schroedan [`99e7e31`](https://github.com/skriptfabrik/n8n-nodes/commit/99e7e315be0233deefe95a62158dac515d26c8aa)
 - bump actions/checkout from 5 to 6 @dependabot[bot] [`6acc72a`](https://github.com/skriptfabrik/n8n-nodes/commit/6acc72a0903bb091fcc3fd6118c5cc824a486106)
 - bump ts-jest from 29.4.5 to 29.4.6 @dependabot[bot] [`a41296d`](https://github.com/skriptfabrik/n8n-nodes/commit/a41296daf0e43262cab5a6c6e870b779311544ef)
-- bump pnpm from 10.20.0 to 10.23.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`a12a6fa`](https://github.com/skriptfabrik/n8n-nodes/commit/a12a6fa1b0254f6234c212a7714cf9f39dc3c83d)
-- bump actions/setup-node from v4 to v6 [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @Daniel Schröder [`24a43e3`](https://github.com/skriptfabrik/n8n-nodes/commit/24a43e355c356d94b5c02a70137643573f445ab0)
+- bump pnpm from 10.20.0 to 10.23.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`a12a6fa`](https://github.com/skriptfabrik/n8n-nodes/commit/a12a6fa1b0254f6234c212a7714cf9f39dc3c83d)
+- bump actions/setup-node from v4 to v6 [N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35) @schroedan [`24a43e3`](https://github.com/skriptfabrik/n8n-nodes/commit/24a43e355c356d94b5c02a70137643573f445ab0)
 - bump n8n-workflow version to 1.117.1 @dependabot[bot] [`97e50aa`](https://github.com/skriptfabrik/n8n-nodes/commit/97e50aaa111a167edb6bf2fa4e234df9edcf067d)
-- approve dependency builds [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`a7fffb3`](https://github.com/skriptfabrik/n8n-nodes/commit/a7fffb38e1591560fccfee80a7b8c040440c96ce)
+- approve dependency builds [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`a7fffb3`](https://github.com/skriptfabrik/n8n-nodes/commit/a7fffb38e1591560fccfee80a7b8c040440c96ce)
 
 ## [moco-0.4.0](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.3.41...moco-0.4.0)
 
@@ -67,15 +67,15 @@
 
 ### 👷 Continuous Integration
 
-- update input GitHub workflow descriptions for manual invocation [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`7e23c85`](https://github.com/skriptfabrik/n8n-nodes/commit/7e23c850eda025a57f7dfbb115622a173bbf2d3a)
-- update nx dependency update workflow [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`4bbefca`](https://github.com/skriptfabrik/n8n-nodes/commit/4bbefca199f002fc7b18c60f3ec43b02576dffea)
-- update nx dependency update workflow [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`c7ab8f4`](https://github.com/skriptfabrik/n8n-nodes/commit/c7ab8f4cb681e7b3293d0629c204723b891c977b)
-- update n8n dependency update workflow [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`25cef4b`](https://github.com/skriptfabrik/n8n-nodes/commit/25cef4bf8261f164d2e1c19bae5d126f9eae9c1a)
-- update nx dependency update workflow [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`ea7e630`](https://github.com/skriptfabrik/n8n-nodes/commit/ea7e630ecba76b8db4e939a621f4130ac7d8ab55)
-- update `devEngines` runtime version when updating `engine` version [N8N-33](https://skriptfabrik.atlassian.net/browse/N8N-33) @Marco Spengler [`56aa885`](https://github.com/skriptfabrik/n8n-nodes/commit/56aa88519ee13881d4cd56ad07712b5125425aae)
-- revert - drop deprecated options from git-auto-commit-action [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`34a33e5`](https://github.com/skriptfabrik/n8n-nodes/commit/34a33e5978cbfa5e4429e3fb4fa05aadf5142c92)
-- drop deprecated options from git-auto-commit-action [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`40552ac`](https://github.com/skriptfabrik/n8n-nodes/commit/40552ac6fb2bb1a9edb241437639ca40dcf49b89)
-- update n8n dependency update workflow [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`02ac7ad`](https://github.com/skriptfabrik/n8n-nodes/commit/02ac7ad18605ede7148fcce3c877270bfb39682a)
+- update input GitHub workflow descriptions for manual invocation [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`7e23c85`](https://github.com/skriptfabrik/n8n-nodes/commit/7e23c850eda025a57f7dfbb115622a173bbf2d3a)
+- update nx dependency update workflow [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`4bbefca`](https://github.com/skriptfabrik/n8n-nodes/commit/4bbefca199f002fc7b18c60f3ec43b02576dffea)
+- update nx dependency update workflow [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`c7ab8f4`](https://github.com/skriptfabrik/n8n-nodes/commit/c7ab8f4cb681e7b3293d0629c204723b891c977b)
+- update n8n dependency update workflow [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`25cef4b`](https://github.com/skriptfabrik/n8n-nodes/commit/25cef4bf8261f164d2e1c19bae5d126f9eae9c1a)
+- update nx dependency update workflow [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`ea7e630`](https://github.com/skriptfabrik/n8n-nodes/commit/ea7e630ecba76b8db4e939a621f4130ac7d8ab55)
+- update `devEngines` runtime version when updating `engine` version [N8N-33](https://skriptfabrik.atlassian.net/browse/N8N-33) @MaSpeng [`56aa885`](https://github.com/skriptfabrik/n8n-nodes/commit/56aa88519ee13881d4cd56ad07712b5125425aae)
+- revert - drop deprecated options from git-auto-commit-action [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`34a33e5`](https://github.com/skriptfabrik/n8n-nodes/commit/34a33e5978cbfa5e4429e3fb4fa05aadf5142c92)
+- drop deprecated options from git-auto-commit-action [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`40552ac`](https://github.com/skriptfabrik/n8n-nodes/commit/40552ac6fb2bb1a9edb241437639ca40dcf49b89)
+- update n8n dependency update workflow [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`02ac7ad`](https://github.com/skriptfabrik/n8n-nodes/commit/02ac7ad18605ede7148fcce3c877270bfb39682a)
 
 ### 🐛 Bug Fixes
 
@@ -122,7 +122,7 @@
 - bump n8n from 1.112.6 to 1.113.3 @dependabot[bot] [`ef491e8`](https://github.com/skriptfabrik/n8n-nodes/commit/ef491e8915a2dd69794b286dfd1f3d8cb0939701)
 - bump n8n from 1.109.1 to 1.110.1 @dependabot[bot] [`fe962f0`](https://github.com/skriptfabrik/n8n-nodes/commit/fe962f082e9731d5892f4a8536e4cf3968990ab8)
 - bump n8n from 1.115.2 to 1.115.3 @dependabot[bot] [`25253dc`](https://github.com/skriptfabrik/n8n-nodes/commit/25253dcd6a833511d01f3a43db177c740de1e4d7)
-- Revert "bump n8n from 1.109.1 to 1.109.2" [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`71576e0`](https://github.com/skriptfabrik/n8n-nodes/commit/71576e051f544c518ec7df18c9f2060e10ad6f6e)
+- Revert "bump n8n from 1.109.1 to 1.109.2" [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`71576e0`](https://github.com/skriptfabrik/n8n-nodes/commit/71576e051f544c518ec7df18c9f2060e10ad6f6e)
 - bump n8n from 1.109.1 to 1.109.2 @dependabot[bot] [`7e0b05b`](https://github.com/skriptfabrik/n8n-nodes/commit/7e0b05b04cccccc5566fc659bb3ac77b9cec32d5)
 - bump nx dependencies to 21.6.3 @dependabot[bot] [`573a2da`](https://github.com/skriptfabrik/n8n-nodes/commit/573a2dada0fc58b7f99ec87628b8b4fa8a7617e4)
 - bump nx dependencies to 21.5.1 @dependabot[bot] [`2e83b11`](https://github.com/skriptfabrik/n8n-nodes/commit/2e83b11cf0cd2ab69149a91cd1856667260d6fff)
@@ -133,7 +133,7 @@
 - bump n8n from 1.113.3 to 1.114.4 @dependabot[bot] [`6fa8d9d`](https://github.com/skriptfabrik/n8n-nodes/commit/6fa8d9d36b90cf7b5ac9b7271d814e2b7a1dd9b1)
 - bump n8n-nodes-base version to 1.109.0 @dependabot[bot] [`dc4c45a`](https://github.com/skriptfabrik/n8n-nodes/commit/dc4c45a2da2ddf7dbb509079d1fddcd0b6d6347d)
 - bump n8n-nodes-base version to 1.103.3 @MaSpeng [`04b64af`](https://github.com/skriptfabrik/n8n-nodes/commit/04b64af79886dd3b0123579924a76ba7e8164f64)
-- Revert "bump n8n-nodes-base version to 1.107.0" [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`77d50e6`](https://github.com/skriptfabrik/n8n-nodes/commit/77d50e6a26765efbfb458215c28db6f83169cc21)
+- Revert "bump n8n-nodes-base version to 1.107.0" [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`77d50e6`](https://github.com/skriptfabrik/n8n-nodes/commit/77d50e6a26765efbfb458215c28db6f83169cc21)
 - bump n8n-nodes-base version to 1.107.0 @dependabot[bot] [`95ab078`](https://github.com/skriptfabrik/n8n-nodes/commit/95ab078ac4bf18d57c8c9eae2a05ee634775611d)
 - bump n8n-nodes-base version to 1.117.1 @dependabot[bot] [`bc70ed3`](https://github.com/skriptfabrik/n8n-nodes/commit/bc70ed3cf6a0245ea01e0457d6810733c3a1ef58)
 - bump n8n-nodes-base version to 1.108.0 @dependabot[bot] [`733a995`](https://github.com/skriptfabrik/n8n-nodes/commit/733a995bd32e76c643b01b4e3880d6a11a5bb982)
@@ -142,7 +142,7 @@
 - bump n8n-nodes-base version to 1.111.2 @dependabot[bot] [`ac7c21c`](https://github.com/skriptfabrik/n8n-nodes/commit/ac7c21c948754d1563c7fec1ef9071d21d3c2dd8)
 - bump n8n-nodes-base version to 1.113.2 @dependabot[bot] [`19419b7`](https://github.com/skriptfabrik/n8n-nodes/commit/19419b7f639db3ee7e4527753d2f74578123c471)
 - bump n8n from 1.108.1 to 1.109.1 @dependabot[bot] [`5840593`](https://github.com/skriptfabrik/n8n-nodes/commit/5840593ff18bbb68c30aef077b1ca618ec0eab66)
-- bump nx dependencies to 21.3.11 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`d1df965`](https://github.com/skriptfabrik/n8n-nodes/commit/d1df9653cc28338161acff3e23104f4d3bbf25d1)
+- bump nx dependencies to 21.3.11 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`d1df965`](https://github.com/skriptfabrik/n8n-nodes/commit/d1df9653cc28338161acff3e23104f4d3bbf25d1)
 - bump nx from 22.0.2 to 22.0.4 @dependabot[bot] [`c4ff815`](https://github.com/skriptfabrik/n8n-nodes/commit/c4ff815c6daae04aa1bc3fc955ca2afb7aa6bab3)
 - bump n8n from 1.105.4 to 1.106.2 @dependabot[bot] [`d0188a4`](https://github.com/skriptfabrik/n8n-nodes/commit/d0188a462f7237d959771ba1b057cb4d6b9225a7)
 - bump jest from 30.1.3 to 30.2.0 @dependabot[bot] [`ac63f85`](https://github.com/skriptfabrik/n8n-nodes/commit/ac63f8559f42fc6eb5f3b7b0a008bf3326dccf0d)
@@ -165,9 +165,9 @@
 - bump nx dependencies to 22.0.1 @dependabot[bot] [`c63df2d`](https://github.com/skriptfabrik/n8n-nodes/commit/c63df2de1d70c389582cbb873b290e17b229b141)
 - bump n8n-nodes-base version to 1.116.0 @dependabot[bot] [`d03c860`](https://github.com/skriptfabrik/n8n-nodes/commit/d03c8608c8d89aeb58fab5caef87c2dacedf522f)
 - bump nx dependencies to 21.6.4 @dependabot[bot] [`458bf44`](https://github.com/skriptfabrik/n8n-nodes/commit/458bf44a291f94e0355afbf6b6bc45dc0cd07393)
-- bump nx dependencies to 21.4.1 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`03107aa`](https://github.com/skriptfabrik/n8n-nodes/commit/03107aae0b8bdb1aec8ce4241a4ee23bd0c10102)
+- bump nx dependencies to 21.4.1 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`03107aa`](https://github.com/skriptfabrik/n8n-nodes/commit/03107aae0b8bdb1aec8ce4241a4ee23bd0c10102)
 - bump nx dependencies to 22.0.2 @dependabot[bot] [`a79a02a`](https://github.com/skriptfabrik/n8n-nodes/commit/a79a02af1bb6d90790c547170c25e5a5e6120b38)
-- bump nx dependencies to 21.4.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`6c10eaa`](https://github.com/skriptfabrik/n8n-nodes/commit/6c10eaab9dba4df844a2945cffd25f205b91a377)
+- bump nx dependencies to 21.4.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`6c10eaa`](https://github.com/skriptfabrik/n8n-nodes/commit/6c10eaab9dba4df844a2945cffd25f205b91a377)
 - bump eslint from 9.38.0 to 9.39.0 @dependabot[bot] [`d23c5fe`](https://github.com/skriptfabrik/n8n-nodes/commit/d23c5fe367b5296de78586db7662cf7a7bbdde97)
 - bump n8n from 1.114.4 to 1.115.2 @dependabot[bot] [`cb1ff49`](https://github.com/skriptfabrik/n8n-nodes/commit/cb1ff49c7a2b8a8c8537f994319f78930d55a4f8)
 - bump n8n-nodes-base version to 1.115.0 @dependabot[bot] [`afde349`](https://github.com/skriptfabrik/n8n-nodes/commit/afde349b36edc5944251cc0a36a4f914ef2c10bb)
@@ -214,7 +214,7 @@
 - bump typescript-eslint from 8.39.1 to 8.40.0 @dependabot[bot] [`d8d4d88`](https://github.com/skriptfabrik/n8n-nodes/commit/d8d4d880964fba18958b623fa137cd0f360b1c22)
 - bump typescript-eslint from 8.44.1 to 8.45.0 @dependabot[bot] [`8a6f67a`](https://github.com/skriptfabrik/n8n-nodes/commit/8a6f67a73bb0bf1deb916e8d12b30e8c0f33d775)
 - bump @types/node version to 22.18.1 @dependabot[bot] [`24f44c8`](https://github.com/skriptfabrik/n8n-nodes/commit/24f44c81fd2242c7226c406f31b29f58b0a578e0)
-- Revert "bump @types/node version to 22.18.1" [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`448ab10`](https://github.com/skriptfabrik/n8n-nodes/commit/448ab10ee78a311b6c6303ae0e67fb0e3f99d865)
+- Revert "bump @types/node version to 22.18.1" [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`448ab10`](https://github.com/skriptfabrik/n8n-nodes/commit/448ab10ee78a311b6c6303ae0e67fb0e3f99d865)
 - bump @types/node version to 22.18.1 @dependabot[bot] [`1bb6836`](https://github.com/skriptfabrik/n8n-nodes/commit/1bb6836806443b13d202a173ac7de08fe62f1b82)
 - bump typescript-eslint from 8.39.0 to 8.39.1 @dependabot[bot] [`406e37d`](https://github.com/skriptfabrik/n8n-nodes/commit/406e37df5ac27d8245998e33c80e83adf23d8a74)
 - bump typescript-eslint from 8.41.0 to 8.42.0 @dependabot[bot] [`2922522`](https://github.com/skriptfabrik/n8n-nodes/commit/292252284568f07f2b8f83a7ae2d12b4c0e69125)
@@ -269,12 +269,12 @@
 - bump jest-environment-node from 30.0.4 to 30.0.5 @dependabot[bot] [`643da66`](https://github.com/skriptfabrik/n8n-nodes/commit/643da66ce26f1ee44fddabc4387909dc4688098c)
 - bump @eslint/js from 9.31.0 to 9.33.0 @dependabot[bot] [`7f73359`](https://github.com/skriptfabrik/n8n-nodes/commit/7f733597c637d6443507440e38d0cd51329c4735)
 - bump @eslint/compat from 1.3.1 to 1.3.2 @dependabot[bot] [`9e91398`](https://github.com/skriptfabrik/n8n-nodes/commit/9e913987afc331489de8e06afc4648985ab7e565)
-- add `devEngines` configuration [N8N-33](https://skriptfabrik.atlassian.net/browse/N8N-33) @Marco Spengler [`b8b080b`](https://github.com/skriptfabrik/n8n-nodes/commit/b8b080ba598337b2421e8e03d8542c90031bf6d8)
-- bump pnpm from 10.15.1 to 10.20.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`347ba22`](https://github.com/skriptfabrik/n8n-nodes/commit/347ba22c5a11d2b178feb2b9f866e22d430f50fd)
-- bump pnpm to from 10.14.0 to 10.15.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`62c6733`](https://github.com/skriptfabrik/n8n-nodes/commit/62c67331b4bd8117ee6d4e921daa3e68a1e18842)
-- update pnpm version [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`48ae536`](https://github.com/skriptfabrik/n8n-nodes/commit/48ae536da8e6f68dc41561b0d800f456b72e570e)
+- add `devEngines` configuration [N8N-33](https://skriptfabrik.atlassian.net/browse/N8N-33) @MaSpeng [`b8b080b`](https://github.com/skriptfabrik/n8n-nodes/commit/b8b080ba598337b2421e8e03d8542c90031bf6d8)
+- bump pnpm from 10.15.1 to 10.20.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`347ba22`](https://github.com/skriptfabrik/n8n-nodes/commit/347ba22c5a11d2b178feb2b9f866e22d430f50fd)
+- bump pnpm to from 10.14.0 to 10.15.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`62c6733`](https://github.com/skriptfabrik/n8n-nodes/commit/62c67331b4bd8117ee6d4e921daa3e68a1e18842)
+- update pnpm version [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`48ae536`](https://github.com/skriptfabrik/n8n-nodes/commit/48ae536da8e6f68dc41561b0d800f456b72e570e)
 - bump @eslint/js from 9.36.0 to 9.37.0 @dependabot[bot] [`ecb3fb8`](https://github.com/skriptfabrik/n8n-nodes/commit/ecb3fb89ea6ab89807d304ad13720bff1f2fb408)
-- allow builds from nx when installing dependencies [N8N-33](https://skriptfabrik.atlassian.net/browse/N8N-33) @Marco Spengler [`86ed896`](https://github.com/skriptfabrik/n8n-nodes/commit/86ed896cb613bbc53add5006e5fd135c2f5b687e)
+- allow builds from nx when installing dependencies [N8N-33](https://skriptfabrik.atlassian.net/browse/N8N-33) @MaSpeng [`86ed896`](https://github.com/skriptfabrik/n8n-nodes/commit/86ed896cb613bbc53add5006e5fd135c2f5b687e)
 - bump n8n-workflow version to 1.116.0 @dependabot[bot] [`af8c4ee`](https://github.com/skriptfabrik/n8n-nodes/commit/af8c4ee81fdab060d43411a11439ecca282134e7)
 - bump node version in package.json to 22.21.0 @dependabot[bot] [`ce2a8d4`](https://github.com/skriptfabrik/n8n-nodes/commit/ce2a8d4361e87eeaac8bea2134f5f95a9a9f5e3a)
 - [nx migration] 22-0-0-consolidate-release-tag-config @github-actions[bot] [`d5e4e6f`](https://github.com/skriptfabrik/n8n-nodes/commit/d5e4e6f1c0b25499c04c69191a7f82b4ca47b173)
@@ -282,9 +282,9 @@
 - bump node version in package.json to 22.20.0 @dependabot[bot] [`dfb4d80`](https://github.com/skriptfabrik/n8n-nodes/commit/dfb4d8097fc3ed031f2eb511dbf718d9ae63944c)
 - bump eslint from 9.35.0 to 9.36.0 @dependabot[bot] [`3013881`](https://github.com/skriptfabrik/n8n-nodes/commit/3013881ba833c1fdf7e1c7ba997bb2e910e5150d)
 - bump node version in package.json to 22.19.0 @dependabot[bot] [`4854baa`](https://github.com/skriptfabrik/n8n-nodes/commit/4854baacf34dd0af714fa58cc882bbd5aad9e96d)
-- Revert "bump node version in package.json to 22.19.0" [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`89dfead`](https://github.com/skriptfabrik/n8n-nodes/commit/89dfead7e421a9632e4aabd550460052cbfdae25)
+- Revert "bump node version in package.json to 22.19.0" [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`89dfead`](https://github.com/skriptfabrik/n8n-nodes/commit/89dfead7e421a9632e4aabd550460052cbfdae25)
 - bump node version in package.json to 22.19.0 @dependabot[bot] [`8aa69d7`](https://github.com/skriptfabrik/n8n-nodes/commit/8aa69d74217032875a53b27b5285ee9200a28389)
-- add pnpm to `engines` [N8N-33](https://skriptfabrik.atlassian.net/browse/N8N-33) @Marco Spengler [`e6ec1d9`](https://github.com/skriptfabrik/n8n-nodes/commit/e6ec1d9771a0db7f27c117a7c6fb45825b509072)
+- add pnpm to `engines` [N8N-33](https://skriptfabrik.atlassian.net/browse/N8N-33) @MaSpeng [`e6ec1d9`](https://github.com/skriptfabrik/n8n-nodes/commit/e6ec1d9771a0db7f27c117a7c6fb45825b509072)
 - bump n8n-workflow version to 1.117.0 @dependabot[bot] [`19c2cf4`](https://github.com/skriptfabrik/n8n-nodes/commit/19c2cf4222a52e16de21e9024fa7e84527d3f7da)
 - bump node version in devcontainer to 22.21.0 @dependabot[bot] [`8d626be`](https://github.com/skriptfabrik/n8n-nodes/commit/8d626be89d65b5de0a20dd8cca80394e7e3f4c49)
 - bump n8n-workflow version to 1.113.0 @dependabot[bot] [`828d059`](https://github.com/skriptfabrik/n8n-nodes/commit/828d05993d9ca358bc415f8dce41cfc82c4f79f0)
@@ -295,32 +295,32 @@
 - bump n8n-workflow version to 1.108.0 @dependabot[bot] [`4ad2694`](https://github.com/skriptfabrik/n8n-nodes/commit/4ad269420fdfa7e1b344936b1003ba2fa860e8f4)
 - bump n8n-workflow version to 1.107.0 @dependabot[bot] [`07e3ed7`](https://github.com/skriptfabrik/n8n-nodes/commit/07e3ed762cca6f971bc6e49213f03918ad72763e)
 - bump node version in devcontainer to 22.19.0 @dependabot[bot] [`c0b71be`](https://github.com/skriptfabrik/n8n-nodes/commit/c0b71be71b7d18f98c8e27b83436de7de1afeeec)
-- Revert "bump node version in devcontainer to 22.19.0" [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`013173f`](https://github.com/skriptfabrik/n8n-nodes/commit/013173f5147739187cd7ced1bb83bffdb521242f)
+- Revert "bump node version in devcontainer to 22.19.0" [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`013173f`](https://github.com/skriptfabrik/n8n-nodes/commit/013173f5147739187cd7ced1bb83bffdb521242f)
 - bump node version in devcontainer to 22.19.0 @dependabot[bot] [`1ea1955`](https://github.com/skriptfabrik/n8n-nodes/commit/1ea19551999347686175361744b548cce7962927)
 - bump n8n-workflow version to 1.106.0 @dependabot[bot] [`9190791`](https://github.com/skriptfabrik/n8n-nodes/commit/9190791ca4ad4b80e1f502136517b2437ec35ed1)
 - bump n8n-workflow version to 1.105.0 @dependabot[bot] [`575e3f3`](https://github.com/skriptfabrik/n8n-nodes/commit/575e3f3822731bab3100d716ea310e451b8dd63f)
 - bump n8n-workflow version to 1.103.3 @dependabot[bot] [`bf8d0c7`](https://github.com/skriptfabrik/n8n-nodes/commit/bf8d0c71abea4a2845ae9efaa0b0e4800fba29c5)
 - bump n8n-workflow version to 1.103.2 @dependabot[bot] [`3baebd0`](https://github.com/skriptfabrik/n8n-nodes/commit/3baebd033df2733d524d05576413ef3a0a49d4de)
 - bump n8n-workflow version to 1.102.2 @MaSpeng [`042a559`](https://github.com/skriptfabrik/n8n-nodes/commit/042a5594b8e8fcc41eabba3c5d4bd9a8af74f328)
-- add `#` as issue prefix for commit linting [N8N-32](https://skriptfabrik.atlassian.net/browse/N8N-32) @Marco Spengler [`e575ea9`](https://github.com/skriptfabrik/n8n-nodes/commit/e575ea9d54f5ca5fdc908fef62b5b601bcfc430f)
-- bump pnpm from 9.4.0 to 10.13.1 [N8N-33](https://skriptfabrik.atlassian.net/browse/N8N-33) @Marco Spengler [`0322031`](https://github.com/skriptfabrik/n8n-nodes/commit/0322031da1e8505eae0aff0731bfe8614cceb4aa)
+- add `#` as issue prefix for commit linting [N8N-32](https://skriptfabrik.atlassian.net/browse/N8N-32) @MaSpeng [`e575ea9`](https://github.com/skriptfabrik/n8n-nodes/commit/e575ea9d54f5ca5fdc908fef62b5b601bcfc430f)
+- bump pnpm from 9.4.0 to 10.13.1 [N8N-33](https://skriptfabrik.atlassian.net/browse/N8N-33) @MaSpeng [`0322031`](https://github.com/skriptfabrik/n8n-nodes/commit/0322031da1e8505eae0aff0731bfe8614cceb4aa)
 - bump n8n-workflow version to 1.100.0 @dependabot[bot] [`c6ab9e6`](https://github.com/skriptfabrik/n8n-nodes/commit/c6ab9e6dc1b1cce8b148693616606775fde4107f)
-- allow builds from @sentry-internal/node-native-stacktrace [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`8d8a4d3`](https://github.com/skriptfabrik/n8n-nodes/commit/8d8a4d3b2aafe90877107f6df6333b7a75377cb7)
-- allow builds from unrs-resolver when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`21dd857`](https://github.com/skriptfabrik/n8n-nodes/commit/21dd857b76b08ddc50faa97fe9d2b2df0dd6bd9a)
-- allow builds from ssh2 when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`e030d1f`](https://github.com/skriptfabrik/n8n-nodes/commit/e030d1fd9cf947a9eb649804eb067287fa776c2f)
-- allow builds from sqlite3 when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`19c12ca`](https://github.com/skriptfabrik/n8n-nodes/commit/19c12ca157bde9d33ee11d49f8df2609150f3f90)
-- allow builds from protobufjs when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`63bf917`](https://github.com/skriptfabrik/n8n-nodes/commit/63bf9178fee8ae29d501146e3da9aa8339f310c2)
-- allow builds from msgpackr-extract when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`9cca48b`](https://github.com/skriptfabrik/n8n-nodes/commit/9cca48b744bd0d5ebf8b6bcd77a227a1d1331a55)
-- allow builds from eslint-plugin-n8n-nodes-base when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`ccddcb9`](https://github.com/skriptfabrik/n8n-nodes/commit/ccddcb918a00d7a2e3b5032f7984ecbf633abc81)
-- allow builds from cpu-features when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`2a9754f`](https://github.com/skriptfabrik/n8n-nodes/commit/2a9754f535df21fcdbdb755a1834bcf432353852)
-- allow builds from canvas when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`420c5d5`](https://github.com/skriptfabrik/n8n-nodes/commit/420c5d596a09c6d2f9f68ea93010e3b01c0a416f)
-- allow builds from @swc/core when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`cf6a6d6`](https://github.com/skriptfabrik/n8n-nodes/commit/cf6a6d69ec86101809d6f8caee6b8176b0c1b59f)
-- allow builds from @scarf/scarf when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`1bc1785`](https://github.com/skriptfabrik/n8n-nodes/commit/1bc178543bd3b368d52cc7203a17d6e2854de211)
-- add pnpm version to devcontainer configuration [N8N-33](https://skriptfabrik.atlassian.net/browse/N8N-33) @Marco Spengler [`4a5e2f5`](https://github.com/skriptfabrik/n8n-nodes/commit/4a5e2f55455626c37f28c0a1ebc6e447bbbed3a7)
+- allow builds from @sentry-internal/node-native-stacktrace [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`8d8a4d3`](https://github.com/skriptfabrik/n8n-nodes/commit/8d8a4d3b2aafe90877107f6df6333b7a75377cb7)
+- allow builds from unrs-resolver when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`21dd857`](https://github.com/skriptfabrik/n8n-nodes/commit/21dd857b76b08ddc50faa97fe9d2b2df0dd6bd9a)
+- allow builds from ssh2 when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`e030d1f`](https://github.com/skriptfabrik/n8n-nodes/commit/e030d1fd9cf947a9eb649804eb067287fa776c2f)
+- allow builds from sqlite3 when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`19c12ca`](https://github.com/skriptfabrik/n8n-nodes/commit/19c12ca157bde9d33ee11d49f8df2609150f3f90)
+- allow builds from protobufjs when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`63bf917`](https://github.com/skriptfabrik/n8n-nodes/commit/63bf9178fee8ae29d501146e3da9aa8339f310c2)
+- allow builds from msgpackr-extract when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`9cca48b`](https://github.com/skriptfabrik/n8n-nodes/commit/9cca48b744bd0d5ebf8b6bcd77a227a1d1331a55)
+- allow builds from eslint-plugin-n8n-nodes-base when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`ccddcb9`](https://github.com/skriptfabrik/n8n-nodes/commit/ccddcb918a00d7a2e3b5032f7984ecbf633abc81)
+- allow builds from cpu-features when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`2a9754f`](https://github.com/skriptfabrik/n8n-nodes/commit/2a9754f535df21fcdbdb755a1834bcf432353852)
+- allow builds from canvas when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`420c5d5`](https://github.com/skriptfabrik/n8n-nodes/commit/420c5d596a09c6d2f9f68ea93010e3b01c0a416f)
+- allow builds from @swc/core when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`cf6a6d6`](https://github.com/skriptfabrik/n8n-nodes/commit/cf6a6d69ec86101809d6f8caee6b8176b0c1b59f)
+- allow builds from @scarf/scarf when installing dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`1bc1785`](https://github.com/skriptfabrik/n8n-nodes/commit/1bc178543bd3b368d52cc7203a17d6e2854de211)
+- add pnpm version to devcontainer configuration [N8N-33](https://skriptfabrik.atlassian.net/browse/N8N-33) @MaSpeng [`4a5e2f5`](https://github.com/skriptfabrik/n8n-nodes/commit/4a5e2f55455626c37f28c0a1ebc6e447bbbed3a7)
 
 ### 📚 Documentation Changes
 
-- add contribution guidelines [N8N-32](https://skriptfabrik.atlassian.net/browse/N8N-32) @Marco Spengler [`1baac40`](https://github.com/skriptfabrik/n8n-nodes/commit/1baac40bf78b40dbd40be462f4ba220b9c2e46e3)
+- add contribution guidelines [N8N-32](https://skriptfabrik.atlassian.net/browse/N8N-32) @MaSpeng [`1baac40`](https://github.com/skriptfabrik/n8n-nodes/commit/1baac40bf78b40dbd40be462f4ba220b9c2e46e3)
 
 ### ✅ Changes to Test Assets
 
@@ -330,16 +330,16 @@
 
 ### 👷 Continuous Integration
 
-- install node-canvas build dependencies to be able install the repository dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`dfc190f`](https://github.com/skriptfabrik/n8n-nodes/commit/dfc190f1502db904e42518eabc0030a0cc3cf877)
-- ignore nx dependencies to allow GitHub workflow to do its job [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`543aaa3`](https://github.com/skriptfabrik/n8n-nodes/commit/543aaa3a7856957a4f4a1449a452e77cdfd713c0)
-- fix n8n dependency update workflow @Marco Spengler [`164a8a5`](https://github.com/skriptfabrik/n8n-nodes/commit/164a8a5608fecd4fd5bb4f0aab5b115096131796)
+- install node-canvas build dependencies to be able install the repository dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`dfc190f`](https://github.com/skriptfabrik/n8n-nodes/commit/dfc190f1502db904e42518eabc0030a0cc3cf877)
+- ignore nx dependencies to allow GitHub workflow to do its job [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`543aaa3`](https://github.com/skriptfabrik/n8n-nodes/commit/543aaa3a7856957a4f4a1449a452e77cdfd713c0)
+- fix n8n dependency update workflow @MaSpeng [`164a8a5`](https://github.com/skriptfabrik/n8n-nodes/commit/164a8a5608fecd4fd5bb4f0aab5b115096131796)
 
 ### 🐛 Bug Fixes
 
-- **moco:** company update and delete specification [N8N-30](https://skriptfabrik.atlassian.net/browse/N8N-30) @Marco Spengler [`5c235df`](https://github.com/skriptfabrik/n8n-nodes/commit/5c235dffe29b4c18484c3e295764664ea74082b9)
+- **moco:** company update and delete specification [N8N-30](https://skriptfabrik.atlassian.net/browse/N8N-30) @MaSpeng [`5c235df`](https://github.com/skriptfabrik/n8n-nodes/commit/5c235dffe29b4c18484c3e295764664ea74082b9)
 - **moco:** bump n8n-workflow version to 1.99.1 @dependabot[bot] [`01f01e5`](https://github.com/skriptfabrik/n8n-nodes/commit/01f01e519d0279a84d95537cc2c977ebd6a1b117)
 - **moco:** bump n8n-workflow version to 1.97.0 @dependabot[bot] [`217b90c`](https://github.com/skriptfabrik/n8n-nodes/commit/217b90c0baf296d695b65bddf0b97113730f49bb)
-- **moco:** bump n8n-workflow version to 1.96.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`3f2dbbf`](https://github.com/skriptfabrik/n8n-nodes/commit/3f2dbbf84399ca1d044584087d71814084cf9387)
+- **moco:** bump n8n-workflow version to 1.96.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`3f2dbbf`](https://github.com/skriptfabrik/n8n-nodes/commit/3f2dbbf84399ca1d044584087d71814084cf9387)
 - **moco:** bump n8n-workflow version to 1.93.0 @dependabot[bot] [`6a17def`](https://github.com/skriptfabrik/n8n-nodes/commit/6a17defaeeabd173dc96d9f833116b2dbe45cfc4)
 - **moco:** bump n8n-workflow version to 1.92.0 @dependabot[bot] [`40197ef`](https://github.com/skriptfabrik/n8n-nodes/commit/40197efa1883d861ad3fa33dcb1774e76a29c579)
 - **moco:** bump n8n-workflow version to 1.91.0 @dependabot[bot] [`274487a`](https://github.com/skriptfabrik/n8n-nodes/commit/274487a35778601d8fd4b7a9ee5a5f00cd7beeb2)
@@ -355,7 +355,7 @@
 - bump nx and @nx/devkit @dependabot[bot] [`e8a8bfe`](https://github.com/skriptfabrik/n8n-nodes/commit/e8a8bfe6e4be36c2f5b3017484b87c021a2a4bb5)
 - bump n8n from 1.90.2 to 1.91.2 @dependabot[bot] [`d260305`](https://github.com/skriptfabrik/n8n-nodes/commit/d260305870a06c052b0ea4b534301dedb2770794)
 - bump n8n from 1.95.3 to 1.98.1 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @dependabot[bot] [`709f082`](https://github.com/skriptfabrik/n8n-nodes/commit/709f0829825c249321aa006a67298833cdeab7c4)
-- bump jest from 29.7.0 to 30.0.2 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`5be0c83`](https://github.com/skriptfabrik/n8n-nodes/commit/5be0c83ce91d2cabb19b5fa866455bc675ec6b7b)
+- bump jest from 29.7.0 to 30.0.2 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`5be0c83`](https://github.com/skriptfabrik/n8n-nodes/commit/5be0c83ce91d2cabb19b5fa866455bc675ec6b7b)
 - bump n8n from 1.91.3 to 1.92.2 @dependabot[bot] [`1583829`](https://github.com/skriptfabrik/n8n-nodes/commit/15838290236f1b5f6ffce87d0a78acbdb4cb2db5)
 - bump n8n from 1.91.2 to 1.91.3 @dependabot[bot] [`3a19e60`](https://github.com/skriptfabrik/n8n-nodes/commit/3a19e6064adcd2196179b5666fac8485d81c415e)
 - bump n8n from 1.95.2 to 1.95.3 @dependabot[bot] [`3d6c0e8`](https://github.com/skriptfabrik/n8n-nodes/commit/3d6c0e80e57350de687deb0d1eda2113196c5d64)
@@ -363,18 +363,18 @@
 - bump n8n from 1.92.2 to 1.93.0 @dependabot[bot] [`2b69208`](https://github.com/skriptfabrik/n8n-nodes/commit/2b69208f97d8b2129f993f01fa1ecce21512e48f)
 - bump jest from 30.0.2 to 30.0.3 @dependabot[bot] [`9a1df38`](https://github.com/skriptfabrik/n8n-nodes/commit/9a1df38a1bf5b56fbb31deb15e55c5ee0df44a65)
 - bump n8n from 1.98.1 to 1.99.1 @dependabot[bot] [`d1cc22f`](https://github.com/skriptfabrik/n8n-nodes/commit/d1cc22f874c9cadc96422e8c68753e24251c30fb)
-- bump n8n-nodes-base version to 1.96.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`c6a673a`](https://github.com/skriptfabrik/n8n-nodes/commit/c6a673a6af829317c396c35d6d7b94fed0a7ea2b)
+- bump n8n-nodes-base version to 1.96.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`c6a673a`](https://github.com/skriptfabrik/n8n-nodes/commit/c6a673a6af829317c396c35d6d7b94fed0a7ea2b)
 - bump n8n-nodes-base version to 1.93.1 @dependabot[bot] [`8ee8617`](https://github.com/skriptfabrik/n8n-nodes/commit/8ee86178cfef8ab1f329508853e0ff4b0faec787)
 - bump n8n-nodes-base version to 1.93.0 @dependabot[bot] [`4e14f56`](https://github.com/skriptfabrik/n8n-nodes/commit/4e14f5698e653192e28856c86c9469d492795191)
 - bump nx dependencies to 21.0.0 @dependabot[bot] [`a5e636b`](https://github.com/skriptfabrik/n8n-nodes/commit/a5e636bac323a7e3358f982a17790cc4f2b65064)
-- bump nx dependencies from 21.2.0 to 21.2.1 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`764321c`](https://github.com/skriptfabrik/n8n-nodes/commit/764321cbf5fddf2a42195cef9daeebb3ae8b82cf)
+- bump nx dependencies from 21.2.0 to 21.2.1 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`764321c`](https://github.com/skriptfabrik/n8n-nodes/commit/764321cbf5fddf2a42195cef9daeebb3ae8b82cf)
 - bump nx dependencies to 21.2.0 @dependabot[bot] [`501b849`](https://github.com/skriptfabrik/n8n-nodes/commit/501b8493e171b60cf3bd9127ddffb4f2cf9c8c78)
 - bump nx dependencies to 21.1.2 @dependabot[bot] [`f2593cc`](https://github.com/skriptfabrik/n8n-nodes/commit/f2593ccade2ad6674c270b3aac45b55c9f3b2506)
 - bump nx and @nx/devkit @dependabot[bot] [`03d7359`](https://github.com/skriptfabrik/n8n-nodes/commit/03d7359fa71ca94ffdc72f03619e6a0b63ecb585)
 - bump eslint from 9.25.1 to 9.26.0 @dependabot[bot] [`ae71dec`](https://github.com/skriptfabrik/n8n-nodes/commit/ae71decaba759209e56518389abacca54dd88565)
 - bump n8n from 1.94.1 to 1.95.2 @dependabot[bot] [`e0e2057`](https://github.com/skriptfabrik/n8n-nodes/commit/e0e20578f876b4c89a7e0e0507168dcc1eb63261)
 - bump verdaccio from 6.1.2 to 6.1.4 @dependabot[bot] [`6a015bd`](https://github.com/skriptfabrik/n8n-nodes/commit/6a015bd97cdf0fc0426226f908bb79d4dcce7b51)
-- update test to match stricter branch coverage [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`91bb34b`](https://github.com/skriptfabrik/n8n-nodes/commit/91bb34b4893727bdf6f0af3aebe3fdcd0cbcfdf2)
+- update test to match stricter branch coverage [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`91bb34b`](https://github.com/skriptfabrik/n8n-nodes/commit/91bb34b4893727bdf6f0af3aebe3fdcd0cbcfdf2)
 - bump @swc/core from 1.12.9 to 1.12.14 @dependabot[bot] [`739770a`](https://github.com/skriptfabrik/n8n-nodes/commit/739770a415da0f29faf22edaf43e2fe5413f5f8f)
 - bump nx and @nx/devkit @dependabot[bot] [`417c287`](https://github.com/skriptfabrik/n8n-nodes/commit/417c28744d880da5e8b69a0d9d2a515d896aa9ca)
 - bump @swc/core from 1.11.29 to 1.11.31 @dependabot[bot] [`455adf5`](https://github.com/skriptfabrik/n8n-nodes/commit/455adf5ace49733193bec12156853a89983be760)
@@ -386,7 +386,7 @@
 - bump @swc/core from 1.12.6 to 1.12.9 @dependabot[bot] [`c257cc4`](https://github.com/skriptfabrik/n8n-nodes/commit/c257cc46ba764c65a79dfb86b4259c5f63d2ff79)
 - bump eslint from 9.28.0 to 9.29.0 @dependabot[bot] [`b359fa7`](https://github.com/skriptfabrik/n8n-nodes/commit/b359fa7ef56a2ac3c5120c8c5c8cdc1baf00a5a5)
 - bump @swc/core from 1.11.24 to 1.11.29 @dependabot[bot] [`37fa652`](https://github.com/skriptfabrik/n8n-nodes/commit/37fa652e35389470368592cbfd6f2e2c1d6d6d4b)
-- bump @swc-node/register from 1.9.2 to 1.10.10 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`26456b1`](https://github.com/skriptfabrik/n8n-nodes/commit/26456b133dd71707e21313dcf0d21935e27b6e77)
+- bump @swc-node/register from 1.9.2 to 1.10.10 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`26456b1`](https://github.com/skriptfabrik/n8n-nodes/commit/26456b133dd71707e21313dcf0d21935e27b6e77)
 - bump nx and @nx/devkit @dependabot[bot] [`40b3362`](https://github.com/skriptfabrik/n8n-nodes/commit/40b3362d93bc845e38c5b4ba2bb3efaf95806043)
 - bump nx from 20.8.1 to 21.0.0 @dependabot[bot] [`3d5d11f`](https://github.com/skriptfabrik/n8n-nodes/commit/3d5d11f230209491783604a1f72d33a4638bd79c)
 - bump verdaccio from 6.1.4 to 6.1.5 @dependabot[bot] [`058e3a2`](https://github.com/skriptfabrik/n8n-nodes/commit/058e3a24930233f046c776a884bc7abb3ae0a7ec)
@@ -407,7 +407,7 @@
 - bump n8n-nodes-base version to 1.100.1 @dependabot[bot] [`fc5880e`](https://github.com/skriptfabrik/n8n-nodes/commit/fc5880ed3cf5742d48d419219083ea9e9c025b36)
 - bump openapi-typescript from 7.7.1 to 7.8.0 @dependabot[bot] [`69bb3a2`](https://github.com/skriptfabrik/n8n-nodes/commit/69bb3a27e8f5cad6eeff50dd0c0cf34e02a19fe7)
 - bump @types/node version to 22.16.4 @dependabot[bot] [`0cc09c3`](https://github.com/skriptfabrik/n8n-nodes/commit/0cc09c30aff9fcd7d2a0e69c81edd88dfc876ce6)
-- bump canvas from 2.11.2 to 3.1.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`5ccf9df`](https://github.com/skriptfabrik/n8n-nodes/commit/5ccf9df71e8d780244ef76d56bf23092d59e37dd)
+- bump canvas from 2.11.2 to 3.1.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`5ccf9df`](https://github.com/skriptfabrik/n8n-nodes/commit/5ccf9df71e8d780244ef76d56bf23092d59e37dd)
 - bump typescript-eslint from 8.32.0 to 8.32.1 @dependabot[bot] [`d40b44a`](https://github.com/skriptfabrik/n8n-nodes/commit/d40b44a4af16e083cf5b9453db718c5e3f72bda8)
 - bump @types/node version to 20.19.0 @dependabot[bot] [`1184fc4`](https://github.com/skriptfabrik/n8n-nodes/commit/1184fc4de8a49a466577b67082218eb4777cc517)
 - bump @types/node version to 22.15.32 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @dependabot[bot] [`bd3f720`](https://github.com/skriptfabrik/n8n-nodes/commit/bd3f720c5bbc96ce69f427801e8575c2a7cad4e5)
@@ -420,7 +420,7 @@
 - bump typescript-eslint from 8.31.1 to 8.32.0 @dependabot[bot] [`592e1c2`](https://github.com/skriptfabrik/n8n-nodes/commit/592e1c22a8841208cfba3a75606fa038eae55225)
 - bump eslint from 9.30.1 to 9.31.0 @dependabot[bot] [`184143d`](https://github.com/skriptfabrik/n8n-nodes/commit/184143d8a6ff3efdda874381472e627d43505d63)
 - bump eslint from 9.27.0 to 9.28.0 @dependabot[bot] [`65f0c88`](https://github.com/skriptfabrik/n8n-nodes/commit/65f0c889e87d0d05e4af676a127ed05dca5c62ac)
-- update tests to match updated typings [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`f1c96e0`](https://github.com/skriptfabrik/n8n-nodes/commit/f1c96e049faa88740ff0a1a67d2ac3fe59cc57e8)
+- update tests to match updated typings [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`f1c96e0`](https://github.com/skriptfabrik/n8n-nodes/commit/f1c96e049faa88740ff0a1a67d2ac3fe59cc57e8)
 - bump n8n-nodes-base version to 1.92.0 @dependabot[bot] [`b6a6f7e`](https://github.com/skriptfabrik/n8n-nodes/commit/b6a6f7eae0d35fa0153ddd1e1388c847a560b006)
 - bump n8n-nodes-base version to 1.91.1 @dependabot[bot] [`f925d6b`](https://github.com/skriptfabrik/n8n-nodes/commit/f925d6b8f2f55996c24853cdc7ac3f1cf2de7c26)
 - bump n8n-nodes-base version to 1.97.1 @dependabot[bot] [`bc4140f`](https://github.com/skriptfabrik/n8n-nodes/commit/bc4140f35e17fe5051cdda489abdff7599b96867)
@@ -431,10 +431,10 @@
 - bump n8n-workflow version to 1.90.0 @dependabot[bot] [`b108574`](https://github.com/skriptfabrik/n8n-nodes/commit/b108574225fb9ae64e0664ddd2c5b014534e3918)
 - bump n8n-workflow version to 1.91.0 @dependabot[bot] [`7421218`](https://github.com/skriptfabrik/n8n-nodes/commit/74212186a679283e0db7abc3b891e67a3f15f589)
 - bump n8n-workflow version to 1.89.0 @dependabot[bot] [`c35abc1`](https://github.com/skriptfabrik/n8n-nodes/commit/c35abc1a982e6c054597edaeaf8cf9719e64893d)
-- bump @types/jest from 29.5.12 to 30.0.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`3e955ef`](https://github.com/skriptfabrik/n8n-nodes/commit/3e955ef882adfd2bec2922097f0420fa189f5535)
+- bump @types/jest from 29.5.12 to 30.0.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`3e955ef`](https://github.com/skriptfabrik/n8n-nodes/commit/3e955ef882adfd2bec2922097f0420fa189f5535)
 - bump openapi-typescript from 7.6.1 to 7.7.1 @dependabot[bot] [`64491c7`](https://github.com/skriptfabrik/n8n-nodes/commit/64491c733f05ddedd2550fae282ce6bbbfe025a3)
 - bump jest-environment-node from 30.0.2 to 30.0.4 @dependabot[bot] [`5492f10`](https://github.com/skriptfabrik/n8n-nodes/commit/5492f10bdc9fa77e45bebbaafee33196ebff5610)
-- bump @types/express from 4.17.21 to 5.0.3 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`a333ed1`](https://github.com/skriptfabrik/n8n-nodes/commit/a333ed1844ceb54ad519694485d66025dc70ce9c)
+- bump @types/express from 4.17.21 to 5.0.3 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`a333ed1`](https://github.com/skriptfabrik/n8n-nodes/commit/a333ed1844ceb54ad519694485d66025dc70ce9c)
 - bump form-data from 4.0.2 to 4.0.3 @dependabot[bot] [`c859acc`](https://github.com/skriptfabrik/n8n-nodes/commit/c859acccf9dad6a2044e6610bf45a9ad839ec2d6)
 - bump ts-jest from 29.3.4 to 29.4.0 @dependabot[bot] [`530110d`](https://github.com/skriptfabrik/n8n-nodes/commit/530110d0364a7c503c1ba280407d932a5196174c)
 - bump ts-jest from 29.3.2 to 29.3.3 @dependabot[bot] [`76fa43c`](https://github.com/skriptfabrik/n8n-nodes/commit/76fa43c4a10887c25c5e50737b6b5d66ddbbf038)
@@ -445,11 +445,11 @@
 - bump @commitlint/config-nx-scopes from 19.8.0 to 19.8.1 @dependabot[bot] [`d7d89b2`](https://github.com/skriptfabrik/n8n-nodes/commit/d7d89b2b663efe7f3854a726bc6fafed68b0d60f)
 - bump jsbarcode from 3.11.6 to 3.12.1 @dependabot[bot] [`242b944`](https://github.com/skriptfabrik/n8n-nodes/commit/242b9449d8288399e37c3515747c0487a6c316c6)
 - bump eslint-config-prettier from 10.1.2 to 10.1.5 @dependabot[bot] [`e1fd35a`](https://github.com/skriptfabrik/n8n-nodes/commit/e1fd35a9e76737ad1f2e9ecd48580fbab399a4fd)
-- replace GitHub dependabot reviewers with codeowners [INTERN-68](https://skriptfabrik.atlassian.net/browse/INTERN-68) @Marco Spengler [`72d1403`](https://github.com/skriptfabrik/n8n-nodes/commit/72d1403b7a17fd99129a58f41958a19efa7bd69c)
+- replace GitHub dependabot reviewers with codeowners [INTERN-68](https://skriptfabrik.atlassian.net/browse/INTERN-68) @MaSpeng [`72d1403`](https://github.com/skriptfabrik/n8n-nodes/commit/72d1403b7a17fd99129a58f41958a19efa7bd69c)
 - bump stefanzweifel/git-auto-commit-action from 5 to 6 @dependabot[bot] [`49132a8`](https://github.com/skriptfabrik/n8n-nodes/commit/49132a8fa42d195dc7d671c9b0acd04a0bf76796)
 - bump @eslint/compat from 1.3.0 to 1.3.1 @dependabot[bot] [`880ad5b`](https://github.com/skriptfabrik/n8n-nodes/commit/880ad5b0de89798d43599c4f551ad17356dfba50)
 - bump @commitlint/config-conventional from 19.8.0 to 19.8.1 @dependabot[bot] [`3beefc5`](https://github.com/skriptfabrik/n8n-nodes/commit/3beefc56cfa5c07be50c059893804dc6359e087c)
-- bump @types/jsonwebtoken from 9.0.6 to 9.0.10 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`2d67070`](https://github.com/skriptfabrik/n8n-nodes/commit/2d67070c91001b3e14084c4bb82056fb4705f706)
+- bump @types/jsonwebtoken from 9.0.6 to 9.0.10 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`2d67070`](https://github.com/skriptfabrik/n8n-nodes/commit/2d67070c91001b3e14084c4bb82056fb4705f706)
 - bump @eslint/js from 9.30.1 to 9.31.0 @dependabot[bot] [`63bc970`](https://github.com/skriptfabrik/n8n-nodes/commit/63bc970aaa32bd8cc77dcb14152e095e8f673fef)
 - bump @eslint/js from 9.30.0 to 9.30.1 @dependabot[bot] [`16adcdc`](https://github.com/skriptfabrik/n8n-nodes/commit/16adcdc5a5b27189eca6ab431547f5811485b6f4)
 - bump prettier from 3.6.0 to 3.6.2 @dependabot[bot] [`0fab3ba`](https://github.com/skriptfabrik/n8n-nodes/commit/0fab3ba583ae2f6a498953e0b08830b286896594)
@@ -460,10 +460,10 @@
 - bump @eslint/js from 9.27.0 to 9.28.0 @dependabot[bot] [`1aa040f`](https://github.com/skriptfabrik/n8n-nodes/commit/1aa040fc9f00635762e86beeb4dc21d04d579550)
 - bump @eslint/js from 9.26.0 to 9.27.0 @dependabot[bot] [`d4235a6`](https://github.com/skriptfabrik/n8n-nodes/commit/d4235a6bcd9dbba49cef140ac119e997501f2f84)
 - bump @eslint/compat from 1.2.8 to 1.2.9 @dependabot[bot] [`16d9e24`](https://github.com/skriptfabrik/n8n-nodes/commit/16d9e24c59a8dcbfc44346c5ca72a8c70d822ee9)
-- drop deprecated eslint__js types dependency [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`7403bfd`](https://github.com/skriptfabrik/n8n-nodes/commit/7403bfd9c8abcdb3fbd8fb33facae445154007fc)
-- bump n8n-workflow version to 1.96.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`dda7a88`](https://github.com/skriptfabrik/n8n-nodes/commit/dda7a88d363bac8f695bca79d1b800a28410bbe2)
-- apply codeowner responsibility suggestion [INTERN-68](https://skriptfabrik.atlassian.net/browse/INTERN-68) @Marco Spengler [`fd9511a`](https://github.com/skriptfabrik/n8n-nodes/commit/fd9511a0579d8db8b268f39db6433c528f1d8f7a)
-- update feature references in devcontainer configuration [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`df70e90`](https://github.com/skriptfabrik/n8n-nodes/commit/df70e90100c9febf215f1cca764ae4f6b513e0f5)
+- drop deprecated eslint__js types dependency [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`7403bfd`](https://github.com/skriptfabrik/n8n-nodes/commit/7403bfd9c8abcdb3fbd8fb33facae445154007fc)
+- bump n8n-workflow version to 1.96.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`dda7a88`](https://github.com/skriptfabrik/n8n-nodes/commit/dda7a88d363bac8f695bca79d1b800a28410bbe2)
+- apply codeowner responsibility suggestion [INTERN-68](https://skriptfabrik.atlassian.net/browse/INTERN-68) @MaSpeng [`fd9511a`](https://github.com/skriptfabrik/n8n-nodes/commit/fd9511a0579d8db8b268f39db6433c528f1d8f7a)
+- update feature references in devcontainer configuration [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`df70e90`](https://github.com/skriptfabrik/n8n-nodes/commit/df70e90100c9febf215f1cca764ae4f6b513e0f5)
 - [nx migration] release-version-config-changes @github-actions[bot] [`da81739`](https://github.com/skriptfabrik/n8n-nodes/commit/da81739b6ab1edae2b2af9a7dc6c5755ce6d05ff)
 - [nx migration] remove-legacy-cache @github-actions[bot] [`af4e202`](https://github.com/skriptfabrik/n8n-nodes/commit/af4e20219e22ea13676910f7414fb88517a2bf64)
 - bump n8n-workflow version to 1.99.1 @dependabot[bot] [`2eafa7b`](https://github.com/skriptfabrik/n8n-nodes/commit/2eafa7b02b837b15c7f6351732f247ad89890277)
@@ -475,23 +475,23 @@
 - bump node version in devcontainer to 20.19.2 @dependabot[bot] [`fed6713`](https://github.com/skriptfabrik/n8n-nodes/commit/fed6713609640911256b7e3ab845a08910b3a0ee)
 - bump node version in package.json to 20.19.2 @dependabot[bot] [`cbbec8d`](https://github.com/skriptfabrik/n8n-nodes/commit/cbbec8db82116734b7124f11664135d37faee73a)
 - [nx migration] 21-1-0-add-ignore-entries-for-nx-rule-files @github-actions[bot] [`446d706`](https://github.com/skriptfabrik/n8n-nodes/commit/446d706e656f758aa0311634dd451903bc2b3b6a)
-- allow INTERN- as issue prefix for commit linting [INTERN-68](https://skriptfabrik.atlassian.net/browse/INTERN-68) @Marco Spengler [`6efd832`](https://github.com/skriptfabrik/n8n-nodes/commit/6efd832f89d45526429d4edb8b059db4f45b66ef)
+- allow INTERN- as issue prefix for commit linting [INTERN-68](https://skriptfabrik.atlassian.net/browse/INTERN-68) @MaSpeng [`6efd832`](https://github.com/skriptfabrik/n8n-nodes/commit/6efd832f89d45526429d4edb8b059db4f45b66ef)
 
 ## [moco-0.3.40](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.3.39...moco-0.3.40)
 
 ### 👷 Continuous Integration
 
-- update n8n version update workflow (n8n-6) @Marco Spengler [`b0a3c90`](https://github.com/skriptfabrik/n8n-nodes/commit/b0a3c9034e9b5ccbe8000a1f8216e3d5c846955e)
+- update n8n version update workflow (n8n-6) @MaSpeng [`b0a3c90`](https://github.com/skriptfabrik/n8n-nodes/commit/b0a3c9034e9b5ccbe8000a1f8216e3d5c846955e)
 
 ### 🐛 Bug Fixes
 
-- **moco:** add n8n-workflow to dev dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`4576613`](https://github.com/skriptfabrik/n8n-nodes/commit/457661337a5fcc1582039769ce0947cba3b2f4dc)
-- **moco:** update version range for n8n-workflow to ^1.86.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`f5be7c2`](https://github.com/skriptfabrik/n8n-nodes/commit/f5be7c24836744d5f11b9633c9b6aa5192552798)
-- **moco:** bump n8n-workflow version to 1.88.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`aa70e21`](https://github.com/skriptfabrik/n8n-nodes/commit/aa70e21c658bc9f50bbd36e75066793ebb3fa196)
+- **moco:** add n8n-workflow to dev dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`4576613`](https://github.com/skriptfabrik/n8n-nodes/commit/457661337a5fcc1582039769ce0947cba3b2f4dc)
+- **moco:** update version range for n8n-workflow to ^1.86.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`f5be7c2`](https://github.com/skriptfabrik/n8n-nodes/commit/f5be7c24836744d5f11b9633c9b6aa5192552798)
+- **moco:** bump n8n-workflow version to 1.88.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`aa70e21`](https://github.com/skriptfabrik/n8n-nodes/commit/aa70e21c658bc9f50bbd36e75066793ebb3fa196)
 
 ### 🔧 Maintenance And Housekeeping
 
-- bump n8n-nodes-base version to 1.89.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`592a170`](https://github.com/skriptfabrik/n8n-nodes/commit/592a170dfbd9336a4e53e4f6b24384de9d4ecd97)
+- bump n8n-nodes-base version to 1.89.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`592a170`](https://github.com/skriptfabrik/n8n-nodes/commit/592a170dfbd9336a4e53e4f6b24384de9d4ecd97)
 - bump n8n from 1.88.0 to 1.89.2 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @dependabot[bot] [`bcd0ffc`](https://github.com/skriptfabrik/n8n-nodes/commit/bcd0ffc9b62292b8db7012a8083c03299ffeccef)
 - bump nx dependencies to 20.8.1 @dependabot[bot] [`3a8a5e0`](https://github.com/skriptfabrik/n8n-nodes/commit/3a8a5e051e45eb88b859d06c18953f11a2576f1d)
 - bump nx dependencies to 20.8.0 @dependabot[bot] [`214a9d6`](https://github.com/skriptfabrik/n8n-nodes/commit/214a9d65f659e0b3d935147713ad49d306fa71b0)
@@ -499,14 +499,14 @@
 - bump nx from 20.8.0 to 20.8.1 @dependabot[bot] [`7d819f5`](https://github.com/skriptfabrik/n8n-nodes/commit/7d819f5fdb566c4c2aea7fdc656f2450acb62976)
 - bump @swc/core from 1.11.22 to 1.11.24 @dependabot[bot] [`d98f8cf`](https://github.com/skriptfabrik/n8n-nodes/commit/d98f8cf35c021f5cf79a97ec372ae72071500e82)
 - bump @swc/core from 1.11.21 to 1.11.22 @dependabot[bot] [`f351a9b`](https://github.com/skriptfabrik/n8n-nodes/commit/f351a9b57aaea6cd10734519525d30c1db9e86bb)
-- bump @types/node version to 20.17.32 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`121a3f5`](https://github.com/skriptfabrik/n8n-nodes/commit/121a3f54813dfa5cb3e8f89823f84b0ed279c310)
-- bump n8n-workflow version to 1.88.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`3519221`](https://github.com/skriptfabrik/n8n-nodes/commit/351922165f5adb9b6f2d704c2ca2a56790593833)
+- bump @types/node version to 20.17.32 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`121a3f5`](https://github.com/skriptfabrik/n8n-nodes/commit/121a3f54813dfa5cb3e8f89823f84b0ed279c310)
+- bump n8n-workflow version to 1.88.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`3519221`](https://github.com/skriptfabrik/n8n-nodes/commit/351922165f5adb9b6f2d704c2ca2a56790593833)
 - bump eslint from 9.24.0 to 9.25.0 @dependabot[bot] [`0d96a61`](https://github.com/skriptfabrik/n8n-nodes/commit/0d96a615aa63251d9663507dd005db608a52dc36)
 - bump typescript-eslint from 8.31.0 to 8.31.1 @dependabot[bot] [`2e90a89`](https://github.com/skriptfabrik/n8n-nodes/commit/2e90a8909a00b4431f2235bace63d5a1060780a6)
 - bump typescript-eslint from 8.29.1 to 8.30.1 @dependabot[bot] [`a70394e`](https://github.com/skriptfabrik/n8n-nodes/commit/a70394ec683de352d8cf7b544656c56de94664d0)
 - bump @eslint/js from 9.24.0 to 9.25.0 @dependabot[bot] [`5102ca5`](https://github.com/skriptfabrik/n8n-nodes/commit/5102ca545b67a98c72bf29230fcff6b1435867e7)
-- update version range for n8n-workflow to ^1.86.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`0641c81`](https://github.com/skriptfabrik/n8n-nodes/commit/0641c816a5795de959ed7d1cb3465d2da85a5ca6)
-- update version range for n8n-nodes-base to ^1.87.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`f982dce`](https://github.com/skriptfabrik/n8n-nodes/commit/f982dce3cf5cf0991e01111f56fee0ccc71012ba)
+- update version range for n8n-workflow to ^1.86.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`0641c81`](https://github.com/skriptfabrik/n8n-nodes/commit/0641c816a5795de959ed7d1cb3465d2da85a5ca6)
+- update version range for n8n-nodes-base to ^1.87.0 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`f982dce`](https://github.com/skriptfabrik/n8n-nodes/commit/f982dce3cf5cf0991e01111f56fee0ccc71012ba)
 
 ## [moco-0.3.39](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.3.38...moco-0.3.39)
 
@@ -554,7 +554,7 @@
 
 ### 🐛 Bug Fixes
 
-- **moco:** exchange NodeConnectionType with NodeConnectionsType [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`a5a5962`](https://github.com/skriptfabrik/n8n-nodes/commit/a5a596207bb8feeb38bf2935c354f00a35a84dc7)
+- **moco:** exchange NodeConnectionType with NodeConnectionsType [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`a5a5962`](https://github.com/skriptfabrik/n8n-nodes/commit/a5a596207bb8feeb38bf2935c354f00a35a84dc7)
 - **moco:** bump n8n-workflow version to 1.83.0 @dependabot[bot] [`e753873`](https://github.com/skriptfabrik/n8n-nodes/commit/e7538739a498a7904642f681a651bd4f9960002c)
 
 ### 🔧 Maintenance And Housekeeping
@@ -702,7 +702,7 @@
 
 ### 👷 Continuous Integration
 
-- remove subdirectory update [N8N-27](https://skriptfabrik.atlassian.net/browse/N8N-27) @Marco Spengler [`2db030b`](https://github.com/skriptfabrik/n8n-nodes/commit/2db030b432c3e75b7f5f9da21a2a4f3e2a8f2ea6)
+- remove subdirectory update [N8N-27](https://skriptfabrik.atlassian.net/browse/N8N-27) @MaSpeng [`2db030b`](https://github.com/skriptfabrik/n8n-nodes/commit/2db030b432c3e75b7f5f9da21a2a4f3e2a8f2ea6)
 
 ### 🐛 Bug Fixes
 
@@ -938,7 +938,7 @@
 
 ### 👷 Continuous Integration
 
-- remove obsolete groups configuration from dependabot [N8N-24](https://skriptfabrik.atlassian.net/browse/N8N-24) @Marco Spengler [`a71291f`](https://github.com/skriptfabrik/n8n-nodes/commit/a71291fe99d0671aed913c4f09bf5c537974d2db)
+- remove obsolete groups configuration from dependabot [N8N-24](https://skriptfabrik.atlassian.net/browse/N8N-24) @MaSpeng [`a71291f`](https://github.com/skriptfabrik/n8n-nodes/commit/a71291fe99d0671aed913c4f09bf5c537974d2db)
 
 ### 🐛 Bug Fixes
 
@@ -953,7 +953,7 @@
 - bump nx from 20.1.2 to 20.1.3 @dependabot[bot] [`48607b4`](https://github.com/skriptfabrik/n8n-nodes/commit/48607b4b0e193624345b8eb65c134bd4aedbfe29)
 - bump nx from 20.0.12 to 20.1.2 @dependabot[bot] [`d81f1a4`](https://github.com/skriptfabrik/n8n-nodes/commit/d81f1a4666f240403ed7637d3b38096dc12bcd22)
 - bump @types/node version to 20.17.7 @MaSpeng [`a874133`](https://github.com/skriptfabrik/n8n-nodes/commit/a874133527ae38694b93496e5732f06d32353115)
-- bump n8n from 1.67.1 to 1.68.0 [N8N-24](https://skriptfabrik.atlassian.net/browse/N8N-24) @Marco Spengler [`cb45874`](https://github.com/skriptfabrik/n8n-nodes/commit/cb45874571d0c8797b41410071f3bc3cc0c6f478)
+- bump n8n from 1.67.1 to 1.68.0 [N8N-24](https://skriptfabrik.atlassian.net/browse/N8N-24) @MaSpeng [`cb45874`](https://github.com/skriptfabrik/n8n-nodes/commit/cb45874571d0c8797b41410071f3bc3cc0c6f478)
 - bump typescript-eslint from 8.12.1 to 8.15.0 @dependabot[bot] [`84e4d0a`](https://github.com/skriptfabrik/n8n-nodes/commit/84e4d0af4aa6ff3f165fc1274bed9ff471d692db)
 - bump tslib from 2.8.0 to 2.8.1 @dependabot[bot] [`730add4`](https://github.com/skriptfabrik/n8n-nodes/commit/730add40e539df1962f6722f359e658e04b4e357)
 - bump @eslint/eslintrc from 3.1.0 to 3.2.0 @dependabot[bot] [`4bc22c2`](https://github.com/skriptfabrik/n8n-nodes/commit/4bc22c2e0e2cf83088bf6cbfa4355ec23fedfc0a)
@@ -985,25 +985,25 @@
 
 ### 👷 Continuous Integration
 
-- allow manual workflow dispatch for a n8n dependency update [N8N-25](https://skriptfabrik.atlassian.net/browse/N8N-25) @Marco Spengler [`fa1eb1c`](https://github.com/skriptfabrik/n8n-nodes/commit/fa1eb1c2d75803cd779606f103bddcbb94c0b705)
+- allow manual workflow dispatch for a n8n dependency update [N8N-25](https://skriptfabrik.atlassian.net/browse/N8N-25) @MaSpeng [`fa1eb1c`](https://github.com/skriptfabrik/n8n-nodes/commit/fa1eb1c2d75803cd779606f103bddcbb94c0b705)
 
 ### 🐛 Bug Fixes
 
-- **moco:** bump n8n-workflow version to 1.63.0 [N8N-24](https://skriptfabrik.atlassian.net/browse/N8N-24) @Marco Spengler [`452ebdb`](https://github.com/skriptfabrik/n8n-nodes/commit/452ebdb9764d2615435182cc819fb0d4d7bc5140)
+- **moco:** bump n8n-workflow version to 1.63.0 [N8N-24](https://skriptfabrik.atlassian.net/browse/N8N-24) @MaSpeng [`452ebdb`](https://github.com/skriptfabrik/n8n-nodes/commit/452ebdb9764d2615435182cc819fb0d4d7bc5140)
 
 ### 🔧 Maintenance And Housekeeping
 
-- bump n8n from 1.63.4 to 1.64.3 [N8N-24](https://skriptfabrik.atlassian.net/browse/N8N-24) @Marco Spengler [`de3b839`](https://github.com/skriptfabrik/n8n-nodes/commit/de3b83900f8bc3628b0255fbfded844062aae167)
-- bump n8n-nodes-base version to 1.64.1 [N8N-24](https://skriptfabrik.atlassian.net/browse/N8N-24) @Marco Spengler [`151d805`](https://github.com/skriptfabrik/n8n-nodes/commit/151d8058dc7ab3b2480812f0d1786393714098b0)
+- bump n8n from 1.63.4 to 1.64.3 [N8N-24](https://skriptfabrik.atlassian.net/browse/N8N-24) @MaSpeng [`de3b839`](https://github.com/skriptfabrik/n8n-nodes/commit/de3b83900f8bc3628b0255fbfded844062aae167)
+- bump n8n-nodes-base version to 1.64.1 [N8N-24](https://skriptfabrik.atlassian.net/browse/N8N-24) @MaSpeng [`151d805`](https://github.com/skriptfabrik/n8n-nodes/commit/151d8058dc7ab3b2480812f0d1786393714098b0)
 - bump nx dependencies to 20.0.6 @dependabot[bot] [`d4ea839`](https://github.com/skriptfabrik/n8n-nodes/commit/d4ea83923bc2e87c58ad3774ea3cd8ba3ad20045)
 - bump @swc/core from 1.5.29 to 1.8.0 @dependabot[bot] [`18c9887`](https://github.com/skriptfabrik/n8n-nodes/commit/18c98872e5f321afe3add7a96ca7307a6bbf644c)
 - bump nx from 20.0.3 to 20.0.6 @dependabot[bot] [`6ad4433`](https://github.com/skriptfabrik/n8n-nodes/commit/6ad4433551ed559573db4eab5423f55000f3d5fc)
-- bump @types/node version to 20.17.6 [N8N-24](https://skriptfabrik.atlassian.net/browse/N8N-24) @Marco Spengler [`ce2932b`](https://github.com/skriptfabrik/n8n-nodes/commit/ce2932ba58724734f54c8acc306b4ce772227263)
+- bump @types/node version to 20.17.6 [N8N-24](https://skriptfabrik.atlassian.net/browse/N8N-24) @MaSpeng [`ce2932b`](https://github.com/skriptfabrik/n8n-nodes/commit/ce2932ba58724734f54c8acc306b4ce772227263)
 - bump eslint from 9.13.0 to 9.14.0 @dependabot[bot] [`f35d8e0`](https://github.com/skriptfabrik/n8n-nodes/commit/f35d8e06eef29a9668ebdf2b1ddb3b0442bffdcc)
 - bump typescript-eslint from 8.10.0 to 8.12.1 @dependabot[bot] [`2415a46`](https://github.com/skriptfabrik/n8n-nodes/commit/2415a46287670d1a21502ee4269946d46d138707)
 - bump openapi-typescript from 7.4.1 to 7.4.2 @dependabot[bot] [`2f4b723`](https://github.com/skriptfabrik/n8n-nodes/commit/2f4b723bd1f65b1eac9333fa8f828b79e1a7ba32)
 - bump @eslint/js from 9.12.0 to 9.13.0 @dependabot[bot] [`1d6e8b1`](https://github.com/skriptfabrik/n8n-nodes/commit/1d6e8b1efb092f6b47b62b40cdeba7b88b3fbbdc)
-- bump n8n-workflow version to 1.63.0 [N8N-24](https://skriptfabrik.atlassian.net/browse/N8N-24) @Marco Spengler [`a310d0b`](https://github.com/skriptfabrik/n8n-nodes/commit/a310d0bd5e19ebcd43887d5943cc7d3989b8c89c)
+- bump n8n-workflow version to 1.63.0 [N8N-24](https://skriptfabrik.atlassian.net/browse/N8N-24) @MaSpeng [`a310d0b`](https://github.com/skriptfabrik/n8n-nodes/commit/a310d0bd5e19ebcd43887d5943cc7d3989b8c89c)
 - bump @eslint/js from 9.13.0 to 9.14.0 @dependabot[bot] [`46d6fde`](https://github.com/skriptfabrik/n8n-nodes/commit/46d6fdeb44cb73076f7f5f37cdeffafa7e2c199c)
 - bump @eslint/compat from 1.2.0 to 1.2.2 @dependabot[bot] [`c4449ff`](https://github.com/skriptfabrik/n8n-nodes/commit/c4449ffb97fb41eca18cc3cf69f42555bfd872ba)
 
@@ -1024,13 +1024,13 @@
 
 ### 🐛 Bug Fixes
 
-- remove obsolete eslintignore [N8N-23](https://skriptfabrik.atlassian.net/browse/N8N-23) @Marco Spengler [`59e3598`](https://github.com/skriptfabrik/n8n-nodes/commit/59e3598ccb88e49fc9566cce1e057d41b65f863f)
+- remove obsolete eslintignore [N8N-23](https://skriptfabrik.atlassian.net/browse/N8N-23) @MaSpeng [`59e3598`](https://github.com/skriptfabrik/n8n-nodes/commit/59e3598ccb88e49fc9566cce1e057d41b65f863f)
 - **moco:** bump n8n-workflow version to 1.61.1 @dependabot[bot] [`ead7448`](https://github.com/skriptfabrik/n8n-nodes/commit/ead7448d872696d1a54ea2b79fe655f2b245d9f0)
 
 ### 🔧 Maintenance And Housekeeping
 
 - bump n8n from 1.60.1 to 1.62.6 @dependabot[bot] [`d928ed9`](https://github.com/skriptfabrik/n8n-nodes/commit/d928ed9f4187d7dc5991fe014c6590dc04d714d2)
-- update ESLint [N8N-23](https://skriptfabrik.atlassian.net/browse/N8N-23) @Marco Spengler [`b2658a8`](https://github.com/skriptfabrik/n8n-nodes/commit/b2658a85e3ffcec7aadd2ed47fc3e4152a8ebc3b)
+- update ESLint [N8N-23](https://skriptfabrik.atlassian.net/browse/N8N-23) @MaSpeng [`b2658a8`](https://github.com/skriptfabrik/n8n-nodes/commit/b2658a85e3ffcec7aadd2ed47fc3e4152a8ebc3b)
 - bump tslib from 2.7.0 to 2.8.0 @dependabot[bot] [`02b199a`](https://github.com/skriptfabrik/n8n-nodes/commit/02b199a0ec099386d2a06cc28307fa8e5729c947)
 - bump nx dependencies to 20.0.0 @dependabot[bot] [`18fad03`](https://github.com/skriptfabrik/n8n-nodes/commit/18fad035ad5e4a47d008c27609142be7761c95bd)
 - bump nx from 19.8.2 to 20.0.0 @dependabot[bot] [`7658327`](https://github.com/skriptfabrik/n8n-nodes/commit/7658327b4ad2d59f733499be5a6c397646d89ab6)
@@ -1045,15 +1045,15 @@
 - bump @types/node version to 20.16.11 @dependabot[bot] [`310e16b`](https://github.com/skriptfabrik/n8n-nodes/commit/310e16bf9a5967c6e030169612fb35520e80d784)
 - bump typescript-eslint from 8.8.1 to 8.10.0 @dependabot[bot] [`9299d12`](https://github.com/skriptfabrik/n8n-nodes/commit/9299d12d9b9c6e3dfe79dfcf9b0e06e5ac1618e8)
 - bump eslint from 9.12.0 to 9.13.0 @dependabot[bot] [`75aa27b`](https://github.com/skriptfabrik/n8n-nodes/commit/75aa27b9fd20c89463344f0c68a355b054e3a330)
-- update list of ignored files for git [N8N-23](https://skriptfabrik.atlassian.net/browse/N8N-23) @Marco Spengler [`13714c5`](https://github.com/skriptfabrik/n8n-nodes/commit/13714c5b202e73a14f057563a837819fd8202f25)
-- update nx configuration [N8N-23](https://skriptfabrik.atlassian.net/browse/N8N-23) @Marco Spengler [`72f15a8`](https://github.com/skriptfabrik/n8n-nodes/commit/72f15a893d9dcff8761c145cc2741f128198bdee)
+- update list of ignored files for git [N8N-23](https://skriptfabrik.atlassian.net/browse/N8N-23) @MaSpeng [`13714c5`](https://github.com/skriptfabrik/n8n-nodes/commit/13714c5b202e73a14f057563a837819fd8202f25)
+- update nx configuration [N8N-23](https://skriptfabrik.atlassian.net/browse/N8N-23) @MaSpeng [`72f15a8`](https://github.com/skriptfabrik/n8n-nodes/commit/72f15a893d9dcff8761c145cc2741f128198bdee)
 - bump eslint-plugin-n8n-nodes-base from 1.16.2 to 1.16.3 @dependabot[bot] [`fc0e3f8`](https://github.com/skriptfabrik/n8n-nodes/commit/fc0e3f8856b6e8550016b59bcaf6d63dbc676716)
-- fix linter errors [N8N-23](https://skriptfabrik.atlassian.net/browse/N8N-23) @Marco Spengler [`68cb409`](https://github.com/skriptfabrik/n8n-nodes/commit/68cb409b74efc33cd6ee1226b6b7dc29a8afd9da)
-- drop obsolete ESLint suppressions [N8N-23](https://skriptfabrik.atlassian.net/browse/N8N-23) @Marco Spengler [`3e70e68`](https://github.com/skriptfabrik/n8n-nodes/commit/3e70e68aeb18f970b32205aaae51a523f93c24f0)
+- fix linter errors [N8N-23](https://skriptfabrik.atlassian.net/browse/N8N-23) @MaSpeng [`68cb409`](https://github.com/skriptfabrik/n8n-nodes/commit/68cb409b74efc33cd6ee1226b6b7dc29a8afd9da)
+- drop obsolete ESLint suppressions [N8N-23](https://skriptfabrik.atlassian.net/browse/N8N-23) @MaSpeng [`3e70e68`](https://github.com/skriptfabrik/n8n-nodes/commit/3e70e68aeb18f970b32205aaae51a523f93c24f0)
 - [nx migration] use-legacy-cache @github-actions[bot] [`27f06e7`](https://github.com/skriptfabrik/n8n-nodes/commit/27f06e77f1efe0467150e0040bcf4254d8c4c5f9)
 - bump node version in devcontainer to 20.18.0 @dependabot[bot] [`5c508a8`](https://github.com/skriptfabrik/n8n-nodes/commit/5c508a89c65e800ed6ab4dea10a7dfb5314be065)
 - bump node version in package.json to 20.18.0 @dependabot[bot] [`1d9c9af`](https://github.com/skriptfabrik/n8n-nodes/commit/1d9c9af35422226c70c0c15f398a2fa83edb4d32)
-- update list of ignored files for prettier [N8N-23](https://skriptfabrik.atlassian.net/browse/N8N-23) @Marco Spengler [`201e27f`](https://github.com/skriptfabrik/n8n-nodes/commit/201e27feb3ea05defcda649d412c13dfc1db9c54)
+- update list of ignored files for prettier [N8N-23](https://skriptfabrik.atlassian.net/browse/N8N-23) @MaSpeng [`201e27f`](https://github.com/skriptfabrik/n8n-nodes/commit/201e27feb3ea05defcda649d412c13dfc1db9c54)
 
 ## [moco-0.3.12](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.3.11...moco-0.3.12)
 
@@ -1093,10 +1093,10 @@
 
 ### 🐛 Bug Fixes
 
-- **moco:** update order of node options due to n8n node options rule set [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`d716ae4`](https://github.com/skriptfabrik/n8n-nodes/commit/d716ae4227ee58351dd5866036d8611809948f81)
-- **moco:** update node inputs and outputs [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`112d12a`](https://github.com/skriptfabrik/n8n-nodes/commit/112d12a360aea56cafe384a3aec1e918011b5248)
+- **moco:** update order of node options due to n8n node options rule set [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`d716ae4`](https://github.com/skriptfabrik/n8n-nodes/commit/d716ae4227ee58351dd5866036d8611809948f81)
+- **moco:** update node inputs and outputs [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`112d12a`](https://github.com/skriptfabrik/n8n-nodes/commit/112d12a360aea56cafe384a3aec1e918011b5248)
 - **moco:** bump n8n-workflow version to 1.57.1 @dependabot[bot] [`f13d5c7`](https://github.com/skriptfabrik/n8n-nodes/commit/f13d5c706068a733a2acf238f4591e63d9ca2a5c)
-- suppress outdated eslint role [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`a3d2aaa`](https://github.com/skriptfabrik/n8n-nodes/commit/a3d2aaa4ae71fe290fe14d699abea0de1dfcc17d)
+- suppress outdated eslint role [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`a3d2aaa`](https://github.com/skriptfabrik/n8n-nodes/commit/a3d2aaa4ae71fe290fe14d699abea0de1dfcc17d)
 
 ### 🔧 Maintenance And Housekeeping
 
@@ -1142,8 +1142,8 @@
 
 ### 🐛 Bug Fixes
 
-- remove cookie for owner setup [N8N-22](https://skriptfabrik.atlassian.net/browse/N8N-22) @Marco Spengler [`9a7bd04`](https://github.com/skriptfabrik/n8n-nodes/commit/9a7bd048fb80797833fb3968f13d5609ee4af128)
-- **moco:** add stringyfied response body and item index to node api error [N8N-22](https://skriptfabrik.atlassian.net/browse/N8N-22) @Marco Spengler [`e3c4d66`](https://github.com/skriptfabrik/n8n-nodes/commit/e3c4d66737223cd6bdd0a01d2adcde63eb14f4d3)
+- remove cookie for owner setup [N8N-22](https://skriptfabrik.atlassian.net/browse/N8N-22) @MaSpeng [`9a7bd04`](https://github.com/skriptfabrik/n8n-nodes/commit/9a7bd048fb80797833fb3968f13d5609ee4af128)
+- **moco:** add stringyfied response body and item index to node api error [N8N-22](https://skriptfabrik.atlassian.net/browse/N8N-22) @MaSpeng [`e3c4d66`](https://github.com/skriptfabrik/n8n-nodes/commit/e3c4d66737223cd6bdd0a01d2adcde63eb14f4d3)
 
 ## [moco-0.3.7](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.3.6...moco-0.3.7)
 
@@ -1180,7 +1180,7 @@
 
 ### 👷 Continuous Integration
 
-- only cancel code check for matching pull requests N8N-15 @Marco Spengler [`9f4119a`](https://github.com/skriptfabrik/n8n-nodes/commit/9f4119aaa4f16d4e7e70bcaff5f35e5b8255b628)
+- only cancel code check for matching pull requests N8N-15 @MaSpeng [`9f4119a`](https://github.com/skriptfabrik/n8n-nodes/commit/9f4119aaa4f16d4e7e70bcaff5f35e5b8255b628)
 
 ### 🐛 Bug Fixes
 
@@ -1196,7 +1196,7 @@
 - bump n8n-nodes-base version to 1.53.2 @dependabot[bot] [`28be1fd`](https://github.com/skriptfabrik/n8n-nodes/commit/28be1fd10c1481d58cd7485cab97ba4f927f1a45)
 - bump @stylistic/eslint-plugin from 2.3.0 to 2.6.1 @dependabot[bot] [`eea23ef`](https://github.com/skriptfabrik/n8n-nodes/commit/eea23efa8496cff8d4a5a5bbebb7ced0c8f8d9fb)
 - bump @stylistic/eslint-plugin from 2.6.1 to 2.6.2 @dependabot[bot] [`5f14b33`](https://github.com/skriptfabrik/n8n-nodes/commit/5f14b334ecd596fdee79c1c7adedf964d844bfc5)
-- disable line length rule in yamllint for GitHub workfow files [N8N-21](https://skriptfabrik.atlassian.net/browse/N8N-21) @Marco Spengler [`49d6a36`](https://github.com/skriptfabrik/n8n-nodes/commit/49d6a363b51eb87c0fcd51675c77f0065ed6d43e)
+- disable line length rule in yamllint for GitHub workfow files [N8N-21](https://skriptfabrik.atlassian.net/browse/N8N-21) @MaSpeng [`49d6a36`](https://github.com/skriptfabrik/n8n-nodes/commit/49d6a363b51eb87c0fcd51675c77f0065ed6d43e)
 - bump @commitlint/cli from 19.3.0 to 19.4.0 @dependabot[bot] [`301e253`](https://github.com/skriptfabrik/n8n-nodes/commit/301e253100d618df959e6750333715d5173cc282)
 - bump n8n-workflow version to 1.52.1 @dependabot[bot] [`f7ba7d5`](https://github.com/skriptfabrik/n8n-nodes/commit/f7ba7d5ba7dd8eeb8caf6e96013113238628f4f9)
 
@@ -1204,14 +1204,14 @@
 
 ### 👷 Continuous Integration
 
-- extract code check into distinct workflow [N8N-20](https://skriptfabrik.atlassian.net/browse/N8N-20) @Marco Spengler [`ebc390d`](https://github.com/skriptfabrik/n8n-nodes/commit/ebc390d0186e7d2d87320779ec2a2c62a1916687)
-- remove obsolete workflow Node.js version check in dependency update workflow [N8N-19](https://skriptfabrik.atlassian.net/browse/N8N-19) @Marco Spengler [`682c524`](https://github.com/skriptfabrik/n8n-nodes/commit/682c524f1efcf5b8c5b3d5aea2b1bdb2f67dea2b)
-- update workflows to determine node version based on package.json [N8N-19](https://skriptfabrik.atlassian.net/browse/N8N-19) @Marco Spengler [`f917352`](https://github.com/skriptfabrik/n8n-nodes/commit/f917352b39289fe3ca25be9821fdf7cb8e1c7b5b)
-- cancel already running code-check [N8N-20](https://skriptfabrik.atlassian.net/browse/N8N-20) @Marco Spengler [`b1afed7`](https://github.com/skriptfabrik/n8n-nodes/commit/b1afed7d264c56286e467666242b614997b6f6e4)
-- execute code check when nx or n8n dependency updates are finished [N8N-20](https://skriptfabrik.atlassian.net/browse/N8N-20) @Marco Spengler [`b7a13a0`](https://github.com/skriptfabrik/n8n-nodes/commit/b7a13a0fb99e1f078f46356ee09eaa918fea240f)
-- update Node.js version in package.json during n8n update [N8N-19](https://skriptfabrik.atlassian.net/browse/N8N-19) @Marco Spengler [`9836ef1`](https://github.com/skriptfabrik/n8n-nodes/commit/9836ef1271abd0e5c5aa11a97af71056f8c76266)
-- ensure nx release will publish the build output of a custom node [N8N-18](https://skriptfabrik.atlassian.net/browse/N8N-18) @Marco Spengler [`a19caed`](https://github.com/skriptfabrik/n8n-nodes/commit/a19caed88c19dcca5728b420708edbc7e1b2b9fc)
-- remove obsolete permissions on workflows [N8N-20](https://skriptfabrik.atlassian.net/browse/N8N-20) @Marco Spengler [`82b56c8`](https://github.com/skriptfabrik/n8n-nodes/commit/82b56c8c672afc0d10aeaff5f5bbab072d511ff1)
+- extract code check into distinct workflow [N8N-20](https://skriptfabrik.atlassian.net/browse/N8N-20) @MaSpeng [`ebc390d`](https://github.com/skriptfabrik/n8n-nodes/commit/ebc390d0186e7d2d87320779ec2a2c62a1916687)
+- remove obsolete workflow Node.js version check in dependency update workflow [N8N-19](https://skriptfabrik.atlassian.net/browse/N8N-19) @MaSpeng [`682c524`](https://github.com/skriptfabrik/n8n-nodes/commit/682c524f1efcf5b8c5b3d5aea2b1bdb2f67dea2b)
+- update workflows to determine node version based on package.json [N8N-19](https://skriptfabrik.atlassian.net/browse/N8N-19) @MaSpeng [`f917352`](https://github.com/skriptfabrik/n8n-nodes/commit/f917352b39289fe3ca25be9821fdf7cb8e1c7b5b)
+- cancel already running code-check [N8N-20](https://skriptfabrik.atlassian.net/browse/N8N-20) @MaSpeng [`b1afed7`](https://github.com/skriptfabrik/n8n-nodes/commit/b1afed7d264c56286e467666242b614997b6f6e4)
+- execute code check when nx or n8n dependency updates are finished [N8N-20](https://skriptfabrik.atlassian.net/browse/N8N-20) @MaSpeng [`b7a13a0`](https://github.com/skriptfabrik/n8n-nodes/commit/b7a13a0fb99e1f078f46356ee09eaa918fea240f)
+- update Node.js version in package.json during n8n update [N8N-19](https://skriptfabrik.atlassian.net/browse/N8N-19) @MaSpeng [`9836ef1`](https://github.com/skriptfabrik/n8n-nodes/commit/9836ef1271abd0e5c5aa11a97af71056f8c76266)
+- ensure nx release will publish the build output of a custom node [N8N-18](https://skriptfabrik.atlassian.net/browse/N8N-18) @MaSpeng [`a19caed`](https://github.com/skriptfabrik/n8n-nodes/commit/a19caed88c19dcca5728b420708edbc7e1b2b9fc)
+- remove obsolete permissions on workflows [N8N-20](https://skriptfabrik.atlassian.net/browse/N8N-20) @MaSpeng [`82b56c8`](https://github.com/skriptfabrik/n8n-nodes/commit/82b56c8c672afc0d10aeaff5f5bbab072d511ff1)
 
 ### 🐛 Bug Fixes
 
@@ -1232,7 +1232,7 @@
 - bump openapi-typescript from 7.0.2 to 7.3.0 @dependabot[bot] [`04fbb29`](https://github.com/skriptfabrik/n8n-nodes/commit/04fbb2986c6283bbfdb0c154f49fd046d0ea9060)
 - bump prettier from 3.3.2 to 3.3.3 @dependabot[bot] [`8b4a4b5`](https://github.com/skriptfabrik/n8n-nodes/commit/8b4a4b55793a3c8ef557970018432d85816d8ebb)
 - bump n8n-workflow version to 1.51.0 @dependabot[bot] [`7541c5d`](https://github.com/skriptfabrik/n8n-nodes/commit/7541c5d9f287be59ca1441ce3ebb7630c6790ef3)
-- manifest required Node.js version in package.json [N8N-19](https://skriptfabrik.atlassian.net/browse/N8N-19) @Marco Spengler [`65cf8eb`](https://github.com/skriptfabrik/n8n-nodes/commit/65cf8eb6afd1451b43623b67f68d8211f378bc32)
+- manifest required Node.js version in package.json [N8N-19](https://skriptfabrik.atlassian.net/browse/N8N-19) @MaSpeng [`65cf8eb`](https://github.com/skriptfabrik/n8n-nodes/commit/65cf8eb6afd1451b43623b67f68d8211f378bc32)
 - bump node version in devcontainer to 20.15.0 @dependabot[bot] [`df035a6`](https://github.com/skriptfabrik/n8n-nodes/commit/df035a681e3fc143788af37a4b29366de41807a7)
 - bump node version in package.json to 20.15.0 @dependabot[bot] [`eabc12b`](https://github.com/skriptfabrik/n8n-nodes/commit/eabc12b82021ff476cc52c3fda2f1cef8d039cf6)
 
@@ -1240,23 +1240,23 @@
 
 ### 👷 Continuous Integration
 
-- add workflow to automate n8n updates [N8N-13](https://skriptfabrik.atlassian.net/browse/N8N-13) @Marco Spengler [`af6e9c7`](https://github.com/skriptfabrik/n8n-nodes/commit/af6e9c700f9d44ded1f21c3e74b974b3a66d9b76)
-- add workflow to automate nx updates [N8N-15](https://skriptfabrik.atlassian.net/browse/N8N-15) @Marco Spengler [`c9ca9e9`](https://github.com/skriptfabrik/n8n-nodes/commit/c9ca9e91fe64fd88e11d22bf2f5acb395bcc7ff6)
-- provide workflow to trigger dependabot enhancement workflows [N8N-15](https://skriptfabrik.atlassian.net/browse/N8N-15) @Marco Spengler [`aec1803`](https://github.com/skriptfabrik/n8n-nodes/commit/aec18039ae4c84519fb4a694729dac5c88c77460)
-- fix pnpm lockfile handling [N8N-16](https://skriptfabrik.atlassian.net/browse/N8N-16) @Daniel Schröder [`80229a0`](https://github.com/skriptfabrik/n8n-nodes/commit/80229a09fffe4e8f111f85ea4403be88997e8f6a)
-- use pre-installed version of yq [N8N-13](https://skriptfabrik.atlassian.net/browse/N8N-13) @Marco Spengler [`87c07ed`](https://github.com/skriptfabrik/n8n-nodes/commit/87c07ed06871799bf1cd42a8c3356ac0087072e2)
-- update pnpm lock file after dependency update in node [N8N-16](https://skriptfabrik.atlassian.net/browse/N8N-16) @Marco Spengler [`10fcb3f`](https://github.com/skriptfabrik/n8n-nodes/commit/10fcb3fdc077b91bfe19cb0c6ff417085d78d3ed)
-- bump node in workflows to 20.14.0 [N8N-13](https://skriptfabrik.atlassian.net/browse/N8N-13) @Marco Spengler [`afa29fe`](https://github.com/skriptfabrik/n8n-nodes/commit/afa29fee3a0be925f21df9c6e691356184a1634a)
-- replace manual git user configuration with action in workflows [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @Marco Spengler [`d845fb4`](https://github.com/skriptfabrik/n8n-nodes/commit/d845fb405e21f2c06f0c687fafd3ecf28da9764b)
-- ignore commits signed off by GitHub actions bot [N8N-13](https://skriptfabrik.atlassian.net/browse/N8N-13) @Marco Spengler [`9e5fc2e`](https://github.com/skriptfabrik/n8n-nodes/commit/9e5fc2e556707cd3a6019fd245973cb7c47968b7)
-- sign off commits from workflows to be able to identify automated commits [N8N-13](https://skriptfabrik.atlassian.net/browse/N8N-13) @Marco Spengler [`a81ed94`](https://github.com/skriptfabrik/n8n-nodes/commit/a81ed94d3aa77b0cbe88f23bb6eb88d304bbbfea)
-- drop default "skip_dirty_check" for commits from workflows [N8N-13](https://skriptfabrik.atlassian.net/browse/N8N-13) @Marco Spengler [`4a89dc2`](https://github.com/skriptfabrik/n8n-nodes/commit/4a89dc2283506f572569ec385b4eb5fab29755a9)
-- only update n8n dependencies which where already present [N8N-13](https://skriptfabrik.atlassian.net/browse/N8N-13) @Marco Spengler [`cd8a39c`](https://github.com/skriptfabrik/n8n-nodes/commit/cd8a39cf2f8b7c910dcd655a1eec06d50ffbb314)
-- ignore dependabot commits in commitlint [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`3818ac7`](https://github.com/skriptfabrik/n8n-nodes/commit/3818ac746ceb0cce9dc6f759080376b2ee2aa27d)
-- ignore workspace root check when adding packages [N8N-16](https://skriptfabrik.atlassian.net/browse/N8N-16) @Daniel Schröder [`37c109b`](https://github.com/skriptfabrik/n8n-nodes/commit/37c109b20839ba8f90651eca1793600ff179899c)
-- fix file pattern for nx dependency update workflow [N8N-16](https://skriptfabrik.atlassian.net/browse/N8N-16) @Marco Spengler [`89ddaa1`](https://github.com/skriptfabrik/n8n-nodes/commit/89ddaa1c1360743cc833b6673c0d35c94c33f1d2)
-- don't lint commits or yaml when pull request has been edited [N8N-15](https://skriptfabrik.atlassian.net/browse/N8N-15) @Marco Spengler [`60f119b`](https://github.com/skriptfabrik/n8n-nodes/commit/60f119b36c4d4304ac4f87b8483f4c671eba793d)
-- remove header pattern from commitlint configuration [N8N-15](https://skriptfabrik.atlassian.net/browse/N8N-15) @Marco Spengler [`be2f6b5`](https://github.com/skriptfabrik/n8n-nodes/commit/be2f6b509d12c4caa6ac0cea75df24d69a95a2bb)
+- add workflow to automate n8n updates [N8N-13](https://skriptfabrik.atlassian.net/browse/N8N-13) @MaSpeng [`af6e9c7`](https://github.com/skriptfabrik/n8n-nodes/commit/af6e9c700f9d44ded1f21c3e74b974b3a66d9b76)
+- add workflow to automate nx updates [N8N-15](https://skriptfabrik.atlassian.net/browse/N8N-15) @MaSpeng [`c9ca9e9`](https://github.com/skriptfabrik/n8n-nodes/commit/c9ca9e91fe64fd88e11d22bf2f5acb395bcc7ff6)
+- provide workflow to trigger dependabot enhancement workflows [N8N-15](https://skriptfabrik.atlassian.net/browse/N8N-15) @MaSpeng [`aec1803`](https://github.com/skriptfabrik/n8n-nodes/commit/aec18039ae4c84519fb4a694729dac5c88c77460)
+- fix pnpm lockfile handling [N8N-16](https://skriptfabrik.atlassian.net/browse/N8N-16) @schroedan [`80229a0`](https://github.com/skriptfabrik/n8n-nodes/commit/80229a09fffe4e8f111f85ea4403be88997e8f6a)
+- use pre-installed version of yq [N8N-13](https://skriptfabrik.atlassian.net/browse/N8N-13) @MaSpeng [`87c07ed`](https://github.com/skriptfabrik/n8n-nodes/commit/87c07ed06871799bf1cd42a8c3356ac0087072e2)
+- update pnpm lock file after dependency update in node [N8N-16](https://skriptfabrik.atlassian.net/browse/N8N-16) @MaSpeng [`10fcb3f`](https://github.com/skriptfabrik/n8n-nodes/commit/10fcb3fdc077b91bfe19cb0c6ff417085d78d3ed)
+- bump node in workflows to 20.14.0 [N8N-13](https://skriptfabrik.atlassian.net/browse/N8N-13) @MaSpeng [`afa29fe`](https://github.com/skriptfabrik/n8n-nodes/commit/afa29fee3a0be925f21df9c6e691356184a1634a)
+- replace manual git user configuration with action in workflows [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @MaSpeng [`d845fb4`](https://github.com/skriptfabrik/n8n-nodes/commit/d845fb405e21f2c06f0c687fafd3ecf28da9764b)
+- ignore commits signed off by GitHub actions bot [N8N-13](https://skriptfabrik.atlassian.net/browse/N8N-13) @MaSpeng [`9e5fc2e`](https://github.com/skriptfabrik/n8n-nodes/commit/9e5fc2e556707cd3a6019fd245973cb7c47968b7)
+- sign off commits from workflows to be able to identify automated commits [N8N-13](https://skriptfabrik.atlassian.net/browse/N8N-13) @MaSpeng [`a81ed94`](https://github.com/skriptfabrik/n8n-nodes/commit/a81ed94d3aa77b0cbe88f23bb6eb88d304bbbfea)
+- drop default "skip_dirty_check" for commits from workflows [N8N-13](https://skriptfabrik.atlassian.net/browse/N8N-13) @MaSpeng [`4a89dc2`](https://github.com/skriptfabrik/n8n-nodes/commit/4a89dc2283506f572569ec385b4eb5fab29755a9)
+- only update n8n dependencies which where already present [N8N-13](https://skriptfabrik.atlassian.net/browse/N8N-13) @MaSpeng [`cd8a39c`](https://github.com/skriptfabrik/n8n-nodes/commit/cd8a39cf2f8b7c910dcd655a1eec06d50ffbb314)
+- ignore dependabot commits in commitlint [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`3818ac7`](https://github.com/skriptfabrik/n8n-nodes/commit/3818ac746ceb0cce9dc6f759080376b2ee2aa27d)
+- ignore workspace root check when adding packages [N8N-16](https://skriptfabrik.atlassian.net/browse/N8N-16) @schroedan [`37c109b`](https://github.com/skriptfabrik/n8n-nodes/commit/37c109b20839ba8f90651eca1793600ff179899c)
+- fix file pattern for nx dependency update workflow [N8N-16](https://skriptfabrik.atlassian.net/browse/N8N-16) @MaSpeng [`89ddaa1`](https://github.com/skriptfabrik/n8n-nodes/commit/89ddaa1c1360743cc833b6673c0d35c94c33f1d2)
+- don't lint commits or yaml when pull request has been edited [N8N-15](https://skriptfabrik.atlassian.net/browse/N8N-15) @MaSpeng [`60f119b`](https://github.com/skriptfabrik/n8n-nodes/commit/60f119b36c4d4304ac4f87b8483f4c671eba793d)
+- remove header pattern from commitlint configuration [N8N-15](https://skriptfabrik.atlassian.net/browse/N8N-15) @MaSpeng [`be2f6b5`](https://github.com/skriptfabrik/n8n-nodes/commit/be2f6b509d12c4caa6ac0cea75df24d69a95a2bb)
 
 ### 🐛 Bug Fixes
 
@@ -1264,11 +1264,11 @@
 
 ### 🔧 Maintenance And Housekeeping
 
-- use pnpm instead of npm [N8N-16](https://skriptfabrik.atlassian.net/browse/N8N-16) @Daniel Schröder [`02ad5cd`](https://github.com/skriptfabrik/n8n-nodes/commit/02ad5cdeafcfdb3656a1370abf46c1c5e9eec0df)
-- update package.json to match latest nx monorepository preset [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`db206b5`](https://github.com/skriptfabrik/n8n-nodes/commit/db206b5b73a285b2c86fcbc53a062fece6767d10)
+- use pnpm instead of npm [N8N-16](https://skriptfabrik.atlassian.net/browse/N8N-16) @schroedan [`02ad5cd`](https://github.com/skriptfabrik/n8n-nodes/commit/02ad5cdeafcfdb3656a1370abf46c1c5e9eec0df)
+- update package.json to match latest nx monorepository preset [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`db206b5`](https://github.com/skriptfabrik/n8n-nodes/commit/db206b5b73a285b2c86fcbc53a062fece6767d10)
 - bump n8n from 1.44.1 to 1.47.3 @dependabot[bot] [`13987e4`](https://github.com/skriptfabrik/n8n-nodes/commit/13987e407aa1db9142d56bd9b14db85d2897c1e2)
 - bump typescript from 5.5.2 to 5.5.3 @dependabot[bot] [`c5161a8`](https://github.com/skriptfabrik/n8n-nodes/commit/c5161a86edc576145234f6fb08137faf23d4bdd5)
-- install/use local commitlint [N8N-16](https://skriptfabrik.atlassian.net/browse/N8N-16) @Daniel Schröder [`c46864b`](https://github.com/skriptfabrik/n8n-nodes/commit/c46864b67ab368a685f5a11d257b97ca8efa4a8c)
+- install/use local commitlint [N8N-16](https://skriptfabrik.atlassian.net/browse/N8N-16) @schroedan [`c46864b`](https://github.com/skriptfabrik/n8n-nodes/commit/c46864b67ab368a685f5a11d257b97ca8efa4a8c)
 - bump nx dependencies to 19.4.0 @dependabot[bot] [`72ec3d2`](https://github.com/skriptfabrik/n8n-nodes/commit/72ec3d283a0c338333d7e6c6359d26ee2c19fa87)
 - bump nx from 19.2.3 to 19.4.0 @dependabot[bot] [`74633da`](https://github.com/skriptfabrik/n8n-nodes/commit/74633dae43fe733682eb51a8fae4bed2c884e077)
 - bump @types/node version to 20.14.0 @dependabot[bot] [`54287aa`](https://github.com/skriptfabrik/n8n-nodes/commit/54287aa57860a46db150d2891a21d69b927dcd37)
@@ -1278,17 +1278,17 @@
 - bump @stylistic/eslint-plugin from 2.1.0 to 2.2.2 @dependabot[bot] [`8c4afd3`](https://github.com/skriptfabrik/n8n-nodes/commit/8c4afd3789293179bcdd2694aca4c538cdef8548)
 - bump n8n-workflow version to 1.46.0 @dependabot[bot] [`04be70c`](https://github.com/skriptfabrik/n8n-nodes/commit/04be70cd7bee4a7be3fdb330b4e1d6735318e925)
 - bump typescript from 5.4.5 to 5.5.2 @dependabot[bot] [`aa25b60`](https://github.com/skriptfabrik/n8n-nodes/commit/aa25b60c3c910333d752914e6243ab1cd8218140)
-- fix project names in nx install targets [N8N-16](https://skriptfabrik.atlassian.net/browse/N8N-16) @Daniel Schröder [`6b662f5`](https://github.com/skriptfabrik/n8n-nodes/commit/6b662f57e7c5cd632f16bc8f5b43263132fd4ea1)
+- fix project names in nx install targets [N8N-16](https://skriptfabrik.atlassian.net/browse/N8N-16) @schroedan [`6b662f5`](https://github.com/skriptfabrik/n8n-nodes/commit/6b662f57e7c5cd632f16bc8f5b43263132fd4ea1)
 - bump openapi-typescript from 7.0.0 to 7.0.2 @dependabot[bot] [`566d2b2`](https://github.com/skriptfabrik/n8n-nodes/commit/566d2b204e6402ea58a260299fb09f52653a7de4)
 - bump ts-jest from 29.1.4 to 29.1.5 @dependabot[bot] [`8d22652`](https://github.com/skriptfabrik/n8n-nodes/commit/8d226522630a5a9853276c1bee2c6582501af09f)
-- update common jest configuration to retrieve jest projects in async manner [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`f33b085`](https://github.com/skriptfabrik/n8n-nodes/commit/f33b085c3d345e4fa20fd7fbf5c2404b8ebd320e)
-- add default nx workspace `pluginConfig` from latest nx preset [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`fa1887d`](https://github.com/skriptfabrik/n8n-nodes/commit/fa1887d08ce7319c1712cd4ea222ad19e19e7cd5)
-- remove obsolete nx workspace configuration `workspaceLayout` [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`aa6674d`](https://github.com/skriptfabrik/n8n-nodes/commit/aa6674d140f220f7d450461812694334e43d9025)
-- **moco:** remove obsolete publish configuration from nx project [N8N-15](https://skriptfabrik.atlassian.net/browse/N8N-15) @Marco Spengler [`b68d6ab`](https://github.com/skriptfabrik/n8n-nodes/commit/b68d6ab15b5a07f21f373bb661df78be26bba752)
+- update common jest configuration to retrieve jest projects in async manner [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`f33b085`](https://github.com/skriptfabrik/n8n-nodes/commit/f33b085c3d345e4fa20fd7fbf5c2404b8ebd320e)
+- add default nx workspace `pluginConfig` from latest nx preset [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`fa1887d`](https://github.com/skriptfabrik/n8n-nodes/commit/fa1887d08ce7319c1712cd4ea222ad19e19e7cd5)
+- remove obsolete nx workspace configuration `workspaceLayout` [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`aa6674d`](https://github.com/skriptfabrik/n8n-nodes/commit/aa6674d140f220f7d450461812694334e43d9025)
+- **moco:** remove obsolete publish configuration from nx project [N8N-15](https://skriptfabrik.atlassian.net/browse/N8N-15) @MaSpeng [`b68d6ab`](https://github.com/skriptfabrik/n8n-nodes/commit/b68d6ab15b5a07f21f373bb661df78be26bba752)
 - bump node version in devcontainer to 20.14.0 @dependabot[bot] [`e4a77da`](https://github.com/skriptfabrik/n8n-nodes/commit/e4a77da768e5f481a20334a06e2cf563965e44ff)
-- add nx workspace `extends` configuration from latest nx preset [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`f20349b`](https://github.com/skriptfabrik/n8n-nodes/commit/f20349bd5fda91c645769aa2b3b7ce1fe96178ac)
-- add nx workspace release version pre command from latest nx preset [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`d9d4a0c`](https://github.com/skriptfabrik/n8n-nodes/commit/d9d4a0c90fc5d738c8480f314f0019f37dd7bdf0)
-- remove nx workspace release projects configuration [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`0cbdf6a`](https://github.com/skriptfabrik/n8n-nodes/commit/0cbdf6aa3e83bab435e53f6f5874422e0df13c19)
+- add nx workspace `extends` configuration from latest nx preset [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`f20349b`](https://github.com/skriptfabrik/n8n-nodes/commit/f20349bd5fda91c645769aa2b3b7ce1fe96178ac)
+- add nx workspace release version pre command from latest nx preset [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`d9d4a0c`](https://github.com/skriptfabrik/n8n-nodes/commit/d9d4a0c90fc5d738c8480f314f0019f37dd7bdf0)
+- remove nx workspace release projects configuration [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`0cbdf6a`](https://github.com/skriptfabrik/n8n-nodes/commit/0cbdf6aa3e83bab435e53f6f5874422e0df13c19)
 
 ## [moco-0.3.2](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.3.1...moco-0.3.2)
 
@@ -1298,44 +1298,44 @@
 
 ### 👷 Continuous Integration
 
-- add workflow to create a GitHub release on tag push [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @Marco Spengler [`9091ef9`](https://github.com/skriptfabrik/n8n-nodes/commit/9091ef978da632d9c48e1189a46330081d7491d6)
-- add workflow to prepare a package release using nx release @Marco Spengler [`720676f`](https://github.com/skriptfabrik/n8n-nodes/commit/720676f50174c46c88b11b839d191c3cd89a6f4f)
-- update publish package workflow to use nx release @Marco Spengler [`933d875`](https://github.com/skriptfabrik/n8n-nodes/commit/933d875c57d12559089b8167b291383701de2f4f)
-- simplify release package workflow [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @Marco Spengler [`143b130`](https://github.com/skriptfabrik/n8n-nodes/commit/143b1309f3f51dc3d1b1e84651ea06e81d6b4948)
-- drop deprecated publish script [N8N-7](https://skriptfabrik.atlassian.net/browse/N8N-7) @Marco Spengler [`82db8d4`](https://github.com/skriptfabrik/n8n-nodes/commit/82db8d45cc2835297d3453b83d25645579ce4925)
-- exchange regular expression check with commitlint [N8N-7](https://skriptfabrik.atlassian.net/browse/N8N-7) @Marco Spengler [`d63bb27`](https://github.com/skriptfabrik/n8n-nodes/commit/d63bb27f6865d2491b23951b8cd448404d1832ff)
-- drop deprecated publish target from project configurations [N8N-7](https://skriptfabrik.atlassian.net/browse/N8N-7) @Marco Spengler [`e99a7d9`](https://github.com/skriptfabrik/n8n-nodes/commit/e99a7d90d3c599eff700cc94e993f568bcdb64ee)
-- execute create GitHub release workflow when the publish package workflow completed [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @Marco Spengler [`0ae38cf`](https://github.com/skriptfabrik/n8n-nodes/commit/0ae38cfef7344db3c90ce21cbbe912beedbf47f6)
-- configure dependabot commit message prefix [N8N-7](https://skriptfabrik.atlassian.net/browse/N8N-7) @Marco Spengler [`6faf1bf`](https://github.com/skriptfabrik/n8n-nodes/commit/6faf1bf3c9dba55b154f409d250bea75ad9e3155)
-- remove prefix n8n-nodes- from package project configurations [N8N-7](https://skriptfabrik.atlassian.net/browse/N8N-7) @Marco Spengler [`edcd198`](https://github.com/skriptfabrik/n8n-nodes/commit/edcd1980b8e099f3cca9011b887030a59a01d386)
-- simplify publish package workflow [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @Marco Spengler [`be39e50`](https://github.com/skriptfabrik/n8n-nodes/commit/be39e508ce23b3b679076874c526ceaf1541e343)
-- provide configuration for nx to be able to create releases [N8N-7](https://skriptfabrik.atlassian.net/browse/N8N-7) @Marco Spengler [`2515982`](https://github.com/skriptfabrik/n8n-nodes/commit/2515982c3a5ac05a3292ea26154b9b1b697c1577)
-- add devcontainer to dependabot configuration [N8N-10](https://skriptfabrik.atlassian.net/browse/N8N-10) @Marco Spengler [`4fed475`](https://github.com/skriptfabrik/n8n-nodes/commit/4fed4754e52532e22794cf86be8207601e107491)
-- ensure package will be published [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @Marco Spengler [`6f2d640`](https://github.com/skriptfabrik/n8n-nodes/commit/6f2d6400b0b9c0efb874cbd06b34f1f0024727de)
-- skip lock file update during nx release command execution [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @Marco Spengler [`6a8327b`](https://github.com/skriptfabrik/n8n-nodes/commit/6a8327b0421feffe8dfca3f0e0aabea02e26ed4a)
-- ensure latest tag is available when releasing a package [N8N-7](https://skriptfabrik.atlassian.net/browse/N8N-7) @Marco Spengler [`0e1bb45`](https://github.com/skriptfabrik/n8n-nodes/commit/0e1bb459c3d6506764e4a7f64dde28f7b9a174b8)
-- limit NODE_AUTH_TOKEN environment to publish step [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @Marco Spengler [`c339d4a`](https://github.com/skriptfabrik/n8n-nodes/commit/c339d4ae6e38499a1d32894517d675a11d086091)
-- configure commit message pattern for the execution of the nx release command [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @Marco Spengler [`f9512d3`](https://github.com/skriptfabrik/n8n-nodes/commit/f9512d3c020e1fb0061239d842728b28b2cb5fcd)
-- reintroduce dependency installation for commit linting due to implicit dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`57c6d8b`](https://github.com/skriptfabrik/n8n-nodes/commit/57c6d8b2104dfd33af4f27bab31b7e051c979255)
-- remove not required dependency installation from commit message linting @Marco Spengler [`34d7220`](https://github.com/skriptfabrik/n8n-nodes/commit/34d7220d4ff2f7a4f785129831c1f6b63f6836d9)
-- ensure nx version from workspace will be used for commit linting [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`57e598b`](https://github.com/skriptfabrik/n8n-nodes/commit/57e598b2e847e7210bb334a4bd15c94dd3a78631)
-- extend checkout for commit message liniting @Marco Spengler [`e406daf`](https://github.com/skriptfabrik/n8n-nodes/commit/e406daf0ab90a0e989f9439178014273b87caa96)
-- update node version in pull request workflow to match with the other workflows and the expected runtime version @Marco Spengler [`384ad7b`](https://github.com/skriptfabrik/n8n-nodes/commit/384ad7bf914ab6c4a7d8f99b67a8515bfa1b6988)
-- bump node version in CI pipeline to match runtime environment [N8N-7](https://skriptfabrik.atlassian.net/browse/N8N-7) @Marco Spengler [`81f0084`](https://github.com/skriptfabrik/n8n-nodes/commit/81f00845306fed0baab3e73915b748655891ff02)
-- provide npm registry url to be able to publish a package [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @Marco Spengler [`53cca5f`](https://github.com/skriptfabrik/n8n-nodes/commit/53cca5f139927fcbeb41668057913e0637358ed8)
-- ignore automatic generated changelogs in markdownlint [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @Marco Spengler [`149a13c`](https://github.com/skriptfabrik/n8n-nodes/commit/149a13c196032a45e822b720d3396ccf6738d476)
+- add workflow to create a GitHub release on tag push [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @MaSpeng [`9091ef9`](https://github.com/skriptfabrik/n8n-nodes/commit/9091ef978da632d9c48e1189a46330081d7491d6)
+- add workflow to prepare a package release using nx release @MaSpeng [`720676f`](https://github.com/skriptfabrik/n8n-nodes/commit/720676f50174c46c88b11b839d191c3cd89a6f4f)
+- update publish package workflow to use nx release @MaSpeng [`933d875`](https://github.com/skriptfabrik/n8n-nodes/commit/933d875c57d12559089b8167b291383701de2f4f)
+- simplify release package workflow [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @MaSpeng [`143b130`](https://github.com/skriptfabrik/n8n-nodes/commit/143b1309f3f51dc3d1b1e84651ea06e81d6b4948)
+- drop deprecated publish script [N8N-7](https://skriptfabrik.atlassian.net/browse/N8N-7) @MaSpeng [`82db8d4`](https://github.com/skriptfabrik/n8n-nodes/commit/82db8d45cc2835297d3453b83d25645579ce4925)
+- exchange regular expression check with commitlint [N8N-7](https://skriptfabrik.atlassian.net/browse/N8N-7) @MaSpeng [`d63bb27`](https://github.com/skriptfabrik/n8n-nodes/commit/d63bb27f6865d2491b23951b8cd448404d1832ff)
+- drop deprecated publish target from project configurations [N8N-7](https://skriptfabrik.atlassian.net/browse/N8N-7) @MaSpeng [`e99a7d9`](https://github.com/skriptfabrik/n8n-nodes/commit/e99a7d90d3c599eff700cc94e993f568bcdb64ee)
+- execute create GitHub release workflow when the publish package workflow completed [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @MaSpeng [`0ae38cf`](https://github.com/skriptfabrik/n8n-nodes/commit/0ae38cfef7344db3c90ce21cbbe912beedbf47f6)
+- configure dependabot commit message prefix [N8N-7](https://skriptfabrik.atlassian.net/browse/N8N-7) @MaSpeng [`6faf1bf`](https://github.com/skriptfabrik/n8n-nodes/commit/6faf1bf3c9dba55b154f409d250bea75ad9e3155)
+- remove prefix n8n-nodes- from package project configurations [N8N-7](https://skriptfabrik.atlassian.net/browse/N8N-7) @MaSpeng [`edcd198`](https://github.com/skriptfabrik/n8n-nodes/commit/edcd1980b8e099f3cca9011b887030a59a01d386)
+- simplify publish package workflow [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @MaSpeng [`be39e50`](https://github.com/skriptfabrik/n8n-nodes/commit/be39e508ce23b3b679076874c526ceaf1541e343)
+- provide configuration for nx to be able to create releases [N8N-7](https://skriptfabrik.atlassian.net/browse/N8N-7) @MaSpeng [`2515982`](https://github.com/skriptfabrik/n8n-nodes/commit/2515982c3a5ac05a3292ea26154b9b1b697c1577)
+- add devcontainer to dependabot configuration [N8N-10](https://skriptfabrik.atlassian.net/browse/N8N-10) @MaSpeng [`4fed475`](https://github.com/skriptfabrik/n8n-nodes/commit/4fed4754e52532e22794cf86be8207601e107491)
+- ensure package will be published [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @MaSpeng [`6f2d640`](https://github.com/skriptfabrik/n8n-nodes/commit/6f2d6400b0b9c0efb874cbd06b34f1f0024727de)
+- skip lock file update during nx release command execution [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @MaSpeng [`6a8327b`](https://github.com/skriptfabrik/n8n-nodes/commit/6a8327b0421feffe8dfca3f0e0aabea02e26ed4a)
+- ensure latest tag is available when releasing a package [N8N-7](https://skriptfabrik.atlassian.net/browse/N8N-7) @MaSpeng [`0e1bb45`](https://github.com/skriptfabrik/n8n-nodes/commit/0e1bb459c3d6506764e4a7f64dde28f7b9a174b8)
+- limit NODE_AUTH_TOKEN environment to publish step [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @MaSpeng [`c339d4a`](https://github.com/skriptfabrik/n8n-nodes/commit/c339d4ae6e38499a1d32894517d675a11d086091)
+- configure commit message pattern for the execution of the nx release command [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @MaSpeng [`f9512d3`](https://github.com/skriptfabrik/n8n-nodes/commit/f9512d3c020e1fb0061239d842728b28b2cb5fcd)
+- reintroduce dependency installation for commit linting due to implicit dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`57c6d8b`](https://github.com/skriptfabrik/n8n-nodes/commit/57c6d8b2104dfd33af4f27bab31b7e051c979255)
+- remove not required dependency installation from commit message linting @MaSpeng [`34d7220`](https://github.com/skriptfabrik/n8n-nodes/commit/34d7220d4ff2f7a4f785129831c1f6b63f6836d9)
+- ensure nx version from workspace will be used for commit linting [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`57e598b`](https://github.com/skriptfabrik/n8n-nodes/commit/57e598b2e847e7210bb334a4bd15c94dd3a78631)
+- extend checkout for commit message liniting @MaSpeng [`e406daf`](https://github.com/skriptfabrik/n8n-nodes/commit/e406daf0ab90a0e989f9439178014273b87caa96)
+- update node version in pull request workflow to match with the other workflows and the expected runtime version @MaSpeng [`384ad7b`](https://github.com/skriptfabrik/n8n-nodes/commit/384ad7bf914ab6c4a7d8f99b67a8515bfa1b6988)
+- bump node version in CI pipeline to match runtime environment [N8N-7](https://skriptfabrik.atlassian.net/browse/N8N-7) @MaSpeng [`81f0084`](https://github.com/skriptfabrik/n8n-nodes/commit/81f00845306fed0baab3e73915b748655891ff02)
+- provide npm registry url to be able to publish a package [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @MaSpeng [`53cca5f`](https://github.com/skriptfabrik/n8n-nodes/commit/53cca5f139927fcbeb41668057913e0637358ed8)
+- ignore automatic generated changelogs in markdownlint [N8N-11](https://skriptfabrik.atlassian.net/browse/N8N-11) @MaSpeng [`149a13c`](https://github.com/skriptfabrik/n8n-nodes/commit/149a13c196032a45e822b720d3396ccf6738d476)
 
 ### 🐛 Bug Fixes
 
-- update dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`671e52f`](https://github.com/skriptfabrik/n8n-nodes/commit/671e52f0b55e2d53e8aa4b5385eb89cab553a243)
-- update nx workspace [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`4bfa0b8`](https://github.com/skriptfabrik/n8n-nodes/commit/4bfa0b8e57ce682d69f71e9bc5430cfbf8a7a5f7)
-- update node version to match n8n docker image [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`dba618a`](https://github.com/skriptfabrik/n8n-nodes/commit/dba618a4f47f7557c231eb7112638dae95556f62)
-- **moco:** update dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`13bd5be`](https://github.com/skriptfabrik/n8n-nodes/commit/13bd5bee2dffe94c985255c6b449453f92f3ba60)
-- commitlint configuration file extension @Marco Spengler [`3571414`](https://github.com/skriptfabrik/n8n-nodes/commit/3571414c8f9fdd20dc69d52d5123b1476faba933)
+- update dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`671e52f`](https://github.com/skriptfabrik/n8n-nodes/commit/671e52f0b55e2d53e8aa4b5385eb89cab553a243)
+- update nx workspace [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`4bfa0b8`](https://github.com/skriptfabrik/n8n-nodes/commit/4bfa0b8e57ce682d69f71e9bc5430cfbf8a7a5f7)
+- update node version to match n8n docker image [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`dba618a`](https://github.com/skriptfabrik/n8n-nodes/commit/dba618a4f47f7557c231eb7112638dae95556f62)
+- **moco:** update dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`13bd5be`](https://github.com/skriptfabrik/n8n-nodes/commit/13bd5bee2dffe94c985255c6b449453f92f3ba60)
+- commitlint configuration file extension @MaSpeng [`3571414`](https://github.com/skriptfabrik/n8n-nodes/commit/3571414c8f9fdd20dc69d52d5123b1476faba933)
 
 ### 🔧 Maintenance And Housekeeping
 
-- bump nx from 19.2.2 to 19.2.3 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`44be523`](https://github.com/skriptfabrik/n8n-nodes/commit/44be5235e2d774fd54831875cdb0762caf1416d1)
+- bump nx from 19.2.2 to 19.2.3 [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`44be523`](https://github.com/skriptfabrik/n8n-nodes/commit/44be5235e2d774fd54831875cdb0762caf1416d1)
 - bump @nx/node from 19.2.1 to 19.2.2 @dependabot[bot] [`d7f6fbf`](https://github.com/skriptfabrik/n8n-nodes/commit/d7f6fbf2e89dee5d0d64c9cd458aee6f6b2048c1)
 - bump @nx/js from 19.2.1 to 19.2.2 @dependabot[bot] [`63398c5`](https://github.com/skriptfabrik/n8n-nodes/commit/63398c54223f3f03e005d53550a2736e6f9faca1)
 - bump nx from 19.2.1 to 19.2.2 @dependabot[bot] [`f7ee409`](https://github.com/skriptfabrik/n8n-nodes/commit/f7ee40947f224ebb11070ee292524c4e5e277ff4)
@@ -1346,12 +1346,12 @@
 - bump @swc/core from 1.3.107 to 1.5.25 @dependabot[bot] [`59bc61a`](https://github.com/skriptfabrik/n8n-nodes/commit/59bc61a0c9deaa1252728ef6798da5bde99b1726)
 - bump the typescript-eslint group with 3 updates @dependabot[bot] [`842db01`](https://github.com/skriptfabrik/n8n-nodes/commit/842db0108d12c013380b48dd691494ab216183b6)
 - bump @swc/core from 1.5.27 to 1.5.29 @dependabot[bot] [`46ef57f`](https://github.com/skriptfabrik/n8n-nodes/commit/46ef57fb7d07d7bd9268aacb1318712abe217212)
-- ignore n8n child dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`b4ff805`](https://github.com/skriptfabrik/n8n-nodes/commit/b4ff8053cc824feaa2acf8170d363bc9a3627af8)
+- ignore n8n child dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`b4ff805`](https://github.com/skriptfabrik/n8n-nodes/commit/b4ff8053cc824feaa2acf8170d363bc9a3627af8)
 - bump @azure/msal-node in the npm_and_yarn group @dependabot[bot] [`f52eddd`](https://github.com/skriptfabrik/n8n-nodes/commit/f52edddbe724e42459f6696726174fd8d2ef7e31)
 - bump prettier from 3.3.1 to 3.3.2 @dependabot[bot] [`8209780`](https://github.com/skriptfabrik/n8n-nodes/commit/8209780d1e4f589d05dcc941c26bb08d7b241ffc)
 - bump @swc-node/register from 1.9.1 to 1.9.2 @dependabot[bot] [`4e66260`](https://github.com/skriptfabrik/n8n-nodes/commit/4e6626067b1dd2ed7c5c5f3639cb373e0270ed61)
-- group dependabot updates for @typescript-eslint dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`3ef1802`](https://github.com/skriptfabrik/n8n-nodes/commit/3ef180271dd89bfba6e08d21bdca95e02e9e124a)
-- ignore nx child dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @Marco Spengler [`f142ae6`](https://github.com/skriptfabrik/n8n-nodes/commit/f142ae6724cddb66bf543f1f2fdcd54fcd2680c6)
+- group dependabot updates for @typescript-eslint dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`3ef1802`](https://github.com/skriptfabrik/n8n-nodes/commit/3ef180271dd89bfba6e08d21bdca95e02e9e124a)
+- ignore nx child dependencies [N8N-6](https://skriptfabrik.atlassian.net/browse/N8N-6) @MaSpeng [`f142ae6`](https://github.com/skriptfabrik/n8n-nodes/commit/f142ae6724cddb66bf543f1f2fdcd54fcd2680c6)
 
 ## [moco-0.3.1](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.3.0...moco-0.3.1)
 
@@ -1370,7 +1370,7 @@
 
 ### 🧩 General Changes
 
-- Update dependabot reviewers @Daniel Schröder [`e1be359`](https://github.com/skriptfabrik/n8n-nodes/commit/e1be359958c1f807fba6ff386ecb493130165671)
+- Update dependabot reviewers @schroedan [`e1be359`](https://github.com/skriptfabrik/n8n-nodes/commit/e1be359958c1f807fba6ff386ecb493130165671)
 
 ## [moco-0.3.0](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.2.0...moco-0.3.0)
 
@@ -1418,8 +1418,8 @@
 
 ### 🧩 General Changes
 
-- Add commit message check @Daniel Schröder [`c4d9021`](https://github.com/skriptfabrik/n8n-nodes/commit/c4d90218a758f4c86311187e8894c689a5f8a0a7)
-- Extend hostname detection @Daniel Schröder [`ecd8eed`](https://github.com/skriptfabrik/n8n-nodes/commit/ecd8eedbfb8b3422ec99fbee43125419406ee38d)
+- Add commit message check @schroedan [`c4d9021`](https://github.com/skriptfabrik/n8n-nodes/commit/c4d90218a758f4c86311187e8894c689a5f8a0a7)
+- Extend hostname detection @schroedan [`ecd8eed`](https://github.com/skriptfabrik/n8n-nodes/commit/ecd8eedbfb8b3422ec99fbee43125419406ee38d)
 
 ## [moco-0.1.1](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.1.0...moco-0.1.1)
 
@@ -1430,10 +1430,10 @@
 
 ### 🧩 General Changes
 
-- Update dependencies @Daniel Schröder [`9ede034`](https://github.com/skriptfabrik/n8n-nodes/commit/9ede034c8ea0ce89c41452960b24b3a23b6bfeec)
-- Add MOCO triggers @Daniel Schröder [`820893e`](https://github.com/skriptfabrik/n8n-nodes/commit/820893eb0605c2e55fb4f947077e1b66554273d4)
-- Bump Bugfix version of MOCO node @Daniel Schröder [`d8c97e4`](https://github.com/skriptfabrik/n8n-nodes/commit/d8c97e49933a1b303965e4b1cd83aa5f2341f01a)
-- Fix MOCO trigger creation @Daniel Schröder [`dda43da`](https://github.com/skriptfabrik/n8n-nodes/commit/dda43dae84a3ecb71edaa27865d43222cde1eee2)
+- Update dependencies @schroedan [`9ede034`](https://github.com/skriptfabrik/n8n-nodes/commit/9ede034c8ea0ce89c41452960b24b3a23b6bfeec)
+- Add MOCO triggers @schroedan [`820893e`](https://github.com/skriptfabrik/n8n-nodes/commit/820893eb0605c2e55fb4f947077e1b66554273d4)
+- Bump Bugfix version of MOCO node @schroedan [`d8c97e4`](https://github.com/skriptfabrik/n8n-nodes/commit/d8c97e49933a1b303965e4b1cd83aa5f2341f01a)
+- Fix MOCO trigger creation @schroedan [`dda43da`](https://github.com/skriptfabrik/n8n-nodes/commit/dda43dae84a3ecb71edaa27865d43222cde1eee2)
 
 ## moco-0.1.0
 
@@ -1445,13 +1445,13 @@
 
 ### 🧩 General Changes
 
-- Initial commit @Daniel Schröder [`2a8c68b`](https://github.com/skriptfabrik/n8n-nodes/commit/2a8c68bcf422052d2b2ae806778267b0b93e4ff3)
-- Use n8n dependencies as peer dependencies @Daniel Schröder [`c0c7e34`](https://github.com/skriptfabrik/n8n-nodes/commit/c0c7e3462c0b0b40fd5b01ed210c391802e1dbf1)
-- Add Google enhanced nodes to dependabot @Daniel Schröder [`12cc48f`](https://github.com/skriptfabrik/n8n-nodes/commit/12cc48f75bbcc12e687414b7d164aff186fe9e9b)
-- Increase bugfix version @Daniel Schröder [`2813bbd`](https://github.com/skriptfabrik/n8n-nodes/commit/2813bbdf2d0bf952086b00df4b1b39ff7383c13c)
-- Provide radable job names @Daniel Schröder [`e948fce`](https://github.com/skriptfabrik/n8n-nodes/commit/e948fce8b6c1194e85bd8ea9f2aa209fa2a94111)
-- Fix package syntax @Daniel Schröder [`4493ea6`](https://github.com/skriptfabrik/n8n-nodes/commit/4493ea6fafd0a4050c23a026e82b23a97d0b8e92)
-- Fix registry in publish config @Daniel Schröder [`c0d30b8`](https://github.com/skriptfabrik/n8n-nodes/commit/c0d30b8aa5657bb19140e8638223746f358197ca)
-- Generate coverage report @Daniel Schröder [`87e3afe`](https://github.com/skriptfabrik/n8n-nodes/commit/87e3afecc23d13c38c33c89edb701f27cf7b2997)
-- Add enhanced Google nodes o README.md @Daniel Schröder [`550f3a5`](https://github.com/skriptfabrik/n8n-nodes/commit/550f3a5227657e1b2b3c5b1ee5bcbbb430656cad)
-- Remove unused tag patterns @Daniel Schröder [`148b3a6`](https://github.com/skriptfabrik/n8n-nodes/commit/148b3a6020975d44cb40bec5de907c726b89f3c2)
+- Initial commit @schroedan [`2a8c68b`](https://github.com/skriptfabrik/n8n-nodes/commit/2a8c68bcf422052d2b2ae806778267b0b93e4ff3)
+- Use n8n dependencies as peer dependencies @schroedan [`c0c7e34`](https://github.com/skriptfabrik/n8n-nodes/commit/c0c7e3462c0b0b40fd5b01ed210c391802e1dbf1)
+- Add Google enhanced nodes to dependabot @schroedan [`12cc48f`](https://github.com/skriptfabrik/n8n-nodes/commit/12cc48f75bbcc12e687414b7d164aff186fe9e9b)
+- Increase bugfix version @schroedan [`2813bbd`](https://github.com/skriptfabrik/n8n-nodes/commit/2813bbdf2d0bf952086b00df4b1b39ff7383c13c)
+- Provide radable job names @schroedan [`e948fce`](https://github.com/skriptfabrik/n8n-nodes/commit/e948fce8b6c1194e85bd8ea9f2aa209fa2a94111)
+- Fix package syntax @schroedan [`4493ea6`](https://github.com/skriptfabrik/n8n-nodes/commit/4493ea6fafd0a4050c23a026e82b23a97d0b8e92)
+- Fix registry in publish config @schroedan [`c0d30b8`](https://github.com/skriptfabrik/n8n-nodes/commit/c0d30b8aa5657bb19140e8638223746f358197ca)
+- Generate coverage report @schroedan [`87e3afe`](https://github.com/skriptfabrik/n8n-nodes/commit/87e3afecc23d13c38c33c89edb701f27cf7b2997)
+- Add enhanced Google nodes o README.md @schroedan [`550f3a5`](https://github.com/skriptfabrik/n8n-nodes/commit/550f3a5227657e1b2b3c5b1ee5bcbbb430656cad)
+- Remove unused tag patterns @schroedan [`148b3a6`](https://github.com/skriptfabrik/n8n-nodes/commit/148b3a6020975d44cb40bec5de907c726b89f3c2)

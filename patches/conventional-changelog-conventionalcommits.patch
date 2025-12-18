@@ -1,0 +1,24 @@
+diff --git a/src/templates/commit.hbs b/src/templates/commit.hbs
+index 641c2f377774274d6854208ad90d02574565dde0..5febbeeaf54384d1b96e7a4577b3664131a3bb9d 100644
+--- a/src/templates/commit.hbs
++++ b/src/templates/commit.hbs
+@@ -1,4 +1,4 @@
+-*{{#if scope}} **{{scope}}:**
++-{{#if scope}} **{{scope}}:**
+ {{~/if}} {{#if subject}}
+   {{~subject}}
+ {{~else}}
+diff --git a/src/templates/header.hbs b/src/templates/header.hbs
+index d7efc8fbc60158889dc51d2bc1d98b66366ad5cf..4f6a5013131550a22d8065effa767b4bd154f87f 100644
+--- a/src/templates/header.hbs
++++ b/src/templates/header.hbs
+@@ -1,7 +1,7 @@
+ ## {{#if @root.linkCompare~}}
+-  [{{version}}]({{compareUrlFormat}})
++  [{{currentTag}}]({{compareUrlFormat}})
+ {{~else}}
+-  {{~version}}
++  {{~currentTag}}
+ {{~/if}}
+ {{~#if title}} "{{title}}"
+ {{~/if}}

@@ -1,4 +1,4 @@
-name: Publish
+name: Publish Package
 
 on:
   workflow_dispatch:
@@ -21,6 +21,8 @@ on:
 
 permissions:
   contents: write
+  issues: write
+  pull-requests: write
   id-token: write
 
 jobs:
@@ -50,9 +52,17 @@ jobs:
           node-registry-url: https://registry.npmjs.org
           node-version-file: .node-version
 
-      - name: 🔨 Build, bump version, create changelog, publish package and create release
+      - name: 🔨 Build node package
+        run: pnpm -s run build
+        working-directory: nodes/${{ github.event.inputs.node-package }}
+
+      - name: 🚀 Bump version, update changelog, publish package and create release
         env:
-          GITHUB_TOKEN: ${{ secrets.RW_PAT }}
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GITHUB_TOKEN: ${{ github.token }}
           RELEASE_MODE: 'true'
-        run: pnpm -s run release
+        run: pnpm -s run release --repository-url ${{ github.repositoryUrl }}
         working-directory: nodes/${{ github.event.inputs.node-package }}

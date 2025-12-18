@@ -31,21 +31,27 @@
   "devDependencies": {
     "@commitlint/cli": "^20.3.0",
     "@commitlint/config-conventional": "^20.3.0",
-    "@conventional-changelog/git-client": "^2.5.1",
     "@n8n/node-cli": "^0.17.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/exec": "^7.1.0",
     "@trivago/prettier-plugin-sort-imports": "^6.0.1",
-    "auto-changelog": "^2.5.0",
-    "conventional-commits-filter": "^5.0.0",
-    "conventional-commits-parser": "^6.2.1",
     "eslint": "^9.39.2",
     "knip": "^5.78.0",
     "markdownlint-cli2": "^0.20.0",
     "n8n": "^2.2.3",
     "prettier": "^3.7.4",
-    "release-it": "^19.2.2",
+    "semantic-release": "^25.0.2",
     "syncpack": "^13.0.4",
     "turbo": "^2.7.3",
     "typescript": "5.9.3"
   },
-  "packageManager": "pnpm@10.26.0"
+  "packageManager": "pnpm@10.26.0",
+  "pnpm": {
+    "overrides": {
+      "@commitlint/config-conventional@^20.3.0>conventional-changelog-conventionalcommits": "^9.1.0"
+    },
+    "patchedDependencies": {
+      "conventional-changelog-conventionalcommits": "patches/conventional-changelog-conventionalcommits.patch"
+    }
+  }
 }

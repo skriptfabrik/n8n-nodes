@@ -23,10 +23,12 @@
     "lint": "n8n-node lint",
     "lint:fix": "n8n-node lint --fix",
     "prepublishOnly": "n8n-node prerelease",
-    "release": "release-it --increment $(node ../../tools/scripts/conventional-bump.mjs)"
+    "release": "semantic-release"
   },
   "files": [
-    "dist"
+    "dist/icons",
+    "dist/nodes",
+    "CHANGELOG.md"
   ],
   "n8n": {
     "n8nNodesApiVersion": 1,
