@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD013 MD024 -->
 # Changelog
 
 ## [barcode-0.1.38](https://github.com/skriptfabrik/n8n-nodes/compare/barcode-0.1.37...barcode-0.1.38)

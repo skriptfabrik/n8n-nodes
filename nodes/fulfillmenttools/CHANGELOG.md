@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD013 MD024 -->
 # Changelog
 
 ## [fulfillmenttools-0.1.38](https://github.com/skriptfabrik/n8n-nodes/compare/fulfillmenttools-0.1.37...fulfillmenttools-0.1.38)

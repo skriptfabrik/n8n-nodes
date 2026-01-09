@@ -17,7 +17,7 @@
   "scripts": {
     "commitlint": "commitlint",
     "knip": "knip",
-    "markdownlint": "markdownlint -d .",
+    "markdownlint": "markdownlint-cli2",
     "n8n:owner:setup": "node tools/scripts/n8n-owner-setup.mjs",
     "n8n:start": "n8n start",
     "prettier:format": "prettier --write .",
@@ -39,7 +39,7 @@
     "conventional-commits-parser": "^6.2.1",
     "eslint": "^9.39.2",
     "knip": "^5.78.0",
-    "markdownlint-cli": "^0.47.0",
+    "markdownlint-cli2": "^0.20.0",
     "n8n": "^2.2.3",
     "prettier": "^3.7.4",
     "release-it": "^19.2.2",

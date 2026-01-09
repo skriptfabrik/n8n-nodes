@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD013 MD024 -->
 # Changelog
 
 ## [channable-0.1.38](https://github.com/skriptfabrik/n8n-nodes/compare/channable-0.1.37...channable-0.1.38)

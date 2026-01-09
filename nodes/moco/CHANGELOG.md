@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD013 MD024 -->
 # Changelog
 
 ## [moco-0.5.1](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.5.0...0.5.1)

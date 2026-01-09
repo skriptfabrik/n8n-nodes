@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD013 MD024 -->
 # Changelog
 
 ## [otto-market-0.1.38](https://github.com/skriptfabrik/n8n-nodes/compare/otto-market-0.1.37...otto-market-0.1.38)

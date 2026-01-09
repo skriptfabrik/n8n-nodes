@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD013 MD024 -->
 # Changelog
 
 ## [google-enhanced-0.1.42](https://github.com/skriptfabrik/n8n-nodes/compare/google-enhanced-0.1.41...google-enhanced-0.1.42)

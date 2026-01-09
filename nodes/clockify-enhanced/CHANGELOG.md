@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD013 MD024 -->
 # Changelog
 
 ## [clockify-enhanced-0.4.42](https://github.com/skriptfabrik/n8n-nodes/compare/clockify-enhanced-0.4.41...clockify-enhanced-0.4.42)

@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD013 MD024 -->
 # Changelog
 
 ## [sentry-io-enhanced-0.2.40](https://github.com/skriptfabrik/n8n-nodes/compare/sentry-io-enhanced-0.2.39...sentry-io-enhanced-0.2.40)

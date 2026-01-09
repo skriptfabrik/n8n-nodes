@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD013 MD024 -->
 # Changelog
 
 ## [kaufland-marketplace-0.2.0](https://github.com/skriptfabrik/n8n-nodes/compare/kaufland-marketplace-0.1.38...kaufland-marketplace-0.2.0)
