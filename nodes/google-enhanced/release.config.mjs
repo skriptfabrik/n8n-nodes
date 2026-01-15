@@ -108,7 +108,7 @@ export default {
         tarballDir: 'dist',
       },
     ],
-    // Because @semantic-release/git is not able to use SSH to push we use exec here
+    // Because @semantic-release/git is not able to use SSH to push we use exec here, see https://github.com/semantic-release/git/issues/422
     [
       '@semantic-release/exec',
       {
@@ -120,6 +120,8 @@ export default {
       '@semantic-release/github',
       {
         assets: 'dist/*.tgz',
+        // disable commenting issues/pull requests, see https://github.com/semantic-release/github/issues/1017
+        successCommentCondition: '<% return false; %>',
         releaseNameTemplate: '<%= nextRelease.gitTag %>',
       },
     ],
