@@ -1,5 +1,4 @@
 import { CredentialData } from '../../credentials/MocoApi.credentials';
-import { DateTime } from 'luxon';
 import type {
   IExecuteFunctions,
   ILoadOptionsFunctions,
@@ -9,7 +8,7 @@ import type {
   IHttpRequestOptions,
   IHookFunctions,
 } from 'n8n-workflow';
-import { NodeApiError, sleep } from 'n8n-workflow';
+import { NodeApiError, sleep, tryToParseDateTime } from 'n8n-workflow';
 
 export function createUTCStringFromNodeParameter(
   this: IExecuteFunctions | IPollFunctions | ILoadOptionsFunctions,
@@ -25,17 +24,21 @@ export function createUTCStringFromNodeParameter(
     return undefined;
   }
 
-  const dateTime = DateTime.fromISO(dateTimeParam, {
-    zone: this.getTimezone(),
-  });
+  const dateTime = tryToParseDateTime(dateTimeParam, this.getTimezone());
 
   if (!dateTime.isValid) {
     return undefined;
   }
 
-  return dateTime.toUTC().toISO({
+  const dateTimeValue = dateTime.toUTC().toISO({
     suppressMilliseconds: true,
   });
+
+  if (dateTimeValue === null) {
+    return undefined;
+  }
+
+  return dateTimeValue;
 }
 
 export function createParametersFromNodeParameter(
