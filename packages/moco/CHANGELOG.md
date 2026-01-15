@@ -1,5 +1,15 @@
 # Changelog
 
+## [moco-0.6.0](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.5.1...moco-0.6.0) (2026-01-15)
+
+### ✨ New Features
+
+- use semantic release instead of release it ([N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35)) ([f7d18bd](https://github.com/skriptfabrik/n8n-nodes/commit/f7d18bde60af30895a9f0858043a041f4b83ab43))
+
+### 🐛 Bug Fixes
+
+- resolve luxon dependency ([N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35)) ([7a95b7b](https://github.com/skriptfabrik/n8n-nodes/commit/7a95b7b75a7de8595cec853da284d540e517f2b0))
+
 ## [moco-0.5.1](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.5.0...0.5.1)
 
 ### 👷 Continuous Integration
