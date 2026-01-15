@@ -208,15 +208,17 @@ export type Deal = {
     id: number;
     name: string;
   };
-  category: {
-    id: number;
-    name: string;
-    probability: number;
-  };
+  category: DealCategory;
   service_period_from: string;
   service_period_to: string;
   created_at: string;
   updated_at: string;
+};
+
+export type DealCategory = {
+  id: number;
+  name: string;
+  probability: number;
 };
 
 export type GlobalFilters = {
@@ -443,6 +445,34 @@ export type ContactFilters = GlobalFilters & {
   //company_id?: string;  //Filter functions for Companies not implemented in Moco API
   phone?: string;
   term?: string;
+};
+
+export type DealParameters = {
+  name: string;
+  currency: string;
+  money: number;
+  reminder_date: string;
+  user_id: number;
+  deal_category_id: number;
+  custom_properties?: Record<string, string>;
+  service_period_from?: string;
+  service_period_to?: string;
+  info?: string;
+  tags?: string[];
+  company_id?: number;
+  person_id?: number;
+  status?: DealStatus;
+};
+
+export type DealStatus = 'dropped' | 'lost' | 'pending' | 'potential' | 'won';
+
+export type DealFilters = GlobalFilters & {
+  company_id?: string;
+  companyId?: number;
+  closedFrom?: string;
+  closedTo?: string;
+  status?: DealStatus;
+  tags?: string;
 };
 
 export type Webhook = {
