@@ -16,6 +16,10 @@ import type {
   User,
   UserParameters,
   UserFilters,
+  DealCategory,
+  DealFilters,
+  DealParameters,
+  DealStatus,
 } from '../../types/api';
 import {
   activityFields,
@@ -30,10 +34,17 @@ import {
   contactOperations,
 } from './Descriptions/ContactDescription';
 import {
+  dealFields,
+  dealOperations,
+} from './Descriptions/DealDescription';
+import {
   projectFields,
   projectOperations,
 } from './Descriptions/ProjectDescription';
-import { userFields, userOperations } from './Descriptions/UserDescription';
+import {
+  userFields,
+  userOperations,
+} from './Descriptions/UserDescription';
 import {
   createUTCStringFromNodeParameter,
   createParametersFromNodeParameter,
@@ -110,6 +121,8 @@ export class Moco implements INodeType {
       ...companyFields,
       ...contactOperations,
       ...contactFields,
+      ...dealOperations,
+      ...dealFields,
       ...projectOperations,
       ...projectFields,
       ...userOperations,
@@ -283,6 +296,28 @@ export class Moco implements INodeType {
           returnData.push({
             name: `${user.firstname} ${user.lastname}`,
             value: user.id,
+          });
+        }
+
+        return returnData.sort((a, b) => a.name.localeCompare(b.name));
+      },
+      async listDealCategories(
+        this: ILoadOptionsFunctions,
+      ): Promise<INodePropertyOptions[]> {
+        const returnData: INodePropertyOptions[] = [];
+
+        const dealCategories =
+          await (mocoApiRequestAllItems<DealCategory>).call(
+            this,
+            undefined,
+            'GET',
+            '/deal_categories',
+          );
+
+        for (const dealCategory of dealCategories) {
+          returnData.push({
+            name: dealCategory.name,
+            value: dealCategory.id,
           });
         }
 
@@ -1089,6 +1124,216 @@ export class Moco implements INodeType {
               `/contacts/people/${contactId}`,
               { body },
             )) as Contact;
+          }
+        }
+
+        if (resource === 'deals') {
+          if (operation === 'create') {
+            const additionalFields = this.getNodeParameter(
+              'additionalFields',
+              item,
+            ) as {
+              companyId?: number;
+              personId?: number;
+              info?: string;
+              status?: DealStatus;
+              closedOn?: string;
+              servicePeriodFrom?: string;
+              servicePeriodTo?: string;
+              tags?: string;
+              customProperties?: { values: { key: string; value: string }[] };
+            };
+
+            const body: DealParameters = {
+              name: this.getNodeParameter('name', item) as string,
+              currency: this.getNodeParameter('currency', item) as string,
+              money: this.getNodeParameter('money', item) as number,
+              reminder_date: this.getNodeParameter(
+                'reminderDate',
+                item,
+              ) as string,
+              user_id: this.getNodeParameter('userId', item) as number,
+              deal_category_id: this.getNodeParameter(
+                'dealCategoryId',
+                item,
+              ) as number,
+              company_id: this.getNodeParameter('companyId', item) as number,
+              ...(additionalFields.companyId && {
+                company_id: additionalFields.companyId,
+              }),
+              ...(additionalFields.personId && {
+                person_id: additionalFields.personId,
+              }),
+              ...(additionalFields.info && { info: additionalFields.info }),
+              ...(additionalFields.tags && {
+                tags: additionalFields.tags.split(',').map((tag) => tag.trim()),
+              }),
+              ...(additionalFields.status && {
+                status: additionalFields.status,
+              }),
+              ...(additionalFields.closedOn && {
+                closed_on: additionalFields.closedOn,
+              }),
+              ...(additionalFields.servicePeriodFrom && {
+                service_period_from: additionalFields.servicePeriodFrom,
+              }),
+              ...(additionalFields.servicePeriodTo && {
+                service_period_to: additionalFields.servicePeriodTo,
+              }),
+            };
+
+            // Process custom properties for create
+            if (additionalFields.customProperties?.values) {
+              body.custom_properties =
+                additionalFields.customProperties.values.reduce(
+                  (acc, prop) => {
+                    acc[prop.key] = prop.value;
+                    return acc;
+                  },
+                  {} as Record<string, string>,
+                );
+            }
+
+            responseData = (await mocoApiRequest.call(
+              this,
+              item,
+              'POST',
+              '/deals',
+              {
+                body,
+              },
+            )) as Deal;
+          }
+
+          if (operation === 'delete') {
+            const dealId = this.getNodeParameter('dealId', item);
+
+            responseData = (await mocoApiRequest.call(
+              this,
+              item,
+              'DELETE',
+              `/deals/${dealId}`,
+            )) as never;
+          }
+
+          if (operation === 'get') {
+            const dealId = this.getNodeParameter('dealId', item);
+
+            responseData = (await mocoApiRequest.call(
+              this,
+              item,
+              'GET',
+              `/deals/${dealId}`,
+            )) as Deal;
+          }
+
+          if (operation === 'list') {
+            const returnAll = this.getNodeParameter('returnAll', item);
+
+            const qs: DealFilters = {
+              ...(returnAll
+                ? {}
+                : {
+                    limit:
+                      (this.getNodeParameter('limit', item) as number) ||
+                      undefined,
+                    ids:
+                      (this.getNodeParameter('ids', item) as string) ||
+                      undefined,
+                    updated_after: createUTCStringFromNodeParameter.call(
+                      this,
+                      'updatedAfter',
+                      item,
+                    ),
+                  }),
+              ...createParametersFromNodeParameter.call(
+                this,
+                'additionalFields',
+                item,
+                ['companyId', 'closedFrom', 'closedTo', 'status', 'tags'],
+              ),
+            };
+
+            responseData = (await mocoApiRequestAllItems.call(
+              this,
+              item,
+              'GET',
+              '/deals',
+              { qs },
+            )) as Deal[];
+          }
+
+          if (operation === 'update') {
+            const dealId = this.getNodeParameter('dealId', item);
+            const updateFields = this.getNodeParameter(
+              'updateFields',
+              item,
+            ) as {
+              name?: string;
+              currency?: string;
+              money?: number;
+              reminderDate?: string;
+              userId?: number;
+              dealCategoryId?: number;
+              companyId?: number;
+              personId?: number;
+              info?: string;
+              status?: DealStatus;
+              closedOn?: string;
+              servicePeriodFrom?: string;
+              servicePeriodTo?: string;
+              tags?: string;
+              customProperties?: { values: { key: string; value: string }[] };
+            };
+
+            const body: Partial<DealParameters> = {
+              ...(updateFields.name && { name: updateFields.name }),
+              ...(updateFields.currency && { currency: updateFields.currency }),
+              ...(updateFields.money && { money: updateFields.money }),
+              ...(updateFields.reminderDate && {reminder_date: updateFields.reminderDate }),
+              ...(updateFields.userId && { user_id: updateFields.userId }),
+              ...(updateFields.dealCategoryId && {deal_category_id: updateFields.dealCategoryId }),
+              ...(updateFields.companyId && { company_id: updateFields.companyId }),
+              ...(updateFields.personId && {
+                person_id: updateFields.personId,
+              }),
+              ...(updateFields.info && { info: updateFields.info }),
+              ...(updateFields.tags && {
+                tags: updateFields.tags.split(',').map((tag) => tag.trim()),
+              }),
+              ...(updateFields.status && {
+                status: updateFields.status,
+              }),
+              ...(updateFields.closedOn && {
+                closed_on: updateFields.closedOn,
+              }),
+              ...(updateFields.servicePeriodFrom && {
+                service_period_from: updateFields.servicePeriodFrom,
+              }),
+              ...(updateFields.servicePeriodTo && {
+                service_period_to: updateFields.servicePeriodTo,
+              }),
+            };
+
+            // Process custom properties for update
+            if (updateFields.customProperties?.values) {
+              body.custom_properties =
+                updateFields.customProperties.values.reduce(
+                  (acc, prop) => {
+                    acc[prop.key] = prop.value;
+                    return acc;
+                  },
+                  {} as Record<string, string>,
+                );
+            }
+
+            responseData = (await mocoApiRequest.call(
+              this,
+              item,
+              'PUT',
+              `/deals/${dealId}`,
+              { body },
+            )) as Deal;
           }
         }
 
