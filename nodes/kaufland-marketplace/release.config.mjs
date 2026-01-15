@@ -39,6 +39,7 @@ export default {
           issuePrefixes: ['N8N-'],
           issueUrlFormat:
             'https://skriptfabrik.atlassian.net/browse/{{prefix}}{{id}}',
+          ignoreCommits: /bump n8n-(nodes-base|workflow) version/,
           scope: [nodeName],
           types: [
             {
