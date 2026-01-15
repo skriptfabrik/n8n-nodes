@@ -64,5 +64,5 @@ jobs:
           GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
           GITHUB_TOKEN: ${{ github.token }}
           RELEASE_MODE: 'true'
-        run: pnpm -s run release --repository-url ${{ github.repositoryUrl }}
+        run: pnpm -s run release
         working-directory: nodes/${{ github.event.inputs.node-package }}

@@ -45,7 +45,7 @@ It supports these operations:
 
 - Create, delete, get, list and update activities
 - Create, delete, get, list and update companies
-- Create, delete, get, list and update contracts
+- Create, delete, get, list and update contacts
 - Create, delete, get, list and update projects
 - Create, delete, get, list and update users
 
