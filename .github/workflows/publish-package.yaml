@@ -54,7 +54,7 @@ jobs:
 
       - name: 🔨 Build node package
         run: pnpm -s run build
-        working-directory: nodes/${{ github.event.inputs.node-package }}
+        working-directory: packages/${{ github.event.inputs.node-package }}
 
       - name: 🚀 Bump version, update changelog, publish package and create release
         env:
@@ -65,4 +65,4 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           RELEASE_MODE: 'true'
         run: pnpm -s run release
-        working-directory: nodes/${{ github.event.inputs.node-package }}
+        working-directory: packages/${{ github.event.inputs.node-package }}

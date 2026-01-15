@@ -3,13 +3,13 @@
   "workspaces": {
     ".": {
       "entry": ["tools/scripts/*.mjs"],
-      "ignore": ["nodes/*/release.config.mjs"],
+      "ignore": ["packages/*/release.config.mjs"],
       "ignoreDependencies": [
         "@semantic-release/changelog",
         "@semantic-release/exec"
       ]
     },
-    "nodes/*": {
+    "packages/*": {
       "entry": ["**/*.{credentials,node}.ts"],
       "ignore": ["**/*.d.ts"]
     }

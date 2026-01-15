@@ -10,16 +10,16 @@ nodes documentation.
 This is a mono repository with many different community nodes.
 Please take a closer look at the detailed instructions for the individual nodes:
 
-- [Barcode community nodes](nodes/barcode/README.md)
-- [Channable community nodes](nodes/channable/README.md)
-- [Cronhooks community nodes](nodes/cronhooks/README.md)
-- [Enhanced Clockify community nodes](nodes/clockify-enhanced/README.md)
-- [Enhanced Google community nodes](nodes/google-enhanced/README.md)
-- [Enhanced Sentry.io community nodes](nodes/sentry-io-enhanced/README.md)
-- [fulfillmenttools community nodes](nodes/fulfillmenttools/README.md)
-- [Kaufland Marketplace community nodes](nodes/kaufland-marketplace/README.md)
-- [MOCO community nodes](nodes/moco/README.md)
-- [OTTO Market community nodes](nodes/otto-market/README.md)
+- [Barcode community nodes](packages/barcode/README.md)
+- [Channable community nodes](packages/channable/README.md)
+- [Cronhooks community nodes](packages/cronhooks/README.md)
+- [Enhanced Clockify community nodes](packages/clockify-enhanced/README.md)
+- [Enhanced Google community nodes](packages/google-enhanced/README.md)
+- [Enhanced Sentry.io community nodes](packages/sentry-io-enhanced/README.md)
+- [fulfillmenttools community nodes](packages/fulfillmenttools/README.md)
+- [Kaufland Marketplace community nodes](packages/kaufland-marketplace/README.md)
+- [MOCO community nodes](packages/moco/README.md)
+- [OTTO Market community nodes](packages/otto-market/README.md)
 
 ## Resources
 

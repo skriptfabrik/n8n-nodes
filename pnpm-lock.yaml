@@ -62,43 +62,43 @@ importers:
         specifier: 5.9.3
         version: 5.9.3
 
-  nodes/barcode:
+  packages/barcode:
     dependencies:
       canvas:
         specifier: ^3.2.1
         version: 3.2.1
       jsbarcode:
         specifier: ^3.12.1
-        version: 3.12.1
+        version: 3.12.3
       n8n-workflow:
         specifier: '*'
-        version: 1.120.0
+        version: 2.3.3
 
-  nodes/channable:
+  packages/channable:
     dependencies:
       n8n-workflow:
         specifier: '*'
-        version: 1.120.0
+        version: 2.3.3
 
-  nodes/clockify-enhanced:
+  packages/clockify-enhanced:
     dependencies:
       n8n-workflow:
         specifier: '*'
-        version: 1.120.0
+        version: 2.3.3
 
-  nodes/cronhooks:
+  packages/cronhooks:
     dependencies:
       n8n-workflow:
         specifier: '*'
-        version: 1.120.0
+        version: 2.3.3
 
-  nodes/fulfillmenttools:
+  packages/fulfillmenttools:
     dependencies:
       n8n-workflow:
         specifier: '*'
-        version: 1.120.0
+        version: 2.3.3
 
-  nodes/google-enhanced:
+  packages/google-enhanced:
     dependencies:
       form-data:
         specifier: ^4.0.5
@@ -111,35 +111,35 @@ importers:
         version: 0.6.0
       n8n-workflow:
         specifier: '*'
-        version: 1.120.0
+        version: 2.3.3
     devDependencies:
       '@types/jsonwebtoken':
         specifier: ^9.0.10
         version: 9.0.10
 
-  nodes/kaufland-marketplace:
+  packages/kaufland-marketplace:
     dependencies:
       n8n-workflow:
         specifier: '*'
-        version: 1.120.0
+        version: 2.3.3
 
-  nodes/moco:
+  packages/moco:
     dependencies:
       n8n-workflow:
         specifier: '*'
-        version: 1.120.0
+        version: 2.3.3
 
-  nodes/otto-market:
+  packages/otto-market:
     dependencies:
       n8n-workflow:
         specifier: '*'
-        version: 1.120.0
+        version: 2.3.3
 
-  nodes/sentry-io-enhanced:
+  packages/sentry-io-enhanced:
     dependencies:
       n8n-workflow:
         specifier: '*'
-        version: 1.120.0
+        version: 2.3.3
 
 packages:
 
@@ -2837,9 +2837,6 @@ packages:
 
   '@types/node@18.19.130':
     resolution: {integrity: sha512-GRaXQx6jGfL8sKfaIDD6OupbIHBr9jv7Jnaml9tB7l4v068PAOXqfcujMMo5PhbIs6ggR1XODELqahT2R8v0fg==}
-
-  '@types/node@25.0.0':
-    resolution: {integrity: sha512-rl78HwuZlaDIUSeUKkmogkhebA+8K1Hy7tddZuJ3D0xV8pZSfsYGTsliGUol1JPzu9EKnTxPC4L1fiWouStRew==}
 
   '@types/node@25.0.8':
     resolution: {integrity: sha512-powIePYMmC3ibL0UJ2i2s0WIbq6cg6UyVFQxSCpaPxxzAaziRfimGivjdF943sSGV6RADVbk0Nvlm5P/FB44Zg==}
@@ -5557,8 +5554,8 @@ packages:
     resolution: {integrity: sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==}
     hasBin: true
 
-  jsbarcode@3.12.1:
-    resolution: {integrity: sha512-QZQSqIknC2Rr/YOUyOkCBqsoiBAOTYK+7yNN3JsqfoUtJtkazxNw1dmPpxuv7VVvqW13kA3/mKiLq+s/e3o9hQ==}
+  jsbarcode@3.12.3:
+    resolution: {integrity: sha512-CuHU9hC6dPsHF5oVFMo8NW76uQVjH4L22CsP4hW+dNnGywJHC/B0ThA1CTDVLnxKLrrpYdicBLnd2xsgTfRnvg==}
 
   jsbi@4.3.2:
     resolution: {integrity: sha512-9fqMSQbhJykSeii05nxKl4m6Eqn2P6rOlYiS+C5Dr/HPIU/7yZxu5qzbs40tgaFORiw2Amd0mirjxatXYMkIew==}
@@ -6323,9 +6320,6 @@ packages:
 
   n8n-nodes-base@2.3.4:
     resolution: {integrity: sha512-W9q/cVbWd8/gRQzv6EJPMYqdfT9NN1IGt4hWqISUZWlBqDc5+jz5SPjviBczjV59LnF/QGtRfEx3JzdD20N/yQ==}
-
-  n8n-workflow@1.120.0:
-    resolution: {integrity: sha512-EqMvW5J7ontULkigLJ9U6AsLKjWQetPl6nzN7jFkAuONuyHHco5bs0El4sHtxiJ+7EuxHSdby3WHUDMOhlW05A==}
 
   n8n-workflow@2.3.3:
     resolution: {integrity: sha512-/R98Rg0qBphvbYmOAfN6EJbaP2wp9Ae7/btgitFLWTXTOyF65x2YlZtBsDYeBjmv0oQaM4zPzf5ZCdPkSMkrSw==}
@@ -12865,7 +12859,7 @@ snapshots:
   '@types/jsonwebtoken@9.0.10':
     dependencies:
       '@types/ms': 2.1.0
-      '@types/node': 25.0.0
+      '@types/node': 25.0.8
 
   '@types/katex@0.16.7': {}
 
@@ -12893,10 +12887,6 @@ snapshots:
   '@types/node@18.19.130':
     dependencies:
       undici-types: 5.26.5
-
-  '@types/node@25.0.0':
-    dependencies:
-      undici-types: 7.16.0
 
   '@types/node@25.0.8':
     dependencies:
@@ -16023,7 +16013,7 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  jsbarcode@3.12.1: {}
+  jsbarcode@3.12.3: {}
 
   jsbi@4.3.2: {}
 
@@ -17090,27 +17080,6 @@ snapshots:
       - supports-color
       - utf-8-validate
       - zod
-
-  n8n-workflow@1.120.0:
-    dependencies:
-      '@n8n/errors': 0.5.0
-      '@n8n/tournament': 1.0.6
-      ast-types: 0.16.1
-      callsites: 3.1.0
-      esprima-next: 5.8.4
-      form-data: 4.0.0
-      jmespath: 0.16.0
-      js-base64: 3.7.2
-      jsonrepair: 3.13.1
-      jssha: 3.3.1
-      lodash: 4.17.21
-      luxon: 3.4.4
-      md5: 2.3.0
-      recast: 0.22.0
-      title-case: 3.0.3
-      transliteration: 2.3.5
-      xml2js: 0.6.2
-      zod: 3.25.67
 
   n8n-workflow@2.3.3:
     dependencies:

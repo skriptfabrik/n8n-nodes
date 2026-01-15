@@ -1,0 +1,48 @@
+{
+  "name": "@skriptfabrik/n8n-nodes-barcode",
+  "version": "0.2.0",
+  "description": "Barcode community nodes for n8n",
+  "license": "MIT",
+  "homepage": "https://github.com/skriptfabrik/n8n-nodes/blob/main/packages/barcode/README.md",
+  "bugs": "https://github.com/skriptfabrik/n8n-nodes/issues",
+  "keywords": [
+    "barcode",
+    "n8n",
+    "n8n-community-node",
+    "n8n-community-node-package"
+  ],
+  "author": {
+    "name": "skriptfabrik",
+    "email": "info@skriptfabrik.com"
+  },
+  "repository": "skriptfabrik/n8n-nodes.git",
+  "scripts": {
+    "build": "n8n-node build",
+    "build:watch": "tsc --watch",
+    "dev": "n8n-node dev --external-n8n --custom-user-folder=$N8N_USER_FOLDER",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "prepublishOnly": "n8n-node prerelease",
+    "release": "semantic-release"
+  },
+  "files": [
+    "dist/icons",
+    "dist/nodes",
+    "CHANGELOG.md"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": false,
+    "credentials": [],
+    "nodes": [
+      "dist/nodes/Barcode/Barcode.node.js"
+    ]
+  },
+  "dependencies": {
+    "canvas": "^3.2.1",
+    "jsbarcode": "^3.12.1"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
