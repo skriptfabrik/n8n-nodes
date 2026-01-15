@@ -1,0 +1,57 @@
+{
+  "name": "@skriptfabrik/n8n-nodes-google-enhanced",
+  "version": "0.1.43",
+  "description": "Enhanced Google community nodes for n8n",
+  "license": "MIT",
+  "homepage": "https://github.com/skriptfabrik/n8n-nodes/blob/main/packages/google-enhanced/README.md",
+  "bugs": "https://github.com/skriptfabrik/n8n-nodes/issues",
+  "keywords": [
+    "google",
+    "google-cloud-storage",
+    "n8n",
+    "n8n-community-node",
+    "n8n-community-node-package"
+  ],
+  "author": {
+    "name": "skriptfabrik",
+    "email": "info@skriptfabrik.com"
+  },
+  "repository": "skriptfabrik/n8n-nodes.git",
+  "scripts": {
+    "build": "n8n-node build",
+    "build:watch": "tsc --watch",
+    "dev": "n8n-node dev --external-n8n --custom-user-folder=$N8N_USER_FOLDER",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "prepublishOnly": "n8n-node prerelease",
+    "release": "semantic-release"
+  },
+  "files": [
+    "dist/credentials",
+    "dist/icons",
+    "dist/nodes",
+    "CHANGELOG.md"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": false,
+    "credentials": [
+      "dist/credentials/GoogleCloudStorageEnhancedApi.credentials.js",
+      "dist/credentials/GoogleCloudStorageEnhancedOAuth2Api.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/GoogleCloudStorageEnhanced/GoogleCloudStorageEnhanced.node.js"
+    ]
+  },
+  "dependencies": {
+    "form-data": "^4.0.5",
+    "jsonwebtoken": "^9.0.3",
+    "moment-timezone": "^0.6.0"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.10"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
