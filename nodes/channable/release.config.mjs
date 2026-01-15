@@ -122,6 +122,7 @@ export default {
         assets: 'dist/*.tgz',
         // disable commenting issues/pull requests, see https://github.com/semantic-release/github/issues/1017
         successCommentCondition: '<% return false; %>',
+        failCommentCondition: '<% return false; %>',
         releaseNameTemplate: '<%= nextRelease.gitTag %>',
       },
     ],
