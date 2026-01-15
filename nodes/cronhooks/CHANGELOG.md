@@ -1,5 +1,17 @@
 # Changelog
 
+## [cronhooks-0.2.0](https://github.com/skriptfabrik/n8n-nodes/compare/cronhooks-0.1.38...cronhooks-0.2.0) (2026-01-15)
+
+### ✨ New Features
+
+- migrate from Nx to Turbo ([N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35)) ([b0e1cd1](https://github.com/skriptfabrik/n8n-nodes/commit/b0e1cd108f0d75e82bba70a828dc0947e2bb07d3))
+- use semantic release instead of release it ([N8N-35](https://skriptfabrik.atlassian.net/browse/N8N-35)) ([f7d18bd](https://github.com/skriptfabrik/n8n-nodes/commit/f7d18bde60af30895a9f0858043a041f4b83ab43))
+
+### 🐛 Bug Fixes
+
+- add missing load options in moco activity:list description ([N8N-34](https://skriptfabrik.atlassian.net/browse/N8N-34)) ([ec99eb9](https://github.com/skriptfabrik/n8n-nodes/commit/ec99eb9d204bf0d415f805e4e0bcda212557a5ca))
+- drop duplicate sort by option in moco activity:list description ([N8N-34](https://skriptfabrik.atlassian.net/browse/N8N-34)) ([8cdcb3c](https://github.com/skriptfabrik/n8n-nodes/commit/8cdcb3c5265521274b178168894d2e895e4c10b7))
+
 ## [cronhooks-0.1.38](https://github.com/skriptfabrik/n8n-nodes/compare/cronhooks-0.1.37...cronhooks-0.1.38)
 
 ### 👷 Continuous Integration
