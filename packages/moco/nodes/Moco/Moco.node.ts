@@ -1,12 +1,67 @@
-import type { Activity, ActivityParameters, ActivityFilters, Company, CompanyParameters, CompanyFilters, Contact, ContactParameters, ContactFilters, Deal, Project, ProjectParameters, ProjectTask, Unit, User, UserParameters, UserFilters, DealCategory, DealFilters, DealParameters, DealStatus } from '../../types/api';
-import { activityFields, activityOperations } from './Descriptions/ActivityDescription';
-import { companyFields, companyOperations } from './Descriptions/CompanyDescription';
-import { contactFields, contactOperations } from './Descriptions/ContactDescription';
-import { dealFields, dealOperations } from './Descriptions/DealDescription';
-import { projectFields, projectOperations } from './Descriptions/ProjectDescription';
-import { userFields, userOperations } from './Descriptions/UserDescription';
-import { createUTCStringFromNodeParameter, createParametersFromNodeParameter, mocoApiRequest, mocoApiRequestAllItems } from './GenericFunctions';
-import type { IDataObject, IExecuteFunctions, ILoadOptionsFunctions, INodeExecutionData, INodePropertyOptions, INodeType, INodeTypeDescription, NodeApiError, NodeParameterValue } from 'n8n-workflow';
+import type {
+  Activity,
+  ActivityParameters,
+  ActivityFilters,
+  Company,
+  CompanyParameters,
+  CompanyFilters,
+  Contact,
+  ContactParameters,
+  ContactFilters,
+  Deal,
+  Project,
+  ProjectParameters,
+  ProjectTask,
+  Unit,
+  User,
+  UserParameters,
+  UserFilters,
+  DealCategory,
+  DealFilters,
+  DealParameters,
+  DealStatus,
+} from '../../types/api';
+import {
+  activityFields,
+  activityOperations,
+} from './Descriptions/ActivityDescription';
+import {
+  companyFields,
+  companyOperations,
+} from './Descriptions/CompanyDescription';
+import {
+  contactFields,
+  contactOperations,
+} from './Descriptions/ContactDescription';
+import {
+  dealFields,
+  dealOperations,
+} from './Descriptions/DealDescription';
+import {
+  projectFields,
+  projectOperations,
+} from './Descriptions/ProjectDescription';
+import {
+  userFields,
+  userOperations,
+} from './Descriptions/UserDescription';
+import {
+  createUTCStringFromNodeParameter,
+  createParametersFromNodeParameter,
+  mocoApiRequest,
+  mocoApiRequestAllItems,
+} from './GenericFunctions';
+import type {
+  IDataObject,
+  IExecuteFunctions,
+  ILoadOptionsFunctions,
+  INodeExecutionData,
+  INodePropertyOptions,
+  INodeType,
+  INodeTypeDescription,
+  NodeApiError,
+  NodeParameterValue,
+} from 'n8n-workflow';
 import { NodeConnectionTypes } from 'n8n-workflow';
 
 export class Moco implements INodeType {
