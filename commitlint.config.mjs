@@ -15,7 +15,7 @@ export default {
   ],
   parserPreset: {
     parserOpts: {
-      issuePrefixes: ['INTERN-', 'N8N-', '#'],
+      issuePrefixes: ['DWBN-', 'INTERN-', 'N8N-', '#'],
     },
   },
 };

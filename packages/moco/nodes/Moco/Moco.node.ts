@@ -33,18 +33,12 @@ import {
   contactFields,
   contactOperations,
 } from './Descriptions/ContactDescription';
-import {
-  dealFields,
-  dealOperations,
-} from './Descriptions/DealDescription';
+import { dealFields, dealOperations } from './Descriptions/DealDescription';
 import {
   projectFields,
   projectOperations,
 } from './Descriptions/ProjectDescription';
-import {
-  userFields,
-  userOperations,
-} from './Descriptions/UserDescription';
+import { userFields, userOperations } from './Descriptions/UserDescription';
 import {
   createUTCStringFromNodeParameter,
   createParametersFromNodeParameter,
@@ -1290,10 +1284,16 @@ export class Moco implements INodeType {
               ...(updateFields.name && { name: updateFields.name }),
               ...(updateFields.currency && { currency: updateFields.currency }),
               ...(updateFields.money && { money: updateFields.money }),
-              ...(updateFields.reminderDate && {reminder_date: updateFields.reminderDate }),
+              ...(updateFields.reminderDate && {
+                reminder_date: updateFields.reminderDate,
+              }),
               ...(updateFields.userId && { user_id: updateFields.userId }),
-              ...(updateFields.dealCategoryId && {deal_category_id: updateFields.dealCategoryId }),
-              ...(updateFields.companyId && { company_id: updateFields.companyId }),
+              ...(updateFields.dealCategoryId && {
+                deal_category_id: updateFields.dealCategoryId,
+              }),
+              ...(updateFields.companyId && {
+                company_id: updateFields.companyId,
+              }),
               ...(updateFields.personId && {
                 person_id: updateFields.personId,
               }),
