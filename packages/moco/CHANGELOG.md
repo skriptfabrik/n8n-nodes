@@ -1,5 +1,11 @@
 # Changelog
 
+## [moco-0.7.0](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.6.0...moco-0.7.0) (2026-01-19)
+
+### ✨ New Features
+
+- add "Deals" resource with operations to Moco node (DWBN-2) ([290d7fb](https://github.com/skriptfabrik/n8n-nodes/commit/290d7fb7460f661d3dceb5829326e117276e5bbf))
+
 ## [moco-0.6.0](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.5.1...moco-0.6.0) (2026-01-15)
 
 ### ✨ New Features
