@@ -8,7 +8,7 @@ export const contactOperations: INodeProperties[] = [
     noDataExpression: true,
     displayOptions: {
       show: {
-        resource: ['contacts'],
+        resource: ['contact'],
       },
     },
     options: [
@@ -48,9 +48,9 @@ export const contactOperations: INodeProperties[] = [
 ];
 
 export const contactFields: INodeProperties[] = [
-  /* -------------------------------------------------------------------------- */
-  /*                               contacts:create                              */
-  /* -------------------------------------------------------------------------- */
+  /* ------------------------------------------------------------------------- */
+  /*                               contact:create                              */
+  /* ------------------------------------------------------------------------- */
   {
     displayName: 'First Name',
     name: 'firstname',
@@ -60,7 +60,7 @@ export const contactFields: INodeProperties[] = [
     description: 'Firstname of contact being created',
     displayOptions: {
       show: {
-        resource: ['contacts'],
+        resource: ['contact'],
         operation: ['create'],
       },
     },
@@ -74,7 +74,7 @@ export const contactFields: INodeProperties[] = [
     description: 'Lastname of contact being created',
     displayOptions: {
       show: {
-        resource: ['contacts'],
+        resource: ['contact'],
         operation: ['create'],
       },
     },
@@ -92,7 +92,7 @@ export const contactFields: INodeProperties[] = [
       'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
     displayOptions: {
       show: {
-        resource: ['contacts'],
+        resource: ['contact'],
         operation: ['create'],
       },
     },
@@ -104,7 +104,7 @@ export const contactFields: INodeProperties[] = [
     placeholder: 'Add Field',
     displayOptions: {
       show: {
-        resource: ['contacts'],
+        resource: ['contact'],
         operation: ['create'],
       },
     },
@@ -264,9 +264,9 @@ export const contactFields: INodeProperties[] = [
       },
     ],
   },
-  /* -------------------------------------------------------------------------- */
-  /*                               contacts:delete                              */
-  /* -------------------------------------------------------------------------- */
+  /* ------------------------------------------------------------------------- */
+  /*                               contact:delete                              */
+  /* ------------------------------------------------------------------------- */
   {
     displayName: 'Contact ID',
     name: 'contactId',
@@ -275,15 +275,15 @@ export const contactFields: INodeProperties[] = [
     required: true,
     displayOptions: {
       show: {
-        resource: ['contacts'],
+        resource: ['contact'],
         operation: ['delete'],
       },
     },
     description: 'ID of the contact to delete',
   },
-  /* -------------------------------------------------------------------------- */
-  /*                                contacts:get                                */
-  /* -------------------------------------------------------------------------- */
+  /* ------------------------------------------------------------------------- */
+  /*                                contact:get                                */
+  /* ------------------------------------------------------------------------- */
   {
     displayName: 'Contact ID',
     name: 'contactId',
@@ -292,22 +292,22 @@ export const contactFields: INodeProperties[] = [
     required: true,
     displayOptions: {
       show: {
-        resource: ['contacts'],
+        resource: ['contact'],
         operation: ['get'],
       },
     },
     description: 'ID of the contact to retrieve',
   },
-  /* -------------------------------------------------------------------------- */
-  /*                               contacts:list                                */
-  /* -------------------------------------------------------------------------- */
+  /* ------------------------------------------------------------------------- */
+  /*                               contact:list                                */
+  /* ------------------------------------------------------------------------- */
   {
     displayName: 'Return All',
     name: 'returnAll',
     type: 'boolean',
     displayOptions: {
       show: {
-        resource: ['contacts'],
+        resource: ['contact'],
         operation: ['list'],
       },
     },
@@ -320,7 +320,7 @@ export const contactFields: INodeProperties[] = [
     type: 'number',
     displayOptions: {
       show: {
-        resource: ['contacts'],
+        resource: ['contact'],
         operation: ['list'],
         returnAll: [false],
       },
@@ -337,7 +337,7 @@ export const contactFields: INodeProperties[] = [
     type: 'string',
     displayOptions: {
       show: {
-        resource: ['contacts'],
+        resource: ['contact'],
         operation: ['list'],
         returnAll: [false],
       },
@@ -352,7 +352,7 @@ export const contactFields: INodeProperties[] = [
     type: 'dateTime',
     displayOptions: {
       show: {
-        resource: ['contacts'],
+        resource: ['contact'],
         operation: ['list'],
         returnAll: [false],
       },
@@ -368,13 +368,14 @@ export const contactFields: INodeProperties[] = [
     placeholder: 'Add Field',
     displayOptions: {
       show: {
-        resource: ['contacts'],
+        resource: ['contact'],
         operation: ['list'],
       },
     },
     default: {},
     options: [
-      /*      Filter functions for Companies not implemented in Moco API
+      // Filter functions for Companies not implemented in Moco API
+      /*
       {
         displayName: 'Company Name or ID',
         name: 'companyId',
@@ -385,7 +386,8 @@ export const contactFields: INodeProperties[] = [
         default: '',
         description:
           'Filter contacts by company - Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
-      },*/
+      },
+      */
       {
         displayName: 'Phone',
         name: 'phone',
@@ -402,9 +404,9 @@ export const contactFields: INodeProperties[] = [
       },
     ],
   },
-  /* -------------------------------------------------------------------------- */
-  /*                              contacts:update                               */
-  /* -------------------------------------------------------------------------- */
+  /* ------------------------------------------------------------------------- */
+  /*                              contact:update                               */
+  /* ------------------------------------------------------------------------- */
   {
     displayName: 'Contact ID',
     name: 'contactId',
@@ -413,7 +415,7 @@ export const contactFields: INodeProperties[] = [
     required: true,
     displayOptions: {
       show: {
-        resource: ['contacts'],
+        resource: ['contact'],
         operation: ['update'],
       },
     },
@@ -426,7 +428,7 @@ export const contactFields: INodeProperties[] = [
     placeholder: 'Add Field',
     displayOptions: {
       show: {
-        resource: ['contacts'],
+        resource: ['contact'],
         operation: ['update'],
       },
     },
