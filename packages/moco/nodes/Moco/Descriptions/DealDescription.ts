@@ -8,7 +8,7 @@ export const dealOperations: INodeProperties[] = [
     noDataExpression: true,
     displayOptions: {
       show: {
-        resource: ['deals'],
+        resource: ['deal'],
       },
     },
     options: [
@@ -48,9 +48,9 @@ export const dealOperations: INodeProperties[] = [
 ];
 
 export const dealFields: INodeProperties[] = [
-  /* -------------------------------------------------------------------------- */
-  /*                               deals:create                              */
-  /* -------------------------------------------------------------------------- */
+  /* ---------------------------------------------------------------------- */
+  /*                               deal:create                              */
+  /* ---------------------------------------------------------------------- */
   {
     displayName: 'Name',
     name: 'name',
@@ -60,7 +60,7 @@ export const dealFields: INodeProperties[] = [
     description: 'Name of deal being created',
     displayOptions: {
       show: {
-        resource: ['deals'],
+        resource: ['deal'],
         operation: ['create'],
       },
     },
@@ -73,7 +73,7 @@ export const dealFields: INodeProperties[] = [
     description: 'Currency of the deal',
     displayOptions: {
       show: {
-        resource: ['deals'],
+        resource: ['deal'],
         operation: ['create'],
       },
     },
@@ -92,7 +92,7 @@ export const dealFields: INodeProperties[] = [
     description: 'Amount of money of deal being created',
     displayOptions: {
       show: {
-        resource: ['deals'],
+        resource: ['deal'],
         operation: ['create'],
       },
     },
@@ -106,7 +106,7 @@ export const dealFields: INodeProperties[] = [
     description: 'Reminder date of the deal',
     displayOptions: {
       show: {
-        resource: ['deals'],
+        resource: ['deal'],
         operation: ['create'],
       },
     },
@@ -120,7 +120,7 @@ export const dealFields: INodeProperties[] = [
     },
     displayOptions: {
       show: {
-        resource: ['deals'],
+        resource: ['deal'],
         operation: ['create'],
       },
     },
@@ -139,7 +139,7 @@ export const dealFields: INodeProperties[] = [
     },
     displayOptions: {
       show: {
-        resource: ['deals'],
+        resource: ['deal'],
         operation: ['create'],
       },
     },
@@ -156,7 +156,7 @@ export const dealFields: INodeProperties[] = [
     placeholder: 'Add Field',
     displayOptions: {
       show: {
-        resource: ['deals'],
+        resource: ['deal'],
         operation: ['create'],
       },
     },
@@ -293,9 +293,9 @@ export const dealFields: INodeProperties[] = [
       },
     ],
   },
-  /* -------------------------------------------------------------------------- */
-  /*                               deals:delete                              */
-  /* -------------------------------------------------------------------------- */
+  /* ---------------------------------------------------------------------- */
+  /*                               deal:delete                              */
+  /* ---------------------------------------------------------------------- */
   {
     displayName: 'Deal ID',
     name: 'dealId',
@@ -304,15 +304,15 @@ export const dealFields: INodeProperties[] = [
     required: true,
     displayOptions: {
       show: {
-        resource: ['deals'],
+        resource: ['deal'],
         operation: ['delete'],
       },
     },
     description: 'ID of the deal to delete',
   },
-  /* -------------------------------------------------------------------------- */
-  /*                                deals:get                                */
-  /* -------------------------------------------------------------------------- */
+  /* ---------------------------------------------------------------------- */
+  /*                                deal:get                                */
+  /* ---------------------------------------------------------------------- */
   {
     displayName: 'Deal ID',
     name: 'dealId',
@@ -321,22 +321,22 @@ export const dealFields: INodeProperties[] = [
     required: true,
     displayOptions: {
       show: {
-        resource: ['deals'],
+        resource: ['deal'],
         operation: ['get'],
       },
     },
     description: 'ID of the deal to retrieve',
   },
-  /* -------------------------------------------------------------------------- */
-  /*                               deals:list                                */
-  /* -------------------------------------------------------------------------- */
+  /* ---------------------------------------------------------------------- */
+  /*                               deal:list                                */
+  /* ---------------------------------------------------------------------- */
   {
     displayName: 'Return All',
     name: 'returnAll',
     type: 'boolean',
     displayOptions: {
       show: {
-        resource: ['deals'],
+        resource: ['deal'],
         operation: ['list'],
       },
     },
@@ -349,7 +349,7 @@ export const dealFields: INodeProperties[] = [
     type: 'number',
     displayOptions: {
       show: {
-        resource: ['deals'],
+        resource: ['deal'],
         operation: ['list'],
         returnAll: [false],
       },
@@ -366,7 +366,7 @@ export const dealFields: INodeProperties[] = [
     type: 'string',
     displayOptions: {
       show: {
-        resource: ['deals'],
+        resource: ['deal'],
         operation: ['list'],
         returnAll: [false],
       },
@@ -381,7 +381,7 @@ export const dealFields: INodeProperties[] = [
     type: 'dateTime',
     displayOptions: {
       show: {
-        resource: ['deals'],
+        resource: ['deal'],
         operation: ['list'],
         returnAll: [false],
       },
@@ -397,7 +397,7 @@ export const dealFields: INodeProperties[] = [
     placeholder: 'Add Field',
     displayOptions: {
       show: {
-        resource: ['deals'],
+        resource: ['deal'],
         operation: ['list'],
       },
     },
@@ -466,9 +466,9 @@ export const dealFields: INodeProperties[] = [
       },
     ],
   },
-  /* -------------------------------------------------------------------------- */
-  /*                              deals:update                               */
-  /* -------------------------------------------------------------------------- */
+  /* ---------------------------------------------------------------------- */
+  /*                              deal:update                               */
+  /* ---------------------------------------------------------------------- */
   {
     displayName: 'Deal ID',
     name: 'dealId',
@@ -477,7 +477,7 @@ export const dealFields: INodeProperties[] = [
     required: true,
     displayOptions: {
       show: {
-        resource: ['deals'],
+        resource: ['deal'],
         operation: ['update'],
       },
     },
@@ -490,7 +490,7 @@ export const dealFields: INodeProperties[] = [
     placeholder: 'Add Field',
     displayOptions: {
       show: {
-        resource: ['deals'],
+        resource: ['deal'],
         operation: ['update'],
       },
     },
@@ -522,7 +522,7 @@ export const dealFields: INodeProperties[] = [
         description: 'Currency of the deal',
         displayOptions: {
           show: {
-            resource: ['deals'],
+            resource: ['deal'],
             operation: ['create'],
           },
         },
@@ -602,7 +602,7 @@ export const dealFields: INodeProperties[] = [
         description: 'Amount of money of deal being created',
         displayOptions: {
           show: {
-            resource: ['deals'],
+            resource: ['deal'],
             operation: ['create'],
           },
         },
@@ -615,7 +615,7 @@ export const dealFields: INodeProperties[] = [
         description: 'Name of deal being created',
         displayOptions: {
           show: {
-            resource: ['deals'],
+            resource: ['deal'],
             operation: ['create'],
           },
         },

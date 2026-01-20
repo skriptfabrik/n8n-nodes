@@ -96,11 +96,11 @@ export class Moco implements INodeType {
           },
           {
             name: 'Contact',
-            value: 'contacts',
+            value: 'contact',
           },
           {
             name: 'Deal',
-            value: 'deals',
+            value: 'deal',
           },
           {
             name: 'Project',
@@ -899,7 +899,7 @@ export class Moco implements INodeType {
           }
         }
 
-        if (resource === 'contacts') {
+        if (resource === 'contact') {
           if (operation === 'create') {
             const additionalFields = this.getNodeParameter(
               'additionalFields',
@@ -1125,7 +1125,7 @@ export class Moco implements INodeType {
           }
         }
 
-        if (resource === 'deals') {
+        if (resource === 'deal') {
           if (operation === 'create') {
             const additionalFields = this.getNodeParameter(
               'additionalFields',
