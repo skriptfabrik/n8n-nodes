@@ -1,5 +1,12 @@
 # Changelog
 
+## [moco-0.7.1](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.7.0...moco-0.7.1) (2026-01-20)
+
+### 🐛 Bug Fixes
+
+- hide deals fields if not needed (#1079) ([97f7629](https://github.com/skriptfabrik/n8n-nodes/commit/97f7629991c8250847116b0224a0ee1bf8bc6125))
+- singularize MOCO resource identifiers (DWBN-2) ([24900e6](https://github.com/skriptfabrik/n8n-nodes/commit/24900e6b289aa266ea1b38e870c240f6906aa1ef))
+
 ## [moco-0.7.0](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.6.0...moco-0.7.0) (2026-01-19)
 
 ### ✨ New Features
