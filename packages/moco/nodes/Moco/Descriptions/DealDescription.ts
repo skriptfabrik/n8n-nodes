@@ -104,6 +104,12 @@ export const dealFields: INodeProperties[] = [
     required: true,
     default: '',
     description: 'Reminder date of the deal',
+    displayOptions: {
+      show: {
+        resource: ['deals'],
+        operation: ['create'],
+      },
+    },
   },
   {
     displayName: 'User Name or ID',
@@ -111,6 +117,12 @@ export const dealFields: INodeProperties[] = [
     type: 'options',
     typeOptions: {
       loadOptionsMethod: 'listUsers',
+    },
+    displayOptions: {
+      show: {
+        resource: ['deals'],
+        operation: ['create'],
+      },
     },
     default: '',
     description:
@@ -124,6 +136,12 @@ export const dealFields: INodeProperties[] = [
     type: 'options',
     typeOptions: {
       loadOptionsMethod: 'listDealCategories',
+    },
+    displayOptions: {
+      show: {
+        resource: ['deals'],
+        operation: ['create'],
+      },
     },
     default: '',
     description:

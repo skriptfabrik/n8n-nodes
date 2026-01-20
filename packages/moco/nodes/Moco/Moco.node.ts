@@ -99,6 +99,10 @@ export class Moco implements INodeType {
             value: 'contacts',
           },
           {
+            name: 'Deal',
+            value: 'deals',
+          },
+          {
             name: 'Project',
             value: 'project',
           },
