@@ -17,6 +17,7 @@ Please take a closer look at the detailed instructions for the individual nodes:
 - [Enhanced Google community nodes](packages/google-enhanced/README.md)
 - [Enhanced Sentry.io community nodes](packages/sentry-io-enhanced/README.md)
 - [fulfillmenttools community nodes](packages/fulfillmenttools/README.md)
+- [Headwind MDM community nodes](packages/headwind-mdm/README.md)
 - [Kaufland Marketplace community nodes](packages/kaufland-marketplace/README.md)
 - [MOCO community nodes](packages/moco/README.md)
 - [OTTO Market community nodes](packages/otto-market/README.md)

@@ -1,3 +1,4 @@
+import type { JWTToken } from '../types/api';
 import crypto from 'crypto';
 import type {
   Icon,
@@ -8,19 +9,6 @@ import type {
   IHttpRequestHelper,
   ICredentialDataDecryptedObject,
 } from 'n8n-workflow';
-
-function md5Upper(str: string): string {
-  return crypto
-    .createHash('md5')
-    .update(str, 'utf8')
-    .digest('hex')
-    .toUpperCase();
-}
-
-type TokenResponse = {
-  id_token: string;
-};
-
 
 export class HeadwindMdmApi implements ICredentialType {
   name = 'headwindMdmApi';
@@ -60,6 +48,12 @@ export class HeadwindMdmApi implements ICredentialType {
       default: undefined,
     },
     {
+      displayName: 'Skip SSL Certificate Validation',
+      name: 'skipSslCertificateValidation',
+      type: 'boolean',
+      default: false,
+    },
+    {
       displayName: 'ID Token',
       name: 'idToken',
       type: 'hidden',
@@ -79,14 +73,18 @@ export class HeadwindMdmApi implements ICredentialType {
       method: 'POST',
       url: `${credentials.url}/rest/public/jwt/login`,
       headers: {
-        'content-type': 'application/json',
         accept: 'application/json',
+        'content-type': 'application/json',
       },
       body: {
         login: credentials.username,
-        password: md5Upper(credentials.password as string),
+        password: crypto
+          .createHash('md5')
+          .update(credentials.password as string, 'utf8')
+          .digest('hex')
+          .toUpperCase(),
       },
-    })) as TokenResponse;
+    })) as JWTToken;
 
     return {
       idToken: response.id_token,

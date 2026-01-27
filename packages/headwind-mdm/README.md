@@ -36,6 +36,14 @@ panel.
 
 It supports these operations:
 
+- Search and get applications
+- Search application versions
+- Search and get configurations
+- Search and update configuration application settings
+- Search devices
+- Search device application settings
+- Search device groups
+
 ## Credentials
 
 The provided credential can be used to authenticate with a Headwind MDM instance.

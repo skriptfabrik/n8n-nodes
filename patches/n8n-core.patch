@@ -1,0 +1,13 @@
+diff --git a/dist/execution-engine/node-execution-context/utils/request-helper-functions.js b/dist/execution-engine/node-execution-context/utils/request-helper-functions.js
+index c8929271f543b61747d68482dee9950bf60cf5e5..f7df446b82920959bf416b8ec30450dd17fcd352 100644
+--- a/dist/execution-engine/node-execution-context/utils/request-helper-functions.js
++++ b/dist/execution-engine/node-execution-context/utils/request-helper-functions.js
+@@ -979,7 +979,7 @@ async function httpRequestWithAuthentication(credentialsType, requestOptions, wo
+         return await httpRequest(requestOptions);
+     }
+     catch (error) {
+-        if (error.response?.status === 401 &&
++        if ((error.response?.status === 401 || error.response?.status === 403) &&
+             additionalData.credentialsHelper.preAuthentication !== undefined) {
+             try {
+                 if (credentialsDecrypted !== undefined) {
