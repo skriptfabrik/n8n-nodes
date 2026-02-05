@@ -2,9 +2,7 @@ version: 2
 
 updates:
   - package-ecosystem: 'github-actions'
-    directories:
-      - '/'
-      - '/actions/setup-turborepo'
+    directory: '/'
     schedule:
       interval: 'weekly'
     commit-message:

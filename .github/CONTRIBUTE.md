@@ -90,7 +90,7 @@ and password `n8nOwner`.
 ### Compile nodes in watch mode
 
 ```bash
-pnpm run turbo:dev
+pnpm run dev
 ```
 
 This will compile all nodes and automatically reload or restart the application when changes occur in the source code files.
@@ -98,19 +98,19 @@ This will compile all nodes and automatically reload or restart the application 
 ### 🔍 Run linters
 
 ```bash
-pnpm run turbo:lint
+pnpm run lint
 ```
 
 Or for a specific project:
 
 ```bash
-pnpm run turbo:lint --filter=<package-name>
+pnpm run lint --filter=<package-name>
 ```
 
 ### 🚀 Build a project (if applicable)
 
 ```bash
-pnpm run turbo:build --filter=<package-name>
+pnpm run build --filter=<package-name>
 ```
 
 ---
