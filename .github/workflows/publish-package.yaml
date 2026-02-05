@@ -48,7 +48,7 @@ jobs:
           version: canvas-deps-1
 
       - name: 🏗 Setup Turborepo
-        uses: ./.github/actions/setup-turborepo
+        uses: skriptfabrik/github-actions/setup-turborepo@main
         with:
           node-registry-url: https://registry.npmjs.org
           node-version-file: .node-version
