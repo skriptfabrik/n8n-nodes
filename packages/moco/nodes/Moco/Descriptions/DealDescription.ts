@@ -520,12 +520,6 @@ export const dealFields: INodeProperties[] = [
         type: 'string',
         default: '',
         description: 'Currency of the deal',
-        displayOptions: {
-          show: {
-            resource: ['deal'],
-            operation: ['create'],
-          },
-        },
         placeholder: 'EUR',
         requiresDataPath: 'single',
         validateType: 'string',
@@ -600,12 +594,6 @@ export const dealFields: INodeProperties[] = [
         default: 0,
         placeholder: '25000',
         description: 'Amount of money of deal being created',
-        displayOptions: {
-          show: {
-            resource: ['deal'],
-            operation: ['create'],
-          },
-        },
       },
       {
         displayName: 'Name',
@@ -613,12 +601,6 @@ export const dealFields: INodeProperties[] = [
         type: 'string',
         default: '',
         description: 'Name of deal being created',
-        displayOptions: {
-          show: {
-            resource: ['deal'],
-            operation: ['create'],
-          },
-        },
       },
       {
         displayName: 'Person Name or ID',
