@@ -1,5 +1,11 @@
 # Changelog
 
+## [moco-0.7.2](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.7.1...moco-0.7.2) (2026-02-16)
+
+### 🐛 Bug Fixes
+
+- fix update deal operation (DWBN-2) ([707c831](https://github.com/skriptfabrik/n8n-nodes/commit/707c831964c50d9c2a17940cfbef6393efa05ceb))
+
 ## [moco-0.7.1](https://github.com/skriptfabrik/n8n-nodes/compare/moco-0.7.0...moco-0.7.1) (2026-01-20)
 
 ### 🐛 Bug Fixes
