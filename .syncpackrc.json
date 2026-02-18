@@ -1,5 +1,5 @@
 {
-  "$schema": "./node_modules/syncpack/dist/schema.json",
+  "$schema": "./node_modules/syncpack/schema.json",
   "sortFirst": [
     "name",
     "version",
@@ -20,5 +20,13 @@
     "optionalDependencies",
     "engines",
     "devEngines"
+  ],
+  "versionGroups": [
+    {
+      "label": "Ignore latest versions of n8n-workflow",
+      "dependencies": ["n8n-workflow"],
+      "specifierTypes": ["latest"],
+      "isIgnored": true
+    }
   ]
 }
