@@ -23,6 +23,10 @@ updates:
       commitlint:
         patterns:
           - '@commitlint/*'
+    ignore:
+      - dependency-name: '@types/node'
+        update-types:
+          - 'version-update:semver-major'
     schedule:
       interval: 'weekly'
       day: 'monday'
