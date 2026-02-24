@@ -51,7 +51,6 @@ jobs:
         uses: skriptfabrik/github-actions/setup-turborepo@main
         with:
           node-registry-url: https://registry.npmjs.org
-          node-version-file: .node-version
 
       - name: 🔨 Build node package
         run: pnpm -s run build

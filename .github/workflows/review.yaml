@@ -36,8 +36,6 @@ jobs:
 
       - name: 🏗 Setup Turborepo
         uses: skriptfabrik/github-actions/setup-turborepo@main
-        with:
-          node-version-file: .node-version
 
       - name: 🔍 Lint all commit messages
         run: |
@@ -61,8 +59,6 @@ jobs:
 
       - name: 🏗 Setup Turborepo
         uses: skriptfabrik/github-actions/setup-turborepo@main
-        with:
-          node-version-file: .node-version
 
       - name: 🔍 Find unused files, dependencies and exports
         run: pnpm -s run lint:deps --reporter github-actions
@@ -83,8 +79,6 @@ jobs:
 
       - name: 🏗 Setup Turborepo
         uses: skriptfabrik/github-actions/setup-turborepo@main
-        with:
-          node-version-file: .node-version
 
       - name: 🔍 Lint all Markdown files
         run: pnpm -s run lint:markdown
@@ -102,8 +96,6 @@ jobs:
 
       - name: 🏗 Setup Turborepo
         uses: skriptfabrik/github-actions/setup-turborepo@main
-        with:
-          node-version-file: .node-version
 
       - name: 🔍 Check if the files are formatted
         run: pnpm -s run lint:style
@@ -124,8 +116,6 @@ jobs:
 
       - name: 🏗 Setup Turborepo
         uses: skriptfabrik/github-actions/setup-turborepo@main
-        with:
-          node-version-file: .node-version
 
       - name: 🔍 Lint all versions and ranges
         run: pnpm -s run lint:versions
@@ -163,7 +153,6 @@ jobs:
       - name: 🏗 Setup Turborepo
         uses: skriptfabrik/github-actions/setup-turborepo@main
         with:
-          node-version-file: .node-version
           turbo-s3-endpoint: nbg1.your-objectstorage.com
           turbo-s3-region: nbg1
           turbo-s3-bucket: turbo-bucket-1
