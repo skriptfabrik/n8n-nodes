@@ -17,14 +17,14 @@ importers:
   .:
     devDependencies:
       '@commitlint/cli':
-        specifier: ^20.4.3
-        version: 20.4.3(@types/node@25.4.0)(typescript@5.9.3)
+        specifier: ^20.5.0
+        version: 20.5.0(@types/node@25.4.0)(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.3.0)(typescript@5.9.3)
       '@commitlint/config-conventional':
-        specifier: ^20.4.3
-        version: 20.4.3
+        specifier: ^20.5.0
+        version: 20.5.0
       '@n8n/node-cli':
         specifier: ^0.21.0
-        version: 0.21.0(9a93e195822c520effde5551201ba50c)
+        version: 0.21.0(c0aec7d3686267958a11b88348b9893f)
       '@semantic-release/changelog':
         specifier: ^6.0.3
         version: 6.0.3(semantic-release@25.0.3(typescript@5.9.3))
@@ -45,7 +45,7 @@ importers:
         version: 0.21.0
       n8n:
         specifier: ^2.11.2
-        version: 2.11.2(89c59fdfb838404d46bdd1193dae1d73)
+        version: 2.11.2(384796f63ccc086f86b499e61c760985)
       prettier:
         specifier: ^3.8.1
         version: 3.8.1
@@ -699,8 +699,8 @@ packages:
     resolution: {integrity: sha512-0ZrskXVEHSWIqZM/sQZ4EV3jZJXRkio/WCxaqKZP1g//CEWEPSfeZFcms4XeKBCHU0ZKnIkdJeU/kF+eRp5lBg==}
     engines: {node: '>=6.9.0'}
 
-  '@browserbasehq/sdk@2.7.0':
-    resolution: {integrity: sha512-1iwuj3fChplMq+S66M9tGb9ZXA4e7Vi8MjqQQ6/T6rzoAWLGfDnEAPbgTOU479o+Mi3of5/6YXk1oIHKTw0NBw==}
+  '@browserbasehq/sdk@2.8.0':
+    resolution: {integrity: sha512-z4Acpj0IlRLfA95sSr12YCCRZIztEZ1I7sfUk0xGWPIOpEsVaVBc6FPiMaMB5uFG6dji9rThH37XwsCS6txg+A==}
 
   '@browserbasehq/stagehand@1.14.0':
     resolution: {integrity: sha512-Hi/EzgMFWz+FKyepxHTrqfTPjpsuBS4zRy3e9sbMpBgLPv+9c0R+YZEvS7Bw4mTS66QtvvURRT6zgDGFotthVQ==}
@@ -728,61 +728,61 @@ packages:
     resolution: {integrity: sha512-Ir+AOibqzrIsL6ajt3Rz3LskB7OiMVHqltZmspbW/TJuTVuyOMirVqAkjfY6JISiLHgyNqicAC8AyHHGzNd/dA==}
     engines: {node: '>=0.1.90'}
 
-  '@commitlint/cli@20.4.3':
-    resolution: {integrity: sha512-Z37EMoDT7+Upg500vlr/vZrgRsb6Xc5JAA3Tv7BYbobnN/ZpqUeZnSLggBg2+1O+NptRDtyujr2DD1CPV2qwhA==}
+  '@commitlint/cli@20.5.0':
+    resolution: {integrity: sha512-yNkyN/tuKTJS3wdVfsZ2tXDM4G4Gi7z+jW54Cki8N8tZqwKBltbIvUUrSbT4hz1bhW/h0CdR+5sCSpXD+wMKaQ==}
     engines: {node: '>=v18'}
     hasBin: true
 
-  '@commitlint/config-conventional@20.4.3':
-    resolution: {integrity: sha512-9RtLySbYQAs8yEqWEqhSZo9nYhbm57jx7qHXtgRmv/nmeQIjjMcwf6Dl+y5UZcGWgWx435TAYBURONaJIuCjWg==}
+  '@commitlint/config-conventional@20.5.0':
+    resolution: {integrity: sha512-t3Ni88rFw1XMa4nZHgOKJ8fIAT9M2j5TnKyTqJzsxea7FUetlNdYFus9dz+MhIRZmc16P0PPyEfh6X2d/qw8SA==}
     engines: {node: '>=v18'}
 
-  '@commitlint/config-validator@20.4.3':
-    resolution: {integrity: sha512-jCZpZFkcSL3ZEdL5zgUzFRdytv3xPo8iukTe9VA+QGus/BGhpp1xXSVu2B006GLLb2gYUAEGEqv64kTlpZNgmA==}
+  '@commitlint/config-validator@20.5.0':
+    resolution: {integrity: sha512-T/Uh6iJUzyx7j35GmHWdIiGRQB+ouZDk0pwAaYq4SXgB54KZhFdJ0vYmxiW6AMYICTIWuyMxDBl1jK74oFp/Gw==}
     engines: {node: '>=v18'}
 
-  '@commitlint/ensure@20.4.3':
-    resolution: {integrity: sha512-WcXGKBNn0wBKpX8VlXgxqedyrLxedIlLBCMvdamLnJFEbUGJ9JZmBVx4vhLV3ZyA8uONGOb+CzW0Y9HDbQ+ONQ==}
+  '@commitlint/ensure@20.5.0':
+    resolution: {integrity: sha512-IpHqAUesBeW1EDDdjzJeaOxU9tnogLAyXLRBn03SHlj1SGENn2JGZqSWGkFvBJkJzfXAuCNtsoYzax+ZPS+puw==}
     engines: {node: '>=v18'}
 
   '@commitlint/execute-rule@20.0.0':
     resolution: {integrity: sha512-xyCoOShoPuPL44gVa+5EdZsBVao/pNzpQhkzq3RdtlFdKZtjWcLlUFQHSWBuhk5utKYykeJPSz2i8ABHQA+ZZw==}
     engines: {node: '>=v18'}
 
-  '@commitlint/format@20.4.3':
-    resolution: {integrity: sha512-UDJVErjLbNghop6j111rsHJYGw6MjCKAi95K0GT2yf4eeiDHy3JDRLWYWEjIaFgO+r+dQSkuqgJ1CdMTtrvHsA==}
+  '@commitlint/format@20.5.0':
+    resolution: {integrity: sha512-TI9EwFU/qZWSK7a5qyXMpKPPv3qta7FO4tKW+Wt2al7sgMbLWTsAcDpX1cU8k16TRdsiiet9aOw0zpvRXNJu7Q==}
     engines: {node: '>=v18'}
 
-  '@commitlint/is-ignored@20.4.3':
-    resolution: {integrity: sha512-W5VQKZ7fdJ1X3Tko+h87YZaqRMGN1KvQKXyCM8xFdxzMIf1KCZgN4uLz3osLB1zsFcVS4ZswHY64LI26/9ACag==}
+  '@commitlint/is-ignored@20.5.0':
+    resolution: {integrity: sha512-JWLarAsurHJhPozbuAH6GbP4p/hdOCoqS9zJMfqwswne+/GPs5V0+rrsfOkP68Y8PSLphwtFXV0EzJ+GTXTTGg==}
     engines: {node: '>=v18'}
 
-  '@commitlint/lint@20.4.3':
-    resolution: {integrity: sha512-CYOXL23e+nRKij81+d0+dymtIi7Owl9QzvblJYbEfInON/4MaETNSLFDI74LDu+YJ0ML5HZyw9Vhp9QpckwQ0A==}
+  '@commitlint/lint@20.5.0':
+    resolution: {integrity: sha512-jiM3hNUdu04jFBf1VgPdjtIPvbuVfDTBAc6L98AWcoLjF5sYqkulBHBzlVWll4rMF1T5zeQFB6r//a+s+BBKlA==}
     engines: {node: '>=v18'}
 
-  '@commitlint/load@20.4.3':
-    resolution: {integrity: sha512-3cdJOUVP+VcgHa7bhJoWS+Z8mBNXB5aLWMBu7Q7uX8PSeWDzdbrBlR33J1MGGf7r1PZDp+mPPiFktk031PgdRw==}
+  '@commitlint/load@20.5.0':
+    resolution: {integrity: sha512-sLhhYTL/KxeOTZjjabKDhwidGZan84XKK1+XFkwDYL/4883kIajcz/dZFAhBJmZPtL8+nBx6bnkzA95YxPeDPw==}
     engines: {node: '>=v18'}
 
   '@commitlint/message@20.4.3':
     resolution: {integrity: sha512-6akwCYrzcrFcTYz9GyUaWlhisY4lmQ3KvrnabmhoeAV8nRH4dXJAh4+EUQ3uArtxxKQkvxJS78hNX2EU3USgxQ==}
     engines: {node: '>=v18'}
 
-  '@commitlint/parse@20.4.3':
-    resolution: {integrity: sha512-hzC3JCo3zs3VkQ833KnGVuWjWIzR72BWZWjQM7tY/7dfKreKAm7fEsy71tIFCRtxf2RtMP2d3RLF1U9yhFSccA==}
+  '@commitlint/parse@20.5.0':
+    resolution: {integrity: sha512-SeKWHBMk7YOTnnEWUhx+d1a9vHsjjuo6Uo1xRfPNfeY4bdYFasCH1dDpAv13Lyn+dDPOels+jP6D2GRZqzc5fA==}
     engines: {node: '>=v18'}
 
-  '@commitlint/read@20.4.3':
-    resolution: {integrity: sha512-j42OWv3L31WfnP8WquVjHZRt03w50Y/gEE8FAyih7GQTrIv2+pZ6VZ6pWLD/ml/3PO+RV2SPtRtTp/MvlTb8rQ==}
+  '@commitlint/read@20.5.0':
+    resolution: {integrity: sha512-JDEIJ2+GnWpK8QqwfmW7O42h0aycJEWNqcdkJnyzLD11nf9dW2dWLTVEa8Wtlo4IZFGLPATjR5neA5QlOvIH1w==}
     engines: {node: '>=v18'}
 
-  '@commitlint/resolve-extends@20.4.3':
-    resolution: {integrity: sha512-QucxcOy+00FhS9s4Uy0OyS5HeUV+hbC6OLqkTSIm6fwMdKva+OEavaCDuLtgd9akZZlsUo//XzSmPP3sLKBPog==}
+  '@commitlint/resolve-extends@20.5.0':
+    resolution: {integrity: sha512-3SHPWUW2v0tyspCTcfSsYml0gses92l6TlogwzvM2cbxDgmhSRc+fldDjvGkCXJrjSM87BBaWYTPWwwyASZRrg==}
     engines: {node: '>=v18'}
 
-  '@commitlint/rules@20.4.3':
-    resolution: {integrity: sha512-Yuosd7Grn5qiT7FovngXLyRXTMUbj9PYiSkvUgWK1B5a7+ZvrbWDS7epeUapYNYatCy/KTpPFPbgLUdE+MUrBg==}
+  '@commitlint/rules@20.5.0':
+    resolution: {integrity: sha512-5NdQXQEdnDPT5pK8O39ZA7HohzPRHEsDGU23cyVCNPQy4WegAbAwrQk3nIu7p2sl3dutPk8RZd91yKTrMTnRkQ==}
     engines: {node: '>=v18'}
 
   '@commitlint/to-lines@20.0.0':
@@ -793,9 +793,21 @@ packages:
     resolution: {integrity: sha512-qD9xfP6dFg5jQ3NMrOhG0/w5y3bBUsVGyJvXxdWEwBm8hyx4WOk3kKXw28T5czBYvyeCVJgJJ6aoJZUWDpaacQ==}
     engines: {node: '>=v18'}
 
-  '@commitlint/types@20.4.3':
-    resolution: {integrity: sha512-51OWa1Gi6ODOasPmfJPq6js4pZoomima4XLZZCrkldaH2V5Nb3bVhNXPeT6XV0gubbainSpTw4zi68NqAeCNCg==}
+  '@commitlint/types@20.5.0':
+    resolution: {integrity: sha512-ZJoS8oSq2CAZEpc/YI9SulLrdiIyXeHb/OGqGrkUP6Q7YV+0ouNAa7GjqRdXeQPncHQIDz/jbCTlHScvYvO/gA==}
     engines: {node: '>=v18'}
+
+  '@conventional-changelog/git-client@2.6.0':
+    resolution: {integrity: sha512-T+uPDciKf0/ioNNDpMGc8FDsehJClZP0yR3Q5MN6wE/Y/1QZ7F+80OgznnTCOlMEG4AV0LvH2UJi3C/nBnaBUg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      conventional-commits-filter: ^5.0.0
+      conventional-commits-parser: ^6.3.0
+    peerDependenciesMeta:
+      conventional-commits-filter:
+        optional: true
+      conventional-commits-parser:
+        optional: true
 
   '@dabh/diagnostics@2.0.8':
     resolution: {integrity: sha512-R4MSXTVnuMzGD7bzHdW2ZhhdPC/igELENcq5IjEverBvq5hn1SXCWcsi6eSsdWP0/Ur+SItRRjAktmdoX/8R/Q==}
@@ -2798,6 +2810,10 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
+  '@simple-libs/child-process-utils@1.0.2':
+    resolution: {integrity: sha512-/4R8QKnd/8agJynkNdJmNw2MBxuFTRcNFnE5Sg/G+jkSsV8/UBgULMzhizWWW42p8L5H7flImV2ATi79Ove2Tw==}
+    engines: {node: '>=18'}
+
   '@simple-libs/stream-utils@1.2.0':
     resolution: {integrity: sha512-KxXvfapcixpz6rVEB6HPjOUZT22yN6v0vI0urQSk1L8MlEWPDFCZkhw2xmkyoTGYeFw7tWTZd7e3lVzRZRN/EA==}
     engines: {node: '>=18'}
@@ -3480,6 +3496,7 @@ packages:
 
   '@xata.io/client@0.28.4':
     resolution: {integrity: sha512-B02WHIA/ViHya84XvH6JCo13rd5h4S5vVyY2aYi6fIcjDIbCpsSLJ4oGWpdodovRYeAZy9Go4OhdyZwMIRC4BQ==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     peerDependencies:
       typescript: '>=4.5'
 
@@ -4383,10 +4400,6 @@ packages:
     resolution: {integrity: sha512-E+Pn8UJYx9mViuIUkoc93gJGGYut6mSDKy2+XaPwccwkRGlR+LO97L2VCCRjQivTwLHkSnAJG7yo00BWY6QM+w==}
     hasBin: true
 
-  dargs@8.1.0:
-    resolution: {integrity: sha512-wAV9QHOsNbwnWdNW2FYvE1P56wtgSbM+3SZcdGiWQILwVjACCXDCI3Ai8QlCjMDB8YK5zySiXZYBiwGmNY3lnw==}
-    engines: {node: '>=12'}
-
   dashdash@1.14.1:
     resolution: {integrity: sha512-jRFi8UDGo6j+odZiEpjazZaWqEal3w/basFjQHQEwVtZJGDpxbH1MeYluwCS8Xq5wmLJooDlMgvVarmWfGM44g==}
     engines: {node: '>=0.10'}
@@ -5277,10 +5290,9 @@ packages:
   git-log-parser@1.2.1:
     resolution: {integrity: sha512-PI+sPDvHXNPl5WNOErAK05s3j0lgwUzMN6o8cyQrDaKfT3qd7TmNJKeXX+SknI5I0QhG5fVPAEwSY4tRGDtYoQ==}
 
-  git-raw-commits@4.0.0:
-    resolution: {integrity: sha512-ICsMM1Wk8xSGMowkOmPrzo2Fgmfo4bMHLNX6ytHjajRJUqvHOw/TFapQ+QG75c3X/tTDDhOSRPGC52dDbNM8FQ==}
-    engines: {node: '>=16'}
-    deprecated: This package is no longer maintained. For the JavaScript API, please use @conventional-changelog/git-client instead.
+  git-raw-commits@5.0.1:
+    resolution: {integrity: sha512-Y+csSm2GD/PCSh6Isd/WiMjNAydu0VBiG9J7EdQsNA5P9uXvLayqjmTsNlK5Gs9IhblFZqOU0yid5Il5JPoLiQ==}
+    engines: {node: '>=18'}
     hasBin: true
 
   github-from-package@0.0.0:
@@ -6398,10 +6410,6 @@ packages:
 
   memory-pager@1.5.0:
     resolution: {integrity: sha512-ZS4Bp4r/Zoeq6+NLJpP+0Zzm0pR8whtGPf1XExKLJBAczGMnSi3It14OiNCStjQjM6NU1okjQGSxgEZN8eBYKg==}
-
-  meow@12.1.1:
-    resolution: {integrity: sha512-BhXM0Au22RwUneMPwSCnyhTOizdWoIEPU9sp0Aqa1PnDMR5Wv2FGXYDjuzJEIX+Eo2Rb8xuYe5jrnm5QowQFkw==}
-    engines: {node: '>=16.10'}
 
   meow@13.2.0:
     resolution: {integrity: sha512-pxQJQzB6djGPXh08dacEloMFopsOqGVRKFPYvPOt9XDZ1HasbgDZA74CJGreSU4G3Ak7EFJGoiH2auq+yXISgA==}
@@ -8374,8 +8382,8 @@ packages:
     resolution: {integrity: sha512-75voc/9G4rDIJleOo4jPvN4/YC4GRZrY8yy1uU4lwrB3XEQbWve8zXoO5No4eFrGcTAMYyoY67p8jRQdtA1HbA==}
     engines: {node: '>=12'}
 
-  tinyexec@1.0.2:
-    resolution: {integrity: sha512-W/KYk+NFhkmsYpuHq5JykngiOCnxeVL8v8dFnqxSD8qEEdRfXk1SDM6JzNqcERbcGYj9tMrDQBYV9cjgnunFIg==}
+  tinyexec@1.0.4:
+    resolution: {integrity: sha512-u9r3uZC0bdpGOXtlxUIdwf9pkmvhqJdrVCH9fapQtgy/OeTTMZ1nqH7agtvEfmGui6e1XxjcdrlxvxJvc3sMqw==}
     engines: {node: '>=18'}
 
   tinyglobby@0.2.15:
@@ -10700,7 +10708,7 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
 
-  '@browserbasehq/sdk@2.7.0(encoding@0.1.13)':
+  '@browserbasehq/sdk@2.8.0(encoding@0.1.13)':
     dependencies:
       '@types/node': 18.19.130
       '@types/node-fetch': 2.6.13
@@ -10715,7 +10723,7 @@ snapshots:
   '@browserbasehq/stagehand@1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@17.2.3)(encoding@0.1.13)(openai@6.27.0(ws@8.17.1)(zod@3.25.67))(zod@3.25.67)':
     dependencies:
       '@anthropic-ai/sdk': 0.27.3(encoding@0.1.13)
-      '@browserbasehq/sdk': 2.7.0(encoding@0.1.13)
+      '@browserbasehq/sdk': 2.8.0(encoding@0.1.13)
       '@playwright/test': 1.57.0
       deepmerge: 4.3.1
       dotenv: 17.2.3
@@ -10746,32 +10754,34 @@ snapshots:
 
   '@colors/colors@1.6.0': {}
 
-  '@commitlint/cli@20.4.3(@types/node@25.4.0)(typescript@5.9.3)':
+  '@commitlint/cli@20.5.0(@types/node@25.4.0)(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.3.0)(typescript@5.9.3)':
     dependencies:
-      '@commitlint/format': 20.4.3
-      '@commitlint/lint': 20.4.3
-      '@commitlint/load': 20.4.3(@types/node@25.4.0)(typescript@5.9.3)
-      '@commitlint/read': 20.4.3
-      '@commitlint/types': 20.4.3
-      tinyexec: 1.0.2
+      '@commitlint/format': 20.5.0
+      '@commitlint/lint': 20.5.0
+      '@commitlint/load': 20.5.0(@types/node@25.4.0)(typescript@5.9.3)
+      '@commitlint/read': 20.5.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.3.0)
+      '@commitlint/types': 20.5.0
+      tinyexec: 1.0.4
       yargs: 17.7.2
     transitivePeerDependencies:
       - '@types/node'
+      - conventional-commits-filter
+      - conventional-commits-parser
       - typescript
 
-  '@commitlint/config-conventional@20.4.3':
+  '@commitlint/config-conventional@20.5.0':
     dependencies:
-      '@commitlint/types': 20.4.3
+      '@commitlint/types': 20.5.0
       conventional-changelog-conventionalcommits: 9.3.0(patch_hash=f95a24c25a92f9019f2c77c60525c6d1f932ee9ac4b0a85cf198ab5bb2176ba3)
 
-  '@commitlint/config-validator@20.4.3':
+  '@commitlint/config-validator@20.5.0':
     dependencies:
-      '@commitlint/types': 20.4.3
+      '@commitlint/types': 20.5.0
       ajv: 8.18.0
 
-  '@commitlint/ensure@20.4.3':
+  '@commitlint/ensure@20.5.0':
     dependencies:
-      '@commitlint/types': 20.4.3
+      '@commitlint/types': 20.5.0
       lodash.camelcase: 4.3.0
       lodash.kebabcase: 4.1.1
       lodash.snakecase: 4.1.1
@@ -10780,29 +10790,29 @@ snapshots:
 
   '@commitlint/execute-rule@20.0.0': {}
 
-  '@commitlint/format@20.4.3':
+  '@commitlint/format@20.5.0':
     dependencies:
-      '@commitlint/types': 20.4.3
+      '@commitlint/types': 20.5.0
       picocolors: 1.1.1
 
-  '@commitlint/is-ignored@20.4.3':
+  '@commitlint/is-ignored@20.5.0':
     dependencies:
-      '@commitlint/types': 20.4.3
+      '@commitlint/types': 20.5.0
       semver: 7.7.4
 
-  '@commitlint/lint@20.4.3':
+  '@commitlint/lint@20.5.0':
     dependencies:
-      '@commitlint/is-ignored': 20.4.3
-      '@commitlint/parse': 20.4.3
-      '@commitlint/rules': 20.4.3
-      '@commitlint/types': 20.4.3
+      '@commitlint/is-ignored': 20.5.0
+      '@commitlint/parse': 20.5.0
+      '@commitlint/rules': 20.5.0
+      '@commitlint/types': 20.5.0
 
-  '@commitlint/load@20.4.3(@types/node@25.4.0)(typescript@5.9.3)':
+  '@commitlint/load@20.5.0(@types/node@25.4.0)(typescript@5.9.3)':
     dependencies:
-      '@commitlint/config-validator': 20.4.3
+      '@commitlint/config-validator': 20.5.0
       '@commitlint/execute-rule': 20.0.0
-      '@commitlint/resolve-extends': 20.4.3
-      '@commitlint/types': 20.4.3
+      '@commitlint/resolve-extends': 20.5.0
+      '@commitlint/types': 20.5.0
       cosmiconfig: 9.0.1(typescript@5.9.3)
       cosmiconfig-typescript-loader: 6.2.0(@types/node@25.4.0)(cosmiconfig@9.0.1(typescript@5.9.3))(typescript@5.9.3)
       is-plain-obj: 4.1.0
@@ -10814,35 +10824,38 @@ snapshots:
 
   '@commitlint/message@20.4.3': {}
 
-  '@commitlint/parse@20.4.3':
+  '@commitlint/parse@20.5.0':
     dependencies:
-      '@commitlint/types': 20.4.3
+      '@commitlint/types': 20.5.0
       conventional-changelog-angular: 8.3.0
       conventional-commits-parser: 6.3.0
 
-  '@commitlint/read@20.4.3':
+  '@commitlint/read@20.5.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.3.0)':
     dependencies:
       '@commitlint/top-level': 20.4.3
-      '@commitlint/types': 20.4.3
-      git-raw-commits: 4.0.0
+      '@commitlint/types': 20.5.0
+      git-raw-commits: 5.0.1(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.3.0)
       minimist: 1.2.8
-      tinyexec: 1.0.2
+      tinyexec: 1.0.4
+    transitivePeerDependencies:
+      - conventional-commits-filter
+      - conventional-commits-parser
 
-  '@commitlint/resolve-extends@20.4.3':
+  '@commitlint/resolve-extends@20.5.0':
     dependencies:
-      '@commitlint/config-validator': 20.4.3
-      '@commitlint/types': 20.4.3
+      '@commitlint/config-validator': 20.5.0
+      '@commitlint/types': 20.5.0
       global-directory: 4.0.1
       import-meta-resolve: 4.2.0
       lodash.mergewith: 4.6.2
       resolve-from: 5.0.0
 
-  '@commitlint/rules@20.4.3':
+  '@commitlint/rules@20.5.0':
     dependencies:
-      '@commitlint/ensure': 20.4.3
+      '@commitlint/ensure': 20.5.0
       '@commitlint/message': 20.4.3
       '@commitlint/to-lines': 20.0.0
-      '@commitlint/types': 20.4.3
+      '@commitlint/types': 20.5.0
 
   '@commitlint/to-lines@20.0.0': {}
 
@@ -10850,10 +10863,19 @@ snapshots:
     dependencies:
       escalade: 3.2.0
 
-  '@commitlint/types@20.4.3':
+  '@commitlint/types@20.5.0':
     dependencies:
       conventional-commits-parser: 6.3.0
       picocolors: 1.1.1
+
+  '@conventional-changelog/git-client@2.6.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.3.0)':
+    dependencies:
+      '@simple-libs/child-process-utils': 1.0.2
+      '@simple-libs/stream-utils': 1.2.0
+      semver: 7.7.4
+    optionalDependencies:
+      conventional-commits-filter: 5.0.0
+      conventional-commits-parser: 6.3.0
 
   '@dabh/diagnostics@2.0.8':
     dependencies:
@@ -11207,7 +11229,7 @@ snapshots:
       - aws-crt
       - encoding
 
-  '@langchain/community@1.1.14(daa628c6b312b56c1b11bd29dc204b83)':
+  '@langchain/community@1.1.14(b6b757c9af4bbcf8b8daa766b4c32648)':
     dependencies:
       '@browserbasehq/stagehand': 1.14.0(@playwright/test@1.57.0)(deepmerge@4.3.1)(dotenv@17.2.3)(encoding@0.1.13)(openai@6.27.0(ws@8.17.1)(zod@3.25.67))(zod@3.25.67)
       '@ibm-cloud/watsonx-ai': 1.7.5
@@ -11227,7 +11249,7 @@ snapshots:
       '@aws-sdk/client-s3': 3.1005.0
       '@aws-sdk/credential-provider-node': 3.972.19
       '@azure/search-documents': 12.1.0
-      '@browserbasehq/sdk': 2.7.0(encoding@0.1.13)
+      '@browserbasehq/sdk': 2.8.0(encoding@0.1.13)
       '@getzep/zep-cloud': 1.0.6(@langchain/core@1.1.8(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(openai@6.27.0(ws@8.17.1)(zod@3.25.67)))(encoding@0.1.13)(langchain@1.2.3(@langchain/core@1.1.8(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(openai@6.27.0(ws@8.17.1)(zod@3.25.67)))(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(openai@6.27.0(ws@8.17.1)(zod@3.25.67))(zod-to-json-schema@3.23.3(zod@3.25.67)))
       '@getzep/zep-js': 0.9.0
       '@google-cloud/storage': 7.19.0(encoding@0.1.13)
@@ -11659,9 +11681,9 @@ snapshots:
   '@msgpackr-extract/msgpackr-extract-win32-x64@3.0.3':
     optional: true
 
-  '@n8n/ai-node-sdk@0.2.0(31c93d7d2207cf018baef34d49d6a329)':
+  '@n8n/ai-node-sdk@0.2.0(ce8c07538f4f9ead9990eea9e7d9dea5)':
     dependencies:
-      '@n8n/ai-utilities': 0.4.0(31c93d7d2207cf018baef34d49d6a329)
+      '@n8n/ai-utilities': 0.4.0(ce8c07538f4f9ead9990eea9e7d9dea5)
     transitivePeerDependencies:
       - '@arcjet/redact'
       - '@aws-crypto/sha256-js'
@@ -11793,10 +11815,10 @@ snapshots:
       - ws
       - youtubei.js
 
-  '@n8n/ai-utilities@0.4.0(31c93d7d2207cf018baef34d49d6a329)':
+  '@n8n/ai-utilities@0.4.0(ce8c07538f4f9ead9990eea9e7d9dea5)':
     dependencies:
       '@langchain/classic': 1.0.5(@langchain/core@1.1.8(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(openai@6.27.0(ws@8.17.1)(zod@3.25.67)))(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(cheerio@1.0.0)(openai@6.27.0(ws@8.17.1)(zod@3.25.67))(ws@8.17.1)
-      '@langchain/community': 1.1.14(daa628c6b312b56c1b11bd29dc204b83)
+      '@langchain/community': 1.1.14(b6b757c9af4bbcf8b8daa766b4c32648)
       '@langchain/core': 1.1.8(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(openai@6.27.0(ws@8.17.1)(zod@3.25.67))
       '@langchain/openai': 1.1.3(@langchain/core@1.1.8(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(openai@6.27.0(ws@8.17.1)(zod@3.25.67)))(ws@8.17.1)
       '@langchain/textsplitters': 1.0.1(@langchain/core@1.1.8(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(openai@6.27.0(ws@8.17.1)(zod@3.25.67)))
@@ -11942,10 +11964,10 @@ snapshots:
       - ws
       - youtubei.js
 
-  '@n8n/ai-utilities@0.5.1(28df84aa999152978470610ae736680a)':
+  '@n8n/ai-utilities@0.5.1(acb11104c7119384280d003457dc1b14)':
     dependencies:
       '@langchain/classic': 1.0.5(@langchain/core@1.1.8(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(openai@6.27.0(ws@8.17.1)(zod@3.25.67)))(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(cheerio@1.0.0)(openai@6.27.0(ws@8.17.1)(zod@3.25.67))(ws@8.17.1)
-      '@langchain/community': 1.1.14(daa628c6b312b56c1b11bd29dc204b83)
+      '@langchain/community': 1.1.14(b6b757c9af4bbcf8b8daa766b4c32648)
       '@langchain/core': 1.1.8(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(openai@6.27.0(ws@8.17.1)(zod@3.25.67))
       '@langchain/openai': 1.1.3(@langchain/core@1.1.8(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(openai@6.27.0(ws@8.17.1)(zod@3.25.67)))(ws@8.17.1)
       '@langchain/textsplitters': 1.0.1(@langchain/core@1.1.8(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(openai@6.27.0(ws@8.17.1)(zod@3.25.67)))
@@ -12245,7 +12267,7 @@ snapshots:
     dependencies:
       zod: 3.25.67
 
-  '@n8n/n8n-nodes-langchain@2.11.2(1eac8ee7a92d97d9681e2915fd5421aa)':
+  '@n8n/n8n-nodes-langchain@2.11.2(543f8427b3d91f8b677addf5fbbbdcf8)':
     dependencies:
       '@aws-sdk/client-sso-oidc': 3.808.0
       '@azure/identity': 4.13.0
@@ -12260,7 +12282,7 @@ snapshots:
       '@langchain/aws': 1.0.3(@langchain/core@1.1.8(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(openai@6.27.0(ws@8.17.1)(zod@3.25.67)))
       '@langchain/classic': 1.0.5(@langchain/core@1.1.8(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(openai@6.27.0(ws@8.17.1)(zod@3.25.67)))(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(cheerio@1.0.0)(openai@6.27.0(ws@8.17.1)(zod@3.25.67))(ws@8.17.1)
       '@langchain/cohere': 1.0.1(@langchain/core@1.1.8(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(openai@6.27.0(ws@8.17.1)(zod@3.25.67)))(encoding@0.1.13)
-      '@langchain/community': 1.1.14(daa628c6b312b56c1b11bd29dc204b83)
+      '@langchain/community': 1.1.14(b6b757c9af4bbcf8b8daa766b4c32648)
       '@langchain/core': 1.1.8(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(openai@6.27.0(ws@8.17.1)(zod@3.25.67))
       '@langchain/google-genai': 2.1.10(@langchain/core@1.1.8(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(openai@6.27.0(ws@8.17.1)(zod@3.25.67)))
       '@langchain/google-vertexai': 2.1.10(@langchain/core@1.1.8(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(openai@6.27.0(ws@8.17.1)(zod@3.25.67)))
@@ -12283,7 +12305,7 @@ snapshots:
       '@microsoft/agents-hosting': 1.2.3
       '@modelcontextprotocol/sdk': 1.26.0(@cfworker/json-schema@4.1.1)(zod@3.25.67)
       '@mozilla/readability': 0.6.0
-      '@n8n/ai-utilities': 0.5.1(28df84aa999152978470610ae736680a)
+      '@n8n/ai-utilities': 0.5.1(acb11104c7119384280d003457dc1b14)
       '@n8n/client-oauth2': 1.0.0-rc.0
       '@n8n/config': 2.10.1
       '@n8n/di': 0.10.0
@@ -12457,10 +12479,10 @@ snapshots:
       - ws
       - youtubei.js
 
-  '@n8n/node-cli@0.21.0(9a93e195822c520effde5551201ba50c)':
+  '@n8n/node-cli@0.21.0(c0aec7d3686267958a11b88348b9893f)':
     dependencies:
       '@clack/prompts': 0.11.0
-      '@n8n/ai-node-sdk': 0.2.0(31c93d7d2207cf018baef34d49d6a329)
+      '@n8n/ai-node-sdk': 0.2.0(ce8c07538f4f9ead9990eea9e7d9dea5)
       '@n8n/eslint-plugin-community-nodes': 0.8.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       '@oclif/core': 4.8.1
       change-case: 5.4.4
@@ -13851,6 +13873,10 @@ snapshots:
       '@sentry/node': 10.43.0
     transitivePeerDependencies:
       - supports-color
+
+  '@simple-libs/child-process-utils@1.0.2':
+    dependencies:
+      '@simple-libs/stream-utils': 1.2.0
 
   '@simple-libs/stream-utils@1.2.0': {}
 
@@ -15713,8 +15739,6 @@ snapshots:
       iconv-lite: 0.4.24
       rw: 1.3.3
 
-  dargs@8.1.0: {}
-
   dashdash@1.14.1:
     dependencies:
       assert-plus: 1.0.0
@@ -16802,11 +16826,13 @@ snapshots:
       through2: 2.0.5
       traverse: 0.6.8
 
-  git-raw-commits@4.0.0:
+  git-raw-commits@5.0.1(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.3.0):
     dependencies:
-      dargs: 8.1.0
-      meow: 12.1.1
-      split2: 4.2.0
+      '@conventional-changelog/git-client': 2.6.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.3.0)
+      meow: 13.2.0
+    transitivePeerDependencies:
+      - conventional-commits-filter
+      - conventional-commits-parser
 
   github-from-package@0.0.0: {}
 
@@ -18081,8 +18107,6 @@ snapshots:
 
   memory-pager@1.5.0: {}
 
-  meow@12.1.1: {}
-
   meow@13.2.0: {}
 
   merge-descriptors@2.0.0: {}
@@ -18723,14 +18747,14 @@ snapshots:
       xml2js: 0.6.2
       zod: 3.25.67
 
-  n8n@2.11.2(89c59fdfb838404d46bdd1193dae1d73):
+  n8n@2.11.2(384796f63ccc086f86b499e61c760985):
     dependencies:
       '@aws-sdk/client-secrets-manager': 3.808.0
       '@azure/identity': 4.13.0
       '@azure/keyvault-secrets': 4.8.0
       '@google-cloud/secret-manager': 5.6.0(encoding@0.1.13)
       '@modelcontextprotocol/sdk': 1.26.0(@cfworker/json-schema@4.1.1)(zod@3.25.67)
-      '@n8n/ai-utilities': 0.5.1(28df84aa999152978470610ae736680a)
+      '@n8n/ai-utilities': 0.5.1(acb11104c7119384280d003457dc1b14)
       '@n8n/ai-workflow-builder': 1.11.1(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(openai@6.27.0(ws@8.17.1)(zod@3.25.67))(ws@8.17.1)(zod-to-json-schema@3.23.3(zod@3.25.67))
       '@n8n/api-types': 1.11.1
       '@n8n/backend-common': 1.11.1
@@ -18742,7 +18766,7 @@ snapshots:
       '@n8n/decorators': 1.11.1
       '@n8n/di': 0.10.0
       '@n8n/errors': 0.6.0
-      '@n8n/n8n-nodes-langchain': 2.11.2(1eac8ee7a92d97d9681e2915fd5421aa)
+      '@n8n/n8n-nodes-langchain': 2.11.2(543f8427b3d91f8b677addf5fbbbdcf8)
       '@n8n/permissions': 0.52.0
       '@n8n/syslog-client': 1.2.0
       '@n8n/task-runner': 2.11.1(@opentelemetry/api@1.9.0)(@opentelemetry/exporter-trace-otlp-proto@0.204.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(openai@6.27.0(ws@8.17.1)(zod@3.25.67))
@@ -19033,7 +19057,7 @@ snapshots:
 
   node-abi@3.87.0:
     dependencies:
-      semver: 7.7.4
+      semver: 7.5.4
 
   node-abort-controller@3.1.1: {}
 
@@ -19122,7 +19146,7 @@ snapshots:
   normalize-package-data@6.0.2:
     dependencies:
       hosted-git-info: 7.0.2
-      semver: 7.7.4
+      semver: 7.7.3
       validate-npm-package-license: 3.0.4
 
   normalize-package-data@8.0.0:
@@ -20748,7 +20772,7 @@ snapshots:
     dependencies:
       convert-hrtime: 5.0.0
 
-  tinyexec@1.0.2: {}
+  tinyexec@1.0.4: {}
 
   tinyglobby@0.2.15:
     dependencies:
