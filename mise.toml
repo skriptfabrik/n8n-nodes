@@ -1,0 +1,22 @@
+[settings]
+idiomatic_version_file_enable_tools = [ "node" ]
+
+[env]
+_.path = [ "{{config_root}}/node_modules/.bin" ]
+COREPACK_ENABLE_DOWNLOAD_PROMPT = "0"
+
+[hooks]
+postinstall = """
+npx corepack enable
+pnpm config set store-dir ~/.local/share/pnpm/store
+"""
+
+[tasks.install]
+description = "Installs dependencies with pnpm"
+run = "pnpm install"
+sources = [
+  "package.json",
+  "pnpm-lock.yaml",
+  "mise.toml"
+]
+outputs = [ "node_modules/.pnpm/lock.yaml" ]
