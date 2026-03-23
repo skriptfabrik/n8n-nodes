@@ -33,16 +33,16 @@ jobs:
 
     steps:
       - name: 🏗 Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0
           ssh-key: ${{ secrets.DEPLOY_KEY }}
 
       - name: 🏗 Setup git user
-        uses: fregante/setup-git-user@v2
+        uses: fregante/setup-git-user@024bc0b8e177d7e77203b48dab6fb45666854b35 # v2.0.2
 
       - name: 🏗 Install canvas deps
-        uses: awalsh128/cache-apt-pkgs-action@v1
+        uses: awalsh128/cache-apt-pkgs-action@acb598e5ddbc6f68a970c5da0688d2f3a9f04d05 # v1.6.0
         with:
           packages: libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
           version: canvas-deps-1
