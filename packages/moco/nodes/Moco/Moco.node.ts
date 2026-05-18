@@ -53,10 +53,10 @@ import type {
   INodePropertyOptions,
   INodeType,
   INodeTypeDescription,
-  NodeApiError,
+  JsonObject,
   NodeParameterValue,
 } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeApiError, NodeConnectionTypes } from 'n8n-workflow';
 
 export class Moco implements INodeType {
   description: INodeTypeDescription = {
@@ -1356,7 +1356,7 @@ export class Moco implements INodeType {
           continue;
         }
 
-        throw error;
+        throw new NodeApiError(this.getNode(), error as JsonObject);
       }
     }
 

@@ -14,6 +14,7 @@ import type {
   INodeExecutionData,
   INodeType,
   INodeTypeDescription,
+  JsonObject,
 } from 'n8n-workflow';
 import {
   BINARY_ENCODING,
@@ -64,12 +65,12 @@ export class GoogleCloudStorageEnhanced implements INodeType {
         type: 'options',
         options: [
           {
-            name: 'Service Account',
-            value: 'serviceAccount',
-          },
-          {
             name: 'OAuth2',
             value: 'oAuth2',
+          },
+          {
+            name: 'Service Account',
+            value: 'serviceAccount',
           },
         ],
         default: 'serviceAccount',
@@ -546,7 +547,7 @@ export class GoogleCloudStorageEnhanced implements INodeType {
           continue;
         }
 
-        throw error;
+        throw new NodeApiError(this.getNode(), error as JsonObject);
       }
     }
 

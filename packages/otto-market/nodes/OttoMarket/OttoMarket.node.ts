@@ -17,7 +17,7 @@ import type {
   INodeType,
   INodeTypeDescription,
 } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeApiError, NodeConnectionTypes } from 'n8n-workflow';
 
 export class OttoMarket implements INodeType {
   description: INodeTypeDescription = {
@@ -76,71 +76,87 @@ export class OttoMarket implements INodeType {
     const resource = this.getNodeParameter('resource', 0) as string;
     const operation = this.getNodeParameter('operation', 0) as string;
 
-    for (let i = 0; i < items.length; i++) {
-      if (resource === 'orders') {
-        if (operation === 'getOne') {
-          const orderId = this.getNodeParameter('id', 0) as string;
+    for (let item = 0; item < items.length; item++) {
+      try {
+        if (resource === 'orders') {
+          if (operation === 'getOne') {
+            const orderId = this.getNodeParameter('id', 0) as string;
 
-          const requestData: OttoMarketRequestData = {
-            method: 'GET',
-            uri: `/v4/orders/${orderId}`,
-            body: '',
-          };
+            const requestData: OttoMarketRequestData = {
+              method: 'GET',
+              uri: `/v4/orders/${orderId}`,
+              body: '',
+            };
 
-          const orderData = await ottoMarketApiRequest.call(
-            this,
-            requestData,
-            i,
-          );
+            const orderData = await ottoMarketApiRequest.call(
+              this,
+              requestData,
+              item,
+            );
 
-          returnData.push({ orderData });
-        }
-      } else if (resource === 'returns') {
-        if (operation == 'list') {
-          const status = this.getNodeParameter('status', 0) as string;
-
-          const query = `?limit=50&page=1&status=${status}`;
-
-          const requestData: OttoMarketRequestData = {
-            method: 'GET',
-            uri: `/v2/returns` + query,
-            body: '',
-          };
-
-          const positionItems = await ottoMarketApiRequest.call(
-            this,
-            requestData,
-            i,
-          );
-
-          returnData.push({ positionItems });
-        } else if (operation == 'accept' || operation == 'reject') {
-          switch (operation) {
-            case 'accept':
-              endpoint = `/v2/returns/acceptance`;
-              break;
-            case 'reject':
-              endpoint = `/v2/returns/rejection`;
-              break;
+            returnData.push({ orderData });
           }
+        } else if (resource === 'returns') {
+          if (operation == 'list') {
+            const status = this.getNodeParameter('status', 0) as string;
 
-          const positionItems = this.getNodeParameter(
-            'positionItems',
-            0,
-          ) as string;
+            const query = `?limit=50&page=1&status=${status}`;
 
-          const requestData: OttoMarketRequestData = {
-            method: 'POST',
-            uri: endpoint,
-            body: {
-              positionItems,
-            },
-          };
+            const requestData: OttoMarketRequestData = {
+              method: 'GET',
+              uri: `/v2/returns` + query,
+              body: '',
+            };
 
-          responseData = await ottoMarketApiRequest.call(this, requestData, i);
+            const positionItems = await ottoMarketApiRequest.call(
+              this,
+              requestData,
+              item,
+            );
 
-          returnData.push({ data: responseData });
+            returnData.push({ positionItems });
+          } else if (operation == 'accept' || operation == 'reject') {
+            switch (operation) {
+              case 'accept':
+                endpoint = `/v2/returns/acceptance`;
+                break;
+              case 'reject':
+                endpoint = `/v2/returns/rejection`;
+                break;
+            }
+
+            const positionItems = this.getNodeParameter(
+              'positionItems',
+              0,
+            ) as string;
+
+            const requestData: OttoMarketRequestData = {
+              method: 'POST',
+              uri: endpoint,
+              body: {
+                positionItems,
+              },
+            };
+
+            responseData = await ottoMarketApiRequest.call(
+              this,
+              requestData,
+              item,
+            );
+
+            returnData.push({ data: responseData });
+          }
         }
+      } catch (error) {
+        if (this.continueOnFail()) {
+          returnData.push({
+            json: { error: (error as NodeApiError).message },
+            pairedItem: { item },
+          });
+          continue;
+        }
+
+        throw new NodeApiError(this.getNode(), error);
       }
     }
 

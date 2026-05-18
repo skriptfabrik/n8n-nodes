@@ -61,7 +61,7 @@ export class KauflandMarketplaceApi implements ICredentialType {
       )
       .digest('hex');
 
-    requestOptions.json = true;
+    requestOptions.baseURL = 'https://sellerapi.kaufland.com/v2';
 
     requestOptions.headers = {
       ...requestOptions.headers,
@@ -72,13 +72,14 @@ export class KauflandMarketplaceApi implements ICredentialType {
       'Shop-Client-Key': credentials['clientId'],
     };
 
+    requestOptions.json = true;
+
     return requestOptions;
   }
 
   test: ICredentialTestRequest = {
     request: {
-      baseURL: 'https://sellerapi.kaufland.com',
-      url: '/v2/status/ping',
+      url: '/status/ping',
     },
   };
 }

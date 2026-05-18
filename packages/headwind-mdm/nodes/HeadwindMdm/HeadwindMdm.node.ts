@@ -45,6 +45,7 @@ import type {
   INodePropertyOptions,
   INodeType,
   INodeTypeDescription,
+  JsonObject,
 } from 'n8n-workflow';
 import { NodeApiError, NodeConnectionTypes } from 'n8n-workflow';
 
@@ -488,7 +489,7 @@ export class HeadwindMdm implements INodeType {
           continue;
         }
 
-        throw error;
+        throw new NodeApiError(this.getNode(), error as JsonObject);
       }
     }
 

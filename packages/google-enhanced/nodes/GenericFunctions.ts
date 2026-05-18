@@ -118,7 +118,11 @@ async function requestAccessToken(
     json: true,
   };
 
-  return this.helpers.httpRequest(options);
+  return this.helpers.httpRequestWithAuthentication.call(
+    this,
+    credentialsType,
+    options,
+  );
 }
 
 export async function requestServiceAccount(
@@ -133,11 +137,15 @@ export async function requestServiceAccount(
     scopes,
   );
 
-  return this.helpers.httpRequest({
-    ...options,
-    headers: {
-      ...options.headers,
-      Authorization: `Bearer ${access_token}`,
+  return this.helpers.httpRequestWithAuthentication.call(
+    this,
+    credentialsType,
+    {
+      ...options,
+      headers: {
+        ...options.headers,
+        Authorization: `Bearer ${access_token}`,
+      },
     },
-  });
+  );
 }

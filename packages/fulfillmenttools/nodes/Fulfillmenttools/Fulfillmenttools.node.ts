@@ -18,9 +18,9 @@ import type {
   INodeExecutionData,
   INodeType,
   INodeTypeDescription,
-  NodeApiError,
+  JsonObject,
 } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeApiError, NodeConnectionTypes } from 'n8n-workflow';
 
 type FacilityForCreation = components['schemas']['FacilityForCreation'];
 type Facility = components['schemas']['Facility'];
@@ -384,7 +384,7 @@ export class Fulfillmenttools implements INodeType {
           continue;
         }
 
-        throw error;
+        throw new NodeApiError(this.getNode(), error as JsonObject);
       }
     }
 

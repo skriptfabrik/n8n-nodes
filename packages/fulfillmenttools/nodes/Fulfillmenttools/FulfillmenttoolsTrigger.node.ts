@@ -123,108 +123,20 @@ export class FulfillmenttoolsTrigger implements INodeType {
         noDataExpression: true,
         options: [
           {
-            name: 'Order Created',
-            value: FulfillmenttoolsEvents.ORDER_CREATED,
-          },
-          {
-            name: 'Order Canceled',
-            value: FulfillmenttoolsEvents.ORDER_CANCELED,
-          },
-          {
-            name: 'Order Unlocked',
-            value: FulfillmenttoolsEvents.ORDER_UNLOCKED,
-          },
-          {
-            name: 'Inventory Facility Stock Changed',
-            value: FulfillmenttoolsEvents.INVENTORY_FACILITY_STOCK_CHANGED,
-          },
-          {
-            name: 'Inbound Delivery Received',
-            value: FulfillmenttoolsEvents.INBOUND_DELIVERY_RECEIVED,
-          },
-          {
-            name: 'Inbound Delivery Finished',
-            value: FulfillmenttoolsEvents.INBOUND_DELIVERY_FINISHED,
-          },
-          {
-            name: 'Inbound Delivery On Hold',
-            value: FulfillmenttoolsEvents.INBOUND_DELIVERY_ON_HOLD,
-          },
-          {
-            name: 'Routing Plan Splitted',
-            value: FulfillmenttoolsEvents.ROUTING_PLAN_SPLITTED,
-          },
-          {
-            name: 'Routing Plan Waiting',
-            value: FulfillmenttoolsEvents.ROUTING_PLAN_WAITING,
-          },
-          {
-            name: 'Routing Plan Fallback',
-            value: FulfillmenttoolsEvents.ROUTING_PLAN_FALLBACK,
-          },
-          {
-            name: 'Routing Plan Routed',
-            value: FulfillmenttoolsEvents.ROUTING_PLAN_ROUTED,
-          },
-          {
-            name: 'Routing Plan Rerouteplan Created',
-            value: FulfillmenttoolsEvents.ROUTING_PLAN_REROUTEPLAN_CREATED,
-          },
-          {
-            name: 'Routing Plan Not Routable',
-            value: FulfillmenttoolsEvents.ROUTING_PLAN_NOT_ROUTABLE,
-          },
-          {
             name: 'Facility Created',
             value: FulfillmenttoolsEvents.FACILITY_CREATED,
-          },
-          {
-            name: 'Facility Updated',
-            value: FulfillmenttoolsEvents.FACILITY_UPDATED,
           },
           {
             name: 'Facility Deleted',
             value: FulfillmenttoolsEvents.FACILITY_DELETED,
           },
           {
-            name: 'Pick Job Created',
-            value: FulfillmenttoolsEvents.PICK_JOB_CREATED,
+            name: 'Facility Updated',
+            value: FulfillmenttoolsEvents.FACILITY_UPDATED,
           },
           {
-            name: 'Pick Job Picking Commenced',
-            value: FulfillmenttoolsEvents.PICK_JOB_PICKING_COMMENCED,
-          },
-          {
-            name: 'Pick Job Picking Paused',
-            value: FulfillmenttoolsEvents.PICK_JOB_PICKING_PAUSED,
-          },
-          {
-            name: 'Pick Job Picking Finished',
-            value: FulfillmenttoolsEvents.PICK_JOB_PICKING_FINISHED,
-          },
-          {
-            name: 'Pick Job Pick Line Picked',
-            value: FulfillmenttoolsEvents.PICK_JOB_PICK_LINE_PICKED,
-          },
-          {
-            name: 'Pick Job Rerouted',
-            value: FulfillmenttoolsEvents.PICK_JOB_REROUTED,
-          },
-          {
-            name: 'Pick Job Reset',
-            value: FulfillmenttoolsEvents.PICK_JOB_RESET,
-          },
-          {
-            name: 'Pick Job Aborted',
-            value: FulfillmenttoolsEvents.PICK_JOB_ABORTED,
-          },
-          {
-            name: 'Pack Job Created',
-            value: FulfillmenttoolsEvents.PACK_JOB_CREATED,
-          },
-          {
-            name: 'Pack Job Updated',
-            value: FulfillmenttoolsEvents.PACK_JOB_UPDATED,
+            name: 'Handoverjob Canceled',
+            value: FulfillmenttoolsEvents.HANDOVERJOB_CANCELED,
           },
           {
             name: 'Handoverjob Created',
@@ -239,24 +151,88 @@ export class FulfillmenttoolsTrigger implements INodeType {
             value: FulfillmenttoolsEvents.HANDOVERJOB_REVERTED,
           },
           {
-            name: 'Handoverjob Canceled',
-            value: FulfillmenttoolsEvents.HANDOVERJOB_CANCELED,
+            name: 'Inbound Delivery Finished',
+            value: FulfillmenttoolsEvents.INBOUND_DELIVERY_FINISHED,
           },
           {
-            name: 'Parcel Carrier Requested',
-            value: FulfillmenttoolsEvents.PARCEL_CARRIER_REQUESTED,
+            name: 'Inbound Delivery On Hold',
+            value: FulfillmenttoolsEvents.INBOUND_DELIVERY_ON_HOLD,
           },
           {
-            name: 'Parcel Carrier Failed',
-            value: FulfillmenttoolsEvents.PARCEL_CARRIER_FAILED,
+            name: 'Inbound Delivery Received',
+            value: FulfillmenttoolsEvents.INBOUND_DELIVERY_RECEIVED,
+          },
+          {
+            name: 'Inventory Facility Stock Changed',
+            value: FulfillmenttoolsEvents.INVENTORY_FACILITY_STOCK_CHANGED,
+          },
+          {
+            name: 'Order Canceled',
+            value: FulfillmenttoolsEvents.ORDER_CANCELED,
+          },
+          {
+            name: 'Order Created',
+            value: FulfillmenttoolsEvents.ORDER_CREATED,
+          },
+          {
+            name: 'Order Unlocked',
+            value: FulfillmenttoolsEvents.ORDER_UNLOCKED,
+          },
+          {
+            name: 'Pack Job Created',
+            value: FulfillmenttoolsEvents.PACK_JOB_CREATED,
+          },
+          {
+            name: 'Pack Job Updated',
+            value: FulfillmenttoolsEvents.PACK_JOB_UPDATED,
           },
           {
             name: 'Parcel Carrier Acknowledged',
             value: FulfillmenttoolsEvents.PARCEL_CARRIER_ACKNOWLEDGED,
           },
           {
-            name: 'Return Created',
-            value: FulfillmenttoolsEvents.RETURN_CREATED,
+            name: 'Parcel Carrier Failed',
+            value: FulfillmenttoolsEvents.PARCEL_CARRIER_FAILED,
+          },
+          {
+            name: 'Parcel Carrier Requested',
+            value: FulfillmenttoolsEvents.PARCEL_CARRIER_REQUESTED,
+          },
+          {
+            name: 'Pick Job Aborted',
+            value: FulfillmenttoolsEvents.PICK_JOB_ABORTED,
+          },
+          {
+            name: 'Pick Job Created',
+            value: FulfillmenttoolsEvents.PICK_JOB_CREATED,
+          },
+          {
+            name: 'Pick Job Pick Line Picked',
+            value: FulfillmenttoolsEvents.PICK_JOB_PICK_LINE_PICKED,
+          },
+          {
+            name: 'Pick Job Picking Commenced',
+            value: FulfillmenttoolsEvents.PICK_JOB_PICKING_COMMENCED,
+          },
+          {
+            name: 'Pick Job Picking Finished',
+            value: FulfillmenttoolsEvents.PICK_JOB_PICKING_FINISHED,
+          },
+          {
+            name: 'Pick Job Picking Paused',
+            value: FulfillmenttoolsEvents.PICK_JOB_PICKING_PAUSED,
+          },
+          {
+            name: 'Pick Job Rerouted',
+            value: FulfillmenttoolsEvents.PICK_JOB_REROUTED,
+          },
+          {
+            name: 'Pick Job Reset',
+            value: FulfillmenttoolsEvents.PICK_JOB_RESET,
+          },
+          {
+            name: 'Return Canceled',
+            value: FulfillmenttoolsEvents.RETURN_CANCELED,
           },
           {
             name: 'Return Claimed',
@@ -267,12 +243,36 @@ export class FulfillmenttoolsTrigger implements INodeType {
             value: FulfillmenttoolsEvents.RETURN_CLOSED,
           },
           {
-            name: 'Return Canceled',
-            value: FulfillmenttoolsEvents.RETURN_CANCELED,
+            name: 'Return Created',
+            value: FulfillmenttoolsEvents.RETURN_CREATED,
           },
           {
             name: 'Return Updated',
             value: FulfillmenttoolsEvents.RETURN_UPDATED,
+          },
+          {
+            name: 'Routing Plan Fallback',
+            value: FulfillmenttoolsEvents.ROUTING_PLAN_FALLBACK,
+          },
+          {
+            name: 'Routing Plan Not Routable',
+            value: FulfillmenttoolsEvents.ROUTING_PLAN_NOT_ROUTABLE,
+          },
+          {
+            name: 'Routing Plan Rerouteplan Created',
+            value: FulfillmenttoolsEvents.ROUTING_PLAN_REROUTEPLAN_CREATED,
+          },
+          {
+            name: 'Routing Plan Routed',
+            value: FulfillmenttoolsEvents.ROUTING_PLAN_ROUTED,
+          },
+          {
+            name: 'Routing Plan Splitted',
+            value: FulfillmenttoolsEvents.ROUTING_PLAN_SPLITTED,
+          },
+          {
+            name: 'Routing Plan Waiting',
+            value: FulfillmenttoolsEvents.ROUTING_PLAN_WAITING,
           },
         ],
         default: FulfillmenttoolsEvents.ORDER_CREATED.toString(),
