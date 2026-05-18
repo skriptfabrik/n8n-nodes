@@ -6,9 +6,8 @@ import type {
   INodeExecutionData,
   INodeType,
   INodeTypeDescription,
-  NodeApiError,
 } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeApiError, NodeConnectionTypes } from 'n8n-workflow';
 
 export class SentryIoEnhanced implements INodeType {
   description: INodeTypeDescription = {
@@ -21,6 +20,8 @@ export class SentryIoEnhanced implements INodeType {
     group: ['transform'],
 
     version: 1,
+
+    subtitle: '={{$parameter["name"]}}',
 
     description: 'Allows you to send envelopes to Sentry.io.',
 
@@ -264,7 +265,7 @@ export class SentryIoEnhanced implements INodeType {
           continue;
         }
 
-        throw error;
+        throw new NodeApiError(this.getNode(), error);
       }
     }
 

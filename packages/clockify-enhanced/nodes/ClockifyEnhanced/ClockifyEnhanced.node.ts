@@ -19,9 +19,8 @@ import type {
   INodePropertyOptions,
   INodeType,
   INodeTypeDescription,
-  NodeApiError,
 } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeApiError, NodeConnectionTypes } from 'n8n-workflow';
 
 type Client = components['schemas']['ClientDtoV1'] &
   Required<Pick<components['schemas']['ClientDtoV1'], 'id' | 'name'>>;
@@ -385,7 +384,7 @@ export class ClockifyEnhanced implements INodeType {
           continue;
         }
 
-        throw error;
+        throw new NodeApiError(this.getNode(), error);
       }
     }
 

@@ -11,7 +11,7 @@ import type {
   INodeType,
   INodeTypeDescription,
 } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeApiError, NodeConnectionTypes } from 'n8n-workflow';
 
 export class Barcode implements INodeType {
   description: INodeTypeDescription = {
@@ -20,6 +20,7 @@ export class Barcode implements INodeType {
     icon: 'file:../../icons/Barcode.svg',
     group: ['transform'],
     version: 1,
+    subtitle: '={{$parameter["name"]}}',
     description: 'Create a Barcode image',
     defaults: {
       name: 'Barcode',
@@ -243,6 +244,7 @@ export class Barcode implements INodeType {
   };
 
   async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
+    const returnData: INodeExecutionData[] = [];
     const data = this.getNodeParameter('data', 0) as string;
     const output = this.getNodeParameter('output', 0) as string;
     const options = this.getNodeParameter('options', 0) as
@@ -251,16 +253,16 @@ export class Barcode implements INodeType {
       | Ean13Options
       | NodeOptions;
 
-    const canvas = createCanvas(0, 0);
+    try {
+      const canvas = createCanvas(0, 0);
 
-    JsBarcode(canvas, data, options);
+      JsBarcode(canvas, data, options);
 
-    const matches = canvas
-      .toDataURL()
-      .match(/^data:(.+\/.+);base64,(.*)$/) as RegExpMatchArray;
+      const matches = canvas
+        .toDataURL()
+        .match(/^data:(.+\/.+);base64,(.*)$/) as RegExpMatchArray;
 
-    return this.prepareOutputData([
-      {
+      returnData.push({
         json: {
           data: matches[2],
           mimeType: matches[1],
@@ -272,7 +274,19 @@ export class Barcode implements INodeType {
             matches[1],
           ),
         },
-      },
-    ]);
+        pairedItem: { item: 0 },
+      });
+    } catch (error) {
+      if (this.continueOnFail()) {
+        returnData.push({
+          json: { error: (error as NodeApiError).message },
+          pairedItem: { item: 0 },
+        });
+      } else {
+        throw new NodeApiError(this.getNode(), error);
+      }
+    }
+
+    return [returnData];
   }
 }

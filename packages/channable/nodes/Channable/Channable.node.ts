@@ -18,7 +18,7 @@ import type {
   INodeType,
   INodeTypeDescription,
 } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
+import { NodeApiError, NodeConnectionTypes } from 'n8n-workflow';
 
 export class Channable implements INodeType {
   description: INodeTypeDescription = {
@@ -87,141 +87,153 @@ export class Channable implements INodeType {
     const resource = this.getNodeParameter('resource', 0) as string;
     const operation = this.getNodeParameter('operation', 0) as string;
 
-    for (let i = 0; i < items.length; i++) {
-      if (resource === 'orders') {
-        if (operation === 'getOne') {
-          const orderId = this.getNodeParameter('id', 0) as string;
+    for (let item = 0; item < items.length; item++) {
+      try {
+        if (resource === 'orders') {
+          if (operation === 'getOne') {
+            const orderId = this.getNodeParameter('id', 0) as string;
 
-          const requestData: ChannableRequestData = {
-            method: 'GET',
-            url: `/orders/${orderId}`,
-            body: '',
-          };
+            const requestData: ChannableRequestData = {
+              method: 'GET',
+              url: `/orders/${orderId}`,
+              body: '',
+            };
 
-          const orderData: IDataObject[] = await channableApiRequest.call(
-            this,
-            requestData,
-            i,
-          );
+            const orderData: IDataObject[] = await channableApiRequest.call(
+              this,
+              requestData,
+              item,
+            );
 
-          returnData.push({ ...orderData[0] });
-        } else if (operation === 'returnManual') {
-          const orderId = this.getNodeParameter('id', 0) as string;
-          const products = this.getNodeParameter('products', 0) as string;
+            returnData.push({ ...orderData[0] });
+          } else if (operation === 'returnManual') {
+            const orderId = this.getNodeParameter('id', 0) as string;
+            const products = this.getNodeParameter('products', 0) as string;
 
-          const requestData: ChannableRequestData = {
-            method: 'POST',
-            url: `/orders/${orderId}/return`,
-            body: {
-              products,
-            },
-          };
+            const requestData: ChannableRequestData = {
+              method: 'POST',
+              url: `/orders/${orderId}/return`,
+              body: {
+                products,
+              },
+            };
 
-          const result: IDataObject[] = await channableApiRequest.call(
-            this,
-            requestData,
-            i,
-          );
+            const result: IDataObject[] = await channableApiRequest.call(
+              this,
+              requestData,
+              item,
+            );
 
-          returnData.push({ result });
+            returnData.push({ result });
+          }
+        } else if (resource === 'stockUpdates') {
+          if (operation === 'updateStock') {
+            const stocks = this.getNodeParameter('stocks', 0) as string;
+
+            const requestData: ChannableRequestData = {
+              method: 'POST',
+              url: `/stock_updates`,
+              body: stocks,
+            };
+
+            const result: IDataObject[] = await channableApiRequest.call(
+              this,
+              requestData,
+              item,
+            );
+
+            returnData.push({ result });
+          }
+        } else if (resource === 'returns') {
+          if (operation == 'list' || operation == 'listAnonymized') {
+            const options = this.getNodeParameter(
+              'additionalFields',
+              0,
+            ) as Record<string, boolean | string>;
+
+            const qs: IDataObject = {
+              ...options,
+            };
+
+            const requestData: ChannableRequestData = {
+              method: 'GET',
+              url: `/${operation === 'list' ? 'returns' : 'anonymous_returns'}`,
+              body: '',
+              qs,
+            };
+
+            const returns: IDataObject[] = await channableApiRequest.call(
+              this,
+              requestData,
+              item,
+            );
+
+            returnData.push({ returns });
+          } else if (operation === 'getOne') {
+            const returnId = this.getNodeParameter('id', 0) as string;
+
+            const requestData: ChannableRequestData = {
+              method: 'GET',
+              url: `/returns/${returnId}`,
+              body: '',
+            };
+
+            const returnData: IDataObject[] = await channableApiRequest.call(
+              this,
+              requestData,
+              item,
+            );
+
+            returnData.push({ returnData });
+          } else if (operation === 'createTest') {
+            const order_id = this.getNodeParameter('id', 0) as number;
+
+            const requestData: ChannableRequestData = {
+              method: 'POST',
+              url: `/returns/test`,
+              body: {
+                order_id,
+              },
+            };
+
+            const returnData: IDataObject[] = await channableApiRequest.call(
+              this,
+              requestData,
+              item,
+            );
+
+            returnData.push({ returnData });
+          } else if (operation === 'update') {
+            const returnId = this.getNodeParameter('id', 0) as string;
+            const status = this.getNodeParameter('status', 0) as string;
+
+            const requestData: ChannableRequestData = {
+              method: 'POST',
+              url: `/returns/${returnId}/status`,
+              body: {
+                status,
+              },
+            };
+
+            const returnData: IDataObject[] = await channableApiRequest.call(
+              this,
+              requestData,
+              item,
+            );
+
+            returnData.push({ returnData });
+          }
         }
-      } else if (resource === 'stockUpdates') {
-        if (operation === 'updateStock') {
-          const stocks = this.getNodeParameter('stocks', 0) as string;
-
-          const requestData: ChannableRequestData = {
-            method: 'POST',
-            url: `/stock_updates`,
-            body: stocks,
-          };
-
-          const result: IDataObject[] = await channableApiRequest.call(
-            this,
-            requestData,
-            i,
-          );
-
-          returnData.push({ result });
+      } catch (error) {
+        if (this.continueOnFail()) {
+          returnData.push({
+            json: { error: (error as NodeApiError).message },
+            pairedItem: { item },
+          });
+          continue;
         }
-      } else if (resource === 'returns') {
-        if (operation == 'list' || operation == 'listAnonymized') {
-          const options = this.getNodeParameter(
-            'additionalFields',
-            0,
-          ) as Record<string, boolean | string>;
 
-          const qs: IDataObject = {
-            ...options,
-          };
-
-          const requestData: ChannableRequestData = {
-            method: 'GET',
-            url: `/${operation === 'list' ? 'returns' : 'anonymous_returns'}`,
-            body: '',
-            qs,
-          };
-
-          const returns: IDataObject[] = await channableApiRequest.call(
-            this,
-            requestData,
-            i,
-          );
-
-          returnData.push({ returns });
-        } else if (operation === 'getOne') {
-          const returnId = this.getNodeParameter('id', 0) as string;
-
-          const requestData: ChannableRequestData = {
-            method: 'GET',
-            url: `/returns/${returnId}`,
-            body: '',
-          };
-
-          const returnData: IDataObject[] = await channableApiRequest.call(
-            this,
-            requestData,
-            i,
-          );
-
-          returnData.push({ returnData });
-        } else if (operation === 'createTest') {
-          const order_id = this.getNodeParameter('id', 0) as number;
-
-          const requestData: ChannableRequestData = {
-            method: 'POST',
-            url: `/returns/test`,
-            body: {
-              order_id,
-            },
-          };
-
-          const returnData: IDataObject[] = await channableApiRequest.call(
-            this,
-            requestData,
-            i,
-          );
-
-          returnData.push({ returnData });
-        } else if (operation === 'update') {
-          const returnId = this.getNodeParameter('id', 0) as string;
-          const status = this.getNodeParameter('status', 0) as string;
-
-          const requestData: ChannableRequestData = {
-            method: 'POST',
-            url: `/returns/${returnId}/status`,
-            body: {
-              status,
-            },
-          };
-
-          const returnData: IDataObject[] = await channableApiRequest.call(
-            this,
-            requestData,
-            i,
-          );
-
-          returnData.push({ returnData });
-        }
+        throw new NodeApiError(this.getNode(), error);
       }
     }
 

@@ -49,7 +49,7 @@ export const ordersFields: INodeProperties[] = [
     displayName: 'Limit',
     name: 'limit',
     type: 'number',
-    typeOptions: { minValue: 1, maxValue: 250 },
+    typeOptions: { minValue: 1, maxValue: 100 },
     default: 50,
     displayOptions: {
       show: {
