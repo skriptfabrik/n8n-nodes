@@ -740,9 +740,8 @@ export class Moco implements INodeType {
           if (operation === 'update') {
             const projectId = this.getNodeParameter('projectId', item);
 
-            const body: ProjectParameters = {
+            const body: Omit<ProjectParameters, 'currency'> = {
               name: this.getNodeParameter('name', item) as string,
-              currency: this.getNodeParameter('currency', item) as string,
               start_date: this.getNodeParameter('startDate', item) as string,
               finish_date: this.getNodeParameter('finishDate', item) as string,
               fixed_price: this.getNodeParameter('fixedPrice', item) as boolean,
