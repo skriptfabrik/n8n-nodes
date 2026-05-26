@@ -264,7 +264,7 @@ export class KauflandMarketplace implements INodeType {
           continue;
         }
 
-        throw new NodeApiError(this.getNode(), error);
+        throw new NodeApiError(this.getNode(), error, { itemIndex: item });
       }
     }
 

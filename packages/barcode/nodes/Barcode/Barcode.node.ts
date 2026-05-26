@@ -283,7 +283,7 @@ export class Barcode implements INodeType {
           pairedItem: { item: 0 },
         });
       } else {
-        throw new NodeApiError(this.getNode(), error);
+        throw new NodeApiError(this.getNode(), error, { itemIndex: 0 });
       }
     }
 

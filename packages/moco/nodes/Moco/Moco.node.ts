@@ -1355,7 +1355,9 @@ export class Moco implements INodeType {
           continue;
         }
 
-        throw new NodeApiError(this.getNode(), error as JsonObject);
+        throw new NodeApiError(this.getNode(), error as JsonObject, {
+          itemIndex: item,
+        });
       }
     }
 
