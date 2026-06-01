@@ -23,6 +23,7 @@
     "dev": "n8n-node dev --external-n8n --custom-user-folder=$N8N_USER_FOLDER",
     "lint": "n8n-node lint",
     "lint:fix": "n8n-node lint --fix",
+    "test": "pnpm -s run build && node --test tests/**/*.test.cjs",
     "prepublishOnly": "n8n-node prerelease",
     "release": "semantic-release"
   },
@@ -42,14 +43,6 @@
     "nodes": [
       "dist/nodes/GoogleCloudStorageEnhanced/GoogleCloudStorageEnhanced.node.js"
     ]
-  },
-  "dependencies": {
-    "form-data": "^4.0.5",
-    "jsonwebtoken": "^9.0.3",
-    "moment-timezone": "^0.6.2"
-  },
-  "devDependencies": {
-    "@types/jsonwebtoken": "^9.0.10"
   },
   "peerDependencies": {
     "n8n-workflow": "*"

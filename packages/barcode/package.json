@@ -17,11 +17,12 @@
   },
   "repository": "skriptfabrik/n8n-nodes.git",
   "scripts": {
-    "build": "n8n-node build",
+    "build": "n8n-node build && pnpm -s exec esbuild dist/nodes/Barcode/Barcode.node.js --bundle --platform=node --format=cjs --target=node18 --external:n8n-workflow --outfile=dist/nodes/Barcode/Barcode.node.bundle.js && mv dist/nodes/Barcode/Barcode.node.bundle.js dist/nodes/Barcode/Barcode.node.js",
     "build:watch": "tsc --watch",
     "dev": "n8n-node dev --external-n8n --custom-user-folder=$N8N_USER_FOLDER",
     "lint": "n8n-node lint",
     "lint:fix": "n8n-node lint --fix",
+    "test": "pnpm -s run build && node --test tests/**/*.test.cjs",
     "prepublishOnly": "n8n-node prerelease",
     "release": "semantic-release"
   },
@@ -38,9 +39,9 @@
       "dist/nodes/Barcode/Barcode.node.js"
     ]
   },
-  "dependencies": {
-    "canvas": "^3.2.3",
-    "jsbarcode": "^3.12.1"
+  "devDependencies": {
+    "bwip-js": "^4.7.0",
+    "esbuild": "^0.27.0"
   },
   "peerDependencies": {
     "n8n-workflow": "*"

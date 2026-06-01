@@ -367,7 +367,7 @@ export class GoogleCloudStorageEnhanced implements INodeType {
               knownLength = content.length;
             }
 
-            const body = createMultipartForm(
+            const body = await createMultipartForm(
               parseBodyData(createData, bodyDataFields),
               content,
               contentType,
@@ -380,7 +380,7 @@ export class GoogleCloudStorageEnhanced implements INodeType {
               new URL(
                 `https://storage.googleapis.com/upload/storage/v1/b/${bucketName}/o`,
               ),
-              body,
+              body.getBuffer(),
               {
                 name: objectName,
                 uploadType: 'multipart',
