@@ -1,13 +1,80 @@
-import FormData from 'form-data';
-import * as jwt from 'jsonwebtoken';
-import moment from 'moment-timezone';
+import { createSign, randomBytes } from 'crypto';
 import type {
   IDataObject,
   IExecuteFunctions,
-  ILoadOptionsFunctions,
   IHttpRequestOptions,
+  ILoadOptionsFunctions,
 } from 'n8n-workflow';
 import { Readable } from 'stream';
+
+export interface MultipartFormPayload {
+  getBoundary(): string;
+  getLengthSync(): number;
+  getBuffer(): Buffer;
+}
+
+function base64UrlEncode(value: string | Buffer): string {
+  return Buffer.from(value).toString('base64url');
+}
+
+function signJwt(payload: IDataObject, privateKey: string): string {
+  const header = {
+    kid: privateKey,
+    typ: 'JWT',
+    alg: 'RS256',
+  };
+
+  const encodedHeader = base64UrlEncode(JSON.stringify(header));
+  const encodedPayload = base64UrlEncode(JSON.stringify(payload));
+  const unsignedToken = `${encodedHeader}.${encodedPayload}`;
+
+  const signer = createSign('RSA-SHA256');
+  signer.update(unsignedToken);
+  signer.end();
+
+  const signature = signer.sign(privateKey, 'base64url');
+
+  return `${unsignedToken}.${signature}`;
+}
+
+function createMultipartPartHeader(
+  boundary: string,
+  name: string,
+  contentType: string,
+  filename?: string,
+): Buffer {
+  const disposition = filename
+    ? `Content-Disposition: form-data; name="${name}"; filename="${filename}"`
+    : `Content-Disposition: form-data; name="${name}"`;
+
+  return Buffer.from(
+    `--${boundary}\r\n${disposition}\r\nContent-Type: ${contentType}\r\n\r\n`,
+    'utf8',
+  );
+}
+
+async function toBuffer(content: string | Buffer | Readable): Promise<Buffer> {
+  if (Buffer.isBuffer(content)) {
+    return content;
+  }
+
+  if (typeof content === 'string') {
+    return Buffer.from(content, 'utf8');
+  }
+
+  const chunks: Buffer[] = [];
+
+  for await (const chunk of content) {
+    if (Buffer.isBuffer(chunk)) {
+      chunks.push(chunk);
+      continue;
+    }
+
+    chunks.push(Buffer.from(chunk as Uint8Array));
+  }
+
+  return Buffer.concat(chunks);
+}
 
 /**
  * Formats a private key by removing unnecessary whitespace and adding line breaks.
@@ -40,24 +107,42 @@ function formatPrivateKey(privateKey: string, keyIsPublic = false): string {
   return formattedPrivateKey;
 }
 
-export function createMultipartForm(
+export async function createMultipartForm(
   metadata: IDataObject,
   content: string | Buffer | Readable,
   contentType: string,
-  knownLength: number,
-) {
-  const body = new FormData();
+  _knownLength: number,
+): Promise<MultipartFormPayload> {
+  const boundary = `n8n-boundary-${randomBytes(12).toString('hex')}`;
+  const metadataBuffer = Buffer.from(JSON.stringify(metadata), 'utf8');
+  const contentBuffer = await toBuffer(content);
 
-  body.append('metadata', JSON.stringify(metadata), {
-    contentType: 'application/json',
-  });
+  const chunks = [
+    createMultipartPartHeader(
+      boundary,
+      'metadata',
+      'application/json; charset=utf-8',
+    ),
+    metadataBuffer,
+    Buffer.from('\r\n', 'utf8'),
+    createMultipartPartHeader(boundary, 'file', contentType, 'file'),
+    contentBuffer,
+    Buffer.from(`\r\n--${boundary}--\r\n`, 'utf8'),
+  ];
 
-  body.append('file', content, {
-    contentType,
-    knownLength,
-  });
+  const bodyBuffer = Buffer.concat(chunks);
 
-  return body;
+  return {
+    getBoundary() {
+      return boundary;
+    },
+    getLengthSync() {
+      return bodyBuffer.length;
+    },
+    getBuffer() {
+      return bodyBuffer;
+    },
+  };
 }
 
 export function parseBodyData(bodyData: IDataObject, fields: string[]) {
@@ -81,7 +166,7 @@ async function requestAccessToken(
   credentialsType: string,
   scopes: string[],
 ): Promise<IDataObject> {
-  const now = moment().unix();
+  const now = Math.floor(Date.now() / 1000);
   const credentials = await this.getCredentials(credentialsType);
   const privateKey = formatPrivateKey(credentials['privateKey'] as string);
 
@@ -94,7 +179,7 @@ async function requestAccessToken(
     method: 'POST',
     body: {
       grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
-      assertion: jwt.sign(
+      assertion: signJwt(
         {
           iss: credentials['email'],
           sub: credentials['delegatedEmail'] || credentials['email'],
@@ -104,14 +189,6 @@ async function requestAccessToken(
           exp: now + 3600,
         },
         privateKey,
-        {
-          algorithm: 'RS256',
-          header: {
-            kid: privateKey,
-            typ: 'JWT',
-            alg: 'RS256',
-          },
-        },
       ),
     },
     url: 'https://oauth2.googleapis.com/token',

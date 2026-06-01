@@ -19,6 +19,10 @@ on:
           - moco
           - otto-market
           - sentry-io-enhanced
+      verify-cloud-readiness:
+        type: boolean
+        description: Verify published package with n8n cloud scanner
+        default: true
 
 permissions:
   contents: write
@@ -63,6 +67,11 @@ jobs:
           GIT_COMMITTER_NAME: github-actions[bot]
           GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
           GITHUB_TOKEN: ${{ github.token }}
+          NPM_CONFIG_PROVENANCE: 'true'
           RELEASE_MODE: 'true'
         run: pnpm -s run release
         working-directory: packages/${{ github.event.inputs.node-package }}
+
+      - name: ✅ Verify package cloud readiness
+        if: ${{ inputs.verify-cloud-readiness || github.event.inputs.verify-cloud-readiness == 'true' }}
+        run: node tools/scripts/verify-cloud-readiness.mjs ${{ github.event.inputs.node-package }} --retries 6 --delay-ms 20000
