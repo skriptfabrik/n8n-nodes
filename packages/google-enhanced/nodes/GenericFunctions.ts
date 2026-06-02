@@ -17,12 +17,23 @@ function base64UrlEncode(value: string | Buffer): string {
   return Buffer.from(value).toString('base64url');
 }
 
-function signJwt(payload: IDataObject, privateKey: string): string {
-  const header = {
-    kid: privateKey,
+function signJwt(
+  payload: IDataObject,
+  privateKey: string,
+  keyId?: string,
+): string {
+  const header: {
+    typ: 'JWT';
+    alg: 'RS256';
+    kid?: string;
+  } = {
     typ: 'JWT',
     alg: 'RS256',
   };
+
+  if (typeof keyId === 'string' && keyId.trim() !== '') {
+    header.kid = keyId.trim();
+  }
 
   const encodedHeader = base64UrlEncode(JSON.stringify(header));
   const encodedPayload = base64UrlEncode(JSON.stringify(payload));
@@ -168,6 +179,7 @@ async function requestAccessToken(
   const now = Math.floor(Date.now() / 1000);
   const credentials = await this.getCredentials(credentialsType);
   const privateKey = formatPrivateKey(credentials['privateKey'] as string);
+  const privateKeyId = credentials['privateKeyId'] as string | undefined;
 
   credentials['email'] = ((credentials['email'] as string) || '').trim();
 
@@ -188,6 +200,7 @@ async function requestAccessToken(
           exp: now + 3600,
         },
         privateKey,
+        privateKeyId,
       ),
     },
     url: 'https://oauth2.googleapis.com/token',
