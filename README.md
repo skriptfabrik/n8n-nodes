@@ -25,4 +25,3 @@ Please take a closer look at the detailed instructions for the individual nodes:
 ## Resources
 
 - [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
-- [Cloud verification tracker](docs/cloud-verification-tracker.md)
