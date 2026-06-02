@@ -6,12 +6,13 @@ import type {
   ILoadOptionsFunctions,
   IHttpRequestOptions,
 } from 'n8n-workflow';
+import type { Readable } from 'stream';
 
 export async function googleApiRequest(
   this: IExecuteFunctions | ILoadOptionsFunctions,
   method: IHttpRequestMethods,
   url: URL | string,
-  body?: IDataObject | Buffer | URLSearchParams,
+  body?: IDataObject | Buffer | URLSearchParams | Readable,
   qs?: IDataObject,
   headers: IDataObject = { 'Content-Type': 'application/json' },
 ): Promise<IDataObject> {
@@ -59,7 +60,7 @@ export async function googleApiRequestAllItems(
   this: IExecuteFunctions | ILoadOptionsFunctions,
   method: IHttpRequestMethods,
   url: URL | string,
-  body?: IDataObject | Buffer | URLSearchParams,
+  body?: IDataObject | Buffer | URLSearchParams | Readable,
   qs: IDataObject = {},
 ): Promise<IDataObject[]> {
   const returnData: IDataObject[] = [];

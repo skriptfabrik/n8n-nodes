@@ -1,6 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
+const { Readable } = require('node:stream');
 
 const {
   createMultipartForm,
@@ -48,6 +49,42 @@ test('createMultipartForm assembles metadata and file parts', async () => {
   );
   assert.match(serialized, /name="file"/);
   assert.match(serialized, /hello world/);
+});
+
+test('createMultipartForm keeps Readable content streaming', async () => {
+  const content = Readable.from([Buffer.from('hello '), Buffer.from('stream')]);
+
+  const body = await createMultipartForm(
+    { name: 'stream.txt' },
+    content,
+    'text/plain',
+    Buffer.byteLength('hello stream'),
+  );
+
+  const multipartBody = body.getBody();
+  assert.equal(typeof multipartBody.pipe, 'function');
+
+  const streamedChunks = [];
+  for await (const chunk of multipartBody) {
+    streamedChunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk));
+  }
+
+  const streamedBuffer = Buffer.concat(streamedChunks);
+  const serialized = streamedBuffer.toString('utf8');
+
+  assert.equal(body.getLengthSync(), streamedBuffer.length);
+  assert.match(serialized, /name="metadata"/);
+  assert.match(serialized, /name="file"/);
+  assert.match(serialized, /hello stream/);
+  assert.throws(() => body.getBuffer(), /streaming/i);
+});
+
+test('createMultipartForm requires known length for Readable content', async () => {
+  const content = Readable.from([Buffer.from('hello')]);
+
+  await assert.rejects(async () => {
+    await createMultipartForm({ name: 'invalid.txt' }, content, 'text/plain');
+  }, /known content length/i);
 });
 
 test('requestServiceAccount requests token and forwards Authorization header', async () => {
