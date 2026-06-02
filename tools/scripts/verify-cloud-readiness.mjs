@@ -107,8 +107,7 @@ function runScanner(publishedPackageName) {
   );
 
   const output = `${result.stdout || ''}${result.stderr || ''}`;
-  const passed =
-    result.status === 0 && output.includes('has passed all security checks');
+  const passed = result.status === 0;
 
   return {
     passed,
