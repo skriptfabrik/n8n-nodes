@@ -1,7 +1,10 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 
-const { Barcode } = require('../dist/nodes/Barcode/Barcode.node.js');
+const {
+  Barcode,
+  buildRenderOptions,
+} = require('../dist/nodes/Barcode/Barcode.node.js');
 
 function createContext(parameters, continueOnFail = false, options = {}) {
   return {
@@ -65,6 +68,25 @@ test('Barcode.execute returns PNG payload and binary output under selected field
   assert.equal(firstItem.binary.barcodeOutput.mimeType, 'image/png');
   assert.ok(firstItem.binary.barcodeOutput.fileSize > 0);
   assert.equal(firstItem.pairedItem.item, 0);
+});
+
+test('buildRenderOptions translates legacy text and font options to bwip-js fields', () => {
+  const result = buildRenderOptions('ENCODED-DATA', {
+    format: 'EAN13',
+    text: 'VISIBLE-TEXT',
+    font: 'monospace',
+    fontOptions: 'bold',
+    textMargin: 6,
+    textPosition: 'top',
+    flat: true,
+  });
+
+  assert.equal(result.text, 'ENCODED-DATA');
+  assert.equal(result.alttext, 'VISIBLE-TEXT');
+  assert.equal(result.textfont, 'bold monospace');
+  assert.equal(result.textyoffset, 6);
+  assert.equal(result.textyalign, 'above');
+  assert.equal(result.guardheight, 0);
 });
 
 test('Barcode.execute returns an error item when continueOnFail is enabled', async () => {
