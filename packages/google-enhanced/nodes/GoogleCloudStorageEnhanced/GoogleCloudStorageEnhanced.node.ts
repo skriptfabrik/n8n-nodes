@@ -329,6 +329,7 @@ export class GoogleCloudStorageEnhanced implements INodeType {
             // Determine content, content type and known length
             let content: string | Buffer | Readable;
             let contentType: string;
+            let knownLength: number;
 
             const useBinary = this.getNodeParameter(
               'createFromBinary',
@@ -353,20 +354,24 @@ export class GoogleCloudStorageEnhanced implements INodeType {
                 );
                 contentType =
                   binaryMetadata.mimeType ?? 'application/octet-stream';
+                knownLength = binaryMetadata.fileSize;
               } else {
                 content = Buffer.from(binaryData.data, BINARY_ENCODING);
                 contentType = binaryData.mimeType;
+                knownLength = content.length;
               }
             } else {
               content = this.getNodeParameter('createContent', item) as string;
               contentType =
                 (createData['contentType'] as string) || 'text/plain';
+              knownLength = content.length;
             }
 
             const body = await createMultipartForm(
               parseBodyData(createData, bodyDataFields),
               content,
               contentType,
+              knownLength,
             );
 
             responseData = await googleApiRequest.call(
@@ -375,7 +380,7 @@ export class GoogleCloudStorageEnhanced implements INodeType {
               new URL(
                 `https://storage.googleapis.com/upload/storage/v1/b/${bucketName}/o`,
               ),
-              body.getBuffer(),
+              body.getBody(),
               {
                 name: objectName,
                 uploadType: 'multipart',
