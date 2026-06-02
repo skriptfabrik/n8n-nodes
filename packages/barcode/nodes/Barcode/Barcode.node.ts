@@ -36,7 +36,10 @@ function normalizeColor(color?: string): string | undefined {
   return color.replace('#', '');
 }
 
-function buildRenderOptions(data: string, options: IDataObject): RenderOptions {
+export function buildRenderOptions(
+  data: string,
+  options: IDataObject,
+): RenderOptions {
   const renderOptions: RenderOptions = {
     bcid: 'code128',
     text: data,
@@ -45,8 +48,13 @@ function buildRenderOptions(data: string, options: IDataObject): RenderOptions {
 
   const format = (options['format'] as string) || 'CODE128';
   renderOptions.bcid = BARCODE_FORMAT_MAP[format] ?? 'code128';
-  renderOptions.text = ((options['text'] as string) || data).toString();
+  renderOptions.text = data;
   renderOptions.includetext = options['displayValue'] !== false;
+
+  const altText = options['text'];
+  if (typeof altText === 'string' && altText !== '') {
+    renderOptions.alttext = altText;
+  }
 
   if (typeof options['width'] === 'number') {
     renderOptions.scale = Math.max(1, Math.round(options['width'] as number));
@@ -60,9 +68,36 @@ function buildRenderOptions(data: string, options: IDataObject): RenderOptions {
     renderOptions.textsize = options['fontSize'] as number;
   }
 
+  const font = options['font'];
+  const fontOptions = options['fontOptions'];
+  if (typeof font === 'string' && font.trim() !== '') {
+    const normalizedFont = font.trim();
+
+    if (typeof fontOptions === 'string' && fontOptions.trim() !== '') {
+      renderOptions.textfont = `${fontOptions.trim()} ${normalizedFont}`;
+    } else {
+      renderOptions.textfont = normalizedFont;
+    }
+  }
+
   if (typeof options['margin'] === 'number') {
     renderOptions.paddingwidth = options['margin'] as number;
     renderOptions.paddingheight = options['margin'] as number;
+  }
+
+  if (typeof options['textMargin'] === 'number') {
+    renderOptions.textyoffset = options['textMargin'] as number;
+  }
+
+  const textPosition = options['textPosition'];
+  if (textPosition === 'top') {
+    renderOptions.textyalign = 'above';
+  } else if (textPosition === 'bottom') {
+    renderOptions.textyalign = 'below';
+  }
+
+  if (options['flat'] === true && (format === 'EAN8' || format === 'EAN13')) {
+    renderOptions.guardheight = 0;
   }
 
   const textAlign = options['textAlign'];
