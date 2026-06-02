@@ -370,7 +370,7 @@ export class Barcode implements INodeType {
         },
         binary: {
           [output]: await this.helpers.prepareBinaryData(
-            Buffer.from(barcodeImageBase64, 'base64'),
+            barcodeImageBuffer,
             undefined,
             mimeType,
           ),
