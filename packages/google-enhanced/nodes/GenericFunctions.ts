@@ -111,7 +111,6 @@ export async function createMultipartForm(
   metadata: IDataObject,
   content: string | Buffer | Readable,
   contentType: string,
-  _knownLength: number,
 ): Promise<MultipartFormPayload> {
   const boundary = `n8n-boundary-${randomBytes(12).toString('hex')}`;
   const metadataBuffer = Buffer.from(JSON.stringify(metadata), 'utf8');

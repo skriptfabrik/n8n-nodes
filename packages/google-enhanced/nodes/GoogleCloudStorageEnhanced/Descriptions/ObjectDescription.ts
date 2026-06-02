@@ -163,7 +163,6 @@ export const objectOperations: INodeProperties[] = [
                 // Determine content and content type
                 let content: string | Buffer | Readable;
                 let contentType: string;
-                let contentLength: number;
                 if (useBinary) {
                   const binaryPropertyName = this.getNodeParameter(
                     'createBinaryPropertyName',
@@ -178,22 +177,18 @@ export const objectOperations: INodeProperties[] = [
                     );
                     contentType =
                       binaryMetadata.mimeType ?? 'application/octet-stream';
-                    contentLength = binaryMetadata.fileSize;
                   } else {
                     content = Buffer.from(binaryData.data, BINARY_ENCODING);
                     contentType = binaryData.mimeType;
-                    contentLength = content.length;
                   }
                 } else {
                   content = this.getNodeParameter('createContent') as string;
                   contentType = 'text/plain';
-                  contentLength = content.length;
                 }
                 const body = await createMultipartForm(
                   metadata,
                   content,
                   contentType,
-                  contentLength,
                 );
 
                 // Set the headers
