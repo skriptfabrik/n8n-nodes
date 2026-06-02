@@ -10,6 +10,7 @@ import { Readable } from 'stream';
 export interface MultipartFormPayload {
   getBoundary(): string;
   getLengthSync(): number;
+  getBody(): Buffer | Readable;
   getBuffer(): Buffer;
 }
 
@@ -87,6 +88,12 @@ async function toBuffer(content: string | Buffer | Readable): Promise<Buffer> {
   return Buffer.concat(chunks);
 }
 
+function isReadableContent(
+  content: string | Buffer | Readable,
+): content is Readable {
+  return content instanceof Readable;
+}
+
 /**
  * Formats a private key by removing unnecessary whitespace and adding line breaks.
  * @param privateKey - The private key to format.
@@ -122,25 +129,87 @@ export async function createMultipartForm(
   metadata: IDataObject,
   content: string | Buffer | Readable,
   contentType: string,
+  knownLength?: number,
 ): Promise<MultipartFormPayload> {
   const boundary = `n8n-boundary-${randomBytes(12).toString('hex')}`;
   const metadataBuffer = Buffer.from(JSON.stringify(metadata), 'utf8');
+  const metadataHeader = createMultipartPartHeader(
+    boundary,
+    'metadata',
+    'application/json; charset=utf-8',
+  );
+  const metadataSeparator = Buffer.from('\r\n', 'utf8');
+  const fileHeader = createMultipartPartHeader(
+    boundary,
+    'file',
+    contentType,
+    'file',
+  );
+  const footer = Buffer.from(`\r\n--${boundary}--\r\n`, 'utf8');
+
+  if (isReadableContent(content)) {
+    if (!Number.isFinite(knownLength) || (knownLength as number) < 0) {
+      throw new Error(
+        'Known content length is required when creating multipart form from a stream.',
+      );
+    }
+
+    const contentLength = knownLength as number;
+    const bodyLength =
+      metadataHeader.length +
+      metadataBuffer.length +
+      metadataSeparator.length +
+      fileHeader.length +
+      contentLength +
+      footer.length;
+
+    const bodyStream = Readable.from(
+      (async function* () {
+        yield metadataHeader;
+        yield metadataBuffer;
+        yield metadataSeparator;
+        yield fileHeader;
+
+        for await (const chunk of content) {
+          if (Buffer.isBuffer(chunk)) {
+            yield chunk;
+            continue;
+          }
+
+          yield Buffer.from(chunk as Uint8Array);
+        }
+
+        yield footer;
+      })(),
+    );
+
+    return {
+      getBoundary() {
+        return boundary;
+      },
+      getLengthSync() {
+        return bodyLength;
+      },
+      getBody() {
+        return bodyStream;
+      },
+      getBuffer() {
+        throw new Error(
+          'Multipart body is streaming and cannot be read as a buffer.',
+        );
+      },
+    };
+  }
+
   const contentBuffer = await toBuffer(content);
-
-  const chunks = [
-    createMultipartPartHeader(
-      boundary,
-      'metadata',
-      'application/json; charset=utf-8',
-    ),
+  const bodyBuffer = Buffer.concat([
+    metadataHeader,
     metadataBuffer,
-    Buffer.from('\r\n', 'utf8'),
-    createMultipartPartHeader(boundary, 'file', contentType, 'file'),
+    metadataSeparator,
+    fileHeader,
     contentBuffer,
-    Buffer.from(`\r\n--${boundary}--\r\n`, 'utf8'),
-  ];
-
-  const bodyBuffer = Buffer.concat(chunks);
+    footer,
+  ]);
 
   return {
     getBoundary() {
@@ -148,6 +217,9 @@ export async function createMultipartForm(
     },
     getLengthSync() {
       return bodyBuffer.length;
+    },
+    getBody() {
+      return bodyBuffer;
     },
     getBuffer() {
       return bodyBuffer;
