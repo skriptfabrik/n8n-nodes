@@ -388,7 +388,7 @@ export class GoogleCloudStorageEnhanced implements INodeType {
                 projection,
               },
               {
-                'Content-Length': body.getLengthSync(),
+                'Content-Length': body.getLengthSync().toString(),
                 'Content-Type': `multipart/related; boundary=${body.getBoundary()}`,
                 ...encryptionHeaders,
               },
