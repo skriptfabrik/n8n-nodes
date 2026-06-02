@@ -19,19 +19,19 @@ pnpm cloud:verify
 
 Latest observed status by published package version:
 
-| Workspace package | npm package | Result | Primary blocker |
-| --- | --- | --- | --- |
-| barcode | @skriptfabrik/n8n-nodes-barcode | Fail | Runtime dependencies (canvas, jsbarcode) |
-| channable | @skriptfabrik/n8n-nodes-channable | Pass | None |
-| clockify-enhanced | @skriptfabrik/n8n-nodes-clockify-enhanced | Fail | Missing npm provenance on latest release |
-| cronhooks | @skriptfabrik/n8n-nodes-cronhooks | Pass | None |
-| fulfillmenttools | @skriptfabrik/n8n-nodes-fulfillmenttools | Pass | None |
-| google-enhanced | @skriptfabrik/n8n-nodes-google-enhanced | Fail | Missing npm provenance on latest release |
-| headwind-mdm | @skriptfabrik/n8n-nodes-headwind-mdm | Fail | Missing npm provenance on latest release |
-| kaufland-marketplace | @skriptfabrik/n8n-nodes-kaufland-marketplace | Pass | None |
-| moco | @skriptfabrik/n8n-nodes-moco | Pass | None |
-| otto-market | @skriptfabrik/n8n-nodes-otto-market | Pass | None |
-| sentry-io-enhanced | @skriptfabrik/n8n-nodes-sentry-io-enhanced | Fail | Missing npm provenance on latest release |
+| Workspace package    | npm package                                  | Result | Primary blocker                          |
+| -------------------- | -------------------------------------------- | ------ | ---------------------------------------- |
+| barcode              | @skriptfabrik/n8n-nodes-barcode              | Fail   | Runtime dependencies (canvas, jsbarcode) |
+| channable            | @skriptfabrik/n8n-nodes-channable            | Pass   | None                                     |
+| clockify-enhanced    | @skriptfabrik/n8n-nodes-clockify-enhanced    | Fail   | Missing npm provenance on latest release |
+| cronhooks            | @skriptfabrik/n8n-nodes-cronhooks            | Pass   | None                                     |
+| fulfillmenttools     | @skriptfabrik/n8n-nodes-fulfillmenttools     | Pass   | None                                     |
+| google-enhanced      | @skriptfabrik/n8n-nodes-google-enhanced      | Fail   | Missing npm provenance on latest release |
+| headwind-mdm         | @skriptfabrik/n8n-nodes-headwind-mdm         | Fail   | Missing npm provenance on latest release |
+| kaufland-marketplace | @skriptfabrik/n8n-nodes-kaufland-marketplace | Pass   | None                                     |
+| moco                 | @skriptfabrik/n8n-nodes-moco                 | Pass   | None                                     |
+| otto-market          | @skriptfabrik/n8n-nodes-otto-market          | Pass   | None                                     |
+| sentry-io-enhanced   | @skriptfabrik/n8n-nodes-sentry-io-enhanced   | Fail   | Missing npm provenance on latest release |
 
 ## Implementation Progress
 

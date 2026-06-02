@@ -107,7 +107,8 @@ function runScanner(publishedPackageName) {
   );
 
   const output = `${result.stdout || ''}${result.stderr || ''}`;
-  const passed = result.status === 0 && output.includes('has passed all security checks');
+  const passed =
+    result.status === 0 && output.includes('has passed all security checks');
 
   return {
     passed,
@@ -138,10 +139,14 @@ async function verifyPublishedPackage(workspacePackage, retries, delayMs) {
       };
     }
 
-    process.stdout.write(`[${workspacePackage}] FAIL (exit code: ${result.status ?? 'null'})\n`);
+    process.stdout.write(
+      `[${workspacePackage}] FAIL (exit code: ${result.status ?? 'null'})\n`,
+    );
 
     if (attempt < retries && delayMs > 0) {
-      process.stdout.write(`[${workspacePackage}] Waiting ${delayMs}ms before retry\n`);
+      process.stdout.write(
+        `[${workspacePackage}] Waiting ${delayMs}ms before retry\n`,
+      );
       await sleep(delayMs);
     }
   }
@@ -159,7 +164,9 @@ function printSummary(results) {
 
   for (const result of results) {
     const status = result.passed ? 'PASS' : 'FAIL';
-    process.stdout.write(`- ${result.workspacePackage} (${result.publishedPackageName}): ${status}\n`);
+    process.stdout.write(
+      `- ${result.workspacePackage} (${result.publishedPackageName}): ${status}\n`,
+    );
   }
 }
 
@@ -173,7 +180,9 @@ function printFailureDetails(results) {
   process.stdout.write('\nFailure details:\n');
 
   for (const failure of failures) {
-    process.stdout.write(`\n=== ${failure.workspacePackage} (${failure.publishedPackageName}) ===\n`);
+    process.stdout.write(
+      `\n=== ${failure.workspacePackage} (${failure.publishedPackageName}) ===\n`,
+    );
     process.stdout.write(`${failure.output}\n`);
   }
 }
@@ -185,7 +194,11 @@ async function main() {
   const results = [];
 
   for (const workspacePackage of packages) {
-    const result = await verifyPublishedPackage(workspacePackage, args.retries, args.delayMs);
+    const result = await verifyPublishedPackage(
+      workspacePackage,
+      args.retries,
+      args.delayMs,
+    );
     results.push(result);
   }
 

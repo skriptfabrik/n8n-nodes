@@ -42,7 +42,10 @@ test('createMultipartForm assembles metadata and file parts', async () => {
   assert.ok(body.getLengthSync() > 0);
   assert.match(serialized, /name="metadata"/);
   assert.match(serialized, /application\/json/);
-  assert.match(serialized, /\{"name":"report.txt","metadata":\{"env":"test"\}\}/);
+  assert.match(
+    serialized,
+    /\{"name":"report.txt","metadata":\{"env":"test"\}\}/,
+  );
   assert.match(serialized, /name="file"/);
   assert.match(serialized, /hello world/);
 });
@@ -60,7 +63,7 @@ test('requestServiceAccount requests token and forwards Authorization header', a
       return {
         email: ' service-account@example.com ',
         delegatedEmail: '',
-          privateKey: privateKey.export({ type: 'pkcs8', format: 'pem' }),
+        privateKey: privateKey.export({ type: 'pkcs8', format: 'pem' }),
       };
     },
     helpers: {
@@ -100,7 +103,9 @@ test('requestServiceAccount requests token and forwards Authorization header', a
   const payload = JSON.parse(
     Buffer.from(payloadPart, 'base64url').toString('utf8'),
   );
-  const header = JSON.parse(Buffer.from(headerPart, 'base64url').toString('utf8'));
+  const header = JSON.parse(
+    Buffer.from(headerPart, 'base64url').toString('utf8'),
+  );
 
   const isSignatureValid = crypto.verify(
     'RSA-SHA256',
@@ -118,7 +123,10 @@ test('requestServiceAccount requests token and forwards Authorization header', a
   assert.equal(payload.scope, 'scope:test');
   assert.equal(payload.aud, 'https://oauth2.googleapis.com/token');
   assert.equal(payload.exp - payload.iat, 3600);
-  assert.equal(calls[1].options.headers.Authorization, 'Bearer access-token-123');
+  assert.equal(
+    calls[1].options.headers.Authorization,
+    'Bearer access-token-123',
+  );
   assert.deepEqual(response, {
     ok: true,
     authorization: 'Bearer access-token-123',
@@ -150,7 +158,10 @@ test('googleApiRequest sets arraybuffer encoding for media downloads', async () 
 
   assert.equal(calls.length, 1);
   assert.equal(calls[0].type, 'googleApi');
-  assert.equal(calls[0].options.baseURL, 'https://storage.googleapis.com/storage/v1');
+  assert.equal(
+    calls[0].options.baseURL,
+    'https://storage.googleapis.com/storage/v1',
+  );
   assert.equal(calls[0].options.url, '/b/sample/o/object');
   assert.equal(calls[0].options.encoding, 'arraybuffer');
 });

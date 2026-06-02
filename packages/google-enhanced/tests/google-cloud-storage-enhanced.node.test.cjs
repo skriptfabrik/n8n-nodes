@@ -1,7 +1,9 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 
-const { GoogleCloudStorageEnhanced } = require('../dist/nodes/GoogleCloudStorageEnhanced/GoogleCloudStorageEnhanced.node.js');
+const {
+  GoogleCloudStorageEnhanced,
+} = require('../dist/nodes/GoogleCloudStorageEnhanced/GoogleCloudStorageEnhanced.node.js');
 
 function createExecutionContext(parameters, options = {}) {
   const requestCalls = [];
@@ -70,7 +72,10 @@ test('GoogleCloudStorageEnhanced.execute dispatches bucket get operation', async
   assert.equal(requestCalls.length, 1);
   assert.equal(requestCalls[0].type, 'googleApi');
   assert.equal(requestCalls[0].requestOptions.method, 'GET');
-  assert.equal(requestCalls[0].requestOptions.baseURL, 'https://storage.googleapis.com/storage/v1');
+  assert.equal(
+    requestCalls[0].requestOptions.baseURL,
+    'https://storage.googleapis.com/storage/v1',
+  );
   assert.equal(requestCalls[0].requestOptions.url, '/b/my-bucket');
   assert.deepEqual(requestCalls[0].requestOptions.qs, {
     ifMetagenerationMatch: 2,

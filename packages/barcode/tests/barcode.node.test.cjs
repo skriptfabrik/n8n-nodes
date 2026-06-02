@@ -3,11 +3,7 @@ const assert = require('node:assert/strict');
 
 const { Barcode } = require('../dist/nodes/Barcode/Barcode.node.js');
 
-function createContext(
-  parameters,
-  continueOnFail = false,
-  options = {},
-) {
+function createContext(parameters, continueOnFail = false, options = {}) {
   return {
     context: {
       getNodeParameter(name) {
@@ -60,7 +56,9 @@ test('Barcode.execute returns PNG payload and binary output under selected field
 
   const firstItem = result[0][0];
   assert.equal(firstItem.json.mimeType, 'image/png');
-  assert.ok(typeof firstItem.json.data === 'string' && firstItem.json.data.length > 0);
+  assert.ok(
+    typeof firstItem.json.data === 'string' && firstItem.json.data.length > 0,
+  );
 
   assert.ok(firstItem.binary);
   assert.ok(firstItem.binary.barcodeOutput);

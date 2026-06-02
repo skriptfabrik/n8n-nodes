@@ -36,10 +36,7 @@ function normalizeColor(color?: string): string | undefined {
   return color.replace('#', '');
 }
 
-function buildRenderOptions(
-  data: string,
-  options: IDataObject,
-): RenderOptions {
+function buildRenderOptions(data: string, options: IDataObject): RenderOptions {
   const renderOptions: RenderOptions = {
     bcid: 'code128',
     text: data,
@@ -69,11 +66,7 @@ function buildRenderOptions(
   }
 
   const textAlign = options['textAlign'];
-  if (
-    textAlign === 'center' ||
-    textAlign === 'left' ||
-    textAlign === 'right'
-  ) {
+  if (textAlign === 'center' || textAlign === 'left' || textAlign === 'right') {
     renderOptions.textxalign = textAlign;
   }
 
