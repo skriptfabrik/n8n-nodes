@@ -31,9 +31,7 @@
     "lint:versions": "syncpack lint",
     "n8n:owner:setup": "node tools/scripts/n8n-owner-setup.mjs",
     "n8n:start": "n8n start",
-    "test:barcode": "pnpm --filter @skriptfabrik/n8n-nodes-barcode test",
-    "test:core-nodes": "pnpm run test:barcode && pnpm run test:google-enhanced",
-    "test:google-enhanced": "pnpm --filter @skriptfabrik/n8n-nodes-google-enhanced test"
+    "test": "pnpm -r run test"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.0.2",
