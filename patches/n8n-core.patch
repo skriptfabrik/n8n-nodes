@@ -1,9 +1,9 @@
 diff --git a/dist/execution-engine/node-execution-context/utils/request-helper-functions.js b/dist/execution-engine/node-execution-context/utils/request-helper-functions.js
-index c8929271f543b61747d68482dee9950bf60cf5e5..f7df446b82920959bf416b8ec30450dd17fcd352 100644
+index 628fce974a7a2fe9ca2a357d89b0b4dae307a919..56fe2798062c6beceb8cc11a9a2df0ae43807f38 100644
 --- a/dist/execution-engine/node-execution-context/utils/request-helper-functions.js
 +++ b/dist/execution-engine/node-execution-context/utils/request-helper-functions.js
-@@ -979,7 +979,7 @@ async function httpRequestWithAuthentication(credentialsType, requestOptions, wo
-         return await httpRequest(requestOptions);
+@@ -799,7 +799,7 @@ async function httpRequestWithAuthentication(credentialsType, requestOptions, wo
+         return await httpRequest(requestOptions, additionalData.ssrfBridge);
      }
      catch (error) {
 -        if (error.response?.status === 401 &&

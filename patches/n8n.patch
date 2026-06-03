@@ -1,0 +1,27 @@
+diff --git a/dist/load-nodes-and-credentials.js b/dist/load-nodes-and-credentials.js
+index 7c757059ee24bf39a54ecf3113332399ddf1fd8f..27062fc19cf72d0576d01e9614b713c5d51273f8 100644
+--- a/dist/load-nodes-and-credentials.js
++++ b/dist/load-nodes-and-credentials.js
+@@ -479,9 +479,20 @@ let LoadNodesAndCredentials = class LoadNodesAndCredentials {
+                 const customNodeEntries = await promises_1.default.readdir(customNodesRoot, {
+                     withFileTypes: true,
+                 });
+-                const realCustomNodesPaths = await Promise.all(customNodeEntries
++                const extendedCustomNodeEntries = [];
++                for (const entry of customNodeEntries) {
++                    if (entry.isDirectory() && entry.name.startsWith('@')) {
++                        const scopedCustomNodeEntries = await promises_1.default.readdir(path_1.default.join(entry.parentPath, entry.name), {
++                            withFileTypes: true,
++                        });
++                        extendedCustomNodeEntries.push(...scopedCustomNodeEntries);
++                    } else {
++                        extendedCustomNodeEntries.push(entry);
++                    }
++                }
++                const realCustomNodesPaths = await Promise.all(extendedCustomNodeEntries
+                     .filter((entry) => (entry.isDirectory() || entry.isSymbolicLink()) && !entry.name.startsWith('.'))
+-                    .map(async (entry) => await promises_1.default.realpath(path_1.default.join(customNodesRoot, entry.name)).catch(() => null)));
++                    .map(async (entry) => await promises_1.default.realpath(path_1.default.join(entry.parentPath, entry.name)).catch(() => null)));
+                 watchPaths.push.apply(watchPaths, realCustomNodesPaths.filter((path) => !!path));
+             }
+             this.logger.debug('Watching node folders for hot reload', {
