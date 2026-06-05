@@ -1,4 +1,4 @@
-import { createMultipartForm } from '../../GenericFunctions';
+import FormData from 'form-data';
 import type {
   IDataObject,
   INodeExecutionData,
@@ -160,6 +160,12 @@ export const objectOperations: INodeProperties[] = [
                 }
                 metadata = Object.assign(metadata, bodyData);
 
+                // Populate request body
+                const body = new FormData();
+                body.append('metadata', JSON.stringify(metadata), {
+                  contentType: 'application/json',
+                });
+
                 // Determine content and content type
                 let content: string | Buffer | Readable;
                 let contentType: string;
@@ -189,23 +195,19 @@ export const objectOperations: INodeProperties[] = [
                   contentType = 'text/plain';
                   contentLength = content.length;
                 }
-                const body = await createMultipartForm(
-                  metadata,
-                  content,
+                body.append('file', content, {
                   contentType,
-                  contentLength,
-                );
+                  knownLength: contentLength,
+                });
 
                 // Set the headers
                 if (!requestOptions.headers) requestOptions.headers = {};
-                requestOptions.headers['Content-Length'] = body
-                  .getLengthSync()
-                  .toString();
+                requestOptions.headers['Content-Length'] = body.getLengthSync();
                 requestOptions.headers['Content-Type'] =
                   `multipart/related; boundary=${body.getBoundary()}`;
 
                 // Return the request data
-                requestOptions.body = body.getBody();
+                requestOptions.body = body;
                 return requestOptions;
               },
             ],
