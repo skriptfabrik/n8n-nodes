@@ -101,6 +101,16 @@ importers:
 
   packages/google-enhanced:
     dependencies:
+      n8n-workflow:
+        specifier: '*'
+        version: 2.16.0
+    devDependencies:
+      '@types/jsonwebtoken':
+        specifier: ^9.0.10
+        version: 9.0.10
+      esbuild:
+        specifier: ^0.27.0
+        version: 0.27.7
       form-data:
         specifier: ^4.0.5
         version: 4.0.6
@@ -110,13 +120,6 @@ importers:
       moment-timezone:
         specifier: ^0.6.2
         version: 0.6.2
-      n8n-workflow:
-        specifier: '*'
-        version: 2.16.0
-    devDependencies:
-      '@types/jsonwebtoken':
-        specifier: ^9.0.10
-        version: 9.0.10
 
   packages/headwind-mdm:
     dependencies:

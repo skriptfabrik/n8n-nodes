@@ -18,7 +18,7 @@
   },
   "repository": "skriptfabrik/n8n-nodes.git",
   "scripts": {
-    "build": "n8n-node build",
+    "build": "n8n-node build && pnpm -s exec esbuild dist/nodes/GoogleCloudStorageEnhanced/GoogleCloudStorageEnhanced.node.js --bundle --platform=node --format=cjs --target=node18 --external:n8n-workflow --outfile=dist/nodes/GoogleCloudStorageEnhanced/GoogleCloudStorageEnhanced.node.bundle.js && node -e \"require('node:fs').renameSync('dist/nodes/GoogleCloudStorageEnhanced/GoogleCloudStorageEnhanced.node.bundle.js','dist/nodes/GoogleCloudStorageEnhanced/GoogleCloudStorageEnhanced.node.js')\"",
     "build:watch": "tsc --watch",
     "dev": "n8n-node dev --external-n8n --custom-user-folder=$N8N_USER_FOLDER",
     "lint": "n8n-node lint",
@@ -43,13 +43,12 @@
       "dist/nodes/GoogleCloudStorageEnhanced/GoogleCloudStorageEnhanced.node.js"
     ]
   },
-  "dependencies": {
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
+    "esbuild": "^0.27.0",
     "form-data": "^4.0.5",
     "jsonwebtoken": "^9.0.3",
     "moment-timezone": "^0.6.2"
-  },
-  "devDependencies": {
-    "@types/jsonwebtoken": "^9.0.10"
   },
   "peerDependencies": {
     "n8n-workflow": "*"
