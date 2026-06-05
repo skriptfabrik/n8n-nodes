@@ -1,98 +1,13 @@
-import { createSign, randomBytes } from 'crypto';
+import FormData from 'form-data';
+import * as jwt from 'jsonwebtoken';
+import moment from 'moment-timezone';
 import type {
   IDataObject,
   IExecuteFunctions,
-  IHttpRequestOptions,
   ILoadOptionsFunctions,
+  IHttpRequestOptions,
 } from 'n8n-workflow';
 import { Readable } from 'stream';
-
-export interface MultipartFormPayload {
-  getBoundary(): string;
-  getLengthSync(): number;
-  getBody(): Buffer | Readable;
-  getBuffer(): Buffer;
-}
-
-function base64UrlEncode(value: string | Buffer): string {
-  return Buffer.from(value).toString('base64url');
-}
-
-function signJwt(
-  payload: IDataObject,
-  privateKey: string,
-  keyId?: string,
-): string {
-  const header: {
-    typ: 'JWT';
-    alg: 'RS256';
-    kid?: string;
-  } = {
-    typ: 'JWT',
-    alg: 'RS256',
-  };
-
-  if (typeof keyId === 'string' && keyId.trim() !== '') {
-    header.kid = keyId.trim();
-  }
-
-  const encodedHeader = base64UrlEncode(JSON.stringify(header));
-  const encodedPayload = base64UrlEncode(JSON.stringify(payload));
-  const unsignedToken = `${encodedHeader}.${encodedPayload}`;
-
-  const signer = createSign('RSA-SHA256');
-  signer.update(unsignedToken);
-  signer.end();
-
-  const signature = signer.sign(privateKey, 'base64url');
-
-  return `${unsignedToken}.${signature}`;
-}
-
-function createMultipartPartHeader(
-  boundary: string,
-  name: string,
-  contentType: string,
-  filename?: string,
-): Buffer {
-  const disposition = filename
-    ? `Content-Disposition: form-data; name="${name}"; filename="${filename}"`
-    : `Content-Disposition: form-data; name="${name}"`;
-
-  return Buffer.from(
-    `--${boundary}\r\n${disposition}\r\nContent-Type: ${contentType}\r\n\r\n`,
-    'utf8',
-  );
-}
-
-async function toBuffer(content: string | Buffer | Readable): Promise<Buffer> {
-  if (Buffer.isBuffer(content)) {
-    return content;
-  }
-
-  if (typeof content === 'string') {
-    return Buffer.from(content, 'utf8');
-  }
-
-  const chunks: Buffer[] = [];
-
-  for await (const chunk of content) {
-    if (Buffer.isBuffer(chunk)) {
-      chunks.push(chunk);
-      continue;
-    }
-
-    chunks.push(Buffer.from(chunk as Uint8Array));
-  }
-
-  return Buffer.concat(chunks);
-}
-
-function isReadableContent(
-  content: string | Buffer | Readable,
-): content is Readable {
-  return content instanceof Readable;
-}
 
 /**
  * Formats a private key by removing unnecessary whitespace and adding line breaks.
@@ -125,106 +40,24 @@ function formatPrivateKey(privateKey: string, keyIsPublic = false): string {
   return formattedPrivateKey;
 }
 
-export async function createMultipartForm(
+export function createMultipartForm(
   metadata: IDataObject,
   content: string | Buffer | Readable,
   contentType: string,
-  knownLength?: number,
-): Promise<MultipartFormPayload> {
-  const boundary = `n8n-boundary-${randomBytes(12).toString('hex')}`;
-  const metadataBuffer = Buffer.from(JSON.stringify(metadata), 'utf8');
-  const metadataHeader = createMultipartPartHeader(
-    boundary,
-    'metadata',
-    'application/json; charset=utf-8',
-  );
-  const metadataSeparator = Buffer.from('\r\n', 'utf8');
-  const fileHeader = createMultipartPartHeader(
-    boundary,
-    'file',
+  knownLength: number,
+) {
+  const body = new FormData();
+
+  body.append('metadata', JSON.stringify(metadata), {
+    contentType: 'application/json',
+  });
+
+  body.append('file', content, {
     contentType,
-    'file',
-  );
-  const footer = Buffer.from(`\r\n--${boundary}--\r\n`, 'utf8');
+    knownLength,
+  });
 
-  if (isReadableContent(content)) {
-    if (!Number.isFinite(knownLength) || (knownLength as number) < 0) {
-      throw new Error(
-        'Known content length is required when creating multipart form from a stream.',
-      );
-    }
-
-    const contentLength = knownLength as number;
-    const bodyLength =
-      metadataHeader.length +
-      metadataBuffer.length +
-      metadataSeparator.length +
-      fileHeader.length +
-      contentLength +
-      footer.length;
-
-    const bodyStream = Readable.from(
-      (async function* () {
-        yield metadataHeader;
-        yield metadataBuffer;
-        yield metadataSeparator;
-        yield fileHeader;
-
-        for await (const chunk of content) {
-          if (Buffer.isBuffer(chunk)) {
-            yield chunk;
-            continue;
-          }
-
-          yield Buffer.from(chunk as Uint8Array);
-        }
-
-        yield footer;
-      })(),
-    );
-
-    return {
-      getBoundary() {
-        return boundary;
-      },
-      getLengthSync() {
-        return bodyLength;
-      },
-      getBody() {
-        return bodyStream;
-      },
-      getBuffer() {
-        throw new Error(
-          'Multipart body is streaming and cannot be read as a buffer.',
-        );
-      },
-    };
-  }
-
-  const contentBuffer = await toBuffer(content);
-  const bodyBuffer = Buffer.concat([
-    metadataHeader,
-    metadataBuffer,
-    metadataSeparator,
-    fileHeader,
-    contentBuffer,
-    footer,
-  ]);
-
-  return {
-    getBoundary() {
-      return boundary;
-    },
-    getLengthSync() {
-      return bodyBuffer.length;
-    },
-    getBody() {
-      return bodyBuffer;
-    },
-    getBuffer() {
-      return bodyBuffer;
-    },
-  };
+  return body;
 }
 
 export function parseBodyData(bodyData: IDataObject, fields: string[]) {
@@ -248,10 +81,9 @@ async function requestAccessToken(
   credentialsType: string,
   scopes: string[],
 ): Promise<IDataObject> {
-  const now = Math.floor(Date.now() / 1000);
+  const now = moment().unix();
   const credentials = await this.getCredentials(credentialsType);
   const privateKey = formatPrivateKey(credentials['privateKey'] as string);
-  const privateKeyId = credentials['privateKeyId'] as string | undefined;
 
   credentials['email'] = ((credentials['email'] as string) || '').trim();
 
@@ -262,7 +94,7 @@ async function requestAccessToken(
     method: 'POST',
     body: {
       grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
-      assertion: signJwt(
+      assertion: jwt.sign(
         {
           iss: credentials['email'],
           sub: credentials['delegatedEmail'] || credentials['email'],
@@ -272,7 +104,14 @@ async function requestAccessToken(
           exp: now + 3600,
         },
         privateKey,
-        privateKeyId,
+        {
+          algorithm: 'RS256',
+          header: {
+            kid: privateKey,
+            typ: 'JWT',
+            alg: 'RS256',
+          },
+        },
       ),
     },
     url: 'https://oauth2.googleapis.com/token',
