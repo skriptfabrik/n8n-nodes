@@ -367,7 +367,7 @@ export class GoogleCloudStorageEnhanced implements INodeType {
               knownLength = content.length;
             }
 
-            const body = await createMultipartForm(
+            const body = createMultipartForm(
               parseBodyData(createData, bodyDataFields),
               content,
               contentType,
@@ -380,7 +380,7 @@ export class GoogleCloudStorageEnhanced implements INodeType {
               new URL(
                 `https://storage.googleapis.com/upload/storage/v1/b/${bucketName}/o`,
               ),
-              body.getBody(),
+              body,
               {
                 name: objectName,
                 uploadType: 'multipart',
@@ -388,7 +388,7 @@ export class GoogleCloudStorageEnhanced implements INodeType {
                 projection,
               },
               {
-                'Content-Length': body.getLengthSync().toString(),
+                'Content-Length': body.getLengthSync(),
                 'Content-Type': `multipart/related; boundary=${body.getBoundary()}`,
                 ...encryptionHeaders,
               },
@@ -547,9 +547,7 @@ export class GoogleCloudStorageEnhanced implements INodeType {
           continue;
         }
 
-        throw new NodeApiError(this.getNode(), error as JsonObject, {
-          itemIndex: item,
-        });
+        throw new NodeApiError(this.getNode(), error as JsonObject);
       }
     }
 
