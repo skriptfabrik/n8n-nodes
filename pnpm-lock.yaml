@@ -11,6 +11,9 @@ patchedDependencies:
   conventional-changelog-conventionalcommits:
     hash: b5d5b421b43ef113121cb5c734ef4eb96a824b3365662802ac1bbd925aac0544
     path: patches/conventional-changelog-conventionalcommits.patch
+  n8n:
+    hash: 8758f7e435daddf6ace9c608370473ea48b464078af55f7821ee83b0645a6f41
+    path: patches/n8n.patch
   n8n-core:
     hash: 8dc2edf2a333872283cf53d8e9bb12c5005b421e9c4fe0b2384235735a01cd0f
     path: patches/n8n-core.patch
@@ -48,7 +51,7 @@ importers:
         version: 0.22.1
       n8n:
         specifier: ^2.23.2
-        version: 2.23.2(17ca4c7ed825fff4ebdfc249677c5ecc)
+        version: 2.23.2(patch_hash=8758f7e435daddf6ace9c608370473ea48b464078af55f7821ee83b0645a6f41)(17ca4c7ed825fff4ebdfc249677c5ecc)
       prettier:
         specifier: ^3.8.3
         version: 3.8.3
@@ -9595,7 +9598,7 @@ packages:
     engines: {node: '>=18'}
 
   xlsx@https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz:
-    resolution: {tarball: https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz}
+    resolution: {integrity: sha512-+nKZ39+nvK7Qq6i0PvWWRA4j/EkfWOtkP/YhMtupm+lJIiHxUrgTr1CcKv1nBk1rHtkRRQ3O2+Ih/q/sA+FXZA==, tarball: https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz}
     version: 0.20.2
     engines: {node: '>=0.8'}
     hasBin: true
@@ -20274,7 +20277,7 @@ snapshots:
       xml2js: 0.6.2
       zod: 3.25.67
 
-  n8n@2.23.2(17ca4c7ed825fff4ebdfc249677c5ecc):
+  n8n@2.23.2(patch_hash=8758f7e435daddf6ace9c608370473ea48b464078af55f7821ee83b0645a6f41)(17ca4c7ed825fff4ebdfc249677c5ecc):
     dependencies:
       '@1password/connect': 1.4.2
       '@ai-sdk/anthropic': 3.0.58(zod@3.25.67)
