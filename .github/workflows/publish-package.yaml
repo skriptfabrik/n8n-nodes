@@ -42,7 +42,7 @@ jobs:
         uses: fregante/setup-git-user@024bc0b8e177d7e77203b48dab6fb45666854b35 # v2.0.2
 
       - name: 🏗 Install canvas deps
-        uses: awalsh128/cache-apt-pkgs-action@acb598e5ddbc6f68a970c5da0688d2f3a9f04d05 # v1.6.0
+        uses: awalsh128/cache-apt-pkgs-action@681749ae568c81c2037cb9185e38b709b261bd2f # v1.6.1
         with:
           packages: libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
           version: canvas-deps-1
