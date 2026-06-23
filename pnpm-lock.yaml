@@ -8,15 +8,9 @@ overrides:
   '@langchain/core': ^1.1.44
 
 patchedDependencies:
-  conventional-changelog-conventionalcommits:
-    hash: b5d5b421b43ef113121cb5c734ef4eb96a824b3365662802ac1bbd925aac0544
-    path: patches/conventional-changelog-conventionalcommits.patch
-  n8n:
-    hash: 8758f7e435daddf6ace9c608370473ea48b464078af55f7821ee83b0645a6f41
-    path: patches/n8n.patch
-  n8n-core:
-    hash: 8dc2edf2a333872283cf53d8e9bb12c5005b421e9c4fe0b2384235735a01cd0f
-    path: patches/n8n-core.patch
+  conventional-changelog-conventionalcommits: b5d5b421b43ef113121cb5c734ef4eb96a824b3365662802ac1bbd925aac0544
+  n8n: 8758f7e435daddf6ace9c608370473ea48b464078af55f7821ee83b0645a6f41
+  n8n-core: 8dc2edf2a333872283cf53d8e9bb12c5005b421e9c4fe0b2384235735a01cd0f
 
 importers:
 

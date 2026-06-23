@@ -1,6 +1,16 @@
 packages:
   - packages/*
 
+overrides:
+  '@langchain/core': ^1.1.44
+
+patchedDependencies:
+  conventional-changelog-conventionalcommits: patches/conventional-changelog-conventionalcommits.patch
+  n8n-core: patches/n8n-core.patch
+  n8n: patches/n8n.patch
+
+blockExoticSubdeps: false
+
 ignoredBuiltDependencies:
   - oxc-resolver
 
@@ -22,3 +32,22 @@ onlyBuiltDependencies:
   - sqlite3
   - ssh2
   - unrs-resolver
+
+allowBuilds:
+  '@parcel/watcher': true
+  '@scarf/scarf': true
+  '@sentry-internal/node-cpu-profiler': true
+  '@sentry-internal/node-native-stacktrace': true
+  '@sentry/node-cpu-profiler': true
+  '@sentry/node-native-stacktrace': true
+  agent-browser: true
+  canvas: true
+  cpu-features: true
+  eslint-plugin-n8n-nodes-base: true
+  isolated-vm: true
+  msgpackr-extract: true
+  oracledb: true
+  protobufjs: true
+  sqlite3: true
+  ssh2: true
+  unrs-resolver: true
