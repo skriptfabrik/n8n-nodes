@@ -24,12 +24,12 @@ jobs:
 
     steps:
       - name: 🏗 Checkout repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7.0.0
         with:
           fetch-depth: 0
 
       - name: 🏗 Install canvas deps
-        uses: awalsh128/cache-apt-pkgs-action@681749ae568c81c2037cb9185e38b709b261bd2f # v1.6.1
+        uses: awalsh128/cache-apt-pkgs-action@681749ae568c81c2037cb9185e38b709b261bd2f  # v1.6.1
         with:
           packages: libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
           version: canvas-deps-1
@@ -49,10 +49,10 @@ jobs:
 
     steps:
       - name: 🏗 Checkout repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7.0.0
 
       - name: 🏗 Install canvas deps
-        uses: awalsh128/cache-apt-pkgs-action@681749ae568c81c2037cb9185e38b709b261bd2f # v1.6.1
+        uses: awalsh128/cache-apt-pkgs-action@681749ae568c81c2037cb9185e38b709b261bd2f  # v1.6.1
         with:
           packages: libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
           version: canvas-deps-1
@@ -69,10 +69,10 @@ jobs:
 
     steps:
       - name: 🏗 Checkout repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7.0.0
 
       - name: 🏗 Install canvas deps
-        uses: awalsh128/cache-apt-pkgs-action@681749ae568c81c2037cb9185e38b709b261bd2f # v1.6.1
+        uses: awalsh128/cache-apt-pkgs-action@681749ae568c81c2037cb9185e38b709b261bd2f  # v1.6.1
         with:
           packages: libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
           version: canvas-deps-1
@@ -89,7 +89,7 @@ jobs:
 
     steps:
       - name: 🏗 Checkout repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7.0.0
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
@@ -106,10 +106,10 @@ jobs:
 
     steps:
       - name: 🏗 Checkout repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7.0.0
 
       - name: 🏗 Install canvas deps
-        uses: awalsh128/cache-apt-pkgs-action@681749ae568c81c2037cb9185e38b709b261bd2f # v1.6.1
+        uses: awalsh128/cache-apt-pkgs-action@681749ae568c81c2037cb9185e38b709b261bd2f  # v1.6.1
         with:
           packages: libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
           version: canvas-deps-1
@@ -126,13 +126,14 @@ jobs:
 
     steps:
       - name: 🏗 Checkout repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
-
-      - name: 🏗 Install yamllint
-        run: pip install yamllint
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7.0.0
 
       - name: 🔍 Lint all YAML files
-        run: yamllint --format github .
+        run: |
+          python3 -m venv .venv
+          . .venv/bin/activate
+          pip install yamllint
+          yamllint --format github .
 
   lint-and-build:
     name: Lint and Build
@@ -140,12 +141,12 @@ jobs:
 
     steps:
       - name: 🏗 Checkout repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7.0.0
         with:
           fetch-depth: 0
 
       - name: 🏗 Install canvas deps
-        uses: awalsh128/cache-apt-pkgs-action@681749ae568c81c2037cb9185e38b709b261bd2f # v1.6.1
+        uses: awalsh128/cache-apt-pkgs-action@681749ae568c81c2037cb9185e38b709b261bd2f  # v1.6.1
         with:
           packages: libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
           version: canvas-deps-1
