@@ -9,35 +9,12 @@ patchedDependencies:
   n8n-core: patches/n8n-core.patch
   n8n: patches/n8n.patch
 
-blockExoticSubdeps: false
-
 ignoredBuiltDependencies:
   - oxc-resolver
-
-onlyBuiltDependencies:
-  - '@parcel/watcher'
-  - '@scarf/scarf'
-  - '@sentry-internal/node-cpu-profiler'
-  - '@sentry-internal/node-native-stacktrace'
-  - '@swc/core'
-  - agent-browser
-  - canvas
-  - cpu-features
-  - eslint-plugin-n8n-nodes-base
-  - isolated-vm
-  - msgpackr-extract
-  - nx
-  - oracledb
-  - protobufjs
-  - sqlite3
-  - ssh2
-  - unrs-resolver
 
 allowBuilds:
   '@parcel/watcher': true
   '@scarf/scarf': true
-  '@sentry-internal/node-cpu-profiler': true
-  '@sentry-internal/node-native-stacktrace': true
   '@sentry/node-cpu-profiler': true
   '@sentry/node-native-stacktrace': true
   agent-browser: true
