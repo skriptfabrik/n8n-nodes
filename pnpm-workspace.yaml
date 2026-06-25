@@ -9,6 +9,9 @@ patchedDependencies:
   n8n-core: patches/n8n-core.patch
   n8n: patches/n8n.patch
 
+# Sheet-JS xlsx package can only be downloaded from their own CDN 
+blockExoticSubdeps: false
+
 ignoredBuiltDependencies:
   - oxc-resolver
 
