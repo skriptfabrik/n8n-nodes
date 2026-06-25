@@ -12,6 +12,8 @@ patchedDependencies:
 # Sheet-JS xlsx package can only be downloaded from their own CDN 
 blockExoticSubdeps: false
 
+verifyDepsBeforeRun: error
+
 ignoredBuiltDependencies:
   - oxc-resolver
 
