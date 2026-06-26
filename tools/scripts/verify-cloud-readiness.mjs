@@ -6,16 +6,26 @@ import { fileURLToPath } from 'node:url';
 const EXIT_OK = 0;
 const EXIT_FAIL = 1;
 
+function printHelp() {
+  process.stdout.write(`Verify n8n cloud readiness for one or more workspace packages.\n\nUsage:\n  node tools/scripts/verify-cloud-readiness.mjs <workspace-package> [--retries N] [--delay-ms N]\n  node tools/scripts/verify-cloud-readiness.mjs --all [--retries N] [--delay-ms N]\n\nOptions:\n  --all         Verify every package in ./packages\n  --retries N   Number of scan attempts per package (default: 5)\n  --delay-ms N  Delay between retry attempts in milliseconds (default: 15000)\n  --help, -h    Show this help message\n`);
+}
+
 function parseArgs(argv) {
   const args = {
     packageName: null,
     all: false,
     retries: 5,
     delayMs: 15000,
+    help: false,
   };
 
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
+
+    if (arg === '--help' || arg === '-h') {
+      args.help = true;
+      continue;
+    }
 
     if (arg === '--all') {
       args.all = true;
@@ -48,6 +58,10 @@ function parseArgs(argv) {
     }
 
     throw new Error(`Unknown argument: ${arg}`);
+  }
+
+  if (args.help) {
+    return args;
   }
 
   if (!args.all && !args.packageName) {
@@ -188,6 +202,12 @@ function printFailureDetails(results) {
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
+
+  if (args.help) {
+    printHelp();
+    process.exit(EXIT_OK);
+  }
+
   const packages = args.all ? getWorkspacePackages() : [args.packageName];
 
   const results = [];
@@ -212,5 +232,8 @@ async function main() {
 
   process.exit(EXIT_OK);
 }
-
-process.argv[1] === fileURLToPath(import.meta.url) && main();
+process.argv[1] === fileURLToPath(import.meta.url) && main().catch(error => {
+  printHelp();
+  console.log("\n\n");
+  console.error(error);
+});
