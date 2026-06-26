@@ -17,7 +17,6 @@
   "scripts": {
     "build": "turbo build",
     "cloud:verify": "node tools/scripts/verify-cloud-readiness.mjs --all --retries 1 --delay-ms 0",
-    "cloud:verify:package": "node tools/scripts/verify-cloud-readiness.mjs",
     "dev": "turbo dev",
     "fix:deps": "knip --fix",
     "fix:versions": "syncpack fix",
