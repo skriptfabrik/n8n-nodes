@@ -128,12 +128,11 @@ jobs:
       - name: 🏗 Checkout repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
+      - name: 🏗 Install yamllint
+        run: pip install yamllint
+
       - name: 🔍 Lint all YAML files
-        run: |
-          python3 -m venv .venv
-          . .venv/bin/activate
-          pip install yamllint
-          yamllint --format github .
+        run: yamllint --format github .
 
   lint-and-build:
     name: Lint and Build
