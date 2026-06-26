@@ -1,10 +1,14 @@
 import { spawnSync } from 'node:child_process';
-import { readdirSync, readFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { readdirSync, readFileSync, realpathSync } from 'node:fs';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const EXIT_OK = 0;
 const EXIT_FAIL = 1;
+const SCRIPT_PATH = realpathSync(fileURLToPath(import.meta.url));
+const SCRIPT_DIR = dirname(SCRIPT_PATH);
+const REPO_ROOT = resolve(SCRIPT_DIR, '..', '..');
+const PACKAGES_DIR = join(REPO_ROOT, 'packages');
 
 function printHelp() {
   process.stdout.write(`Verify n8n cloud readiness for one or more workspace packages.\n\nUsage:\n  node tools/scripts/verify-cloud-readiness.mjs <workspace-package> [--retries N] [--delay-ms N]\n  node tools/scripts/verify-cloud-readiness.mjs --all [--retries N] [--delay-ms N]\n\nOptions:\n  --all         Verify every package in ./packages\n  --retries N   Number of scan attempts per package (default: 5)\n  --delay-ms N  Delay between retry attempts in milliseconds (default: 15000)\n  --help, -h    Show this help message\n`);
@@ -78,14 +82,12 @@ function parseArgs(argv) {
 }
 
 function getWorkspacePackages() {
-  const packagesDir = 'packages';
-
-  return readdirSync(packagesDir, { withFileTypes: true })
+  return readdirSync(PACKAGES_DIR, { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
     .map((entry) => entry.name)
     .filter((name) => {
       try {
-        const packageJsonPath = join(packagesDir, name, 'package.json');
+        const packageJsonPath = join(PACKAGES_DIR, name, 'package.json');
         readFileSync(packageJsonPath, 'utf8');
         return true;
       } catch {
@@ -96,7 +98,7 @@ function getWorkspacePackages() {
 }
 
 function getPublishedPackageName(workspacePackage) {
-  const packageJsonPath = join('packages', workspacePackage, 'package.json');
+  const packageJsonPath = join(PACKAGES_DIR, workspacePackage, 'package.json');
   const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf8'));
 
   if (!packageJson.name) {
@@ -232,7 +234,9 @@ async function main() {
 
   process.exit(EXIT_OK);
 }
-process.argv[1] === fileURLToPath(import.meta.url) && main().catch(error => {
+const invokedPath = process.argv[1] ? realpathSync(resolve(process.argv[1])) : null;
+
+invokedPath === SCRIPT_PATH && main().catch(error => {
   printHelp();
   console.log("\n\n");
   console.error(error);
