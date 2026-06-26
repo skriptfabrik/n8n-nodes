@@ -11,7 +11,9 @@ const REPO_ROOT = resolve(SCRIPT_DIR, '..', '..');
 const PACKAGES_DIR = join(REPO_ROOT, 'packages');
 
 function printHelp() {
-  process.stdout.write(`Verify n8n cloud readiness for one or more workspace packages.\n\nUsage:\n  node tools/scripts/verify-cloud-readiness.mjs <workspace-package> [--retries N] [--delay-ms N]\n  node tools/scripts/verify-cloud-readiness.mjs --all [--retries N] [--delay-ms N]\n\nOptions:\n  --all         Verify every package in ./packages\n  --retries N   Number of scan attempts per package (default: 5)\n  --delay-ms N  Delay between retry attempts in milliseconds (default: 15000)\n  --help, -h    Show this help message\n`);
+  process.stdout.write(
+    `Verify n8n cloud readiness for one or more workspace packages.\n\nUsage:\n  node tools/scripts/verify-cloud-readiness.mjs <workspace-package> [--retries N] [--delay-ms N]\n  node tools/scripts/verify-cloud-readiness.mjs --all [--retries N] [--delay-ms N]\n\nOptions:\n  --all         Verify every package in ./packages\n  --retries N   Number of scan attempts per package (default: 5)\n  --delay-ms N  Delay between retry attempts in milliseconds (default: 15000)\n  --help, -h    Show this help message\n`,
+  );
 }
 
 function parseArgs(argv) {
@@ -234,10 +236,13 @@ async function main() {
 
   process.exit(EXIT_OK);
 }
-const invokedPath = process.argv[1] ? realpathSync(resolve(process.argv[1])) : null;
+const invokedPath = process.argv[1]
+  ? realpathSync(resolve(process.argv[1]))
+  : null;
 
-invokedPath === SCRIPT_PATH && main().catch(error => {
-  printHelp();
-  console.log("\n\n");
-  console.error(error);
-});
+invokedPath === SCRIPT_PATH &&
+  main().catch((error) => {
+    printHelp();
+    console.log('\n\n');
+    console.error(error);
+  });
