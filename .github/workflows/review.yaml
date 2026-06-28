@@ -29,7 +29,7 @@ jobs:
           fetch-depth: 0
 
       - name: 🏗 Install canvas deps
-        uses: awalsh128/cache-apt-pkgs-action@681749ae568c81c2037cb9185e38b709b261bd2f # v1.6.1
+        uses: awalsh128/cache-apt-pkgs-action@5513791f75b039e2a79653b1a92238d3fb8d99b4 # v1.6.2
         with:
           packages: libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
           version: canvas-deps-1
@@ -52,7 +52,7 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
       - name: 🏗 Install canvas deps
-        uses: awalsh128/cache-apt-pkgs-action@681749ae568c81c2037cb9185e38b709b261bd2f # v1.6.1
+        uses: awalsh128/cache-apt-pkgs-action@5513791f75b039e2a79653b1a92238d3fb8d99b4 # v1.6.2
         with:
           packages: libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
           version: canvas-deps-1
@@ -72,7 +72,7 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
       - name: 🏗 Install canvas deps
-        uses: awalsh128/cache-apt-pkgs-action@681749ae568c81c2037cb9185e38b709b261bd2f # v1.6.1
+        uses: awalsh128/cache-apt-pkgs-action@5513791f75b039e2a79653b1a92238d3fb8d99b4 # v1.6.2
         with:
           packages: libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
           version: canvas-deps-1
@@ -109,7 +109,7 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
       - name: 🏗 Install canvas deps
-        uses: awalsh128/cache-apt-pkgs-action@681749ae568c81c2037cb9185e38b709b261bd2f # v1.6.1
+        uses: awalsh128/cache-apt-pkgs-action@5513791f75b039e2a79653b1a92238d3fb8d99b4 # v1.6.2
         with:
           packages: libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
           version: canvas-deps-1
@@ -145,7 +145,7 @@ jobs:
           fetch-depth: 0
 
       - name: 🏗 Install canvas deps
-        uses: awalsh128/cache-apt-pkgs-action@681749ae568c81c2037cb9185e38b709b261bd2f # v1.6.1
+        uses: awalsh128/cache-apt-pkgs-action@5513791f75b039e2a79653b1a92238d3fb8d99b4 # v1.6.2
         with:
           packages: libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
           version: canvas-deps-1
