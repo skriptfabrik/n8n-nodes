@@ -245,4 +245,5 @@ invokedPath === SCRIPT_PATH &&
     printHelp();
     console.log('\n\n');
     console.error(error);
+    process.exitCode = EXIT_FAIL;
   });
