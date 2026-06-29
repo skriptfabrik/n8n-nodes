@@ -16,6 +16,7 @@
   "repository": "skriptfabrik/n8n-nodes.git",
   "scripts": {
     "build": "turbo build",
+    "cloud:verify": "node tools/scripts/verify-cloud-readiness.mjs --all --retries 1 --delay-ms 0",
     "dev": "turbo dev",
     "fix:deps": "knip --fix",
     "fix:versions": "syncpack fix",
@@ -28,12 +29,13 @@
     "lint:style": "prettier --check .",
     "lint:versions": "syncpack lint",
     "n8n:owner:setup": "node tools/scripts/n8n-owner-setup.mjs",
-    "n8n:start": "n8n start"
+    "n8n:start": "n8n start",
+    "test": "pnpm -r run test"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.0.2",
     "@commitlint/config-conventional": "^21.0.2",
-    "@n8n/node-cli": "^0.31.0",
+    "@n8n/node-cli": "^0.33.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/exec": "^7.1.0",
     "@trivago/prettier-plugin-sort-imports": "^6.0.2",

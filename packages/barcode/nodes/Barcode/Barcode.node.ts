@@ -1,17 +1,124 @@
-import { createCanvas } from 'canvas';
-import JsBarcode, {
-  BaseOptions,
-  Code128Options,
-  Ean13Options,
-  NodeOptions,
-} from 'jsbarcode';
+import { toBuffer, type RenderOptions } from 'bwip-js';
 import type {
+  IDataObject,
   IExecuteFunctions,
   INodeExecutionData,
   INodeType,
   INodeTypeDescription,
 } from 'n8n-workflow';
 import { NodeApiError, NodeConnectionTypes } from 'n8n-workflow';
+
+const BARCODE_FORMAT_MAP: Record<string, string> = {
+  codabar: 'rationalizedCodabar',
+  CODE128: 'code128',
+  CODE128A: 'code128',
+  CODE128B: 'code128',
+  CODE128D: 'code128',
+  CODE39: 'code39',
+  EAN13: 'ean13',
+  EAN2: 'ean2',
+  EAN5: 'ean5',
+  EAN8: 'ean8',
+  ITF14: 'itf14',
+  MSI10: 'msi',
+  MSI1010: 'msi',
+  MSI11: 'msi',
+  MSI1110: 'msi',
+  pharmacode: 'pharmacode',
+  UPC: 'upca',
+};
+
+function normalizeColor(color?: string): string | undefined {
+  if (!color) {
+    return undefined;
+  }
+
+  return color.replace('#', '');
+}
+
+export function buildRenderOptions(
+  data: string,
+  options: IDataObject,
+): RenderOptions {
+  const renderOptions: RenderOptions = {
+    bcid: 'code128',
+    text: data,
+    includetext: true,
+  };
+
+  const format = (options['format'] as string) || 'CODE128';
+  renderOptions.bcid = BARCODE_FORMAT_MAP[format] ?? 'code128';
+  renderOptions.text = data;
+  renderOptions.includetext = options['displayValue'] !== false;
+
+  const altText = options['text'];
+  if (typeof altText === 'string' && altText !== '') {
+    renderOptions.alttext = altText;
+  }
+
+  if (typeof options['width'] === 'number') {
+    renderOptions.scale = Math.max(1, Math.round(options['width'] as number));
+  }
+
+  if (typeof options['height'] === 'number') {
+    renderOptions.height = options['height'] as number;
+  }
+
+  if (typeof options['fontSize'] === 'number') {
+    renderOptions.textsize = options['fontSize'] as number;
+  }
+
+  const font = options['font'];
+  const fontOptions = options['fontOptions'];
+  if (typeof font === 'string' && font.trim() !== '') {
+    const normalizedFont = font.trim();
+
+    if (typeof fontOptions === 'string' && fontOptions.trim() !== '') {
+      renderOptions.textfont = `${fontOptions.trim()} ${normalizedFont}`;
+    } else {
+      renderOptions.textfont = normalizedFont;
+    }
+  }
+
+  if (typeof options['margin'] === 'number') {
+    renderOptions.paddingwidth = options['margin'] as number;
+    renderOptions.paddingheight = options['margin'] as number;
+  }
+
+  if (typeof options['textMargin'] === 'number') {
+    renderOptions.textyoffset = options['textMargin'] as number;
+  }
+
+  const textPosition = options['textPosition'];
+  if (textPosition === 'top') {
+    renderOptions.textyalign = 'above';
+  } else if (textPosition === 'bottom') {
+    renderOptions.textyalign = 'below';
+  }
+
+  if (options['flat'] === true && (format === 'EAN8' || format === 'EAN13')) {
+    renderOptions.guardheight = 0;
+  }
+
+  const textAlign = options['textAlign'];
+  if (textAlign === 'center' || textAlign === 'left' || textAlign === 'right') {
+    renderOptions.textxalign = textAlign;
+  }
+
+  const barColor = normalizeColor(options['lineColor'] as string | undefined);
+  if (barColor) {
+    renderOptions.barcolor = barColor;
+  }
+
+  const backgroundColor = normalizeColor(
+    options['background'] as string | undefined,
+  );
+  if (backgroundColor) {
+    renderOptions.backgroundcolor = backgroundColor;
+  }
+
+  return renderOptions;
+}
 
 export class Barcode implements INodeType {
   description: INodeTypeDescription = {
@@ -247,31 +354,25 @@ export class Barcode implements INodeType {
     const returnData: INodeExecutionData[] = [];
     const data = this.getNodeParameter('data', 0) as string;
     const output = this.getNodeParameter('output', 0) as string;
-    const options = this.getNodeParameter('options', 0) as
-      | BaseOptions
-      | Code128Options
-      | Ean13Options
-      | NodeOptions;
+    const options = this.getNodeParameter('options', 0) as IDataObject;
 
     try {
-      const canvas = createCanvas(0, 0);
-
-      JsBarcode(canvas, data, options);
-
-      const matches = canvas
-        .toDataURL()
-        .match(/^data:(.+\/.+);base64,(.*)$/) as RegExpMatchArray;
+      const barcodeImageBuffer = await toBuffer(
+        buildRenderOptions(data, options),
+      );
+      const barcodeImageBase64 = barcodeImageBuffer.toString('base64');
+      const mimeType = 'image/png';
 
       returnData.push({
         json: {
-          data: matches[2],
-          mimeType: matches[1],
+          data: barcodeImageBase64,
+          mimeType,
         },
         binary: {
           [output]: await this.helpers.prepareBinaryData(
-            Buffer.from(matches[2], 'base64'),
+            barcodeImageBuffer,
             undefined,
-            matches[1],
+            mimeType,
           ),
         },
         pairedItem: { item: 0 },

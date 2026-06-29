@@ -49,8 +49,6 @@ jobs:
 
       - name: 🏗 Setup Turborepo
         uses: skriptfabrik/github-actions/setup-turborepo@main
-        with:
-          node-registry-url: https://registry.npmjs.org
 
       - name: 🔨 Build node package
         run: pnpm -s run build
@@ -63,6 +61,7 @@ jobs:
           GIT_COMMITTER_NAME: github-actions[bot]
           GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
           GITHUB_TOKEN: ${{ github.token }}
+          NPM_CONFIG_PROVENANCE: 'true'
           RELEASE_MODE: 'true'
         run: pnpm -s run release
         working-directory: packages/${{ github.event.inputs.node-package }}
