@@ -41,12 +41,6 @@ jobs:
       - name: 🏗 Setup git user
         uses: fregante/setup-git-user@024bc0b8e177d7e77203b48dab6fb45666854b35 # v2.0.2
 
-      - name: 🏗 Install canvas deps
-        uses: awalsh128/cache-apt-pkgs-action@553a35bb8ebd9fcabcb1c9451aa4c98e1b4ca8a9 # v1.6.3
-        with:
-          packages: libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
-          version: canvas-deps-1
-
       - name: 🏗 Setup Turborepo
         uses: skriptfabrik/github-actions/setup-turborepo@main
         with:
