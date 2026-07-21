@@ -1,0 +1,13 @@
+diff --git a/dist/elements.js b/dist/elements.js
+index 1a0ced045d45c8aa73b0e0ee92f944350c932ccd..bb56ec0e9f66fc65ab04527518979aafadba1101 100644
+--- a/dist/elements.js
++++ b/dist/elements.js
+@@ -54,7 +54,7 @@ export function list(array, callback) {
+             ? `  ${line}`
+             : line))
+             .join('\n');
+-        return rendered ? `* ${itemText}` : '';
++        return rendered ? `- ${itemText}` : '';
+     });
+ }
+ /**

@@ -5,6 +5,7 @@ overrides:
   '@langchain/core': ^1.1.44
 
 patchedDependencies:
+  '@conventional-changelog/template': patches/@conventional-changelog__template.patch
   conventional-changelog-conventionalcommits: patches/conventional-changelog-conventionalcommits.patch
   n8n-core: patches/n8n-core.patch
   n8n: patches/n8n.patch

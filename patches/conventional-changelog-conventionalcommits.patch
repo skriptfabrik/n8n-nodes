@@ -1,25 +1,21 @@
 diff --git a/src/templates.js b/src/templates.js
-index 577f8be005dbf885289b19788c493ffc775e5394..bafe6b93d65031c9b13bdeef3132c50b46ddeed5 100644
+index cb96952c36863dee5fba5d5f3eea5b0541e419e5..bcc6f7299fd7f79954ea580e90ff9b823f21a6cb 100644
 --- a/src/templates.js
 +++ b/src/templates.js
-@@ -23,9 +23,9 @@ export const mainTemplate = `{{> header}}
- `
+@@ -14,13 +14,13 @@ import {
+ export function headerPartial(context) {
+   const {
+     linkCompare,
+-    version,
++    currentTag,
+     title,
+     date
+   } = context
+   const versionText = linkCompare
+-    ? link(version, this.formatCompareUrl(context))
+-    : version
++    ? link(currentTag, this.formatCompareUrl(context))
++    : currentTag
  
- export const headerPartial = `## {{#if @root.linkCompare~}}
--  [{{version}}]({{compareUrlFormat}})
-+  [{{currentTag}}]({{compareUrlFormat}})
- {{~else}}
--  {{~version}}
-+  {{~currentTag}}
- {{~/if}}
- {{~#if title}} "{{title}}"
- {{~/if}}
-@@ -33,7 +33,7 @@ export const headerPartial = `## {{#if @root.linkCompare~}}
- {{/if}}
- `
- 
--export const commitPartial = `*{{#if scope}} **{{scope}}:**
-+export const commitPartial = `-{{#if scope}} **{{scope}}:**
- {{~/if}} {{#if subject}}
-   {{~subject}}
- {{~else}}
+   return heading(
+     2,
