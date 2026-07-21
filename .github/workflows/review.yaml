@@ -28,12 +28,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: 🏗 Install canvas deps
-        uses: awalsh128/cache-apt-pkgs-action@553a35bb8ebd9fcabcb1c9451aa4c98e1b4ca8a9 # v1.6.3
-        with:
-          packages: libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
-          version: canvas-deps-1
-
       - name: 🏗 Setup Turborepo
         uses: skriptfabrik/github-actions/setup-turborepo@main
 
@@ -51,12 +45,6 @@ jobs:
       - name: 🏗 Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: 🏗 Install canvas deps
-        uses: awalsh128/cache-apt-pkgs-action@553a35bb8ebd9fcabcb1c9451aa4c98e1b4ca8a9 # v1.6.3
-        with:
-          packages: libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
-          version: canvas-deps-1
-
       - name: 🏗 Setup Turborepo
         uses: skriptfabrik/github-actions/setup-turborepo@main
 
@@ -70,12 +58,6 @@ jobs:
     steps:
       - name: 🏗 Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-
-      - name: 🏗 Install canvas deps
-        uses: awalsh128/cache-apt-pkgs-action@553a35bb8ebd9fcabcb1c9451aa4c98e1b4ca8a9 # v1.6.3
-        with:
-          packages: libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
-          version: canvas-deps-1
 
       - name: 🏗 Setup Turborepo
         uses: skriptfabrik/github-actions/setup-turborepo@main
@@ -108,12 +90,6 @@ jobs:
       - name: 🏗 Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: 🏗 Install canvas deps
-        uses: awalsh128/cache-apt-pkgs-action@553a35bb8ebd9fcabcb1c9451aa4c98e1b4ca8a9 # v1.6.3
-        with:
-          packages: libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
-          version: canvas-deps-1
-
       - name: 🏗 Setup Turborepo
         uses: skriptfabrik/github-actions/setup-turborepo@main
 
@@ -143,12 +119,6 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
-
-      - name: 🏗 Install canvas deps
-        uses: awalsh128/cache-apt-pkgs-action@553a35bb8ebd9fcabcb1c9451aa4c98e1b4ca8a9 # v1.6.3
-        with:
-          packages: libcairo2-dev libgif-dev libjpeg-dev libpango1.0-dev librsvg2-dev
-          version: canvas-deps-1
 
       - name: 🏗 Setup Turborepo
         uses: skriptfabrik/github-actions/setup-turborepo@main
