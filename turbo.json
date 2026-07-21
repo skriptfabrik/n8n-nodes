@@ -13,6 +13,9 @@
     },
     "lint": {
       "inputs": ["**/*.{js,ts}"]
+    },
+    "test": {
+      "inputs": ["**/*.{js,ts}", "**/*.test.cjs"]
     }
   }
 }
