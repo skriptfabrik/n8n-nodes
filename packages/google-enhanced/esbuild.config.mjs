@@ -2,6 +2,17 @@ import * as esbuild from 'esbuild';
 import * as fs from 'node:fs';
 
 const entry = process.argv[2];
+
+if (!entry) {
+  throw new Error(
+    'Missing entry file argument. Usage: node esbuild.config.mjs <path-to-*.node.js>',
+  );
+}
+
+if (!entry.endsWith('.node.js')) {
+  throw new Error(`Expected entry file to end with ".node.js", got: ${entry}`);
+}
+
 const bundle = entry.replace('.node.js', '.node.bundle.js');
 
 await esbuild.build({

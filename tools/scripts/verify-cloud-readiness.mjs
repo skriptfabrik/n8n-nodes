@@ -12,7 +12,16 @@ const PACKAGES_DIR = join(REPO_ROOT, 'packages');
 
 function printHelp() {
   process.stdout.write(
-    `Verify n8n cloud readiness for one or more workspace packages.\n\nUsage:\n  node tools/scripts/verify-cloud-readiness.mjs <workspace-package> [--retries N] [--delay-ms N]\n  node tools/scripts/verify-cloud-readiness.mjs --all [--retries N] [--delay-ms N]\n\nOptions:\n  --all         Verify every package in ./packages\n  --retries N   Number of scan attempts per package (default: 5)\n  --delay-ms N  Delay between retry attempts in milliseconds (default: 15000)\n  --help, -h    Show this help message\n`,
+    `Verify n8n cloud readiness for a workspace package (or all workspace packages).
+ Usage:
+   node tools/scripts/verify-cloud-readiness.mjs <workspace-package> [--retries N] [--delay-ms N]
+   node tools/scripts/verify-cloud-readiness.mjs --all [--retries N] [--delay-ms N]
+ Options:
+   --all         Verify every package in ./packages
+   --retries N   Number of scan attempts per package (default: 5)
+   --delay-ms N  Delay between retry attempts in milliseconds (default: 15000)
+   --help, -h    Show this help message
+ `,
   );
 }
 
