@@ -11,10 +11,7 @@ import { NodeApiError, sleep } from 'n8n-workflow';
 
 export async function fulfillmenttoolsApiRequest<T = unknown>(
   this:
-    | IExecuteFunctions
-    | IHookFunctions
-    | ILoadOptionsFunctions
-    | IPollFunctions,
+    IExecuteFunctions | IHookFunctions | ILoadOptionsFunctions | IPollFunctions,
   method: IHttpRequestMethods,
   url: string,
   body?: IDataObject,
@@ -105,10 +102,7 @@ export async function fulfillmenttoolsApiRequest<T = unknown>(
 
 export async function fulfillmenttoolsApiRequestAllItems<T = unknown>(
   this:
-    | IExecuteFunctions
-    | IHookFunctions
-    | ILoadOptionsFunctions
-    | IPollFunctions,
+    IExecuteFunctions | IHookFunctions | ILoadOptionsFunctions | IPollFunctions,
   resource: string,
   method: IHttpRequestMethods,
   url: string,

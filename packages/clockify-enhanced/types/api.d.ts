@@ -2271,12 +2271,7 @@ export interface components {
        * @enum {string}
        */
       invoiceStatus?:
-        | 'UNSENT'
-        | 'SENT'
-        | 'PAID'
-        | 'PARTIALLY_PAID'
-        | 'VOID'
-        | 'OVERDUE';
+        'UNSENT' | 'SENT' | 'PAID' | 'PARTIALLY_PAID' | 'VOID' | 'OVERDUE';
     };
     ClientDtoV1: {
       /**
@@ -3874,10 +3869,7 @@ export interface components {
        *     ]
        */
       roles?: (
-        | 'WORKSPACE_ADMIN'
-        | 'OWNER'
-        | 'TEAM_MANAGER'
-        | 'PROJECT_MANAGER'
+        'WORKSPACE_ADMIN' | 'OWNER' | 'TEAM_MANAGER' | 'PROJECT_MANAGER'
       )[];
       /**
        * @description Sorting criteria
@@ -4243,12 +4235,7 @@ export interface components {
        * @enum {string}
        */
       status?:
-        | 'UNSENT'
-        | 'SENT'
-        | 'PAID'
-        | 'PARTIALLY_PAID'
-        | 'VOID'
-        | 'OVERDUE';
+        'UNSENT' | 'SENT' | 'PAID' | 'PARTIALLY_PAID' | 'VOID' | 'OVERDUE';
     };
     /** @description Represents an invoice export fields object. */
     InvoiceExportFields: {
@@ -4345,12 +4332,7 @@ export interface components {
        * @enum {string}
        */
       sortColumn?:
-        | 'ID'
-        | 'CLIENT'
-        | 'DUE_ON'
-        | 'ISSUE_DATE'
-        | 'AMOUNT'
-        | 'BALANCE';
+        'ID' | 'CLIENT' | 'DUE_ON' | 'ISSUE_DATE' | 'AMOUNT' | 'BALANCE';
       /**
        * @description Represents the sorting order.
        * @example ASCENDING
@@ -4366,12 +4348,7 @@ export interface components {
        *     ]
        */
       statuses?: (
-        | 'UNSENT'
-        | 'SENT'
-        | 'PAID'
-        | 'PARTIALLY_PAID'
-        | 'VOID'
-        | 'OVERDUE'
+        'UNSENT' | 'SENT' | 'PAID' | 'PARTIALLY_PAID' | 'VOID' | 'OVERDUE'
       )[];
       /** @description Flag to toggle on/off strict search mode. When set to true, search by invoice number only will return invoices whose number exactly matches the string value given for the 'invoiceNumber' parameter. When set to false, results will also include invoices whose number contain the string value, but could be longer than the string value itself. For example, if there is an invoice with the number '123456', and the search value is '123', setting strict-name-search to true will not return that invoice in the results, whereas setting it to false will. */
       strictSearch?: boolean;
@@ -4460,12 +4437,7 @@ export interface components {
        * @enum {string}
        */
       status?:
-        | 'UNSENT'
-        | 'SENT'
-        | 'PAID'
-        | 'PARTIALLY_PAID'
-        | 'VOID'
-        | 'OVERDUE';
+        'UNSENT' | 'SENT' | 'PAID' | 'PARTIALLY_PAID' | 'VOID' | 'OVERDUE';
       visibleZeroFields?: components['schemas']['VisibleZeroFieldsInvoice'];
     };
     /** @description Represents a list of invoice item datatransfer objects. */
@@ -4613,12 +4585,7 @@ export interface components {
        * @enum {string}
        */
       status?:
-        | 'UNSENT'
-        | 'SENT'
-        | 'PAID'
-        | 'PARTIALLY_PAID'
-        | 'VOID'
-        | 'OVERDUE';
+        'UNSENT' | 'SENT' | 'PAID' | 'PARTIALLY_PAID' | 'VOID' | 'OVERDUE';
       /**
        * @description Represents an invoice subject.
        * @example January salary
@@ -9176,12 +9143,7 @@ export interface components {
        * @enum {string}
        */
       sortColumn?:
-        | 'GROUP'
-        | 'DURATION'
-        | 'AMOUNT'
-        | 'EARNED'
-        | 'COST'
-        | 'PROFIT';
+        'GROUP' | 'DURATION' | 'AMOUNT' | 'EARNED' | 'COST' | 'PROFIT';
       /**
        * @description If provided, you'll get sorted result by provided summary chart type.
        * @example PROJECT
@@ -9653,10 +9615,7 @@ export interface operations {
          *     ]
          */
         roles?:
-          | 'WORKSPACE_ADMIN'
-          | 'OWNER'
-          | 'TEAM_MANAGER'
-          | 'PROJECT_MANAGER';
+          'WORKSPACE_ADMIN' | 'OWNER' | 'TEAM_MANAGER' | 'PROJECT_MANAGER';
       };
       header?: never;
       path?: never;
@@ -10932,23 +10891,13 @@ export interface operations {
          *     ]
          */
         statuses?:
-          | 'UNSENT'
-          | 'SENT'
-          | 'PAID'
-          | 'PARTIALLY_PAID'
-          | 'VOID'
-          | 'OVERDUE';
+          'UNSENT' | 'SENT' | 'PAID' | 'PARTIALLY_PAID' | 'VOID' | 'OVERDUE';
         /**
          * @description Valid column name as sorting criteria. Default: ID
          * @example CLIENT
          */
         'sort-column'?:
-          | 'ID'
-          | 'CLIENT'
-          | 'DUE_ON'
-          | 'ISSUE_DATE'
-          | 'AMOUNT'
-          | 'BALANCE';
+          'ID' | 'CLIENT' | 'DUE_ON' | 'ISSUE_DATE' | 'AMOUNT' | 'BALANCE';
         /**
          * @description Sort order. Default: ASCENDING
          * @example ASCENDING
@@ -11552,12 +11501,7 @@ export interface operations {
          * @example NAME
          */
         'sort-column'?:
-          | 'ID'
-          | 'NAME'
-          | 'CLIENT_NAME'
-          | 'DURATION'
-          | 'BUDGET'
-          | 'PROGRESS';
+          'ID' | 'NAME' | 'CLIENT_NAME' | 'DURATION' | 'BUDGET' | 'PROGRESS';
         /**
          * @description Sorting mode.
          * @example ASCENDING
@@ -12204,11 +12148,7 @@ export interface operations {
          * @example ACTIVE
          */
         'membership-status'?:
-          | 'PENDING'
-          | 'ACTIVE'
-          | 'DECLINED'
-          | 'INACTIVE'
-          | 'ALL';
+          'PENDING' | 'ACTIVE' | 'DECLINED' | 'INACTIVE' | 'ALL';
       };
       header?: never;
       path: {

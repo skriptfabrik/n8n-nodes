@@ -10,10 +10,7 @@ import type {
 
 export async function clockifyApiRequest<T = unknown>(
   this:
-    | IExecuteFunctions
-    | IHookFunctions
-    | ILoadOptionsFunctions
-    | IPollFunctions,
+    IExecuteFunctions | IHookFunctions | ILoadOptionsFunctions | IPollFunctions,
   method: IHttpRequestMethods,
   url: string,
   body: IDataObject = {},
@@ -40,10 +37,7 @@ export async function clockifyApiRequest<T = unknown>(
 
 export async function clockifyApiRequestAllItems<T = unknown>(
   this:
-    | IExecuteFunctions
-    | IHookFunctions
-    | ILoadOptionsFunctions
-    | IPollFunctions,
+    IExecuteFunctions | IHookFunctions | ILoadOptionsFunctions | IPollFunctions,
   method: IHttpRequestMethods,
   url: string,
   body: IDataObject = {},

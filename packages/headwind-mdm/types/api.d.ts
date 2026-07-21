@@ -959,11 +959,7 @@ export type RuleFilter = {
    * @enum {string}
    */
   tableTypeFilter?:
-    | 'OUTGOING_CALL'
-    | 'INCOMING_CALL'
-    | 'OUTGOING_SMS'
-    | 'INCOMING_SMS'
-    | 'URL';
+    'OUTGOING_CALL' | 'INCOMING_CALL' | 'OUTGOING_SMS' | 'INCOMING_SMS' | 'URL';
   /**
    * @description A filter used for filtering the rules by rule type
    * @enum {string}
@@ -998,11 +994,7 @@ export type Rule = {
    * @enum {string}
    */
   tableType?:
-    | 'OUTGOING_CALL'
-    | 'INCOMING_CALL'
-    | 'OUTGOING_SMS'
-    | 'INCOMING_SMS'
-    | 'URL';
+    'OUTGOING_CALL' | 'INCOMING_CALL' | 'OUTGOING_SMS' | 'INCOMING_SMS' | 'URL';
   /**
    * @description Rule type (blacklist or whitelist)
    * @enum {string}

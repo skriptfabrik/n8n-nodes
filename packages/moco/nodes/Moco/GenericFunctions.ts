@@ -79,10 +79,7 @@ export function createParametersFromNodeParameter(
 
 export async function mocoApiRequest<T = unknown>(
   this:
-    | IHookFunctions
-    | ILoadOptionsFunctions
-    | IPollFunctions
-    | IExecuteFunctions,
+    IHookFunctions | ILoadOptionsFunctions | IPollFunctions | IExecuteFunctions,
   itemIndex: number | undefined,
   method: IHttpRequestMethods,
   url: string,
@@ -161,10 +158,7 @@ export async function mocoApiRequest<T = unknown>(
 
 export async function mocoApiRequestAllItems<T = unknown>(
   this:
-    | IHookFunctions
-    | IExecuteFunctions
-    | IPollFunctions
-    | ILoadOptionsFunctions,
+    IHookFunctions | IExecuteFunctions | IPollFunctions | ILoadOptionsFunctions,
   itemIndex: number | undefined,
   method: IHttpRequestMethods,
   url: string,

@@ -7013,8 +7013,7 @@ export interface components {
      * @enum {unknown}
      */
     HandoverJobOrderBy:
-      | 'STATUS_TARGET_TIME_LAST_MODIFIED_DATE'
-      | 'TARGET_TIME_ASC';
+      'STATUS_TARGET_TIME_LAST_MODIFIED_DATE' | 'TARGET_TIME_ASC';
     TenantConnectorConfigurations: {
       /** @description All possible apps */
       connectApps: components['schemas']['TenantConnectorConfiguration'][];
@@ -7038,10 +7037,7 @@ export interface components {
      * @enum {string}
      */
     ConnectAppTypeEnum:
-      | 'PICKING'
-      | 'INVENTORY'
-      | 'OPERATIONS_ANDROID'
-      | 'OPERATIONS_IOS';
+      'PICKING' | 'INVENTORY' | 'OPERATIONS_ANDROID' | 'OPERATIONS_IOS';
     /**
      * @description Services which should be booked from carrier
      * @example SIGNATURE
@@ -7244,9 +7240,7 @@ export interface components {
      * @enum {string}
      */
     PickingScanningConfigurationEnum:
-      | 'MUST_SCAN_FIRST'
-      | 'MUST_SCAN_EACH'
-      | 'SCAN_NOT_REQUIRED';
+      'MUST_SCAN_FIRST' | 'MUST_SCAN_EACH' | 'SCAN_NOT_REQUIRED';
     /**
      * @description A pickjob line item initially has the status OPEN and picking can start. When a line item is opened within the picking app, the item changes its status to IN_PROGRESS. When the commissioning is finished the state is CLOSED
      * @enum {string}
@@ -7778,9 +7772,7 @@ export interface components {
     HandoverjobStatus: 'OPEN' | 'HANDED_OVER' | 'OBSOLETE' | 'CANCELED';
     /** @enum {string} */
     HandoverJobCancelReason:
-      | 'CONSUMER_NO_SHOW'
-      | 'CONSUMER_REJECTS'
-      | 'ORDER_CANCELED';
+      'CONSUMER_NO_SHOW' | 'CONSUMER_REJECTS' | 'ORDER_CANCELED';
     HandoverConfiguration: {
       availableRefusedReasons?: unknown;
     } & components['schemas']['VersionedResource'];
@@ -10283,11 +10275,7 @@ export interface components {
      * @enum {string}
      */
     ReturnLineStatus:
-      | 'INITIAL'
-      | 'ADVISED'
-      | 'ACCEPTED'
-      | 'DECLINED'
-      | 'CANCELED';
+      'INITIAL' | 'ADVISED' | 'ACCEPTED' | 'DECLINED' | 'CANCELED';
     ReturnNoteConfiguration: {
       /** @example delivery-note */
       id: string;
@@ -10951,10 +10939,7 @@ export interface components {
      * @enum {string}
      */
     PickingMethodEnum:
-      | 'SINGLE_ORDER'
-      | 'MULTI_ORDER'
-      | 'BATCH_PICKING'
-      | 'BATCH';
+      'SINGLE_ORDER' | 'MULTI_ORDER' | 'BATCH_PICKING' | 'BATCH';
     PackingContainerRequiredConfiguration: {
       /** @default false */
       active: boolean;
@@ -11545,12 +11530,7 @@ export interface components {
      * @enum {string}
      */
     PackJobStatus:
-      | 'OPEN'
-      | 'IN_PROGRESS'
-      | 'CLOSED'
-      | 'OBSOLETE'
-      | 'CANCELED'
-      | 'PAUSED';
+      'OPEN' | 'IN_PROGRESS' | 'CLOSED' | 'OBSOLETE' | 'CANCELED' | 'PAUSED';
     TagPatchActions: {
       actions: components['schemas']['AddAllowedValueToTagAction'][];
       /**
@@ -11846,11 +11826,7 @@ export interface components {
     DocumentOperations: 'PRINT' | 'VIEW';
     /** @enum {string} */
     DocumentCategory:
-      | 'EXTERNAL'
-      | 'DELIVERYNOTE'
-      | 'RETURNNOTE'
-      | 'SENDLABEL'
-      | 'RETURNLABEL';
+      'EXTERNAL' | 'DELIVERYNOTE' | 'RETURNNOTE' | 'SENDLABEL' | 'RETURNLABEL';
     AssignFacilityToProcessAction: {
       action: 'AssignFacilityToProcessAction';
     } & (Omit<components['schemas']['AbstractModificationAction'], 'action'> & {
@@ -12323,10 +12299,7 @@ export interface components {
      * @enum {string}
      */
     LoadUnitAssignmentType:
-      | 'INACTIVE'
-      | 'AT_START'
-      | 'AT_END'
-      | 'DURING_PICKING';
+      'INACTIVE' | 'AT_START' | 'AT_END' | 'DURING_PICKING';
     TagScanningConfiguration: {
       offeredScanningRuleByTag?: components['schemas']['OfferedScanningRuleByTag'][];
     };
@@ -12519,11 +12492,7 @@ export interface components {
     };
     /** @enum {string} */
     ItemReturnLineItemStatus:
-      | 'OPEN'
-      | 'IN_PROGRESS'
-      | 'WAITING_FOR_INPUT'
-      | 'REJECTED'
-      | 'ACCEPTED';
+      'OPEN' | 'IN_PROGRESS' | 'WAITING_FOR_INPUT' | 'REJECTED' | 'ACCEPTED';
     ItemReturns: {
       itemReturns: components['schemas']['ItemReturnsWithSearchPaths'][];
       /**
@@ -12930,11 +12899,7 @@ export interface components {
     } & components['schemas']['RemoteConfigurationScopeForCreation'];
     /** @enum {string} */
     RemoteConfigurationValueType:
-      | 'BOOLEAN'
-      | 'STRING'
-      | 'JSON'
-      | 'NUMBER'
-      | 'INT';
+      'BOOLEAN' | 'STRING' | 'JSON' | 'NUMBER' | 'INT';
     /**
      * @description The type of an external action
      * @enum {string}
@@ -12955,10 +12920,7 @@ export interface components {
     };
     /** @enum {string} */
     ExternalFormActionElementType:
-      | 'TEXT_INPUT'
-      | 'HEADLINE'
-      | 'SUBHEADLINE'
-      | 'TEXT';
+      'TEXT_INPUT' | 'HEADLINE' | 'SUBHEADLINE' | 'TEXT';
     ExternalFormActionInputElement: {
       elementId: string;
       isMandatory?: boolean;
@@ -13436,11 +13398,7 @@ export interface components {
       | 'NOT_READY';
     /** @enum {string} */
     AdditionalInformationValueType:
-      | 'STRING'
-      | 'BOOLEAN'
-      | 'NUMBER'
-      | 'NOVALUE'
-      | 'INPUT_MULTILINE_STRING';
+      'STRING' | 'BOOLEAN' | 'NUMBER' | 'NOVALUE' | 'INPUT_MULTILINE_STRING';
     AdditionalInformationForCreation: {
       nameLocalized: components['schemas']['LocaleString'];
       descriptionLocalized?: components['schemas']['LocaleString'];
@@ -15412,9 +15370,7 @@ export interface components {
      * @enum {string}
      */
     ToolkitRuleComparisonOperatorType:
-      | 'ALL_MATCHES'
-      | 'LEFT_CONTAINS_RIGHT'
-      | 'RIGHT_CONTAINS_LEFT';
+      'ALL_MATCHES' | 'LEFT_CONTAINS_RIGHT' | 'RIGHT_CONTAINS_LEFT';
     /** @description The predicate for a Toolkit V2 Fence that defines how conditions are constructed */
     ToolkitPredicate: {
       propertyPath: string;
@@ -15715,9 +15671,7 @@ export interface components {
     RoutingPlanObsoleteStatusReason: {
       /** @enum {string} */
       reason:
-        | 'REROUTE_AFTER_SHORTPICK'
-        | 'MANUALLY_REROUTED'
-        | 'MANUALLY_ASSIGNED';
+        'REROUTE_AFTER_SHORTPICK' | 'MANUALLY_REROUTED' | 'MANUALLY_ASSIGNED';
       /** @enum {string} */
       status: 'OBSOLETE';
     };

@@ -248,10 +248,7 @@ export class Barcode implements INodeType {
     const data = this.getNodeParameter('data', 0) as string;
     const output = this.getNodeParameter('output', 0) as string;
     const options = this.getNodeParameter('options', 0) as
-      | BaseOptions
-      | Code128Options
-      | Ean13Options
-      | NodeOptions;
+      BaseOptions | Code128Options | Ean13Options | NodeOptions;
 
     try {
       const canvas = createCanvas(0, 0);
