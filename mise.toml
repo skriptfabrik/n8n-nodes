@@ -2,14 +2,12 @@
 idiomatic_version_file_enable_tools = [ "node" ]
 
 [env]
+_.file = [ ".env" ]
 _.path = [ "{{config_root}}/node_modules/.bin" ]
 COREPACK_ENABLE_DOWNLOAD_PROMPT = "0"
 
 [hooks]
-postinstall = """
-npx corepack enable
-pnpm config set store-dir ~/.local/share/pnpm/store
-"""
+postinstall = ". {{config_root}}/.mise/hooks/postinstall.sh"
 
 [tasks.install]
 description = "Installs dependencies with pnpm"

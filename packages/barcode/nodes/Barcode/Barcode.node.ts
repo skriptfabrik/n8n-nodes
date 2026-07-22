@@ -9,11 +9,11 @@ import type {
 import { NodeApiError, NodeConnectionTypes } from 'n8n-workflow';
 
 const BARCODE_FORMAT_MAP: Record<string, string> = {
-  codabar: 'rationalizedCodabar',
+  CODABAR: 'rationalizedCodabar',
   CODE128: 'code128',
   CODE128A: 'code128',
   CODE128B: 'code128',
-  CODE128D: 'code128',
+  CODE128C: 'code128',
   CODE39: 'code39',
   EAN13: 'ean13',
   EAN2: 'ean2',
@@ -24,7 +24,7 @@ const BARCODE_FORMAT_MAP: Record<string, string> = {
   MSI1010: 'msi',
   MSI11: 'msi',
   MSI1110: 'msi',
-  pharmacode: 'pharmacode',
+  PHARMACODE: 'pharmacode',
   UPC: 'upca',
 };
 
@@ -105,9 +105,12 @@ export function buildRenderOptions(
     renderOptions.textxalign = textAlign;
   }
 
-  const barColor = normalizeColor(options['lineColor'] as string | undefined);
-  if (barColor) {
-    renderOptions.barcolor = barColor;
+  const barAndTextColor = normalizeColor(
+    options['barAndTextColor'] as string | undefined,
+  );
+  if (barAndTextColor) {
+    renderOptions.barcolor = barAndTextColor;
+    renderOptions.textcolor = barAndTextColor;
   }
 
   const backgroundColor = normalizeColor(
@@ -124,7 +127,10 @@ export class Barcode implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'Barcode',
     name: 'barcode',
-    icon: 'file:../../icons/Barcode.svg',
+    icon: {
+      dark: 'file:../../icons/Barcode.dark.svg',
+      light: 'file:../../icons/Barcode.light.svg',
+    },
     group: ['transform'],
     version: 1,
     subtitle: '={{$parameter["name"]}}',
@@ -171,7 +177,7 @@ export class Barcode implements INodeType {
             options: [
               {
                 name: 'Codabar',
-                value: 'codabar',
+                value: 'CODABAR',
               },
               {
                 name: 'CODE128',
@@ -187,7 +193,7 @@ export class Barcode implements INodeType {
               },
               {
                 name: 'CODE128 C',
-                value: 'CODE128D',
+                value: 'CODE128C',
               },
               {
                 name: 'CODE39',
@@ -231,7 +237,7 @@ export class Barcode implements INodeType {
               },
               {
                 name: 'Pharmacode',
-                value: 'pharmacode',
+                value: 'PHARMACODE',
               },
               {
                 name: 'UPC',
@@ -242,7 +248,7 @@ export class Barcode implements INodeType {
           },
           {
             displayName: 'Color Of The Bars And The Text',
-            name: 'lineColor',
+            name: 'barAndTextColor',
             type: 'color',
             default: '#000000',
           },
