@@ -9,7 +9,8 @@ overrides:
 
 patchedDependencies:
   '@conventional-changelog/template': 60a5d16a1ab65743a76e5ed3d05c20c84f16ee01beae7d9e84344b871ec2dee5
-  conventional-changelog-conventionalcommits: 7f4a13ed9034a39a8dc4d0bbcad813f6b23edf034ec561fffebaf3d22b232cbb
+  conventional-changelog-conventionalcommits@10.2.1: 7f4a13ed9034a39a8dc4d0bbcad813f6b23edf034ec561fffebaf3d22b232cbb
+  conventional-changelog-conventionalcommits@9.3.1: ca8428af4b242174cea0ee46385cefaec93a5973c309b53b421a4cfcf0c1c610
   n8n: c54f145da07e68584934cdafefb23d1d08bd9771e61866966cc59e857ba1d601
   n8n-core: c00f6137b17eb4819cdeaf5e780cd5a32fd920975c65347ff0d51e0f8ebe826f
 
@@ -18,23 +19,26 @@ importers:
   .:
     devDependencies:
       '@commitlint/cli':
-        specifier: ^21.0.2
+        specifier: ^21.2.1
         version: 21.2.1(@types/node@26.1.1)(conventional-commits-parser@7.1.0)(typescript@5.9.3)
       '@commitlint/config-conventional':
-        specifier: ^21.0.2
+        specifier: ^21.2.0
         version: 21.2.0
       '@n8n/node-cli':
         specifier: ^0.40.2
         version: 0.40.2(3fe053cd4b617d91784c8e934abbd0e2)
       '@semantic-release/changelog':
-        specifier: ^6.0.3
-        version: 6.0.3(semantic-release@25.0.8(supports-color@8.1.1)(typescript@5.9.3))
+        specifier: ^7.0.0
+        version: 7.0.0(semantic-release@25.0.8(supports-color@8.1.1)(typescript@5.9.3))
       '@semantic-release/exec':
         specifier: ^7.1.0
         version: 7.1.0(semantic-release@25.0.8(supports-color@8.1.1)(typescript@5.9.3))(supports-color@8.1.1)
       '@trivago/prettier-plugin-sort-imports':
         specifier: ^6.0.2
         version: 6.0.2(@vue/compiler-sfc@3.5.40)(prettier@3.9.6)(supports-color@8.1.1)
+      conventional-changelog-conventionalcommits:
+        specifier: ^9.3.1
+        version: 9.3.1(patch_hash=ca8428af4b242174cea0ee46385cefaec93a5973c309b53b421a4cfcf0c1c610)
       eslint:
         specifier: ^9.39.4
         version: 9.39.5(jiti@2.7.0)(supports-color@8.1.1)
@@ -3371,21 +3375,17 @@ packages:
   '@selderee/plugin-htmlparser2@0.11.0':
     resolution: {integrity: sha512-P33hHGdldxGabLFjPPpaTxVolMrzrcegejx+0GxjrIb9Zv48D8yAIA/QTDR2dFl7Uz7urX8aX6+5bCZslr+gWQ==}
 
-  '@semantic-release/changelog@6.0.3':
-    resolution: {integrity: sha512-dZuR5qByyfe3Y03TpmCvAxCyTnp7r5XwtHRf/8vD9EAn4ZWbavUX8adMtXYzE86EVh0gyLA7lm5yW4IV30XUag==}
-    engines: {node: '>=14.17'}
+  '@semantic-release/changelog@7.0.0':
+    resolution: {integrity: sha512-TNPyag5db24o7jWjre7UwKB4EcL8oJxbRhnDQ7hmZRAYqzreAc6PgdxQuU3pppp5xQinYtiumL0iG8SSKvnlzg==}
+    engines: {node: ^22.22.2 || >=24.15}
     peerDependencies:
-      semantic-release: '>=18.0.0'
+      semantic-release: '>=20.1.0'
 
   '@semantic-release/commit-analyzer@13.0.1':
     resolution: {integrity: sha512-wdnBPHKkr9HhNhXOhZD5a2LNl91+hs8CC2vsAVYxtZH3y0dV3wKn+uZSN61rdJQZ8EGxzWB3inWocBHV9+u/CQ==}
     engines: {node: '>=20.8.1'}
     peerDependencies:
       semantic-release: '>=20.1.0'
-
-  '@semantic-release/error@3.0.0':
-    resolution: {integrity: sha512-5hiM4Un+tpl4cKw3lV4UgzJj+SmfNIDCLLw0TepzQxz9ZGV5ixnqkzIVF+3tp0ZHgcMKE+VNGHJjEeyFG2dcSw==}
-    engines: {node: '>=14.17'}
 
   '@semantic-release/error@4.0.0':
     resolution: {integrity: sha512-mgdxrHTLOjOddRVYIYDo0fR3/v61GNN1YGkfbrjuIKg/uMgCd+Qzo3UAXJ+woLQQpos4pl5Esuw5A7AoNlzjUQ==}
@@ -5047,6 +5047,10 @@ packages:
   conventional-changelog-conventionalcommits@10.2.1:
     resolution: {integrity: sha512-n4Kr1HFMTf3iMbES0TMxKIcYtUUv4rKqyQQp2JwfOEfFCOfGT3Tq4mCyJ8S9/YPyWhydjfKrrvnyl+gCjA+mJQ==}
     engines: {node: '>=22'}
+
+  conventional-changelog-conventionalcommits@9.3.1:
+    resolution: {integrity: sha512-dTYtpIacRpcZgrvBYvBfArMmK2xvIpv2TaxM0/ZI5CBtNUzvF2x0t15HsbRABWprS6UPmvj+PzHVjSx4qAVKyw==}
+    engines: {node: '>=18'}
 
   conventional-changelog-writer@8.4.0:
     resolution: {integrity: sha512-HHBFkk1EECxxmCi4CTu091iuDpQv5/OavuCUAuZmrkWpmYfyD816nom1CvtfXJ/uYfAAjavgHvXHX291tSLK8g==}
@@ -15780,12 +15784,11 @@ snapshots:
       domhandler: 5.0.3
       selderee: 0.11.0
 
-  '@semantic-release/changelog@6.0.3(semantic-release@25.0.8(supports-color@8.1.1)(typescript@5.9.3))':
+  '@semantic-release/changelog@7.0.0(semantic-release@25.0.8(supports-color@8.1.1)(typescript@5.9.3))':
     dependencies:
-      '@semantic-release/error': 3.0.0
-      aggregate-error: 3.1.0
-      fs-extra: 11.3.6
-      lodash: 4.18.1
+      '@semantic-release/error': 4.0.0
+      aggregate-error: 5.0.0
+      lodash-es: 4.18.1
       semantic-release: 25.0.8(supports-color@8.1.1)(typescript@5.9.3)
 
   '@semantic-release/commit-analyzer@13.0.1(semantic-release@25.0.8(supports-color@8.1.1)(typescript@5.9.3))(supports-color@8.1.1)':
@@ -15801,8 +15804,6 @@ snapshots:
       semantic-release: 25.0.8(supports-color@8.1.1)(typescript@5.9.3)
     transitivePeerDependencies:
       - supports-color
-
-  '@semantic-release/error@3.0.0': {}
 
   '@semantic-release/error@4.0.0': {}
 
@@ -17725,6 +17726,10 @@ snapshots:
   conventional-changelog-conventionalcommits@10.2.1(patch_hash=7f4a13ed9034a39a8dc4d0bbcad813f6b23edf034ec561fffebaf3d22b232cbb):
     dependencies:
       '@conventional-changelog/template': 1.2.1(patch_hash=60a5d16a1ab65743a76e5ed3d05c20c84f16ee01beae7d9e84344b871ec2dee5)
+
+  conventional-changelog-conventionalcommits@9.3.1(patch_hash=ca8428af4b242174cea0ee46385cefaec93a5973c309b53b421a4cfcf0c1c610):
+    dependencies:
+      compare-func: 2.0.0
 
   conventional-changelog-writer@8.4.0:
     dependencies:

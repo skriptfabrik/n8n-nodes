@@ -1,0 +1,34 @@
+diff --git a/src/templates.js b/src/templates.js
+index 577f8be005dbf885289b19788c493ffc775e5394..cd1557b28d255aa0b3a1282265202fdc2788bd6d 100644
+--- a/src/templates.js
++++ b/src/templates.js
+@@ -5,7 +5,7 @@ export const mainTemplate = `{{> header}}
+ ### ⚠ {{title}}
+ 
+ {{#each notes}}
+-* {{#if commit.scope}}**{{commit.scope}}:** {{/if}}{{text}}
++- {{#if commit.scope}}**{{commit.scope}}:** {{/if}}{{text}}
+ {{/each}}
+ {{/each}}
+ {{/if}}
+@@ -23,9 +23,9 @@ export const mainTemplate = `{{> header}}
+ `
+ 
+ export const headerPartial = `## {{#if @root.linkCompare~}}
+-  [{{version}}]({{compareUrlFormat}})
++  [{{currentTag}}]({{compareUrlFormat}})
+ {{~else}}
+-  {{~version}}
++  {{~currentTag}}
+ {{~/if}}
+ {{~#if title}} "{{title}}"
+ {{~/if}}
+@@ -33,7 +33,7 @@ export const headerPartial = `## {{#if @root.linkCompare~}}
+ {{/if}}
+ `
+ 
+-export const commitPartial = `*{{#if scope}} **{{scope}}:**
++export const commitPartial = `-{{#if scope}} **{{scope}}:**
+ {{~/if}} {{#if subject}}
+   {{~subject}}
+ {{~else}}

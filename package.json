@@ -33,12 +33,13 @@
     "verify": "node tools/scripts/verify-cloud-readiness.mjs --all --retries 1 --delay-ms 0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.0.2",
-    "@commitlint/config-conventional": "^21.0.2",
+    "@commitlint/cli": "^21.2.1",
+    "@commitlint/config-conventional": "^21.2.0",
     "@n8n/node-cli": "^0.40.2",
-    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/changelog": "^7.0.0",
     "@semantic-release/exec": "^7.1.0",
     "@trivago/prettier-plugin-sort-imports": "^6.0.2",
+    "conventional-changelog-conventionalcommits": "^9.3.1",
     "eslint": "^9.39.4",
     "knip": "^6.16.1",
     "markdownlint-cli2": "^0.23.1",
