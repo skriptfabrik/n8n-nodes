@@ -1,24 +1,28 @@
 diff --git a/dist/load-nodes-and-credentials.js b/dist/load-nodes-and-credentials.js
-index 7c757059ee24bf39a54ecf3113332399ddf1fd8f..27062fc19cf72d0576d01e9614b713c5d51273f8 100644
+index 7c757059ee24bf39a54ecf3113332399ddf1fd8f..e0e1be6ae6bf668d159fde6b4516ef78d78e257a 100644
 --- a/dist/load-nodes-and-credentials.js
 +++ b/dist/load-nodes-and-credentials.js
-@@ -479,9 +479,20 @@ let LoadNodesAndCredentials = class LoadNodesAndCredentials {
-                 const customNodeEntries = await promises_1.default.readdir(customNodesRoot, {
+@@ -476,12 +476,23 @@ let LoadNodesAndCredentials = class LoadNodesAndCredentials {
+             const watchPaths = loader.isLazyLoaded ? [path_1.default.join(directory, 'dist')] : [directory];
+             const customNodesRoot = path_1.default.join(directory, 'node_modules');
+             if (loader.packageName === n8n_core_1.CUSTOM_NODES_PACKAGE_NAME) {
+-                const customNodeEntries = await promises_1.default.readdir(customNodesRoot, {
++                const customNodesRootEntries = await promises_1.default.readdir(customNodesRoot, {
                      withFileTypes: true,
                  });
 -                const realCustomNodesPaths = await Promise.all(customNodeEntries
-+                const extendedCustomNodeEntries = [];
-+                for (const entry of customNodeEntries) {
++                const customNodesEntries = [];
++                for (const entry of customNodesRootEntries) {
 +                    if (entry.isDirectory() && entry.name.startsWith('@')) {
-+                        const scopedCustomNodeEntries = await promises_1.default.readdir(path_1.default.join(entry.parentPath, entry.name), {
++                        const scopedCustomNodesEntries = await promises_1.default.readdir(path_1.default.join(entry.parentPath, entry.name), {
 +                            withFileTypes: true,
 +                        });
-+                        extendedCustomNodeEntries.push(...scopedCustomNodeEntries);
++                        customNodesEntries.push(...scopedCustomNodesEntries);
 +                    } else {
-+                        extendedCustomNodeEntries.push(entry);
++                        customNodesEntries.push(entry);
 +                    }
 +                }
-+                const realCustomNodesPaths = await Promise.all(extendedCustomNodeEntries
++                const realCustomNodesPaths = await Promise.all(customNodesEntries
                      .filter((entry) => (entry.isDirectory() || entry.isSymbolicLink()) && !entry.name.startsWith('.'))
 -                    .map(async (entry) => await promises_1.default.realpath(path_1.default.join(customNodesRoot, entry.name)).catch(() => null)));
 +                    .map(async (entry) => await promises_1.default.realpath(path_1.default.join(entry.parentPath, entry.name)).catch(() => null)));
