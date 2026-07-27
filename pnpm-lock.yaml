@@ -49,8 +49,8 @@ importers:
         specifier: ^0.23.1
         version: 0.23.1(supports-color@8.1.1)
       n8n:
-        specifier: ^2.31.5
-        version: 2.31.5(patch_hash=c54f145da07e68584934cdafefb23d1d08bd9771e61866966cc59e857ba1d601)(42fb67e0ea1b802bda7d36e588aba9f9)
+        specifier: ^2.31.7
+        version: 2.31.7(patch_hash=c54f145da07e68584934cdafefb23d1d08bd9771e61866966cc59e857ba1d601)(42fb67e0ea1b802bda7d36e588aba9f9)
       prettier:
         specifier: ^3.9.6
         version: 3.9.6
@@ -2306,8 +2306,8 @@ packages:
   '@n8n/constants@0.31.0':
     resolution: {integrity: sha512-qUffAbe5M5Y6IT4Dbjvts6clFSbZHKlfBDool0q5EYlq6fw5aRvvA9K31gxuySxgGaGLazXiflwDlv7OEcSjEA==}
 
-  '@n8n/db@1.31.3':
-    resolution: {integrity: sha512-w7Sm9SxTWaCeM7BIuhX5P7RjTsIqQC5CtYybZT4fUQLaUVIFjJp+e+Gr04VadKD1XDMFwSuDoNNbxOSTb3YJbw==}
+  '@n8n/db@1.31.4':
+    resolution: {integrity: sha512-4srj59IiNmrAJ5fDLUxk0A8l5bWHFJvGIWk0w1o6+5nKXwiXCMEhc9Uiex6mXyD6dWJvTHWPZZOgaAo/5J49Ag==}
 
   '@n8n/decorators@1.31.2':
     resolution: {integrity: sha512-aK2mwvS47lKlkbI8DzEx7UaxoxAlrmE+d78D1RBh5t3jRUxOsofSR17Y3f9AUkSm7yMyXxup7EX7JRp6eDy0Yw==}
@@ -2361,8 +2361,8 @@ packages:
   '@n8n/mcp-browser@0.14.0':
     resolution: {integrity: sha512-eaQS37Wm+JHB10Oy2UlHcUkNS35J51hU+WBeroAr1exk1w4h2GPWJIvjb43WqvCLnJmSPQoudo2AE5o2FADmjw==}
 
-  '@n8n/n8n-nodes-langchain@2.31.3':
-    resolution: {integrity: sha512-qzQplaHQQD8fUeXpC4nd5eif7Kep0AdREvZTWgGrannFW78gvsbxtybakirATBvzasRYa4kmz6K5L81RhUUdYQ==}
+  '@n8n/n8n-nodes-langchain@2.31.4':
+    resolution: {integrity: sha512-jGUEqr2skVnl7PUOdYwC06kDrjcWah/dqzNLPnP53ckIS4ysfJ0fR+jqjyqQ9XY1KGVMxIZNUFLelHrroloFIg==}
 
   '@n8n/node-cli@0.40.2':
     resolution: {integrity: sha512-uXgDHwewzpc9p1CDNwMi3MIfLzzo5AM8sevbx5q4nEq6OyhyKorZ+jv4xd/HyRadRHixiSAqIafoOAKajw4JFw==}
@@ -7916,8 +7916,8 @@ packages:
   n8n-editor-ui@2.31.5:
     resolution: {integrity: sha512-s+DAgWGhEUhYNjsDHA4zoROxftiENj67YUREsIrP/2malrOkRmYmkuFq7qR9QTijyVRBtaPWadOc0cs9SuQihg==}
 
-  n8n-nodes-base@2.31.3:
-    resolution: {integrity: sha512-+0rBf/GQ+0ZWutfWq+4IpaPgCAGlZki+UjLJZQhe07ht/OB8J7aYeTwc6qqIL+76+S+TwaFlO4jwTlNOMtLx4w==}
+  n8n-nodes-base@2.31.4:
+    resolution: {integrity: sha512-zYkF16zFWQ0KeZxfQiEjZINuyY6tqP8H3aQq1kaC4xT3Ee83kfPjCVvRxCNF/BozVcD7aziGNd2g98c6uKvw/Q==}
 
   n8n-workflow@2.16.0:
     resolution: {integrity: sha512-JoDvHLvV4QZQBCDVQl5xkrGOmPmsacLO4TkJkErCzMmiEqIej+h14J6eCUY7gbxBj8V+GIBlpqyO63akJbXRQg==}
@@ -7932,8 +7932,8 @@ packages:
     peerDependencies:
       zod: 3.25.67
 
-  n8n@2.31.5:
-    resolution: {integrity: sha512-vdznK9EUOrqkD9Qzn1JByP3Rc852hAYfmSqEnbIKzuyPrWpAsAHo/X61HHZVYp3nymWBAVGqlndZYnRxLRi8XQ==}
+  n8n@2.31.7:
+    resolution: {integrity: sha512-E/VHIO7DYaz+Ms0oCQr5UwU/OTR6KtBc5X49VfKClmWoKbLDvMdZZU3gz4RoUj2xS1SMGs75tCh8WgeHNpYRwg==}
     engines: {node: '>=22.22'}
     hasBin: true
 
@@ -14936,7 +14936,7 @@ snapshots:
 
   '@n8n/constants@0.31.0': {}
 
-  '@n8n/db@1.31.3(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-proto@0.217.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.10.0(@opentelemetry/api@1.9.1))(debug@4.4.3(supports-color@8.1.1))(openai@6.49.0(@aws-sdk/credential-provider-node@3.972.72)(@smithy/hash-node@4.4.14)(@smithy/signature-v4@5.6.10)(ws@8.20.1)(zod@3.25.67))(pg@8.17.0)(sqlite3@5.1.7(bluebird@3.7.2)(supports-color@8.1.1))(supports-color@8.1.1)(ws@8.20.1)':
+  '@n8n/db@1.31.4(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-proto@0.217.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.10.0(@opentelemetry/api@1.9.1))(debug@4.4.3(supports-color@8.1.1))(openai@6.49.0(@aws-sdk/credential-provider-node@3.972.72)(@smithy/hash-node@4.4.14)(@smithy/signature-v4@5.6.10)(ws@8.20.1)(zod@3.25.67))(pg@8.17.0)(sqlite3@5.1.7(bluebird@3.7.2)(supports-color@8.1.1))(supports-color@8.1.1)(ws@8.20.1)':
     dependencies:
       '@n8n/api-types': 1.31.3(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)(zod@3.25.67)
       '@n8n/backend-common': 1.31.3(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)(zod@3.25.67)
@@ -15288,7 +15288,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@n8n/n8n-nodes-langchain@2.31.3(2b6a881f197a481524ad7bcfcfa297a8)':
+  '@n8n/n8n-nodes-langchain@2.31.4(2b6a881f197a481524ad7bcfcfa297a8)':
     dependencies:
       '@aws-sdk/client-bedrock-runtime': 3.938.0
       '@aws-sdk/client-sso-oidc': 3.808.0
@@ -15370,7 +15370,7 @@ snapshots:
       mongodb: 6.21.0(@aws-sdk/credential-providers@3.808.0)(socks@2.8.9)
       mysql2: 3.17.0
       n8n-core: 2.31.3(patch_hash=c00f6137b17eb4819cdeaf5e780cd5a32fd920975c65347ff0d51e0f8ebe826f)(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-proto@0.217.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.10.0(@opentelemetry/api@1.9.1))(debug@4.4.3(supports-color@8.1.1))(openai@6.46.0(@aws-sdk/credential-provider-node@3.972.72)(@smithy/hash-node@4.4.14)(@smithy/signature-v4@5.6.10)(ws@8.20.1)(zod@3.25.67))(supports-color@8.1.1)(ws@8.20.1)(zod@3.25.67)
-      n8n-nodes-base: 2.31.3(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-proto@0.217.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.10.0(@opentelemetry/api@1.9.1))(asn1.js@5.4.1)(date-fns@2.30.0)(debug@4.4.3(supports-color@8.1.1))(encoding@0.1.13)(openai@6.46.0(@aws-sdk/credential-provider-node@3.972.72)(@smithy/hash-node@4.4.14)(@smithy/signature-v4@5.6.10)(ws@8.20.1)(zod@3.25.67))(promise-ftp-common@1.1.5)(socks@2.8.9)(supports-color@8.1.1)(ws@8.20.1)
+      n8n-nodes-base: 2.31.4(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-proto@0.217.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.10.0(@opentelemetry/api@1.9.1))(asn1.js@5.4.1)(date-fns@2.30.0)(debug@4.4.3(supports-color@8.1.1))(encoding@0.1.13)(openai@6.46.0(@aws-sdk/credential-provider-node@3.972.72)(@smithy/hash-node@4.4.14)(@smithy/signature-v4@5.6.10)(ws@8.20.1)(zod@3.25.67))(promise-ftp-common@1.1.5)(socks@2.8.9)(supports-color@8.1.1)(ws@8.20.1)
       n8n-workflow: 2.31.3(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)(zod@3.25.67)
       openai: 6.46.0(@aws-sdk/credential-provider-node@3.972.72)(@smithy/hash-node@4.4.14)(@smithy/signature-v4@5.6.10)(ws@8.20.1)(zod@3.25.67)
       oracledb: 6.10.0
@@ -22402,7 +22402,7 @@ snapshots:
 
   n8n-editor-ui@2.31.5: {}
 
-  n8n-nodes-base@2.31.3(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-proto@0.217.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.10.0(@opentelemetry/api@1.9.1))(asn1.js@5.4.1)(date-fns@2.30.0)(debug@4.4.3(supports-color@8.1.1))(encoding@0.1.13)(openai@6.46.0(@aws-sdk/credential-provider-node@3.972.72)(@smithy/hash-node@4.4.14)(@smithy/signature-v4@5.6.10)(ws@8.20.1)(zod@3.25.67))(promise-ftp-common@1.1.5)(socks@2.8.9)(supports-color@8.1.1)(ws@8.20.1):
+  n8n-nodes-base@2.31.4(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-proto@0.217.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.10.0(@opentelemetry/api@1.9.1))(asn1.js@5.4.1)(date-fns@2.30.0)(debug@4.4.3(supports-color@8.1.1))(encoding@0.1.13)(openai@6.46.0(@aws-sdk/credential-provider-node@3.972.72)(@smithy/hash-node@4.4.14)(@smithy/signature-v4@5.6.10)(ws@8.20.1)(zod@3.25.67))(promise-ftp-common@1.1.5)(socks@2.8.9)(supports-color@8.1.1)(ws@8.20.1):
     dependencies:
       '@aws-crypto/sha256-js': 5.2.0
       '@aws-sdk/credential-providers': 3.808.0
@@ -22523,7 +22523,7 @@ snapshots:
       - utf-8-validate
       - ws
 
-  n8n-nodes-base@2.31.3(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-proto@0.217.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.10.0(@opentelemetry/api@1.9.1))(asn1.js@5.4.1)(date-fns@2.30.0)(debug@4.4.3(supports-color@8.1.1))(encoding@0.1.13)(openai@6.49.0(@aws-sdk/credential-provider-node@3.972.72)(@smithy/hash-node@4.4.14)(@smithy/signature-v4@5.6.10)(ws@8.20.1)(zod@3.25.67))(promise-ftp-common@1.1.5)(socks@2.8.9)(supports-color@8.1.1)(ws@8.20.1):
+  n8n-nodes-base@2.31.4(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-proto@0.217.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.10.0(@opentelemetry/api@1.9.1))(asn1.js@5.4.1)(date-fns@2.30.0)(debug@4.4.3(supports-color@8.1.1))(encoding@0.1.13)(openai@6.49.0(@aws-sdk/credential-provider-node@3.972.72)(@smithy/hash-node@4.4.14)(@smithy/signature-v4@5.6.10)(ws@8.20.1)(zod@3.25.67))(promise-ftp-common@1.1.5)(socks@2.8.9)(supports-color@8.1.1)(ws@8.20.1):
     dependencies:
       '@aws-crypto/sha256-js': 5.2.0
       '@aws-sdk/credential-providers': 3.808.0
@@ -22737,7 +22737,7 @@ snapshots:
       - debug
       - supports-color
 
-  n8n@2.31.5(patch_hash=c54f145da07e68584934cdafefb23d1d08bd9771e61866966cc59e857ba1d601)(42fb67e0ea1b802bda7d36e588aba9f9):
+  n8n@2.31.7(patch_hash=c54f145da07e68584934cdafefb23d1d08bd9771e61866966cc59e857ba1d601)(42fb67e0ea1b802bda7d36e588aba9f9):
     dependencies:
       '@1password/connect': 1.4.2(supports-color@8.1.1)
       '@ai-sdk/anthropic': 3.0.103(zod@3.25.67)
@@ -22766,7 +22766,7 @@ snapshots:
       '@n8n/client-oauth2': 1.13.0(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
       '@n8n/config': 2.29.1
       '@n8n/constants': 0.31.0
-      '@n8n/db': 1.31.3(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-proto@0.217.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.10.0(@opentelemetry/api@1.9.1))(debug@4.4.3(supports-color@8.1.1))(openai@6.49.0(@aws-sdk/credential-provider-node@3.972.72)(@smithy/hash-node@4.4.14)(@smithy/signature-v4@5.6.10)(ws@8.20.1)(zod@3.25.67))(pg@8.17.0)(sqlite3@5.1.7(bluebird@3.7.2)(supports-color@8.1.1))(supports-color@8.1.1)(ws@8.20.1)
+      '@n8n/db': 1.31.4(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-proto@0.217.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.10.0(@opentelemetry/api@1.9.1))(debug@4.4.3(supports-color@8.1.1))(openai@6.49.0(@aws-sdk/credential-provider-node@3.972.72)(@smithy/hash-node@4.4.14)(@smithy/signature-v4@5.6.10)(ws@8.20.1)(zod@3.25.67))(pg@8.17.0)(sqlite3@5.1.7(bluebird@3.7.2)(supports-color@8.1.1))(supports-color@8.1.1)(ws@8.20.1)
       '@n8n/decorators': 1.31.3(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)(zod@3.25.67)
       '@n8n/di': 0.15.0
       '@n8n/errors': 0.12.0
@@ -22774,7 +22774,7 @@ snapshots:
       '@n8n/instance-ai': 1.16.3(2cc59f2b45e12d30f8d9987b89aaab65)
       '@n8n/mcp-apps': 0.8.2(@modelcontextprotocol/sdk@1.26.0(@cfworker/json-schema@4.1.1)(supports-color@8.1.1)(zod@3.25.67))(typescript@5.9.3)
       '@n8n/mcp-browser': 0.14.0(@cfworker/json-schema@4.1.1)(supports-color@8.1.1)
-      '@n8n/n8n-nodes-langchain': 2.31.3(2b6a881f197a481524ad7bcfcfa297a8)
+      '@n8n/n8n-nodes-langchain': 2.31.4(2b6a881f197a481524ad7bcfcfa297a8)
       '@n8n/permissions': 0.68.0
       '@n8n/scheduler': 0.3.3(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)(zod@3.25.67)
       '@n8n/syslog-client': 1.8.0
@@ -22849,7 +22849,7 @@ snapshots:
       multer: 2.2.0
       n8n-core: 2.31.3(patch_hash=c00f6137b17eb4819cdeaf5e780cd5a32fd920975c65347ff0d51e0f8ebe826f)(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-proto@0.217.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.10.0(@opentelemetry/api@1.9.1))(debug@4.4.3(supports-color@8.1.1))(openai@6.49.0(@aws-sdk/credential-provider-node@3.972.72)(@smithy/hash-node@4.4.14)(@smithy/signature-v4@5.6.10)(ws@8.20.1)(zod@3.25.67))(supports-color@8.1.1)(ws@8.20.1)(zod@3.25.67)
       n8n-editor-ui: 2.31.5
-      n8n-nodes-base: 2.31.3(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-proto@0.217.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.10.0(@opentelemetry/api@1.9.1))(asn1.js@5.4.1)(date-fns@2.30.0)(debug@4.4.3(supports-color@8.1.1))(encoding@0.1.13)(openai@6.49.0(@aws-sdk/credential-provider-node@3.972.72)(@smithy/hash-node@4.4.14)(@smithy/signature-v4@5.6.10)(ws@8.20.1)(zod@3.25.67))(promise-ftp-common@1.1.5)(socks@2.8.9)(supports-color@8.1.1)(ws@8.20.1)
+      n8n-nodes-base: 2.31.4(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-proto@0.217.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.10.0(@opentelemetry/api@1.9.1))(asn1.js@5.4.1)(date-fns@2.30.0)(debug@4.4.3(supports-color@8.1.1))(encoding@0.1.13)(openai@6.49.0(@aws-sdk/credential-provider-node@3.972.72)(@smithy/hash-node@4.4.14)(@smithy/signature-v4@5.6.10)(ws@8.20.1)(zod@3.25.67))(promise-ftp-common@1.1.5)(socks@2.8.9)(supports-color@8.1.1)(ws@8.20.1)
       n8n-workflow: 2.31.3(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.221.0(@opentelemetry/api@1.9.1))(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)(zod@3.25.67)
       nanoid: 3.3.8
       nodemailer: 8.0.10
