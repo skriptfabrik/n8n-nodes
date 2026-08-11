@@ -157,25 +157,34 @@ export class CronhooksTrigger implements INodeType {
         const group = this.getNodeParameter('group') as string;
         const staticData = this.getWorkflowStaticData('node') as StaticData;
 
-        const responseData = await (cronhooksApiRequest<{ id?: string }>).call(
-          this,
-          'POST',
-          '/schedules',
-          {
-            url: callbackUrl,
-            title,
-            timezone: 'europe/berlin',
-            method: 'POST',
-            contentType: 'application/json; charset=utf-8',
-            isRecurring: true,
-            sendCronhookObject: true,
-            sendFailureAlert: true,
-            cronExpression,
-            ...(group && group.length > 0 && group !== 'none' ? { group } : {}),
-          },
-        );
+        let responseData;
+        try {
+          responseData = await (cronhooksApiRequest<{ id?: string }>).call(
+            this,
+            'POST',
+            '/schedules',
+            {
+              url: callbackUrl,
+              title,
+              timezone: 'europe/berlin',
+              method: 'POST',
+              contentType: 'application/json; charset=utf-8',
+              isRecurring: true,
+              sendCronhookObject: true,
+              sendFailureAlert: true,
+              cronExpression,
+              ...(group && group.length > 0 && group !== 'none'
+                ? { group }
+                : {}),
+            },
+          );
+        } catch {
+          this.logger.error('Failed to create webhook');
+          return false;
+        }
 
         if (responseData.id === undefined) {
+          this.logger.error('Failed to create webhook');
           return false;
         }
 
@@ -197,6 +206,7 @@ export class CronhooksTrigger implements INodeType {
             `/schedules/${staticData.scheduleId}`,
           );
         } catch {
+          this.logger.error('Failed to delete webhook');
           return false;
         }
 

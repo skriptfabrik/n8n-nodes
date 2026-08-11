@@ -391,6 +391,7 @@ export class MocoTrigger implements INodeType {
             { body },
           );
         } catch {
+          this.logger.error('Failed to create webhook');
           return false;
         }
 
@@ -419,6 +420,7 @@ export class MocoTrigger implements INodeType {
             `/account/web_hooks/${webhookData.hookId}`,
           );
         } catch {
+          this.logger.error('Failed to delete webhook');
           return false;
         }
 

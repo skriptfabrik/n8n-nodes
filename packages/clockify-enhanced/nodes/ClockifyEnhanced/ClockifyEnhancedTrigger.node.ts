@@ -282,17 +282,24 @@ export class ClockifyEnhancedTrigger implements INodeType {
           webhookEvent,
         };
 
-        const responseData = await (clockifyApiRequest<Webhook>).call(
-          this,
-          'POST',
-          `/workspaces/${workspaceId}/webhooks`,
-          body,
-        );
+        let responseData;
+        try {
+          responseData = await (clockifyApiRequest<Webhook>).call(
+            this,
+            'POST',
+            `/workspaces/${workspaceId}/webhooks`,
+            body,
+          );
+        } catch {
+          this.logger.error('Failed to create webhook');
+          return false;
+        }
 
         if (
           responseData.authToken === undefined ||
           responseData.id === undefined
         ) {
+          this.logger.error('Failed to create webhook');
           return false;
         }
 
@@ -319,6 +326,7 @@ export class ClockifyEnhancedTrigger implements INodeType {
             `/workspaces/${workspaceId}/webhooks/${webhookData.webhookId}`,
           );
         } catch {
+          this.logger.error('Failed to delete webhook');
           return false;
         }
 
