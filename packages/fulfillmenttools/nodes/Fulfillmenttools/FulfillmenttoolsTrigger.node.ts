@@ -309,32 +309,39 @@ export class FulfillmenttoolsTrigger implements INodeType {
         )) as Credentials;
         const staticData = this.getWorkflowStaticData('node') as StaticData;
 
-        const responseData = (await fulfillmenttoolsApiRequest.call(
-          this,
-          'POST',
-          '/subscriptions',
-          {
-            callbackUrl,
-            event,
-            name: `${event}`.split('_').join(' ').toLowerCase(),
-            headers: [
-              {
-                key: 'user-agent',
-                value: `${credentials.subDomain}/1.0`,
-              },
-              {
-                key: 'x-fulfillmenttools-event',
-                value: event,
-              },
-              {
-                key: 'x-fulfillmenttools-token',
-                value: credentials.webhookToken,
-              },
-            ],
-          },
-        )) as Subscription;
+        let responseData;
+        try {
+          responseData = (await fulfillmenttoolsApiRequest.call(
+            this,
+            'POST',
+            '/subscriptions',
+            {
+              callbackUrl,
+              event,
+              name: `${event}`.split('_').join(' ').toLowerCase(),
+              headers: [
+                {
+                  key: 'user-agent',
+                  value: `${credentials.subDomain}/1.0`,
+                },
+                {
+                  key: 'x-fulfillmenttools-event',
+                  value: event,
+                },
+                {
+                  key: 'x-fulfillmenttools-token',
+                  value: credentials.webhookToken,
+                },
+              ],
+            },
+          )) as Subscription;
+        } catch {
+          this.logger.error('Failed to create webhook');
+          return false;
+        }
 
         if (responseData.id === undefined) {
+          this.logger.error('Failed to create webhook');
           return false;
         }
 
@@ -356,6 +363,7 @@ export class FulfillmenttoolsTrigger implements INodeType {
             `/subscriptions/${staticData.subscriptionId}`,
           );
         } catch {
+          this.logger.error('Failed to delete webhook');
           return false;
         }
 
