@@ -64,7 +64,6 @@ export class ClockifyEnhancedTrigger implements INodeType {
     defaults: {
       name: 'Clockify Enhanced Trigger',
     },
-    usableAsTool: true,
     inputs: [],
     outputs: [NodeConnectionTypes.Main],
     credentials: [

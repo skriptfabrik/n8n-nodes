@@ -29,7 +29,6 @@ export class MocoTrigger implements INodeType {
     defaults: {
       name: 'MOCO Trigger',
     },
-    usableAsTool: true,
     inputs: [],
     outputs: [NodeConnectionTypes.Main],
     credentials: [

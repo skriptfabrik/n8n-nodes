@@ -131,7 +131,7 @@ jobs:
           turbo-token: ${{ secrets.TURBO_TOKEN }}
 
       - name: 🔍 Lint source code affected by changes
-        run: pnpm -s run lint --affected
+        run: pnpm -s run lint --affected --continue
 
       - name: 🔨 Run build of projects affected by changes
-        run: pnpm -s run build --affected
+        run: pnpm -s run build --affected --continue

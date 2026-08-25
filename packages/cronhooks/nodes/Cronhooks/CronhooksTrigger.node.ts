@@ -47,8 +47,6 @@ export class CronhooksTrigger implements INodeType {
       name: 'cronhooks.io Trigger',
     },
 
-    usableAsTool: true,
-
     inputs: [],
 
     outputs: [NodeConnectionTypes.Main],
