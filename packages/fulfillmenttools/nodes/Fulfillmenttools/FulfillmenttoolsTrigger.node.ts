@@ -93,8 +93,6 @@ export class FulfillmenttoolsTrigger implements INodeType {
       name: 'fulfillmenttools Trigger',
     },
 
-    usableAsTool: true,
-
     inputs: [],
 
     outputs: [NodeConnectionTypes.Main],
