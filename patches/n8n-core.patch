@@ -1,13 +1,11 @@
-diff --git a/dist/execution-engine/node-execution-context/utils/request-helpers/authentication.js b/dist/execution-engine/node-execution-context/utils/request-helpers/authentication.js
-index d93d5f26f26ab17d53f78a76f5c3fa08f813f622..3dcf0935dad6e16464bf6338f42aa51938af8dfa 100644
 --- a/dist/execution-engine/node-execution-context/utils/request-helpers/authentication.js
 +++ b/dist/execution-engine/node-execution-context/utils/request-helpers/authentication.js
-@@ -44,7 +44,7 @@ async function httpRequestWithAuthentication(credentialsType, requestOptions, wo
-         return await (0, backend_network_1.httpRequest)(requestOptions, additionalData.ssrfBridge);
+@@ -45,7 +45,7 @@ async function httpRequestWithAuthentication(credentialsType, requestOptions, wo
+         return await di_1.Container.get(backend_network_1.OutboundHttp).requests().request(requestOptions);
      }
      catch (error) {
 -        if (error.response?.status === 401 &&
 +        if ((error.response?.status === 401 || error.response?.status === 403) &&
-             additionalData.credentialsHelper.preAuthentication !== undefined) {
+             additionalData.credentialsHelper.preAuthentication !== undefined &&
+             credentialsDecrypted !== undefined) {
              try {
-                 if (credentialsDecrypted !== undefined) {
