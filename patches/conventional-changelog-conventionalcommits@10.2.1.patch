@@ -1,5 +1,3 @@
-diff --git a/src/templates.js b/src/templates.js
-index cb96952c36863dee5fba5d5f3eea5b0541e419e5..bcc6f7299fd7f79954ea580e90ff9b823f21a6cb 100644
 --- a/src/templates.js
 +++ b/src/templates.js
 @@ -14,13 +14,13 @@ import {
@@ -16,6 +14,6 @@ index cb96952c36863dee5fba5d5f3eea5b0541e419e5..bcc6f7299fd7f79954ea580e90ff9b82
 -    : version
 +    ? link(currentTag, this.formatCompareUrl(context))
 +    : currentTag
- 
+
    return heading(
      2,
