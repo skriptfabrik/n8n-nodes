@@ -3,12 +3,12 @@ packages:
 
 overrides:
   '@langchain/core': ^1.1.44
+  n8n-workflow: 2.40.1
 
 patchedDependencies:
   '@conventional-changelog/template': patches/@conventional-changelog__template.patch
   conventional-changelog-conventionalcommits@9.3.1: patches/conventional-changelog-conventionalcommits@9.3.1.patch
   conventional-changelog-conventionalcommits@10.2.1: patches/conventional-changelog-conventionalcommits@10.2.1.patch
-  n8n-core: patches/n8n-core.patch
   n8n: patches/n8n.patch
 
 # Sheet-JS xlsx package can only be downloaded from their own CDN

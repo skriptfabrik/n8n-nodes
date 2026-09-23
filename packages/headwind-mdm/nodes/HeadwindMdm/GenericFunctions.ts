@@ -16,6 +16,7 @@ import type {
   IHttpRequestOptions,
   ICredentialDataDecryptedObject,
   IAllExecuteFunctions,
+  IAdditionalCredentialOptions,
 } from 'n8n-workflow';
 import { NodeApiError } from 'n8n-workflow';
 
@@ -56,11 +57,16 @@ async function headwindMdmApiRequest<
     json: true,
   };
 
+  const additionalCredentialOptions: IAdditionalCredentialOptions = {
+    preAuthenticationRetryStatusCode: 403,
+  };
+
   const responseBody: { status: string; message: string | null; data: T } =
     await this.helpers.httpRequestWithAuthentication.call(
       this,
       'headwindMdmApi',
       requestOptions,
+      additionalCredentialOptions,
     );
 
   if (responseBody.status !== 'OK') {
