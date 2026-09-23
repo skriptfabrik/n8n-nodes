@@ -65,6 +65,20 @@ jobs:
       - name: 🔍 Lint all Markdown files
         run: pnpm -s run lint:markdown
 
+  lint-overrides:
+    name: Lint Overrides
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🏗 Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: 🏗 Setup Turborepo
+        uses: skriptfabrik/github-actions/setup-turborepo@main
+
+      - name: 🔍 Check that the n8n-workflow override matches n8n's own version
+        run: pnpm -s run lint:n8n-workflow
+
   lint-style:
     name: Lint File Format
     runs-on: ubuntu-latest
