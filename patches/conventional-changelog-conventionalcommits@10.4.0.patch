@@ -1,0 +1,19 @@
+--- a/src/templates.js
++++ b/src/templates.js
+@@ -14,13 +14,13 @@ import {
+ export function headerPartial(context) {
+   const {
+     linkCompare,
+-    version,
++    currentTag,
+     title,
+     date
+   } = context
+   const versionText = linkCompare
+-    ? link(version, this.formatCompareUrl(context))
+-    : version
++    ? link(currentTag, this.formatCompareUrl(context))
++    : currentTag
+
+   return heading(
+     2,
