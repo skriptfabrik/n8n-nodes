@@ -4,6 +4,23 @@ packages:
 overrides:
   '@langchain/core': ^1.1.44
   n8n-workflow: 2.44.1
+  # @tiptap/vue-3 requires exactly matching @tiptap/core and @tiptap/pm versions
+  '@tiptap/vue-3>@tiptap/extension-bubble-menu': 3.30.5
+  '@tiptap/vue-3>@tiptap/extension-floating-menu': 3.30.5
+
+# Peer dependency mismatches inside upstream packages that cannot be fixed here
+peerDependencyRules:
+  allowedVersions:
+    '@browserbasehq/stagehand>openai': '6'
+    '@getzep/zep-cloud>langchain': '1'
+    '@langchain/community>@azure/search-documents': '12'
+    '@langchain/community>@getzep/zep-js': '0.9'
+    '@langchain/community>@huggingface/inference': '4'
+    '@langchain/community>@xata.io/client': '0.28'
+    '@langchain/community>cheerio': '1'
+    '@langchain/community>d3-dsv': '2'
+    '@langchain/community>ignore': '5'
+    '@n8n/eslint-plugin-community-nodes>eslint': '9'
 
 patchedDependencies:
   '@conventional-changelog/template': patches/@conventional-changelog__template.patch
