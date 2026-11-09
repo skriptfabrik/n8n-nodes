@@ -4,13 +4,7 @@
   "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu-24.04",
   "features": {
     "ghcr.io/devcontainers-extra/features/mise:1": {
-      "version": "latest"
-    },
-    "ghcr.io/devcontainers-extra/features/yamllint:2": {
-      "version": "latest"
-    },
-    "ghcr.io/skriptfabrik/devcontainer-features/yamlfix:1": {
-      "version": "latest"
+      "version": "2026.10.20"
     }
   },
   "customizations": {
@@ -32,40 +26,67 @@
         "vercel.turbo-vsc"
       ],
       "settings": {
-        "editor.defaultFormatter": "prettier.prettier-vscode",
+        "editor": {
+          "defaultFormatter": "prettier.prettier-vscode"
+        },
         "[javascript]": {
-          "editor.defaultFormatter": "prettier.prettier-vscode"
+          "editor": {
+            "defaultFormatter": "prettier.prettier-vscode"
+          }
+        },
+        "python": {
+          "terminal": {
+            "activateEnvironment": false,
+            "useEnvFile": true
+          }
+        },
+        "python-envs": {
+          "terminal": {
+            "autoActivationType": "off"
+          }
         }
       }
     }
   },
   "mounts": [
     {
-      "source": "vscode-local-data",
-      "target": "/home/vscode/.local",
+      "source": "vscode-cache-mise",
+      "target": "/home/vscode/.cache/mise",
+      "type": "volume"
+    },
+    {
+      "source": "vscode-cache-pnpm",
+      "target": "/home/vscode/.cache/pnpm",
+      "type": "volume"
+    },
+    {
+      "source": "vscode-claude",
+      "target": "/home/vscode/.claude",
+      "type": "volume"
+    },
+    {
+      "source": "vscode-config-gh",
+      "target": "/home/vscode/.config/gh",
+      "type": "volume"
+    },
+    {
+      "source": "vscode-local-share-mise",
+      "target": "/home/vscode/.local/share/mise",
+      "type": "volume"
+    },
+    {
+      "source": "vscode-local-share-pnpm",
+      "target": "/home/vscode/.local/share/pnpm",
       "type": "volume"
     }
   ],
   "containerEnv": {
+    "CLAUDE_CONFIG_DIR": "/home/vscode/.claude",
     "MISE_TRUSTED_CONFIG_PATHS": "${containerWorkspaceFolder}"
   },
   "remoteEnv": {
-    "DB_SQLITE_POOL_SIZE": "10",
-    "GENERIC_TIMEZONE": "Europe/Berlin",
     "MISE_EXPERIMENTAL": "true",
-    "MISE_LOCKFILE": "true",
-    "N8N_DEV_RELOAD": "true",
-    "N8N_DIAGNOSTICS_ENABLED": "false",
-    "N8N_HIRING_BANNER_ENABLED": "false",
-    "N8N_LOG_LEVEL": "debug",
-    "N8N_MIGRATE_FS_STORAGE_PATH": "true",
-    "N8N_PERSONALIZATION_ENABLED": "false",
-    "N8N_PYTHON_ENABLED": "false",
-    "N8N_TEMPLATES_ENABLED": "false",
-    "N8N_UNVERIFIED_PACKAGES_ENABLED": "true",
-    "N8N_USER_FOLDER": "${containerWorkspaceFolder}",
-    "N8N_VERSION_NOTIFICATIONS_ENABLED": "false",
-    "TZ": "Europe/Berlin"
+    "MISE_LOCKFILE": "true"
   },
   "onCreateCommand": ".devcontainer/hooks/on-create.sh",
   "postCreateCommand": ".devcontainer/hooks/post-create.sh"

@@ -2,11 +2,12 @@
 
 set -e
 
-# Change ownership of the local data volume mount to the current user
-sudo chown $(id -u):$(id -g) ~/.local
-
-# Update mise to the latest version
-sudo mise self-update --yes
+# Change ownership of the volume mounts to the current user
+sudo chown $(id -u):$(id -g) \
+    ~/.cache ~/.cache/mise ~/.cache/pnpm \
+    ~/.claude \
+    ~/.config ~/.config/gh \
+    ~/.local ~/.local/share ~/.local/share/mise ~/.local/share/pnpm
 
 # Activate mise in bash
 cat << 'EOF' >> ~/.bashrc

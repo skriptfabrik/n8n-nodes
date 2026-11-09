@@ -1,20 +1,34 @@
 [settings]
-idiomatic_version_file_enable_tools = [ "node" ]
+idiomatic_version_file_enable_tools = ["node", "pnpm"]
 
 [env]
-_.file = [ ".env" ]
-_.path = [ "{{config_root}}/node_modules/.bin" ]
-COREPACK_ENABLE_DOWNLOAD_PROMPT = "0"
+_.file = [".env"]
+_.path = ["{{config_root}}/node_modules/.bin"]
+_.python.venv = { path = "{{config_root}}/.venv", create = true }
+DB_SQLITE_POOL_SIZE = "10"
+GENERIC_TIMEZONE = "Europe/Berlin"
+N8N_DEV_RELOAD = "true"
+N8N_DIAGNOSTICS_ENABLED = "false"
+N8N_HIRING_BANNER_ENABLED = "false"
+N8N_LOG_LEVEL = "debug"
+N8N_MIGRATE_FS_STORAGE_PATH = "true"
+N8N_PERSONALIZATION_ENABLED = "false"
+N8N_PYTHON_ENABLED = "false"
+N8N_TEMPLATES_ENABLED = "false"
+N8N_UNVERIFIED_PACKAGES_ENABLED = "true"
+N8N_USER_FOLDER = "{{config_root}}"
+N8N_VERSION_NOTIFICATIONS_ENABLED = "false"
+PNPM_CONFIG_STORE_DIR = "~/.local/share/pnpm/store"
+TZ = "Europe/Berlin"
 
-[hooks]
-postinstall = ". {{config_root}}/.mise/hooks/postinstall.sh"
+[tools]
+gh = "2.103.3"
+uv = "0.13.6"
+yamlfmt = "0.21.0"
+yamllint = "1.38.0"
 
 [tasks.install]
 description = "Installs dependencies with pnpm"
 run = "pnpm install"
-sources = [
-  "package.json",
-  "pnpm-lock.yaml",
-  "mise.toml"
-]
-outputs = [ "node_modules/.pnpm/lock.yaml" ]
+sources = ["package.json", "pnpm-lock.yaml", "mise.toml"]
+outputs = ["node_modules/.pnpm/lock.yaml"]
