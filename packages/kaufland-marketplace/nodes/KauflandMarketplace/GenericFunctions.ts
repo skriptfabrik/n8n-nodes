@@ -40,7 +40,7 @@ export async function kauflandMarketplaceRequestAllItems<
     ? `${requestData.uri}?${searchParams.toString()}`
     : requestData.uri;
 
-  const res = (await instance.helpers.requestWithAuthentication
+  const res = (await instance.helpers.httpRequestWithAuthentication
     .call(instance, credentialIdentifier, {
       method: requestData.method,
       url,
