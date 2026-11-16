@@ -19,7 +19,7 @@ permissions:
 jobs:
   lint-commits:
     name: Lint Commit Message Format
-    if: ${{ github.actor != 'dependabot[bot]' && github.actor != 'github-actions[bot]' }}
+    if: ${{ github.actor != 'renovate[bot]' && github.actor != 'github-actions[bot]' }}
     runs-on: ubuntu-latest
 
     steps:
