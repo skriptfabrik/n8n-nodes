@@ -53,6 +53,15 @@
       "groupName": "commitlint"
     },
     {
+      "description": "Tiptap overrides must match the @tiptap/vue-3 version pulled in by n8n and are updated manually",
+      "matchFileNames": ["pnpm-workspace.yaml"],
+      "matchPackageNames": [
+        "@tiptap/extension-bubble-menu",
+        "@tiptap/extension-floating-menu"
+      ],
+      "enabled": false
+    },
+    {
       "description": "Node.js major updates are disabled",
       "matchManagers": ["npm"],
       "matchPackageNames": ["@types/node"],
