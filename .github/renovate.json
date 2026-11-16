@@ -62,6 +62,12 @@
       "enabled": false
     },
     {
+      "description": "The n8n-workflow override must match the version n8n depends on and is synced via `pnpm fix:n8n-workflow`",
+      "matchFileNames": ["pnpm-workspace.yaml"],
+      "matchPackageNames": ["n8n-workflow"],
+      "enabled": false
+    },
+    {
       "description": "Node.js major updates are disabled",
       "matchManagers": ["npm"],
       "matchPackageNames": ["@types/node"],
