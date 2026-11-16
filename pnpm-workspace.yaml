@@ -1,6 +1,7 @@
 packages:
   - packages/*
 
+# Dependency Resolution
 overrides:
   '@langchain/core': ^1.1.44
   n8n-workflow: 2.47.0
@@ -8,7 +9,12 @@ overrides:
   '@tiptap/vue-3>@tiptap/extension-bubble-menu': 3.30.5
   '@tiptap/vue-3>@tiptap/extension-floating-menu': 3.30.5
 
-# Peer dependency mismatches inside upstream packages that cannot be fixed here
+minimumReleaseAge: 1440
+
+# Sheet-JS xlsx package can only be downloaded from their own CDN
+blockExoticSubdeps: false
+
+# Peer Dependency Settings
 peerDependencyRules:
   allowedVersions:
     '@browserbasehq/stagehand>openai': '6'
@@ -22,38 +28,35 @@ peerDependencyRules:
     '@langchain/community>ignore': '5'
     '@n8n/eslint-plugin-community-nodes>eslint': '9'
 
+# Build Settings
+verifyDepsBeforeRun: error
+
+allowBuilds:
+  '@confluentinc/kafka-javascript': false
+  '@parcel/watcher': false
+  '@scarf/scarf': false
+  '@sentry/node-cpu-profiler': false
+  '@sentry/node-native-stacktrace': false
+  agent-browser: false
+  cpu-features: false
+  esbuild: true
+  eslint-plugin-n8n-nodes-base: false
+  isolated-vm: true
+  msgpackr-extract: false
+  oracledb: false
+  oxc-resolver: false
+  protobufjs: false
+  sqlite3: true
+  ssh2: false
+  unrs-resolver: false
+  vue-demi: false
+
+# Other Settings
+updateNotifier: false
+
 patchedDependencies:
   '@conventional-changelog/template': patches/@conventional-changelog__template.patch
   conventional-changelog-conventionalcommits@9.3.1: patches/conventional-changelog-conventionalcommits@9.3.1.patch
   conventional-changelog-conventionalcommits@10.2.1: patches/conventional-changelog-conventionalcommits@10.2.1.patch
   conventional-changelog-conventionalcommits@10.4.0: patches/conventional-changelog-conventionalcommits@10.4.0.patch
   n8n: patches/n8n.patch
-
-# Sheet-JS xlsx package can only be downloaded from their own CDN
-blockExoticSubdeps: false
-
-verifyDepsBeforeRun: error
-
-ignoredBuiltDependencies:
-  - oxc-resolver
-
-allowBuilds:
-  '@confluentinc/kafka-javascript': true
-  '@parcel/watcher': true
-  '@scarf/scarf': true
-  '@sentry/node-cpu-profiler': true
-  '@sentry/node-native-stacktrace': true
-  agent-browser: true
-  cpu-features: true
-  esbuild: true
-  eslint-plugin-n8n-nodes-base: true
-  isolated-vm: true
-  msgpackr-extract: true
-  oracledb: true
-  protobufjs: true
-  sqlite3: true
-  ssh2: true
-  unrs-resolver: true
-  vue-demi: true
-
-minimumReleaseAge: 0
