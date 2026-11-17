@@ -73,6 +73,13 @@
       "matchPackageNames": ["@types/node"],
       "matchUpdateTypes": ["major"],
       "enabled": false
+    },
+    {
+      "description": "ESLint major updates are disabled until @n8n/node-cli supports them",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["eslint", "@eslint/*"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
     }
   ]
 }
