@@ -87,6 +87,12 @@
       "matchPackageNames": ["conventional-changelog-conventionalcommits"],
       "matchUpdateTypes": ["major"],
       "enabled": false
+    },
+    {
+      "description": "TypeScript 7 is disabled until typescript-eslint and @n8n/node-cli support the native compiler without the JavaScript API",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["typescript"],
+      "allowedVersions": "<7"
     }
   ]
 }
