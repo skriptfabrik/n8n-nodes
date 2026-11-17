@@ -80,6 +80,13 @@
       "matchPackageNames": ["eslint", "@eslint/*"],
       "matchUpdateTypes": ["major"],
       "enabled": false
+    },
+    {
+      "description": "conventional-changelog-conventionalcommits major updates are disabled until the semantic-release plugins support conventional-changelog-writer v9",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["conventional-changelog-conventionalcommits"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
     }
   ]
 }
