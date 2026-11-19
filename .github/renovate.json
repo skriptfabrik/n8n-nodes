@@ -10,7 +10,24 @@
   ],
   "labels": ["dependencies"],
   "timezone": "Europe/Berlin",
-  "enabledManagers": ["devcontainer", "github-actions", "mise", "npm"],
+  "enabledManagers": [
+    "custom.regex",
+    "devcontainer",
+    "github-actions",
+    "mise",
+    "npm"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Devcontainer feature versions annotated with renovate comments",
+      "managerFilePatterns": ["/^\\.devcontainer/devcontainer\\.json$/"],
+      "matchStrings": [
+        "//\\s*renovate:\\s*datasource=(?<datasource>\\S+)\\s+depName=(?<depName>\\S+)\\s*\\n\\s*\"version\":\\s*\"(?<currentValue>[^\"]+)\""
+      ],
+      "extractVersionTemplate": "^v(?<version>.*)$"
+    }
+  ],
   "lockFileMaintenance": {
     "enabled": true
   },
@@ -18,6 +35,14 @@
     {
       "description": "Devcontainer updates are applied on Sundays",
       "matchManagers": ["devcontainer"],
+      "addLabels": ["devcontainer"],
+      "schedule": ["* * * * 0"]
+    },
+    {
+      "description": "Devcontainer feature versions are updated on Sundays, final releases only",
+      "matchManagers": ["custom.regex"],
+      "matchFileNames": [".devcontainer/devcontainer.json"],
+      "allowedVersions": "/^\\d+\\.\\d+\\.\\d+$/",
       "addLabels": ["devcontainer"],
       "schedule": ["* * * * 0"]
     },
