@@ -33,7 +33,10 @@ export class CronhooksTrigger implements INodeType {
 
     displayName: 'cronhooks.io Trigger',
 
-    icon: 'file:../../icons/Cronhooks.svg',
+    icon: {
+      dark: 'file:../../icons/Cronhooks.dark.svg',
+      light: 'file:../../icons/Cronhooks.light.svg',
+    },
 
     group: ['trigger'],
 
