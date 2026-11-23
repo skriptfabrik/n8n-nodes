@@ -13,7 +13,7 @@ export const ordersOperations: INodeProperties[] = [
     },
     options: [
       {
-        name: 'Get Order',
+        name: 'Get',
         value: 'getOne',
         description: 'Get order by identifier',
         action: 'Get one order',

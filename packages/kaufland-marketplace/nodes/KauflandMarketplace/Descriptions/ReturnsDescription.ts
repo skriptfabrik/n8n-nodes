@@ -13,22 +13,22 @@ export const returnsOperations: INodeProperties[] = [
     },
     options: [
       {
-        name: 'Accepting Returns',
+        name: 'Accept',
         value: 'acceptingReturns',
         action: 'Accepting returns',
       },
       {
-        name: 'Clarifying Returns',
+        name: 'Clarify',
         value: 'clarifyingReturns',
         action: 'Clarifying returns',
       },
       {
-        name: 'Rejecting Returns',
+        name: 'Reject',
         value: 'rejectingReturns',
         action: 'Rejecting returns',
       },
       {
-        name: 'Repairing Returns',
+        name: 'Repair',
         value: 'repairingReturns',
         action: 'Repairing returns',
       },
