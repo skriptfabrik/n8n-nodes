@@ -15,7 +15,10 @@ export class HeadwindMdmApi implements ICredentialType {
 
   displayName = 'Headwind MDM API';
 
-  icon: Icon = 'file:../icons/HeadwindMDM.svg';
+  icon: Icon = {
+    dark: 'file:../icons/HeadwindMDM.svg',
+    light: 'file:../icons/HeadwindMDM.svg',
+  };
 
   documentationUrl = 'https://srv.h-mdm.com/swagger-ui/';
 
