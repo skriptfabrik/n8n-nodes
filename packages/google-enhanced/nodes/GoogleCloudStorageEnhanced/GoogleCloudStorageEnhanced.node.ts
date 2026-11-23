@@ -27,7 +27,10 @@ export class GoogleCloudStorageEnhanced implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'Google Cloud Storage Enhanced',
     name: 'googleCloudStorageEnhanced',
-    icon: 'file:../../icons/GoogleCloudStorage.svg',
+    icon: {
+      dark: 'file:../../icons/GoogleCloudStorage.svg',
+      light: 'file:../../icons/GoogleCloudStorage.svg',
+    },
     group: ['transform'],
     version: 1,
     subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
