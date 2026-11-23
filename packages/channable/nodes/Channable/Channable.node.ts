@@ -24,7 +24,10 @@ export class Channable implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'Channable',
     name: 'channable',
-    icon: 'file:../../icons/Channable.svg',
+    icon: {
+      dark: 'file:../../icons/Channable.svg',
+      light: 'file:../../icons/Channable.svg',
+    },
     group: ['transform'],
     version: 1,
     documentationUrl: 'https://api.channable.com/v1/docs#section/Introduction',

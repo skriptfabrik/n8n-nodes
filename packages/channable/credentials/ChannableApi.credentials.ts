@@ -11,7 +11,10 @@ export class ChannableApi implements ICredentialType {
 
   displayName = 'Channable API';
 
-  icon: Icon = 'file:../icons/Channable.svg';
+  icon: Icon = {
+    dark: 'file:../icons/Channable.svg',
+    light: 'file:../icons/Channable.svg',
+  };
 
   documentationUrl = 'https://api.channable.com/v1/docs#section/Introduction';
 
