@@ -13,7 +13,10 @@ export class KauflandMarketplaceApi implements ICredentialType {
 
   displayName = 'Kaufland Marketplace API';
 
-  icon: Icon = 'file:../icons/Kaufland.svg';
+  icon: Icon = {
+    dark: 'file:../icons/Kaufland.svg',
+    light: 'file:../icons/Kaufland.svg',
+  };
 
   documentationUrl = 'https://sellerapi.kaufland.com/?page=rest-api';
 

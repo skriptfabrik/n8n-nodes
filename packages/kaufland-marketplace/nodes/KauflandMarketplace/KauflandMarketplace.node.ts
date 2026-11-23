@@ -24,7 +24,10 @@ export class KauflandMarketplace implements INodeType {
     displayName: 'Kaufland Marketplace',
     name: 'kauflandMarketplace',
     documentationUrl: 'https://sellerapi.kaufland.com/',
-    icon: 'file:../../icons/Kaufland.svg',
+    icon: {
+      dark: 'file:../../icons/Kaufland.svg',
+      light: 'file:../../icons/Kaufland.svg',
+    },
     group: ['transform'],
     version: 1,
     subtitle: '={{ $parameter["resource"] + ": " + $parameter["operation"] }}',
