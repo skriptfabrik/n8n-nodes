@@ -97,6 +97,13 @@ export default {
             },
           ],
         },
+        writerOpts: {
+          // use the git tag instead of the plain version as release heading
+          finalizeContext: (context) => ({
+            ...context,
+            version: context.currentTag,
+          }),
+        },
       },
     ],
     [
