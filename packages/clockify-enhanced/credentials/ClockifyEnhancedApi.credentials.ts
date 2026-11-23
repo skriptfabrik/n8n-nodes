@@ -11,7 +11,10 @@ export class ClockifyEnhancedApi implements ICredentialType {
 
   displayName = 'Clockify Enhanced API';
 
-  icon: Icon = 'file:../icons/Clockify.svg';
+  icon: Icon = {
+    dark: 'file:../icons/Clockify.dark.svg',
+    light: 'file:../icons/Clockify.light.svg',
+  };
 
   documentationUrl =
     'https://github.com/skriptfabrik/n8n-nodes/blob/main/packages/clockify-enhanced/README.md';

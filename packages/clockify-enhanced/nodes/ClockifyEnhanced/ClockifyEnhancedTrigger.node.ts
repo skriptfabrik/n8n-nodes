@@ -56,7 +56,10 @@ export class ClockifyEnhancedTrigger implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'Clockify Enhanced Trigger',
     name: 'clockifyEnhancedTrigger',
-    icon: 'file:../../icons/Clockify.svg',
+    icon: {
+      dark: 'file:../../icons/Clockify.dark.svg',
+      light: 'file:../../icons/Clockify.light.svg',
+    },
     group: ['trigger'],
     version: 1,
     subtitle: '={{$parameter["name"]}}',
