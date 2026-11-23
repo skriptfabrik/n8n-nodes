@@ -24,7 +24,10 @@ export class OttoMarketApi implements ICredentialType {
 
   displayName = 'OTTO Market API';
 
-  icon: Icon = 'file:../icons/Otto.svg';
+  icon: Icon = {
+    dark: 'file:../icons/Otto.svg',
+    light: 'file:../icons/Otto.svg',
+  };
 
   documentationUrl =
     "https://api.otto.market/docs#section/OTTO-Market-API-Developer's-Guide/Authorization-(OAuth2)";

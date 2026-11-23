@@ -23,7 +23,10 @@ export class OttoMarket implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'OTTO Market',
     name: 'ottoMarket',
-    icon: 'file:../../icons/Otto.svg',
+    icon: {
+      dark: 'file:../../icons/Otto.svg',
+      light: 'file:../../icons/Otto.svg',
+    },
     group: ['transform'],
     version: 1,
     documentationUrl: 'https://api.otto.market/docs#section/Home',
