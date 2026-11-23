@@ -42,7 +42,10 @@ export class ClockifyEnhanced implements INodeType {
 
     name: 'clockifyEnhanced',
 
-    icon: 'file:../../icons/Clockify.svg',
+    icon: {
+      dark: 'file:../../icons/Clockify.dark.svg',
+      light: 'file:../../icons/Clockify.light.svg',
+    },
 
     group: ['transform'],
 
