@@ -11,7 +11,10 @@ export class CronhooksApi implements ICredentialType {
 
   displayName = 'cronhooks.io API';
 
-  icon: Icon = 'file:../icons/Cronhooks.svg';
+  icon: Icon = {
+    dark: 'file:../icons/Cronhooks.dark.svg',
+    light: 'file:../icons/Cronhooks.light.svg',
+  };
 
   documentationUrl = 'https://docs.cronhooks.io/#introduction';
 
