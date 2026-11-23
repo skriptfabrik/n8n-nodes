@@ -35,7 +35,6 @@ export class SentryIoDSNApi implements ICredentialType {
       name: 'dsn',
       required: true,
       type: 'string',
-      typeOptions: { password: true },
       default: undefined,
     },
   ];
