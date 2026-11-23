@@ -1,3 +1,4 @@
+import { formatIssueUrl } from 'conventional-changelog-conventionalcommits';
 import { basename } from 'node:path';
 
 const nodeName = basename(import.meta.dirname);
@@ -36,9 +37,11 @@ export default {
       {
         preset: 'conventionalcommits',
         presetConfig: {
-          issuePrefixes: ['N8N-'],
-          issueUrlFormat:
-            'https://skriptfabrik.atlassian.net/browse/{{prefix}}{{id}}',
+          issuePrefixes: ['#', 'DWBN-', 'INTERN-', 'LAA-', 'N8N-'],
+          formatIssueUrl: (context, reference) =>
+            reference.prefix === '#'
+              ? formatIssueUrl(context, reference)
+              : `https://skriptfabrik.atlassian.net/browse/${reference.prefix}${reference.issue}`,
           ignoreCommits: /bump n8n-(nodes-base|workflow) version/,
           scope: [nodeName],
           types: [
