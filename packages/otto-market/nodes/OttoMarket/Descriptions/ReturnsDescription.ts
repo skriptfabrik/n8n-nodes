@@ -19,12 +19,12 @@ export const returnsOperations: INodeProperties[] = [
         action: 'List returns',
       },
       {
-        name: 'Accept Return',
+        name: 'Accept',
         value: 'accept',
         action: 'Accept return',
       },
       {
-        name: 'Reject Return',
+        name: 'Reject',
         value: 'reject',
         action: 'Reject return',
       },
