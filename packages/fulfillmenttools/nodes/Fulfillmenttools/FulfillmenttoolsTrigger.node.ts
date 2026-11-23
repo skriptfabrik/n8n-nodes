@@ -79,7 +79,10 @@ export class FulfillmenttoolsTrigger implements INodeType {
 
     displayName: 'Fulfillmenttools Trigger',
 
-    icon: 'file:../../icons/Fulfillmenttools.svg',
+    icon: {
+      dark: 'file:../../icons/Fulfillmenttools.svg',
+      light: 'file:../../icons/Fulfillmenttools.svg',
+    },
 
     group: ['trigger'],
 
