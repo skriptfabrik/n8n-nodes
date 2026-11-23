@@ -143,6 +143,21 @@ export class Barcode implements INodeType {
     outputs: [NodeConnectionTypes.Main],
     properties: [
       {
+        displayName: 'Operation',
+        name: 'operation',
+        type: 'options',
+        noDataExpression: true,
+        options: [
+          {
+            name: 'Create',
+            value: 'create',
+            action: 'Create a barcode',
+            description: 'Create a barcode image',
+          },
+        ],
+        default: 'create',
+      },
+      {
         displayName: 'Data',
         name: 'data',
         type: 'string',
