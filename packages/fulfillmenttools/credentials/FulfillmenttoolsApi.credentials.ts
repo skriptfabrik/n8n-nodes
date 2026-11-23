@@ -41,7 +41,10 @@ export class FulfillmenttoolsApi implements ICredentialType {
 
   displayName = 'Fulfillmenttools API';
 
-  icon: Icon = 'file:../icons/Fulfillmenttools.svg';
+  icon: Icon = {
+    dark: 'file:../icons/Fulfillmenttools.svg',
+    light: 'file:../icons/Fulfillmenttools.svg',
+  };
 
   documentationUrl =
     'https://docs.fulfillmenttools.com/api-docs/getting-started/make-your-first-api-call';

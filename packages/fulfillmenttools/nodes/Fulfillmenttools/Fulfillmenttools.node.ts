@@ -55,7 +55,10 @@ export class Fulfillmenttools implements INodeType {
 
     displayName: 'fulfillmenttools',
 
-    icon: 'file:../../icons/Fulfillmenttools.svg',
+    icon: {
+      dark: 'file:../../icons/Fulfillmenttools.svg',
+      light: 'file:../../icons/Fulfillmenttools.svg',
+    },
 
     group: ['transform'],
 
