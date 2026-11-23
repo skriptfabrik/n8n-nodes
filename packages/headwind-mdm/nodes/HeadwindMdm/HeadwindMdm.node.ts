@@ -53,7 +53,10 @@ export class HeadwindMdm implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'Headwind MDM',
     name: 'headwindMdm',
-    icon: 'file:../../icons/HeadwindMDM.svg',
+    icon: {
+      dark: 'file:../../icons/HeadwindMDM.svg',
+      light: 'file:../../icons/HeadwindMDM.svg',
+    },
     group: ['transform'],
     version: 1,
     documentationUrl: 'https://srv.h-mdm.com/swagger-ui/',
