@@ -18,7 +18,10 @@ export class MocoApi implements ICredentialType {
 
   displayName = 'MOCO API';
 
-  icon?: Icon = 'file:../icons/Moco.svg';
+  icon?: Icon = {
+    dark: 'file:../icons/Moco.svg',
+    light: 'file:../icons/Moco.svg',
+  };
 
   documentationUrl =
     'https://github.com/skriptfabrik/n8n-nodes/blob/main/packages/moco/README.md';
