@@ -179,8 +179,7 @@ overrides:
 
 patchedDependencies:
   '@conventional-changelog/template': 6d47a5e4ba0dc25dc595a83652e16ad035658fe258f5fd81a88df0bc0cce7611
-  conventional-changelog-conventionalcommits@9.3.1: 78f8d1be6eac69ddf4b6adf327f1531f207796e8af7bd1c18c1790fd98f13f08
-  conventional-changelog-conventionalcommits@^10.2.1: c1ea432259989caa6c7786800fbf1c790c9e9dff16d79a7ab98d37a95e0577b6
+  conventional-changelog-conventionalcommits: c1ea432259989caa6c7786800fbf1c790c9e9dff16d79a7ab98d37a95e0577b6
   n8n: 470ee80c3d73dfb3e129de32b989b910c563d74d0089d1b3d3b8a6c7abc27d41
 
 importers:
@@ -206,8 +205,8 @@ importers:
         specifier: ^6.0.2
         version: 6.0.2(@vue/compiler-sfc@3.5.45)(prettier@3.10.1)(supports-color@8.1.1)
       conventional-changelog-conventionalcommits:
-        specifier: ^9.3.1
-        version: 9.3.1(patch_hash=78f8d1be6eac69ddf4b6adf327f1531f207796e8af7bd1c18c1790fd98f13f08)
+        specifier: ^10.4.1
+        version: 10.4.1(patch_hash=c1ea432259989caa6c7786800fbf1c790c9e9dff16d79a7ab98d37a95e0577b6)
       eslint:
         specifier: ^9.39.4
         version: 9.39.5(jiti@2.7.0)(supports-color@8.1.1)
@@ -5432,9 +5431,6 @@ packages:
   array-hyper-unique@2.1.8:
     resolution: {integrity: sha512-HbOTmCsWMvj5CLsepiPC0sjsSYu8/YPcmKsrvStkLaHrIUUAo0L6xZxM5NabzxKgB9QN4O/2ScDUzrC1js0S5g==}
 
-  array-ify@1.0.0:
-    resolution: {integrity: sha512-c5AMf34bKdvPhQ7tBGhqkgKNUzMr4WUs+WDtC2ZUGOUncbxKMTvqxYctiseW3+L4bA8ec+GcZ6/A/FW4m8ukng==}
-
   array-parallel@0.1.3:
     resolution: {integrity: sha512-TDPTwSWW5E4oiFiKmz6RGJ/a80Y91GuLgUYuLd49+XBS75tYo8PNgaT2K/OxuQYqkoI852MDGBorg9OcUSTQ8w==}
 
@@ -5962,9 +5958,6 @@ packages:
   commist@3.2.0:
     resolution: {integrity: sha512-4PIMoPniho+LqXmpS5d3NuGYncG6XWlkBSVGiWycL22dd42OYdUGil2CWuzklaJoNxyxUSpO4MKIBU94viWNAw==}
 
-  compare-func@2.0.0:
-    resolution: {integrity: sha512-zHig5N+tPWARooBnb0Zx1MFcdfpyJrfTJ3Y5L+IFvUm8rM74hHz66z0gw0x4tijh5CorKkKUCnW82R2vmpeCRA==}
-
   component-type@2.0.0:
     resolution: {integrity: sha512-/1+d/k0Al0uzg4rFAz9fbYOTnT20JYgN7SoaRr5x2cz7kH4Mtj+GQPh7W9UocpzFtxSL8flv6qAOOfJvQGqUjg==}
     engines: {node: '>=18'}
@@ -6019,10 +6012,6 @@ packages:
   conventional-changelog-conventionalcommits@10.4.1:
     resolution: {integrity: sha512-jS1LRFSbRoAr6JbhhRy1JYfNNUj5LM3+v49hRE03CgccsiYqgdVj/RTmrw4J1rylrqijHwdOlJWiJa61JHOgHg==}
     engines: {node: '>=22'}
-
-  conventional-changelog-conventionalcommits@9.3.1:
-    resolution: {integrity: sha512-dTYtpIacRpcZgrvBYvBfArMmK2xvIpv2TaxM0/ZI5CBtNUzvF2x0t15HsbRABWprS6UPmvj+PzHVjSx4qAVKyw==}
-    engines: {node: '>=18'}
 
   conventional-changelog-writer@9.3.0:
     resolution: {integrity: sha512-lxiECDlvy880e7JIYAtAhxg0wD/CGCVbZCdeua5aOlQVFTEd39zAeOzwK22i/FO4xnEOURK1gbUTETNEYW7zxQ==}
@@ -6383,10 +6372,6 @@ packages:
   domutils@4.0.2:
     resolution: {integrity: sha512-qI4JLRKnSzqFqr7hAlS5xQDusBCjKSEG4t4+7aNrIQMHBcsC2TGEhuyABJdYkgSewL57PNLYEiibY2iPKhKpaA==}
     engines: {node: '>=20.19.0'}
-
-  dot-prop@5.3.0:
-    resolution: {integrity: sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==}
-    engines: {node: '>=8'}
 
   dotenv@16.4.5:
     resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
@@ -7568,10 +7553,6 @@ packages:
   is-number@7.0.0:
     resolution: {integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==}
     engines: {node: '>=0.12.0'}
-
-  is-obj@2.0.0:
-    resolution: {integrity: sha512-drqDG3cbczxxEJRoOXcOjtdp1J/lyp1mNn0xaznRs8+muBhgQcrnbspox5X5fOw0HnMnbfDzvnEMEtqDEJEo8w==}
-    engines: {node: '>=8'}
 
   is-path-inside@4.0.0:
     resolution: {integrity: sha512-lJJV/5dYS+RcL8uQdBDW9c9uWFLLBNRyFhnAKXw5tVqLlKZ4RMGZKv+YQ/IA3OhD+RpbJa1LLFM1FQPGyIXvOA==}
@@ -20335,8 +20316,6 @@ snapshots:
       deep-eql: 4.0.0
       lodash: 4.18.1
 
-  array-ify@1.0.0: {}
-
   array-parallel@0.1.3: {}
 
   array-series@0.1.5: {}
@@ -20916,11 +20895,6 @@ snapshots:
 
   commist@3.2.0: {}
 
-  compare-func@2.0.0:
-    dependencies:
-      array-ify: 1.0.0
-      dot-prop: 5.3.0
-
   component-type@2.0.0: {}
 
   compressible@2.0.18:
@@ -20978,10 +20952,6 @@ snapshots:
   conventional-changelog-conventionalcommits@10.4.1(patch_hash=c1ea432259989caa6c7786800fbf1c790c9e9dff16d79a7ab98d37a95e0577b6):
     dependencies:
       '@conventional-changelog/template': 1.4.1(patch_hash=6d47a5e4ba0dc25dc595a83652e16ad035658fe258f5fd81a88df0bc0cce7611)
-
-  conventional-changelog-conventionalcommits@9.3.1(patch_hash=78f8d1be6eac69ddf4b6adf327f1531f207796e8af7bd1c18c1790fd98f13f08):
-    dependencies:
-      compare-func: 2.0.0
 
   conventional-changelog-writer@9.3.0:
     dependencies:
@@ -21355,10 +21325,6 @@ snapshots:
       dom-serializer: 3.1.1
       domelementtype: 3.0.0
       domhandler: 6.0.1
-
-  dot-prop@5.3.0:
-    dependencies:
-      is-obj: 2.0.0
 
   dotenv@16.4.5: {}
 
@@ -22842,8 +22808,6 @@ snapshots:
   is-network-error@1.3.2: {}
 
   is-number@7.0.0: {}
-
-  is-obj@2.0.0: {}
 
   is-path-inside@4.0.0: {}
 
