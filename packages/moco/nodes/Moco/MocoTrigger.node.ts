@@ -20,7 +20,10 @@ export class MocoTrigger implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'MOCO Trigger',
     name: 'mocoTrigger',
-    icon: 'file:../../icons/Moco.svg',
+    icon: {
+      dark: 'file:../../icons/Moco.svg',
+      light: 'file:../../icons/Moco.svg',
+    },
     group: ['trigger'],
     version: 1,
     subtitle:

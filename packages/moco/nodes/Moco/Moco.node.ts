@@ -62,7 +62,10 @@ export class Moco implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'MOCO',
     name: 'moco',
-    icon: 'file:../../icons/Moco.svg',
+    icon: {
+      dark: 'file:../../icons/Moco.svg',
+      light: 'file:../../icons/Moco.svg',
+    },
     group: ['transform'],
     version: 1,
     subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
