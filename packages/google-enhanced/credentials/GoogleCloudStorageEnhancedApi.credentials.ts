@@ -220,7 +220,10 @@ export class GoogleCloudStorageEnhancedApi implements ICredentialType {
 
   displayName = 'Google Cloud Storage Enhanced Service Account API';
 
-  icon: Icon = 'file:../icons/GoogleCloudStorage.svg';
+  icon: Icon = {
+    dark: 'file:../icons/GoogleCloudStorage.svg',
+    light: 'file:../icons/GoogleCloudStorage.svg',
+  };
 
   documentationUrl =
     'https://github.com/skriptfabrik/n8n-nodes/blob/main/packages/google-enhanced/README.md';
