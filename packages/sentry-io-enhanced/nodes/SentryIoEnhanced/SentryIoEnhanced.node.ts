@@ -45,6 +45,21 @@ export class SentryIoEnhanced implements INodeType {
 
     properties: [
       {
+        displayName: 'Operation',
+        name: 'operation',
+        type: 'options',
+        noDataExpression: true,
+        options: [
+          {
+            name: 'Send Message',
+            value: 'sendMessage',
+            action: 'Send a message',
+            description: 'Send a message envelope to Sentry.io',
+          },
+        ],
+        default: 'sendMessage',
+      },
+      {
         displayName: 'Message',
         name: 'message',
         type: 'string',
