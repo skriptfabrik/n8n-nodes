@@ -15,7 +15,10 @@ export class SentryIoEnhanced implements INodeType {
 
     name: 'sentryIoEnhanced',
 
-    icon: 'file:../../icons/Sentry.svg',
+    icon: {
+      dark: 'file:../../icons/Sentry.dark.svg',
+      light: 'file:../../icons/Sentry.light.svg',
+    },
 
     group: ['transform'],
 

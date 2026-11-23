@@ -17,7 +17,10 @@ export class SentryIoDSNApi implements ICredentialType {
 
   displayName = 'Sentry.io DSN API';
 
-  icon: Icon = 'file:../icons/Sentry.svg';
+  icon: Icon = {
+    dark: 'file:../icons/Sentry.dark.svg',
+    light: 'file:../icons/Sentry.light.svg',
+  };
 
   documentationUrl =
     'https://docs.sentry.io/product/sentry-basics/concepts/dsn-explainer/';
