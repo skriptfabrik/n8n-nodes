@@ -371,7 +371,7 @@ export const objectOperations: INodeProperties[] = [
             },
           },
         },
-        action: 'Get a list of objects',
+        action: 'Get many objects',
       },
       {
         name: 'Update',

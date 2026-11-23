@@ -243,7 +243,7 @@ export const bucketOperations: INodeProperties[] = [
             },
           },
         },
-        action: 'Get a list of buckets for a given project',
+        action: 'Get many buckets',
       },
       {
         name: 'Update',
